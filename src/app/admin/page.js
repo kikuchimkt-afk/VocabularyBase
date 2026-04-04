@@ -53,13 +53,30 @@ export default function AdminPage() {
     }
   };
 
+  // 学年を数値化（高3=15, 高2=14, ..., 中3=9, 中2=8, 中1=7, 小6=6, ..., 小1=1）
+  const gradeToNumber = (grade) => {
+    if (!grade) return 0;
+    const g = grade.toString().trim();
+    const match = g.match(/^(高|中|小|Kou|Chu|Sho)?(\d+)$/i);
+    if (!match) return 0;
+    const prefix = (match[1] || '').toLowerCase();
+    const num = parseInt(match[2]) || 0;
+    if (prefix === '高' || prefix === 'kou') return 12 + num;
+    if (prefix === '中' || prefix === 'chu') return 6 + num;
+    if (prefix === '小' || prefix === 'sho') return num;
+    return num;
+  };
+
+  const sortByGrade = (list) =>
+    [...list].sort((a, b) => gradeToNumber(b.grade) - gradeToNumber(a.grade));
+
   const fetchStudents = async () => {
     setLoading(true);
     try {
       const res = await fetch('/api/students');
       if (!res.ok) throw new Error('Fetch failed');
       const data = await res.json();
-      setStudents(data.students || []);
+      setStudents(sortByGrade(data.students || []));
     } catch (e) {
       console.error(e);
     } finally {
