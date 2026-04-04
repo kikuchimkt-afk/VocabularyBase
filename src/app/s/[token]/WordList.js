@@ -8,6 +8,7 @@ export default function WordList({ studentId }) {
   const [loading, setLoading] = useState(true);
   const [playingId, setPlayingId] = useState(null);
   const [generatingId, setGeneratingId] = useState(null);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const supabase = useMemo(() => createBrowserClient(), []);
 
@@ -130,9 +131,48 @@ export default function WordList({ studentId }) {
     );
   }
 
+  // 検索フィルター（部分一致）
+  const filteredWords = words.filter(w => {
+    if (!searchQuery.trim()) return true;
+    const q = searchQuery.toLowerCase();
+    const english = (w.english || '').toLowerCase();
+    const meanings = (w.meanings || []).join(' ').toLowerCase();
+    const example = (w.example_sentence || '').toLowerCase();
+    const exampleJa = (w.example_sentence_ja || '').toLowerCase();
+    return english.includes(q) || meanings.includes(q) || example.includes(q) || exampleJa.includes(q);
+  });
+
   return (
     <div>
-      {words.map((word) => {
+      {/* 検索バー */}
+      <div style={{ position: 'relative', marginBottom: '1rem' }}>
+        <input
+          className="input-text"
+          type="text"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          placeholder="🔍 英語・日本語で検索..."
+          style={{ paddingRight: '4rem' }}
+        />
+        {searchQuery && (
+          <button
+            onClick={() => setSearchQuery('')}
+            style={{
+              position: 'absolute', right: 10, top: '50%', transform: 'translateY(-50%)',
+              border: 'none', background: 'transparent', cursor: 'pointer',
+              fontSize: '0.8rem', color: 'var(--text-muted)',
+            }}
+          >
+            ✕ クリア
+          </button>
+        )}
+      </div>
+      {searchQuery && (
+        <p className="text-muted" style={{ fontSize: '0.8rem', marginBottom: '0.75rem' }}>
+          {filteredWords.length}件見つかりました
+        </p>
+      )}
+      {filteredWords.map((word) => {
         const needsAudio = !word.word_audio_url || (!word.sentence_audio_url && word.example_sentence);
         const isGenerating = generatingId === word.id;
 
@@ -234,6 +274,11 @@ export default function WordList({ studentId }) {
           </div>
         );
       })}
+      {filteredWords.length === 0 && searchQuery && (
+        <div className="card" style={{ textAlign: 'center', padding: '2rem' }}>
+          <p className="text-muted">「{searchQuery}」に一致する単語が見つかりません</p>
+        </div>
+      )}
     </div>
   );
 }

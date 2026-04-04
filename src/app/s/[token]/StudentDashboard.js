@@ -5,6 +5,7 @@ import { createBrowserClient } from '@/lib/supabase';
 import RegisterForm from './RegisterForm';
 import WordList from './WordList';
 import Quiz from './Quiz';
+import StudentManual from './StudentManual';
 
 export default function StudentDashboard({ token }) {
   const [activeTab, setActiveTab] = useState('register');
@@ -13,6 +14,7 @@ export default function StudentDashboard({ token }) {
   const [wordCount, setWordCount] = useState(0);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
+  const [showManual, setShowManual] = useState(false);
 
   const supabase = useMemo(() => createBrowserClient(), []);
 
@@ -88,6 +90,17 @@ export default function StudentDashboard({ token }) {
           <h2 style={{ fontSize: '1.3rem', fontWeight: '700' }}>📖 {studentName} の単語帳</h2>
           <p className="text-muted" style={{ fontSize: '0.8rem' }}>登録語数: {wordCount}語</p>
         </div>
+        <button
+          onClick={() => setShowManual(true)}
+          style={{
+            border: '1px solid var(--border)', background: 'var(--bg-card)',
+            borderRadius: 'var(--radius-md)', padding: '0.4rem 0.75rem',
+            fontSize: '0.8rem', cursor: 'pointer', color: 'var(--text-muted)',
+            fontWeight: '600',
+          }}
+        >
+          ❓ 使い方
+        </button>
       </div>
 
       {/* タブナビゲーション */}
@@ -133,6 +146,9 @@ export default function StudentDashboard({ token }) {
           <Quiz studentId={studentId} />
         )}
       </div>
+
+      {/* マニュアル */}
+      {showManual && <StudentManual onClose={() => setShowManual(false)} />}
     </div>
   );
 }

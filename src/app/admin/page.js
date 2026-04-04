@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import TeacherWordRegister from './TeacherWordRegister';
+import ManualModal from './ManualModal';
 
 export default function AdminPage() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -28,6 +29,9 @@ export default function AdminPage() {
   const [showImport, setShowImport] = useState(false);
   const [importLoading, setImportLoading] = useState(false);
   const [importResults, setImportResults] = useState(null);
+
+  // マニュアル
+  const [showManual, setShowManual] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -246,9 +250,14 @@ export default function AdminPage() {
               <h1 style={{ fontSize: '1.5rem', fontWeight: '700' }}>📚 VocabularyBase</h1>
               <p style={{ opacity: 0.8, fontSize: '0.875rem' }}>講師ダッシュボード</p>
             </div>
-            <button className="btn" style={{ color: 'white', opacity: 0.8 }} onClick={() => setIsLoggedIn(false)}>
-              ログアウト
-            </button>
+            <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+              <button className="btn" style={{ color: 'white', opacity: 0.8 }} onClick={() => setShowManual(true)}>
+                📖 マニュアル
+              </button>
+              <button className="btn" style={{ color: 'white', opacity: 0.8 }} onClick={() => setIsLoggedIn(false)}>
+                ログアウト
+              </button>
+            </div>
           </div>
         </div>
       </header>
@@ -572,6 +581,9 @@ export default function AdminPage() {
           </div>
         </div>
       )}
+
+      {/* マニュアルモーダル */}
+      {showManual && <ManualModal onClose={() => setShowManual(false)} />}
     </div>
   );
 }
