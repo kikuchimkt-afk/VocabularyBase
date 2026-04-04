@@ -30,6 +30,8 @@ export default function StudentDashboard({ token }) {
         } else {
           setStudentId(data.id);
           setStudentName(data.name);
+          // PWAホーム画面追加対応: トークンを記憶
+          try { localStorage.setItem('vb_student_token', token); } catch {}
 
           // 単語数も取得
           const { count } = await supabase
