@@ -23,6 +23,7 @@ export default function Quiz({ token, studentId }) {
   const [againSet, setAgainSet] = useState(new Set());
   const [order, setOrder] = useState('rand');
   const [autoplay, setAutoplay] = useState(true);
+  const [dateFilter, setDateFilter] = useState('all'); // 'all' or specific date string
   const audioRef = useRef(null);
 
   const supabase = createBrowserClient();
@@ -47,6 +48,18 @@ export default function Quiz({ token, studentId }) {
     }
   };
 
+  // 日付一覧を取得（新しい順）
+  const availableDates = [...new Set(
+    words
+      .filter(w => w.assigned_date)
+      .map(w => w.assigned_date)
+  )].sort((a, b) => b.localeCompare(a));
+
+  // フィルター適用後の単語
+  const filteredWords = dateFilter === 'all'
+    ? words
+    : words.filter(w => w.assigned_date === dateFilter);
+
   const playAudio = useCallback((url) => {
     if (!url) return;
     if (audioRef.current) {
@@ -59,8 +72,8 @@ export default function Quiz({ token, studentId }) {
   }, []);
 
   const startQuiz = () => {
-    if (words.length === 0) return;
-    let cards = words.map((w, i) => ({ ...w, origIdx: i }));
+    if (filteredWords.length === 0) return;
+    let cards = filteredWords.map((w, i) => ({ ...w, origIdx: i }));
     if (order === 'rand') cards = shuffleArray(cards);
     setDeck(cards);
     setCurrentIdx(0);
@@ -138,6 +151,12 @@ export default function Quiz({ token, studentId }) {
     startQuiz();
   };
 
+  // 日付フォーマット (YYYY-MM-DD → M/D)
+  const formatDate = (dateStr) => {
+    const d = new Date(dateStr + 'T00:00:00');
+    return `${d.getMonth() + 1}/${d.getDate()}`;
+  };
+
   if (loading) {
     return <div className="text-muted" style={{ textAlign: 'center', padding: '2rem' }}>読み込み中...</div>;
   }
@@ -146,10 +165,53 @@ export default function Quiz({ token, studentId }) {
   if (quizState === 'start') {
     return (
       <div style={{ padding: '1rem' }}>
+        {/* Date filter */}
+        {availableDates.length > 0 && (
+          <div style={{ marginBottom: '1.25rem' }}>
+            <label style={{ fontWeight: '600', fontSize: '0.85rem', display: 'block', marginBottom: '0.5rem', color: 'var(--text-muted)' }}>
+              📅 日付で絞り込む
+            </label>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+              <button
+                onClick={() => setDateFilter('all')}
+                style={{
+                  padding: '6px 14px', border: 'none', borderRadius: 20,
+                  fontSize: '0.8rem', fontWeight: 600, cursor: 'pointer',
+                  background: dateFilter === 'all' ? 'var(--primary)' : 'var(--bg-card)',
+                  color: dateFilter === 'all' ? 'white' : 'var(--text-muted)',
+                  border: `1px solid ${dateFilter === 'all' ? 'var(--primary)' : 'var(--border)'}`,
+                  transition: '0.2s',
+                }}
+              >
+                すべて ({words.length})
+              </button>
+              {availableDates.map(date => {
+                const count = words.filter(w => w.assigned_date === date).length;
+                return (
+                  <button
+                    key={date}
+                    onClick={() => setDateFilter(date)}
+                    style={{
+                      padding: '6px 14px', border: 'none', borderRadius: 20,
+                      fontSize: '0.8rem', fontWeight: 600, cursor: 'pointer',
+                      background: dateFilter === date ? 'var(--primary)' : 'var(--bg-card)',
+                      color: dateFilter === date ? 'white' : 'var(--text-muted)',
+                      border: `1px solid ${dateFilter === date ? 'var(--primary)' : 'var(--border)'}`,
+                      transition: '0.2s',
+                    }}
+                  >
+                    {formatDate(date)} ({count})
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
         {/* Stats */}
         <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '1.5rem' }}>
-          <StatCard value={words.length} label="全単語" color="var(--primary)" />
-          <StatCard value={words.length} label="残り" color="#fbbf24" />
+          <StatCard value={filteredWords.length} label="全単語" color="var(--primary)" />
+          <StatCard value={filteredWords.length} label="残り" color="#fbbf24" />
           <StatCard value={0} label="覚えた" color="var(--secondary)" />
         </div>
 
@@ -184,7 +246,7 @@ export default function Quiz({ token, studentId }) {
           <button
             className="btn btn-primary"
             onClick={startQuiz}
-            disabled={words.length === 0}
+            disabled={filteredWords.length === 0}
             style={{
               fontSize: '1.1rem', fontWeight: '800', padding: '1rem 3rem',
               borderRadius: 'var(--radius-full)', letterSpacing: '2px',
@@ -193,9 +255,9 @@ export default function Quiz({ token, studentId }) {
           >
             START
           </button>
-          {words.length === 0 && (
+          {filteredWords.length === 0 && (
             <p className="text-muted" style={{ marginTop: '1rem', color: 'var(--danger)' }}>
-              単語を登録してから開始してください
+              {dateFilter !== 'all' ? 'この日付の単語はありません' : '単語を登録してから開始してください'}
             </p>
           )}
         </div>

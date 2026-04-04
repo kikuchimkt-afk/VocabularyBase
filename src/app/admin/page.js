@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import TeacherWordRegister from './TeacherWordRegister';
 
 export default function AdminPage() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -21,6 +22,12 @@ export default function AdminPage() {
 
   // QRコードモーダル
   const [qrStudent, setQrStudent] = useState(null);
+  const [activeTab, setActiveTab] = useState('students'); // 'students' | 'register'
+
+  // Excel一括登録
+  const [showImport, setShowImport] = useState(false);
+  const [importLoading, setImportLoading] = useState(false);
+  const [importResults, setImportResults] = useState(null);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -115,6 +122,48 @@ export default function AdminPage() {
     return '';
   };
 
+  // サンプルExcelダウンロード
+  const downloadSample = () => {
+    const header = '名前,学年';
+    const rows = ['田中 太郎,中2', '鈴木 花子,高1', '山田 次郎,中3'];
+    const csv = '\uFEFF' + [header, ...rows].join('\n');
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'VocabularyBase_生徒一括登録サンプル.csv';
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  // Excel/CSVインポート
+  const handleImport = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    setImportLoading(true);
+    setImportResults(null);
+    try {
+      const formData = new FormData();
+      formData.append('file', file);
+      const res = await fetch('/api/students/import', {
+        method: 'POST',
+        body: formData,
+      });
+      if (!res.ok) {
+        const err = await res.json();
+        throw new Error(err.error || 'Import failed');
+      }
+      const data = await res.json();
+      setImportResults(data);
+      fetchStudents();
+    } catch (err) {
+      setImportResults({ error: err.message });
+    } finally {
+      setImportLoading(false);
+      e.target.value = '';
+    }
+  };
+
   const getStudentUrl = (token) => `${getAppUrl()}/s/${token}`;
 
   const getQrImageUrl = (url) => 
@@ -188,6 +237,42 @@ export default function AdminPage() {
       </header>
 
       <div className="container" style={{ paddingTop: '1.5rem' }}>
+        {/* Tab Navigation */}
+        <div style={{
+          display: 'flex', gap: '0', marginBottom: '1.5rem',
+          background: 'var(--bg-card)', borderRadius: 'var(--radius-lg)',
+          border: '1px solid var(--border)', overflow: 'hidden',
+        }}>
+          <button
+            onClick={() => setActiveTab('students')}
+            style={{
+              flex: 1, padding: '0.75rem', border: 'none', cursor: 'pointer',
+              fontWeight: '600', fontSize: '0.9rem', fontFamily: 'inherit',
+              background: activeTab === 'students' ? 'var(--primary)' : 'transparent',
+              color: activeTab === 'students' ? 'white' : 'var(--text-muted)',
+              transition: '0.2s',
+            }}
+          >
+            👥 生徒管理
+          </button>
+          <button
+            onClick={() => setActiveTab('register')}
+            style={{
+              flex: 1, padding: '0.75rem', border: 'none', cursor: 'pointer',
+              fontWeight: '600', fontSize: '0.9rem', fontFamily: 'inherit',
+              background: activeTab === 'register' ? 'var(--primary)' : 'transparent',
+              color: activeTab === 'register' ? 'white' : 'var(--text-muted)',
+              transition: '0.2s',
+            }}
+          >
+            📝 単語配信
+          </button>
+        </div>
+
+        {activeTab === 'register' ? (
+          <TeacherWordRegister students={students} onRegistered={fetchStudents} />
+        ) : (
+        <>
         {/* Stats */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
           <div className="card" style={{ textAlign: 'center' }}>
@@ -207,10 +292,73 @@ export default function AdminPage() {
         {/* Student list header */}
         <div className="flex justify-between items-center" style={{ marginBottom: '1rem' }}>
           <h2 className="title-2" style={{ margin: 0 }}>生徒一覧</h2>
-          <button className="btn btn-primary" onClick={() => setShowAddForm(true)}>
-            ＋ 生徒を追加
-          </button>
+          <div style={{ display: 'flex', gap: '0.5rem' }}>
+            <button className="btn btn-secondary" onClick={() => { setShowImport(!showImport); setShowAddForm(false); }}>
+              📄 一括登録
+            </button>
+            <button className="btn btn-primary" onClick={() => { setShowAddForm(true); setShowImport(false); }}>
+              ＋ 生徒を追加
+            </button>
+          </div>
         </div>
+
+        {/* Excel一括登録 */}
+        {showImport && (
+          <div className="card" style={{ marginBottom: '1rem' }}>
+            <h3 style={{ fontSize: '1rem', fontWeight: '700', marginBottom: '0.75rem' }}>📄 Excel / CSV で一括登録</h3>
+            <p className="text-muted" style={{ fontSize: '0.85rem', marginBottom: '1rem' }}>
+              「名前」「学年」の2列を含むExcel (.xlsx) または CSV ファイルをアップロードしてください。
+            </p>
+            <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', alignItems: 'center' }}>
+              <label
+                className="btn btn-primary"
+                style={{ cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
+              >
+                📤 ファイルを選択
+                <input
+                  type="file"
+                  accept=".xlsx,.xls,.csv"
+                  onChange={handleImport}
+                  style={{ display: 'none' }}
+                  disabled={importLoading}
+                />
+              </label>
+              <button className="btn btn-outline" onClick={downloadSample}>
+                📥 サンプルをダウンロード
+              </button>
+              <button className="btn btn-secondary" onClick={() => { setShowImport(false); setImportResults(null); }}>
+                閉じる
+              </button>
+            </div>
+            {importLoading && (
+              <p style={{ marginTop: '0.75rem', color: 'var(--primary)', fontWeight: '600' }}>📤 インポート中...</p>
+            )}
+            {importResults && (
+              <div style={{ marginTop: '1rem' }}>
+                {importResults.error ? (
+                  <p style={{ color: 'var(--danger)', fontWeight: '600' }}>❌ {importResults.error}</p>
+                ) : (
+                  <>
+                    <p style={{ fontWeight: '600', marginBottom: '0.5rem', color: 'var(--secondary)' }}>
+                      ✅ {importResults.summary.success}名登録完了
+                      {importResults.summary.skip > 0 && ` / ${importResults.summary.skip}件スキップ`}
+                      {importResults.summary.error > 0 && ` / ${importResults.summary.error}件エラー`}
+                    </p>
+                    <div style={{ fontSize: '0.8rem', maxHeight: '150px', overflowY: 'auto' }}>
+                      {importResults.results.map((r, i) => (
+                        <div key={i} style={{ padding: '0.25rem 0', borderBottom: '1px solid var(--border)' }}>
+                          <span style={{ fontWeight: '600' }}>{r.name}</span>
+                          {r.grade && <span className="text-muted"> ({r.grade})</span>}
+                          <span style={{ marginLeft: '0.5rem' }}>{r.status}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </>
+                )}
+              </div>
+            )}
+          </div>
+        )}
 
         {/* Add form */}
         {showAddForm && (
@@ -319,6 +467,8 @@ export default function AdminPage() {
               </div>
             ))}
           </div>
+        )}
+        </>
         )}
       </div>
 
