@@ -12,12 +12,15 @@ export const metadata = {
     ],
     apple: '/apple-touch-icon.png',
   },
-  themeColor: '#6366f1',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
     title: 'VocabBase',
   },
+};
+
+export const viewport = {
+  themeColor: '#6366f1',
 };
 
 export default function RootLayout({ children }) {

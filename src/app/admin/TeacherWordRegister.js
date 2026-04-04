@@ -22,6 +22,12 @@ export default function TeacherWordRegister({ students, onRegistered }) {
   const [saveProgress, setSaveProgress] = useState('');
   const [history, setHistory] = useState([]);
 
+  // Excel一括登録
+  const [showBulkImport, setShowBulkImport] = useState(false);
+  const [bulkImporting, setBulkImporting] = useState(false);
+  const [bulkProgress, setBulkProgress] = useState('');
+  const [bulkResults, setBulkResults] = useState(null);
+
   // 前回の選択を記憶
   useEffect(() => {
     try {
@@ -267,7 +273,138 @@ export default function TeacherWordRegister({ students, onRegistered }) {
         </div>
       </div>
 
-      {/* 単語検索 */}
+      {/* 登録方法の切替 */}
+      <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1rem' }}>
+        <button
+          className={`btn ${!showBulkImport ? 'btn-primary' : 'btn-outline'}`}
+          onClick={() => setShowBulkImport(false)}
+          style={{ flex: 1, fontSize: '0.85rem' }}
+        >
+          📝 1語ずつ登録
+        </button>
+        <button
+          className={`btn ${showBulkImport ? 'btn-primary' : 'btn-outline'}`}
+          onClick={() => setShowBulkImport(true)}
+          style={{ flex: 1, fontSize: '0.85rem' }}
+        >
+          📄 Excel一括登録
+        </button>
+      </div>
+
+      {/* Excel一括登録 */}
+      {showBulkImport && (
+        <div className="card" style={{ marginBottom: '1rem' }}>
+          <h3 style={{ fontSize: '1rem', fontWeight: '700', marginBottom: '0.75rem' }}>📄 Excel / CSV で単語一括登録</h3>
+          <p className="text-muted" style={{ fontSize: '0.85rem', marginBottom: '0.75rem' }}>
+            「英単語」「意味」「例文」の3列を含むファイルをアップロード。例文の和訳と音声は自動生成されます。
+          </p>
+          <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', alignItems: 'center' }}>
+            <label
+              className="btn btn-primary"
+              style={{ cursor: bulkImporting ? 'not-allowed' : 'pointer', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', opacity: bulkImporting ? 0.6 : 1 }}
+            >
+              {bulkImporting ? '📤 処理中...' : '📤 ファイルを選択'}
+              <input
+                type="file"
+                accept=".xlsx,.xls,.csv"
+                onChange={async (e) => {
+                  const file = e.target.files[0];
+                  if (!file) return;
+                  if (selectedStudents.size === 0) {
+                    setBulkResults({ error: '配信先の生徒を選択してください' });
+                    e.target.value = '';
+                    return;
+                  }
+                  setBulkImporting(true);
+                  setBulkResults(null);
+                  setBulkProgress('📤 ファイルを読み込み中...');
+                  try {
+                    const formData = new FormData();
+                    formData.append('file', file);
+                    formData.append('studentIds', JSON.stringify([...selectedStudents]));
+                    formData.append('assignedDate', assignedDate);
+                    setBulkProgress('🔄 音声生成・翻訳・登録中（数分かかる場合があります）...');
+                    const res = await fetch('/api/words/import', {
+                      method: 'POST',
+                      body: formData,
+                    });
+                    if (!res.ok) {
+                      const err = await res.json();
+                      throw new Error(err.error || 'Import failed');
+                    }
+                    const data = await res.json();
+                    setBulkResults(data);
+                    setBulkProgress('');
+                    if (onRegistered) onRegistered();
+                  } catch (err) {
+                    setBulkResults({ error: err.message });
+                    setBulkProgress('');
+                  } finally {
+                    setBulkImporting(false);
+                    e.target.value = '';
+                  }
+                }}
+                style={{ display: 'none' }}
+                disabled={bulkImporting}
+              />
+            </label>
+            <button
+              className="btn btn-outline"
+              onClick={() => {
+                const header = '英単語,意味,例文';
+                const rows = [
+                  'determine,決定する、特定する,We need to determine the best approach.',
+                  'purchase,購入する、買う,She decided to purchase a new laptop.',
+                  'significant,重要な、意味のある,The results showed a significant improvement.',
+                ];
+                const csv = '\uFEFF' + [header, ...rows].join('\n');
+                const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'VocabularyBase_単語一括登録サンプル.csv';
+                a.click();
+                URL.revokeObjectURL(url);
+              }}
+            >
+              📥 サンプルをダウンロード
+            </button>
+          </div>
+
+          {bulkProgress && (
+            <p style={{ marginTop: '0.75rem', color: 'var(--primary)', fontWeight: '600', fontSize: '0.85rem' }}>
+              {bulkProgress}
+            </p>
+          )}
+
+          {bulkResults && (
+            <div style={{ marginTop: '1rem' }}>
+              {bulkResults.error ? (
+                <p style={{ color: 'var(--danger)', fontWeight: '600' }}>❌ {bulkResults.error}</p>
+              ) : (
+                <>
+                  <p style={{ fontWeight: '600', marginBottom: '0.5rem', color: 'var(--secondary)' }}>
+                    ✅ {bulkResults.summary.success}語登録完了 · {bulkResults.summary.students}名の生徒に配信
+                  </p>
+                  <div style={{ fontSize: '0.8rem', maxHeight: '200px', overflowY: 'auto', border: '1px solid var(--border)', borderRadius: 'var(--radius-md)', padding: '0.5rem' }}>
+                    {bulkResults.results.map((r, i) => (
+                      <div key={i} style={{ padding: '0.3rem 0', borderBottom: '1px solid var(--border)' }}>
+                        <span style={{ fontWeight: '600' }}>{r.word}</span>
+                        {r.meanings && <span className="text-muted"> ({r.meanings})</span>}
+                        <span style={{ marginLeft: '0.5rem' }}>{r.status}</span>
+                        {r.detail && <span className="text-muted" style={{ fontSize: '0.75rem', display: 'block', marginLeft: '1rem' }}>{r.detail}</span>}
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* 単語検索（1語ずつ） */}
+      {!showBulkImport && (
       <div className="card" style={{ marginBottom: '1rem' }}>
         <h3 style={{ fontSize: '1rem', fontWeight: '700', marginBottom: '1rem' }}>📝 単語を登録</h3>
         <div style={{ display: 'flex', gap: '0.5rem' }}>
@@ -414,6 +551,7 @@ export default function TeacherWordRegister({ students, onRegistered }) {
           </div>
         )}
       </div>
+      )}
 
       {/* 配信履歴 */}
       {history.length > 0 && (
