@@ -2,8 +2,9 @@
 
 import { useState, useEffect, useMemo, useCallback } from 'react';
 import { createBrowserClient } from '@/lib/supabase';
+import * as XLSX from 'xlsx';
 
-export default function WordList({ studentId }) {
+export default function WordList({ studentId, studentName }) {
   const [words, setWords] = useState([]);
   const [loading, setLoading] = useState(true);
   const [playingId, setPlayingId] = useState(null);
@@ -171,6 +172,41 @@ export default function WordList({ studentId }) {
         <p className="text-muted" style={{ fontSize: '0.8rem', marginBottom: '0.75rem' }}>
           {filteredWords.length}件見つかりました
         </p>
+      )}
+      {/* ダウンロードボタン */}
+      {words.length > 0 && (
+        <div style={{ display: 'flex', gap: '0.4rem', marginBottom: '1rem', justifyContent: 'flex-end' }}>
+          <button className="btn btn-secondary" style={{ fontSize: '0.75rem', padding: '0.35rem 0.7rem' }} onClick={() => {
+            const rows = (searchQuery ? filteredWords : words).map(w => ({
+              英単語: w.english,
+              意味: (w.meanings || []).join('、'),
+              例文: w.example_sentence || '',
+              例文訳: w.example_sentence_ja || '',
+            }));
+            const header = '英単語,意味,例文,例文訳';
+            const csv = '\uFEFF' + header + '\n' + rows.map(r =>
+              [r.英単語, r.意味, r.例文, r.例文訳].map(v => `"${String(v).replace(/"/g, '""')}"`).join(',')
+            ).join('\n');
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url; a.download = `${studentName || '単語帳'}.csv`; a.click();
+            URL.revokeObjectURL(url);
+          }}>📥 CSV</button>
+          <button className="btn btn-secondary" style={{ fontSize: '0.75rem', padding: '0.35rem 0.7rem' }} onClick={() => {
+            const rows = (searchQuery ? filteredWords : words).map(w => ({
+              英単語: w.english,
+              意味: (w.meanings || []).join('、'),
+              例文: w.example_sentence || '',
+              例文訳: w.example_sentence_ja || '',
+            }));
+            const ws = XLSX.utils.json_to_sheet(rows);
+            ws['!cols'] = [{ wch: 15 }, { wch: 25 }, { wch: 40 }, { wch: 40 }];
+            const wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, ws, '単語帳');
+            XLSX.writeFile(wb, `${studentName || '単語帳'}.xlsx`);
+          }}>📥 Excel</button>
+        </div>
       )}
       {filteredWords.map((word) => {
         const needsAudio = !word.word_audio_url || (!word.sentence_audio_url && word.example_sentence);

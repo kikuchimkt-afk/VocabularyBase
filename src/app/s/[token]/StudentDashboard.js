@@ -139,7 +139,7 @@ export default function StudentDashboard({ token }) {
         )}
 
         {activeTab === 'list' && (
-          <WordList studentId={studentId} />
+          <WordList studentId={studentId} studentName={studentName} />
         )}
 
         {activeTab === 'quiz' && (

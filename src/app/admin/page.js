@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import TeacherWordRegister from './TeacherWordRegister';
 import ManualModal from './ManualModal';
+import * as XLSX from 'xlsx';
 
 export default function AdminPage() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -65,14 +66,22 @@ export default function AdminPage() {
 
   const gradeToNumber = (grade) => {
     if (!grade) return 0;
-    const g = grade.toString().trim();
-    const match = g.match(/^(高|中|小|Kou|Chu|Sho)?(\d+)$/i);
+    // 全角→半角変換、スペース除去
+    let g = grade.toString().trim()
+      .replace(/[０-９]/g, c => String.fromCharCode(c.charCodeAt(0) - 0xFEE0))
+      .replace(/\s+/g, '')
+      .replace(/年$/, '')
+      .replace(/年生$/, '')
+      .replace(/校/g, '');
+    // 高3, 高校3, 中2, 中学2, 小5, 小学5 などに対応
+    const match = g.match(/^(高|中|小)?\s*(\d+)$/);
     if (!match) return 0;
-    const prefix = (match[1] || '').toLowerCase();
+    const prefix = match[1] || '';
     const num = parseInt(match[2]) || 0;
-    if (prefix === '高' || prefix === 'kou') return 12 + num;
-    if (prefix === '中' || prefix === 'chu') return 6 + num;
-    if (prefix === '小' || prefix === 'sho') return num;
+    if (prefix === '高') return 12 + num;
+    if (prefix === '中') return 6 + num;
+    if (prefix === '小') return num;
+    // プレフィックスなし: 数字が大きければそのまま
     return num;
   };
 
@@ -569,7 +578,47 @@ export default function AdminPage() {
               <p className="text-muted">まだ単語が登録されていません。</p>
             ) : (
               <div>
-                <p className="text-muted" style={{ marginBottom: '0.75rem' }}>登録数: {studentWords.length}語</p>
+                <div className="flex justify-between items-center" style={{ marginBottom: '0.75rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                  <p className="text-muted" style={{ margin: 0 }}>登録数: {studentWords.length}語</p>
+                  <div style={{ display: 'flex', gap: '0.35rem' }}>
+                    <button className="action-btn ghost" onClick={() => {
+                      const rows = studentWords.map(w => ({
+                        英単語: w.english,
+                        意味: (w.meanings || []).join('、'),
+                        例文: w.example_sentence || '',
+                        例文訳: w.example_sentence_ja || '',
+                        正解数: w.correct_count || 0,
+                        不正解数: w.wrong_count || 0,
+                      }));
+                      const header = '英単語,意味,例文,例文訳,正解数,不正解数';
+                      const csv = '\uFEFF' + header + '\n' + rows.map(r =>
+                        [r.英単語, r.意味, r.例文, r.例文訳, r.正解数, r.不正解数].map(v => `"${String(v).replace(/"/g, '""')}"`).join(',')
+                      ).join('\n');
+                      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+                      const url = URL.createObjectURL(blob);
+                      const a = document.createElement('a');
+                      a.href = url;
+                      a.download = `${selectedStudent.name}_単語帳.csv`;
+                      a.click();
+                      URL.revokeObjectURL(url);
+                    }}>📥 CSV</button>
+                    <button className="action-btn ghost" onClick={() => {
+                      const rows = studentWords.map(w => ({
+                        英単語: w.english,
+                        意味: (w.meanings || []).join('、'),
+                        例文: w.example_sentence || '',
+                        例文訳: w.example_sentence_ja || '',
+                        正解数: w.correct_count || 0,
+                        不正解数: w.wrong_count || 0,
+                      }));
+                      const ws = XLSX.utils.json_to_sheet(rows);
+                      ws['!cols'] = [{ wch: 15 }, { wch: 25 }, { wch: 40 }, { wch: 40 }, { wch: 8 }, { wch: 8 }];
+                      const wb = XLSX.utils.book_new();
+                      XLSX.utils.book_append_sheet(wb, ws, '単語帳');
+                      XLSX.writeFile(wb, `${selectedStudent.name}_単語帳.xlsx`);
+                    }}>📥 Excel</button>
+                  </div>
+                </div>
                 {studentWords.map(word => (
                   <div key={word.id} style={{ padding: '0.75rem 0', borderBottom: '1px solid var(--border)' }}>
                     <div className="flex justify-between items-center">
