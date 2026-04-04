@@ -45,7 +45,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --primary: #818cf8;
     --primary-hover: #6366f1;
     --primary-light: rgba(99, 102, 241, 0.15);
@@ -79,6 +79,42 @@
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.3);
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.3);
   }
+}
+
+/* Manual dark mode override */
+:root[data-theme="dark"] {
+  --primary: #818cf8;
+  --primary-hover: #6366f1;
+  --primary-light: rgba(99, 102, 241, 0.15);
+  --secondary: #34d399;
+  --secondary-hover: #10b981;
+  --secondary-light: rgba(16, 185, 129, 0.15);
+  --danger: #f87171;
+  --danger-hover: #ef4444;
+  --danger-light: rgba(239, 68, 68, 0.15);
+
+  --bg-page: #0f172a;
+  --bg-card: #1e293b;
+
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --text-light: #64748b;
+
+  --border: #334155;
+
+  --badge-green-bg: rgba(16, 185, 129, 0.15);
+  --badge-green-text: #6ee7b7;
+  --badge-blue-bg: rgba(99, 102, 241, 0.15);
+  --badge-blue-text: #a5b4fc;
+
+  --btn-secondary-bg: #1e293b;
+  --input-focus-shadow: 0 0 0 3px rgba(129, 140, 248, 0.2);
+
+  --header-gradient: linear-gradient(135deg, #312e81 0%, #4c1d95 50%, #581c87 100%);
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.3);
 }
 
 * {

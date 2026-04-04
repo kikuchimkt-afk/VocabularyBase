@@ -1,4 +1,5 @@
 import './globals.css';
+import ThemeToggle from './ThemeToggle';
 
 export const metadata = {
   title: 'VocabularyBase - 生徒個別英単語帳',
@@ -7,11 +8,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ja">
+    <html lang="ja" suppressHydrationWarning>
       <body>
         <main>
           {children}
         </main>
+        <ThemeToggle />
       </body>
     </html>
   );
