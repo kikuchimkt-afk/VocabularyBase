@@ -7,6 +7,7 @@ export default function WordList({ studentId }) {
   const [words, setWords] = useState([]);
   const [loading, setLoading] = useState(true);
   const [playingId, setPlayingId] = useState(null);
+  const [generatingId, setGeneratingId] = useState(null);
 
   const supabase = useMemo(() => createBrowserClient(), []);
 
@@ -42,6 +43,64 @@ export default function WordList({ studentId }) {
     audio.play().catch(() => setPlayingId(null));
   }, []);
 
+  // 音声が未生成の単語に対して音声を再生成する
+  const regenerateAudio = async (word) => {
+    setGeneratingId(word.id);
+    try {
+      let wordAudioUrl = word.word_audio_url;
+      let sentenceAudioUrl = word.sentence_audio_url;
+
+      // 単語音声が未生成の場合
+      if (!wordAudioUrl) {
+        const res = await fetch('/api/tts', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text: word.english }),
+        });
+        if (res.ok) {
+          const data = await res.json();
+          wordAudioUrl = data.url;
+        }
+      }
+
+      // 例文音声が未生成の場合
+      if (!sentenceAudioUrl && word.example_sentence) {
+        const res = await fetch('/api/tts', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text: word.example_sentence }),
+        });
+        if (res.ok) {
+          const data = await res.json();
+          sentenceAudioUrl = data.url;
+        }
+      }
+
+      // DB更新
+      const { error } = await supabase
+        .from('vb_words')
+        .update({
+          word_audio_url: wordAudioUrl,
+          sentence_audio_url: sentenceAudioUrl,
+        })
+        .eq('id', word.id);
+
+      if (error) throw error;
+
+      // ローカルステート更新
+      setWords(prev => prev.map(w =>
+        w.id === word.id
+          ? { ...w, word_audio_url: wordAudioUrl, sentence_audio_url: sentenceAudioUrl }
+          : w
+      ));
+    } catch (err) {
+      console.error('Audio regeneration error:', err);
+      alert('音声の生成に失敗しました');
+    } finally {
+      setGeneratingId(null);
+    }
+  };
+
   const handleDelete = async (wordId) => {
     if (!confirm('この単語を削除しますか？')) return;
 
@@ -73,85 +132,108 @@ export default function WordList({ studentId }) {
 
   return (
     <div>
-      {words.map((word) => (
-        <div key={word.id} className="card" style={{ marginBottom: '1rem' }}>
-          {/* Word header */}
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <h3 style={{ fontSize: '1.25rem', fontWeight: '700' }}>{word.english}</h3>
-              {word.word_audio_url && (
-                <button
-                  onClick={() => playAudio(word.word_audio_url, `word-${word.id}`)}
-                  style={{
-                    padding: '0.2rem 0.5rem',
-                    borderRadius: '999px',
-                    fontSize: '1rem',
-                    cursor: 'pointer',
-                    backgroundColor: playingId === `word-${word.id}` ? 'var(--primary)' : 'var(--bg-page)',
-                    color: playingId === `word-${word.id}` ? 'white' : 'var(--text-main)',
-                    border: '1px solid var(--border)',
-                    transition: 'all 0.2s',
-                  }}
-                  title="発音を再生"
-                >
-                  🔊
-                </button>
-              )}
-            </div>
-            <button
-              onClick={() => handleDelete(word.id)}
-              className="text-muted"
-              style={{ fontSize: '0.8rem', cursor: 'pointer' }}
-            >
-              削除
-            </button>
-          </div>
+      {words.map((word) => {
+        const needsAudio = !word.word_audio_url || (!word.sentence_audio_url && word.example_sentence);
+        const isGenerating = generatingId === word.id;
 
-          {/* Meanings */}
-          <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '0.75rem' }}>
-            {word.meanings?.map((meaning, i) => (
-              <span key={i} className="badge badge-green">{meaning}</span>
-            ))}
-          </div>
-
-          {/* Example sentence */}
-          {word.example_sentence && (
-            <div style={{ backgroundColor: 'var(--bg-page)', padding: '0.75rem', borderRadius: 'var(--radius-md)' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                <p style={{ fontWeight: '500', marginBottom: '0.25rem', flex: 1 }}>{word.example_sentence}</p>
-                {word.sentence_audio_url && (
+        return (
+          <div key={word.id} className="card" style={{ marginBottom: '1rem' }}>
+            {/* Word header */}
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: '700' }}>{word.english}</h3>
+                {word.word_audio_url && (
                   <button
-                    onClick={() => playAudio(word.sentence_audio_url, `sent-${word.id}`)}
+                    onClick={() => playAudio(word.word_audio_url, `word-${word.id}`)}
                     style={{
-                      padding: '0.2rem 0.4rem',
+                      padding: '0.2rem 0.5rem',
                       borderRadius: '999px',
-                      fontSize: '0.9rem',
+                      fontSize: '1rem',
                       cursor: 'pointer',
-                      backgroundColor: playingId === `sent-${word.id}` ? 'var(--primary)' : 'transparent',
-                      color: playingId === `sent-${word.id}` ? 'white' : 'var(--text-main)',
+                      backgroundColor: playingId === `word-${word.id}` ? 'var(--primary)' : 'var(--bg-page)',
+                      color: playingId === `word-${word.id}` ? 'white' : 'var(--text-main)',
                       border: '1px solid var(--border)',
                       transition: 'all 0.2s',
-                      flexShrink: 0,
-                      marginLeft: '0.5rem',
                     }}
-                    title="例文を再生"
+                    title="発音を再生"
                   >
                     🔊
                   </button>
                 )}
               </div>
-              <p className="text-muted">{word.example_sentence_ja}</p>
+              <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                {needsAudio && (
+                  <button
+                    onClick={() => regenerateAudio(word)}
+                    disabled={isGenerating}
+                    className="btn"
+                    style={{
+                      fontSize: '0.7rem',
+                      padding: '0.25rem 0.5rem',
+                      backgroundColor: 'var(--primary-light)',
+                      color: 'var(--primary)',
+                      borderRadius: 'var(--radius-md)',
+                    }}
+                  >
+                    {isGenerating ? '生成中...' : '🔄 音声生成'}
+                  </button>
+                )}
+                <button
+                  onClick={() => handleDelete(word.id)}
+                  className="text-muted"
+                  style={{ fontSize: '0.8rem', cursor: 'pointer' }}
+                >
+                  削除
+                </button>
+              </div>
             </div>
-          )}
 
-          {/* Source */}
-          {word.source && (
-            <div className="text-muted" style={{ fontSize: '0.75rem', marginTop: '0.5rem' }}>
-              📍 出典: {word.source}
+            {/* Meanings */}
+            <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '0.75rem' }}>
+              {word.meanings?.map((meaning, i) => (
+                <span key={i} className="badge badge-green">{meaning}</span>
+              ))}
             </div>
-          )}
-        </div>
-      ))}
+
+            {/* Example sentence */}
+            {word.example_sentence && (
+              <div style={{ backgroundColor: 'var(--bg-page)', padding: '0.75rem', borderRadius: 'var(--radius-md)' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                  <p style={{ fontWeight: '500', marginBottom: '0.25rem', flex: 1 }}>{word.example_sentence}</p>
+                  {word.sentence_audio_url && (
+                    <button
+                      onClick={() => playAudio(word.sentence_audio_url, `sent-${word.id}`)}
+                      style={{
+                        padding: '0.2rem 0.4rem',
+                        borderRadius: '999px',
+                        fontSize: '0.9rem',
+                        cursor: 'pointer',
+                        backgroundColor: playingId === `sent-${word.id}` ? 'var(--primary)' : 'transparent',
+                        color: playingId === `sent-${word.id}` ? 'white' : 'var(--text-main)',
+                        border: '1px solid var(--border)',
+                        transition: 'all 0.2s',
+                        flexShrink: 0,
+                        marginLeft: '0.5rem',
+                      }}
+                      title="例文を再生"
+                    >
+                      🔊
+                    </button>
+                  )}
+                </div>
+                <p className="text-muted">{word.example_sentence_ja}</p>
+              </div>
+            )}
+
+            {/* Source */}
+            {word.source && (
+              <div className="text-muted" style={{ fontSize: '0.75rem', marginTop: '0.5rem' }}>
+                📍 出典: {word.source}
+              </div>
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 }
