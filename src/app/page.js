@@ -9,12 +9,17 @@ export default function Home() {
   const [checking, setChecking] = useState(true);
 
   useEffect(() => {
-    // PWAホーム画面から開いた場合、保存済みトークンにリダイレクト
+    // PWAスタンドアロンモード（ホーム画面から開いた場合）のみリダイレクト
+    // 通常のブラウザアクセスでは講師ページを表示
     try {
-      const token = localStorage.getItem('vb_student_token');
-      if (token) {
-        router.replace(`/s/${token}`);
-        return;
+      const isPWA = window.matchMedia('(display-mode: standalone)').matches
+        || window.navigator.standalone === true;
+      if (isPWA) {
+        const token = localStorage.getItem('vb_student_token');
+        if (token) {
+          router.replace(`/s/${token}`);
+          return;
+        }
       }
     } catch {}
     setChecking(false);
