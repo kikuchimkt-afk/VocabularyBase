@@ -12,6 +12,7 @@
     "@google/genai": "^1.48.0",
     "@supabase/supabase-js": "^2.101.1",
     "edge-tts": "^1.0.1",
+    "edge-tts-universal": "^1.4.0",
     "next": "16.2.2",
     "qrcode": "^1.5.4",
     "react": "19.2.4",
