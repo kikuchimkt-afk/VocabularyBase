@@ -386,7 +386,7 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                   const parsed = selected.map((w, idx) => ({
                     id: idx,
                     english: w.word || w.english,
-                    meanings: w.meanings || (w.meaning ? [w.meaning] : []),
+                    meanings: Array.isArray(w.meanings) ? w.meanings.join('、') : (w.meanings || w.meaning || ''),
                     example: w.example || '',
                     exampleJa: w.exampleJa || w.translation || '',
                     removed: false,
