@@ -48,6 +48,7 @@ export default function AdminPage() {
   const [bulkGenerating, setBulkGenerating] = useState(false);
   const [selectedWordIds, setSelectedWordIds] = useState(new Set());
   const [deletingWords, setDeletingWords] = useState(false);
+  const [dateFilter, setDateFilter] = useState('all'); // 'all' or 'YYYY-MM-DD'
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -587,20 +588,32 @@ export default function AdminPage() {
               <p className="text-muted">まだ単語が登録されていません。</p>
             ) : (
               <div>
-                <div className="flex justify-between items-center" style={{ marginBottom: '0.75rem', flexWrap: 'wrap', gap: '0.5rem' }}>
-                  <p className="text-muted" style={{ margin: 0 }}>登録数: {studentWords.length}語</p>
+                {(() => {
+                  // 登録日リストを生成
+                  const dateSet = new Set();
+                  studentWords.forEach(w => {
+                    dateSet.add(w.assigned_date || '未設定');
+                  });
+                  const dates = [...dateSet].sort().reverse();
+                  const filteredWords = dateFilter === 'all'
+                    ? studentWords
+                    : studentWords.filter(w => (w.assigned_date || '未設定') === dateFilter);
+                  const filteredCount = filteredWords.length;
+
+                  return (<>
+                <div className="flex justify-between items-center" style={{ marginBottom: '0.5rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                  <p className="text-muted" style={{ margin: 0 }}>全{studentWords.length}語{dateFilter !== 'all' ? ` / 表示: ${filteredCount}語` : ''}</p>
                   <div style={{ display: 'flex', gap: '0.35rem', flexWrap: 'wrap' }}>
-                    {studentWords.some(w => !w.example_sentence) && (
+                    {filteredWords.some(w => !w.example_sentence) && (
                       <button className="action-btn ghost" style={{ color: 'var(--primary)', fontWeight: '600' }}
                         disabled={bulkGenerating}
                         onClick={async () => {
-                          const missing = studentWords.filter(w => !w.example_sentence);
-                          if (!confirm(`例文がない${missing.length}語の例文を自動生成しますか？\n（レート制限のため1語ずつ2秒間隔で処理します）`)) return;
+                          const missing = filteredWords.filter(w => !w.example_sentence);
+                          if (!confirm(`例文がない${missing.length}語の例文を自動生成しますか？\n（1語ずつ2秒間隔で処理）`)) return;
                           setBulkGenerating(true);
                           let updated = [...studentWords];
                           let done = 0;
                           for (const word of missing) {
-                            // レート制限回避: 2語目以降は2秒待機
                             if (done > 0) await new Promise(r => setTimeout(r, 2000));
                             try {
                               setGeneratingWordId(word.id);
@@ -624,17 +637,18 @@ export default function AdminPage() {
                       >{bulkGenerating ? '⏳ 生成中...' : '🔄 例文一括生成'}</button>
                     )}
                     <button className="action-btn ghost" onClick={() => {
-                      const rows = studentWords.map(w => ({
+                      const rows = filteredWords.map(w => ({
                         英単語: w.english,
                         意味: (w.meanings || []).join('、'),
                         例文: w.example_sentence || '',
                         例文訳: w.example_sentence_ja || '',
+                        登録日: w.assigned_date || '',
                         正解数: w.correct_count || 0,
                         不正解数: w.wrong_count || 0,
                       }));
-                      const header = '英単語,意味,例文,例文訳,正解数,不正解数';
+                      const header = '英単語,意味,例文,例文訳,登録日,正解数,不正解数';
                       const csv = '\uFEFF' + header + '\n' + rows.map(r =>
-                        [r.英単語, r.意味, r.例文, r.例文訳, r.正解数, r.不正解数].map(v => `"${String(v).replace(/"/g, '""')}"`).join(',')
+                        [r.英単語, r.意味, r.例文, r.例文訳, r.登録日, r.正解数, r.不正解数].map(v => `"${String(v).replace(/"/g, '""')}"`).join(',')
                       ).join('\n');
                       const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
                       const url = URL.createObjectURL(blob);
@@ -645,36 +659,60 @@ export default function AdminPage() {
                       URL.revokeObjectURL(url);
                     }}>📥 CSV</button>
                     <button className="action-btn ghost" onClick={() => {
-                      const rows = studentWords.map(w => ({
+                      const rows = filteredWords.map(w => ({
                         英単語: w.english,
                         意味: (w.meanings || []).join('、'),
                         例文: w.example_sentence || '',
                         例文訳: w.example_sentence_ja || '',
+                        登録日: w.assigned_date || '',
                         正解数: w.correct_count || 0,
                         不正解数: w.wrong_count || 0,
                       }));
                       const ws = XLSX.utils.json_to_sheet(rows);
-                      ws['!cols'] = [{ wch: 15 }, { wch: 25 }, { wch: 40 }, { wch: 40 }, { wch: 8 }, { wch: 8 }];
+                      ws['!cols'] = [{ wch: 15 }, { wch: 25 }, { wch: 40 }, { wch: 40 }, { wch: 12 }, { wch: 8 }, { wch: 8 }];
                       const wb = XLSX.utils.book_new();
                       XLSX.utils.book_append_sheet(wb, ws, '単語帳');
                       XLSX.writeFile(wb, `${selectedStudent.name}_単語帳.xlsx`);
                     }}>📥 Excel</button>
                   </div>
                 </div>
+
+                {/* 登録日フィルター */}
+                {dates.length > 1 && (
+                  <div style={{ display: 'flex', gap: '0.3rem', flexWrap: 'wrap', marginBottom: '0.5rem' }}>
+                    <button
+                      className={`btn ${dateFilter === 'all' ? 'btn-primary' : 'btn-secondary'}`}
+                      style={{ fontSize: '0.65rem', padding: '0.2rem 0.5rem', borderRadius: '20px' }}
+                      onClick={() => { setDateFilter('all'); setSelectedWordIds(new Set()); }}
+                    >すべて ({studentWords.length})</button>
+                    {dates.map(d => {
+                      const count = studentWords.filter(w => (w.assigned_date || '未設定') === d).length;
+                      const label = d === '未設定' ? '未設定' : d.replace(/^\d{4}-/, '');
+                      return (
+                        <button key={d}
+                          className={`btn ${dateFilter === d ? 'btn-primary' : 'btn-secondary'}`}
+                          style={{ fontSize: '0.65rem', padding: '0.2rem 0.5rem', borderRadius: '20px' }}
+                          onClick={() => { setDateFilter(d); setSelectedWordIds(new Set()); }}
+                        >📅 {label} ({count})</button>
+                      );
+                    })}
+                  </div>
+                )}
+
                 {/* 選択・削除バー */}
                 <div style={{ display: 'flex', gap: '0.4rem', alignItems: 'center', marginBottom: '0.5rem', flexWrap: 'wrap' }}>
                   <label style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.75rem', cursor: 'pointer' }}>
                     <input type="checkbox"
-                      checked={selectedWordIds.size === studentWords.length && studentWords.length > 0}
+                      checked={selectedWordIds.size === filteredCount && filteredCount > 0}
                       onChange={(e) => {
                         if (e.target.checked) {
-                          setSelectedWordIds(new Set(studentWords.map(w => w.id)));
+                          setSelectedWordIds(new Set(filteredWords.map(w => w.id)));
                         } else {
                           setSelectedWordIds(new Set());
                         }
                       }}
                       style={{ width: 14, height: 14, accentColor: 'var(--primary)' }}
-                    /> 全選択
+                    /> 表示中を全選択
                   </label>
                   {selectedWordIds.size > 0 && (
                     <button
@@ -701,7 +739,7 @@ export default function AdminPage() {
                     >{deletingWords ? '削除中...' : `🗑️ ${selectedWordIds.size}語を削除`}</button>
                   )}
                 </div>
-                {studentWords.map(word => (
+                {filteredWords.map(word => (
                   <div key={word.id} style={{ padding: '0.75rem 0', borderBottom: '1px solid var(--border)', display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}>
                     <input type="checkbox"
                       checked={selectedWordIds.has(word.id)}
@@ -843,6 +881,8 @@ export default function AdminPage() {
                     </div>{/* flex:1 wrapper end */}
                   </div>
                 ))}
+                </>); /* IIFE end */
+                })()}
               </div>
             )}
           </div>
