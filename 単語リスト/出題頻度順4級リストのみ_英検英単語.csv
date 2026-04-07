@@ -1,0 +1,727 @@
+﻿列1,列2,列3
+1,other,ほかの
+2,people,人々
+3,end,終わる
+4,last,この前の，最後の
+5,one,1つの
+6,each,各々の
+7,say,言う
+8,talk,話す
+9,question,質問
+10,own,自分の
+11,think,考える
+12,last,最後
+13,rest,休息する
+14,tea,お茶
+15,see,見る
+16,sit,着席する
+17,art,美術，芸術
+18,take,取る
+19,take,連れて行く
+20,rain,雨
+21,foot,足
+22,I,私は
+23,enough,十分な
+24,tell,伝える
+25,shout,叫ぶ
+26,think,思う
+27,five,5
+28,father,父親
+29,fish,魚
+30,animal,動物
+31,such,そのような
+32,answer,答える
+33,right,右に
+34,teach,教える
+35,future,未来
+36,show,見せる
+37,rise,昇る
+38,sea,海
+39,decide,決心する
+40,you,あなたは
+41,right,正しい
+42,exciting,興奮させる
+43,sun,太陽
+44,word,言葉
+45,see,分かる
+46,interesting,面白い
+47,port,港
+48,front,前
+49,hold,握る
+50,remember,思い出す
+51,mountain,山
+52,understand,理解する
+53,river,川
+54,popular,人気の
+55,face,顔
+56,usual,通常の
+57,set,置く
+58,market,市場
+59,what,なに
+60,remember,覚えている
+61,different,違った
+62,watch,見る，視聴する
+63,sure,確信して
+64,same,同じ
+65,mean,意味する
+66,lake,湖
+67,lie,嘘
+68,spend,費やす
+69,war,戦争
+70,wear,着る
+71,kind,種類
+72,tired,疲れて
+73,useful,役に立つ
+74,cloth,服
+75,take,撮影する
+76,ice,氷
+77,leg,脚
+78,enter,入る
+79,health,健康
+80,invite,招待する
+81,loud,騒がしい
+82,hold,握る
+83,fall,落ちる
+84,throw,投げる
+85,tell,伝える
+86,finish,終える
+87,forget,忘れる
+88,snow,雪
+89,water,水
+90,person,人
+91,heart,心
+92,worry,心配させる
+93,wife,妻
+94,meat,肉
+95,well,健康な
+96,a lot of,たくさんの
+97,hundred,百
+98,vacation,休暇
+99,leaf,葉
+100,wish,望む
+101,vegetable,野菜
+102,grandmother,祖母
+103,island,島
+104,hill,丘
+105,tooth,歯
+106,draw,描く
+107,success,成功
+108,wind,風
+109,stone,石
+110,pork,豚肉
+111,build,建てる
+112,pick,選ぶ
+113,inside,内側
+114,factory,工場
+115,roof,屋根
+116,past,過去の
+117,sailor,船員
+118,sugar,砂糖
+119,shoulder,肩
+120,wood,木材
+121,seem,～の様に見える
+122,textbook,教科書
+123,wake,目が覚める
+124,pay,支払う
+125,salt,塩
+126,farmer,農家
+127,cloud,雲
+128,thousand,千，千の
+129,ask,たずねる
+130,land,土地
+131,planet,惑星
+132,pond,池
+133,nature,自然
+134,pig,ブタ
+135,rabbit,ウサギ
+136,laugh,笑う
+137,just,ちょうど
+138,real,ほんとうの
+139,stood,立った
+140,while,～する間
+141,fail,失敗する
+142,put,置く
+143,arm,腕
+144,listen,聴く
+145,enjoyed,楽しんだ
+146,spoke,話した
+147,save,節約する
+148,tried,試した
+149,still,まだ
+150,sold,売った
+151,foolish,愚かな
+152,watched,見た
+153,first,1番目
+154,they,彼らは
+155,played,演奏した
+156,realize,実現する
+157,important,重要な
+158,forth,4番目
+159,hers,彼女のもの
+160,honest,正直な
+161,between,～と～の間
+162,took,取った
+163,zoo,動物園
+164,quiet,静かな
+165,then,そのとき
+166,when,～するとき
+167,got,得た
+168,yours,あなたのもの
+169,joy,喜び
+170,weak,弱い
+171,it,それは
+172,thought,考え
+173,use,使う
+174,senior,年上の
+175,waste,浪費
+176,net,網
+177,had,食べた
+178,lose,失う
+179,bought,持ってきた
+180,poor,貧乏な
+181,rainy,雨降りの
+182,her,彼女の
+183,its,その
+184,weather,天気
+185,wave,波
+186,went,行った
+187,but,しかし
+188,her,彼女の
+189,once,かつて
+190,his,彼の
+191,stay,滞在
+192,you,あなたは
+193,their,彼らの
+194,your,あなたの
+195,yesterday,昨日
+196,east,東
+197,she,彼女は
+198,How,どのぐらい
+199,please,喜ばせる
+200,toy,玩具
+201,used,使った
+202,fat,太った
+203,dislike,嫌う
+204,it,それは
+205,he,彼は
+206,studied,勉強した
+207,cloudy,曇った
+208,worried,心配した
+209,made,作った
+210,guess,推測する
+211,event,出来事
+212,sweet,甘い
+213,fruit,果物
+214,fourteen,14
+215,soup,スープ
+216,science,科学
+217,drink,飲む
+218,station,駅
+219,seventy,70
+220,cake,ケーキ
+221,stand,立つ
+222,hope,望む
+223,street,通り
+224,friend,友達
+225,rise,昇る
+226,sometimes,時々
+227,frog,カエル
+228,supermarket,スーパー
+229,small,小さい
+230,summer,夏
+231,stop,止める
+232,subject,科目、題目
+233,help,助ける
+234,green,緑
+235,here,ここに
+236,garbage,ゴミ
+237,by,のそばに、によって
+238,sister,姉妹
+239,good,良い
+240,seven,7
+241,family,家族
+242,food,食べ物
+243,hot,暑い
+244,great,すばらしい、広大な
+245,hear,聞く
+246,funny,おかしな
+247,festival,祭り
+248,straight,まっすぐに
+249,telephone,電話
+250,forty,40
+251,sport,スポーツ
+252,Do,する
+253,go,行く
+254,strong,強い
+255,teacher,先生
+256,head,頭
+257,eighteen,18
+258,culture,文化
+259,second,2番目
+260,homework,宿題
+261,language,言語
+262,swim,泳ぐ
+263,fast,速い
+264,six,6
+265,school,学校
+266,speak,話す
+267,ship,船
+268,ten,10
+269,shopping,買物
+270,hospital,病院
+271,sing,歌う
+272,famous,有名な
+273,fifty,50
+274,shop,店
+275,season,季節
+276,delicious,おいしい
+277,short,短い
+278,everyone,みんな
+279,star,星
+280,soft,柔らかい
+281,from,～から
+282,happy,幸福な
+283,buy,買う
+284,Friday,金曜日
+285,have,持っている
+286,scientist,科学者
+287,girl,少女
+288,theirs,彼らのもの
+289,favorite,お気に入りの
+290,spell,をつづる
+291,September,９月
+292,Sunday,日曜日
+293,beautiful,美しい
+294,table,つくえ
+295,fifteen,15
+296,desk,机
+297,grape,ブドウ
+298,for,のために
+299,four,4
+300,fun,楽しみ
+301,house,家
+302,temple,お寺
+303,study,勉強する
+304,hand,手
+305,snowy,雪の降る
+306,flower,花
+307,August,8月
+308,get,得る
+309,subway,地下鉄
+310,February,2月
+311,walk,散歩
+312,together,一緒に
+313,umbrella,傘
+314,the,その
+315,with,～といっしょに
+316,thirteen,13
+317,usually,普通は
+318,who,だれ
+319,very,非常に
+320,My,私の
+321,tiger,トラ
+322,wall,壁
+323,world,世界、地球
+324,like,好む
+325,travel,旅行
+326,winter,冬
+327,train,列車
+328,under,下の
+329,try,試す
+330,was,でした
+331,turn,曲がる、回る、変化する
+332,two,2
+333,up,上へ
+334,twelve,12
+335,window,窓
+336,tree,木
+337,visit,訪問する
+338,three,3
+339,Tuesday,火曜日
+340,this,この
+341,tower,塔
+342,third,3番目
+343,write,書く、手紙を書く
+344,Wednesday,水曜日
+345,town,街
+346,twenty,20
+347,thirty,30
+348,to,～へ
+349,trip,旅行
+350,where,どこに
+351,want,欲しい
+352,welcome,歓迎する
+353,white,白
+354,wonderful,すばらしい
+355,why,なぜ
+356,year,年
+357,yellow,黄色
+358,low,低い
+359,grow,育てる
+360,history,歴史
+361,wash,洗う
+362,many,多くの
+363,beer,ビール
+364,doctor,医者
+365,large,大きい、広い
+366,begin,始まる
+367,bridge,橋
+368,December,１２月
+369,enjoy,楽しむ
+370,all,全部、全員、全て、みな
+371,eight,8
+372,or,それとも
+373,nine,9
+374,elementary school,小学校
+375,absent,欠席の
+376,am,いる、ある
+377,not,～でない
+378,room,部屋
+379,if,もし～なら
+380,airplane,飛行機
+381,on,の上に
+382,climb,登る
+383,sad,悲しい
+384,stopped,止まった
+385,a few,いくらかの
+386,be scared of,が怖い
+387,arrive at,に到着する
+388,and so on,などなど
+389,January,1月
+390,at noon,正午に
+391,ask about,～について聞く
+392,drum,太鼓
+393,Japan,日本
+394,meet,会う
+395,talk to,に話しかける
+396,for example,例えば
+397,reading,読書
+398,elementary school,小学校
+399,car,自動車
+400,clothes,服
+401,evening,夕方
+402,way,道、方法
+403,host,主人
+404,say again,もう一度言う
+405,hat,帽子
+406,most of,のほとんど
+407,can,～できる
+408,number,数
+409,nest,巣
+410,listen to,聴く
+411,bear,クマ
+412,go abroad,外国に行く
+413,and,～と
+414,job,仕事
+415,November,11月
+416,become,～になる
+417,look,見る
+418,country,国
+419,cow,ウシ
+420,bookstore,本屋
+421,dinner,夕食
+422,afternoon,午後
+423,March,3月
+424,dream,夢
+425,take out,持ち帰り
+426,snake,蛇
+427,gave,与えた
+428,show around,に見せて回る
+429,bag,カバン
+430,ninety,90
+431,fine,元気な，晴れた
+432,add,加える
+433,down,下に
+434,make own bed,ベッドを整える
+435,leave,去る、残す、置いて行く
+436,one day,ある日
+437,brother,兄弟
+438,again,もう一度、再び、また
+439,best,一番良い
+440,walk to,へ歩いていく
+441,sat,座った
+442,worry about,について心配する
+443,ask for,～に求める
+444,let's,さあ～しよう
+445,bird,鳥
+446,purple,紫色
+447,medicine,薬
+448,clever,利口な
+449,eighty,80
+450,big,大きい
+451,sheep,ヒツジ
+452,look at,見る
+453,field trip,遠足
+454,airport,空港
+455,play,劇
+456,cold,冷たい
+457,join,参加する
+458,though,～だけれど
+459,hurry,急ぐ
+460,borrow,借りる
+461,that,あれ
+462,ever,今まで
+463,from the experience,経験から
+464,meaning,意味
+465,hard,一生懸命に
+466,problem,問題
+467,baseball,野球
+468,seventeen,17
+469,about,について、に関する
+470,by bus,バスで
+471,happiness,幸福
+472,call back,折り返し電話する
+473,think of,思い付く
+474,south,南
+475,did,した
+476,after,～の後で
+477,eat,食べる
+478,blue,青い
+479,black,黒い
+480,easy,簡単な
+481,look after,の面倒を見る
+482,practice,練習する
+483,fool,馬鹿
+484,decide to,に決める
+485,farewell party,送別会
+486,player,選手
+487,Japanese,日本人
+488,afraid,恐れて
+489,bread,パン
+490,Thursday,木曜日
+491,sixteen,16
+492,chair,いす
+493,park,公園
+494,cat,猫
+495,picture,絵、写真
+496,him,彼を(に)
+497,light,光
+498,July,7月
+499,sleep,眠る
+500,know,知っている
+501,dish,皿
+502,too ～ for,～すぎる
+503,poem,詩
+504,sit down,座る
+505,kind to,に対して親切な
+506,nurse,看護師
+507,box,箱
+508,neck,首
+509,ate,食べた
+510,take care of,の面倒を見る
+511,every minutes,毎分ごとに
+512,work for,のために働く
+513,another,もう一つの
+514,live in,に住む
+515,ear,耳
+516,get up,起きる
+517,me,私を(に)
+518,mouth,口
+519,die,死ぬ
+520,May,５月
+521,difficult,難しい
+522,nineteen,19
+523,body,身体
+524,during,～の間
+525,new,新しい
+526,musician,音楽家
+527,egg,卵
+528,lend,貸す
+529,monkey,サル
+530,take a rest,休憩する
+531,math,数学
+532,clock,置き時計
+533,queen,女王
+534,boy,少年
+535,Let us(Let's),～しましょう
+536,capital,首都
+537,in,中に
+538,on weekends,週末に
+539,million,100万
+540,name,名前
+541,away,離れて
+542,brought,持ってきた
+543,lived,住んだ
+544,map,地図
+545,our,私たちの
+546,cook,料理する
+547,try on,試着する
+548,strange,奇妙な
+549,grandfather,祖父
+550,someone in need,助けが必要な人
+551,be,である
+552,stay up,起きている
+553,to go,持ち帰り
+554,autumn,秋
+555,birthday,誕生日
+556,classmate,同級生
+557,night,夜
+558,hall,廊下
+559,change,変わる
+560,bath,風呂
+561,beach,砂浜
+562,write down,書く
+563,clean,きれいな
+564,be(get) excited,興奮をする
+565,knee,ひざ
+566,sixty,60
+567,magazine,雑誌
+568,much,たくさん
+569,English,英語
+570,time,時、～回
+571,choose,選ぶ
+572,talk about,について話す
+573,by car,車で
+574,get along with,うまくやる
+575,discover,発見する
+576,brush,をみがく
+577,day,日
+578,nose,鼻
+579,bike,自転車
+580,farm,農場
+581,one,1
+582,old,古い
+583,cap,帽子
+584,police,警察
+585,explain,説明する
+586,luck,運
+587,read,読む
+588,grass,草
+589,north,北
+590,date,日付
+591,learn about,について学ぶ
+592,have a headache,頭痛がする
+593,always,いつも
+594,run,走る
+595,saw,見た
+596,earth,地球
+597,cute,可愛い
+598,stand up,立つ
+599,book,本
+600,place,場所
+601,dry,乾いた
+602,for here,ここで食べる
+603,came,来た
+604,search for,を探索する
+605,color,色
+606,on your right,右側に
+607,try to,しようとする
+608,classroom,教室
+609,advice,忠告
+610,Monday,月曜日
+611,row,こぐ
+612,excuse,許す
+613,them,彼らを(に)
+614,leave for,へ出かける
+615,newspaper,新聞
+616,ruler,定規
+617,introduce,紹介する
+618,really,本当に
+619,keep in touch,連絡を取り合う
+620,understood,理解した
+621,April,4月
+622,chicken,鶏肉
+623,bring,持って来る
+624,go to,へ行く
+625,believe,信じる
+626,spring,春
+627,child,子供
+628,on the way,道の途中で
+629,in the future,将来に
+630,month,月
+631,salad,サラダ
+632,is,ある、いる
+633,beef,牛肉
+634,happen,起こる
+635,take it back,取り戻す
+636,stationery shop,文房具店
+637,pencil,鉛筆
+638,sang,歌った
+639,over there,あそこに
+640,mine,私のもの
+641,entrance ceremony,入学式
+642,horse,馬
+643,wait for,を待つ
+644,busy,忙しい
+645,junior high school,中学校
+646,lie,嘘
+647,library,図書館
+648,foreign language,外国語
+649,sorry,ごめんなさい
+650,bicycle,自転車
+651,cool,かっこいい
+652,dog,イヌ
+653,on the wall,壁に
+654,stand by,そばに立つ
+655,eleven,11
+656,June,6月
+657,because,なぜなら
+658,jump,跳ぶ
+659,carefully,注意深く
+660,memory,記憶
+661,college,大学
+662,be born,生まれる
+663,even,～さえ
+664,carry,運ぶ
+665,out,外に
+666,exam,試験
+667,Saturday,土曜日
+668,learn a lot from,からたくさん学ぶ
+669,October,10月
+670,hungry,空腹の
+671,at,で、に
+672,with a smile,笑顔で
+673,dictionary,辞書
+674,lunch,昼食
+675,museum,博物館
+676,red,赤い
+677,between A and B,AとBの間
+678,school festival,文化祭
+679,life,生活
+680,bright,明るい
+681,breakfast,朝食
+682,make,作る、～を～にする
+683,morning,朝
+684,long,長い
+685,drama,劇
+686,high school,高校
+687,sunny,晴れた
+688,go straight,まっすぐ行く
+689,too,～もまた
+690,brown,茶色の
+691,nice,良い
+692,cup,カップ
+693,we,私たちは
+694,cried,泣いた
+695,never,１度もない
+696,How about,はどうですか？
+697,law,法律
+698,ride,乗る
+699,example,例
+700,find,見つける
+701,left,左
+702,eraser,消しゴム
+703,bean,豆
+704,plan,計画する
+705,apple,リンゴ
+706,eye,目
+707,mother,母
+708,sent,送った
+709,mouse,ネズミ
+710,go back to,に戻る
+711,feel,感じる
+712,help with,を助ける
+713,city,市
+714,even so,それでも
+715,on your left,左側に
+716,try hard,一生懸命
+717,live abroad,海外で生活する
+718,from now on,これから
+719,get tired,疲れる
+720,check ～ out,を確認する
+721,be interested in,に興味がある
+722,from ～ to ～,～から～まで
+723,be famous for,で有名である
+724,try on,試着する
+725,try to,試す
+726,work for,のために働く
