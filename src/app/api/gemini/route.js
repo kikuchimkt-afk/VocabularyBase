@@ -1,5 +1,4 @@
 import { NextResponse } from 'next/server';
-import { GoogleGenAI } from '@google/genai';
 
 // Collect all available API keys for fallback
 function getApiKeys() {
@@ -7,7 +6,7 @@ function getApiKeys() {
   if (process.env.GEMINI_API_KEY) keys.push(process.env.GEMINI_API_KEY);
   if (process.env.GEMINI_API_KEY_2) keys.push(process.env.GEMINI_API_KEY_2);
   if (process.env.GEMINI_API_KEY_3) keys.push(process.env.GEMINI_API_KEY_3);
-  return keys;
+  return [...new Set(keys)]; // deduplicate
 }
 
 export async function POST(request) {
@@ -24,37 +23,44 @@ export async function POST(request) {
       return NextResponse.json({ error: '英単語が提供されていません。' }, { status: 400 });
     }
 
-    const prompt = `
-以下の英単語について、中学生・高校生向けの学習アプリとして適切な情報をJSON形式で返してください。
+    const prompt = `以下の英単語について、中学生・高校生向けの学習アプリとして適切な情報をJSON形式で返してください。
 
 英単語: "${word}"
 
 返却するJSONフォーマット:
 {
-  "meanings": ["意味1", "意味2", "意味3"], // 最もよく使われる日本語訳を2〜4つ程度
-  "example_sentence": "英語の例文", // この単語を使った自然でわかりやすい英語の例文
+  "meanings": ["意味1", "意味2", "意味3"],
+  "example_sentence": "英語の例文",
   "example_sentence_ja": "例文の日本語訳"
 }
 
 注意事項:
 - JSON以外のテキストは一切含めないでください。
-- 例文は中高生の教科書レベルの適切な難易度にしてください。
-`;
+- 例文は中高生の教科書レベルの適切な難易度にしてください。`;
 
-    // Try each key until one succeeds
+    // Try each key until one succeeds (using REST API directly)
     let lastError = null;
     for (const key of keys) {
       try {
-        const ai = new GoogleGenAI({ apiKey: key });
-        const response = await ai.models.generateContent({
-          model: 'gemini-2.5-flash',
-          contents: prompt,
-          config: {
-            responseMimeType: "application/json",
-          }
+        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${key}`;
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: [{ parts: [{ text: prompt }] }],
+            generationConfig: {
+              responseMimeType: "application/json",
+            }
+          })
         });
 
-        const resultText = response.text;
+        if (!res.ok) {
+          const errData = await res.text();
+          throw new Error(`API ${res.status}: ${errData.substring(0, 200)}`);
+        }
+
+        const data = await res.json();
+        const resultText = data.candidates[0].content.parts[0].text;
         const resultJson = JSON.parse(resultText);
         return NextResponse.json(resultJson);
       } catch (keyError) {
