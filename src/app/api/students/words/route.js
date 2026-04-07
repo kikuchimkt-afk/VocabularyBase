@@ -149,3 +149,38 @@ export async function PUT(request) {
     return NextResponse.json({ error: 'Failed to update word' }, { status: 500 });
   }
 }
+
+export async function DELETE(request) {
+  const session = request.cookies.get('admin_session');
+  if (!session) {
+    return NextResponse.json({ error: 'Auth required' }, { status: 401 });
+  }
+
+  try {
+    const { searchParams } = new URL(request.url);
+    const idsParam = searchParams.get('ids');
+
+    if (!idsParam) {
+      return NextResponse.json({ error: 'Word IDs required' }, { status: 400 });
+    }
+
+    const ids = idsParam.split(',').filter(Boolean);
+    if (ids.length === 0) {
+      return NextResponse.json({ error: 'No valid IDs' }, { status: 400 });
+    }
+
+    const supabase = createServerClient();
+
+    const { error } = await supabase
+      .from('vb_words')
+      .delete()
+      .in('id', ids);
+
+    if (error) throw error;
+
+    return NextResponse.json({ deleted: ids.length });
+  } catch (error) {
+    console.error('Word delete error:', error);
+    return NextResponse.json({ error: 'Failed to delete words' }, { status: 500 });
+  }
+}

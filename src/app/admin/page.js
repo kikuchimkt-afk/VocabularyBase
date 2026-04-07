@@ -44,6 +44,10 @@ export default function AdminPage() {
   const [editWord, setEditWord] = useState(null);
   const [editWordData, setEditWordData] = useState({ english: '', meanings: '', example: '', exampleJa: '' });
   const [editWordLoading, setEditWordLoading] = useState(false);
+  const [generatingWordId, setGeneratingWordId] = useState(null);
+  const [bulkGenerating, setBulkGenerating] = useState(false);
+  const [selectedWordIds, setSelectedWordIds] = useState(new Set());
+  const [deletingWords, setDeletingWords] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -571,11 +575,11 @@ export default function AdminPage() {
 
       {/* Word Detail Modal */}
       {selectedStudent && (
-        <div className="modal-overlay" onClick={() => setSelectedStudent(null)}>
+        <div className="modal-overlay" onClick={() => { setSelectedStudent(null); setSelectedWordIds(new Set()); }}>
           <div className="modal-card" style={{ maxWidth: '600px', width: '100%', maxHeight: '80vh', overflowY: 'auto' }} onClick={e => e.stopPropagation()}>
             <div className="flex justify-between items-center" style={{ marginBottom: '1rem' }}>
               <h2 style={{ fontSize: '1.2rem', fontWeight: '700', margin: 0 }}>{selectedStudent.name} の単語帳</h2>
-              <button className="btn btn-secondary" onClick={() => setSelectedStudent(null)}>✕</button>
+              <button className="btn btn-secondary" onClick={() => { setSelectedStudent(null); setSelectedWordIds(new Set()); }}>✕</button>
             </div>
             {wordsLoading ? (
               <p className="text-muted">読み込み中...</p>
@@ -585,7 +589,35 @@ export default function AdminPage() {
               <div>
                 <div className="flex justify-between items-center" style={{ marginBottom: '0.75rem', flexWrap: 'wrap', gap: '0.5rem' }}>
                   <p className="text-muted" style={{ margin: 0 }}>登録数: {studentWords.length}語</p>
-                  <div style={{ display: 'flex', gap: '0.35rem' }}>
+                  <div style={{ display: 'flex', gap: '0.35rem', flexWrap: 'wrap' }}>
+                    {studentWords.some(w => !w.example_sentence) && (
+                      <button className="action-btn ghost" style={{ color: 'var(--primary)', fontWeight: '600' }}
+                        disabled={bulkGenerating}
+                        onClick={async () => {
+                          const missing = studentWords.filter(w => !w.example_sentence);
+                          if (!confirm(`例文がない${missing.length}語の例文を自動生成しますか？`)) return;
+                          setBulkGenerating(true);
+                          let updated = [...studentWords];
+                          for (const word of missing) {
+                            try {
+                              setGeneratingWordId(word.id);
+                              const res = await fetch('/api/students/words/generate', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ wordId: word.id }),
+                              });
+                              if (res.ok) {
+                                const data = await res.json();
+                                updated = updated.map(w => w.id === word.id ? data.word : w);
+                                setStudentWords([...updated]);
+                              }
+                            } catch {}
+                          }
+                          setGeneratingWordId(null);
+                          setBulkGenerating(false);
+                        }}
+                      >{bulkGenerating ? '⏳ 生成中...' : '🔄 例文一括生成'}</button>
+                    )}
                     <button className="action-btn ghost" onClick={() => {
                       const rows = studentWords.map(w => ({
                         英単語: w.english,
@@ -624,8 +656,58 @@ export default function AdminPage() {
                     }}>📥 Excel</button>
                   </div>
                 </div>
+                {/* 選択・削除バー */}
+                <div style={{ display: 'flex', gap: '0.4rem', alignItems: 'center', marginBottom: '0.5rem', flexWrap: 'wrap' }}>
+                  <label style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.75rem', cursor: 'pointer' }}>
+                    <input type="checkbox"
+                      checked={selectedWordIds.size === studentWords.length && studentWords.length > 0}
+                      onChange={(e) => {
+                        if (e.target.checked) {
+                          setSelectedWordIds(new Set(studentWords.map(w => w.id)));
+                        } else {
+                          setSelectedWordIds(new Set());
+                        }
+                      }}
+                      style={{ width: 14, height: 14, accentColor: 'var(--primary)' }}
+                    /> 全選択
+                  </label>
+                  {selectedWordIds.size > 0 && (
+                    <button
+                      className="btn btn-secondary"
+                      style={{ fontSize: '0.7rem', padding: '0.2rem 0.6rem', color: 'var(--danger)', borderColor: 'var(--danger)' }}
+                      disabled={deletingWords}
+                      onClick={async () => {
+                        if (!confirm(`${selectedWordIds.size}語を削除しますか？\n生徒のテスト・単語帳からも削除されます。`)) return;
+                        setDeletingWords(true);
+                        try {
+                          const res = await fetch(`/api/students/words?ids=${[...selectedWordIds].join(',')}`, {
+                            method: 'DELETE',
+                          });
+                          if (!res.ok) throw new Error('Delete failed');
+                          setStudentWords(studentWords.filter(w => !selectedWordIds.has(w.id)));
+                          setSelectedWordIds(new Set());
+                        } catch (e) {
+                          console.error(e);
+                          alert('削除に失敗しました');
+                        } finally {
+                          setDeletingWords(false);
+                        }
+                      }}
+                    >{deletingWords ? '削除中...' : `🗑️ ${selectedWordIds.size}語を削除`}</button>
+                  )}
+                </div>
                 {studentWords.map(word => (
-                  <div key={word.id} style={{ padding: '0.75rem 0', borderBottom: '1px solid var(--border)' }}>
+                  <div key={word.id} style={{ padding: '0.75rem 0', borderBottom: '1px solid var(--border)', display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}>
+                    <input type="checkbox"
+                      checked={selectedWordIds.has(word.id)}
+                      onChange={(e) => {
+                        const next = new Set(selectedWordIds);
+                        if (e.target.checked) next.add(word.id); else next.delete(word.id);
+                        setSelectedWordIds(next);
+                      }}
+                      style={{ width: 14, height: 14, marginTop: '0.2rem', accentColor: 'var(--primary)', flexShrink: 0, cursor: 'pointer' }}
+                    />
+                    <div style={{ flex: 1, minWidth: 0 }}>
                     {editWord?.id === word.id ? (
                       /* --- 編集モード --- */
                       <div style={{ background: 'var(--secondary-light)', borderRadius: 'var(--radius-md)', padding: '0.75rem' }}>
@@ -719,12 +801,41 @@ export default function AdminPage() {
                           </div>
                         )}
                         {!word.example_sentence && (
-                          <div style={{ marginTop: '0.35rem', fontSize: '0.75rem', color: 'var(--danger)' }}>
-                            ⚠️ 例文なし
+                          <div style={{ marginTop: '0.35rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                            <span style={{ fontSize: '0.75rem', color: 'var(--danger)' }}>⚠️ 例文なし</span>
+                            <button
+                              className="btn btn-secondary"
+                              style={{ fontSize: '0.65rem', padding: '0.15rem 0.5rem', borderRadius: '20px' }}
+                              disabled={generatingWordId === word.id}
+                              onClick={async () => {
+                                setGeneratingWordId(word.id);
+                                try {
+                                  const res = await fetch('/api/students/words/generate', {
+                                    method: 'POST',
+                                    headers: { 'Content-Type': 'application/json' },
+                                    body: JSON.stringify({ wordId: word.id }),
+                                  });
+                                  if (!res.ok) {
+                                    const err = await res.json();
+                                    throw new Error(err.error || 'Failed');
+                                  }
+                                  const data = await res.json();
+                                  setStudentWords(studentWords.map(w => w.id === word.id ? data.word : w));
+                                } catch (e) {
+                                  console.error(e);
+                                  alert(`生成失敗: ${e.message}`);
+                                } finally {
+                                  setGeneratingWordId(null);
+                                }
+                              }}
+                            >
+                              {generatingWordId === word.id ? '⏳ 生成中...' : '🔄 生成'}
+                            </button>
                           </div>
                         )}
                       </>
                     )}
+                    </div>{/* flex:1 wrapper end */}
                   </div>
                 ))}
               </div>
