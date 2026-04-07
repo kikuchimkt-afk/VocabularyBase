@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 import { GoogleGenAI } from '@google/genai';
 
-// Initialize the API only if the key exists to prevent build crashes
-const apiKey = process.env.GEMINI_API_KEY;
+// Initialize the API - use KEY_2 (for single word lookups) with fallback to original
+const apiKey = process.env.GEMINI_API_KEY_2 || process.env.GEMINI_API_KEY;
 const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
 
 export async function POST(request) {

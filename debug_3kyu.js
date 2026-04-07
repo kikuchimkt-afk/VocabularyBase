@@ -1,0 +1,12 @@
+const xlsx = require('xlsx');
+const fs = require('fs');
+const f = String.raw`C:\Users\makoto\Documents\GitHub\VocabularyBase\単語リスト\出題頻度順リストのみ_英検英単語_updated.xlsx`;
+const wb = xlsx.readFile(f);
+const ws = wb.Sheets['3級'];
+const aoa = xlsx.utils.sheet_to_json(ws, { header: 1, defval: '' });
+console.log('Header:', JSON.stringify(aoa[0]));
+console.log('Row 1:', JSON.stringify(aoa[1]));
+console.log('Row 2:', JSON.stringify(aoa[2]));
+console.log('Cols in row1:', aoa[1].length);
+console.log('Col3 of row1:', JSON.stringify(aoa[1][3]));
+console.log('Col3 type:', typeof aoa[1][3]);
