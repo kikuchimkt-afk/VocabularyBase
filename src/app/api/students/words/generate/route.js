@@ -9,12 +9,10 @@ const GEMINI_MODELS = [
   'gemini-1.5-flash',
 ];
 
-// 利用可能な全APIキーを取得
+// 利用可能な全APIキーを取得（テキスト生成用 - 有料キー）
 function getApiKeys() {
   const keys = [];
   if (process.env.GEMINI_API_KEY) keys.push(process.env.GEMINI_API_KEY);
-  if (process.env.GEMINI_API_KEY_2) keys.push(process.env.GEMINI_API_KEY_2);
-  if (process.env.GEMINI_API_KEY_3) keys.push(process.env.GEMINI_API_KEY_3);
   return keys;
 }
 

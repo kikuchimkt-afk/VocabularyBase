@@ -1,6 +1,18 @@
 import { NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 
+// TTS専用の無料キーを取得（ラウンドロビン用）
+let ttsKeyIndex = 0;
+function getTtsKeys() {
+  const keys = [];
+  if (process.env.GEMINI_TTS_KEY_1) keys.push(process.env.GEMINI_TTS_KEY_1);
+  if (process.env.GEMINI_TTS_KEY_2) keys.push(process.env.GEMINI_TTS_KEY_2);
+  if (process.env.GEMINI_TTS_KEY_3) keys.push(process.env.GEMINI_TTS_KEY_3);
+  // フォールバック: メインキー
+  if (keys.length === 0 && process.env.GEMINI_API_KEY) keys.push(process.env.GEMINI_API_KEY);
+  return keys;
+}
+
 export async function POST(request) {
   try {
     const body = await request.json();
@@ -21,35 +33,53 @@ export async function POST(request) {
     } catch (edgeError) {
       console.error('Edge TTS failed:', edgeError?.message);
 
-      // フォールバック: Gemini TTS
-      const apiKey = process.env.GEMINI_API_KEY;
-      if (!apiKey) {
+      // フォールバック: Gemini TTS（無料キーをラウンドロビン）
+      const ttsKeys = getTtsKeys();
+      if (ttsKeys.length === 0) {
         return NextResponse.json({ error: 'No TTS service available' }, { status: 500 });
       }
 
-      const { GoogleGenAI } = await import('@google/genai');
-      const ai = new GoogleGenAI({ apiKey });
+      let lastError = null;
+      for (let i = 0; i < ttsKeys.length; i++) {
+        const keyIdx = (ttsKeyIndex + i) % ttsKeys.length;
+        const apiKey = ttsKeys[keyIdx];
+        try {
+          const { GoogleGenAI } = await import('@google/genai');
+          const ai = new GoogleGenAI({ apiKey });
 
-      const response = await ai.models.generateContent({
-        model: 'gemini-2.5-flash-preview-tts',
-        contents: [{ role: 'user', parts: [{ text }] }],
-        config: {
-          responseModalities: ['AUDIO'],
-          speechConfig: {
-            voiceConfig: {
-              prebuiltVoiceConfig: { voiceName: 'Aoede' },
+          const response = await ai.models.generateContent({
+            model: 'gemini-2.5-flash-preview-tts',
+            contents: [{ role: 'user', parts: [{ text }] }],
+            config: {
+              responseModalities: ['AUDIO'],
+              speechConfig: {
+                voiceConfig: {
+                  prebuiltVoiceConfig: { voiceName: 'Aoede' },
+                },
+              },
             },
-          },
-        },
-      });
+          });
 
-      const audioPart = response.candidates?.[0]?.content?.parts?.[0]?.inlineData;
-      if (!audioPart?.data) {
-        return NextResponse.json({ error: 'No audio generated' }, { status: 500 });
+          const audioPart = response.candidates?.[0]?.content?.parts?.[0]?.inlineData;
+          if (!audioPart?.data) {
+            throw new Error('No audio data in response');
+          }
+
+          const pcmBuffer = Buffer.from(audioPart.data, 'base64');
+          audioBuffer = pcmToWav(pcmBuffer);
+          // 成功したキーの次から始める
+          ttsKeyIndex = (keyIdx + 1) % ttsKeys.length;
+          console.log(`TTS generated with key ${keyIdx + 1}/${ttsKeys.length}`);
+          break;
+        } catch (keyError) {
+          console.error(`TTS key ${keyIdx + 1} failed:`, keyError?.message);
+          lastError = keyError;
+        }
       }
 
-      const pcmBuffer = Buffer.from(audioPart.data, 'base64');
-      audioBuffer = pcmToWav(pcmBuffer);
+      if (!audioBuffer) {
+        return NextResponse.json({ error: `All TTS keys failed: ${lastError?.message}` }, { status: 500 });
+      }
     }
 
     if (!audioBuffer || audioBuffer.length === 0) {
