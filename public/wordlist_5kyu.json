@@ -1,0 +1,3075 @@
+[
+  {
+    "rank": 1,
+    "word": "one",
+    "meaning": "1つの、1人の",
+    "example": "I have one brother.",
+    "translation": "私には1人の兄弟がいます。"
+  },
+  {
+    "rank": 2,
+    "word": "the",
+    "meaning": "その",
+    "example": "Look at the dog.",
+    "translation": "その犬を見て。"
+  },
+  {
+    "rank": 3,
+    "word": "you",
+    "meaning": "あなたは",
+    "example": "Are you a student?",
+    "translation": "あなたは学生ですか？"
+  },
+  {
+    "rank": 4,
+    "word": "my",
+    "meaning": "私の",
+    "example": "This is my bag.",
+    "translation": "これは私のかばんです。"
+  },
+  {
+    "rank": 5,
+    "word": "father",
+    "meaning": "父",
+    "example": "My father is a doctor.",
+    "translation": "私の父は医者です。"
+  },
+  {
+    "rank": 6,
+    "word": "do",
+    "meaning": "する",
+    "example": "Do you like tennis?",
+    "translation": "あなたはテニスが好きですか？"
+  },
+  {
+    "rank": 7,
+    "word": "your",
+    "meaning": "あなたの",
+    "example": "Is this your pen?",
+    "translation": "これはあなたのペンですか？"
+  },
+  {
+    "rank": 8,
+    "word": "in",
+    "meaning": "中に",
+    "example": "My book is in the bag.",
+    "translation": "私の本はかばんの中にあります。"
+  },
+  {
+    "rank": 9,
+    "word": "read",
+    "meaning": "読む",
+    "example": "I read a book every day.",
+    "translation": "私は毎日本を読みます。"
+  },
+  {
+    "rank": 10,
+    "word": "he",
+    "meaning": "彼は",
+    "example": "He is my friend.",
+    "translation": "彼は私の友達です。"
+  },
+  {
+    "rank": 11,
+    "word": "see",
+    "meaning": "見る、わかる",
+    "example": "I can see a bird.",
+    "translation": "鳥が見えます。"
+  },
+  {
+    "rank": 12,
+    "word": "it",
+    "meaning": "それは",
+    "example": "It is an apple.",
+    "translation": "それはリンゴです。"
+  },
+  {
+    "rank": 13,
+    "word": "mother",
+    "meaning": "母",
+    "example": "My mother can play the piano.",
+    "translation": "私の母はピアノを弾くことができます。"
+  },
+  {
+    "rank": 14,
+    "word": "name",
+    "meaning": "名前",
+    "example": "My name is Ken.",
+    "translation": "私の名前はケンです。"
+  },
+  {
+    "rank": 15,
+    "word": "like",
+    "meaning": "好む",
+    "example": "I like cats.",
+    "translation": "私は猫が好きです。"
+  },
+  {
+    "rank": 16,
+    "word": "how",
+    "meaning": "どのぐらい",
+    "example": "How are you?",
+    "translation": "ごきげんいかがですか？"
+  },
+  {
+    "rank": 17,
+    "word": "school",
+    "meaning": "学校",
+    "example": "I go to school.",
+    "translation": "私は学校に行きます。"
+  },
+  {
+    "rank": 18,
+    "word": "January",
+    "meaning": "1月",
+    "example": "My birthday is in January.",
+    "translation": "私の誕生日は1月です。"
+  },
+  {
+    "rank": 19,
+    "word": "all",
+    "meaning": "全部、全員",
+    "example": "We are all happy.",
+    "translation": "私たちはみな幸せです。"
+  },
+  {
+    "rank": 20,
+    "word": "old",
+    "meaning": "古い",
+    "example": "This is an old book.",
+    "translation": "これは古い本です。"
+  },
+  {
+    "rank": 21,
+    "word": "fruit",
+    "meaning": "果物",
+    "example": "I like sweet fruit.",
+    "translation": "私は甘い果物が好きです。"
+  },
+  {
+    "rank": 22,
+    "word": "speak",
+    "meaning": "話す",
+    "example": "I can speak English.",
+    "translation": "私は英語を話せます。"
+  },
+  {
+    "rank": 23,
+    "word": "where",
+    "meaning": "どこに",
+    "example": "Where is my pen?",
+    "translation": "私のペンはどこですか？"
+  },
+  {
+    "rank": 24,
+    "word": "long",
+    "meaning": "長い",
+    "example": "She has long hair.",
+    "translation": "彼女は長い髪をしています。"
+  },
+  {
+    "rank": 25,
+    "word": "study",
+    "meaning": "勉強する",
+    "example": "I study English every day.",
+    "translation": "私は毎日英語を勉強します。"
+  },
+  {
+    "rank": 26,
+    "word": "chair",
+    "meaning": "いす",
+    "example": "Sit on the chair.",
+    "translation": "いすに座ってください。"
+  },
+  {
+    "rank": 27,
+    "word": "very",
+    "meaning": "非常に",
+    "example": "It is very hot today.",
+    "translation": "今日はとても暑いです。"
+  },
+  {
+    "rank": 28,
+    "word": "I",
+    "meaning": "私は",
+    "example": "I am a boy.",
+    "translation": "私は男の子です。"
+  },
+  {
+    "rank": 29,
+    "word": "our",
+    "meaning": "私たちの",
+    "example": "This is our house.",
+    "translation": "これは私たちの家です。"
+  },
+  {
+    "rank": 30,
+    "word": "year",
+    "meaning": "年",
+    "example": "He is ten years old.",
+    "translation": "彼は10歳です。"
+  },
+  {
+    "rank": 31,
+    "word": "when",
+    "meaning": "いつ",
+    "example": "When is your birthday?",
+    "translation": "あなたの誕生日はいつですか？"
+  },
+  {
+    "rank": 32,
+    "word": "a lot of",
+    "meaning": "たくさんの",
+    "example": "I have a lot of books.",
+    "translation": "私はたくさんの本を持っています。"
+  },
+  {
+    "rank": 33,
+    "word": "nice",
+    "meaning": "良い",
+    "example": "Have a nice day.",
+    "translation": "良い一日を。"
+  },
+  {
+    "rank": 34,
+    "word": "sing",
+    "meaning": "歌う",
+    "example": "Let's sing a song.",
+    "translation": "歌を歌いましょう。"
+  },
+  {
+    "rank": 35,
+    "word": "fine",
+    "meaning": "元気な",
+    "example": "I am fine.",
+    "translation": "私は元気です。"
+  },
+  {
+    "rank": 36,
+    "word": "right",
+    "meaning": "右",
+    "example": "Turn right here.",
+    "translation": "ここで右に曲がってください。"
+  },
+  {
+    "rank": 37,
+    "word": "want",
+    "meaning": "欲しい",
+    "example": "I want a new bag.",
+    "translation": "新しいかばんが欲しいです。"
+  },
+  {
+    "rank": 38,
+    "word": "red",
+    "meaning": "赤い",
+    "example": "I have a red apple.",
+    "translation": "私は赤いリンゴを持っています。"
+  },
+  {
+    "rank": 39,
+    "word": "much",
+    "meaning": "たくさん",
+    "example": "Thank you very much.",
+    "translation": "どうもありがとう。"
+  },
+  {
+    "rank": 40,
+    "word": "here",
+    "meaning": "ここに",
+    "example": "Come here, please.",
+    "translation": "ここに来てください。"
+  },
+  {
+    "rank": 41,
+    "word": "July",
+    "meaning": "7月",
+    "example": "It is hot in July.",
+    "translation": "7月は暑いです。"
+  },
+  {
+    "rank": 42,
+    "word": "cold",
+    "meaning": "冷たい",
+    "example": "I want cold water.",
+    "translation": "冷たい水が欲しいです。"
+  },
+  {
+    "rank": 43,
+    "word": "write",
+    "meaning": "書く",
+    "example": "I write a letter.",
+    "translation": "私は手紙を書きます。"
+  },
+  {
+    "rank": 44,
+    "word": "station",
+    "meaning": "駅",
+    "example": "Let's go to the station.",
+    "translation": "駅へ行きましょう。"
+  },
+  {
+    "rank": 45,
+    "word": "color",
+    "meaning": "色",
+    "example": "What color is it?",
+    "translation": "それは何色ですか？"
+  },
+  {
+    "rank": 46,
+    "word": "this",
+    "meaning": "この",
+    "example": "This is my dog.",
+    "translation": "これは私の犬です。"
+  },
+  {
+    "rank": 47,
+    "word": "she",
+    "meaning": "彼女は",
+    "example": "She is my sister.",
+    "translation": "彼女は私の姉です。"
+  },
+  {
+    "rank": 48,
+    "word": "look",
+    "meaning": "見る",
+    "example": "Look at that bird.",
+    "translation": "あの鳥を見て。"
+  },
+  {
+    "rank": 49,
+    "word": "many",
+    "meaning": "多くの",
+    "example": "I have many friends.",
+    "translation": "私には多くの友達がいます。"
+  },
+  {
+    "rank": 50,
+    "word": "two",
+    "meaning": "2",
+    "example": "I have two pens.",
+    "translation": "私は2本のペンを持っています。"
+  },
+  {
+    "rank": 51,
+    "word": "teacher",
+    "meaning": "先生",
+    "example": "He is a good teacher.",
+    "translation": "彼は良い先生です。"
+  },
+  {
+    "rank": 52,
+    "word": "morning",
+    "meaning": "朝",
+    "example": "Good morning, everyone.",
+    "translation": "みなさん、おはようございます。"
+  },
+  {
+    "rank": 53,
+    "word": "use",
+    "meaning": "使う",
+    "example": "May I use your pen?",
+    "translation": "あなたのペンを使ってもいいですか？"
+  },
+  {
+    "rank": 54,
+    "word": "run",
+    "meaning": "走る",
+    "example": "He can run fast.",
+    "translation": "彼は速く走ることができます。"
+  },
+  {
+    "rank": 55,
+    "word": "hungry",
+    "meaning": "空腹の",
+    "example": "I am very hungry.",
+    "translation": "私はとてもお腹がすいています。"
+  },
+  {
+    "rank": 56,
+    "word": "fish",
+    "meaning": "魚",
+    "example": "I like to eat fish.",
+    "translation": "私は魚を食べるのが好きです。"
+  },
+  {
+    "rank": 57,
+    "word": "lunch",
+    "meaning": "昼食",
+    "example": "Let's eat lunch.",
+    "translation": "昼食を食べましょう。"
+  },
+  {
+    "rank": 58,
+    "word": "have",
+    "meaning": "持っている",
+    "example": "I have a new bike.",
+    "translation": "私は新しい自転車を持っています。"
+  },
+  {
+    "rank": 59,
+    "word": "eat",
+    "meaning": "食べる",
+    "example": "I eat an apple.",
+    "translation": "私はリンゴを食べます。"
+  },
+  {
+    "rank": 60,
+    "word": "know",
+    "meaning": "知っている",
+    "example": "I know him.",
+    "translation": "私は彼を知っています。"
+  },
+  {
+    "rank": 61,
+    "word": "usually",
+    "meaning": "普通は",
+    "example": "I usually get up at seven.",
+    "translation": "私は普通は7時に起きます。"
+  },
+  {
+    "rank": 62,
+    "word": "season",
+    "meaning": "季節",
+    "example": "Spring is a nice season.",
+    "translation": "春は良い季節です。"
+  },
+  {
+    "rank": 63,
+    "word": "book",
+    "meaning": "本",
+    "example": "This is an interesting book.",
+    "translation": "これは面白い本です。"
+  },
+  {
+    "rank": 64,
+    "word": "winter",
+    "meaning": "冬",
+    "example": "It is cold in winter.",
+    "translation": "冬は寒いです。"
+  },
+  {
+    "rank": 65,
+    "word": "stop",
+    "meaning": "止める",
+    "example": "Please stop here.",
+    "translation": "ここで止まってください。"
+  },
+  {
+    "rank": 66,
+    "word": "three",
+    "meaning": "3",
+    "example": "I have three cats.",
+    "translation": "私は3匹の猫を飼っています。"
+  },
+  {
+    "rank": 67,
+    "word": "pencil",
+    "meaning": "鉛筆",
+    "example": "I need a pencil.",
+    "translation": "私は鉛筆が必要です。"
+  },
+  {
+    "rank": 68,
+    "word": "please",
+    "meaning": "どうぞ",
+    "example": "Sit down, please.",
+    "translation": "どうぞ座ってください。"
+  },
+  {
+    "rank": 69,
+    "word": "wall",
+    "meaning": "壁",
+    "example": "Look at the picture on the wall.",
+    "translation": "壁の絵を見てください。"
+  },
+  {
+    "rank": 70,
+    "word": "meet",
+    "meaning": "会う",
+    "example": "Nice to meet you.",
+    "translation": "あなたに会えて嬉しいです。"
+  },
+  {
+    "rank": 71,
+    "word": "May",
+    "meaning": "５月",
+    "example": "My sister was born in May.",
+    "translation": "私の姉は5月に生まれました。"
+  },
+  {
+    "rank": 72,
+    "word": "ride",
+    "meaning": "乗る",
+    "example": "I ride a bike to school.",
+    "translation": "学校まで自転車に乗ります。"
+  },
+  {
+    "rank": 73,
+    "word": "six",
+    "meaning": "6",
+    "example": "I get up at six.",
+    "translation": "私は6時に起きます。"
+  },
+  {
+    "rank": 74,
+    "word": "always",
+    "meaning": "いつも",
+    "example": "He is always happy.",
+    "translation": "彼はいつも幸せそうです。"
+  },
+  {
+    "rank": 75,
+    "word": "drink",
+    "meaning": "飲む",
+    "example": "I drink milk.",
+    "translation": "私は牛乳を飲みます。"
+  },
+  {
+    "rank": 76,
+    "word": "four",
+    "meaning": "4",
+    "example": "A dog has four legs.",
+    "translation": "犬には4本の脚があります。"
+  },
+  {
+    "rank": 77,
+    "word": "sister",
+    "meaning": "姉妹",
+    "example": "This is my sister.",
+    "translation": "こちらは私の姉です。"
+  },
+  {
+    "rank": 78,
+    "word": "hospital",
+    "meaning": "病院",
+    "example": "He is in the hospital.",
+    "translation": "彼は病院にいます。"
+  },
+  {
+    "rank": 79,
+    "word": "park",
+    "meaning": "公園",
+    "example": "Let's go to the park.",
+    "translation": "公園に行きましょう。"
+  },
+  {
+    "rank": 80,
+    "word": "baseball",
+    "meaning": "野球",
+    "example": "I play baseball.",
+    "translation": "私は野球をします。"
+  },
+  {
+    "rank": 81,
+    "word": "wash",
+    "meaning": "洗う",
+    "example": "Wash your hands.",
+    "translation": "手を洗いなさい。"
+  },
+  {
+    "rank": 82,
+    "word": "cake",
+    "meaning": "ケーキ",
+    "example": "I like this cake.",
+    "translation": "私はこのケーキが好きです。"
+  },
+  {
+    "rank": 83,
+    "word": "bag",
+    "meaning": "カバン",
+    "example": "Is this your bag?",
+    "translation": "これはあなたのかばんですか？"
+  },
+  {
+    "rank": 84,
+    "word": "Tuesday",
+    "meaning": "火曜日",
+    "example": "Today is Tuesday.",
+    "translation": "今日は火曜日です。"
+  },
+  {
+    "rank": 85,
+    "word": "try",
+    "meaning": "試す",
+    "example": "Try this apple.",
+    "translation": "このリンゴを試してください。"
+  },
+  {
+    "rank": 86,
+    "word": "cook",
+    "meaning": "料理する",
+    "example": "My mother can cook well.",
+    "translation": "母は上手に料理することができます。"
+  },
+  {
+    "rank": 87,
+    "word": "watch",
+    "meaning": "見る",
+    "example": "I watch TV every day.",
+    "translation": "私は毎日テレビを見ます。"
+  },
+  {
+    "rank": 88,
+    "word": "nurse",
+    "meaning": "看護婦",
+    "example": "She is a good nurse.",
+    "translation": "彼女は良い看護師です。"
+  },
+  {
+    "rank": 89,
+    "word": "five",
+    "meaning": "5",
+    "example": "I have five apples.",
+    "translation": "私は5つのリンゴを持っています。"
+  },
+  {
+    "rank": 90,
+    "word": "seventeen",
+    "meaning": "17",
+    "example": "He is seventeen years old.",
+    "translation": "彼は17歳です。"
+  },
+  {
+    "rank": 91,
+    "word": "table",
+    "meaning": "つくえ",
+    "example": "The book is on the table.",
+    "translation": "本はテーブルの上にあります。"
+  },
+  {
+    "rank": 92,
+    "word": "place",
+    "meaning": "場所",
+    "example": "This is a nice place.",
+    "translation": "ここは良い場所です。"
+  },
+  {
+    "rank": 93,
+    "word": "cup",
+    "meaning": "カップ",
+    "example": "I want a cup of tea.",
+    "translation": "お茶を1カップ欲しいです。"
+  },
+  {
+    "rank": 94,
+    "word": "green",
+    "meaning": "緑",
+    "example": "Look at the green tree.",
+    "translation": "あの緑の木を見て。"
+  },
+  {
+    "rank": 95,
+    "word": "we",
+    "meaning": "私たちは",
+    "example": "We are good friends.",
+    "translation": "私たちは良い友達です。"
+  },
+  {
+    "rank": 96,
+    "word": "fifty",
+    "meaning": "50",
+    "example": "I have fifty yen.",
+    "translation": "私は50円持っています。"
+  },
+  {
+    "rank": 97,
+    "word": "eleven",
+    "meaning": "11",
+    "example": "My brother is eleven.",
+    "translation": "兄は11歳です。"
+  },
+  {
+    "rank": 98,
+    "word": "picture",
+    "meaning": "絵、写真",
+    "example": "Draw a picture.",
+    "translation": "絵を描いてください。"
+  },
+  {
+    "rank": 99,
+    "word": "happy",
+    "meaning": "幸福な",
+    "example": "Are you happy?",
+    "translation": "あなたは幸せですか？"
+  },
+  {
+    "rank": 100,
+    "word": "Thursday",
+    "meaning": "木曜日",
+    "example": "I play tennis on Thursday.",
+    "translation": "私は木曜日にテニスをします。"
+  },
+  {
+    "rank": 101,
+    "word": "Japan",
+    "meaning": "日本",
+    "example": "I live in Japan.",
+    "translation": "私は日本に住んでいます。"
+  },
+  {
+    "rank": 102,
+    "word": "hot",
+    "meaning": "暑い",
+    "example": "It is hot today.",
+    "translation": "今日は暑いです。"
+  },
+  {
+    "rank": 103,
+    "word": "leave",
+    "meaning": "去る",
+    "example": "I leave home at eight.",
+    "translation": "私は8時に家を出ます。"
+  },
+  {
+    "rank": 104,
+    "word": "garbage",
+    "meaning": "ゴミ",
+    "example": "Throw the garbage away.",
+    "translation": "ゴミを捨てなさい。"
+  },
+  {
+    "rank": 105,
+    "word": "hand",
+    "meaning": "手",
+    "example": "Wash your hands.",
+    "translation": "手を洗いなさい。"
+  },
+  {
+    "rank": 106,
+    "word": "thirty",
+    "meaning": "30",
+    "example": "He is thirty years old.",
+    "translation": "彼は30歳です。"
+  },
+  {
+    "rank": 107,
+    "word": "dinner",
+    "meaning": "夕食",
+    "example": "Let's eat dinner.",
+    "translation": "夕食を食べましょう。"
+  },
+  {
+    "rank": 108,
+    "word": "Saturday",
+    "meaning": "土曜日",
+    "example": "I play tennis on Saturday.",
+    "translation": "私は土曜日にテニスをします。"
+  },
+  {
+    "rank": 109,
+    "word": "thirteen",
+    "meaning": "13",
+    "example": "She is thirteen.",
+    "translation": "彼女は13歳です。"
+  },
+  {
+    "rank": 110,
+    "word": "fourteen",
+    "meaning": "14",
+    "example": "I am fourteen years old.",
+    "translation": "私は14歳です。"
+  },
+  {
+    "rank": 111,
+    "word": "sorry",
+    "meaning": "ごめんなさい",
+    "example": "I am sorry.",
+    "translation": "ごめんなさい。"
+  },
+  {
+    "rank": 112,
+    "word": "large",
+    "meaning": "大きい",
+    "example": "This box is large.",
+    "translation": "この箱は大きいです。"
+  },
+  {
+    "rank": 113,
+    "word": "enjoy",
+    "meaning": "楽しむ",
+    "example": "I enjoy music.",
+    "translation": "私は音楽を楽しみます。"
+  },
+  {
+    "rank": 114,
+    "word": "flower",
+    "meaning": "花",
+    "example": "This is a beautiful flower.",
+    "translation": "これは美しい花です。"
+  },
+  {
+    "rank": 115,
+    "word": "nineteen",
+    "meaning": "19",
+    "example": "My brother is nineteen.",
+    "translation": "兄は19歳です。"
+  },
+  {
+    "rank": 116,
+    "word": "night",
+    "meaning": "夜",
+    "example": "Good night, mom.",
+    "translation": "おやすみなさい、お母さん。"
+  },
+  {
+    "rank": 117,
+    "word": "sheep",
+    "meaning": "ヒツジ",
+    "example": "Look at the sheep.",
+    "translation": "あのヒツジを見てください。"
+  },
+  {
+    "rank": 118,
+    "word": "car",
+    "meaning": "自動車",
+    "example": "He has a new car.",
+    "translation": "彼は新しい自動車を持っています。"
+  },
+  {
+    "rank": 119,
+    "word": "library",
+    "meaning": "図書館",
+    "example": "Let's go to the library.",
+    "translation": "図書館に行きましょう。"
+  },
+  {
+    "rank": 120,
+    "word": "March",
+    "meaning": "3月",
+    "example": "Spring starts in March.",
+    "translation": "春は3月に始まります。"
+  },
+  {
+    "rank": 121,
+    "word": "again",
+    "meaning": "もう一度",
+    "example": "Please come again.",
+    "translation": "また来てください。"
+  },
+  {
+    "rank": 122,
+    "word": "beautiful",
+    "meaning": "美しい",
+    "example": "She is beautiful.",
+    "translation": "彼女は美しいです。"
+  },
+  {
+    "rank": 123,
+    "word": "Friday",
+    "meaning": "金曜日",
+    "example": "Today is Friday.",
+    "translation": "今日は金曜日です。"
+  },
+  {
+    "rank": 124,
+    "word": "cool",
+    "meaning": "かっこいい",
+    "example": "He looks cool.",
+    "translation": "彼はかっこよく見えます。"
+  },
+  {
+    "rank": 125,
+    "word": "day",
+    "meaning": "日",
+    "example": "It is a nice day.",
+    "translation": "今日は良い日です。"
+  },
+  {
+    "rank": 126,
+    "word": "October",
+    "meaning": "10月",
+    "example": "Halloween is in October.",
+    "translation": "ハロウィンは10月にあります。"
+  },
+  {
+    "rank": 127,
+    "word": "get",
+    "meaning": "得る",
+    "example": "I get a letter from him.",
+    "translation": "彼から手紙を受け取ります。"
+  },
+  {
+    "rank": 128,
+    "word": "map",
+    "meaning": "地図",
+    "example": "Look at this map.",
+    "translation": "この地図を見てください。"
+  },
+  {
+    "rank": 129,
+    "word": "family",
+    "meaning": "家族",
+    "example": "My family is big.",
+    "translation": "私の家族は大家族です。"
+  },
+  {
+    "rank": 130,
+    "word": "boy",
+    "meaning": "少年",
+    "example": "He is a tall boy.",
+    "translation": "彼は背の高い少年です。"
+  },
+  {
+    "rank": 131,
+    "word": "white",
+    "meaning": "白",
+    "example": "I like white flowers.",
+    "translation": "私は白い花が好きです。"
+  },
+  {
+    "rank": 132,
+    "word": "house",
+    "meaning": "家",
+    "example": "This is my house.",
+    "translation": "これは私の家です。"
+  },
+  {
+    "rank": 133,
+    "word": "Monday",
+    "meaning": "月曜日",
+    "example": "We have school on Monday.",
+    "translation": "月曜日に学校があります。"
+  },
+  {
+    "rank": 134,
+    "word": "country",
+    "meaning": "国",
+    "example": "Japan is a small country.",
+    "translation": "日本は小さな国です。"
+  },
+  {
+    "rank": 135,
+    "word": "box",
+    "meaning": "箱",
+    "example": "Open the box.",
+    "translation": "箱を開けなさい。"
+  },
+  {
+    "rank": 136,
+    "word": "bread",
+    "meaning": "パン",
+    "example": "I eat bread.",
+    "translation": "私はパンを食べます。"
+  },
+  {
+    "rank": 137,
+    "word": "sixteen",
+    "meaning": "16",
+    "example": "He is sixteen.",
+    "translation": "彼は16歳です。"
+  },
+  {
+    "rank": 138,
+    "word": "eighteen",
+    "meaning": "18",
+    "example": "She is eighteen.",
+    "translation": "彼女は18歳です。"
+  },
+  {
+    "rank": 139,
+    "word": "put",
+    "meaning": "置く",
+    "example": "Put your bag here.",
+    "translation": "かばんをここに置きなさい。"
+  },
+  {
+    "rank": 140,
+    "word": "month",
+    "meaning": "月",
+    "example": "May is a nice month.",
+    "translation": "5月は良い月です。"
+  },
+  {
+    "rank": 141,
+    "word": "cap",
+    "meaning": "帽子",
+    "example": "He has a red cap.",
+    "translation": "彼は赤い帽子を持っています。"
+  },
+  {
+    "rank": 142,
+    "word": "fast",
+    "meaning": "速い",
+    "example": "You run fast.",
+    "translation": "あなたは速く走ります。"
+  },
+  {
+    "rank": 143,
+    "word": "April",
+    "meaning": "4月",
+    "example": "School starts in April.",
+    "translation": "学校は4月に始まります。"
+  },
+  {
+    "rank": 144,
+    "word": "autumn",
+    "meaning": "秋",
+    "example": "I like autumn.",
+    "translation": "私は秋が好きです。"
+  },
+  {
+    "rank": 145,
+    "word": "buy",
+    "meaning": "買う",
+    "example": "I buy a book.",
+    "translation": "私は本を買います。"
+  },
+  {
+    "rank": 146,
+    "word": "swim",
+    "meaning": "泳ぐ",
+    "example": "I swim in the pool.",
+    "translation": "プールで泳ぎます。"
+  },
+  {
+    "rank": 147,
+    "word": "city",
+    "meaning": "市",
+    "example": "Tokyo is a big city.",
+    "translation": "東京は大きな都市です。"
+  },
+  {
+    "rank": 148,
+    "word": "room",
+    "meaning": "部屋",
+    "example": "This is my room.",
+    "translation": "ここは私の部屋です。"
+  },
+  {
+    "rank": 149,
+    "word": "brother",
+    "meaning": "兄弟",
+    "example": "I have one brother.",
+    "translation": "兄弟が1人います。"
+  },
+  {
+    "rank": 150,
+    "word": "walk",
+    "meaning": "散歩",
+    "example": "Let's take a walk.",
+    "translation": "散歩に行きましょう。"
+  },
+  {
+    "rank": 151,
+    "word": "August",
+    "meaning": "8月",
+    "example": "It is hot in August.",
+    "translation": "8月は暑いです。"
+  },
+  {
+    "rank": 152,
+    "word": "summer",
+    "meaning": "夏",
+    "example": "I like summer.",
+    "translation": "私は夏が好きです。"
+  },
+  {
+    "rank": 153,
+    "word": "blue",
+    "meaning": "青い",
+    "example": "The sky is blue.",
+    "translation": "空は青いです。"
+  },
+  {
+    "rank": 154,
+    "word": "dog",
+    "meaning": "イヌ",
+    "example": "I like dogs.",
+    "translation": "私は犬が好きです。"
+  },
+  {
+    "rank": 155,
+    "word": "ten",
+    "meaning": "10",
+    "example": "I have ten pens.",
+    "translation": "10本のペンを持っています。"
+  },
+  {
+    "rank": 156,
+    "word": "eighty",
+    "meaning": "80",
+    "example": "My grandfather is eighty.",
+    "translation": "祖父は80歳です。"
+  },
+  {
+    "rank": 157,
+    "word": "doctor",
+    "meaning": "医者",
+    "example": "He is a doctor.",
+    "translation": "彼は医者です。"
+  },
+  {
+    "rank": 158,
+    "word": "friend",
+    "meaning": "友達",
+    "example": "She is my friend.",
+    "translation": "彼女は私の友達です。"
+  },
+  {
+    "rank": 159,
+    "word": "sleep",
+    "meaning": "眠る",
+    "example": "I sleep early.",
+    "translation": "私は早く眠ります。"
+  },
+  {
+    "rank": 160,
+    "word": "busy",
+    "meaning": "忙しい",
+    "example": "My mother is busy.",
+    "translation": "母は忙しいです。"
+  },
+  {
+    "rank": 161,
+    "word": "play",
+    "meaning": "する",
+    "example": "I play tennis.",
+    "translation": "私はテニスをします。"
+  },
+  {
+    "rank": 162,
+    "word": "help",
+    "meaning": "助ける",
+    "example": "Please help me.",
+    "translation": "私を助けてください。"
+  },
+  {
+    "rank": 163,
+    "word": "live",
+    "meaning": "住む",
+    "example": "I live in Japan.",
+    "translation": "日本に住んでいます。"
+  },
+  {
+    "rank": 164,
+    "word": "February",
+    "meaning": "2月",
+    "example": "It is cold in February.",
+    "translation": "2月は寒いです。"
+  },
+  {
+    "rank": 165,
+    "word": "not",
+    "meaning": "～でない",
+    "example": "I am not a teacher.",
+    "translation": "私は先生ではありません。"
+  },
+  {
+    "rank": 166,
+    "word": "way",
+    "meaning": "道",
+    "example": "This is the way to the park.",
+    "translation": "これが公園への道です。"
+  },
+  {
+    "rank": 167,
+    "word": "fifteen",
+    "meaning": "15",
+    "example": "He is fifteen years old.",
+    "translation": "彼は15歳です。"
+  },
+  {
+    "rank": 168,
+    "word": "stand",
+    "meaning": "立つ",
+    "example": "Stand up.",
+    "translation": "立ちなさい。"
+  },
+  {
+    "rank": 169,
+    "word": "small",
+    "meaning": "小さい",
+    "example": "This box is small.",
+    "translation": "この箱は小さいです。"
+  },
+  {
+    "rank": 170,
+    "word": "easy",
+    "meaning": "簡単な",
+    "example": "This test is easy.",
+    "translation": "このテストは簡単です。"
+  },
+  {
+    "rank": 171,
+    "word": "bird",
+    "meaning": "鳥",
+    "example": "Look at the bird.",
+    "translation": "あの鳥を見て。"
+  },
+  {
+    "rank": 172,
+    "word": "time",
+    "meaning": "時",
+    "example": "What time is it?",
+    "translation": "今は何時ですか？"
+  },
+  {
+    "rank": 173,
+    "word": "welcome",
+    "meaning": "歓迎する",
+    "example": "Welcome to my house.",
+    "translation": "私の家へようこそ。"
+  },
+  {
+    "rank": 174,
+    "word": "best",
+    "meaning": "一番良い",
+    "example": "He is my best friend.",
+    "translation": "彼は私の親友です。"
+  },
+  {
+    "rank": 175,
+    "word": "homework",
+    "meaning": "宿題",
+    "example": "I do my homework.",
+    "translation": "私は宿題をします。"
+  },
+  {
+    "rank": 176,
+    "word": "November",
+    "meaning": "11月",
+    "example": "My birthday is in November.",
+    "translation": "誕生日は11月です。"
+  },
+  {
+    "rank": 177,
+    "word": "December",
+    "meaning": "１２月",
+    "example": "Christmas is in December.",
+    "translation": "クリスマスは12月にあります。"
+  },
+  {
+    "rank": 178,
+    "word": "Wednesday",
+    "meaning": "水曜日",
+    "example": "Today is Wednesday.",
+    "translation": "今日は水曜日です。"
+  },
+  {
+    "rank": 179,
+    "word": "June",
+    "meaning": "6月",
+    "example": "It rains a lot in June.",
+    "translation": "6月はたくさん雨が降ります。"
+  },
+  {
+    "rank": 180,
+    "word": "together",
+    "meaning": "一緒に",
+    "example": "Let's play together.",
+    "translation": "一緒に遊びましょう。"
+  },
+  {
+    "rank": 181,
+    "word": "tree",
+    "meaning": "木",
+    "example": "Look at that tree.",
+    "translation": "あの木を見てください。"
+  },
+  {
+    "rank": 182,
+    "word": "black",
+    "meaning": "黒い",
+    "example": "I have a black bag.",
+    "translation": "黒いかばんを持っています。"
+  },
+  {
+    "rank": 183,
+    "word": "cow",
+    "meaning": "ウシ",
+    "example": "I see a cow.",
+    "translation": "ウシが見えます。"
+  },
+  {
+    "rank": 184,
+    "word": "Sunday",
+    "meaning": "日曜日",
+    "example": "I play tennis on Sunday.",
+    "translation": "日曜日にテニスをします。"
+  },
+  {
+    "rank": 185,
+    "word": "yellow",
+    "meaning": "黄色",
+    "example": "This flower is yellow.",
+    "translation": "この花は黄色です。"
+  },
+  {
+    "rank": 186,
+    "word": "spring",
+    "meaning": "春",
+    "example": "Spring is warm.",
+    "translation": "春は暖かいです。"
+  },
+  {
+    "rank": 187,
+    "word": "make",
+    "meaning": "作る",
+    "example": "Let's make a cake.",
+    "translation": "ケーキを作りましょう。"
+  },
+  {
+    "rank": 188,
+    "word": "desk",
+    "meaning": "机",
+    "example": "This is my desk.",
+    "translation": "これは私の机です。"
+  },
+  {
+    "rank": 189,
+    "word": "science",
+    "meaning": "科学",
+    "example": "I like science.",
+    "translation": "私は理科が好きです。"
+  },
+  {
+    "rank": 190,
+    "word": "sixty",
+    "meaning": "60",
+    "example": "My father is sixty.",
+    "translation": "父は60歳です。"
+  },
+  {
+    "rank": 191,
+    "word": "twelve",
+    "meaning": "12",
+    "example": "He is twelve years old.",
+    "translation": "彼は12歳です。"
+  },
+  {
+    "rank": 192,
+    "word": "cat",
+    "meaning": "猫",
+    "example": "I have a white cat.",
+    "translation": "白い猫を飼っています。"
+  },
+  {
+    "rank": 193,
+    "word": "window",
+    "meaning": "窓",
+    "example": "Open the window.",
+    "translation": "窓を開けてください。"
+  },
+  {
+    "rank": 194,
+    "word": "subject",
+    "meaning": "科目",
+    "example": "What subject do you like?",
+    "translation": "何の科目が好きですか？"
+  },
+  {
+    "rank": 195,
+    "word": "me",
+    "meaning": "私に",
+    "example": "Give it to me.",
+    "translation": "それを私にください。"
+  },
+  {
+    "rank": 196,
+    "word": "town",
+    "meaning": "街",
+    "example": "This is a nice town.",
+    "translation": "ここは良い街です。"
+  },
+  {
+    "rank": 197,
+    "word": "that",
+    "meaning": "あれ",
+    "example": "What is that?",
+    "translation": "あれは何ですか？"
+  },
+  {
+    "rank": 198,
+    "word": "seven",
+    "meaning": "7",
+    "example": "I have seven books.",
+    "translation": "7冊の本を持っています。"
+  },
+  {
+    "rank": 199,
+    "word": "afternoon",
+    "meaning": "午後",
+    "example": "Good afternoon.",
+    "translation": "こんにちは。"
+  },
+  {
+    "rank": 200,
+    "word": "why",
+    "meaning": "なぜ",
+    "example": "Why are you late?",
+    "translation": "なぜ遅れたのですか？"
+  },
+  {
+    "rank": 201,
+    "word": "nine",
+    "meaning": "9",
+    "example": "I have nine pencils.",
+    "translation": "私は9本の鉛筆を持っています。"
+  },
+  {
+    "rank": 202,
+    "word": "girl",
+    "meaning": "少女",
+    "example": "She is a cute girl.",
+    "translation": "彼女はかわいい少女です。"
+  },
+  {
+    "rank": 203,
+    "word": "up",
+    "meaning": "上へ",
+    "example": "Please stand up.",
+    "translation": "立ってください。"
+  },
+  {
+    "rank": 204,
+    "word": "too",
+    "meaning": "～もまた",
+    "example": "I like dogs, too.",
+    "translation": "私もまた犬が好きです。"
+  },
+  {
+    "rank": 205,
+    "word": "new",
+    "meaning": "新しい",
+    "example": "This is a new bag.",
+    "translation": "これは新しいかばんです。"
+  },
+  {
+    "rank": 206,
+    "word": "player",
+    "meaning": "選手",
+    "example": "He is a tennis player.",
+    "translation": "彼はテニス選手です。"
+  },
+  {
+    "rank": 207,
+    "word": "seventy",
+    "meaning": "70",
+    "example": "My grandfather is seventy.",
+    "translation": "祖父は70歳です。"
+  },
+  {
+    "rank": 208,
+    "word": "egg",
+    "meaning": "卵",
+    "example": "I eat an egg.",
+    "translation": "私は卵を1つ食べます。"
+  },
+  {
+    "rank": 209,
+    "word": "ninety",
+    "meaning": "90",
+    "example": "My grandmother is ninety.",
+    "translation": "祖母は90歳です。"
+  },
+  {
+    "rank": 210,
+    "word": "forty",
+    "meaning": "40",
+    "example": "My father is forty years old.",
+    "translation": "父は40歳です。"
+  },
+  {
+    "rank": 211,
+    "word": "good",
+    "meaning": "良い",
+    "example": "This is a good book.",
+    "translation": "これは良い本です。"
+  },
+  {
+    "rank": 212,
+    "word": "twenty",
+    "meaning": "20",
+    "example": "I have twenty pens.",
+    "translation": "20本のペンを持っています。"
+  },
+  {
+    "rank": 213,
+    "word": "breakfast",
+    "meaning": "朝食",
+    "example": "I eat bread for breakfast.",
+    "translation": "朝食にパンを食べます。"
+  },
+  {
+    "rank": 214,
+    "word": "everyone",
+    "meaning": "みんな",
+    "example": "Good morning, everyone.",
+    "translation": "みなさん、おはようございます。"
+  },
+  {
+    "rank": 215,
+    "word": "number",
+    "meaning": "数",
+    "example": "What is your phone number?",
+    "translation": "電話番号は何ですか？"
+  },
+  {
+    "rank": 216,
+    "word": "famous",
+    "meaning": "有名な",
+    "example": "He is a famous singer.",
+    "translation": "彼は有名な歌手です。"
+  },
+  {
+    "rank": 217,
+    "word": "short",
+    "meaning": "短い",
+    "example": "She has short hair.",
+    "translation": "彼女は短い髪をしています。"
+  },
+  {
+    "rank": 218,
+    "word": "sad",
+    "meaning": "悲しい",
+    "example": "I am sad.",
+    "translation": "私は悲しいです。"
+  },
+  {
+    "rank": 219,
+    "word": "is",
+    "meaning": "ある、いる",
+    "example": "My dog is in the park.",
+    "translation": "犬は公園にいます。"
+  },
+  {
+    "rank": 220,
+    "word": "eight",
+    "meaning": "8",
+    "example": "I have eight books.",
+    "translation": "8冊の本を持っています。"
+  },
+  {
+    "rank": 221,
+    "word": "sometimes",
+    "meaning": "時々",
+    "example": "I sometimes play tennis.",
+    "translation": "時々テニスをします。"
+  },
+  {
+    "rank": 222,
+    "word": "go",
+    "meaning": "行く",
+    "example": "I go to school.",
+    "translation": "学校に行きます。"
+  },
+  {
+    "rank": 223,
+    "word": "visit",
+    "meaning": "訪問する",
+    "example": "I visit my grandmother.",
+    "translation": "祖母を訪問します。"
+  },
+  {
+    "rank": 224,
+    "word": "to",
+    "meaning": "～へ",
+    "example": "I go to the park.",
+    "translation": "公園へ行きます。"
+  },
+  {
+    "rank": 225,
+    "word": "September",
+    "meaning": "９月",
+    "example": "My birthday is in September.",
+    "translation": "誕生日は9月です。"
+  },
+  {
+    "rank": 226,
+    "word": "one",
+    "meaning": "1",
+    "example": "I have one brother.",
+    "translation": "兄弟が1人います。"
+  },
+  {
+    "rank": 227,
+    "word": "apple",
+    "meaning": "リンゴ",
+    "example": "I like apples.",
+    "translation": "リンゴが好きです。"
+  },
+  {
+    "rank": 228,
+    "word": "evening",
+    "meaning": "夕方",
+    "example": "I study in the evening.",
+    "translation": "夕方に勉強します。"
+  },
+  {
+    "rank": 229,
+    "word": "big",
+    "meaning": "大きい",
+    "example": "This box is big.",
+    "translation": "この箱は大きいです。"
+  },
+  {
+    "rank": 230,
+    "word": "left",
+    "meaning": "左",
+    "example": "Turn left here.",
+    "translation": "ここで左に曲がってください。"
+  },
+  {
+    "rank": 231,
+    "word": "strong",
+    "meaning": "強い",
+    "example": "He is very strong.",
+    "translation": "彼はとても強いです。"
+  },
+  {
+    "rank": 232,
+    "word": "kind",
+    "meaning": "親切な",
+    "example": "She is a kind girl.",
+    "translation": "彼女は親切な少女です。"
+  },
+  {
+    "rank": 233,
+    "word": "cloudy",
+    "meaning": "曇った",
+    "example": "It is cloudy today.",
+    "translation": "今日は曇っています。"
+  },
+  {
+    "rank": 234,
+    "word": "rabbit",
+    "meaning": "ウサギ",
+    "example": "I have a white rabbit.",
+    "translation": "白いウサギを飼っています。"
+  },
+  {
+    "rank": 235,
+    "word": "bicycle",
+    "meaning": "自転車",
+    "example": "I ride a bicycle.",
+    "translation": "自転車に乗ります。"
+  },
+  {
+    "rank": 236,
+    "word": "sport",
+    "meaning": "スポーツ",
+    "example": "I like sports.",
+    "translation": "スポーツが好きです。"
+  },
+  {
+    "rank": 237,
+    "word": "brown",
+    "meaning": "茶色の",
+    "example": "I have a brown dog.",
+    "translation": "茶色の犬を飼っています。"
+  },
+  {
+    "rank": 238,
+    "word": "leg",
+    "meaning": "脚",
+    "example": "A dog has four legs.",
+    "translation": "犬には4本の脚があります。"
+  },
+  {
+    "rank": 239,
+    "word": "street",
+    "meaning": "通り",
+    "example": "This street is beautiful.",
+    "translation": "この通りは美しいです。"
+  },
+  {
+    "rank": 240,
+    "word": "dish",
+    "meaning": "皿",
+    "example": "Wash the dishes.",
+    "translation": "お皿を洗いなさい。"
+  },
+  {
+    "rank": 241,
+    "word": "teach",
+    "meaning": "教える",
+    "example": "She teaches English.",
+    "translation": "彼女は英語を教えます。"
+  },
+  {
+    "rank": 242,
+    "word": "heart",
+    "meaning": "心",
+    "example": "He has a kind heart.",
+    "translation": "彼は優しい心を持っています。"
+  },
+  {
+    "rank": 243,
+    "word": "English",
+    "meaning": "英語",
+    "example": "I study English.",
+    "translation": "英語を勉強します。"
+  },
+  {
+    "rank": 244,
+    "word": "bath",
+    "meaning": "風呂",
+    "example": "I take a bath.",
+    "translation": "お風呂に入ります。"
+  },
+  {
+    "rank": 245,
+    "word": "mouse",
+    "meaning": "ネズミ",
+    "example": "A cat catches a mouse.",
+    "translation": "猫はネズミを捕まえます。"
+  },
+  {
+    "rank": 246,
+    "word": "math",
+    "meaning": "数学",
+    "example": "Math is fun.",
+    "translation": "数学は楽しいです。"
+  },
+  {
+    "rank": 247,
+    "word": "same",
+    "meaning": "同じ",
+    "example": "We go to the same school.",
+    "translation": "同じ学校に行きます。"
+  },
+  {
+    "rank": 248,
+    "word": "tooth",
+    "meaning": "歯",
+    "example": "Brush your teeth.",
+    "translation": "歯を磨きなさい。"
+  },
+  {
+    "rank": 249,
+    "word": "newspaper",
+    "meaning": "新聞",
+    "example": "My father reads a newspaper.",
+    "translation": "父は新聞を読みます。"
+  },
+  {
+    "rank": 250,
+    "word": "dream",
+    "meaning": "夢",
+    "example": "I have a dream.",
+    "translation": "夢があります。"
+  },
+  {
+    "rank": 251,
+    "word": "draw",
+    "meaning": "描く",
+    "example": "I draw a picture.",
+    "translation": "絵を描きます。"
+  },
+  {
+    "rank": 252,
+    "word": "body",
+    "meaning": "身体",
+    "example": "Wash your body.",
+    "translation": "体を洗いなさい。"
+  },
+  {
+    "rank": 253,
+    "word": "clothes",
+    "meaning": "服",
+    "example": "I buy new clothes.",
+    "translation": "新しい服を買います。"
+  },
+  {
+    "rank": 254,
+    "word": "musician",
+    "meaning": "音楽家",
+    "example": "I want to be a musician.",
+    "translation": "音楽家になりたいです。"
+  },
+  {
+    "rank": 255,
+    "word": "monkey",
+    "meaning": "サル",
+    "example": "I like monkeys.",
+    "translation": "サルが好きです。"
+  },
+  {
+    "rank": 256,
+    "word": "fall",
+    "meaning": "秋",
+    "example": "I like fall.",
+    "translation": "秋が好きです。"
+  },
+  {
+    "rank": 257,
+    "word": "join",
+    "meaning": "参加する",
+    "example": "Let's join the club.",
+    "translation": "クラブに参加しましょう。"
+  },
+  {
+    "rank": 258,
+    "word": "and",
+    "meaning": "そして",
+    "example": "I have a dog and a cat.",
+    "translation": "犬と猫を飼っています。"
+  },
+  {
+    "rank": 259,
+    "word": "bear",
+    "meaning": "クマ",
+    "example": "I saw a bear.",
+    "translation": "クマを見ました。"
+  },
+  {
+    "rank": 260,
+    "word": "water",
+    "meaning": "水",
+    "example": "I drink water.",
+    "translation": "水を飲みます。"
+  },
+  {
+    "rank": 261,
+    "word": "nature",
+    "meaning": "自然",
+    "example": "I love nature.",
+    "translation": "自然が大好きです。"
+  },
+  {
+    "rank": 262,
+    "word": "tired",
+    "meaning": "疲れた",
+    "example": "I am tired.",
+    "translation": "疲れています。"
+  },
+  {
+    "rank": 263,
+    "word": "chicken",
+    "meaning": "鶏肉",
+    "example": "I like chicken.",
+    "translation": "鶏肉が好きです。"
+  },
+  {
+    "rank": 264,
+    "word": "mountain",
+    "meaning": "山",
+    "example": "I go to the mountain.",
+    "translation": "山へ行きます。"
+  },
+  {
+    "rank": 265,
+    "word": "rainy",
+    "meaning": "雨降りの",
+    "example": "It is a rainy day.",
+    "translation": "雨降りの日です。"
+  },
+  {
+    "rank": 266,
+    "word": "bridge",
+    "meaning": "橋",
+    "example": "Look at the bridge.",
+    "translation": "あの橋を見てください。"
+  },
+  {
+    "rank": 267,
+    "word": "lake",
+    "meaning": "湖",
+    "example": "We play by the lake.",
+    "translation": "湖のそばで遊びます。"
+  },
+  {
+    "rank": 268,
+    "word": "fun",
+    "meaning": "楽しみ",
+    "example": "English is fun.",
+    "translation": "英語は楽しいです。"
+  },
+  {
+    "rank": 269,
+    "word": "grandmother",
+    "meaning": "祖母",
+    "example": "She is my grandmother.",
+    "translation": "彼女は私の祖母です。"
+  },
+  {
+    "rank": 270,
+    "word": "great",
+    "meaning": "すばらしい",
+    "example": "This is a great book.",
+    "translation": "すばらしい本です。"
+  },
+  {
+    "rank": 271,
+    "word": "date",
+    "meaning": "日付",
+    "example": "What is the date today?",
+    "translation": "今日の日付は何ですか？"
+  },
+  {
+    "rank": 272,
+    "word": "interesting",
+    "meaning": "おもしろい",
+    "example": "This game is interesting.",
+    "translation": "このゲームはおもしろいです。"
+  },
+  {
+    "rank": 273,
+    "word": "job",
+    "meaning": "仕事",
+    "example": "He likes his job.",
+    "translation": "彼は仕事が好きです。"
+  },
+  {
+    "rank": 274,
+    "word": "sea",
+    "meaning": "海",
+    "example": "I want to go to the sea.",
+    "translation": "海に行きたいです。"
+  },
+  {
+    "rank": 275,
+    "word": "dictionary",
+    "meaning": "辞書",
+    "example": "This is my dictionary.",
+    "translation": "これは私の辞書です。"
+  },
+  {
+    "rank": 276,
+    "word": "turn",
+    "meaning": "曲がる",
+    "example": "Turn right.",
+    "translation": "右に曲がりなさい。"
+  },
+  {
+    "rank": 277,
+    "word": "farmer",
+    "meaning": "農場主",
+    "example": "My father is a farmer.",
+    "translation": "父は農家です。"
+  },
+  {
+    "rank": 278,
+    "word": "well",
+    "meaning": "よく",
+    "example": "She sings well.",
+    "translation": "彼女は歌がじょうずです。"
+  },
+  {
+    "rank": 279,
+    "word": "shop",
+    "meaning": "店",
+    "example": "Let's go to the shop.",
+    "translation": "お店に行きましょう。"
+  },
+  {
+    "rank": 280,
+    "word": "clock",
+    "meaning": "置き時計",
+    "example": "Look at the clock.",
+    "translation": "時計を見てください。"
+  },
+  {
+    "rank": 281,
+    "word": "favorite",
+    "meaning": "お気に入りの",
+    "example": "This is my favorite song.",
+    "translation": "これはお気に入りの歌です。"
+  },
+  {
+    "rank": 282,
+    "word": "hundred",
+    "meaning": "百",
+    "example": "I have a hundred yen.",
+    "translation": "100円持っています。"
+  },
+  {
+    "rank": 283,
+    "word": "mouth",
+    "meaning": "口",
+    "example": "Open your mouth.",
+    "translation": "口を開けてください。"
+  },
+  {
+    "rank": 284,
+    "word": "sit",
+    "meaning": "座る",
+    "example": "Sit down, please.",
+    "translation": "どうぞ座ってください。"
+  },
+  {
+    "rank": 285,
+    "word": "train",
+    "meaning": "列車",
+    "example": "I like trains.",
+    "translation": "列車が好きです。"
+  },
+  {
+    "rank": 286,
+    "word": "face",
+    "meaning": "顔",
+    "example": "Wash your face.",
+    "translation": "顔を洗いなさい。"
+  },
+  {
+    "rank": 287,
+    "word": "difficult",
+    "meaning": "むずかしい",
+    "example": "Math is difficult.",
+    "translation": "数学はむずかしいです。"
+  },
+  {
+    "rank": 288,
+    "word": "ear",
+    "meaning": "耳",
+    "example": "A rabbit has long ears.",
+    "translation": "ウサギは長い耳を持っています。"
+  },
+  {
+    "rank": 289,
+    "word": "travel",
+    "meaning": "旅行",
+    "example": "I travel to Kyoto.",
+    "translation": "京都へ旅行します。"
+  },
+  {
+    "rank": 290,
+    "word": "listen",
+    "meaning": "聴く",
+    "example": "Listen to the music.",
+    "translation": "音楽を聴きなさい。"
+  },
+  {
+    "rank": 291,
+    "word": "museum",
+    "meaning": "美術館",
+    "example": "We go to the museum.",
+    "translation": "美術館へ行きます。"
+  },
+  {
+    "rank": 292,
+    "word": "island",
+    "meaning": "島",
+    "example": "This is a small island.",
+    "translation": "小さな島です。"
+  },
+  {
+    "rank": 293,
+    "word": "talk",
+    "meaning": "話す",
+    "example": "Let's talk in English.",
+    "translation": "英語で話しましょう。"
+  },
+  {
+    "rank": 294,
+    "word": "salad",
+    "meaning": "サラダ",
+    "example": "I eat a salad.",
+    "translation": "サラダを食べます。"
+  },
+  {
+    "rank": 295,
+    "word": "jump",
+    "meaning": "跳ぶ",
+    "example": "Dogs can jump.",
+    "translation": "犬は跳ぶことができます。"
+  },
+  {
+    "rank": 296,
+    "word": "pig",
+    "meaning": "ブタ",
+    "example": "That is a cute pig.",
+    "translation": "かわいいブタです。"
+  },
+  {
+    "rank": 297,
+    "word": "tea",
+    "meaning": "お茶",
+    "example": "I drink green tea.",
+    "translation": "緑茶を飲みます。"
+  },
+  {
+    "rank": 298,
+    "word": "star",
+    "meaning": "星",
+    "example": "Look at the stars.",
+    "translation": "星を見てください。"
+  },
+  {
+    "rank": 299,
+    "word": "beef",
+    "meaning": "牛肉",
+    "example": "I like beef.",
+    "translation": "牛肉が好きです。"
+  },
+  {
+    "rank": 300,
+    "word": "nose",
+    "meaning": "鼻",
+    "example": "Elephants have a long nose.",
+    "translation": "ゾウは長い鼻を持っています。"
+  },
+  {
+    "rank": 301,
+    "word": "horse",
+    "meaning": "馬",
+    "example": "This is a big horse.",
+    "translation": "これは大きな馬です。"
+  },
+  {
+    "rank": 302,
+    "word": "hat",
+    "meaning": "帽子",
+    "example": "He has a white hat.",
+    "translation": "白い帽子を持っています。"
+  },
+  {
+    "rank": 303,
+    "word": "think",
+    "meaning": "信じる",
+    "example": "I think it is true.",
+    "translation": "本当だと思います。"
+  },
+  {
+    "rank": 304,
+    "word": "excuse",
+    "meaning": "許す",
+    "example": "Excuse me.",
+    "translation": "すみません。"
+  },
+  {
+    "rank": 305,
+    "word": "animal",
+    "meaning": "動物",
+    "example": "I like this animal.",
+    "translation": "この動物が好きです。"
+  },
+  {
+    "rank": 306,
+    "word": "trip",
+    "meaning": "旅行",
+    "example": "Have a nice trip.",
+    "translation": "良い旅行を。"
+  },
+  {
+    "rank": 307,
+    "word": "vacation",
+    "meaning": "休暇",
+    "example": "It is summer vacation.",
+    "translation": "夏休みです。"
+  },
+  {
+    "rank": 308,
+    "word": "take",
+    "meaning": "写真を撮る",
+    "example": "I take a picture.",
+    "translation": "写真を撮ります。"
+  },
+  {
+    "rank": 309,
+    "word": "textbook",
+    "meaning": "教科書",
+    "example": "Open your textbook.",
+    "translation": "教科書を開きなさい。"
+  },
+  {
+    "rank": 310,
+    "word": "life",
+    "meaning": "生活",
+    "example": "School life is fun.",
+    "translation": "学校生活は楽しいです。"
+  },
+  {
+    "rank": 311,
+    "word": "practice",
+    "meaning": "練習する",
+    "example": "I practice tennis.",
+    "translation": "テニスを練習します。"
+  },
+  {
+    "rank": 312,
+    "word": "clean",
+    "meaning": "きれいな",
+    "example": "This room is clean.",
+    "translation": "この部屋はきれいです。"
+  },
+  {
+    "rank": 313,
+    "word": "wonderful",
+    "meaning": "すばらしい",
+    "example": "This is a wonderful book.",
+    "translation": "すばらしい本です。"
+  },
+  {
+    "rank": 314,
+    "word": "head",
+    "meaning": "頭",
+    "example": "Touch your head.",
+    "translation": "頭をさわりなさい。"
+  },
+  {
+    "rank": 315,
+    "word": "classroom",
+    "meaning": "教室",
+    "example": "I am in the classroom.",
+    "translation": "教室にいます。"
+  },
+  {
+    "rank": 316,
+    "word": "shoulder",
+    "meaning": "肩",
+    "example": "Touch your shoulder.",
+    "translation": "肩をさわりなさい。"
+  },
+  {
+    "rank": 317,
+    "word": "vegetable",
+    "meaning": "野菜",
+    "example": "I eat vegetables.",
+    "translation": "野菜を食べます。"
+  },
+  {
+    "rank": 318,
+    "word": "food",
+    "meaning": "食べ物",
+    "example": "I like Japanese food.",
+    "translation": "日本の食べ物が好きです。"
+  },
+  {
+    "rank": 319,
+    "word": "future",
+    "meaning": "未来",
+    "example": "I want to be a teacher in the future.",
+    "translation": "将来先生になりたいです。"
+  },
+  {
+    "rank": 320,
+    "word": "king",
+    "meaning": "王様",
+    "example": "He is a king.",
+    "translation": "彼は王様です。"
+  },
+  {
+    "rank": 321,
+    "word": "birthday",
+    "meaning": "誕生日",
+    "example": "Today is my birthday.",
+    "translation": "今日は誕生日です。"
+  },
+  {
+    "rank": 322,
+    "word": "river",
+    "meaning": "川",
+    "example": "This is a long river.",
+    "translation": "長い川です。"
+  },
+  {
+    "rank": 323,
+    "word": "can",
+    "meaning": "することができる",
+    "example": "I can play tennis.",
+    "translation": "テニスをすることができます。"
+  },
+  {
+    "rank": 324,
+    "word": "ship",
+    "meaning": "船",
+    "example": "Look at the ship.",
+    "translation": "船を見てください。"
+  },
+  {
+    "rank": 325,
+    "word": "eye",
+    "meaning": "目",
+    "example": "Close your eyes.",
+    "translation": "目を閉じなさい。"
+  },
+  {
+    "rank": 326,
+    "word": "grandfather",
+    "meaning": "祖父",
+    "example": "He is my grandfather.",
+    "translation": "彼は私の祖父です。"
+  },
+  {
+    "rank": 327,
+    "word": "different",
+    "meaning": "違う",
+    "example": "This is a different book.",
+    "translation": "違う本です。"
+  },
+  {
+    "rank": 328,
+    "word": "soup",
+    "meaning": "スープ",
+    "example": "This soup is hot.",
+    "translation": "このスープは熱いです。"
+  },
+  {
+    "rank": 329,
+    "word": "second",
+    "meaning": "2番目",
+    "example": "He is the second boy.",
+    "translation": "彼は2番目の男の子です。"
+  },
+  {
+    "rank": 330,
+    "word": "frog",
+    "meaning": "カエル",
+    "example": "I see a frog.",
+    "translation": "カエルを見ます。"
+  },
+  {
+    "rank": 331,
+    "word": "first",
+    "meaning": "1番目",
+    "example": "I am the first.",
+    "translation": "私が1番目です。"
+  },
+  {
+    "rank": 332,
+    "word": "festival",
+    "meaning": "祭り",
+    "example": "I go to the festival.",
+    "translation": "祭りに行きます。"
+  },
+  {
+    "rank": 333,
+    "word": "knee",
+    "meaning": "ひざ",
+    "example": "Touch your knees.",
+    "translation": "ひざをさわりなさい。"
+  },
+  {
+    "rank": 334,
+    "word": "snowy",
+    "meaning": "雪の降る",
+    "example": "It is a snowy day.",
+    "translation": "雪の降る日です。"
+  },
+  {
+    "rank": 335,
+    "word": "weather",
+    "meaning": "天気",
+    "example": "The weather is good.",
+    "translation": "天気が良いです。"
+  },
+  {
+    "rank": 336,
+    "word": "queen",
+    "meaning": "女王",
+    "example": "She is a queen.",
+    "translation": "彼女は女王です。"
+  },
+  {
+    "rank": 337,
+    "word": "event",
+    "meaning": "出来事",
+    "example": "This is a big event.",
+    "translation": "大きな出来事です。"
+  },
+  {
+    "rank": 338,
+    "word": "exciting",
+    "meaning": "興奮させる",
+    "example": "Tennis is exciting.",
+    "translation": "テニスはわくわくします。"
+  },
+  {
+    "rank": 339,
+    "word": "never",
+    "meaning": "１度も～ない",
+    "example": "I never go there.",
+    "translation": "1度もそこに行きません。"
+  },
+  {
+    "rank": 340,
+    "word": "with",
+    "meaning": "といっしょに",
+    "example": "I play with him.",
+    "translation": "彼と一緒に遊びます。"
+  },
+  {
+    "rank": 341,
+    "word": "brush",
+    "meaning": "をみがく",
+    "example": "I brush my teeth.",
+    "translation": "歯をみがきます。"
+  },
+  {
+    "rank": 342,
+    "word": "really",
+    "meaning": "本当に",
+    "example": "It is really hot.",
+    "translation": "本当に暑いです。"
+  },
+  {
+    "rank": 343,
+    "word": "luck",
+    "meaning": "運",
+    "example": "Good luck.",
+    "translation": "がんばって。"
+  },
+  {
+    "rank": 344,
+    "word": "guess",
+    "meaning": "推測する",
+    "example": "Can you guess?",
+    "translation": "推測できますか？"
+  },
+  {
+    "rank": 345,
+    "word": "umbrella",
+    "meaning": "傘",
+    "example": "This is my umbrella.",
+    "translation": "これは私の傘です。"
+  },
+  {
+    "rank": 346,
+    "word": "grape",
+    "meaning": "ブドウ",
+    "example": "I eat grapes.",
+    "translation": "ブドウを食べます。"
+  },
+  {
+    "rank": 347,
+    "word": "tower",
+    "meaning": "塔",
+    "example": "Look at the tower.",
+    "translation": "塔を見てください。"
+  },
+  {
+    "rank": 348,
+    "word": "snake",
+    "meaning": "蛇",
+    "example": "I see a snake.",
+    "translation": "蛇を見ます。"
+  },
+  {
+    "rank": 349,
+    "word": "hard",
+    "meaning": "一生懸命に",
+    "example": "I study hard.",
+    "translation": "一生懸命勉強します。"
+  },
+  {
+    "rank": 350,
+    "word": "hard",
+    "meaning": "かたい",
+    "example": "This bread is hard.",
+    "translation": "このパンはかたいです。"
+  },
+  {
+    "rank": 351,
+    "word": "scientist",
+    "meaning": "科学者",
+    "example": "He is a scientist.",
+    "translation": "彼は科学者です。"
+  },
+  {
+    "rank": 352,
+    "word": "cute",
+    "meaning": "可愛い",
+    "example": "This cat is cute.",
+    "translation": "この猫は可愛いです。"
+  },
+  {
+    "rank": 353,
+    "word": "straight",
+    "meaning": "まっすぐに",
+    "example": "Go straight.",
+    "translation": "まっすぐに行きなさい。"
+  },
+  {
+    "rank": 354,
+    "word": "funny",
+    "meaning": "おかしな",
+    "example": "This is a funny book.",
+    "translation": "おかしな本です。"
+  },
+  {
+    "rank": 355,
+    "word": "at",
+    "meaning": "で、に",
+    "example": "I am at school.",
+    "translation": "学校にいます。"
+  },
+  {
+    "rank": 356,
+    "word": "third",
+    "meaning": "3番目",
+    "example": "I am the third.",
+    "translation": "私が3番目です。"
+  },
+  {
+    "rank": 357,
+    "word": "zoo",
+    "meaning": "動物園",
+    "example": "Let's go to the zoo.",
+    "translation": "動物園に行きましょう。"
+  },
+  {
+    "rank": 358,
+    "word": "delicious",
+    "meaning": "おいしい",
+    "example": "This cake is delicious.",
+    "translation": "このケーキはおいしいです。"
+  },
+  {
+    "rank": 359,
+    "word": "down",
+    "meaning": "下に",
+    "example": "Sit down.",
+    "translation": "座りなさい。"
+  },
+  {
+    "rank": 360,
+    "word": "beach",
+    "meaning": "砂浜",
+    "example": "I go to the beach.",
+    "translation": "砂浜に行きます。"
+  },
+  {
+    "rank": 361,
+    "word": "be interested in",
+    "meaning": "に興味がある",
+    "example": "I am interested in science.",
+    "translation": "科学に興味があります。"
+  },
+  {
+    "rank": 362,
+    "word": "on",
+    "meaning": "の上に",
+    "example": "The book is on the table.",
+    "translation": "本はテーブルの上にあります。"
+  },
+  {
+    "rank": 363,
+    "word": "who",
+    "meaning": "だれ",
+    "example": "Who is he?",
+    "translation": "彼はだれですか？"
+  },
+  {
+    "rank": 364,
+    "word": "what",
+    "meaning": "何",
+    "example": "What is this?",
+    "translation": "これは何ですか？"
+  },
+  {
+    "rank": 365,
+    "word": "am",
+    "meaning": "いる",
+    "example": "I am in the room.",
+    "translation": "部屋にいます。"
+  },
+  {
+    "rank": 366,
+    "word": "under",
+    "meaning": "下の",
+    "example": "The dog is under the table.",
+    "translation": "犬はテーブルの下にいます。"
+  },
+  {
+    "rank": 367,
+    "word": "for",
+    "meaning": "のために",
+    "example": "This is for you.",
+    "translation": "これはあなたのためです。"
+  },
+  {
+    "rank": 368,
+    "word": "from",
+    "meaning": "～から",
+    "example": "I am from Japan.",
+    "translation": "日本出身です。"
+  },
+  {
+    "rank": 369,
+    "word": "let's",
+    "meaning": "～しよう",
+    "example": "Let's play baseball.",
+    "translation": "野球をしましょう。"
+  },
+  {
+    "rank": 370,
+    "word": "learn about",
+    "meaning": "について学ぶ",
+    "example": "I learn about Japan.",
+    "translation": "日本について学びます。"
+  },
+  {
+    "rank": 371,
+    "word": "purple",
+    "meaning": "紫色",
+    "example": "This flower is purple.",
+    "translation": "この花は紫色です。"
+  },
+  {
+    "rank": 372,
+    "word": "ruler",
+    "meaning": "定規",
+    "example": "I have a ruler.",
+    "translation": "定規を持っています。"
+  },
+  {
+    "rank": 373,
+    "word": "memory",
+    "meaning": "記憶",
+    "example": "It is a good memory.",
+    "translation": "良い思い出です。"
+  },
+  {
+    "rank": 374,
+    "word": "take out",
+    "meaning": "持ち帰り",
+    "example": "Can I take out this pizza?",
+    "translation": "このピザを持ち帰りできますか？"
+  },
+  {
+    "rank": 375,
+    "word": "How about",
+    "meaning": "はどうですか？",
+    "example": "How about you?",
+    "translation": "あなたはどうですか？"
+  },
+  {
+    "rank": 376,
+    "word": "take a rest",
+    "meaning": "休憩する",
+    "example": "Let's take a rest.",
+    "translation": "休憩しましょう。"
+  },
+  {
+    "rank": 377,
+    "word": "sunny",
+    "meaning": "晴れた",
+    "example": "It is sunny.",
+    "translation": "晴れています。"
+  },
+  {
+    "rank": 378,
+    "word": "subway",
+    "meaning": "地下鉄",
+    "example": "I take the subway.",
+    "translation": "地下鉄に乗ります。"
+  },
+  {
+    "rank": 379,
+    "word": "to go",
+    "meaning": "持ち帰り",
+    "example": "I'd like this to go.",
+    "translation": "持ち帰りでお願いします。"
+  },
+  {
+    "rank": 380,
+    "word": "on weekends",
+    "meaning": "週末に",
+    "example": "I play tennis on weekends.",
+    "translation": "週末にテニスをします。"
+  },
+  {
+    "rank": 381,
+    "word": "airplane",
+    "meaning": "飛行機",
+    "example": "Look at the airplane.",
+    "translation": "飛行機を見てください。"
+  },
+  {
+    "rank": 382,
+    "word": "learn a lot from",
+    "meaning": "からたくさん学ぶ",
+    "example": "I learn a lot from books.",
+    "translation": "本からたくさん学びます。"
+  },
+  {
+    "rank": 383,
+    "word": "walk to",
+    "meaning": "へ歩いていく",
+    "example": "I walk to school.",
+    "translation": "学校へ歩いていきます。"
+  },
+  {
+    "rank": 384,
+    "word": "world",
+    "meaning": "世界",
+    "example": "The world is big.",
+    "translation": "世界は大きいです。"
+  },
+  {
+    "rank": 385,
+    "word": "on your left",
+    "meaning": "左側に",
+    "example": "The park is on your left.",
+    "translation": "公園は左側にあります。"
+  },
+  {
+    "rank": 386,
+    "word": "for here",
+    "meaning": "ここで食べる",
+    "example": "Is that for here?",
+    "translation": "店内でお召し上がりですか？"
+  },
+  {
+    "rank": 387,
+    "word": "drum",
+    "meaning": "太鼓",
+    "example": "He plays the drum.",
+    "translation": "太鼓を叩きます。"
+  },
+  {
+    "rank": 388,
+    "word": "on the way",
+    "meaning": "道の途中で",
+    "example": "I met him on the way.",
+    "translation": "道の途中で彼に会いました。"
+  },
+  {
+    "rank": 389,
+    "word": "stand up",
+    "meaning": "立つ",
+    "example": "Stand up, please.",
+    "translation": "立ってください。"
+  },
+  {
+    "rank": 390,
+    "word": "at noon",
+    "meaning": "正午に",
+    "example": "I eat lunch at noon.",
+    "translation": "正午に昼食を食べます。"
+  },
+  {
+    "rank": 391,
+    "word": "farewell party",
+    "meaning": "送別会",
+    "example": "We have a farewell party.",
+    "translation": "送別会をします。"
+  },
+  {
+    "rank": 392,
+    "word": "temple",
+    "meaning": "お寺",
+    "example": "I go to the temple.",
+    "translation": "お寺に行きます。"
+  },
+  {
+    "rank": 393,
+    "word": "by",
+    "meaning": "のそばに",
+    "example": "He is by the door.",
+    "translation": "ドアのそばにいます。"
+  },
+  {
+    "rank": 394,
+    "word": "field trip",
+    "meaning": "遠足",
+    "example": "We have a field trip.",
+    "translation": "遠足があります。"
+  },
+  {
+    "rank": 395,
+    "word": "elementary school",
+    "meaning": "小学校",
+    "example": "I go to elementary school.",
+    "translation": "小学校に行きます。"
+  },
+  {
+    "rank": 396,
+    "word": "high school",
+    "meaning": "高校",
+    "example": "He goes to high school.",
+    "translation": "彼は高校に行きます。"
+  },
+  {
+    "rank": 397,
+    "word": "wait for",
+    "meaning": "を待つ",
+    "example": "Wait for me.",
+    "translation": "私を待ってください。"
+  },
+  {
+    "rank": 398,
+    "word": "high school",
+    "meaning": "高校",
+    "example": "My brother is in high school.",
+    "translation": "兄は高校にいます。"
+  },
+  {
+    "rank": 399,
+    "word": "bookstore",
+    "meaning": "本屋",
+    "example": "I go to the bookstore.",
+    "translation": "本屋に行きます。"
+  },
+  {
+    "rank": 400,
+    "word": "school festival",
+    "meaning": "文化祭",
+    "example": "We enjoy the school festival.",
+    "translation": "文化祭を楽しみます。"
+  },
+  {
+    "rank": 401,
+    "word": "soft",
+    "meaning": "柔らかい",
+    "example": "This bed is very soft.",
+    "translation": "このベッドはとても柔らかいです。"
+  },
+  {
+    "rank": 402,
+    "word": "and so on",
+    "meaning": "などなど",
+    "example": "I like dogs, cats, and so on.",
+    "translation": "犬、猫、などが好きです。"
+  },
+  {
+    "rank": 403,
+    "word": "be",
+    "meaning": "である",
+    "example": "I want to be a teacher.",
+    "translation": "先生になりたいです。"
+  },
+  {
+    "rank": 404,
+    "word": "say again",
+    "meaning": "もう一度言う",
+    "example": "Please say that again.",
+    "translation": "もう一度言ってください。"
+  },
+  {
+    "rank": 405,
+    "word": "get up",
+    "meaning": "起きる",
+    "example": "I get up at seven.",
+    "translation": "7時に起きます。"
+  },
+  {
+    "rank": 406,
+    "word": "worry about",
+    "meaning": "について心配する",
+    "example": "Don't worry about me.",
+    "translation": "私のことを心配しないで。"
+  },
+  {
+    "rank": 407,
+    "word": "spell",
+    "meaning": "をつづる",
+    "example": "How do you spell your name?",
+    "translation": "名前はどうつづりますか？"
+  },
+  {
+    "rank": 408,
+    "word": "check ～ out",
+    "meaning": "を確認する",
+    "example": "Let's check it out.",
+    "translation": "確認してみましょう。"
+  },
+  {
+    "rank": 409,
+    "word": "with a smile",
+    "meaning": "笑顔で",
+    "example": "She answers with a smile.",
+    "translation": "笑顔で答えます。"
+  },
+  {
+    "rank": 410,
+    "word": "reading",
+    "meaning": "読書",
+    "example": "My hobby is reading.",
+    "translation": "趣味は読書です。"
+  },
+  {
+    "rank": 411,
+    "word": "entrance ceremony",
+    "meaning": "入学式",
+    "example": "We have an entrance ceremony today.",
+    "translation": "今日入学式があります。"
+  },
+  {
+    "rank": 412,
+    "word": "sweet",
+    "meaning": "甘い",
+    "example": "This apple is sweet.",
+    "translation": "このリンゴは甘いです。"
+  },
+  {
+    "rank": 413,
+    "word": "go straight",
+    "meaning": "まっすぐ行く",
+    "example": "Go straight along this street.",
+    "translation": "この通りをまっすぐ行きなさい。"
+  },
+  {
+    "rank": 414,
+    "word": "junior high school",
+    "meaning": "中学校",
+    "example": "I go to junior high school.",
+    "translation": "中学校に行きます。"
+  },
+  {
+    "rank": 415,
+    "word": "by bus",
+    "meaning": "バスで",
+    "example": "I go to school by bus.",
+    "translation": "バスで学校へ行きます。"
+  },
+  {
+    "rank": 416,
+    "word": "write down",
+    "meaning": "書く",
+    "example": "Please write down your name.",
+    "translation": "名前を書いてください。"
+  },
+  {
+    "rank": 417,
+    "word": "go back to",
+    "meaning": "に戻る",
+    "example": "Let's go back to the house.",
+    "translation": "家に戻りましょう。"
+  },
+  {
+    "rank": 418,
+    "word": "by car",
+    "meaning": "車で",
+    "example": "We go to the park by car.",
+    "translation": "車で公園へ行きます。"
+  },
+  {
+    "rank": 419,
+    "word": "tiger",
+    "meaning": "トラ",
+    "example": "Look at the tiger.",
+    "translation": "トラを見てください。"
+  },
+  {
+    "rank": 420,
+    "word": "was",
+    "meaning": "でした",
+    "example": "I was happy yesterday.",
+    "translation": "昨日幸せでした。"
+  },
+  {
+    "rank": 421,
+    "word": "look at",
+    "meaning": "見る",
+    "example": "Look at this picture.",
+    "translation": "この絵を見てください。"
+  },
+  {
+    "rank": 422,
+    "word": "sit down",
+    "meaning": "座る",
+    "example": "Please sit down.",
+    "translation": "座ってください。"
+  },
+  {
+    "rank": 423,
+    "word": "stay up",
+    "meaning": "起きている",
+    "example": "Don't stay up late.",
+    "translation": "遅くまで起きていてはいけません。"
+  },
+  {
+    "rank": 424,
+    "word": "shopping",
+    "meaning": "買物",
+    "example": "I go shopping with my mother.",
+    "translation": "母と買物に行きます。"
+  },
+  {
+    "rank": 425,
+    "word": "classmate",
+    "meaning": "同級生",
+    "example": "He is my classmate.",
+    "translation": "彼は同級生です。"
+  },
+  {
+    "rank": 426,
+    "word": "out",
+    "meaning": "外に",
+    "example": "Let's go out and play.",
+    "translation": "外に出て遊びましょう。"
+  },
+  {
+    "rank": 427,
+    "word": "drama",
+    "meaning": "劇",
+    "example": "I like this drama.",
+    "translation": "このドラマが好きです。"
+  },
+  {
+    "rank": 428,
+    "word": "bean",
+    "meaning": "豆",
+    "example": "I eat beans for dinner.",
+    "translation": "夕食に豆を食べます。"
+  },
+  {
+    "rank": 429,
+    "word": "Japanese",
+    "meaning": "日本人",
+    "example": "I am Japanese.",
+    "translation": "私は日本人です。"
+  },
+  {
+    "rank": 430,
+    "word": "be(get) excited",
+    "meaning": "興奮をする",
+    "example": "I am very excited.",
+    "translation": "とてもわくわくしています。"
+  },
+  {
+    "rank": 431,
+    "word": "listen to",
+    "meaning": "聴く",
+    "example": "Listen to the music.",
+    "translation": "音楽を聴いてください。"
+  },
+  {
+    "rank": 432,
+    "word": "have a headache",
+    "meaning": "頭痛がする",
+    "example": "I have a headache today.",
+    "translation": "今日頭痛がします。"
+  },
+  {
+    "rank": 433,
+    "word": "telephone",
+    "meaning": "電話",
+    "example": "Please answer the telephone.",
+    "translation": "電話に出てください。"
+  },
+  {
+    "rank": 434,
+    "word": "on your right",
+    "meaning": "右側に",
+    "example": "The park is on your right.",
+    "translation": "公園は右側にあります。"
+  },
+  {
+    "rank": 435,
+    "word": "about",
+    "meaning": "について",
+    "example": "Tell me about your school.",
+    "translation": "学校について教えてください。"
+  },
+  {
+    "rank": 436,
+    "word": "between A and B",
+    "meaning": "AとBの間",
+    "example": "He is sitting between his mother and father.",
+    "translation": "母と父の間に座っています。"
+  },
+  {
+    "rank": 437,
+    "word": "supermarket",
+    "meaning": "スーパー",
+    "example": "I go to the supermarket.",
+    "translation": "スーパーに行きます。"
+  },
+  {
+    "rank": 438,
+    "word": "help with",
+    "meaning": "を助ける",
+    "example": "Can you help me with my homework?",
+    "translation": "宿題を手伝ってくれませんか？"
+  },
+  {
+    "rank": 439,
+    "word": "bike",
+    "meaning": "自転車",
+    "example": "I ride a bike.",
+    "translation": "自転車に乗ります。"
+  }
+]

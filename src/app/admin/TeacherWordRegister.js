@@ -35,7 +35,7 @@ export default function TeacherWordRegister({ students, onRegistered }) {
 
   // 英検マスターリスト
   const [showMasterList, setShowMasterList] = useState(false);
-  const [masterGrade, setMasterGrade] = useState('3kyu');
+  const [masterGrade, setMasterGrade] = useState('5kyu');
   const [masterRange, setMasterRange] = useState('1-50');
   const [masterLoading, setMasterLoading] = useState(false);
 
@@ -345,6 +345,8 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                 className="input-text"
                 style={{ padding: '0.4rem 0.6rem', fontSize: '0.85rem', width: 'auto' }}
               >
+                <option value="5kyu">5級 (439語)</option>
+                <option value="4kyu">4級 (726語)</option>
                 <option value="3kyu">3級 (996語)</option>
                 <option value="準2kyu">準2級 (1222語)</option>
                 <option value="2kyu">2級 (2000語)</option>
@@ -381,10 +383,10 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                   }
                   const parsed = selected.map((w, idx) => ({
                     id: idx,
-                    english: w.english,
-                    meanings: w.meanings,
-                    example: w.example,
-                    exampleJa: w.exampleJa,
+                    english: w.word || w.english,
+                    meanings: w.meanings || (w.meaning ? [w.meaning] : []),
+                    example: w.example || '',
+                    exampleJa: w.exampleJa || w.translation || '',
                     removed: false,
                     reassign: true,
                   }));
