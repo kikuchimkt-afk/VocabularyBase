@@ -352,6 +352,7 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                 <option value="2kyu">英検2級 (2000語)</option>
                 <option disabled>──── 単語帳 ────</option>
                 <option value="sys5th">シス単5訂版 (2027語)</option>
+                <option value="leap">LEAP (1935語)</option>
               </select>
             </div>
             <div>
