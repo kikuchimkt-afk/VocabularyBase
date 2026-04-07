@@ -34,6 +34,11 @@ export default function AdminPage() {
   // マニュアル
   const [showManual, setShowManual] = useState(false);
 
+  // メモ
+  const [notesStudent, setNotesStudent] = useState(null);
+  const [notesText, setNotesText] = useState('');
+  const [notesSaving, setNotesSaving] = useState(false);
+
   // 生徒編集
   const [editStudent, setEditStudent] = useState(null);
   const [editName, setEditName] = useState('');
@@ -484,7 +489,14 @@ export default function AdminPage() {
                   </div>
                   <div>
                     <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>正答率</span>
-                    <p style={{ fontWeight: '700', color: 'var(--secondary)' }}>{student.accuracy !== null ? `${student.accuracy}%` : '—'}</p>
+                    <p style={{ fontWeight: '700', color: 'var(--secondary)' }}>
+                      {student.accuracy !== null ? `${student.accuracy}%` : '—'}
+                    </p>
+                    {student.quiz_total > 0 && (
+                      <span style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>
+                        ({student.quiz_correct}/{student.quiz_total}問)
+                      </span>
+                    )}
                   </div>
                 </div>
 
@@ -501,6 +513,9 @@ export default function AdminPage() {
                   </button>
                   <button className="action-btn ghost" onClick={() => viewStudentWords(student)}>
                     📖 単語帳
+                  </button>
+                  <button className="action-btn ghost" onClick={() => { setNotesStudent(student); setNotesText(student.notes || ''); }}>
+                    📝 メモ
                   </button>
                 </div>
               </div>
@@ -885,6 +900,64 @@ export default function AdminPage() {
                 })()}
               </div>
             )}
+          </div>
+        </div>
+      )}
+
+      {/* メモモーダル */}
+      {notesStudent && (
+        <div className="modal-overlay" onClick={() => setNotesStudent(null)}>
+          <div className="modal-card" style={{ maxWidth: '500px', width: '100%' }} onClick={e => e.stopPropagation()}>
+            <div className="flex justify-between items-center" style={{ marginBottom: '1rem' }}>
+              <h2 style={{ fontSize: '1.1rem', fontWeight: '700' }}>📝 {notesStudent.name} のメモ</h2>
+              <button className="btn btn-ghost" onClick={() => setNotesStudent(null)} style={{ fontSize: '1.2rem', padding: '0.25rem 0.5rem' }}>✕</button>
+            </div>
+            <textarea
+              value={notesText}
+              onChange={(e) => setNotesText(e.target.value)}
+              placeholder="登録履歴やメモを入力..."
+              rows={8}
+              style={{
+                width: '100%', padding: '0.75rem', borderRadius: 'var(--radius-md)',
+                border: '1px solid var(--border)', fontSize: '0.9rem',
+                fontFamily: 'inherit', resize: 'vertical', marginBottom: '1rem',
+                background: 'var(--bg-page)',
+              }}
+            />
+            <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'flex-end' }}>
+              <button className="btn btn-secondary" onClick={() => setNotesStudent(null)} style={{ padding: '0.5rem 1rem' }}>
+                キャンセル
+              </button>
+              <button
+                className="btn btn-primary"
+                disabled={notesSaving}
+                style={{ padding: '0.5rem 1.5rem' }}
+                onClick={async () => {
+                  setNotesSaving(true);
+                  try {
+                    const res = await fetch('/api/students', {
+                      method: 'PUT',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({ id: notesStudent.id, name: notesStudent.name, grade: notesStudent.grade, notes: notesText }),
+                    });
+                    if (res.ok) {
+                      setStudents(prev => prev.map(s =>
+                        s.id === notesStudent.id ? { ...s, notes: notesText } : s
+                      ));
+                      setNotesStudent(null);
+                    } else {
+                      alert('保存に失敗しました');
+                    }
+                  } catch {
+                    alert('保存に失敗しました');
+                  } finally {
+                    setNotesSaving(false);
+                  }
+                }}
+              >
+                {notesSaving ? '保存中...' : '💾 保存'}
+              </button>
+            </div>
           </div>
         </div>
       )}

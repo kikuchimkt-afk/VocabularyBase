@@ -4,9 +4,6 @@ import { createServerClient } from '@/lib/supabase';
 // 使用可能なGeminiモデル（優先順）
 const GEMINI_MODELS = [
   'gemini-2.5-flash',
-  'gemini-2.0-flash-lite',
-  'gemini-2.0-flash',
-  'gemini-1.5-flash',
 ];
 
 // 利用可能な全APIキーを取得（テキスト生成用 - 有料キー）

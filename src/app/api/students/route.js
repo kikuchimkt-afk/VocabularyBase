@@ -97,7 +97,7 @@ export async function PUT(request) {
 
   try {
     const body = await request.json();
-    const { id, name, grade } = body;
+    const { id, name, grade, notes } = body;
 
     if (!id) {
       return NextResponse.json({ error: 'Student ID required' }, { status: 400 });
@@ -108,9 +108,12 @@ export async function PUT(request) {
 
     const supabase = createServerClient();
 
+    const updateData = { name: name.trim(), grade: grade?.trim() || null };
+    if (notes !== undefined) updateData.notes = notes;
+
     const { data, error } = await supabase
       .from('vb_students')
-      .update({ name: name.trim(), grade: grade?.trim() || null })
+      .update(updateData)
       .eq('id', id)
       .select()
       .single();
