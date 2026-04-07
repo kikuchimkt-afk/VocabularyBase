@@ -42,24 +42,78 @@ export async function POST(request) {
         continue;
       }
 
-      const meanings = meaningsRaw
+      let meanings = meaningsRaw
         ? meaningsRaw.split(/[,、，]/).map(m => m.trim()).filter(Boolean)
         : [];
 
-      if (meanings.length === 0) {
-        results.push({ word: english, status: '⚠️ 意味が空', detail: 'スキップ' });
-        continue;
-      }
-
-      // Gemini APIで例文生成・翻訳
+      // Gemini APIで意味・例文の自動生成
       let finalExampleSentence = exampleSentence;
       let exampleSentenceJa = '';
 
       try {
         const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_API_KEY}`;
 
-        if (!exampleSentence) {
-          // 例文なし → 英語例文＋日本語訳を両方生成
+        if (meanings.length === 0 && !exampleSentence) {
+          // 意味も例文もなし → すべてGeminiで生成
+          const prompt = `英単語「${english}」について以下の情報を生成してください。
+以下のJSON形式のみで返してください（他のテキストは不要）:
+{"meanings":["日本語の意味1","日本語の意味2"],"en":"英語の例文","ja":"例文の日本語訳"}
+- meaningsは主な訳語を2〜3個
+- 例文は中高生が理解できる自然な英文`;
+          const geminiRes = await fetch(geminiUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              contents: [{ parts: [{ text: prompt }] }],
+              generationConfig: { temperature: 0.5, maxOutputTokens: 400 },
+            }),
+          });
+          if (geminiRes.ok) {
+            const d = await geminiRes.json();
+            const raw = d.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || '';
+            const jsonMatch = raw.match(/\{[\s\S]*\}/);
+            if (jsonMatch) {
+              const parsed = JSON.parse(jsonMatch[0]);
+              if (parsed.meanings?.length > 0) meanings = parsed.meanings;
+              finalExampleSentence = parsed.en || '';
+              exampleSentenceJa = parsed.ja || '';
+            }
+          }
+        } else if (meanings.length === 0) {
+          // 意味なし・例文あり → 意味のみGeminiで生成
+          const prompt = `英単語「${english}」の主な日本語の意味を2〜3個、JSON配列のみで返してください（他のテキストは不要）。
+例: ["意味する","〜を意味する"]`;
+          const geminiRes = await fetch(geminiUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              contents: [{ parts: [{ text: prompt }] }],
+              generationConfig: { temperature: 0.3, maxOutputTokens: 200 },
+            }),
+          });
+          if (geminiRes.ok) {
+            const d = await geminiRes.json();
+            const raw = d.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || '';
+            const arrMatch = raw.match(/\[[\s\S]*\]/);
+            if (arrMatch) {
+              meanings = JSON.parse(arrMatch[0]);
+            }
+          }
+          // 例文の日本語訳を生成
+          const transRes = await fetch(geminiUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              contents: [{ parts: [{ text: `以下の英文を自然な日本語に翻訳してください。翻訳文のみを返してください。\n\n${exampleSentence}` }] }],
+              generationConfig: { temperature: 0.2, maxOutputTokens: 200 },
+            }),
+          });
+          if (transRes.ok) {
+            const d = await transRes.json();
+            exampleSentenceJa = d.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || '';
+          }
+        } else if (!exampleSentence) {
+          // 意味あり・例文なし → 例文＋日本語訳をGeminiで生成
           const prompt = `英単語「${english}」（意味: ${meanings.join(', ')}）を使った自然な英語の例文を1つ作成し、その日本語訳も付けてください。
 以下のJSON形式のみで返してください（他のテキストは不要）:
 {"en":"英語例文","ja":"日本語訳"}`;
@@ -82,7 +136,7 @@ export async function POST(request) {
             }
           }
         } else {
-          // 例文あり → 日本語訳のみ生成
+          // 意味あり・例文あり → 日本語訳のみ生成
           const geminiRes = await fetch(geminiUrl, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -98,6 +152,12 @@ export async function POST(request) {
         }
       } catch (e) {
         console.error('Gemini error for', english, e);
+      }
+
+      // 意味の自動生成にも失敗した場合はスキップ
+      if (meanings.length === 0) {
+        results.push({ word: english, status: '⚠️ 意味の生成に失敗', detail: 'スキップ' });
+        continue;
       }
 
       // TTS音声生成
