@@ -1,39 +1,79 @@
 import { NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 
-// レート制限対応: リトライ付きGemini呼び出し
-async function callGeminiWithRetry(prompt, maxRetries = 3) {
-  const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`;
+// 使用可能なGeminiモデル（優先順）
+const GEMINI_MODELS = [
+  'gemini-2.5-flash',
+  'gemini-2.0-flash-lite',
+  'gemini-2.0-flash',
+  'gemini-1.5-flash',
+];
 
-  for (let attempt = 0; attempt < maxRetries; attempt++) {
-    if (attempt > 0) {
-      // 指数的バックオフ: 2秒, 4秒, 8秒...
-      await new Promise(r => setTimeout(r, 2000 * Math.pow(2, attempt)));
+// 利用可能な全APIキーを取得
+function getApiKeys() {
+  const keys = [];
+  if (process.env.GEMINI_API_KEY) keys.push(process.env.GEMINI_API_KEY);
+  if (process.env.GEMINI_API_KEY_2) keys.push(process.env.GEMINI_API_KEY_2);
+  if (process.env.GEMINI_API_KEY_3) keys.push(process.env.GEMINI_API_KEY_3);
+  return keys;
+}
+
+// 複数APIキー × 複数モデル で順次試行
+async function callGeminiWithFallback(prompt) {
+  const apiKeys = getApiKeys();
+  if (apiKeys.length === 0) throw new Error('GEMINI_API_KEY が設定されていません');
+
+  // キー × モデルの全組み合わせを試行
+  for (const apiKey of apiKeys) {
+    for (const model of GEMINI_MODELS) {
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+      const keyLabel = apiKey.slice(-4);
+
+      for (let attempt = 0; attempt < 2; attempt++) {
+        if (attempt > 0) {
+          await new Promise(r => setTimeout(r, 2000));
+        }
+
+        try {
+          const res = await fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              contents: [{ parts: [{ text: prompt }] }],
+              generationConfig: { temperature: 0.5, maxOutputTokens: 400 },
+            }),
+          });
+
+          if (res.status === 429) {
+            console.log(`[key:...${keyLabel}][${model}] 429 rate limit, attempt ${attempt + 1}`);
+            continue;
+          }
+
+          if (res.status === 404 || res.status === 400) {
+            console.log(`[key:...${keyLabel}][${model}] ${res.status}, skipping model`);
+            break; // 次のモデルへ
+          }
+
+          if (!res.ok) {
+            console.log(`[key:...${keyLabel}][${model}] error ${res.status}`);
+            break;
+          }
+
+          const d = await res.json();
+          const text = d.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || '';
+          if (text) {
+            console.log(`Generated with key:...${keyLabel} model:${model}`);
+            return text;
+          }
+        } catch (e) {
+          console.error(`[key:...${keyLabel}][${model}] fetch error`, e.message);
+          break;
+        }
+      }
     }
-
-    const res = await fetch(geminiUrl, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        contents: [{ parts: [{ text: prompt }] }],
-        generationConfig: { temperature: 0.5, maxOutputTokens: 400 },
-      }),
-    });
-
-    if (res.status === 429) {
-      console.log(`Gemini 429, retry ${attempt + 1}/${maxRetries}...`);
-      continue;
-    }
-
-    if (!res.ok) {
-      throw new Error(`Gemini API error: ${res.status}`);
-    }
-
-    const d = await res.json();
-    return d.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || '';
   }
 
-  throw new Error('Gemini API rate limit - しばらく待ってから再試行してください');
+  throw new Error('すべてのキー・モデルでレート制限に達しました。しばらく待ってから再試行してください。');
 }
 
 export async function POST(request) {
@@ -67,7 +107,7 @@ export async function POST(request) {
 以下のJSON形式のみで返してください（他のテキストは不要）:
 {"en":"英語例文","ja":"日本語訳"}`;
 
-    const raw = await callGeminiWithRetry(prompt);
+    const raw = await callGeminiWithFallback(prompt);
 
     let exampleEn = '';
     let exampleJa = '';
