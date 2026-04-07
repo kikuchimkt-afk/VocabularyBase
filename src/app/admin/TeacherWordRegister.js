@@ -345,11 +345,13 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                 className="input-text"
                 style={{ padding: '0.4rem 0.6rem', fontSize: '0.85rem', width: 'auto' }}
               >
-                <option value="5kyu">5級 (439語)</option>
-                <option value="4kyu">4級 (726語)</option>
-                <option value="3kyu">3級 (996語)</option>
-                <option value="準2kyu">準2級 (1222語)</option>
-                <option value="2kyu">2級 (2000語)</option>
+                <option value="5kyu">英検5級 (439語)</option>
+                <option value="4kyu">英検4級 (726語)</option>
+                <option value="3kyu">英検3級 (996語)</option>
+                <option value="準2kyu">英検準2級 (1222語)</option>
+                <option value="2kyu">英検2級 (2000語)</option>
+                <option disabled>──── 単語帳 ────</option>
+                <option value="sys5th">シス単5訂版 (2027語)</option>
               </select>
             </div>
             <div>
