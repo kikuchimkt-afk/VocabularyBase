@@ -60,11 +60,9 @@ export async function POST(request) {
       } catch (keyError) {
         console.error(`Gemini API Error (key ${key.substring(0, 10)}...):`, keyError.message);
         lastError = keyError;
-        // Continue to next key
       }
     }
 
-    // All keys failed
     return NextResponse.json({ 
       error: '意味と例文の生成に失敗しました。',
       detail: lastError?.message || 'All API keys failed'
