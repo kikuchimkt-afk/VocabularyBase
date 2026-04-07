@@ -40,6 +40,11 @@ export default function AdminPage() {
   const [editGrade, setEditGrade] = useState('');
   const [editLoading, setEditLoading] = useState(false);
 
+  // 単語編集
+  const [editWord, setEditWord] = useState(null);
+  const [editWordData, setEditWordData] = useState({ english: '', meanings: '', example: '', exampleJa: '' });
+  const [editWordLoading, setEditWordLoading] = useState(false);
+
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoginLoading(true);
@@ -621,17 +626,105 @@ export default function AdminPage() {
                 </div>
                 {studentWords.map(word => (
                   <div key={word.id} style={{ padding: '0.75rem 0', borderBottom: '1px solid var(--border)' }}>
-                    <div className="flex justify-between items-center">
-                      <span style={{ fontWeight: '600' }}>{word.english}</span>
-                      <span className="text-muted" style={{ fontSize: '0.75rem' }}>
-                        {word.correct_count}✓ / {word.wrong_count}✗
-                      </span>
-                    </div>
-                    <div className="flex gap-2" style={{ marginTop: '0.25rem', flexWrap: 'wrap' }}>
-                      {word.meanings?.map((m, i) => (
-                        <span key={i} className="badge badge-green">{m}</span>
-                      ))}
-                    </div>
+                    {editWord?.id === word.id ? (
+                      /* --- 編集モード --- */
+                      <div style={{ background: 'var(--secondary-light)', borderRadius: 'var(--radius-md)', padding: '0.75rem' }}>
+                        <div className="input-group" style={{ marginBottom: '0.5rem' }}>
+                          <label className="input-label" style={{ fontSize: '0.7rem' }}>英単語</label>
+                          <input className="input-text" value={editWordData.english}
+                            onChange={e => setEditWordData({ ...editWordData, english: e.target.value })}
+                            style={{ padding: '0.4rem 0.6rem', fontSize: '0.85rem' }} />
+                        </div>
+                        <div className="input-group" style={{ marginBottom: '0.5rem' }}>
+                          <label className="input-label" style={{ fontSize: '0.7rem' }}>意味（カンマ区切り）</label>
+                          <input className="input-text" value={editWordData.meanings}
+                            onChange={e => setEditWordData({ ...editWordData, meanings: e.target.value })}
+                            style={{ padding: '0.4rem 0.6rem', fontSize: '0.85rem' }} />
+                        </div>
+                        <div className="input-group" style={{ marginBottom: '0.5rem' }}>
+                          <label className="input-label" style={{ fontSize: '0.7rem' }}>例文（英語）</label>
+                          <input className="input-text" value={editWordData.example}
+                            onChange={e => setEditWordData({ ...editWordData, example: e.target.value })}
+                            style={{ padding: '0.4rem 0.6rem', fontSize: '0.85rem' }} />
+                        </div>
+                        <div className="input-group" style={{ marginBottom: '0.5rem' }}>
+                          <label className="input-label" style={{ fontSize: '0.7rem' }}>例文（日本語訳）</label>
+                          <input className="input-text" value={editWordData.exampleJa}
+                            onChange={e => setEditWordData({ ...editWordData, exampleJa: e.target.value })}
+                            style={{ padding: '0.4rem 0.6rem', fontSize: '0.85rem' }} />
+                        </div>
+                        <div style={{ display: 'flex', gap: '0.4rem', justifyContent: 'flex-end' }}>
+                          <button className="btn btn-secondary" style={{ fontSize: '0.75rem', padding: '0.3rem 0.6rem' }}
+                            onClick={() => setEditWord(null)}>キャンセル</button>
+                          <button className="btn btn-primary" style={{ fontSize: '0.75rem', padding: '0.3rem 0.6rem' }}
+                            disabled={editWordLoading || !editWordData.english.trim()}
+                            onClick={async () => {
+                              setEditWordLoading(true);
+                              try {
+                                const newMeanings = editWordData.meanings.split(/[,、，]/).map(m => m.trim()).filter(Boolean);
+                                const res = await fetch('/api/students/words', {
+                                  method: 'PUT',
+                                  headers: { 'Content-Type': 'application/json' },
+                                  body: JSON.stringify({
+                                    id: word.id,
+                                    english: editWordData.english.trim(),
+                                    meanings: newMeanings,
+                                    example_sentence: editWordData.example.trim(),
+                                    example_sentence_ja: editWordData.exampleJa.trim(),
+                                  }),
+                                });
+                                if (!res.ok) throw new Error('Update failed');
+                                const data = await res.json();
+                                setStudentWords(studentWords.map(w => w.id === word.id ? data.word : w));
+                                setEditWord(null);
+                              } catch (e) {
+                                console.error(e);
+                                alert('更新に失敗しました');
+                              } finally {
+                                setEditWordLoading(false);
+                              }
+                            }}
+                          >{editWordLoading ? '保存中...' : '💾 保存'}</button>
+                        </div>
+                      </div>
+                    ) : (
+                      /* --- 表示モード --- */
+                      <>
+                        <div className="flex justify-between items-center">
+                          <span style={{ fontWeight: '600' }}>{word.english}</span>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                            <span className="text-muted" style={{ fontSize: '0.75rem' }}>
+                              {word.correct_count}✓ / {word.wrong_count}✗
+                            </span>
+                            <button style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '0.8rem', padding: '0.15rem' }}
+                              title="編集" onClick={() => {
+                                setEditWord(word);
+                                setEditWordData({
+                                  english: word.english || '',
+                                  meanings: (word.meanings || []).join('、'),
+                                  example: word.example_sentence || '',
+                                  exampleJa: word.example_sentence_ja || '',
+                                });
+                              }}>✏️</button>
+                          </div>
+                        </div>
+                        <div className="flex gap-2" style={{ marginTop: '0.25rem', flexWrap: 'wrap' }}>
+                          {word.meanings?.map((m, i) => (
+                            <span key={i} className="badge badge-green">{m}</span>
+                          ))}
+                        </div>
+                        {word.example_sentence && (
+                          <div style={{ marginTop: '0.35rem', fontSize: '0.8rem' }} className="text-muted">
+                            📝 {word.example_sentence}
+                          </div>
+                        )}
+                        {!word.example_sentence && (
+                          <div style={{ marginTop: '0.35rem', fontSize: '0.75rem', color: 'var(--danger)' }}>
+                            ⚠️ 例文なし
+                          </div>
+                        )}
+                      </>
+                    )}
                   </div>
                 ))}
               </div>
