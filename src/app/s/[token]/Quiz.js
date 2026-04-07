@@ -471,8 +471,15 @@ export default function Quiz({ token, studentId }) {
               {card.english}
             </div>
             {card.example_sentence && (
-              <div className="text-muted" style={{ fontSize: '0.78rem', textAlign: 'center', fontStyle: 'italic', opacity: 0.7 }}>
-                {card.example_sentence}
+              <div style={{ textAlign: 'center', marginTop: '0.5rem' }}>
+                <div style={{ fontSize: '0.95rem', fontStyle: 'italic', color: 'var(--text-main)', opacity: 0.8 }}>
+                  {card.example_sentence}
+                </div>
+                {card.example_sentence_ja && (
+                  <div className="text-muted" style={{ fontSize: '0.82rem', marginTop: '0.25rem' }}>
+                    {card.example_sentence_ja}
+                  </div>
+                )}
               </div>
             )}
           </div>
