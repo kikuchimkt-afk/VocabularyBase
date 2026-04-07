@@ -595,10 +595,13 @@ export default function AdminPage() {
                         disabled={bulkGenerating}
                         onClick={async () => {
                           const missing = studentWords.filter(w => !w.example_sentence);
-                          if (!confirm(`例文がない${missing.length}語の例文を自動生成しますか？`)) return;
+                          if (!confirm(`例文がない${missing.length}語の例文を自動生成しますか？\n（レート制限のため1語ずつ2秒間隔で処理します）`)) return;
                           setBulkGenerating(true);
                           let updated = [...studentWords];
+                          let done = 0;
                           for (const word of missing) {
+                            // レート制限回避: 2語目以降は2秒待機
+                            if (done > 0) await new Promise(r => setTimeout(r, 2000));
                             try {
                               setGeneratingWordId(word.id);
                               const res = await fetch('/api/students/words/generate', {
@@ -612,9 +615,11 @@ export default function AdminPage() {
                                 setStudentWords([...updated]);
                               }
                             } catch {}
+                            done++;
                           }
                           setGeneratingWordId(null);
                           setBulkGenerating(false);
+                          alert(`${done}語の例文生成が完了しました`);
                         }}
                       >{bulkGenerating ? '⏳ 生成中...' : '🔄 例文一括生成'}</button>
                     )}

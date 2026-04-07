@@ -1,74 +1,28 @@
 import { NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 
-// Gemini API一括呼び出し: 複数単語の意味・例文を一度に生成
-async function batchGenerateWithGemini(wordsToGenerate) {
-  if (wordsToGenerate.length === 0) return {};
-
+// 意味が空の場合のみGeminiで意味を生成（軽量な呼び出し）
+async function generateMeanings(english) {
   const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`;
-  
-  const wordsList = wordsToGenerate.map((w, i) => {
-    let desc = `${i + 1}. "${w.english}"`;
-    if (w.meanings.length > 0) desc += `（意味: ${w.meanings.join(', ')}）`;
-    if (w.example) desc += `（例文: ${w.example}）`;
-    return desc;
-  }).join('\n');
-
-  const prompt = `以下の英単語リストについて、不足している情報を補完してください。
-
-${wordsList}
-
-各単語について以下を生成してください：
-- meanings: 意味が未指定の場合、主な日本語訳を2〜3個の配列で
-- en: 英語例文が未指定の場合、中高生向けの自然な英語例文を1つ
-- ja: 例文の日本語訳
-- 既に意味が指定されている場合はそれをそのまま使用してください
-
-以下のJSON配列形式のみで返してください（他のテキストは絶対に不要）:
-[{"word":"英単語","meanings":["意味1","意味2"],"en":"英語例文","ja":"日本語訳"},...]`;
-
   try {
     const res = await fetch(geminiUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        contents: [{ parts: [{ text: prompt }] }],
-        generationConfig: { temperature: 0.5, maxOutputTokens: 4000 },
+        contents: [{ parts: [{ text: `英単語「${english}」の主な日本語の意味を2〜3個、JSON配列のみで返してください。例: ["意味する","〜を意味する"]` }] }],
+        generationConfig: { temperature: 0.3, maxOutputTokens: 200 },
       }),
     });
-
-    if (!res.ok) {
-      console.error('Gemini batch API error:', res.status, await res.text());
-      return {};
+    if (res.ok) {
+      const d = await res.json();
+      const raw = d.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || '';
+      const arrMatch = raw.match(/\[[\s\S]*\]/);
+      if (arrMatch) return JSON.parse(arrMatch[0]);
     }
-
-    const d = await res.json();
-    const raw = d.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || '';
-    
-    // JSON配列を抽出
-    const arrMatch = raw.match(/\[[\s\S]*\]/);
-    if (!arrMatch) {
-      console.error('Gemini batch: no JSON array found in response');
-      return {};
-    }
-
-    const parsed = JSON.parse(arrMatch[0]);
-    const resultMap = {};
-    for (const item of parsed) {
-      const key = (item.word || '').toLowerCase().trim();
-      if (key) {
-        resultMap[key] = {
-          meanings: item.meanings || [],
-          example: item.en || '',
-          exampleJa: item.ja || '',
-        };
-      }
-    }
-    return resultMap;
   } catch (e) {
-    console.error('Gemini batch error:', e);
-    return {};
+    console.error('Gemini meaning gen error:', e);
   }
+  return null;
 }
 
 export async function POST(request) {
@@ -96,10 +50,8 @@ export async function POST(request) {
       .select('id, name')
       .in('id', studentIds);
 
-    // ===== Phase 1: 全単語をパースし、Gemini生成が必要な単語を収集 =====
+    // ===== Phase 1: 単語をパース =====
     const parsedWords = [];
-    const wordsNeedingGeneration = [];
-
     for (const wordData of words) {
       const english = (wordData.english || '').trim();
       const meaningsRaw = (wordData.meanings || '').trim();
@@ -108,48 +60,31 @@ export async function POST(request) {
 
       if (!english) continue;
 
-      const meanings = meaningsRaw
+      let meanings = meaningsRaw
         ? meaningsRaw.split(/[,、，]/).map(m => m.trim()).filter(Boolean)
         : [];
 
-      const pw = { english, meanings, example: exampleSentence, allowReassign };
-      parsedWords.push(pw);
-
-      // 意味または例文が不足している単語をGemini生成対象に
-      if (meanings.length === 0 || !exampleSentence) {
-        wordsNeedingGeneration.push(pw);
+      // 意味が空の場合のみGeminiで意味を生成
+      if (meanings.length === 0) {
+        const generated = await generateMeanings(english);
+        if (generated && generated.length > 0) {
+          meanings = generated;
+        }
       }
+
+      if (meanings.length === 0) {
+        // 意味を生成できなかった場合はスキップ
+        continue;
+      }
+
+      parsedWords.push({ english, meanings, example: exampleSentence, allowReassign });
     }
 
-    // ===== Phase 2: Geminiで一括生成 =====
-    const geminiResults = await batchGenerateWithGemini(wordsNeedingGeneration);
-
-    // Gemini結果をマージ
-    for (const pw of parsedWords) {
-      const gen = geminiResults[pw.english.toLowerCase()];
-      if (!gen) continue;
-
-      if (pw.meanings.length === 0 && gen.meanings?.length > 0) {
-        pw.meanings = gen.meanings;
-      }
-      if (!pw.example && gen.example) {
-        pw.example = gen.example;
-        pw.exampleJa = gen.exampleJa || '';
-      } else if (pw.example && !pw.exampleJa) {
-        pw.exampleJa = gen.exampleJa || '';
-      }
-    }
-
-    // 例文のあるが日本語訳がない単語の翻訳（Gemini一括で対応済みなのでスキップ可能な場合が多い）
-
-    // ===== Phase 3: TTS音声を並列生成 =====
+    // ===== Phase 2: TTS音声を並列生成（単語音声のみ） =====
     const origin = request.headers.get('origin') || request.headers.get('host');
     const baseUrl = origin?.startsWith('http') ? origin : `https://${origin}`;
 
-    const ttsPromises = parsedWords.map(async (pw) => {
-      if (pw.meanings.length === 0) return; // 意味のない単語はスキップ
-
-      // 単語音声
+    await Promise.all(parsedWords.map(async (pw) => {
       try {
         const res = await fetch(`${baseUrl}/api/tts`, {
           method: 'POST',
@@ -161,35 +96,14 @@ export async function POST(request) {
           pw.wordAudioUrl = d.url;
         }
       } catch {}
+    }));
 
-      // 例文音声
-      if (pw.example) {
-        try {
-          const res = await fetch(`${baseUrl}/api/tts`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ text: pw.example }),
-          });
-          if (res.ok) {
-            const d = await res.json();
-            pw.sentenceAudioUrl = d.url;
-          }
-        } catch {}
-      }
-    });
-
-    await Promise.all(ttsPromises);
-
-    // ===== Phase 4: DB登録 =====
+    // ===== Phase 3: DB登録 =====
     const results = [];
     let totalSuccess = 0;
+    const registeredWordIds = []; // 後で例文生成するためにIDを収集
 
     for (const pw of parsedWords) {
-      if (pw.meanings.length === 0) {
-        results.push({ word: pw.english, status: '⚠️ 意味の生成に失敗', detail: 'スキップ' });
-        continue;
-      }
-
       let wordSuccess = 0;
       let wordUpdated = 0;
       let wordSkipped = 0;
@@ -213,48 +127,50 @@ export async function POST(request) {
             assign_count: currentCount + 1,
           };
           if (pw.meanings.length > 0) updateData.meanings = pw.meanings;
-          if (pw.example) {
-            updateData.example_sentence = pw.example;
-            updateData.example_sentence_ja = pw.exampleJa || '';
-          }
+          if (pw.example) updateData.example_sentence = pw.example;
           if (pw.wordAudioUrl) updateData.word_audio_url = pw.wordAudioUrl;
-          if (pw.sentenceAudioUrl) updateData.sentence_audio_url = pw.sentenceAudioUrl;
 
           const { error } = await supabase
             .from('vb_words')
             .update(updateData)
             .eq('id', existing[0].id);
 
-          if (!error) wordUpdated++;
+          if (!error) {
+            wordUpdated++;
+            if (!pw.example) registeredWordIds.push(existing[0].id);
+          }
           continue;
         }
 
-        const { error } = await supabase.from('vb_words').insert({
+        const { data: inserted, error } = await supabase.from('vb_words').insert({
           student_id: student.id,
           english: pw.english,
           meanings: pw.meanings,
           example_sentence: pw.example || null,
-          example_sentence_ja: pw.exampleJa || null,
+          example_sentence_ja: null,
           word_audio_url: pw.wordAudioUrl || null,
-          sentence_audio_url: pw.sentenceAudioUrl || null,
+          sentence_audio_url: null,
           assigned_date: assignedDate,
           assigned_by: 'teacher',
           assign_count: 1,
-        });
+        }).select('id').single();
 
-        if (!error) wordSuccess++;
+        if (!error) {
+          wordSuccess++;
+          if (!pw.example && inserted) registeredWordIds.push(inserted.id);
+        }
       }
 
       totalSuccess += (wordSuccess > 0 || wordUpdated > 0) ? 1 : 0;
       let statusText = '';
       if (wordSuccess > 0 && wordUpdated > 0) {
-        statusText = `✅ ${wordSuccess}名に新規登録, ${wordUpdated}名に再出題`;
+        statusText = `✅ ${wordSuccess}名に新規, ${wordUpdated}名に再出題`;
       } else if (wordSuccess > 0) {
         statusText = `✅ ${wordSuccess}名に登録`;
       } else if (wordUpdated > 0) {
         statusText = `🔄 ${wordUpdated}名に再出題`;
       } else if (wordSkipped > 0) {
-        statusText = `⏭️ ${wordSkipped}名でスキップ（再出題OFF）`;
+        statusText = `⏭️ スキップ（再出題OFF）`;
       } else {
         statusText = '⚠️ 処理なし';
       }
@@ -263,13 +179,14 @@ export async function POST(request) {
         word: pw.english,
         meanings: pw.meanings.join(', '),
         status: statusText,
-        detail: pw.exampleJa ? `訳: ${pw.exampleJa.substring(0, 50)}` : (pw.example ? `例: ${pw.example.substring(0, 50)}` : ''),
+        hasExample: !!pw.example,
       });
     }
 
     return NextResponse.json({
       results,
       summary: { total: words.length, success: totalSuccess, students: students.length },
+      wordIdsNeedingExamples: registeredWordIds, // 例文生成が必要なWord IDリスト
     });
   } catch (error) {
     console.error('Word import error:', error);

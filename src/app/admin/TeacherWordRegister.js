@@ -631,10 +631,31 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                       }
                       const data = await res.json();
                       setBulkResults(data);
-                      setBulkProgress('');
                       setBulkPreviewWords(null);
                       setEditingRowIndex(null);
                       if (onRegistered) onRegistered();
+
+                      // 例文が必要な単語があれば自動生成開始
+                      const needIds = data.wordIdsNeedingExamples || [];
+                      if (needIds.length > 0) {
+                        setBulkProgress(`🔄 例文生成中... (0/${needIds.length})`);
+                        let done = 0;
+                        for (const wid of needIds) {
+                          if (done > 0) await new Promise(r => setTimeout(r, 2000));
+                          try {
+                            await fetch('/api/students/words/generate', {
+                              method: 'POST',
+                              headers: { 'Content-Type': 'application/json' },
+                              body: JSON.stringify({ wordId: wid }),
+                            });
+                          } catch {}
+                          done++;
+                          setBulkProgress(`🔄 例文生成中... (${done}/${needIds.length})`);
+                        }
+                        setBulkProgress(`✅ 例文生成完了 (${done}語)`);
+                      } else {
+                        setBulkProgress('');
+                      }
                     } catch (err) {
                       setBulkResults({ error: err.message });
                       setBulkProgress('');
