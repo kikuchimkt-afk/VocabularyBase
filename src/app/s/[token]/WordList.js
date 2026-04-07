@@ -218,6 +218,17 @@ export default function WordList({ studentId, studentName }) {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <h3 style={{ fontSize: '1.25rem', fontWeight: '700' }}>{word.english}</h3>
+                {(word.assign_count || 1) >= 2 && (
+                  <span style={{
+                    fontSize: '0.65rem', fontWeight: 700,
+                    color: '#e65100', background: '#fff3e0',
+                    padding: '2px 8px', borderRadius: 10,
+                    border: '1px solid #ffcc80',
+                    whiteSpace: 'nowrap',
+                  }}>
+                    🔥 出題{word.assign_count}回目
+                  </span>
+                )}
                 {word.word_audio_url && (
                   <button
                     onClick={() => playAudio(word.word_audio_url, `word-${word.id}`)}

@@ -27,6 +27,7 @@ CREATE TABLE vb_words (
   sentence_audio_url TEXT,
   assigned_date DATE,         -- 講師が配信した日付（宿題の日付）
   assigned_by TEXT,            -- 'teacher' or 'student'（誰が登録したか）
+  assign_count INT DEFAULT 1,  -- 出題回数（同じ単語を再度配信するとインクリメント）
   difficulty INT DEFAULT 0,
   correct_count INT DEFAULT 0,
   wrong_count INT DEFAULT 0,

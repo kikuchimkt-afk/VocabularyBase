@@ -137,16 +137,40 @@ export async function POST(request) {
 
       // 各生徒に登録
       let wordSuccess = 0;
+      let wordUpdated = 0;
       for (const student of students) {
         // 重複チェック
         const { data: existing } = await supabase
           .from('vb_words')
-          .select('id')
+          .select('id, assign_count')
           .eq('student_id', student.id)
           .ilike('english', english)
           .limit(1);
 
-        if (existing && existing.length > 0) continue;
+        if (existing && existing.length > 0) {
+          // 既存の単語 → assign_count をインクリメント + assigned_date を更新
+          const currentCount = existing[0].assign_count || 1;
+          const updateData = {
+            assigned_date: assignedDate,
+            assign_count: currentCount + 1,
+          };
+          // 意味や例文が新しく提供されていれば更新
+          if (meanings.length > 0) updateData.meanings = meanings;
+          if (finalExampleSentence) {
+            updateData.example_sentence = finalExampleSentence;
+            updateData.example_sentence_ja = exampleSentenceJa;
+          }
+          if (wordAudioUrl) updateData.word_audio_url = wordAudioUrl;
+          if (sentenceAudioUrl) updateData.sentence_audio_url = sentenceAudioUrl;
+
+          const { error } = await supabase
+            .from('vb_words')
+            .update(updateData)
+            .eq('id', existing[0].id);
+
+          if (!error) wordUpdated++;
+          continue;
+        }
 
         const { error } = await supabase.from('vb_words').insert({
           student_id: student.id,
@@ -158,16 +182,28 @@ export async function POST(request) {
           sentence_audio_url: sentenceAudioUrl,
           assigned_date: assignedDate,
           assigned_by: 'teacher',
+          assign_count: 1,
         });
 
         if (!error) wordSuccess++;
       }
 
-      totalSuccess += wordSuccess > 0 ? 1 : 0;
+      totalSuccess += (wordSuccess > 0 || wordUpdated > 0) ? 1 : 0;
+      let statusText = '';
+      if (wordSuccess > 0 && wordUpdated > 0) {
+        statusText = `✅ ${wordSuccess}名に新規登録, ${wordUpdated}名に再出題`;
+      } else if (wordSuccess > 0) {
+        statusText = `✅ ${wordSuccess}名に登録`;
+      } else if (wordUpdated > 0) {
+        statusText = `🔄 ${wordUpdated}名に再出題`;
+      } else {
+        statusText = '⚠️ 処理なし';
+      }
+
       results.push({
         word: english,
         meanings: meanings.join(', '),
-        status: wordSuccess > 0 ? `✅ ${wordSuccess}名に登録` : '⚠️ 全員登録済み',
+        status: statusText,
         detail: exampleSentenceJa ? `訳: ${exampleSentenceJa.substring(0, 50)}` : (finalExampleSentence ? `例: ${finalExampleSentence.substring(0, 50)}` : ''),
       });
     }

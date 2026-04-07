@@ -48,11 +48,6 @@ export default function Quiz({ token, studentId }) {
     }
   };
 
-  // 各単語の最新テスト結果から「覚えた」数を計算
-  // correct_count > wrong_count なら覚えた判定
-  const masteredCount = filteredWords.filter(w => (w.correct_count || 0) > (w.wrong_count || 0)).length;
-  const remainingCount = filteredWords.length - masteredCount;
-
   // 日付一覧を取得（新しい順）
   const availableDates = [...new Set(
     words
@@ -64,6 +59,11 @@ export default function Quiz({ token, studentId }) {
   const filteredWords = dateFilter === 'all'
     ? words
     : words.filter(w => w.assigned_date === dateFilter);
+
+  // 各単語の最新テスト結果から「覚えた」数を計算
+  // correct_count > wrong_count なら覚えた判定
+  const masteredCount = filteredWords.filter(w => (w.correct_count || 0) > (w.wrong_count || 0)).length;
+  const remainingCount = filteredWords.length - masteredCount;
 
   const playAudio = useCallback((url) => {
     if (!url) return;
@@ -412,6 +412,17 @@ export default function Quiz({ token, studentId }) {
               >
                 🔊
               </button>
+            )}
+            {(card.assign_count || 1) >= 2 && (
+              <div style={{
+                position: 'absolute', bottom: 14, left: 18,
+                fontSize: '0.68rem', fontWeight: 700,
+                color: '#e65100', background: '#fff3e0',
+                padding: '2px 8px', borderRadius: 10,
+                border: '1px solid #ffcc80',
+              }}>
+                🔥 出題{card.assign_count}回目
+              </div>
             )}
             <div style={{ fontSize: '2.2rem', fontWeight: 800, textAlign: 'center', marginBottom: '0.5rem' }}>
               {card.english}

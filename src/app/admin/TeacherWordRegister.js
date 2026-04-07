@@ -158,6 +158,7 @@ export default function TeacherWordRegister({ students, onRegistered }) {
 
       // 2. 各生徒に登録
       let successCount = 0;
+      let updatedCount = 0;
       for (let i = 0; i < targetStudents.length; i++) {
         const student = targetStudents[i];
         setSaveProgress(`📤 ${student.name} に登録中... (${i + 1}/${targetStudents.length})`);
@@ -170,8 +171,17 @@ export default function TeacherWordRegister({ students, onRegistered }) {
             w => w.english.toLowerCase() === word.trim().toLowerCase()
           );
           if (exists) {
-            setSaveProgress(`⚠️ ${student.name}: "${word.trim()}" は既に登録済み（スキップ）`);
-            await new Promise(r => setTimeout(r, 500));
+            // 既存の単語 → 再出題（assign_count+1, assigned_date更新）
+            setSaveProgress(`🔄 ${student.name}: "${word.trim()}" を再出題に更新中...`);
+            const res = await fetch('/api/students/words/reassign', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                wordId: exists.id,
+                assignedDate: assignedDate,
+              }),
+            });
+            if (res.ok) updatedCount++;
             continue;
           }
         }
@@ -196,15 +206,25 @@ export default function TeacherWordRegister({ students, onRegistered }) {
         if (res.ok) successCount++;
       }
 
+      const totalAffected = successCount + updatedCount;
+      let resultMsg = '';
+      if (successCount > 0 && updatedCount > 0) {
+        resultMsg = `✅ ${successCount}名に新規配信, ${updatedCount}名に再出題しました！`;
+      } else if (updatedCount > 0) {
+        resultMsg = `🔄 ${updatedCount}名に「${word.trim()}」を再出題しました！`;
+      } else {
+        resultMsg = `✅ ${successCount}名の生徒に「${word.trim()}」を配信しました！`;
+      }
+
       setHistory(prev => [{
         word: word.trim(),
         meanings: [...selectedMeanings],
-        count: successCount,
+        count: totalAffected,
         date: assignedDate,
         time: new Date().toLocaleTimeString('ja-JP', { hour: '2-digit', minute: '2-digit' }),
       }, ...prev]);
 
-      setMessage(`✅ ${successCount}名の生徒に「${word.trim()}」を配信しました！`);
+      setMessage(resultMsg);
       setSaveProgress('');
       setWord('');
       setCandidates(null);
