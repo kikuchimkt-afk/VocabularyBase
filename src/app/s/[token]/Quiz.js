@@ -149,11 +149,14 @@ export default function Quiz({ token, studentId }) {
       fetchWords();
       setQuizState('result');
     } else {
-      setCurrentIdx(nextIdx);
+      // まずカードを表面に戻し、アニメーション完了後に次の単語に切り替え
       setIsFlipped(false);
-      if (autoplay && deck[nextIdx]?.word_audio_url) {
-        setTimeout(() => playAudio(deck[nextIdx].word_audio_url), 300);
-      }
+      setTimeout(() => {
+        setCurrentIdx(nextIdx);
+        if (autoplay && deck[nextIdx]?.word_audio_url) {
+          setTimeout(() => playAudio(deck[nextIdx].word_audio_url), 300);
+        }
+      }, 400); // フリップアニメーション (500ms) より少し早く
     }
   };
 
