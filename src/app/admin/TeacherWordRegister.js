@@ -325,20 +325,20 @@ export default function TeacherWordRegister({ students, onRegistered }) {
           onClick={() => { setShowMasterList(true); setShowBulkImport(true); }}
           style={{ flex: 1, fontSize: '0.85rem' }}
         >
-          📚 英検リスト
+          📚 単語リスト
         </button>
       </div>
 
-      {/* 英検マスターリストから登録 */}
+      {/* マスターリストから登録 */}
       {showMasterList && (
         <div className="card" style={{ marginBottom: '1rem' }}>
-          <h3 style={{ fontSize: '1rem', fontWeight: '700', marginBottom: '0.75rem' }}>📚 英検マスターリストから登録</h3>
+          <h3 style={{ fontSize: '1rem', fontWeight: '700', marginBottom: '0.75rem' }}>📚 マスターリストから登録</h3>
           <p className="text-muted" style={{ fontSize: '0.85rem', marginBottom: '0.75rem' }}>
-            級と番号範囲を指定して、英検単語を一括登録できます。
+            単語帳と番号範囲を指定して、単語を一括登録できます。
           </p>
           <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', alignItems: 'flex-end', marginBottom: '0.75rem' }}>
             <div>
-              <label style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.25rem' }}>級</label>
+              <label style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.25rem' }}>単語帳</label>
               <select
                 value={masterGrade}
                 onChange={e => setMasterGrade(e.target.value)}
