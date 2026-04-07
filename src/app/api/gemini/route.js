@@ -1,13 +1,19 @@
 import { NextResponse } from 'next/server';
 import { GoogleGenAI } from '@google/genai';
 
-// Initialize the API - use KEY_2 (for single word lookups) with fallback to original
-const apiKey = process.env.GEMINI_API_KEY_2 || process.env.GEMINI_API_KEY;
-const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
+// Collect all available API keys for fallback
+function getApiKeys() {
+  const keys = [];
+  if (process.env.GEMINI_API_KEY) keys.push(process.env.GEMINI_API_KEY);
+  if (process.env.GEMINI_API_KEY_2) keys.push(process.env.GEMINI_API_KEY_2);
+  if (process.env.GEMINI_API_KEY_3) keys.push(process.env.GEMINI_API_KEY_3);
+  return keys;
+}
 
 export async function POST(request) {
   try {
-    if (!ai) {
+    const keys = getApiKeys();
+    if (keys.length === 0) {
       return NextResponse.json({ error: 'Gemini APIキーが設定されていません。' }, { status: 500 });
     }
 
@@ -35,25 +41,37 @@ export async function POST(request) {
 - 例文は中高生の教科書レベルの適切な難易度にしてください。
 `;
 
-    const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
-      contents: prompt,
-      config: {
-        responseMimeType: "application/json",
+    // Try each key until one succeeds
+    let lastError = null;
+    for (const key of keys) {
+      try {
+        const ai = new GoogleGenAI({ apiKey: key });
+        const response = await ai.models.generateContent({
+          model: 'gemini-2.0-flash',
+          contents: prompt,
+          config: {
+            responseMimeType: "application/json",
+          }
+        });
+
+        const resultText = response.text;
+        const resultJson = JSON.parse(resultText);
+        return NextResponse.json(resultJson);
+      } catch (keyError) {
+        console.error(`Gemini API Error (key ${key.substring(0, 10)}...):`, keyError.message);
+        lastError = keyError;
       }
-    });
+    }
 
-    const resultText = response.text;
-    const resultJson = JSON.parse(resultText);
-
-    return NextResponse.json(resultJson);
+    return NextResponse.json({ 
+      error: '意味と例文の生成に失敗しました。',
+      detail: lastError?.message || 'All API keys failed'
+    }, { status: 500 });
   } catch (error) {
     console.error('Gemini API Error:', error);
     return NextResponse.json({ 
       error: '意味と例文の生成に失敗しました。',
-      detail: error?.message || String(error),
-      keyExists: !!apiKey,
-      keyPrefix: apiKey ? apiKey.substring(0, 10) + '...' : 'none'
+      detail: error?.message || String(error)
     }, { status: 500 });
   }
 }
