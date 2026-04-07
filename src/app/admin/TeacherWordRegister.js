@@ -33,6 +33,12 @@ export default function TeacherWordRegister({ students, onRegistered }) {
   const [bulkPreviewWords, setBulkPreviewWords] = useState(null);
   const [editingRowIndex, setEditingRowIndex] = useState(null);
 
+  // 英検マスターリスト
+  const [showMasterList, setShowMasterList] = useState(false);
+  const [masterGrade, setMasterGrade] = useState('3kyu');
+  const [masterRange, setMasterRange] = useState('1-50');
+  const [masterLoading, setMasterLoading] = useState(false);
+
   // 前回の選択を記憶
   useEffect(() => {
     try {
@@ -308,13 +314,100 @@ export default function TeacherWordRegister({ students, onRegistered }) {
           📝 1語ずつ登録
         </button>
         <button
-          className={`btn ${showBulkImport ? 'btn-primary' : 'btn-outline'}`}
-          onClick={() => setShowBulkImport(true)}
+          className={`btn ${showBulkImport && !showMasterList ? 'btn-primary' : 'btn-outline'}`}
+          onClick={() => { setShowBulkImport(true); setShowMasterList(false); }}
           style={{ flex: 1, fontSize: '0.85rem' }}
         >
           📄 Excel一括登録
         </button>
+        <button
+          className={`btn ${showMasterList ? 'btn-primary' : 'btn-outline'}`}
+          onClick={() => { setShowMasterList(true); setShowBulkImport(true); }}
+          style={{ flex: 1, fontSize: '0.85rem' }}
+        >
+          📚 英検リスト
+        </button>
       </div>
+
+      {/* 英検マスターリストから登録 */}
+      {showMasterList && (
+        <div className="card" style={{ marginBottom: '1rem' }}>
+          <h3 style={{ fontSize: '1rem', fontWeight: '700', marginBottom: '0.75rem' }}>📚 英検マスターリストから登録</h3>
+          <p className="text-muted" style={{ fontSize: '0.85rem', marginBottom: '0.75rem' }}>
+            級と番号範囲を指定して、英検単語を一括登録できます。
+          </p>
+          <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', alignItems: 'flex-end', marginBottom: '0.75rem' }}>
+            <div>
+              <label style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.25rem' }}>級</label>
+              <select
+                value={masterGrade}
+                onChange={e => setMasterGrade(e.target.value)}
+                className="input-text"
+                style={{ padding: '0.4rem 0.6rem', fontSize: '0.85rem', width: 'auto' }}
+              >
+                <option value="3kyu">3級 (996語)</option>
+                <option value="準2kyu">準2級 (1222語)</option>
+                <option value="2kyu">2級 (2000語)</option>
+              </select>
+            </div>
+            <div>
+              <label style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.25rem' }}>番号範囲</label>
+              <input
+                type="text"
+                value={masterRange}
+                onChange={e => setMasterRange(e.target.value)}
+                placeholder="例: 1-50, 51-100"
+                className="input-text"
+                style={{ padding: '0.4rem 0.6rem', fontSize: '0.85rem', width: '120px' }}
+              />
+            </div>
+            <button
+              className="btn btn-primary"
+              disabled={masterLoading}
+              style={{ padding: '0.45rem 1rem', fontSize: '0.85rem' }}
+              onClick={async () => {
+                setMasterLoading(true);
+                try {
+                  const res = await fetch(`/wordlist_${masterGrade}.json`);
+                  if (!res.ok) throw new Error('Failed to load word list');
+                  const allWords = await res.json();
+                  const [startStr, endStr] = masterRange.split('-').map(s => s.trim());
+                  const start = parseInt(startStr) || 1;
+                  const end = parseInt(endStr) || start;
+                  const selected = allWords.filter(w => w.rank >= start && w.rank <= end);
+                  if (selected.length === 0) {
+                    alert(`番号 ${start}-${end} の範囲に単語が見つかりません`);
+                    return;
+                  }
+                  const parsed = selected.map((w, idx) => ({
+                    id: idx,
+                    english: w.english,
+                    meanings: w.meanings,
+                    example: w.example,
+                    exampleJa: w.exampleJa,
+                    removed: false,
+                    reassign: true,
+                  }));
+                  setBulkPreviewWords(parsed);
+                  setBulkResults(null);
+                  setEditingRowIndex(null);
+                  setShowMasterList(false);
+                  setShowBulkImport(true);
+                } catch (err) {
+                  alert(`リストの読み込みに失敗: ${err.message}`);
+                } finally {
+                  setMasterLoading(false);
+                }
+              }}
+            >
+              {masterLoading ? '読み込み中...' : '🔍 プレビュー'}
+            </button>
+          </div>
+          <div className="text-muted" style={{ fontSize: '0.75rem' }}>
+            ※ 番号は出題頻度順のランクです。例: 「1-50」で最頻出50語を登録
+          </div>
+        </div>
+      )}
 
       {/* Excel一括登録 */}
       {showBulkImport && (

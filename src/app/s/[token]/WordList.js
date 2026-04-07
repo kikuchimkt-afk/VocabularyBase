@@ -10,6 +10,7 @@ export default function WordList({ studentId, studentName }) {
   const [playingId, setPlayingId] = useState(null);
   const [generatingId, setGeneratingId] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
+  const [sourceFilter, setSourceFilter] = useState('all'); // 'all' | 'teacher' | 'self' | 'hw:YYYY-MM-DD'
 
   // 一括音声生成
   const [bulkAudioGenerating, setBulkAudioGenerating] = useState(false);
@@ -220,8 +221,32 @@ export default function WordList({ studentId, studentName }) {
     );
   }
 
-  // 検索フィルター（部分一致）
+  // HWの日付一覧を取得
+  const hwDates = useMemo(() => {
+    const dates = new Set();
+    words.forEach(w => {
+      if (w.assigned_by === 'teacher' && w.assigned_date) {
+        dates.add(w.assigned_date);
+      }
+    });
+    return [...dates].sort().reverse();
+  }, [words]);
+
+  const selfCount = words.filter(w => w.assigned_by !== 'teacher').length;
+  const hwCount = words.filter(w => w.assigned_by === 'teacher').length;
+
+  // ソース＋検索フィルター
   const filteredWords = words.filter(w => {
+    // ソースフィルター
+    if (sourceFilter === 'teacher') {
+      if (w.assigned_by !== 'teacher') return false;
+    } else if (sourceFilter === 'self') {
+      if (w.assigned_by === 'teacher') return false;
+    } else if (sourceFilter.startsWith('hw:')) {
+      const date = sourceFilter.replace('hw:', '');
+      if (w.assigned_by !== 'teacher' || w.assigned_date !== date) return false;
+    }
+    // テキスト検索
     if (!searchQuery.trim()) return true;
     const q = searchQuery.toLowerCase();
     const english = (w.english || '').toLowerCase();
@@ -256,9 +281,63 @@ export default function WordList({ studentId, studentName }) {
           </button>
         )}
       </div>
-      {searchQuery && (
+
+      {/* ソースフィルタータブ */}
+      {words.length > 0 && (
+        <div style={{ display: 'flex', gap: '0.35rem', flexWrap: 'wrap', marginBottom: '0.75rem' }}>
+          <button
+            onClick={() => setSourceFilter('all')}
+            style={{
+              padding: '0.3rem 0.7rem', borderRadius: 20, fontSize: '0.75rem', fontWeight: 600,
+              border: sourceFilter === 'all' ? '2px solid var(--primary)' : '1px solid var(--border)',
+              background: sourceFilter === 'all' ? 'var(--primary)' : 'var(--bg-card)',
+              color: sourceFilter === 'all' ? 'white' : 'var(--text-muted)', cursor: 'pointer',
+            }}
+          >すべて ({words.length})</button>
+          {hwCount > 0 && (
+            <button
+              onClick={() => setSourceFilter('teacher')}
+              style={{
+                padding: '0.3rem 0.7rem', borderRadius: 20, fontSize: '0.75rem', fontWeight: 600,
+                border: sourceFilter === 'teacher' ? '2px solid #e65100' : '1px solid var(--border)',
+                background: sourceFilter === 'teacher' ? '#e65100' : 'var(--bg-card)',
+                color: sourceFilter === 'teacher' ? 'white' : 'var(--text-muted)', cursor: 'pointer',
+              }}
+            >📋 HW ({hwCount})</button>
+          )}
+          {selfCount > 0 && (
+            <button
+              onClick={() => setSourceFilter('self')}
+              style={{
+                padding: '0.3rem 0.7rem', borderRadius: 20, fontSize: '0.75rem', fontWeight: 600,
+                border: sourceFilter === 'self' ? '2px solid var(--secondary)' : '1px solid var(--border)',
+                background: sourceFilter === 'self' ? 'var(--secondary)' : 'var(--bg-card)',
+                color: sourceFilter === 'self' ? 'white' : 'var(--text-muted)', cursor: 'pointer',
+              }}
+            >👤 自分 ({selfCount})</button>
+          )}
+          {hwDates.map(date => {
+            const dateCount = words.filter(w => w.assigned_by === 'teacher' && w.assigned_date === date).length;
+            const label = date.slice(5).replace('-', '/');
+            return (
+              <button
+                key={date}
+                onClick={() => setSourceFilter(`hw:${date}`)}
+                style={{
+                  padding: '0.3rem 0.7rem', borderRadius: 20, fontSize: '0.7rem', fontWeight: 600,
+                  border: sourceFilter === `hw:${date}` ? '2px solid #e65100' : '1px solid var(--border)',
+                  background: sourceFilter === `hw:${date}` ? '#fff3e0' : 'var(--bg-card)',
+                  color: sourceFilter === `hw:${date}` ? '#e65100' : 'var(--text-muted)', cursor: 'pointer',
+                }}
+              >📅 {label} ({dateCount})</button>
+            );
+          })}
+        </div>
+      )}
+
+      {(searchQuery || sourceFilter !== 'all') && (
         <p className="text-muted" style={{ fontSize: '0.8rem', marginBottom: '0.75rem' }}>
-          {filteredWords.length}件見つかりました
+          {filteredWords.length}件表示中
         </p>
       )}
       {/* ダウンロードボタン */}
@@ -347,8 +426,23 @@ export default function WordList({ studentId, studentName }) {
           <div key={word.id} className="card" style={{ marginBottom: '1rem' }}>
             {/* Word header */}
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
                 <h3 style={{ fontSize: '1.25rem', fontWeight: '700' }}>{word.english}</h3>
+                {word.assigned_by === 'teacher' ? (
+                  <span style={{
+                    fontSize: '0.6rem', fontWeight: 700,
+                    color: '#e65100', background: '#fff3e0',
+                    padding: '2px 7px', borderRadius: 10,
+                    border: '1px solid #ffcc80', whiteSpace: 'nowrap',
+                  }}>📋 HW</span>
+                ) : (
+                  <span style={{
+                    fontSize: '0.6rem', fontWeight: 700,
+                    color: 'var(--secondary)', background: 'var(--secondary-light)',
+                    padding: '2px 7px', borderRadius: 10,
+                    border: '1px solid var(--secondary)', whiteSpace: 'nowrap',
+                  }}>👤 自分</span>
+                )}
                 {(word.assign_count || 1) >= 2 && (
                   <span style={{
                     fontSize: '0.65rem', fontWeight: 700,
