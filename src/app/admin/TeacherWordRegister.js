@@ -356,6 +356,7 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                           meanings: meaningsRaw,
                           example,
                           removed: false,
+                          reassign: true,
                         };
                       }).filter(w => w.english); // 空行を除外
                       if (parsed.length === 0) {
@@ -418,6 +419,7 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                         meanings: '',
                         example: '',
                         removed: false,
+                        reassign: true,
                       }]);
                       setEditingRowIndex(nextId);
                     }}
@@ -442,7 +444,7 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                 {/* ヘッダー */}
                 <div style={{
                   display: 'grid',
-                  gridTemplateColumns: '1fr 1.5fr 2fr auto',
+                  gridTemplateColumns: '1fr 1.5fr 2fr 50px auto',
                   gap: '0.5rem',
                   padding: '0.6rem 0.75rem',
                   background: 'var(--primary-light)',
@@ -457,6 +459,7 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                   <span>英単語</span>
                   <span>意味</span>
                   <span>例文</span>
+                  <span style={{ textAlign: 'center', fontSize: '0.65rem' }}>再出題</span>
                   <span style={{ width: '60px', textAlign: 'center' }}>操作</span>
                 </div>
 
@@ -466,7 +469,7 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                     key={pw.id}
                     style={{
                       display: 'grid',
-                      gridTemplateColumns: '1fr 1.5fr 2fr auto',
+                      gridTemplateColumns: '1fr 1.5fr 2fr 50px auto',
                       gap: '0.5rem',
                       padding: '0.5rem 0.75rem',
                       borderBottom: '1px solid var(--border)',
@@ -566,6 +569,23 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                         </div>
                       </>
                     )}
+                    {/* 再出題トグル（編集モード時も削除時も表示） */}
+                    {!pw.removed && (
+                      <div style={{ display: 'flex', justifyContent: 'center' }}>
+                        <input
+                          type="checkbox"
+                          checked={pw.reassign !== false}
+                          onChange={(e) => {
+                            setBulkPreviewWords(bulkPreviewWords.map(w =>
+                              w.id === pw.id ? { ...w, reassign: e.target.checked } : w
+                            ));
+                          }}
+                          style={{ width: 16, height: 16, accentColor: 'var(--primary)', cursor: 'pointer' }}
+                          title="登録済みの場合に再出題する"
+                        />
+                      </div>
+                    )}
+                    {pw.removed && <div />}
                   </div>
                 ))}
               </div>
@@ -587,6 +607,7 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                         english: w.english.trim(),
                         meanings: w.meanings.trim(),
                         example: w.example.trim(),
+                        reassign: w.reassign !== false,
                       }));
                     if (wordsToRegister.length === 0) {
                       setBulkResults({ error: '登録する単語がありません' });

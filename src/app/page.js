@@ -10,7 +10,8 @@ export default function Home() {
 
   useEffect(() => {
     // PWAスタンドアロンモード（ホーム画面から開いた場合）のみリダイレクト
-    // 通常のブラウザアクセスでは講師ページを表示
+    // 動的マニフェストにより start_url が /s/[token] に設定されるので
+    // 通常はこのページに到達しないが、フォールバックとして残す
     try {
       const isPWA = window.matchMedia('(display-mode: standalone)').matches
         || window.navigator.standalone === true;

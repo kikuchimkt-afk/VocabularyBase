@@ -35,6 +35,7 @@ export async function POST(request) {
       const english = (wordData.english || '').trim();
       const meaningsRaw = (wordData.meanings || '').trim();
       const exampleSentence = (wordData.example || '').trim();
+      const allowReassign = wordData.reassign !== false;
 
       if (!english) {
         results.push({ word: '(空行)', status: 'スキップ', detail: '' });
@@ -138,6 +139,7 @@ export async function POST(request) {
       // 各生徒に登録
       let wordSuccess = 0;
       let wordUpdated = 0;
+      let wordSkipped = 0;
       for (const student of students) {
         // 重複チェック
         const { data: existing } = await supabase
@@ -148,6 +150,11 @@ export async function POST(request) {
           .limit(1);
 
         if (existing && existing.length > 0) {
+          if (!allowReassign) {
+            // 再出題無効 → スキップ
+            wordSkipped++;
+            continue;
+          }
           // 既存の単語 → assign_count をインクリメント + assigned_date を更新
           const currentCount = existing[0].assign_count || 1;
           const updateData = {
@@ -196,6 +203,8 @@ export async function POST(request) {
         statusText = `✅ ${wordSuccess}名に登録`;
       } else if (wordUpdated > 0) {
         statusText = `🔄 ${wordUpdated}名に再出題`;
+      } else if (wordSkipped > 0) {
+        statusText = `⏭️ ${wordSkipped}名でスキップ（再出題OFF）`;
       } else {
         statusText = '⚠️ 処理なし';
       }
