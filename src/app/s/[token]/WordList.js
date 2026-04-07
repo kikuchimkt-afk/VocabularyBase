@@ -208,6 +208,38 @@ export default function WordList({ studentId, studentName }) {
     setTimeout(() => setBulkAudioProgress(''), 8000);
   };
 
+  // HWの日付一覧を取得 (hooks must be called before any early returns)
+  const hwDates = useMemo(() => {
+    const dates = new Set();
+    words.forEach(w => {
+      if (w.assigned_by === 'teacher' && w.assigned_date) {
+        dates.add(w.assigned_date);
+      }
+    });
+    return [...dates].sort().reverse();
+  }, [words]);
+
+  const selfCount = useMemo(() => words.filter(w => w.assigned_by !== 'teacher').length, [words]);
+  const hwCount = useMemo(() => words.filter(w => w.assigned_by === 'teacher').length, [words]);
+
+  const filteredWords = useMemo(() => words.filter(w => {
+    if (sourceFilter === 'teacher') {
+      if (w.assigned_by !== 'teacher') return false;
+    } else if (sourceFilter === 'self') {
+      if (w.assigned_by === 'teacher') return false;
+    } else if (sourceFilter.startsWith('hw:')) {
+      const date = sourceFilter.replace('hw:', '');
+      if (w.assigned_by !== 'teacher' || w.assigned_date !== date) return false;
+    }
+    if (!searchQuery.trim()) return true;
+    const q = searchQuery.toLowerCase();
+    const english = (w.english || '').toLowerCase();
+    const meanings = (w.meanings || []).join(' ').toLowerCase();
+    const example = (w.example_sentence || '').toLowerCase();
+    const exampleJa = (w.example_sentence_ja || '').toLowerCase();
+    return english.includes(q) || meanings.includes(q) || example.includes(q) || exampleJa.includes(q);
+  }), [words, sourceFilter, searchQuery]);
+
   if (loading) {
     return <div className="text-muted" style={{ textAlign: 'center', padding: '2rem' }}>読み込み中...</div>;
   }
@@ -220,41 +252,6 @@ export default function WordList({ studentId, studentName }) {
       </div>
     );
   }
-
-  // HWの日付一覧を取得
-  const hwDates = useMemo(() => {
-    const dates = new Set();
-    words.forEach(w => {
-      if (w.assigned_by === 'teacher' && w.assigned_date) {
-        dates.add(w.assigned_date);
-      }
-    });
-    return [...dates].sort().reverse();
-  }, [words]);
-
-  const selfCount = words.filter(w => w.assigned_by !== 'teacher').length;
-  const hwCount = words.filter(w => w.assigned_by === 'teacher').length;
-
-  // ソース＋検索フィルター
-  const filteredWords = words.filter(w => {
-    // ソースフィルター
-    if (sourceFilter === 'teacher') {
-      if (w.assigned_by !== 'teacher') return false;
-    } else if (sourceFilter === 'self') {
-      if (w.assigned_by === 'teacher') return false;
-    } else if (sourceFilter.startsWith('hw:')) {
-      const date = sourceFilter.replace('hw:', '');
-      if (w.assigned_by !== 'teacher' || w.assigned_date !== date) return false;
-    }
-    // テキスト検索
-    if (!searchQuery.trim()) return true;
-    const q = searchQuery.toLowerCase();
-    const english = (w.english || '').toLowerCase();
-    const meanings = (w.meanings || []).join(' ').toLowerCase();
-    const example = (w.example_sentence || '').toLowerCase();
-    const exampleJa = (w.example_sentence_ja || '').toLowerCase();
-    return english.includes(q) || meanings.includes(q) || example.includes(q) || exampleJa.includes(q);
-  });
 
   return (
     <div>
