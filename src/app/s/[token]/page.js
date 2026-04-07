@@ -1,5 +1,12 @@
 import StudentDashboard from './StudentDashboard';
 
+export async function generateMetadata({ params }) {
+  const { token } = await params;
+  return {
+    manifest: `/api/manifest?token=${token}`,
+  };
+}
+
 export default async function StudentPage({ params }) {
   const { token } = await params;
 

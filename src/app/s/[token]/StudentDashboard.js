@@ -5,6 +5,7 @@ import { createBrowserClient } from '@/lib/supabase';
 import RegisterForm from './RegisterForm';
 import WordList from './WordList';
 import Quiz from './Quiz';
+import StudentManual from './StudentManual';
 
 export default function StudentDashboard({ token }) {
   const [activeTab, setActiveTab] = useState('register');
@@ -13,6 +14,7 @@ export default function StudentDashboard({ token }) {
   const [wordCount, setWordCount] = useState(0);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
+  const [showManual, setShowManual] = useState(false);
 
   const supabase = useMemo(() => createBrowserClient(), []);
 
@@ -30,6 +32,8 @@ export default function StudentDashboard({ token }) {
         } else {
           setStudentId(data.id);
           setStudentName(data.name);
+          // PWAホーム画面追加対応: トークンを記憶
+          try { localStorage.setItem('vb_student_token', token); } catch {}
 
           // 単語数も取得
           const { count } = await supabase
@@ -86,6 +90,17 @@ export default function StudentDashboard({ token }) {
           <h2 style={{ fontSize: '1.3rem', fontWeight: '700' }}>📖 {studentName} の単語帳</h2>
           <p className="text-muted" style={{ fontSize: '0.8rem' }}>登録語数: {wordCount}語</p>
         </div>
+        <button
+          onClick={() => setShowManual(true)}
+          style={{
+            border: '1px solid var(--border)', background: 'var(--bg-card)',
+            borderRadius: 'var(--radius-md)', padding: '0.4rem 0.75rem',
+            fontSize: '0.8rem', cursor: 'pointer', color: 'var(--text-muted)',
+            fontWeight: '600',
+          }}
+        >
+          ❓ 使い方
+        </button>
       </div>
 
       {/* タブナビゲーション */}
@@ -124,13 +139,16 @@ export default function StudentDashboard({ token }) {
         )}
 
         {activeTab === 'list' && (
-          <WordList studentId={studentId} />
+          <WordList studentId={studentId} studentName={studentName} />
         )}
 
         {activeTab === 'quiz' && (
           <Quiz studentId={studentId} />
         )}
       </div>
+
+      {/* マニュアル */}
+      {showManual && <StudentManual onClose={() => setShowManual(false)} />}
     </div>
   );
 }

@@ -1,6 +1,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import TeacherWordRegister from './TeacherWordRegister';
+import ManualModal from './ManualModal';
+import * as XLSX from 'xlsx';
 
 export default function AdminPage() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -21,6 +24,31 @@ export default function AdminPage() {
 
   // QRコードモーダル
   const [qrStudent, setQrStudent] = useState(null);
+  const [activeTab, setActiveTab] = useState('students');
+
+  // Excel一括登録
+  const [showImport, setShowImport] = useState(false);
+  const [importLoading, setImportLoading] = useState(false);
+  const [importResults, setImportResults] = useState(null);
+
+  // マニュアル
+  const [showManual, setShowManual] = useState(false);
+
+  // 生徒編集
+  const [editStudent, setEditStudent] = useState(null);
+  const [editName, setEditName] = useState('');
+  const [editGrade, setEditGrade] = useState('');
+  const [editLoading, setEditLoading] = useState(false);
+
+  // 単語編集
+  const [editWord, setEditWord] = useState(null);
+  const [editWordData, setEditWordData] = useState({ english: '', meanings: '', example: '', exampleJa: '' });
+  const [editWordLoading, setEditWordLoading] = useState(false);
+  const [generatingWordId, setGeneratingWordId] = useState(null);
+  const [bulkGenerating, setBulkGenerating] = useState(false);
+  const [selectedWordIds, setSelectedWordIds] = useState(new Set());
+  const [deletingWords, setDeletingWords] = useState(false);
+  const [dateFilter, setDateFilter] = useState('all'); // 'all' or 'YYYY-MM-DD'
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -46,13 +74,37 @@ export default function AdminPage() {
     }
   };
 
+  const gradeToNumber = (grade) => {
+    if (!grade) return 0;
+    // 全角→半角変換、スペース除去
+    let g = grade.toString().trim()
+      .replace(/[０-９]/g, c => String.fromCharCode(c.charCodeAt(0) - 0xFEE0))
+      .replace(/\s+/g, '')
+      .replace(/年$/, '')
+      .replace(/年生$/, '')
+      .replace(/校/g, '');
+    // 高3, 高校3, 中2, 中学2, 小5, 小学5 などに対応
+    const match = g.match(/^(高|中|小)?\s*(\d+)$/);
+    if (!match) return 0;
+    const prefix = match[1] || '';
+    const num = parseInt(match[2]) || 0;
+    if (prefix === '高') return 12 + num;
+    if (prefix === '中') return 6 + num;
+    if (prefix === '小') return num;
+    // プレフィックスなし: 数字が大きければそのまま
+    return num;
+  };
+
+  const sortByGrade = (list) =>
+    [...list].sort((a, b) => gradeToNumber(b.grade) - gradeToNumber(a.grade));
+
   const fetchStudents = async () => {
     setLoading(true);
     try {
       const res = await fetch('/api/students');
       if (!res.ok) throw new Error('Fetch failed');
       const data = await res.json();
-      setStudents(data.students || []);
+      setStudents(sortByGrade(data.students || []));
     } catch (e) {
       console.error(e);
     } finally {
@@ -81,6 +133,33 @@ export default function AdminPage() {
     } finally {
       setAddLoading(false);
     }
+  };
+
+  const updateStudent = async (e) => {
+    e.preventDefault();
+    if (!editName.trim() || !editStudent) return;
+    setEditLoading(true);
+    try {
+      const res = await fetch('/api/students', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: editStudent.id, name: editName.trim(), grade: editGrade.trim() }),
+      });
+      if (!res.ok) throw new Error('Update failed');
+      setEditStudent(null);
+      fetchStudents();
+    } catch (e) {
+      console.error(e);
+      alert('更新に失敗しました。');
+    } finally {
+      setEditLoading(false);
+    }
+  };
+
+  const openEditModal = (student) => {
+    setEditStudent(student);
+    setEditName(student.name);
+    setEditGrade(student.grade || '');
   };
 
   const deleteStudent = async (id, name) => {
@@ -115,9 +194,49 @@ export default function AdminPage() {
     return '';
   };
 
+  const downloadSample = () => {
+    const header = '名前,学年';
+    const rows = ['田中 太郎,中2', '鈴木 花子,高1', '山田 次郎,中3'];
+    const csv = '\uFEFF' + [header, ...rows].join('\n');
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'VocabularyBase_生徒一括登録サンプル.csv';
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  const handleImport = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    setImportLoading(true);
+    setImportResults(null);
+    try {
+      const formData = new FormData();
+      formData.append('file', file);
+      const res = await fetch('/api/students/import', {
+        method: 'POST',
+        body: formData,
+      });
+      if (!res.ok) {
+        const err = await res.json();
+        throw new Error(err.error || 'Import failed');
+      }
+      const data = await res.json();
+      setImportResults(data);
+      fetchStudents();
+    } catch (err) {
+      setImportResults({ error: err.message });
+    } finally {
+      setImportLoading(false);
+      e.target.value = '';
+    }
+  };
+
   const getStudentUrl = (token) => `${getAppUrl()}/s/${token}`;
 
-  const getQrImageUrl = (url) => 
+  const getQrImageUrl = (url) =>
     `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(url)}`;
 
   const copyToClipboard = (text) => {
@@ -129,34 +248,60 @@ export default function AdminPage() {
   // ===== LOGIN =====
   if (!isLoggedIn) {
     return (
-      <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--header-gradient)' }}>
-        <div className="card" style={{ width: '100%', maxWidth: '400px', padding: '2.5rem' }}>
+      <div style={{
+        minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center',
+        background: 'linear-gradient(135deg, #4f46e5 0%, #7c3aed 40%, #a855f7 80%, #ec4899 100%)',
+        position: 'relative', overflow: 'hidden',
+      }}>
+        {/* Decorative orbs */}
+        <div style={{ position: 'absolute', top: '-10%', left: '-5%', width: '400px', height: '400px', borderRadius: '50%', background: 'rgba(255,255,255,0.05)', filter: 'blur(40px)' }} />
+        <div style={{ position: 'absolute', bottom: '-15%', right: '-10%', width: '500px', height: '500px', borderRadius: '50%', background: 'rgba(255,255,255,0.04)', filter: 'blur(50px)' }} />
+
+        <div style={{
+          width: '100%', maxWidth: '420px', padding: '2.5rem',
+          background: 'rgba(255,255,255,0.12)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)',
+          border: '1px solid rgba(255,255,255,0.2)', borderRadius: '1.25rem',
+          boxShadow: '0 24px 48px rgba(0,0,0,0.15)',
+        }}>
           <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-            <h1 style={{ fontSize: '1.5rem', fontWeight: '700', color: 'var(--text-main)' }}>
+            <h1 style={{ fontSize: '1.75rem', fontWeight: '800', color: 'white', letterSpacing: '-0.02em' }}>
               📚 VocabularyBase
             </h1>
-            <p className="text-muted">講師ダッシュボード</p>
+            <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.9rem', marginTop: '0.25rem' }}>講師ダッシュボード</p>
           </div>
           <form onSubmit={handleLogin}>
-            <div className="input-group">
-              <label className="input-label">パスワード</label>
+            <div style={{ marginBottom: '1.25rem' }}>
+              <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', color: 'rgba(255,255,255,0.7)', marginBottom: '0.4rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>パスワード</label>
               <input
-                className="input-text"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="パスワードを入力"
                 autoFocus
+                style={{
+                  width: '100%', padding: '0.75rem 1rem', fontSize: '1rem',
+                  border: '1px solid rgba(255,255,255,0.25)', borderRadius: '0.75rem',
+                  background: 'rgba(255,255,255,0.1)', color: 'white',
+                  outline: 'none', transition: '0.2s',
+                }}
+                onFocus={e => e.target.style.borderColor = 'rgba(255,255,255,0.5)'}
+                onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.25)'}
               />
             </div>
             {loginError && (
-              <p style={{ color: 'var(--danger)', fontSize: '0.875rem', marginBottom: '1rem' }}>{loginError}</p>
+              <p style={{ color: '#fca5a5', fontSize: '0.85rem', marginBottom: '1rem', textAlign: 'center' }}>{loginError}</p>
             )}
             <button
               type="submit"
-              className="btn btn-primary"
-              style={{ width: '100%', padding: '0.75rem', fontSize: '1rem' }}
               disabled={loginLoading}
+              style={{
+                width: '100%', padding: '0.75rem', fontSize: '1rem', fontWeight: '600',
+                background: 'rgba(255,255,255,0.2)', color: 'white',
+                border: '1px solid rgba(255,255,255,0.3)', borderRadius: '0.75rem',
+                cursor: 'pointer', transition: '0.2s', fontFamily: 'inherit',
+              }}
+              onMouseEnter={e => { e.target.style.background = 'rgba(255,255,255,0.3)'; }}
+              onMouseLeave={e => { e.target.style.background = 'rgba(255,255,255,0.2)'; }}
             >
               {loginLoading ? 'ログイン中...' : 'ログイン'}
             </button>
@@ -173,44 +318,108 @@ export default function AdminPage() {
   return (
     <div style={{ minHeight: '100vh', backgroundColor: 'var(--bg-page)' }}>
       {/* Header */}
-      <header style={{ background: 'var(--header-gradient)', color: 'white', padding: '1.5rem 0' }}>
+      <header style={{
+        background: 'var(--header-gradient)', color: 'white', padding: '1.25rem 0',
+        position: 'relative', overflow: 'hidden',
+      }}>
+        <div style={{ position: 'absolute', top: '-60px', right: '-30px', width: '200px', height: '200px', borderRadius: '50%', background: 'rgba(255,255,255,0.06)' }} />
         <div className="container">
           <div className="flex justify-between items-center">
             <div>
-              <h1 style={{ fontSize: '1.5rem', fontWeight: '700' }}>📚 VocabularyBase</h1>
-              <p style={{ opacity: 0.8, fontSize: '0.875rem' }}>講師ダッシュボード</p>
+              <h1 style={{ fontSize: '1.4rem', fontWeight: '800', letterSpacing: '-0.02em' }}>📚 VocabularyBase</h1>
+              <p style={{ opacity: 0.7, fontSize: '0.8rem' }}>講師ダッシュボード</p>
             </div>
-            <button className="btn" style={{ color: 'white', opacity: 0.8 }} onClick={() => setIsLoggedIn(false)}>
-              ログアウト
-            </button>
+            <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+              <button style={{ color: 'white', opacity: 0.8, fontSize: '0.85rem', background: 'rgba(255,255,255,0.1)', padding: '0.4rem 0.8rem', borderRadius: '0.5rem', fontFamily: 'inherit', border: 'none', cursor: 'pointer', transition: '0.2s' }} onClick={() => setShowManual(true)}
+                onMouseEnter={e => e.target.style.background = 'rgba(255,255,255,0.2)'}
+                onMouseLeave={e => e.target.style.background = 'rgba(255,255,255,0.1)'}
+              >📖 マニュアル</button>
+              <button style={{ color: 'white', opacity: 0.8, fontSize: '0.85rem', background: 'rgba(255,255,255,0.1)', padding: '0.4rem 0.8rem', borderRadius: '0.5rem', fontFamily: 'inherit', border: 'none', cursor: 'pointer', transition: '0.2s' }} onClick={() => setIsLoggedIn(false)}
+                onMouseEnter={e => e.target.style.background = 'rgba(255,255,255,0.2)'}
+                onMouseLeave={e => e.target.style.background = 'rgba(255,255,255,0.1)'}
+              >ログアウト</button>
+            </div>
           </div>
         </div>
       </header>
 
       <div className="container" style={{ paddingTop: '1.5rem' }}>
+        {/* Tab Navigation */}
+        <div className="tabs" style={{ marginBottom: '1.5rem' }}>
+          <button
+            className={`tab-btn ${activeTab === 'students' ? 'active' : ''}`}
+            onClick={() => setActiveTab('students')}
+          >👥 生徒管理</button>
+          <button
+            className={`tab-btn ${activeTab === 'register' ? 'active' : ''}`}
+            onClick={() => setActiveTab('register')}
+          >📝 単語配信</button>
+        </div>
+
+        {activeTab === 'register' ? (
+          <TeacherWordRegister students={students} onRegistered={fetchStudents} />
+        ) : (
+        <>
         {/* Stats */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
-          <div className="card" style={{ textAlign: 'center' }}>
-            <p className="text-muted">生徒数</p>
-            <p style={{ fontSize: '2rem', fontWeight: '700', color: 'var(--primary)' }}>{students.length}</p>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
+          <div className="stat-card purple">
+            <p className="stat-label">生徒数</p>
+            <p className="stat-value purple">{students.length}</p>
           </div>
-          <div className="card" style={{ textAlign: 'center' }}>
-            <p className="text-muted">総登録単語数</p>
-            <p style={{ fontSize: '2rem', fontWeight: '700', color: 'var(--secondary)' }}>{totalWords}</p>
+          <div className="stat-card green">
+            <p className="stat-label">総登録単語数</p>
+            <p className="stat-value green">{totalWords}</p>
           </div>
-          <div className="card" style={{ textAlign: 'center' }}>
-            <p className="text-muted">アクティブ生徒</p>
-            <p style={{ fontSize: '2rem', fontWeight: '700', color: '#f97316' }}>{activeStudents}/{students.length}</p>
+          <div className="stat-card orange">
+            <p className="stat-label">アクティブ生徒</p>
+            <p className="stat-value orange">{activeStudents}/{students.length}</p>
           </div>
         </div>
 
         {/* Student list header */}
         <div className="flex justify-between items-center" style={{ marginBottom: '1rem' }}>
           <h2 className="title-2" style={{ margin: 0 }}>生徒一覧</h2>
-          <button className="btn btn-primary" onClick={() => setShowAddForm(true)}>
-            ＋ 生徒を追加
-          </button>
+          <div style={{ display: 'flex', gap: '0.5rem' }}>
+            <button className="btn btn-secondary" onClick={() => { setShowImport(!showImport); setShowAddForm(false); }}>
+              📄 一括登録
+            </button>
+            <button className="btn btn-primary" onClick={() => { setShowAddForm(true); setShowImport(false); }}>
+              ＋ 生徒を追加
+            </button>
+          </div>
         </div>
+
+        {/* Excel一括登録 */}
+        {showImport && (
+          <div className="card" style={{ marginBottom: '1rem' }}>
+            <h3 style={{ fontSize: '1rem', fontWeight: '700', marginBottom: '0.75rem' }}>📄 Excel / CSV で一括登録</h3>
+            <p className="text-muted" style={{ fontSize: '0.85rem', marginBottom: '1rem' }}>
+              「名前」「学年」の2列を含むExcel (.xlsx) または CSV ファイルをアップロードしてください。
+            </p>
+            <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', alignItems: 'center' }}>
+              <label className="btn btn-primary" style={{ cursor: 'pointer' }}>
+                📤 ファイルを選択
+                <input type="file" accept=".xlsx,.xls,.csv" onChange={handleImport} style={{ display: 'none' }} disabled={importLoading} />
+              </label>
+              <button className="btn btn-outline" onClick={downloadSample}>📥 サンプル</button>
+              <button className="btn btn-secondary" onClick={() => { setShowImport(false); setImportResults(null); }}>閉じる</button>
+            </div>
+            {importLoading && <p style={{ marginTop: '0.75rem', color: 'var(--primary)', fontWeight: '600' }}>📤 インポート中...</p>}
+            {importResults && (
+              <div style={{ marginTop: '1rem' }}>
+                {importResults.error ? (
+                  <p style={{ color: 'var(--danger)', fontWeight: '600' }}>❌ {importResults.error}</p>
+                ) : (
+                  <p style={{ fontWeight: '600', color: 'var(--secondary)' }}>
+                    ✅ {importResults.summary.success}名登録完了
+                    {importResults.summary.skip > 0 && ` / ${importResults.summary.skip}件スキップ`}
+                    {importResults.summary.error > 0 && ` / ${importResults.summary.error}件エラー`}
+                  </p>
+                )}
+              </div>
+            )}
+          </div>
+        )}
 
         {/* Add form */}
         {showAddForm && (
@@ -229,9 +438,7 @@ export default function AdminPage() {
                   <button type="submit" className="btn btn-primary" disabled={addLoading || !newName.trim()}>
                     {addLoading ? '追加中...' : '追加'}
                   </button>
-                  <button type="button" className="btn btn-secondary" onClick={() => setShowAddForm(false)}>
-                    キャンセル
-                  </button>
+                  <button type="button" className="btn btn-secondary" onClick={() => setShowAddForm(false)}>キャンセル</button>
                 </div>
               </div>
             </form>
@@ -239,80 +446,60 @@ export default function AdminPage() {
         )}
 
         {loading ? (
-          <p className="text-muted">読み込み中...</p>
+          <p className="text-muted" style={{ textAlign: 'center', padding: '2rem' }}>読み込み中...</p>
         ) : students.length === 0 ? (
           <div className="card" style={{ textAlign: 'center', padding: '3rem' }}>
             <p className="text-muted">まだ生徒が登録されていません。<br/>「＋ 生徒を追加」ボタンから追加してください。</p>
           </div>
         ) : (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '0.75rem' }}>
             {students.map(student => (
-              <div key={student.id} className="card">
-                {/* Name and avatar */}
+              <div key={student.id} className="card" style={{ padding: '1.25rem' }}>
+                {/* Name */}
                 <div className="flex items-center gap-2" style={{ marginBottom: '0.75rem' }}>
-                  <div style={{
-                    width: '40px', height: '40px', borderRadius: 'var(--radius-full)',
-                    backgroundColor: student.avatar_color || '#6366f1',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    color: 'white', fontWeight: '700', fontSize: '1rem', flexShrink: 0
-                  }}>
-                    {student.name.charAt(0)}
-                  </div>
-                  <div style={{ flex: 1 }}>
-                    <p style={{ fontWeight: '600', fontSize: '1rem' }}>{student.name}</p>
+
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <p style={{ fontWeight: '600', fontSize: '1rem', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{student.name}</p>
                     {student.grade && <span className="badge badge-blue">{student.grade}</span>}
                   </div>
-                  <button
-                    className="text-muted"
-                    style={{ fontSize: '0.75rem' }}
-                    onClick={() => deleteStudent(student.id, student.name)}
-                  >
-                    削除
-                  </button>
+                  <div style={{ display: 'flex', gap: '0.25rem' }}>
+                    <button className="btn-ghost" style={{ fontSize: '0.75rem', padding: '0.3rem 0.5rem', borderRadius: '0.375rem', border: 'none', cursor: 'pointer', fontFamily: 'inherit', background: 'none', color: 'var(--text-muted)', transition: '0.2s' }}
+                      onClick={() => openEditModal(student)}
+                      onMouseEnter={e => { e.target.style.color = 'var(--primary)'; e.target.style.background = 'var(--primary-light)'; }}
+                      onMouseLeave={e => { e.target.style.color = 'var(--text-muted)'; e.target.style.background = 'none'; }}
+                    >✏️ 編集</button>
+                    <button className="btn-ghost" style={{ fontSize: '0.75rem', padding: '0.3rem 0.5rem', borderRadius: '0.375rem', border: 'none', cursor: 'pointer', fontFamily: 'inherit', background: 'none', color: 'var(--text-muted)', transition: '0.2s' }}
+                      onClick={() => deleteStudent(student.id, student.name)}
+                      onMouseEnter={e => { e.target.style.color = 'var(--danger)'; e.target.style.background = 'var(--danger-light)'; }}
+                      onMouseLeave={e => { e.target.style.color = 'var(--text-muted)'; e.target.style.background = 'none'; }}
+                    >🗑️</button>
+                  </div>
                 </div>
 
                 {/* Stats */}
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem', fontSize: '0.85rem', marginBottom: '0.75rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem', fontSize: '0.85rem', marginBottom: '0.75rem', background: 'var(--primary-light)', borderRadius: 'var(--radius-md)', padding: '0.5rem 0.75rem' }}>
                   <div>
-                    <span className="text-muted">登録語数</span>
-                    <p style={{ fontWeight: '600' }}>{student.word_count || 0}語</p>
+                    <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>登録語数</span>
+                    <p style={{ fontWeight: '700', color: 'var(--primary)' }}>{student.word_count || 0}語</p>
                   </div>
                   <div>
-                    <span className="text-muted">正答率</span>
-                    <p style={{ fontWeight: '600' }}>{student.accuracy !== null ? `${student.accuracy}%` : '—'}</p>
+                    <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>正答率</span>
+                    <p style={{ fontWeight: '700', color: 'var(--secondary)' }}>{student.accuracy !== null ? `${student.accuracy}%` : '—'}</p>
                   </div>
                 </div>
 
                 {/* Action buttons */}
-                <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-                  <a
-                    href={getStudentUrl(student.token)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-primary"
-                    style={{ fontSize: '0.75rem', padding: '0.4rem 0.75rem' }}
-                  >
+                <div className="action-row">
+                  <a href={getStudentUrl(student.token)} target="_blank" rel="noopener noreferrer" className="action-btn primary">
                     🔗 開く
                   </a>
-                  <button
-                    className="btn btn-secondary"
-                    style={{ fontSize: '0.75rem', padding: '0.4rem 0.75rem' }}
-                    onClick={() => copyToClipboard(getStudentUrl(student.token))}
-                  >
-                    📋 URLコピー
+                  <button className="action-btn ghost" onClick={() => copyToClipboard(getStudentUrl(student.token))}>
+                    📋 URL
                   </button>
-                  <button
-                    className="btn btn-secondary"
-                    style={{ fontSize: '0.75rem', padding: '0.4rem 0.75rem' }}
-                    onClick={(e) => { e.stopPropagation(); setQrStudent(student); }}
-                  >
-                    📱 QRコード
+                  <button className="action-btn ghost" onClick={() => setQrStudent(student)}>
+                    📱 QR
                   </button>
-                  <button
-                    className="btn btn-outline"
-                    style={{ fontSize: '0.75rem', padding: '0.4rem 0.75rem' }}
-                    onClick={() => viewStudentWords(student)}
-                  >
+                  <button className="action-btn ghost" onClick={() => viewStudentWords(student)}>
                     📖 単語帳
                   </button>
                 </div>
@@ -320,15 +507,42 @@ export default function AdminPage() {
             ))}
           </div>
         )}
+        </>
+        )}
       </div>
+
+      {/* Edit Student Modal */}
+      {editStudent && (
+        <div className="modal-overlay" onClick={() => setEditStudent(null)}>
+          <div className="modal-card" style={{ maxWidth: '440px', width: '100%' }} onClick={e => e.stopPropagation()}>
+            <div className="flex justify-between items-center" style={{ marginBottom: '1.5rem' }}>
+              <h2 style={{ fontSize: '1.2rem', fontWeight: '700' }}>✏️ 生徒情報の編集</h2>
+              <button className="btn btn-ghost" onClick={() => setEditStudent(null)} style={{ fontSize: '1.2rem', padding: '0.25rem 0.5rem' }}>✕</button>
+            </div>
+            <form onSubmit={updateStudent}>
+              <div className="input-group">
+                <label className="input-label">名前</label>
+                <input className="input-text" value={editName} onChange={e => setEditName(e.target.value)} autoFocus />
+              </div>
+              <div className="input-group">
+                <label className="input-label">学年</label>
+                <input className="input-text" value={editGrade} onChange={e => setEditGrade(e.target.value)} placeholder="例: 中2, 高1" />
+              </div>
+              <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'flex-end', marginTop: '0.5rem' }}>
+                <button type="button" className="btn btn-secondary" onClick={() => setEditStudent(null)}>キャンセル</button>
+                <button type="submit" className="btn btn-primary" disabled={editLoading || !editName.trim()}>
+                  {editLoading ? '保存中...' : '💾 保存'}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
 
       {/* QR Code Modal */}
       {qrStudent && (
-        <div style={{
-          position: 'fixed', inset: 0, backgroundColor: 'rgba(0,0,0,0.6)', zIndex: 1000,
-          display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem'
-        }} onClick={() => setQrStudent(null)}>
-          <div className="card" style={{ maxWidth: '400px', width: '100%', textAlign: 'center', padding: '2rem' }} onClick={e => e.stopPropagation()}>
+        <div className="modal-overlay" onClick={() => setQrStudent(null)}>
+          <div className="modal-card" style={{ maxWidth: '400px', width: '100%', textAlign: 'center' }} onClick={e => e.stopPropagation()}>
             <h2 style={{ fontSize: '1.2rem', fontWeight: '700', marginBottom: '0.5rem' }}>
               {qrStudent.name} のQRコード
             </h2>
@@ -339,29 +553,22 @@ export default function AdminPage() {
               <img
                 src={getQrImageUrl(getStudentUrl(qrStudent.token))}
                 alt={`QR Code for ${qrStudent.name}`}
-                width={250}
-                height={250}
-                style={{ borderRadius: 'var(--radius-md)', border: '1px solid var(--border)' }}
+                width={240}
+                height={240}
+                style={{ borderRadius: 'var(--radius-lg)', border: '1px solid var(--border)' }}
               />
             </div>
             <p className="text-muted" style={{ fontSize: '0.7rem', wordBreak: 'break-all', marginBottom: '1rem' }}>
               {getStudentUrl(qrStudent.token)}
             </p>
             <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'center' }}>
-              <button
-                className="btn btn-primary"
-                onClick={() => {
-                  const link = document.createElement('a');
-                  link.href = getQrImageUrl(getStudentUrl(qrStudent.token));
-                  link.download = `QR_${qrStudent.name}.png`;
-                  link.click();
-                }}
-              >
-                💾 画像保存
-              </button>
-              <button className="btn btn-secondary" onClick={() => setQrStudent(null)}>
-                閉じる
-              </button>
+              <button className="btn btn-primary" onClick={() => {
+                const link = document.createElement('a');
+                link.href = getQrImageUrl(getStudentUrl(qrStudent.token));
+                link.download = `QR_${qrStudent.name}.png`;
+                link.click();
+              }}>💾 画像保存</button>
+              <button className="btn btn-secondary" onClick={() => setQrStudent(null)}>閉じる</button>
             </div>
           </div>
         </div>
@@ -369,14 +576,11 @@ export default function AdminPage() {
 
       {/* Word Detail Modal */}
       {selectedStudent && (
-        <div style={{
-          position: 'fixed', inset: 0, backgroundColor: 'rgba(0,0,0,0.6)', zIndex: 1000,
-          display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem'
-        }} onClick={() => setSelectedStudent(null)}>
-          <div className="card" style={{ maxWidth: '600px', width: '100%', maxHeight: '80vh', overflowY: 'auto' }} onClick={e => e.stopPropagation()}>
+        <div className="modal-overlay" onClick={() => { setSelectedStudent(null); setSelectedWordIds(new Set()); }}>
+          <div className="modal-card" style={{ maxWidth: '600px', width: '100%', maxHeight: '80vh', overflowY: 'auto' }} onClick={e => e.stopPropagation()}>
             <div className="flex justify-between items-center" style={{ marginBottom: '1rem' }}>
-              <h2 className="title-2" style={{ margin: 0 }}>{selectedStudent.name} の単語帳</h2>
-              <button className="btn btn-secondary" onClick={() => setSelectedStudent(null)}>✕</button>
+              <h2 style={{ fontSize: '1.2rem', fontWeight: '700', margin: 0 }}>{selectedStudent.name} の単語帳</h2>
+              <button className="btn btn-secondary" onClick={() => { setSelectedStudent(null); setSelectedWordIds(new Set()); }}>✕</button>
             </div>
             {wordsLoading ? (
               <p className="text-muted">読み込み中...</p>
@@ -384,27 +588,309 @@ export default function AdminPage() {
               <p className="text-muted">まだ単語が登録されていません。</p>
             ) : (
               <div>
-                <p className="text-muted" style={{ marginBottom: '0.75rem' }}>登録数: {studentWords.length}語</p>
-                {studentWords.map(word => (
-                  <div key={word.id} style={{ padding: '0.75rem 0', borderBottom: '1px solid var(--border)' }}>
-                    <div className="flex justify-between items-center">
-                      <span style={{ fontWeight: '600' }}>{word.english}</span>
-                      <span className="text-muted" style={{ fontSize: '0.75rem' }}>
-                        {word.correct_count}✓ / {word.wrong_count}✗
-                      </span>
-                    </div>
-                    <div className="flex gap-2" style={{ marginTop: '0.25rem', flexWrap: 'wrap' }}>
-                      {word.meanings?.map((m, i) => (
-                        <span key={i} className="badge badge-green">{m}</span>
-                      ))}
-                    </div>
+                {(() => {
+                  // 登録日リストを生成
+                  const dateSet = new Set();
+                  studentWords.forEach(w => {
+                    dateSet.add(w.assigned_date || '未設定');
+                  });
+                  const dates = [...dateSet].sort().reverse();
+                  const filteredWords = dateFilter === 'all'
+                    ? studentWords
+                    : studentWords.filter(w => (w.assigned_date || '未設定') === dateFilter);
+                  const filteredCount = filteredWords.length;
+
+                  return (<>
+                <div className="flex justify-between items-center" style={{ marginBottom: '0.5rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                  <p className="text-muted" style={{ margin: 0 }}>全{studentWords.length}語{dateFilter !== 'all' ? ` / 表示: ${filteredCount}語` : ''}</p>
+                  <div style={{ display: 'flex', gap: '0.35rem', flexWrap: 'wrap' }}>
+                    {filteredWords.some(w => !w.example_sentence) && (
+                      <button className="action-btn ghost" style={{ color: 'var(--primary)', fontWeight: '600' }}
+                        disabled={bulkGenerating}
+                        onClick={async () => {
+                          const missing = filteredWords.filter(w => !w.example_sentence);
+                          if (!confirm(`例文がない${missing.length}語の例文を自動生成しますか？\n（1語ずつ2秒間隔で処理）`)) return;
+                          setBulkGenerating(true);
+                          let updated = [...studentWords];
+                          let done = 0;
+                          for (const word of missing) {
+                            if (done > 0) await new Promise(r => setTimeout(r, 2000));
+                            try {
+                              setGeneratingWordId(word.id);
+                              const res = await fetch('/api/students/words/generate', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ wordId: word.id }),
+                              });
+                              if (res.ok) {
+                                const data = await res.json();
+                                updated = updated.map(w => w.id === word.id ? data.word : w);
+                                setStudentWords([...updated]);
+                              }
+                            } catch {}
+                            done++;
+                          }
+                          setGeneratingWordId(null);
+                          setBulkGenerating(false);
+                          alert(`${done}語の例文生成が完了しました`);
+                        }}
+                      >{bulkGenerating ? '⏳ 生成中...' : '🔄 例文一括生成'}</button>
+                    )}
+                    <button className="action-btn ghost" onClick={() => {
+                      const rows = filteredWords.map(w => ({
+                        英単語: w.english,
+                        意味: (w.meanings || []).join('、'),
+                        例文: w.example_sentence || '',
+                        例文訳: w.example_sentence_ja || '',
+                        登録日: w.assigned_date || '',
+                        正解数: w.correct_count || 0,
+                        不正解数: w.wrong_count || 0,
+                      }));
+                      const header = '英単語,意味,例文,例文訳,登録日,正解数,不正解数';
+                      const csv = '\uFEFF' + header + '\n' + rows.map(r =>
+                        [r.英単語, r.意味, r.例文, r.例文訳, r.登録日, r.正解数, r.不正解数].map(v => `"${String(v).replace(/"/g, '""')}"`).join(',')
+                      ).join('\n');
+                      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+                      const url = URL.createObjectURL(blob);
+                      const a = document.createElement('a');
+                      a.href = url;
+                      a.download = `${selectedStudent.name}_単語帳.csv`;
+                      a.click();
+                      URL.revokeObjectURL(url);
+                    }}>📥 CSV</button>
+                    <button className="action-btn ghost" onClick={() => {
+                      const rows = filteredWords.map(w => ({
+                        英単語: w.english,
+                        意味: (w.meanings || []).join('、'),
+                        例文: w.example_sentence || '',
+                        例文訳: w.example_sentence_ja || '',
+                        登録日: w.assigned_date || '',
+                        正解数: w.correct_count || 0,
+                        不正解数: w.wrong_count || 0,
+                      }));
+                      const ws = XLSX.utils.json_to_sheet(rows);
+                      ws['!cols'] = [{ wch: 15 }, { wch: 25 }, { wch: 40 }, { wch: 40 }, { wch: 12 }, { wch: 8 }, { wch: 8 }];
+                      const wb = XLSX.utils.book_new();
+                      XLSX.utils.book_append_sheet(wb, ws, '単語帳');
+                      XLSX.writeFile(wb, `${selectedStudent.name}_単語帳.xlsx`);
+                    }}>📥 Excel</button>
+                  </div>
+                </div>
+
+                {/* 登録日フィルター */}
+                {dates.length > 1 && (
+                  <div style={{ display: 'flex', gap: '0.3rem', flexWrap: 'wrap', marginBottom: '0.5rem' }}>
+                    <button
+                      className={`btn ${dateFilter === 'all' ? 'btn-primary' : 'btn-secondary'}`}
+                      style={{ fontSize: '0.65rem', padding: '0.2rem 0.5rem', borderRadius: '20px' }}
+                      onClick={() => { setDateFilter('all'); setSelectedWordIds(new Set()); }}
+                    >すべて ({studentWords.length})</button>
+                    {dates.map(d => {
+                      const count = studentWords.filter(w => (w.assigned_date || '未設定') === d).length;
+                      const label = d === '未設定' ? '未設定' : d.replace(/^\d{4}-/, '');
+                      return (
+                        <button key={d}
+                          className={`btn ${dateFilter === d ? 'btn-primary' : 'btn-secondary'}`}
+                          style={{ fontSize: '0.65rem', padding: '0.2rem 0.5rem', borderRadius: '20px' }}
+                          onClick={() => { setDateFilter(d); setSelectedWordIds(new Set()); }}
+                        >📅 {label} ({count})</button>
+                      );
+                    })}
+                  </div>
+                )}
+
+                {/* 選択・削除バー */}
+                <div style={{ display: 'flex', gap: '0.4rem', alignItems: 'center', marginBottom: '0.5rem', flexWrap: 'wrap' }}>
+                  <label style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.75rem', cursor: 'pointer' }}>
+                    <input type="checkbox"
+                      checked={selectedWordIds.size === filteredCount && filteredCount > 0}
+                      onChange={(e) => {
+                        if (e.target.checked) {
+                          setSelectedWordIds(new Set(filteredWords.map(w => w.id)));
+                        } else {
+                          setSelectedWordIds(new Set());
+                        }
+                      }}
+                      style={{ width: 14, height: 14, accentColor: 'var(--primary)' }}
+                    /> 表示中を全選択
+                  </label>
+                  {selectedWordIds.size > 0 && (
+                    <button
+                      className="btn btn-secondary"
+                      style={{ fontSize: '0.7rem', padding: '0.2rem 0.6rem', color: 'var(--danger)', borderColor: 'var(--danger)' }}
+                      disabled={deletingWords}
+                      onClick={async () => {
+                        if (!confirm(`${selectedWordIds.size}語を削除しますか？\n生徒のテスト・単語帳からも削除されます。`)) return;
+                        setDeletingWords(true);
+                        try {
+                          const res = await fetch(`/api/students/words?ids=${[...selectedWordIds].join(',')}`, {
+                            method: 'DELETE',
+                          });
+                          if (!res.ok) throw new Error('Delete failed');
+                          setStudentWords(studentWords.filter(w => !selectedWordIds.has(w.id)));
+                          setSelectedWordIds(new Set());
+                        } catch (e) {
+                          console.error(e);
+                          alert('削除に失敗しました');
+                        } finally {
+                          setDeletingWords(false);
+                        }
+                      }}
+                    >{deletingWords ? '削除中...' : `🗑️ ${selectedWordIds.size}語を削除`}</button>
+                  )}
+                </div>
+                {filteredWords.map(word => (
+                  <div key={word.id} style={{ padding: '0.75rem 0', borderBottom: '1px solid var(--border)', display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}>
+                    <input type="checkbox"
+                      checked={selectedWordIds.has(word.id)}
+                      onChange={(e) => {
+                        const next = new Set(selectedWordIds);
+                        if (e.target.checked) next.add(word.id); else next.delete(word.id);
+                        setSelectedWordIds(next);
+                      }}
+                      style={{ width: 14, height: 14, marginTop: '0.2rem', accentColor: 'var(--primary)', flexShrink: 0, cursor: 'pointer' }}
+                    />
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                    {editWord?.id === word.id ? (
+                      /* --- 編集モード --- */
+                      <div style={{ background: 'var(--secondary-light)', borderRadius: 'var(--radius-md)', padding: '0.75rem' }}>
+                        <div className="input-group" style={{ marginBottom: '0.5rem' }}>
+                          <label className="input-label" style={{ fontSize: '0.7rem' }}>英単語</label>
+                          <input className="input-text" value={editWordData.english}
+                            onChange={e => setEditWordData({ ...editWordData, english: e.target.value })}
+                            style={{ padding: '0.4rem 0.6rem', fontSize: '0.85rem' }} />
+                        </div>
+                        <div className="input-group" style={{ marginBottom: '0.5rem' }}>
+                          <label className="input-label" style={{ fontSize: '0.7rem' }}>意味（カンマ区切り）</label>
+                          <input className="input-text" value={editWordData.meanings}
+                            onChange={e => setEditWordData({ ...editWordData, meanings: e.target.value })}
+                            style={{ padding: '0.4rem 0.6rem', fontSize: '0.85rem' }} />
+                        </div>
+                        <div className="input-group" style={{ marginBottom: '0.5rem' }}>
+                          <label className="input-label" style={{ fontSize: '0.7rem' }}>例文（英語）</label>
+                          <input className="input-text" value={editWordData.example}
+                            onChange={e => setEditWordData({ ...editWordData, example: e.target.value })}
+                            style={{ padding: '0.4rem 0.6rem', fontSize: '0.85rem' }} />
+                        </div>
+                        <div className="input-group" style={{ marginBottom: '0.5rem' }}>
+                          <label className="input-label" style={{ fontSize: '0.7rem' }}>例文（日本語訳）</label>
+                          <input className="input-text" value={editWordData.exampleJa}
+                            onChange={e => setEditWordData({ ...editWordData, exampleJa: e.target.value })}
+                            style={{ padding: '0.4rem 0.6rem', fontSize: '0.85rem' }} />
+                        </div>
+                        <div style={{ display: 'flex', gap: '0.4rem', justifyContent: 'flex-end' }}>
+                          <button className="btn btn-secondary" style={{ fontSize: '0.75rem', padding: '0.3rem 0.6rem' }}
+                            onClick={() => setEditWord(null)}>キャンセル</button>
+                          <button className="btn btn-primary" style={{ fontSize: '0.75rem', padding: '0.3rem 0.6rem' }}
+                            disabled={editWordLoading || !editWordData.english.trim()}
+                            onClick={async () => {
+                              setEditWordLoading(true);
+                              try {
+                                const newMeanings = editWordData.meanings.split(/[,、，]/).map(m => m.trim()).filter(Boolean);
+                                const res = await fetch('/api/students/words', {
+                                  method: 'PUT',
+                                  headers: { 'Content-Type': 'application/json' },
+                                  body: JSON.stringify({
+                                    id: word.id,
+                                    english: editWordData.english.trim(),
+                                    meanings: newMeanings,
+                                    example_sentence: editWordData.example.trim(),
+                                    example_sentence_ja: editWordData.exampleJa.trim(),
+                                  }),
+                                });
+                                if (!res.ok) throw new Error('Update failed');
+                                const data = await res.json();
+                                setStudentWords(studentWords.map(w => w.id === word.id ? data.word : w));
+                                setEditWord(null);
+                              } catch (e) {
+                                console.error(e);
+                                alert('更新に失敗しました');
+                              } finally {
+                                setEditWordLoading(false);
+                              }
+                            }}
+                          >{editWordLoading ? '保存中...' : '💾 保存'}</button>
+                        </div>
+                      </div>
+                    ) : (
+                      /* --- 表示モード --- */
+                      <>
+                        <div className="flex justify-between items-center">
+                          <span style={{ fontWeight: '600' }}>{word.english}</span>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                            <span className="text-muted" style={{ fontSize: '0.75rem' }}>
+                              {word.correct_count}✓ / {word.wrong_count}✗
+                            </span>
+                            <button style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '0.8rem', padding: '0.15rem' }}
+                              title="編集" onClick={() => {
+                                setEditWord(word);
+                                setEditWordData({
+                                  english: word.english || '',
+                                  meanings: (word.meanings || []).join('、'),
+                                  example: word.example_sentence || '',
+                                  exampleJa: word.example_sentence_ja || '',
+                                });
+                              }}>✏️</button>
+                          </div>
+                        </div>
+                        <div className="flex gap-2" style={{ marginTop: '0.25rem', flexWrap: 'wrap' }}>
+                          {word.meanings?.map((m, i) => (
+                            <span key={i} className="badge badge-green">{m}</span>
+                          ))}
+                        </div>
+                        {word.example_sentence && (
+                          <div style={{ marginTop: '0.35rem', fontSize: '0.8rem' }} className="text-muted">
+                            📝 {word.example_sentence}
+                          </div>
+                        )}
+                        {!word.example_sentence && (
+                          <div style={{ marginTop: '0.35rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                            <span style={{ fontSize: '0.75rem', color: 'var(--danger)' }}>⚠️ 例文なし</span>
+                            <button
+                              className="btn btn-secondary"
+                              style={{ fontSize: '0.65rem', padding: '0.15rem 0.5rem', borderRadius: '20px' }}
+                              disabled={generatingWordId === word.id}
+                              onClick={async () => {
+                                setGeneratingWordId(word.id);
+                                try {
+                                  const res = await fetch('/api/students/words/generate', {
+                                    method: 'POST',
+                                    headers: { 'Content-Type': 'application/json' },
+                                    body: JSON.stringify({ wordId: word.id }),
+                                  });
+                                  if (!res.ok) {
+                                    const err = await res.json();
+                                    throw new Error(err.error || 'Failed');
+                                  }
+                                  const data = await res.json();
+                                  setStudentWords(studentWords.map(w => w.id === word.id ? data.word : w));
+                                } catch (e) {
+                                  console.error(e);
+                                  alert(`生成失敗: ${e.message}`);
+                                } finally {
+                                  setGeneratingWordId(null);
+                                }
+                              }}
+                            >
+                              {generatingWordId === word.id ? '⏳ 生成中...' : '🔄 生成'}
+                            </button>
+                          </div>
+                        )}
+                      </>
+                    )}
+                    </div>{/* flex:1 wrapper end */}
                   </div>
                 ))}
+                </>); /* IIFE end */
+                })()}
               </div>
             )}
           </div>
         </div>
       )}
+
+      {/* マニュアルモーダル */}
+      {showManual && <ManualModal onClose={() => setShowManual(false)} />}
     </div>
   );
 }

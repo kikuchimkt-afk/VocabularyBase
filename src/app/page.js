@@ -1,6 +1,39 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 export default function Home() {
+  const router = useRouter();
+  const [checking, setChecking] = useState(true);
+
+  useEffect(() => {
+    // PWAスタンドアロンモード（ホーム画面から開いた場合）のみリダイレクト
+    // 動的マニフェストにより start_url が /s/[token] に設定されるので
+    // 通常はこのページに到達しないが、フォールバックとして残す
+    try {
+      const isPWA = window.matchMedia('(display-mode: standalone)').matches
+        || window.navigator.standalone === true;
+      if (isPWA) {
+        const token = localStorage.getItem('vb_student_token');
+        if (token) {
+          router.replace(`/s/${token}`);
+          return;
+        }
+      }
+    } catch {}
+    setChecking(false);
+  }, [router]);
+
+  if (checking) {
+    return (
+      <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}>
+        <div style={{ color: 'white', fontSize: '1.2rem', fontWeight: '600' }}>読み込み中...</div>
+      </div>
+    );
+  }
+
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white', textAlign: 'center', padding: '2rem' }}>
       <h1 style={{ fontSize: '3rem', fontWeight: '800', marginBottom: '1rem' }}>

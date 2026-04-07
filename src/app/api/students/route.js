@@ -88,6 +88,42 @@ export async function POST(request) {
   }
 }
 
+// PUT: 生徒情報を更新
+export async function PUT(request) {
+  const session = request.cookies.get('admin_session');
+  if (!session) {
+    return NextResponse.json({ error: 'Auth required' }, { status: 401 });
+  }
+
+  try {
+    const body = await request.json();
+    const { id, name, grade } = body;
+
+    if (!id) {
+      return NextResponse.json({ error: 'Student ID required' }, { status: 400 });
+    }
+    if (!name?.trim()) {
+      return NextResponse.json({ error: 'Name is required' }, { status: 400 });
+    }
+
+    const supabase = createServerClient();
+
+    const { data, error } = await supabase
+      .from('vb_students')
+      .update({ name: name.trim(), grade: grade?.trim() || null })
+      .eq('id', id)
+      .select()
+      .single();
+
+    if (error) throw error;
+
+    return NextResponse.json({ student: data });
+  } catch (error) {
+    console.error('Student update error:', error);
+    return NextResponse.json({ error: 'Failed to update student' }, { status: 500 });
+  }
+}
+
 // DELETE: 生徒を削除
 export async function DELETE(request) {
   const session = request.cookies.get('admin_session');
