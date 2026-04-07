@@ -48,6 +48,11 @@ export default function Quiz({ token, studentId }) {
     }
   };
 
+  // 各単語の最新テスト結果から「覚えた」数を計算
+  // correct_count > wrong_count なら覚えた判定
+  const masteredCount = filteredWords.filter(w => (w.correct_count || 0) > (w.wrong_count || 0)).length;
+  const remainingCount = filteredWords.length - masteredCount;
+
   // 日付一覧を取得（新しい順）
   const availableDates = [...new Set(
     words
@@ -110,7 +115,7 @@ export default function Quiz({ token, studentId }) {
     setKnownSet(newKnown);
     setAgainSet(newAgain);
 
-    // Save to DB
+    // Save to DB: quiz_results テーブル + vb_words のカウンター更新
     try {
       await supabase.from('vb_quiz_results').insert({
         student_id: studentId,
@@ -118,10 +123,30 @@ export default function Quiz({ token, studentId }) {
         quiz_type: 'flashcard',
         is_correct: isKnown,
       });
-    } catch (e) {}
+
+      // vb_words の correct_count / wrong_count を更新
+      const field = isKnown ? 'correct_count' : 'wrong_count';
+      const currentVal = card[field] || 0;
+      await supabase
+        .from('vb_words')
+        .update({
+          [field]: currentVal + 1,
+          last_tested: new Date().toISOString(),
+        })
+        .eq('id', card.id);
+
+      // ローカルの deck データも更新（結果画面用）
+      const updatedDeck = [...deck];
+      updatedDeck[currentIdx] = { ...card, [field]: currentVal + 1 };
+      setDeck(updatedDeck);
+    } catch (e) {
+      console.error('Quiz save error:', e);
+    }
 
     const nextIdx = currentIdx + 1;
     if (nextIdx >= deck.length) {
+      // テスト終了時に最新の単語データを再取得（覚えた/残りを正しく反映するため）
+      fetchWords();
       setQuizState('result');
     } else {
       setCurrentIdx(nextIdx);
@@ -211,8 +236,8 @@ export default function Quiz({ token, studentId }) {
         {/* Stats */}
         <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '1.5rem' }}>
           <StatCard value={filteredWords.length} label="全単語" color="var(--primary)" />
-          <StatCard value={filteredWords.length} label="残り" color="#fbbf24" />
-          <StatCard value={0} label="覚えた" color="var(--secondary)" />
+          <StatCard value={remainingCount} label="残り" color="#fbbf24" />
+          <StatCard value={masteredCount} label="覚えた" color="var(--secondary)" />
         </div>
 
         {/* Order toggle */}

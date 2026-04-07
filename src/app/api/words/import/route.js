@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
-import * as XLSX from 'xlsx';
 
 export async function POST(request) {
   const session = request.cookies.get('admin_session');
@@ -9,25 +8,16 @@ export async function POST(request) {
   }
 
   try {
-    const formData = await request.formData();
-    const file = formData.get('file');
-    const studentIds = JSON.parse(formData.get('studentIds') || '[]');
-    const assignedDate = formData.get('assignedDate') || new Date().toISOString().split('T')[0];
+    // JSON形式で受信（クライアント側でパース済み）
+    const body = await request.json();
+    const { words, studentIds, assignedDate: rawDate } = body;
+    const assignedDate = rawDate || new Date().toISOString().split('T')[0];
 
-    if (!file) {
-      return NextResponse.json({ error: 'ファイルが選択されていません' }, { status: 400 });
+    if (!words || !Array.isArray(words) || words.length === 0) {
+      return NextResponse.json({ error: '登録する単語がありません' }, { status: 400 });
     }
-    if (studentIds.length === 0) {
+    if (!studentIds || studentIds.length === 0) {
       return NextResponse.json({ error: '配信先の生徒を選択してください' }, { status: 400 });
-    }
-
-    const buffer = Buffer.from(await file.arrayBuffer());
-    const workbook = XLSX.read(buffer, { type: 'buffer' });
-    const sheet = workbook.Sheets[workbook.SheetNames[0]];
-    const rows = XLSX.utils.sheet_to_json(sheet, { defval: '' });
-
-    if (rows.length === 0) {
-      return NextResponse.json({ error: 'データが空です' }, { status: 400 });
     }
 
     const supabase = createServerClient();
@@ -41,10 +31,10 @@ export async function POST(request) {
     const results = [];
     let totalSuccess = 0;
 
-    for (const row of rows) {
-      const english = (row['english'] || row['英単語'] || row['English'] || row['word'] || '').toString().trim();
-      const meaningsRaw = (row['meanings'] || row['意味'] || row['訳'] || '').toString().trim();
-      const exampleSentence = (row['example'] || row['例文'] || row['example_sentence'] || '').toString().trim();
+    for (const wordData of words) {
+      const english = (wordData.english || '').trim();
+      const meaningsRaw = (wordData.meanings || '').trim();
+      const exampleSentence = (wordData.example || '').trim();
 
       if (!english) {
         results.push({ word: '(空行)', status: 'スキップ', detail: '' });
@@ -184,7 +174,7 @@ export async function POST(request) {
 
     return NextResponse.json({
       results,
-      summary: { total: rows.length, success: totalSuccess, students: students.length },
+      summary: { total: words.length, success: totalSuccess, students: students.length },
     });
   } catch (error) {
     console.error('Word import error:', error);

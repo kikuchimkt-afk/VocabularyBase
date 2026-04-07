@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import * as XLSX from 'xlsx';
 
 export default function TeacherWordRegister({ students, onRegistered }) {
   const [word, setWord] = useState('');
@@ -27,6 +28,10 @@ export default function TeacherWordRegister({ students, onRegistered }) {
   const [bulkImporting, setBulkImporting] = useState(false);
   const [bulkProgress, setBulkProgress] = useState('');
   const [bulkResults, setBulkResults] = useState(null);
+
+  // 一括プレビュー＆編集
+  const [bulkPreviewWords, setBulkPreviewWords] = useState(null);
+  const [editingRowIndex, setEditingRowIndex] = useState(null);
 
   // 前回の選択を記憶
   useEffect(() => {
@@ -307,42 +312,45 @@ export default function TeacherWordRegister({ students, onRegistered }) {
               <input
                 type="file"
                 accept=".xlsx,.xls,.csv"
-                onChange={async (e) => {
+                onChange={(e) => {
                   const file = e.target.files[0];
                   if (!file) return;
-                  if (selectedStudents.size === 0) {
-                    setBulkResults({ error: '配信先の生徒を選択してください' });
-                    e.target.value = '';
-                    return;
-                  }
-                  setBulkImporting(true);
-                  setBulkResults(null);
-                  setBulkProgress('📤 ファイルを読み込み中...');
-                  try {
-                    const formData = new FormData();
-                    formData.append('file', file);
-                    formData.append('studentIds', JSON.stringify([...selectedStudents]));
-                    formData.append('assignedDate', assignedDate);
-                    setBulkProgress('🔄 音声生成・翻訳・登録中（数分かかる場合があります）...');
-                    const res = await fetch('/api/words/import', {
-                      method: 'POST',
-                      body: formData,
-                    });
-                    if (!res.ok) {
-                      const err = await res.json();
-                      throw new Error(err.error || 'Import failed');
+                  const reader = new FileReader();
+                  reader.onload = (evt) => {
+                    try {
+                      const data = new Uint8Array(evt.target.result);
+                      const workbook = XLSX.read(data, { type: 'array' });
+                      const sheet = workbook.Sheets[workbook.SheetNames[0]];
+                      const rows = XLSX.utils.sheet_to_json(sheet, { defval: '' });
+                      if (rows.length === 0) {
+                        setBulkResults({ error: 'データが空です' });
+                        return;
+                      }
+                      const parsed = rows.map((row, idx) => {
+                        const english = (row['english'] || row['英単語'] || row['English'] || row['word'] || '').toString().trim();
+                        const meaningsRaw = (row['meanings'] || row['意味'] || row['訳'] || '').toString().trim();
+                        const example = (row['example'] || row['例文'] || row['example_sentence'] || '').toString().trim();
+                        return {
+                          id: idx,
+                          english,
+                          meanings: meaningsRaw,
+                          example,
+                          removed: false,
+                        };
+                      }).filter(w => w.english); // 空行を除外
+                      if (parsed.length === 0) {
+                        setBulkResults({ error: '有効な単語が見つかりませんでした' });
+                        return;
+                      }
+                      setBulkPreviewWords(parsed);
+                      setBulkResults(null);
+                      setEditingRowIndex(null);
+                    } catch (err) {
+                      setBulkResults({ error: `ファイル読み込みエラー: ${err.message}` });
                     }
-                    const data = await res.json();
-                    setBulkResults(data);
-                    setBulkProgress('');
-                    if (onRegistered) onRegistered();
-                  } catch (err) {
-                    setBulkResults({ error: err.message });
-                    setBulkProgress('');
-                  } finally {
-                    setBulkImporting(false);
-                    e.target.value = '';
-                  }
+                  };
+                  reader.readAsArrayBuffer(file);
+                  e.target.value = '';
                 }}
                 style={{ display: 'none' }}
                 disabled={bulkImporting}
@@ -370,6 +378,237 @@ export default function TeacherWordRegister({ students, onRegistered }) {
               📥 サンプルをダウンロード
             </button>
           </div>
+
+          {/* ===== プレビュー＆編集エリア ===== */}
+          {bulkPreviewWords && !bulkResults && (
+            <div style={{ marginTop: '1rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+                <p style={{ fontWeight: '700', fontSize: '0.95rem', color: 'var(--primary)', margin: 0 }}>
+                  📋 {bulkPreviewWords.filter(w => !w.removed).length}語をプレビュー中
+                </p>
+                <div style={{ display: 'flex', gap: '0.5rem' }}>
+                  <button
+                    className="btn btn-secondary"
+                    style={{ fontSize: '0.75rem', padding: '0.3rem 0.6rem' }}
+                    onClick={() => {
+                      const nextId = bulkPreviewWords.length > 0 ? Math.max(...bulkPreviewWords.map(w => w.id)) + 1 : 0;
+                      setBulkPreviewWords([...bulkPreviewWords, {
+                        id: nextId,
+                        english: '',
+                        meanings: '',
+                        example: '',
+                        removed: false,
+                      }]);
+                      setEditingRowIndex(nextId);
+                    }}
+                  >＋ 単語を追加</button>
+                  <button
+                    className="btn btn-secondary"
+                    style={{ fontSize: '0.75rem', padding: '0.3rem 0.6rem' }}
+                    onClick={() => {
+                      setBulkPreviewWords(null);
+                      setEditingRowIndex(null);
+                    }}
+                  >🗑️ クリア</button>
+                </div>
+              </div>
+
+              <div style={{
+                border: '1px solid var(--border)',
+                borderRadius: 'var(--radius-md)',
+                maxHeight: '400px',
+                overflowY: 'auto',
+              }}>
+                {/* ヘッダー */}
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: '1fr 1.5fr 2fr auto',
+                  gap: '0.5rem',
+                  padding: '0.6rem 0.75rem',
+                  background: 'var(--primary-light)',
+                  borderBottom: '2px solid var(--border)',
+                  fontSize: '0.75rem',
+                  fontWeight: '700',
+                  color: 'var(--primary)',
+                  position: 'sticky',
+                  top: 0,
+                  zIndex: 1,
+                }}>
+                  <span>英単語</span>
+                  <span>意味</span>
+                  <span>例文</span>
+                  <span style={{ width: '60px', textAlign: 'center' }}>操作</span>
+                </div>
+
+                {/* 各行 */}
+                {bulkPreviewWords.map((pw) => (
+                  <div
+                    key={pw.id}
+                    style={{
+                      display: 'grid',
+                      gridTemplateColumns: '1fr 1.5fr 2fr auto',
+                      gap: '0.5rem',
+                      padding: '0.5rem 0.75rem',
+                      borderBottom: '1px solid var(--border)',
+                      alignItems: 'center',
+                      fontSize: '0.85rem',
+                      opacity: pw.removed ? 0.4 : 1,
+                      textDecoration: pw.removed ? 'line-through' : 'none',
+                      background: pw.removed ? 'var(--danger-light)' : (editingRowIndex === pw.id ? 'var(--secondary-light)' : 'transparent'),
+                      transition: 'background 0.15s',
+                    }}
+                  >
+                    {editingRowIndex === pw.id && !pw.removed ? (
+                      <>
+                        <input
+                          className="input-text"
+                          value={pw.english}
+                          onChange={(e) => {
+                            setBulkPreviewWords(bulkPreviewWords.map(w =>
+                              w.id === pw.id ? { ...w, english: e.target.value } : w
+                            ));
+                          }}
+                          placeholder="英単語"
+                          style={{ padding: '0.3rem 0.5rem', fontSize: '0.8rem', margin: 0 }}
+                          autoFocus
+                        />
+                        <input
+                          className="input-text"
+                          value={pw.meanings}
+                          onChange={(e) => {
+                            setBulkPreviewWords(bulkPreviewWords.map(w =>
+                              w.id === pw.id ? { ...w, meanings: e.target.value } : w
+                            ));
+                          }}
+                          placeholder="意味（カンマ区切り）"
+                          style={{ padding: '0.3rem 0.5rem', fontSize: '0.8rem', margin: 0 }}
+                        />
+                        <input
+                          className="input-text"
+                          value={pw.example}
+                          onChange={(e) => {
+                            setBulkPreviewWords(bulkPreviewWords.map(w =>
+                              w.id === pw.id ? { ...w, example: e.target.value } : w
+                            ));
+                          }}
+                          placeholder="例文（空欄で自動生成）"
+                          style={{ padding: '0.3rem 0.5rem', fontSize: '0.8rem', margin: 0 }}
+                        />
+                        <div style={{ display: 'flex', gap: '0.25rem', width: '60px', justifyContent: 'center' }}>
+                          <button
+                            style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '0.85rem', padding: '0.2rem' }}
+                            title="確定"
+                            onClick={() => setEditingRowIndex(null)}
+                          >✅</button>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <span style={{ fontWeight: '600', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                          {pw.english || <span className="text-muted" style={{ fontStyle: 'italic' }}>(空)</span>}
+                        </span>
+                        <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                          {pw.meanings || <span className="text-muted" style={{ fontStyle: 'italic' }}>(空)</span>}
+                        </span>
+                        <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', fontSize: '0.8rem' }} className="text-muted">
+                          {pw.example || <span style={{ fontStyle: 'italic' }}>(自動生成)</span>}
+                        </span>
+                        <div style={{ display: 'flex', gap: '0.25rem', width: '60px', justifyContent: 'center' }}>
+                          {pw.removed ? (
+                            <button
+                              style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '0.8rem', padding: '0.2rem', color: 'var(--secondary)' }}
+                              title="復元"
+                              onClick={() => {
+                                setBulkPreviewWords(bulkPreviewWords.map(w =>
+                                  w.id === pw.id ? { ...w, removed: false } : w
+                                ));
+                              }}
+                            >↩️</button>
+                          ) : (
+                            <>
+                              <button
+                                style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '0.8rem', padding: '0.2rem' }}
+                                title="編集"
+                                onClick={() => setEditingRowIndex(pw.id)}
+                              >✏️</button>
+                              <button
+                                style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '0.8rem', padding: '0.2rem', color: 'var(--danger)' }}
+                                title="削除"
+                                onClick={() => {
+                                  setBulkPreviewWords(bulkPreviewWords.map(w =>
+                                    w.id === pw.id ? { ...w, removed: true } : w
+                                  ));
+                                  if (editingRowIndex === pw.id) setEditingRowIndex(null);
+                                }}
+                              >🗑️</button>
+                            </>
+                          )}
+                        </div>
+                      </>
+                    )}
+                  </div>
+                ))}
+              </div>
+
+              {/* 登録ボタン */}
+              <div style={{ marginTop: '0.75rem', display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                <button
+                  className="btn btn-primary"
+                  style={{ flex: 1, padding: '0.75rem', fontWeight: '700' }}
+                  disabled={bulkImporting || selectedStudents.size === 0 || bulkPreviewWords.filter(w => !w.removed && w.english.trim() && w.meanings.trim()).length === 0}
+                  onClick={async () => {
+                    if (selectedStudents.size === 0) {
+                      setBulkResults({ error: '配信先の生徒を選択してください' });
+                      return;
+                    }
+                    const wordsToRegister = bulkPreviewWords
+                      .filter(w => !w.removed && w.english.trim() && w.meanings.trim())
+                      .map(w => ({
+                        english: w.english.trim(),
+                        meanings: w.meanings.trim(),
+                        example: w.example.trim(),
+                      }));
+                    if (wordsToRegister.length === 0) {
+                      setBulkResults({ error: '登録する単語がありません' });
+                      return;
+                    }
+                    setBulkImporting(true);
+                    setBulkProgress('🔄 音声生成・翻訳・登録中（数分かかる場合があります）...');
+                    try {
+                      const res = await fetch('/api/words/import', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                          words: wordsToRegister,
+                          studentIds: [...selectedStudents],
+                          assignedDate,
+                        }),
+                      });
+                      if (!res.ok) {
+                        const err = await res.json();
+                        throw new Error(err.error || 'Import failed');
+                      }
+                      const data = await res.json();
+                      setBulkResults(data);
+                      setBulkProgress('');
+                      setBulkPreviewWords(null);
+                      setEditingRowIndex(null);
+                      if (onRegistered) onRegistered();
+                    } catch (err) {
+                      setBulkResults({ error: err.message });
+                      setBulkProgress('');
+                    } finally {
+                      setBulkImporting(false);
+                    }
+                  }}
+                >
+                  {bulkImporting
+                    ? '📤 登録中...'
+                    : `📤 ${bulkPreviewWords.filter(w => !w.removed && w.english.trim() && w.meanings.trim()).length}語を${selectedStudents.size}名に登録する`}
+                </button>
+              </div>
+            </div>
+          )}
 
           {bulkProgress && (
             <p style={{ marginTop: '0.75rem', color: 'var(--primary)', fontWeight: '600', fontSize: '0.85rem' }}>
