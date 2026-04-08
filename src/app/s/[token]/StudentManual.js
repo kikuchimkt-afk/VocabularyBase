@@ -46,6 +46,20 @@ export default function StudentManual({ onClose }) {
 
         <Hr />
 
+        {/* 画面構成 */}
+        <Section icon="🗂️" title="3つのタブ">
+          <p style={{ lineHeight: '1.7' }}>
+            画面下部の3つのタブで切り替えて使います。
+          </p>
+          <FeatureList items={[
+            { icon: '📝', text: '登録 — 自分で英単語を検索してAIが意味と例文を自動生成。好きな単語を追加できる' },
+            { icon: '📚', text: '一覧 — 登録済みの全単語を確認・検索・音声再生・ダウンロード' },
+            { icon: '🎮', text: 'テスト — フラッシュカード形式で記憶チェック。覚えた/まだで自動判定' },
+          ]} />
+        </Section>
+
+        <Hr />
+
         {/* 単語を登録 */}
         <Section icon="📝" title="自分で単語を登録する">
           <Step num={1}>
@@ -57,6 +71,7 @@ export default function StudentManual({ onClose }) {
           <Step num={3}>
             音声付きの単語カードが自動的に作成されます！
           </Step>
+          <Tip text="出典欄（📍）に教科書やページ番号を入れておくと、後で復習する時に便利です。" />
         </Section>
 
         <Hr />
@@ -72,6 +87,17 @@ export default function StudentManual({ onClose }) {
           <Step num={3}>
             🔊 ボタンで発音・例文の音声を再生
           </Step>
+          <Step num={4}>
+            フィルターで絞り込み：<br/>
+            • 「すべて」— 全単語を表示<br/>
+            • 「📋 HW」— 先生から配信された宿題だけ<br/>
+            • 「👤 自分」— 自分で登録した単語だけ<br/>
+            • 「📅 日付」— 宿題日ごとに表示。出典情報（例：🏷️ シス単5訂版 No.1〜50）も確認できます
+          </Step>
+          <Step num={5}>
+            📥 CSV / Excel ボタンで単語リストをダウンロード。印刷してノートに書いて覚えるのにも◎
+          </Step>
+          <Tip text="🔊 が表示されない単語は「🔊 一括音声生成」ボタンで音声を自動生成できます。" />
         </Section>
 
         <Hr />
@@ -79,18 +105,32 @@ export default function StudentManual({ onClose }) {
         {/* テスト */}
         <Section icon="🃏" title="テストで覚える">
           <Step num={1}>
-            「🎓 テスト」タブを開く。📅 日付フィルターで「今日の宿題」だけに絞り込みもOK
+            「🎮 テスト」タブを開く。📅 日付フィルターで「今日の宿題」だけに絞り込みもOK
           </Step>
           <Step num={2}>
-            「START」をタップ。英単語が表示されるので、意味を思い出そう
+            並び順（出現順 / ランダム）を選択し、「START」をタップ
           </Step>
           <Step num={3}>
-            カードをタップ（または「答えを見る」）で和訳を表示
+            英単語が表示されたら意味を思い出そう。🔊 ボタンで発音を確認できます
           </Step>
           <Step num={4}>
+            わからない時は「🔈 ヒント」ボタンで例文の音声を再生。文脈から推測してみよう
+          </Step>
+          <Step num={5}>
+            カードをタップ（または「答えを見る」）で和訳・例文・日本語訳を表示
+          </Step>
+          <Step num={6}>
             「✓ 覚えた」か「✕ まだ」で判定。間違えた単語だけやり直し可能！
           </Step>
-          <Tip text="「🔊 自動音声再生」をONにすると、カードが表示されるたびにネイティブの発音が流れます。" />
+          <Tip text="「🔊 自動音声再生」をONにすると、カードが表示されるたびにネイティブの発音が自動で流れます。裏面表示時には例文の音声も流れます。" />
+          <div style={{
+            marginTop: '0.75rem', padding: '0.5rem 0.75rem',
+            background: 'var(--primary-light)', borderRadius: 'var(--radius-md)',
+            fontSize: '0.8rem', color: 'var(--primary)', fontWeight: '600',
+          }}>
+            📊 テスト結果は自動保存！スタート画面の「全単語」「残り」「覚えた」で学習進捗を確認できます。<br/>
+            🔥 同じ単語が複数回出題されている場合は「出題○回目」と表示されます。
+          </div>
         </Section>
 
         <Hr />
@@ -101,7 +141,7 @@ export default function StudentManual({ onClose }) {
             <b>iPhone:</b> Safari のメニュー → 「ホーム画面に追加」<br/>
             <b>Android:</b> Chrome のメニュー → 「ホーム画面に追加」
           </p>
-          <Tip text="ホーム画面からワンタップで自分の単語帳を開けるようになります！" />
+          <Tip text="ホーム画面からワンタップで自分の単語帳を開けるようになります！毎回URLを入力する必要はありません。" />
         </Section>
       </div>
     </div>
