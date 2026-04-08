@@ -1,0 +1,2578 @@
+[
+  {
+    "rank": 1,
+    "word": "believe",
+    "meaning": "を信じる",
+    "example": "I believe that honesty is the best policy.",
+    "translation": "私は正直が最善の策だと信じています。"
+  },
+  {
+    "rank": 3,
+    "word": "expect",
+    "meaning": "を予期する、と思う",
+    "example": "We expect the train to arrive on time.",
+    "translation": "私たちは列車が時間通りに到着するだろうと予期しています。"
+  },
+  {
+    "rank": 6,
+    "word": "remember",
+    "meaning": "覚えている",
+    "example": "Do you remember my name?",
+    "translation": "私の名前を覚えていますか？"
+  },
+  {
+    "rank": 7,
+    "word": "worry",
+    "meaning": "心配する",
+    "example": "Don't worry about the exam; you'll do great.",
+    "translation": "試験のことで心配しないでください。きっとうまくいきますよ。"
+  },
+  {
+    "rank": 10,
+    "word": "explain",
+    "meaning": "説明する",
+    "example": "Can you explain this rule to me?",
+    "translation": "この規則を私に説明してもらえますか？"
+  },
+  {
+    "rank": 15,
+    "word": "provide",
+    "meaning": "を供給する",
+    "example": "Our school provides free lunch for students.",
+    "translation": "私たちの学校は生徒に無料の昼食を供給しています。"
+  },
+  {
+    "rank": 17,
+    "word": "grow",
+    "meaning": "成長する",
+    "example": "Children grow quickly at this age.",
+    "translation": "子供たちはこの年齢で急速に成長します。"
+  },
+  {
+    "rank": 18,
+    "word": "develop",
+    "meaning": "を開発する",
+    "example": "Scientists are developing new ways to save energy.",
+    "translation": "科学者たちはエネルギーを節約する新しい方法を開発しています。"
+  },
+  {
+    "rank": 19,
+    "word": "rise",
+    "meaning": "上がる、昇る",
+    "example": "The sun rises in the east every morning.",
+    "translation": "太陽は毎朝東から昇ります。"
+  },
+  {
+    "rank": 20,
+    "word": "raise",
+    "meaning": "を上げる、（子供）を育てる",
+    "example": "Please raise your hand if you have a question.",
+    "translation": "質問があれば手を挙げてください。"
+  },
+  {
+    "rank": 21,
+    "word": "follow",
+    "meaning": "次に続く、に従う",
+    "example": "Please follow the instructions carefully.",
+    "translation": "指示に注意深く従ってください。"
+  },
+  {
+    "rank": 23,
+    "word": "fill",
+    "meaning": "を満たす",
+    "example": "Please fill out this form completely.",
+    "translation": "この用紙に完全に記入してください。"
+  },
+  {
+    "rank": 24,
+    "word": "support",
+    "meaning": "を支持する",
+    "example": "Many people support the mayor's new policy.",
+    "translation": "多くの人々が市長の新しい政策を支持しています。"
+  },
+  {
+    "rank": 26,
+    "word": "face",
+    "meaning": "に直面する、（危険などが）の身に迫る",
+    "example": "We must face the challenges of climate change.",
+    "translation": "私たちは気候変動の課題に直面しなければなりません。"
+  },
+  {
+    "rank": 27,
+    "word": "touch",
+    "meaning": "を感動させる",
+    "example": "Her kindness really touched my heart.",
+    "translation": "彼女の親切は本当に私の心を感動させました。"
+  },
+  {
+    "rank": 29,
+    "word": "pay",
+    "meaning": "（金）を支払う",
+    "example": "I need to pay for these books.",
+    "translation": "これらの本の代金を支払う必要があります。"
+  },
+  {
+    "rank": 31,
+    "word": "save",
+    "meaning": "（時間、金銭など）を節約する",
+    "example": "Turning off lights can save electricity.",
+    "translation": "電気を消すことで電気を節約できます。"
+  },
+  {
+    "rank": 32,
+    "word": "happen",
+    "meaning": "（事が）起こる、たまたまする",
+    "example": "What happened to your car?",
+    "translation": "あなたの車に何が起こったのですか？"
+  },
+  {
+    "rank": 34,
+    "word": "work",
+    "meaning": "機能する",
+    "example": "This new printer doesn't work well.",
+    "translation": "この新しいプリンターはうまく機能しません。"
+  },
+  {
+    "rank": 35,
+    "word": "change",
+    "meaning": "を変える",
+    "example": "We need to change our plans.",
+    "translation": "私たちは計画を変える必要があります。"
+  },
+  {
+    "rank": 36,
+    "word": "run",
+    "meaning": "を経営する",
+    "example": "My uncle runs a small cafe.",
+    "translation": "私の叔父は小さなカフェを経営しています。"
+  },
+  {
+    "rank": 37,
+    "word": "turn",
+    "meaning": "の向きを変える",
+    "example": "Please turn left at the next corner.",
+    "translation": "次の角を左に曲がってください。"
+  },
+  {
+    "rank": 38,
+    "word": "return",
+    "meaning": "戻る、帰る",
+    "example": "I will return home by 6 p.m.",
+    "translation": "私は午後6時までに家に戻ります。"
+  },
+  {
+    "rank": 39,
+    "word": "stand",
+    "meaning": "を我慢する",
+    "example": "I can't stand the cold weather.",
+    "translation": "私は寒い天気を我慢できません。"
+  },
+  {
+    "rank": 40,
+    "word": "lie",
+    "meaning": "横たわる、うそをつく",
+    "example": "Don't lie to your parents.",
+    "translation": "両親にうそをついてはいけません。"
+  },
+  {
+    "rank": 41,
+    "word": "brain",
+    "meaning": "脳",
+    "example": "The human brain is very complex.",
+    "translation": "人間の脳は非常に複雑です。"
+  },
+  {
+    "rank": 42,
+    "word": "mind",
+    "meaning": "心、精神",
+    "example": "Keep that in mind when you decide.",
+    "translation": "決める際にはそのことを心に留めておいてください。"
+  },
+  {
+    "rank": 43,
+    "word": "language",
+    "meaning": "言語",
+    "example": "English is an international language.",
+    "translation": "英語は国際的な言語です。"
+  },
+  {
+    "rank": 49,
+    "word": "experience",
+    "meaning": "経験",
+    "example": "Travel gives us new experiences.",
+    "translation": "旅行は私たちに新しい経験を与えます。"
+  },
+  {
+    "rank": 50,
+    "word": "result",
+    "meaning": "結果",
+    "example": "The test results will be announced tomorrow.",
+    "translation": "テストの結果は明日発表されます。"
+  },
+  {
+    "rank": 55,
+    "word": "sense",
+    "meaning": "感覚",
+    "example": "He has a good sense of humor.",
+    "translation": "彼には良いユーモアのセンスがあります。"
+  },
+  {
+    "rank": 56,
+    "word": "way",
+    "meaning": "方法、道",
+    "example": "Is there a better way to do this?",
+    "translation": "これをするのにもっと良い方法はありますか？"
+  },
+  {
+    "rank": 59,
+    "word": "condition",
+    "meaning": "状態、状況",
+    "example": "The car is in good condition.",
+    "translation": "その車は良い状態です。"
+  },
+  {
+    "rank": 60,
+    "word": "position",
+    "meaning": "（所定の）位置、場所、立場",
+    "example": "She got a new position at the company.",
+    "translation": "彼女はその会社で新しい役職を得ました。"
+  },
+  {
+    "rank": 62,
+    "word": "nature",
+    "meaning": "自然",
+    "example": "We should protect nature for future generations.",
+    "translation": "私たちは将来の世代のために自然を保護すべきです。"
+  },
+  {
+    "rank": 64,
+    "word": "rule",
+    "meaning": "規則",
+    "example": "Students must follow school rules.",
+    "translation": "学生は校則に従わなければなりません。"
+  },
+  {
+    "rank": 68,
+    "word": "sound",
+    "meaning": "音",
+    "example": "I heard a strange sound from outside.",
+    "translation": "外から奇妙な音が聞こえました。"
+  },
+  {
+    "rank": 69,
+    "word": "form",
+    "meaning": "形状、（記入）用紙",
+    "example": "Please fill out the application form.",
+    "translation": "申込用紙に記入してください。"
+  },
+  {
+    "rank": 70,
+    "word": "case",
+    "meaning": "場合",
+    "example": "In this case, we need to act quickly.",
+    "translation": "この場合、私たちは迅速に行動する必要があります。"
+  },
+  {
+    "rank": 72,
+    "word": "age",
+    "meaning": "年齢",
+    "example": "What is the legal voting age?",
+    "translation": "法定投票年齢は何歳ですか？"
+  },
+  {
+    "rank": 73,
+    "word": "care",
+    "meaning": "世話",
+    "example": "She takes good care of her plants.",
+    "translation": "彼女は植物の世話をよくします。"
+  },
+  {
+    "rank": 74,
+    "word": "risk",
+    "meaning": "危険（性）",
+    "example": "There is a risk of heavy rain tomorrow.",
+    "translation": "明日は大雨の危険性があります。"
+  },
+  {
+    "rank": 75,
+    "word": "human",
+    "meaning": "人間の",
+    "example": "Human beings need water to survive.",
+    "translation": "人間は生き残るために水が必要です。"
+  },
+  {
+    "rank": 76,
+    "word": "free",
+    "meaning": "自由な",
+    "example": "Everyone wants to be free.",
+    "translation": "誰もが自由になりたいと思っています。"
+  },
+  {
+    "rank": 77,
+    "word": "sure",
+    "meaning": "確信して",
+    "example": "I'm not sure about the answer.",
+    "translation": "私はその答えについて確信がありません。"
+  },
+  {
+    "rank": 79,
+    "word": "main",
+    "meaning": "主要な",
+    "example": "The main reason is lack of time.",
+    "translation": "主要な理由は時間の不足です。"
+  },
+  {
+    "rank": 82,
+    "word": "clear",
+    "meaning": "明らかな",
+    "example": "It's clear that he is busy.",
+    "translation": "彼が忙しいのは明らかです。"
+  },
+  {
+    "rank": 86,
+    "word": "close",
+    "meaning": "（ごく）近い",
+    "example": "The station is very close to my house.",
+    "translation": "駅は私の家にとても近いです。"
+  },
+  {
+    "rank": 88,
+    "word": "general",
+    "meaning": "一般的な",
+    "example": "This is a general knowledge question.",
+    "translation": "これは一般的な知識の問題です。"
+  },
+  {
+    "rank": 93,
+    "word": "unique",
+    "meaning": "特有の",
+    "example": "Each person has a unique personality.",
+    "translation": "各人は特有の個性を持っています。"
+  },
+  {
+    "rank": 95,
+    "word": "therefore",
+    "meaning": "したがって、その結果",
+    "example": "He studied hard; therefore, he passed the exam.",
+    "translation": "彼は熱心に勉強した。したがって、試験に合格した。"
+  },
+  {
+    "rank": 96,
+    "word": "thus",
+    "meaning": "したがって",
+    "example": "She missed the train, thus arriving late for the meeting.",
+    "translation": "彼女は電車を逃し、したがって会議に遅刻した。"
+  },
+  {
+    "rank": 97,
+    "word": "moreover",
+    "meaning": "そのうえ、さらに",
+    "example": "It was cold; moreover, it started to rain heavily.",
+    "translation": "寒かった。そのうえ、激しく雨が降り始めた。"
+  },
+  {
+    "rank": 98,
+    "word": "furthermore",
+    "meaning": "そのうえ",
+    "example": "The food was delicious; furthermore, the service was excellent.",
+    "translation": "料理は美味しかった。そのうえ、サービスも素晴らしかった。"
+  },
+  {
+    "rank": 99,
+    "word": "besides",
+    "meaning": "そのうえ",
+    "example": "I don't want to go. Besides, I'm too busy.",
+    "translation": "行きたくない。そのうえ、忙しすぎるんだ。"
+  },
+  {
+    "rank": 102,
+    "word": "note",
+    "meaning": "注意する、注目する",
+    "example": "Please note the change in the meeting schedule.",
+    "translation": "会議スケジュールの変更にご注意ください。"
+  },
+  {
+    "rank": 103,
+    "word": "discover",
+    "meaning": "を発見する",
+    "example": "Scientists hope to discover new ways to treat the disease.",
+    "translation": "科学者たちはその病気を治療する新しい方法を発見したいと願っている。"
+  },
+  {
+    "rank": 108,
+    "word": "order",
+    "meaning": "を注文する",
+    "example": "I'd like to order a cup of coffee, please.",
+    "translation": "コーヒーを一杯注文したいのですが。"
+  },
+  {
+    "rank": 127,
+    "word": "reach",
+    "meaning": "に到着する",
+    "example": "We plan to reach the station before noon.",
+    "translation": "私たちは正午までに駅に到着する予定だ。"
+  },
+  {
+    "rank": 129,
+    "word": "receive",
+    "meaning": "を受け取る",
+    "example": "Did you receive my email about the project?",
+    "translation": "プロジェクトに関する私のメールを受け取りましたか？"
+  },
+  {
+    "rank": 131,
+    "word": "lead",
+    "meaning": "を導く",
+    "example": "This path will lead you to the beautiful lake.",
+    "translation": "この道はあなたを美しい湖へと導くでしょう。"
+  },
+  {
+    "rank": 132,
+    "word": "win",
+    "meaning": "勝つ",
+    "example": "Our team worked hard to win the championship.",
+    "translation": "私たちのチームは優勝するために懸命に努力した。"
+  },
+  {
+    "rank": 133,
+    "word": "lose",
+    "meaning": "を失う",
+    "example": "Don't lose hope even if things are difficult.",
+    "translation": "物事が困難でも希望を失わないでください。"
+  },
+  {
+    "rank": 134,
+    "word": "fail",
+    "meaning": "できない",
+    "example": "He tried his best, but failed to finish the task.",
+    "translation": "彼は最善を尽くしたが、その課題を終えることができなかった。"
+  },
+  {
+    "rank": 135,
+    "word": "miss",
+    "meaning": "に乗り遅れる",
+    "example": "Hurry up, or you will miss the last bus.",
+    "translation": "急いで、さもないと終バスに乗り遅れるよ。"
+  },
+  {
+    "rank": 136,
+    "word": "lack",
+    "meaning": "に欠けている、が不足している",
+    "example": "The project failed due to a lack of funds.",
+    "translation": "そのプロジェクトは資金不足のために失敗した。"
+  },
+  {
+    "rank": 141,
+    "word": "wear",
+    "meaning": "を身に着けている",
+    "example": "She likes to wear bright colors in summer.",
+    "translation": "彼女は夏に明るい色を身につけるのが好きだ。"
+  },
+  {
+    "rank": 144,
+    "word": "author",
+    "meaning": "著者",
+    "example": "The author will sign copies of her new book.",
+    "translation": "その著者は彼女の新刊にサインをするだろう。"
+  },
+  {
+    "rank": 145,
+    "word": "professor",
+    "meaning": "教授",
+    "example": "Professor Tanaka teaches history at our university.",
+    "translation": "田中教授は私たちの大学で歴史を教えている。"
+  },
+  {
+    "rank": 146,
+    "word": "sentence",
+    "meaning": "文、（宣告された）刑",
+    "example": "Please read the next sentence carefully.",
+    "translation": "次の文を注意深く読んでください。"
+  },
+  {
+    "rank": 147,
+    "word": "passage",
+    "meaning": "（文章の）一節",
+    "example": "This passage is from a famous Japanese novel.",
+    "translation": "この一節は日本の有名な小説からのものです。"
+  },
+  {
+    "rank": 148,
+    "word": "message",
+    "meaning": "伝言、メッセージ",
+    "example": "I left a message for him on his voicemail.",
+    "translation": "彼の留守番電話に伝言を残しました。"
+  },
+  {
+    "rank": 157,
+    "word": "government",
+    "meaning": "政府",
+    "example": "The government plans to introduce a new policy.",
+    "translation": "政府は新しい政策を導入する予定だ。"
+  },
+  {
+    "rank": 159,
+    "word": "education",
+    "meaning": "教育",
+    "example": "Good education is essential for a child's future.",
+    "translation": "良い教育は子どもの将来にとって不可欠だ。"
+  },
+  {
+    "rank": 165,
+    "word": "customer",
+    "meaning": "顧客",
+    "example": "The store aims to provide excellent service to its customers.",
+    "translation": "その店は顧客に優れたサービスを提供することを目指している。"
+  },
+  {
+    "rank": 168,
+    "word": "rate",
+    "meaning": "比率",
+    "example": "The birth rate in Japan has been decreasing recently.",
+    "translation": "日本の出生率は最近減少している。"
+  },
+  {
+    "rank": 169,
+    "word": "chance",
+    "meaning": "見込み",
+    "example": "There is a good chance of rain tomorrow.",
+    "translation": "明日は雨が降る可能性が高い。"
+  },
+  {
+    "rank": 173,
+    "word": "effort",
+    "meaning": "努力",
+    "example": "Your effort will surely lead to success.",
+    "translation": "あなたの努力はきっと成功につながるでしょう。"
+  },
+  {
+    "rank": 176,
+    "word": "amount",
+    "meaning": "金額",
+    "example": "Please pay the total amount by the end of this month.",
+    "translation": "今月末までに合計金額をお支払いください。"
+  },
+  {
+    "rank": 177,
+    "word": "scientific",
+    "meaning": "科学の",
+    "example": "He is interested in scientific research and discoveries.",
+    "translation": "彼は科学的な研究と発見に興味がある。"
+  },
+  {
+    "rank": 179,
+    "word": "social",
+    "meaning": "社会の",
+    "example": "We need to solve various social problems.",
+    "translation": "私たちは様々な社会問題を解決する必要がある。"
+  },
+  {
+    "rank": 182,
+    "word": "expensive",
+    "meaning": "高価な",
+    "example": "This watch is beautiful, but it's too expensive for me.",
+    "translation": "この時計は美しいが、私には高すぎる。"
+  },
+  {
+    "rank": 184,
+    "word": "normal",
+    "meaning": "普通の",
+    "example": "It's normal to feel nervous before a big speech.",
+    "translation": "大勢の前で話す前に緊張するのは普通のことだ。"
+  },
+  {
+    "rank": 196,
+    "word": "rather",
+    "meaning": "むしろ、かなり",
+    "example": "I'd rather stay home than go out tonight.",
+    "translation": "今夜は出かけるよりもむしろ家にいたい。"
+  },
+  {
+    "rank": 197,
+    "word": "instead",
+    "meaning": "その代わりに",
+    "example": "I don't like coffee; I'll have tea instead.",
+    "translation": "私はコーヒーが好きではない。その代わりに紅茶を飲むよ。"
+  },
+  {
+    "rank": 198,
+    "word": "otherwise",
+    "meaning": "そうでなければ、それ以外は",
+    "example": "You must study hard; otherwise, you will fail.",
+    "translation": "熱心に勉強しなければならない。そうでなければ、失敗するだろう。"
+  },
+  {
+    "rank": 199,
+    "word": "somehow",
+    "meaning": "どうにかして",
+    "example": "We need to find a way to solve this problem somehow.",
+    "translation": "私たちはどうにかしてこの問題を解決する方法を見つける必要がある。"
+  },
+  {
+    "rank": 205,
+    "word": "wish",
+    "meaning": "と思う",
+    "example": "I wish I could speak French fluently.",
+    "translation": "流暢にフランス語を話せたらなあと思う。"
+  },
+  {
+    "rank": 220,
+    "word": "serve",
+    "meaning": "役に立つ",
+    "example": "This old table can still serve a good purpose.",
+    "translation": "この古いテーブルはまだ十分に役に立つ。"
+  },
+  {
+    "rank": 226,
+    "word": "protect",
+    "meaning": "を保護する",
+    "example": "We must protect endangered animals from extinction.",
+    "translation": "私たちは絶滅危惧種を絶滅から保護しなければならない。"
+  },
+  {
+    "rank": 227,
+    "word": "pick",
+    "meaning": "を選び取る、を摘む",
+    "example": "Please pick the best apples from the basket.",
+    "translation": "バスケットの中から一番良いリンゴを選び取ってください。"
+  },
+  {
+    "rank": 228,
+    "word": "fit",
+    "meaning": "ピッタリ合う、うまく合う",
+    "example": "This shirt doesn't fit me well anymore.",
+    "translation": "このシャツはもう私にピッタリ合わない。"
+  },
+  {
+    "rank": 230,
+    "word": "enter",
+    "meaning": "に入る",
+    "example": "You need a password to enter the system.",
+    "translation": "システムに入るにはパスワードが必要です。"
+  },
+  {
+    "rank": 241,
+    "word": "act",
+    "meaning": "行動する",
+    "example": "We should act quickly to avoid further damage.",
+    "translation": "さらなる損害を避けるために、私たちは迅速に行動すべきだ。"
+  },
+  {
+    "rank": 244,
+    "word": "variety",
+    "meaning": "多様（性）",
+    "example": "The store offers a wide variety of fresh vegetables.",
+    "translation": "その店は様々な新鮮な野菜を提供している。"
+  },
+  {
+    "rank": 245,
+    "word": "degree",
+    "meaning": "程度",
+    "example": "To what degree do you agree with this statement?",
+    "translation": "あなたはこの声明にどの程度同意しますか？"
+  },
+  {
+    "rank": 247,
+    "word": "standard",
+    "meaning": "水準、基準",
+    "example": "We aim to maintain a high standard of quality.",
+    "translation": "私たちは高い品質水準を維持することを目指している。"
+  },
+  {
+    "rank": 251,
+    "word": "rest",
+    "meaning": "残り、息",
+    "example": "You can keep the rest of the money.",
+    "translation": "残りのお金は持っていていいよ。"
+  },
+  {
+    "rank": 252,
+    "word": "purpose",
+    "meaning": "目的",
+    "example": "What is the main purpose of your visit?",
+    "translation": "あなたの訪問の主な目的は何ですか？"
+  },
+  {
+    "rank": 254,
+    "word": "factor",
+    "meaning": "要因、要素",
+    "example": "Cost is an important factor in our decision.",
+    "translation": "費用は私たちの決定における重要な要因だ。"
+  },
+  {
+    "rank": 255,
+    "word": "shape",
+    "meaning": "形、体調",
+    "example": "Keep your body in good shape.",
+    "translation": "体調を良い状態に保ちましょう。"
+  },
+  {
+    "rank": 261,
+    "word": "ground",
+    "meaning": "地上",
+    "example": "The ball fell to the ground.",
+    "translation": "ボールは地面に落ちた。"
+  },
+  {
+    "rank": 263,
+    "word": "disease",
+    "meaning": "病気",
+    "example": "Many people suffer from this disease.",
+    "translation": "多くの人がこの病気に苦しんでいる。"
+  },
+  {
+    "rank": 266,
+    "word": "death",
+    "meaning": "死",
+    "example": "The news of his death shocked us.",
+    "translation": "彼の死の知らせは私たちに衝撃を与えた。"
+  },
+  {
+    "rank": 267,
+    "word": "fear",
+    "meaning": "恐怖（心）",
+    "example": "She felt a sudden fear in her heart.",
+    "translation": "彼女は心に突然の恐怖を感じた。"
+  },
+  {
+    "rank": 270,
+    "word": "movement",
+    "meaning": "（政治的な）運動",
+    "example": "This movement aims for social change.",
+    "translation": "この運動は社会変革を目指している。"
+  },
+  {
+    "rank": 272,
+    "word": "climate",
+    "meaning": "（長期的な）気候",
+    "example": "The climate here is very mild.",
+    "translation": "ここの気候はとても穏やかだ。"
+  },
+  {
+    "rank": 273,
+    "word": "temperature",
+    "meaning": "体温",
+    "example": "My body temperature is a little high.",
+    "translation": "私の体温は少し高い。"
+  },
+  {
+    "rank": 275,
+    "word": "population",
+    "meaning": "人口",
+    "example": "The city's population is growing rapidly.",
+    "translation": "その都市の人口は急速に増加している。"
+  },
+  {
+    "rank": 276,
+    "word": "generation",
+    "meaning": "世代",
+    "example": "This issue affects the next generation.",
+    "translation": "この問題は次の世代に影響を与える。"
+  },
+  {
+    "rank": 277,
+    "word": "present",
+    "meaning": "出席している、現在の",
+    "example": "All students were present at the meeting.",
+    "translation": "会議には全生徒が出席していた。"
+  },
+  {
+    "rank": 282,
+    "word": "serious",
+    "meaning": "真剣な",
+    "example": "This is a serious problem for our society.",
+    "translation": "これは私たちの社会にとって深刻な問題だ。"
+  },
+  {
+    "rank": 283,
+    "word": "careful",
+    "meaning": "注意深い",
+    "example": "Please be careful when crossing the street.",
+    "translation": "通りを渡るときは注意してください。"
+  },
+  {
+    "rank": 284,
+    "word": "responsible",
+    "meaning": "責任がある",
+    "example": "Who is responsible for this accident?",
+    "translation": "この事故の責任は誰にあるのですか？"
+  },
+  {
+    "rank": 286,
+    "word": "afraid",
+    "meaning": "恐れて",
+    "example": "Don't be afraid to ask questions.",
+    "translation": "質問するのを恐れてはいけません。"
+  },
+  {
+    "rank": 289,
+    "word": "whole",
+    "meaning": "全体の",
+    "example": "He ate the whole cake by himself.",
+    "translation": "彼はケーキを丸ごと一人で食べた。"
+  },
+  {
+    "rank": 290,
+    "word": "low",
+    "meaning": "低い",
+    "example": "The price of this product is very low.",
+    "translation": "この製品の価格は非常に低い。"
+  },
+  {
+    "rank": 291,
+    "word": "huge",
+    "meaning": "巨大な",
+    "example": "We saw a huge crowd at the concert.",
+    "translation": "コンサートで巨大な人混みを見た。"
+  },
+  {
+    "rank": 293,
+    "word": "central",
+    "meaning": "中心的な",
+    "example": "The central library is near the station.",
+    "translation": "中央図書館は駅の近くにある。"
+  },
+  {
+    "rank": 294,
+    "word": "safe",
+    "meaning": "安全な",
+    "example": "This area is safe for children to play.",
+    "translation": "この地域は子供たちが遊ぶのに安全だ。"
+  },
+  {
+    "rank": 295,
+    "word": "wild",
+    "meaning": "野生の",
+    "example": "We saw many wild animals in the forest.",
+    "translation": "森で多くの野生動物を見た。"
+  },
+  {
+    "rank": 297,
+    "word": "unfortunately",
+    "meaning": "残念なことに",
+    "example": "Unfortunately, our team lost the game.",
+    "translation": "残念なことに、私たちのチームは試合に負けた。"
+  },
+  {
+    "rank": 298,
+    "word": "seemingly",
+    "meaning": "見たところ",
+    "example": "He was seemingly calm, but he was nervous.",
+    "translation": "彼は見たところ落ち着いていたが、緊張していた。"
+  },
+  {
+    "rank": 299,
+    "word": "afterward",
+    "meaning": "後で",
+    "example": "We had dinner and went home afterward.",
+    "translation": "私たちは夕食をとり、その後家に帰った。"
+  },
+  {
+    "rank": 300,
+    "word": "altogether",
+    "meaning": "完全に",
+    "example": "He gave up smoking altogether last year.",
+    "translation": "彼は昨年、喫煙を完全にやめた。"
+  },
+  {
+    "rank": 302,
+    "word": "guess",
+    "meaning": "と思う",
+    "example": "I guess it will rain tomorrow.",
+    "translation": "明日雨が降ると思う。"
+  },
+  {
+    "rank": 307,
+    "word": "reply",
+    "meaning": "返事を出す",
+    "example": "Please reply to my email as soon as possible.",
+    "translation": "できるだけ早く私のメールに返信してください。"
+  },
+  {
+    "rank": 312,
+    "word": "join",
+    "meaning": "（会、団体、人）に加わる",
+    "example": "Would you like to join our club?",
+    "translation": "私たちのクラブに入りませんか？"
+  },
+  {
+    "rank": 315,
+    "word": "attack",
+    "meaning": "を襲う、攻撃する",
+    "example": "The enemy attacked the castle at night.",
+    "translation": "敵は夜に城を攻撃した。"
+  },
+  {
+    "rank": 319,
+    "word": "marry",
+    "meaning": "と結婚する",
+    "example": "She decided to marry her high school sweetheart.",
+    "translation": "彼女は高校時代の恋人と結婚することを決めた。"
+  },
+  {
+    "rank": 326,
+    "word": "taste",
+    "meaning": "～の味がする",
+    "example": "This soup tastes a little salty.",
+    "translation": "このスープは少し塩辛い味がする。"
+  },
+  {
+    "rank": 327,
+    "word": "smell",
+    "meaning": "～のにおいがする",
+    "example": "The flowers smell very sweet.",
+    "translation": "その花はとても甘い香りがする。"
+  },
+  {
+    "rank": 331,
+    "word": "separate",
+    "meaning": "を分離する",
+    "example": "We need to separate the trash by type.",
+    "translation": "私たちはゴミを種類別に分別する必要がある。"
+  },
+  {
+    "rank": 336,
+    "word": "disappear",
+    "meaning": "姿を消す",
+    "example": "The sun disappeared behind the clouds.",
+    "translation": "太陽は雲の後ろに姿を消した。"
+  },
+  {
+    "rank": 342,
+    "word": "citizen",
+    "meaning": "国民",
+    "example": "Every citizen has the right to vote.",
+    "translation": "すべての国民には投票する権利がある。"
+  },
+  {
+    "rank": 343,
+    "word": "career",
+    "meaning": "経歴",
+    "example": "He is building a successful career in law.",
+    "translation": "彼は法律分野で成功するキャリアを築いている。"
+  },
+  {
+    "rank": 345,
+    "word": "billion",
+    "meaning": "10億",
+    "example": "The company earned over one billion yen.",
+    "translation": "その会社は10億円以上を稼いだ。"
+  },
+  {
+    "rank": 349,
+    "word": "scale",
+    "meaning": "規模",
+    "example": "We need to understand the scale of the problem.",
+    "translation": "私たちは問題の規模を理解する必要がある。"
+  },
+  {
+    "rank": 353,
+    "word": "diet",
+    "meaning": "（日常の）食事",
+    "example": "A balanced diet is important for health.",
+    "translation": "バランスの取れた食事が健康には重要だ。"
+  },
+  {
+    "rank": 356,
+    "word": "moment",
+    "meaning": "瞬間",
+    "example": "Please wait a moment. I'll be right back.",
+    "translation": "少々お待ちください。すぐに戻ります。"
+  },
+  {
+    "rank": 358,
+    "word": "stage",
+    "meaning": "（発達、変化の）段階",
+    "example": "This project is in its final stage.",
+    "translation": "このプロジェクトは最終段階にある。"
+  },
+  {
+    "rank": 371,
+    "word": "difficulty",
+    "meaning": "困難、苦労",
+    "example": "He had difficulty understanding the new concept.",
+    "translation": "彼は新しい概念を理解するのに苦労した。"
+  },
+  {
+    "rank": 372,
+    "word": "trouble",
+    "meaning": "困難",
+    "example": "I had some trouble finding the place.",
+    "translation": "その場所を見つけるのに少し苦労した。"
+  },
+  {
+    "rank": 376,
+    "word": "whatever",
+    "meaning": "たとえ何を…しても、たとえ何が…であろうと",
+    "example": "Do whatever you want to do.",
+    "translation": "やりたいことは何でもやりなさい。"
+  },
+  {
+    "rank": 379,
+    "word": "local",
+    "meaning": "その土地の、地元の",
+    "example": "We visited a famous local restaurant.",
+    "translation": "私たちは地元の有名なレストランを訪れた。"
+  },
+  {
+    "rank": 381,
+    "word": "smart",
+    "meaning": "頭の良い",
+    "example": "She is a very smart student in our class.",
+    "translation": "彼女は私たちのクラスのとても頭の良い生徒だ。"
+  },
+  {
+    "rank": 383,
+    "word": "intellectual",
+    "meaning": "知的な",
+    "example": "He enjoys intellectual conversations with friends.",
+    "translation": "彼は友人との知的な会話を楽しんでいる。"
+  },
+  {
+    "rank": 386,
+    "word": "private",
+    "meaning": "個人的な",
+    "example": "This is a private matter, so please keep it secret.",
+    "translation": "これは個人的なことなので、秘密にしてください。"
+  },
+  {
+    "rank": 388,
+    "word": "fair",
+    "meaning": "公正な、(数量などが)かなりの",
+    "example": "The judge made a fair decision for both sides.",
+    "translation": "裁判官は双方にとって公正な判決を下した。"
+  },
+  {
+    "rank": 393,
+    "word": "terrible",
+    "meaning": "ひどい",
+    "example": "The weather was terrible yesterday.",
+    "translation": "昨日の天気はひどかった。"
+  },
+  {
+    "rank": 395,
+    "word": "direct",
+    "meaning": "直接の",
+    "example": "We need to take direct action to solve this problem.",
+    "translation": "この問題を解決するために直接的な行動をとる必要があります。"
+  },
+  {
+    "rank": 396,
+    "word": "nearly",
+    "meaning": "もう少しで",
+    "example": "I nearly missed my train this morning.",
+    "translation": "今朝、もう少しで電車に乗り遅れるところでした。"
+  },
+  {
+    "rank": 397,
+    "word": "merely",
+    "meaning": "単に",
+    "example": "It was merely a misunderstanding, nothing serious.",
+    "translation": "それは単なる誤解で、深刻なことではありませんでした。"
+  },
+  {
+    "rank": 398,
+    "word": "seldom",
+    "meaning": "めったに…ない",
+    "example": "He seldom goes out on weekdays.",
+    "translation": "彼はめったに平日に外出しない。"
+  },
+  {
+    "rank": 399,
+    "word": "lately",
+    "meaning": "最近",
+    "example": "Have you seen her lately?",
+    "translation": "最近彼女に会いましたか？"
+  },
+  {
+    "rank": 400,
+    "word": "apart",
+    "meaning": "（空間、時間的に）離れて",
+    "example": "The two cities are 200 kilometers apart.",
+    "translation": "その2つの都市は200キロ離れています。"
+  },
+  {
+    "rank": 402,
+    "word": "promise",
+    "meaning": "を約束する",
+    "example": "I promise to help you with your homework.",
+    "translation": "あなたの宿題を手伝うことを約束します。"
+  },
+  {
+    "rank": 414,
+    "word": "gather",
+    "meaning": "を集める、拾い集める",
+    "example": "Students gathered in the hall for the assembly.",
+    "translation": "生徒たちは集会のためにホールに集まった。"
+  },
+  {
+    "rank": 417,
+    "word": "score",
+    "meaning": "（試合、テストで）（点）をとる",
+    "example": "Our team scored three goals in the second half.",
+    "translation": "私たちのチームは後半に3点とった。"
+  },
+  {
+    "rank": 422,
+    "word": "graduate",
+    "meaning": "卒業する",
+    "example": "She will graduate from university next spring.",
+    "translation": "彼女は来年の春に大学を卒業します。"
+  },
+  {
+    "rank": 425,
+    "word": "mix",
+    "meaning": "を混ぜる",
+    "example": "Please mix the ingredients well before baking.",
+    "translation": "焼く前によく材料を混ぜてください。"
+  },
+  {
+    "rank": 426,
+    "word": "fix",
+    "meaning": "を修理する",
+    "example": "Can you fix my broken bicycle?",
+    "translation": "私の壊れた自転車を修理できますか？"
+  },
+  {
+    "rank": 429,
+    "word": "invent",
+    "meaning": "を発明する",
+    "example": "Who invented the telephone?",
+    "translation": "誰が電話を発明しましたか？"
+  },
+  {
+    "rank": 453,
+    "word": "birth",
+    "meaning": "出産",
+    "example": "Her younger sister gave birth to a baby boy.",
+    "translation": "彼女の妹は男の子を出産しました。"
+  },
+  {
+    "rank": 457,
+    "word": "scene",
+    "meaning": "場面",
+    "example": "The opening scene of the movie was very impressive.",
+    "translation": "その映画のオープニングの場面はとても印象的でした。"
+  },
+  {
+    "rank": 461,
+    "word": "series",
+    "meaning": "連続",
+    "example": "This book is part of a popular series.",
+    "translation": "この本は人気シリーズの一部です。"
+  },
+  {
+    "rank": 463,
+    "word": "background",
+    "meaning": "（景色、事件などの）背景",
+    "example": "The artist painted a beautiful mountain in the background.",
+    "translation": "その芸術家は背景に美しい山を描いた。"
+  },
+  {
+    "rank": 466,
+    "word": "volunteer",
+    "meaning": "ボランティア",
+    "example": "Many volunteers helped clean up the park.",
+    "translation": "多くのボランティアが公園の清掃を手伝った。"
+  },
+  {
+    "rank": 467,
+    "word": "staff",
+    "meaning": "スタッフ、職員",
+    "example": "The hotel staff were very kind and helpful.",
+    "translation": "ホテルのスタッフはとても親切で協力的でした。"
+  },
+  {
+    "rank": 469,
+    "word": "labor",
+    "meaning": "労働",
+    "example": "Manual labor can be physically demanding.",
+    "translation": "肉体労働は肉体的にきついことがあります。"
+  },
+  {
+    "rank": 472,
+    "word": "fun",
+    "meaning": "楽しみ、おもしろいこと（人）",
+    "example": "We had a lot of fun at the party.",
+    "translation": "私たちはパーティーでとても楽しかった。"
+  },
+  {
+    "rank": 473,
+    "word": "crowd",
+    "meaning": "群衆",
+    "example": "A large crowd gathered to watch the parade.",
+    "translation": "大勢の群衆がパレードを見るために集まった。"
+  },
+  {
+    "rank": 475,
+    "word": "poverty",
+    "meaning": "貧困",
+    "example": "The government is trying to reduce poverty in the country.",
+    "translation": "政府はその国の貧困を減らそうとしている。"
+  },
+  {
+    "rank": 479,
+    "word": "complicated",
+    "meaning": "複雑な",
+    "example": "The instructions were too complicated for me.",
+    "translation": "その指示は私には複雑すぎた。"
+  },
+  {
+    "rank": 481,
+    "word": "alternative",
+    "meaning": "代替の",
+    "example": "We need to find an alternative energy source.",
+    "translation": "私たちは代替のエネルギー源を見つける必要がある。"
+  },
+  {
+    "rank": 484,
+    "word": "primary",
+    "meaning": "最も重要な",
+    "example": "Her primary goal is to finish her degree.",
+    "translation": "彼女の最も重要な目標は学位を修了することだ。"
+  },
+  {
+    "rank": 488,
+    "word": "commercial",
+    "meaning": "商業的な、営利的な",
+    "example": "This area is mainly for commercial use.",
+    "translation": "この地域は主に商業的な用途に使われている。"
+  },
+  {
+    "rank": 492,
+    "word": "former",
+    "meaning": "元の",
+    "example": "My former teacher now works at a different school.",
+    "translation": "私の元の先生は今、別の学校で働いている。"
+  },
+  {
+    "rank": 494,
+    "word": "straight",
+    "meaning": "まっすぐな",
+    "example": "Please draw a straight line on the paper.",
+    "translation": "紙にまっすぐな線を引いてください。"
+  },
+  {
+    "rank": 495,
+    "word": "regular",
+    "meaning": "定期的な",
+    "example": "He makes regular visits to his grandparents.",
+    "translation": "彼は祖父母の家を定期的に訪れる。"
+  },
+  {
+    "rank": 498,
+    "word": "unlike",
+    "meaning": "～と違って",
+    "example": "Unlike my brother, I enjoy studying history.",
+    "translation": "兄と違って、私は歴史を学ぶのが好きだ。"
+  },
+  {
+    "rank": 513,
+    "word": "invite",
+    "meaning": "を招待する",
+    "example": "They invited us to their wedding party.",
+    "translation": "彼らは私たちを結婚パーティーに招待した。"
+  },
+  {
+    "rank": 517,
+    "word": "belong",
+    "meaning": "所属している、ものである",
+    "example": "This book belongs to the school library.",
+    "translation": "この本は学校の図書館のものだ。"
+  },
+  {
+    "rank": 531,
+    "word": "hurt",
+    "meaning": "を痛める",
+    "example": "I accidentally hurt my leg while running.",
+    "translation": "走っているときに誤って足を痛めてしまった。"
+  },
+  {
+    "rank": 535,
+    "word": "press",
+    "meaning": "を押す",
+    "example": "Press this button to start the machine.",
+    "translation": "機械を始動するにはこのボタンを押してください。"
+  },
+  {
+    "rank": 536,
+    "word": "burn",
+    "meaning": "を燃やす",
+    "example": "Don't burn too much wood in the fireplace.",
+    "translation": "暖炉で木を燃やしすぎないでください。"
+  },
+  {
+    "rank": 539,
+    "word": "borrow",
+    "meaning": "を（無料で）借りる",
+    "example": "May I borrow your pen for a moment?",
+    "translation": "少しの間、あなたのペンを借りてもいいですか？"
+  },
+  {
+    "rank": 540,
+    "word": "steal",
+    "meaning": "を盗む",
+    "example": "Someone tried to steal my bicycle last night.",
+    "translation": "昨夜、誰かが私の自転車を盗もうとした。"
+  },
+  {
+    "rank": 541,
+    "word": "escape",
+    "meaning": "逃れる、脱出する、を免れる",
+    "example": "The prisoner managed to escape from jail.",
+    "translation": "その囚人は刑務所からどうにか脱出した。"
+  },
+  {
+    "rank": 542,
+    "word": "neighbor",
+    "meaning": "隣人、近所の人",
+    "example": "Our neighbor helped us move some heavy boxes.",
+    "translation": "私たちの隣人が重い箱をいくつか運ぶのを手伝ってくれた。"
+  },
+  {
+    "rank": 543,
+    "word": "household",
+    "meaning": "世帯",
+    "example": "Most households in Japan have a television.",
+    "translation": "日本のほとんどの世帯はテレビを持っている。"
+  },
+  {
+    "rank": 545,
+    "word": "vehicle",
+    "meaning": "車、乗り物",
+    "example": "Please park your vehicle in the designated area.",
+    "translation": "指定された場所に乗り物を駐車してください。"
+  },
+  {
+    "rank": 546,
+    "word": "wheel",
+    "meaning": "（自動車の）ハンドル",
+    "example": "The driver gripped the wheel tightly.",
+    "translation": "ドライバーはハンドルをしっかりと握った。"
+  },
+  {
+    "rank": 547,
+    "word": "delay",
+    "meaning": "遅れ",
+    "example": "There was a slight delay in our flight.",
+    "translation": "私たちのフライトにわずかな遅れがあった。"
+  },
+  {
+    "rank": 551,
+    "word": "electricity",
+    "meaning": "電気",
+    "example": "The power outage cut off electricity to the town.",
+    "translation": "停電で町への電気が止まった。"
+  },
+  {
+    "rank": 552,
+    "word": "cancer",
+    "meaning": "癌",
+    "example": "Early detection is important for treating cancer.",
+    "translation": "早期発見は癌の治療にとって重要だ。"
+  },
+  {
+    "rank": 555,
+    "word": "flood",
+    "meaning": "洪水",
+    "example": "Heavy rains caused a severe flood in the area.",
+    "translation": "激しい雨がその地域で深刻な洪水を引き起こした。"
+  },
+  {
+    "rank": 556,
+    "word": "earthquake",
+    "meaning": "地震",
+    "example": "A strong earthquake hit the region last night.",
+    "translation": "昨夜、その地域を強い地震が襲った。"
+  },
+  {
+    "rank": 564,
+    "word": "talent",
+    "meaning": "才能",
+    "example": "She has a great talent for playing the piano.",
+    "translation": "彼女はピアノを弾く素晴らしい才能を持っている。"
+  },
+  {
+    "rank": 566,
+    "word": "scholar",
+    "meaning": "（主に人文系の）学者",
+    "example": "He is a respected scholar of ancient history.",
+    "translation": "彼が古代史の尊敬される学者だ。"
+  },
+  {
+    "rank": 567,
+    "word": "tradition",
+    "meaning": "伝統",
+    "example": "It is a local tradition to celebrate autumn harvest.",
+    "translation": "秋の収穫を祝うのは地元の伝統です。"
+  },
+  {
+    "rank": 568,
+    "word": "literature",
+    "meaning": "文学",
+    "example": "She studies modern Japanese literature at university.",
+    "translation": "彼女は大学で現代日本文学を学んでいます。"
+  },
+  {
+    "rank": 575,
+    "word": "vision",
+    "meaning": "（将来の）展望",
+    "example": "The leader shared his vision for a peaceful future.",
+    "translation": "リーダーは平和な未来への展望を共有しました。"
+  },
+  {
+    "rank": 578,
+    "word": "bilingual",
+    "meaning": "バイリンガルの，2言語を話す",
+    "example": "My friend is bilingual in English and Japanese.",
+    "translation": "私の友人は英語と日本語のバイリンガルです。"
+  },
+  {
+    "rank": 582,
+    "word": "amazing",
+    "meaning": "驚くほどの",
+    "example": "The view from the mountain top was amazing.",
+    "translation": "山頂からの眺めは驚くほどでした。"
+  },
+  {
+    "rank": 583,
+    "word": "calm",
+    "meaning": "冷静な",
+    "example": "She stayed calm even in a difficult situation.",
+    "translation": "彼女は困難な状況でも冷静でした。"
+  },
+  {
+    "rank": 584,
+    "word": "quiet",
+    "meaning": "静かな",
+    "example": "Please be quiet in the library.",
+    "translation": "図書館では静かにしてください。"
+  },
+  {
+    "rank": 585,
+    "word": "senior",
+    "meaning": "高齢者の、（地位などが）上級の",
+    "example": "He is a senior manager in the company.",
+    "translation": "彼はその会社の上級管理職です。"
+  },
+  {
+    "rank": 586,
+    "word": "elderly",
+    "meaning": "年配の",
+    "example": "We should help elderly people cross the street.",
+    "translation": "私たちは年配の人が道を渡るのを手伝うべきです。"
+  },
+  {
+    "rank": 589,
+    "word": "tough",
+    "meaning": "困難な",
+    "example": "It was a tough decision, but I made it.",
+    "translation": "困難な決断でしたが、私はそれを行いました。"
+  },
+  {
+    "rank": 590,
+    "word": "rapid",
+    "meaning": "急速な",
+    "example": "The city has seen rapid growth in recent years.",
+    "translation": "その都市は近年急速な成長を遂げています。"
+  },
+  {
+    "rank": 594,
+    "word": "broad",
+    "meaning": "広範囲な",
+    "example": "The river is very broad at this point.",
+    "translation": "この地点でその川はとても幅が広いです。"
+  },
+  {
+    "rank": 596,
+    "word": "tiny",
+    "meaning": "とても小さな",
+    "example": "I found a tiny bird's nest in the tree.",
+    "translation": "私は木の中にとても小さな鳥の巣を見つけました。"
+  },
+  {
+    "rank": 599,
+    "word": "nearby",
+    "meaning": "すぐ近くの",
+    "example": "There is a nice cafe nearby.",
+    "translation": "すぐ近くに素敵なカフェがあります。"
+  },
+  {
+    "rank": 600,
+    "word": "distant",
+    "meaning": "遠い",
+    "example": "We could see a distant ship on the horizon.",
+    "translation": "地平線上に遠い船が見えました。"
+  },
+  {
+    "rank": 610,
+    "word": "excuse",
+    "meaning": "を大目に見る、の言い訳をする",
+    "example": "Please excuse my late reply.",
+    "translation": "返信が遅れたことをお許しください。"
+  },
+  {
+    "rank": 630,
+    "word": "suit",
+    "meaning": "に（色、服などが）似合う、に都合がよい",
+    "example": "This color suits you well.",
+    "translation": "この色はあなたによく似合います。"
+  },
+  {
+    "rank": 631,
+    "word": "tie",
+    "meaning": "を結びつける",
+    "example": "The two countries will tie closer relations.",
+    "translation": "その2つの国はより緊密な関係を結びつけるでしょう。"
+  },
+  {
+    "rank": 634,
+    "word": "dislike",
+    "meaning": "を嫌う",
+    "example": "Many people dislike humid weather in summer.",
+    "translation": "多くの人が夏の湿気の多い天気を嫌います。"
+  },
+  {
+    "rank": 638,
+    "word": "hire",
+    "meaning": "を雇う",
+    "example": "The company decided to hire more staff.",
+    "translation": "その会社はより多くの職員を雇うことを決めました。"
+  },
+  {
+    "rank": 642,
+    "word": "root",
+    "meaning": "起源、ルーツ",
+    "example": "The root of the problem is a lack of communication.",
+    "translation": "その問題の根源はコミュニケーション不足です。"
+  },
+  {
+    "rank": 648,
+    "word": "mine",
+    "meaning": "鉱山",
+    "example": "The old mine is now a tourist attraction.",
+    "translation": "その古い鉱山は今や観光名所です。"
+  },
+  {
+    "rank": 650,
+    "word": "quarter",
+    "meaning": "四分の一",
+    "example": "A quarter of the students are from abroad.",
+    "translation": "学生の4分の1が海外出身です。"
+  },
+  {
+    "rank": 651,
+    "word": "era",
+    "meaning": "時代",
+    "example": "We are living in a new digital era.",
+    "translation": "私たちは新しいデジタル時代に生きています。"
+  },
+  {
+    "rank": 656,
+    "word": "civilization",
+    "meaning": "文明",
+    "example": "Ancient civilizations developed near rivers.",
+    "translation": "古代文明は川の近くで発展しました。"
+  },
+  {
+    "rank": 657,
+    "word": "universe",
+    "meaning": "宇宙",
+    "example": "The universe is vast and full of mysteries.",
+    "translation": "宇宙は広大で謎に満ちています。"
+  },
+  {
+    "rank": 663,
+    "word": "board",
+    "meaning": "委員会、重役会",
+    "example": "The board will meet next Monday.",
+    "translation": "委員会は来週月曜日に開催されます。"
+  },
+  {
+    "rank": 673,
+    "word": "muscle",
+    "meaning": "筋肉",
+    "example": "Regular exercise builds strong muscles.",
+    "translation": "定期的な運動は強い筋肉を作ります。"
+  },
+  {
+    "rank": 674,
+    "word": "wage",
+    "meaning": "賃金",
+    "example": "The company raised the minimum wage.",
+    "translation": "その会社は最低賃金を引き上げました。"
+  },
+  {
+    "rank": 680,
+    "word": "asleep",
+    "meaning": "眠って",
+    "example": "The baby was fast asleep in the crib.",
+    "translation": "赤ちゃんはベビーベッドでぐっすり眠っていました。"
+  },
+  {
+    "rank": 681,
+    "word": "alive",
+    "meaning": "生きている",
+    "example": "We are lucky to be alive and healthy.",
+    "translation": "私たちは生きて健康であることを幸運に思います。"
+  },
+  {
+    "rank": 682,
+    "word": "alike",
+    "meaning": "似ている",
+    "example": "My brothers are very much alike.",
+    "translation": "私の兄弟はとてもよく似ています。"
+  },
+  {
+    "rank": 683,
+    "word": "excellent",
+    "meaning": "秀でている",
+    "example": "She gave an excellent presentation.",
+    "translation": "彼女は素晴らしいプレゼンテーションをしました。"
+  },
+  {
+    "rank": 691,
+    "word": "elementary",
+    "meaning": "初等（教育）の",
+    "example": "He teaches at an elementary school.",
+    "translation": "彼は小学校で教えています。"
+  },
+  {
+    "rank": 693,
+    "word": "chief",
+    "meaning": "第一の、主要な",
+    "example": "The chief reason is a lack of funds.",
+    "translation": "主要な理由は資金不足です。"
+  },
+  {
+    "rank": 700,
+    "word": "empty",
+    "meaning": "空の",
+    "example": "The box was completely empty.",
+    "translation": "その箱は完全に空でした。"
+  },
+  {
+    "rank": 714,
+    "word": "blow",
+    "meaning": "（風が）吹く",
+    "example": "The strong wind blew all night.",
+    "translation": "強い風が夜通し吹きました。"
+  },
+  {
+    "rank": 715,
+    "word": "injure",
+    "meaning": "を傷つける",
+    "example": "Be careful not to injure yourself.",
+    "translation": "自分を傷つけないように注意してください。"
+  },
+  {
+    "rank": 734,
+    "word": "lift",
+    "meaning": "を持ち上げる",
+    "example": "He tried to lift the heavy box.",
+    "translation": "彼はその重い箱を持ち上げようとしました。"
+  },
+  {
+    "rank": 736,
+    "word": "shake",
+    "meaning": "を振る",
+    "example": "She began to shake with fear.",
+    "translation": "彼女は恐怖で震え始めました。"
+  },
+  {
+    "rank": 738,
+    "word": "lay",
+    "meaning": "を置く、敷く",
+    "example": "She will lay the baby in the crib.",
+    "translation": "彼女は赤ちゃんをベビーベッドに寝かせるでしょう。"
+  },
+  {
+    "rank": 744,
+    "word": "ape",
+    "meaning": "類人猿",
+    "example": "Apes are known for their intelligence.",
+    "translation": "類人猿はその知能で知られています。"
+  },
+  {
+    "rank": 745,
+    "word": "insect",
+    "meaning": "昆虫",
+    "example": "Many insects are active in summer.",
+    "translation": "夏には多くの昆虫が活動します。"
+  },
+  {
+    "rank": 746,
+    "word": "infant",
+    "meaning": "乳児",
+    "example": "The infant slept peacefully in its mother's arms.",
+    "translation": "その乳児は母親の腕の中で安らかに眠りました。"
+  },
+  {
+    "rank": 750,
+    "word": "battle",
+    "meaning": "戦闘",
+    "example": "The soldiers prepared for the coming battle.",
+    "translation": "兵士たちは来るべき戦闘に備えました。"
+  },
+  {
+    "rank": 751,
+    "word": "enemy",
+    "meaning": "敵",
+    "example": "They fought bravely against the enemy.",
+    "translation": "彼らは敵に対して勇敢に戦いました。"
+  },
+  {
+    "rank": 753,
+    "word": "arm",
+    "meaning": "腕、武器、兵器",
+    "example": "He hurt his arm playing sports.",
+    "translation": "彼はスポーツをして腕を痛めました。"
+  },
+  {
+    "rank": 754,
+    "word": "army",
+    "meaning": "陸軍",
+    "example": "The army protected the country's border.",
+    "translation": "陸軍は国の国境を守りました。"
+  },
+  {
+    "rank": 755,
+    "word": "navy",
+    "meaning": "海軍",
+    "example": "The navy has a strong fleet of ships.",
+    "translation": "海軍は強力な艦隊を持っています。"
+  },
+  {
+    "rank": 756,
+    "word": "border",
+    "meaning": "境界線、国境",
+    "example": "They crossed the border into another country.",
+    "translation": "彼らは国境を越えて別の国に入りました。"
+  },
+  {
+    "rank": 764,
+    "word": "shortage",
+    "meaning": "不足",
+    "example": "There is a serious water shortage in this region.",
+    "translation": "この地域では深刻な水不足がある。"
+  },
+  {
+    "rank": 769,
+    "word": "union",
+    "meaning": "組合",
+    "example": "The workers formed a union to protect their rights.",
+    "translation": "労働者たちは自分たちの権利を守るために組合を結成した。"
+  },
+  {
+    "rank": 770,
+    "word": "unit",
+    "meaning": "（最小）単位",
+    "example": "Each unit of the product is carefully inspected.",
+    "translation": "製品の各単位は慎重に検査される。"
+  },
+  {
+    "rank": 775,
+    "word": "edge",
+    "meaning": "へり",
+    "example": "He stood on the edge of the cliff.",
+    "translation": "彼は崖のへりに立っていた。"
+  },
+  {
+    "rank": 777,
+    "word": "mystery",
+    "meaning": "なぞ",
+    "example": "The ancient ruins are still a great mystery.",
+    "translation": "その古代遺跡は今も大きな謎である。"
+  },
+  {
+    "rank": 780,
+    "word": "frank",
+    "meaning": "率直な",
+    "example": "She gave me her frank opinion about the plan.",
+    "translation": "彼女はその計画について率直な意見をくれた。"
+  },
+  {
+    "rank": 781,
+    "word": "polite",
+    "meaning": "丁寧な",
+    "example": "It is polite to say thank you to others.",
+    "translation": "他人に感謝を伝えるのは丁寧なことだ。"
+  },
+  {
+    "rank": 789,
+    "word": "pleasant",
+    "meaning": "快い、楽しい",
+    "example": "We had a pleasant chat over coffee.",
+    "translation": "私たちはコーヒーを飲みながら楽しいおしゃべりをした。"
+  },
+  {
+    "rank": 790,
+    "word": "comfortable",
+    "meaning": "心地よい、快適な",
+    "example": "I felt comfortable in the soft armchair.",
+    "translation": "私は柔らかい肘掛け椅子で心地よく感じた。"
+  },
+  {
+    "rank": 792,
+    "word": "thick",
+    "meaning": "分厚い",
+    "example": "The book was so thick that it was heavy.",
+    "translation": "その本はとても分厚くて重かった。"
+  },
+  {
+    "rank": 793,
+    "word": "thin",
+    "meaning": "やせた",
+    "example": "He became very thin after his long illness.",
+    "translation": "彼は長い病気の後にとても痩せた。"
+  },
+  {
+    "rank": 826,
+    "word": "hurry",
+    "meaning": "急ぐ",
+    "example": "We need to hurry to catch the bus.",
+    "translation": "バスに間に合うように急ぐ必要がある。"
+  },
+  {
+    "rank": 828,
+    "word": "roll",
+    "meaning": "転がる",
+    "example": "The ball started to roll down the hill.",
+    "translation": "そのボールは丘を転がり始めた。"
+  },
+  {
+    "rank": 831,
+    "word": "dig",
+    "meaning": "を掘る",
+    "example": "They had to dig a deep hole for the plant.",
+    "translation": "彼らは植物のために深い穴を掘らなければならなかった。"
+  },
+  {
+    "rank": 842,
+    "word": "tongue",
+    "meaning": "言語",
+    "example": "English is not her native tongue, but she speaks it well.",
+    "translation": "英語は彼女の母語ではないが、彼女は上手に話す。"
+  },
+  {
+    "rank": 844,
+    "word": "accent",
+    "meaning": "なまり、方言",
+    "example": "He spoke English with a strong British accent.",
+    "translation": "彼は強いイギリスなまりの英語を話した。"
+  },
+  {
+    "rank": 850,
+    "word": "hunger",
+    "meaning": "飢え",
+    "example": "Millions of people suffer from hunger worldwide.",
+    "translation": "世界中で何百万人もの人々が飢えに苦しんでいる。"
+  },
+  {
+    "rank": 851,
+    "word": "obesity",
+    "meaning": "肥満",
+    "example": "Lack of exercise can lead to childhood obesity.",
+    "translation": "運動不足は子供の肥満につながる可能性がある。"
+  },
+  {
+    "rank": 860,
+    "word": "election",
+    "meaning": "選挙",
+    "example": "The next general election will be held soon.",
+    "translation": "次の総選挙がまもなく行われる。"
+  },
+  {
+    "rank": 865,
+    "word": "ceremony",
+    "meaning": "式典、儀式",
+    "example": "The opening ceremony of the Olympic Games was grand.",
+    "translation": "オリンピックの開会式は壮大だった。"
+  },
+  {
+    "rank": 870,
+    "word": "theme",
+    "meaning": "主題、テーマ",
+    "example": "The main theme of the novel is love and loss.",
+    "translation": "その小説の主要なテーマは愛と喪失である。"
+  },
+  {
+    "rank": 876,
+    "word": "destination",
+    "meaning": "目的地",
+    "example": "We finally reached our destination after a long journey.",
+    "translation": "長い旅の後、ついに目的地に到着した。"
+  },
+  {
+    "rank": 893,
+    "word": "sudden",
+    "meaning": "急な",
+    "example": "There was a sudden change in the weather.",
+    "translation": "天候に急な変化があった。"
+  },
+  {
+    "rank": 899,
+    "word": "exhausted",
+    "meaning": "疲れ果てた",
+    "example": "After the long hike, I felt completely exhausted.",
+    "translation": "長いハイキングの後、私は完全に疲れ果てた。"
+  },
+  {
+    "rank": 902,
+    "word": "chat",
+    "meaning": "おしゃべりをする",
+    "example": "We often chat online with our friends.",
+    "translation": "私たちはよく友達とオンラインでおしゃべりをする。"
+  },
+  {
+    "rank": 915,
+    "word": "assess",
+    "meaning": "を評価する",
+    "example": "We need to assess the damage after the storm.",
+    "translation": "嵐の後、被害を評価する必要がある。"
+  },
+  {
+    "rank": 917,
+    "word": "weigh",
+    "meaning": "の重さがある、の重さを量る",
+    "example": "The baby weighs about three kilograms.",
+    "translation": "その赤ちゃんは約3キログラムの重さがある。"
+  },
+  {
+    "rank": 918,
+    "word": "strengthen",
+    "meaning": "を強くする",
+    "example": "Exercise can strengthen your muscles and bones.",
+    "translation": "運動は筋肉と骨を強くすることができる。"
+  },
+  {
+    "rank": 919,
+    "word": "weaken",
+    "meaning": "を弱める",
+    "example": "The storm began to weaken as it moved inland.",
+    "translation": "その嵐は内陸へ進むにつれて弱まり始めた。"
+  },
+  {
+    "rank": 929,
+    "word": "shut",
+    "meaning": "を閉める",
+    "example": "Please shut the door quietly when you leave.",
+    "translation": "出かけるときは静かにドアを閉めてください。"
+  },
+  {
+    "rank": 936,
+    "word": "sink",
+    "meaning": "沈む",
+    "example": "The old ship began to sink slowly into the sea.",
+    "translation": "その古い船はゆっくりと海に沈み始めた。"
+  },
+  {
+    "rank": 941,
+    "word": "wrap",
+    "meaning": "を包む",
+    "example": "She decided to wrap the gift in colorful paper.",
+    "translation": "彼女はその贈り物をカラフルな紙で包むことにした。"
+  },
+  {
+    "rank": 943,
+    "word": "length",
+    "meaning": "（物や時間の）長さ",
+    "example": "The length of the bridge is over 100 meters.",
+    "translation": "その橋の長さは100メートル以上だ。"
+  },
+  {
+    "rank": 944,
+    "word": "height",
+    "meaning": "高度",
+    "example": "The mountain reaches a height of over 3,000 meters.",
+    "translation": "その山は3,000メートル以上の高さに達する。"
+  },
+  {
+    "rank": 945,
+    "word": "volume",
+    "meaning": "（総）量、体積、容積",
+    "example": "Please lower the volume of the music.",
+    "translation": "音楽の音量を下げてください。"
+  },
+  {
+    "rank": 951,
+    "word": "square",
+    "meaning": "正方形",
+    "example": "The table has a square top made of wood.",
+    "translation": "そのテーブルは木製の正方形の天板がある。"
+  },
+  {
+    "rank": 952,
+    "word": "empire",
+    "meaning": "帝国",
+    "example": "The Roman Empire was powerful for many centuries.",
+    "translation": "ローマ帝国は何世紀もの間強力だった。"
+  },
+  {
+    "rank": 956,
+    "word": "charity",
+    "meaning": "慈善事業",
+    "example": "He donated a large sum of money to charity.",
+    "translation": "彼は多額のお金を慈善事業に寄付した。"
+  },
+  {
+    "rank": 958,
+    "word": "profession",
+    "meaning": "（専門的な）職業",
+    "example": "Teaching is a noble profession that helps shape minds.",
+    "translation": "教職は心を形成するのを助ける崇高な職業だ。"
+  },
+  {
+    "rank": 959,
+    "word": "slave",
+    "meaning": "奴隷",
+    "example": "Historically, many people were forced to live as slaves.",
+    "translation": "歴史的に、多くの人々が奴隷として生きることを強いられた。"
+  },
+  {
+    "rank": 965,
+    "word": "leisure",
+    "meaning": "余暇",
+    "example": "In my leisure time, I enjoy reading books.",
+    "translation": "私は余暇の時間に本を読むのを楽しむ。"
+  },
+  {
+    "rank": 969,
+    "word": "statue",
+    "meaning": "像、彫像",
+    "example": "There is a beautiful statue in the park.",
+    "translation": "公園には美しい像がある。"
+  },
+  {
+    "rank": 972,
+    "word": "mechanism",
+    "meaning": "仕組み",
+    "example": "He explained the mechanism of the new machine.",
+    "translation": "彼は新しい機械の仕組みを説明した。"
+  },
+  {
+    "rank": 981,
+    "word": "shy",
+    "meaning": "内気な、恥ずかしがりの",
+    "example": "She was too shy to speak in front of the crowd.",
+    "translation": "彼女は人前で話すには内気すぎた。"
+  },
+  {
+    "rank": 983,
+    "word": "stupid",
+    "meaning": "愚かな",
+    "example": "It was stupid of me to forget my umbrella.",
+    "translation": "傘を忘れるなんて私は愚かだった。"
+  },
+  {
+    "rank": 987,
+    "word": "lonely",
+    "meaning": "（孤独で）寂しい",
+    "example": "She felt lonely after her friends moved away.",
+    "translation": "友達が引っ越した後、彼女は寂しく感じた。"
+  },
+  {
+    "rank": 989,
+    "word": "grand",
+    "meaning": "豪華な、雄大な",
+    "example": "The hotel has a grand entrance hall.",
+    "translation": "そのホテルには豪華な玄関ホールがある。"
+  },
+  {
+    "rank": 1004,
+    "word": "cheer",
+    "meaning": "元気づける",
+    "example": "We tried to cheer up our friend who was sad.",
+    "translation": "私たちは悲しんでいる友達を元気づけようとした。"
+  },
+  {
+    "rank": 1011,
+    "word": "shoot",
+    "meaning": "撃つ",
+    "example": "The photographer wanted to shoot some pictures of the birds.",
+    "translation": "その写真家は鳥の写真を何枚か撮りたかった。"
+  },
+  {
+    "rank": 1012,
+    "word": "murder",
+    "meaning": "殺害する",
+    "example": "The police are investigating the murder of a famous artist.",
+    "translation": "警察は有名な芸術家の殺害事件を捜査している。"
+  },
+  {
+    "rank": 1042,
+    "word": "shine",
+    "meaning": "輝く",
+    "example": "The sun began to shine brightly.",
+    "translation": "太陽が明るく輝き始めた。"
+  },
+  {
+    "rank": 1044,
+    "word": "poetry",
+    "meaning": "詩",
+    "example": "She enjoys reading modern poetry.",
+    "translation": "彼女は現代詩を読むのが好きだ。"
+  },
+  {
+    "rank": 1053,
+    "word": "poison",
+    "meaning": "毒",
+    "example": "Some mushrooms contain strong poison.",
+    "translation": "いくつかのキノコは強い毒を含んでいる。"
+  },
+  {
+    "rank": 1056,
+    "word": "oxygen",
+    "meaning": "酸素",
+    "example": "Plants produce oxygen for us to breathe.",
+    "translation": "植物は私たちが呼吸するための酸素を作り出す。"
+  },
+  {
+    "rank": 1058,
+    "word": "pole",
+    "meaning": "極(地)",
+    "example": "Explorers tried to reach the North Pole.",
+    "translation": "探検家たちは北極点に到達しようとした。"
+  },
+  {
+    "rank": 1059,
+    "word": "valley",
+    "meaning": "谷",
+    "example": "A beautiful river flows through the valley.",
+    "translation": "その谷には美しい川が流れている。"
+  },
+  {
+    "rank": 1063,
+    "word": "pioneer",
+    "meaning": "先駆者",
+    "example": "He was a pioneer in space exploration.",
+    "translation": "彼は宇宙探査の先駆者だった。"
+  },
+  {
+    "rank": 1074,
+    "word": "prison",
+    "meaning": "刑務所",
+    "example": "The man was sent to prison for his crime.",
+    "translation": "その男は罪のために刑務所に送られた。"
+  },
+  {
+    "rank": 1076,
+    "word": "committee",
+    "meaning": "委員会",
+    "example": "The committee discussed the new school rules.",
+    "translation": "委員会は新しい学校の規則について議論した。"
+  },
+  {
+    "rank": 1085,
+    "word": "smooth",
+    "meaning": "滑らかな",
+    "example": "The road surface was very smooth.",
+    "translation": "道路の表面はとても滑らかだった。"
+  },
+  {
+    "rank": 1093,
+    "word": "blind",
+    "meaning": "目の見えない",
+    "example": "He is blind but can read braille.",
+    "translation": "彼は目が見えないが、点字を読むことができる。"
+  },
+  {
+    "rank": 1127,
+    "word": "boil",
+    "meaning": "沸かす",
+    "example": "Please boil some water for tea.",
+    "translation": "お茶のために水を少し沸かしてください。"
+  },
+  {
+    "rank": 1143,
+    "word": "continent",
+    "meaning": "大陸",
+    "example": "Asia is the largest continent in the world.",
+    "translation": "アジアは世界で最も大きな大陸だ。"
+  },
+  {
+    "rank": 1146,
+    "word": "inhabitant",
+    "meaning": "住民",
+    "example": "The island's inhabitants live a simple life.",
+    "translation": "その島の住民はシンプルな生活を送っている。"
+  },
+  {
+    "rank": 1147,
+    "word": "suburb",
+    "meaning": "郊外",
+    "example": "Many people live in the suburbs.",
+    "translation": "多くの人々が郊外に住んでいる。"
+  },
+  {
+    "rank": 1148,
+    "word": "furniture",
+    "meaning": "家具",
+    "example": "We bought new furniture for the living room.",
+    "translation": "私たちはリビングルームに新しい家具を買った。"
+  },
+  {
+    "rank": 1149,
+    "word": "refrigerator",
+    "meaning": "冷蔵庫",
+    "example": "Put the milk back in the refrigerator.",
+    "translation": "牛乳を冷蔵庫に戻してください。"
+  },
+  {
+    "rank": 1150,
+    "word": "garbage",
+    "meaning": "(生）ごみ",
+    "example": "Please take out the garbage every morning.",
+    "translation": "毎朝ゴミを出してください。"
+  },
+  {
+    "rank": 1151,
+    "word": "trash",
+    "meaning": "ごみ",
+    "example": "Don't throw trash on the street.",
+    "translation": "通りのゴミを捨てないでください。"
+  },
+  {
+    "rank": 1152,
+    "word": "litter",
+    "meaning": "(公共の場での)ごみ",
+    "example": "Please do not drop litter in the park.",
+    "translation": "公園にゴミを捨てないでください。"
+  },
+  {
+    "rank": 1161,
+    "word": "obligation",
+    "meaning": "義務",
+    "example": "Voting is a civic obligation for citizens.",
+    "translation": "投票は市民の市民としての義務である。"
+  },
+  {
+    "rank": 1176,
+    "word": "fever",
+    "meaning": "熱",
+    "example": "She had a high fever and felt weak.",
+    "translation": "彼女は高熱があり、体がだるかった。"
+  },
+  {
+    "rank": 1180,
+    "word": "gentle",
+    "meaning": "優しい",
+    "example": "He has a gentle voice and kind eyes.",
+    "translation": "彼には優しい声と親切な目がある。"
+  },
+  {
+    "rank": 1184,
+    "word": "holy",
+    "meaning": "神聖な",
+    "example": "This is a holy place for many people.",
+    "translation": "ここを多くの人々は神聖な場所としている。"
+  },
+  {
+    "rank": 1187,
+    "word": "fond",
+    "meaning": "好む",
+    "example": "I am very fond of classical music.",
+    "translation": "私はクラシック音楽がとても好きだ。"
+  },
+  {
+    "rank": 1188,
+    "word": "selfish",
+    "meaning": "自分勝手な",
+    "example": "It was selfish of him to eat all the cake.",
+    "translation": "ケーキを全部食べてしまうなんて、彼は自分勝手だった。"
+  },
+  {
+    "rank": 1195,
+    "word": "dull",
+    "meaning": "退屈な",
+    "example": "The lecture was so dull that I fell asleep.",
+    "translation": "その講義はとても退屈で、私は眠ってしまった。"
+  },
+  {
+    "rank": 1198,
+    "word": "tight",
+    "meaning": "きつい",
+    "example": "These jeans are too tight for me now.",
+    "translation": "このジーンズは今、私にはきつすぎる。"
+  },
+  {
+    "rank": 1203,
+    "word": "scream",
+    "meaning": "叫び声をあげる",
+    "example": "She screamed when she saw the spider.",
+    "translation": "彼女はクモを見て叫び声をあげた。"
+  },
+  {
+    "rank": 1207,
+    "word": "cough",
+    "meaning": "咳をする",
+    "example": "He started to cough loudly during the meeting.",
+    "translation": "彼は会議中に大きな咳をし始めた。"
+  },
+  {
+    "rank": 1208,
+    "word": "hug",
+    "meaning": "抱きしめる",
+    "example": "She gave her mother a warm hug.",
+    "translation": "彼女は母親に温かいハグをした。"
+  },
+  {
+    "rank": 1243,
+    "word": "merchant",
+    "meaning": "商人",
+    "example": "The merchant sold spices from India.",
+    "translation": "その商人はインド産の香辛料を売っていた。"
+  },
+  {
+    "rank": 1245,
+    "word": "voyage",
+    "meaning": "航海",
+    "example": "The ship began its long voyage across the ocean.",
+    "translation": "その船は海を渡る長い航海を始めた。"
+  },
+  {
+    "rank": 1246,
+    "word": "crew",
+    "meaning": "乗組員",
+    "example": "The ship's crew worked hard day and night.",
+    "translation": "その船の乗組員は昼夜を問わず熱心に働いた。"
+  },
+  {
+    "rank": 1247,
+    "word": "luggage",
+    "meaning": "手荷物",
+    "example": "Please check your luggage before boarding.",
+    "translation": "搭乗前に手荷物を確認してください。"
+  },
+  {
+    "rank": 1248,
+    "word": "horizon",
+    "meaning": "水平線、地平線",
+    "example": "The sun set beautifully on the horizon.",
+    "translation": "太陽が水平線に美しく沈んだ。"
+  },
+  {
+    "rank": 1249,
+    "word": "lightning",
+    "meaning": "稲妻",
+    "example": "We saw lightning flash across the dark sky.",
+    "translation": "私たちは暗い空に稲妻が走るのを見た。"
+  },
+  {
+    "rank": 1250,
+    "word": "dawn",
+    "meaning": "夜明け",
+    "example": "We woke up at dawn to see the sunrise.",
+    "translation": "私たちは日の出を見るために夜明けに起きた。"
+  },
+  {
+    "rank": 1256,
+    "word": "viewpoint",
+    "meaning": "見地",
+    "example": "From my viewpoint, the plan seems good.",
+    "translation": "私の見地からすると、その計画は良さそうだ。"
+  },
+  {
+    "rank": 1263,
+    "word": "chapter",
+    "meaning": "章",
+    "example": "I finished reading the first chapter of the novel.",
+    "translation": "私は小説の最初の章を読み終えた。"
+  },
+  {
+    "rank": 1264,
+    "word": "string",
+    "meaning": "ひも、糸",
+    "example": "He tied the package with a piece of string.",
+    "translation": "彼はその小包をひもで縛った。"
+  },
+  {
+    "rank": 1265,
+    "word": "tag",
+    "meaning": "札",
+    "example": "The price tag was still on the shirt.",
+    "translation": "値札がまだシャツについていた。"
+  },
+  {
+    "rank": 1266,
+    "word": "peasant",
+    "meaning": "小作農",
+    "example": "The peasant worked hard on the land.",
+    "translation": "その小作農は土地で一生懸命働いた。"
+  },
+  {
+    "rank": 1267,
+    "word": "livestock",
+    "meaning": "家畜",
+    "example": "Farmers raise livestock like cows and sheep.",
+    "translation": "農家は牛や羊のような家畜を飼育している。"
+  },
+  {
+    "rank": 1271,
+    "word": "sweat",
+    "meaning": "汗",
+    "example": "He wiped the sweat from his forehead.",
+    "translation": "彼は額から汗を拭った。"
+  },
+  {
+    "rank": 1276,
+    "word": "prosperity",
+    "meaning": "繁栄",
+    "example": "The city enjoyed a period of great prosperity.",
+    "translation": "その都市は大きな繁栄の時代を享受した。"
+  },
+  {
+    "rank": 1286,
+    "word": "bold",
+    "meaning": "大胆な",
+    "example": "She made a bold decision to change her career.",
+    "translation": "彼女はキャリアを変えるという大胆な決断をした。"
+  },
+  {
+    "rank": 1288,
+    "word": "ugly",
+    "meaning": "醜い",
+    "example": "The ugly duckling grew into a beautiful swan.",
+    "translation": "醜いアヒルの子は美しい白鳥に成長した。"
+  },
+  {
+    "rank": 1289,
+    "word": "pale",
+    "meaning": "青白い",
+    "example": "Her face turned pale when she heard the news.",
+    "translation": "彼女はその知らせを聞いて顔が青白くなった。"
+  },
+  {
+    "rank": 1290,
+    "word": "male",
+    "meaning": "男の",
+    "example": "This species of bird has colorful male members.",
+    "translation": "この種の鳥には、カラフルなオスがいる。"
+  },
+  {
+    "rank": 1296,
+    "word": "loose",
+    "meaning": "緩い",
+    "example": "This shirt feels a bit loose on me.",
+    "translation": "このシャツは私には少し緩い感じがする。"
+  },
+  {
+    "rank": 1318,
+    "word": "last",
+    "meaning": "続く",
+    "example": "The meeting is expected to last for two hours.",
+    "translation": "会議は2時間続く予定です。"
+  },
+  {
+    "rank": 1331,
+    "word": "bathe",
+    "meaning": "を入浴させる",
+    "example": "She gently bathed her baby in warm water.",
+    "translation": "彼女は赤ちゃんを温かいお湯で優しく入浴させた。"
+  },
+  {
+    "rank": 1337,
+    "word": "sew",
+    "meaning": "を縫いつける",
+    "example": "My grandmother taught me how to sew a button.",
+    "translation": "祖母がボタンの縫い方を教えてくれた。"
+  },
+  {
+    "rank": 1341,
+    "word": "congratulate",
+    "meaning": "に祝いの言葉を述べる",
+    "example": "I congratulated him on his graduation from college.",
+    "translation": "私は彼の大学卒業を祝った。"
+  },
+  {
+    "rank": 1342,
+    "word": "summit",
+    "meaning": "頂上",
+    "example": "We reached the summit of the mountain after a long climb.",
+    "translation": "長い登山の後、私たちは山の頂上に到達した。"
+  },
+  {
+    "rank": 1343,
+    "word": "mayor",
+    "meaning": "市長",
+    "example": "The mayor gave a speech about the city's future.",
+    "translation": "市長は市の未来についてスピーチをした。"
+  },
+  {
+    "rank": 1344,
+    "word": "secretary",
+    "meaning": "秘書",
+    "example": "My secretary prepared all the necessary documents for the meeting.",
+    "translation": "私の秘書が会議に必要な書類をすべて準備した。"
+  },
+  {
+    "rank": 1348,
+    "word": "quarrel",
+    "meaning": "口論",
+    "example": "They had a small quarrel over a trivial matter.",
+    "translation": "彼らは些細なことで小さな口論をした。"
+  },
+  {
+    "rank": 1350,
+    "word": "thief",
+    "meaning": "泥棒",
+    "example": "A thief broke into the house last night.",
+    "translation": "昨夜、泥棒がその家に侵入した。"
+  },
+  {
+    "rank": 1359,
+    "word": "ambulance",
+    "meaning": "救急車",
+    "example": "We called an ambulance immediately after the accident.",
+    "translation": "事故の後、私たちはすぐに救急車を呼んだ。"
+  },
+  {
+    "rank": 1363,
+    "word": "legend",
+    "meaning": "伝説",
+    "example": "This old temple has a legend about a brave warrior.",
+    "translation": "この古い寺院には勇敢な戦士についての伝説がある。"
+  },
+  {
+    "rank": 1365,
+    "word": "glory",
+    "meaning": "栄光",
+    "example": "The team fought for the glory of their country.",
+    "translation": "そのチームは国の栄光のために戦った。"
+  },
+  {
+    "rank": 1376,
+    "word": "atom",
+    "meaning": "原子",
+    "example": "An atom is the smallest unit of a chemical element.",
+    "translation": "原子は化学元素の最小単位である。"
+  },
+  {
+    "rank": 1377,
+    "word": "boom",
+    "meaning": "好況、ブーム",
+    "example": "The city is experiencing an economic boom right now.",
+    "translation": "その市は現在、経済好況を経験している。"
+  },
+  {
+    "rank": 1381,
+    "word": "bare",
+    "meaning": "裸の",
+    "example": "He walked barefoot on the bare floor.",
+    "translation": "彼は裸足でむき出しの床を歩いた。"
+  },
+  {
+    "rank": 1386,
+    "word": "minute",
+    "meaning": "微小な",
+    "example": "Even a minute change can affect the whole system.",
+    "translation": "微小な変化でさえ、システム全体に影響を与える可能性がある。"
+  },
+  {
+    "rank": 1393,
+    "word": "idle",
+    "meaning": "使われていない、仕事がない",
+    "example": "The factory machines have been idle for months.",
+    "translation": "その工場の機械は数ヶ月間使われていない。"
+  }
+]

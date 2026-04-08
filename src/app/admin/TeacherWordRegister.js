@@ -354,6 +354,9 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                 <option value="sys5th">シス単5訂版 (2027語)</option>
                 <option value="leap">LEAP (1935語)</option>
                 <option value="target1900">ターゲット1900 (1900語)</option>
+                <option value="target1400extra">高校生になったらすぐに覚える368語</option>
+                <option disabled>──── 熟語 ────</option>
+                <option value="idiom1000">英熟語ターゲット1000 (1000語)</option>
               </select>
             </div>
             <div>
