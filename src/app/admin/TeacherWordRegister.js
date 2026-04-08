@@ -353,6 +353,7 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                 <option disabled>──── 単語帳 ────</option>
                 <option value="sys5th">シス単5訂版 (2027語)</option>
                 <option value="leap">LEAP (1935語)</option>
+                <option value="target1900">ターゲット1900 (1900語)</option>
               </select>
             </div>
             <div>
