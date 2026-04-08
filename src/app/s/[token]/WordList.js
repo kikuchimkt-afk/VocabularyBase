@@ -222,6 +222,38 @@ export default function WordList({ studentId, studentName }) {
   const selfCount = useMemo(() => words.filter(w => w.assigned_by !== 'teacher').length, [words]);
   const hwCount = useMemo(() => words.filter(w => w.assigned_by === 'teacher').length, [words]);
 
+  const getHwSourceSummary = useCallback((date) => {
+    const hwWords = words.filter(w => w.assigned_by === 'teacher' && w.assigned_date === date && w.source);
+    if (hwWords.length === 0) return null;
+
+    const groups = {};
+    hwWords.forEach(w => {
+      const match = w.source.match(/^(.*?) No\.(\d+)$/);
+      if (match) {
+        const name = match[1].trim();
+        const num = parseInt(match[2], 10);
+        if (!groups[name]) groups[name] = [];
+        groups[name].push(num);
+      } else {
+        if (!groups[w.source]) groups[w.source] = [];
+      }
+    });
+
+    const summaries = [];
+    for (const [name, nums] of Object.entries(groups)) {
+      if (nums.length > 0) {
+        nums.sort((a,b)=>a-b);
+        const min = nums[0];
+        const max = nums[nums.length - 1];
+        if (min === max) summaries.push(`${name} No.${min}`);
+        else summaries.push(`${name} No.${min}〜${max}`);
+      } else {
+        summaries.push(name);
+      }
+    }
+    return summaries.join(', ');
+  }, [words]);
+
   const filteredWords = useMemo(() => words.filter(w => {
     if (sourceFilter === 'teacher') {
       if (w.assigned_by !== 'teacher') return false;
@@ -333,9 +365,23 @@ export default function WordList({ studentId, studentName }) {
       )}
 
       {(searchQuery || sourceFilter !== 'all') && (
-        <p className="text-muted" style={{ fontSize: '0.8rem', marginBottom: '0.75rem' }}>
-          {filteredWords.length}件表示中
-        </p>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+          <p className="text-muted" style={{ fontSize: '0.8rem', margin: 0 }}>
+            {filteredWords.length}件表示中
+          </p>
+          {sourceFilter.startsWith('hw:') && (() => {
+            const sum = getHwSourceSummary(sourceFilter.replace('hw:', ''));
+            return sum ? (
+              <div style={{
+                background: '#fff3e0', color: '#e65100', padding: '0.2rem 0.6rem',
+                borderRadius: '6px', fontSize: '0.75rem', fontWeight: 600,
+                border: '1px solid #ffe0b2', display: 'inline-flex', alignItems: 'center', gap: 4
+              }}>
+                🏷️ 出典: {sum}
+              </div>
+            ) : null;
+          })()}
+        </div>
       )}
       {/* ダウンロードボタン */}
       {words.length > 0 && (

@@ -56,6 +56,10 @@ export async function POST(request) {
       const english = (wordData.english || '').trim();
       const meaningsRaw = (wordData.meanings || '').trim();
       const exampleSentence = (wordData.example || '').trim();
+      const exampleJa = (wordData.exampleJa || '').trim();
+      const source = (wordData.source || '').trim();
+      const listType = wordData.listType || null;
+      const rank = wordData.rank || null;
       const allowReassign = wordData.reassign !== false;
 
       if (!english) continue;
@@ -77,7 +81,7 @@ export async function POST(request) {
         continue;
       }
 
-      parsedWords.push({ english, meanings, example: exampleSentence, allowReassign });
+      parsedWords.push({ english, meanings, example: exampleSentence, exampleJa, source, listType, rank, allowReassign });
     }
 
     // ===== Phase 2: TTS音声を並列生成（単語音声のみ） =====
@@ -85,6 +89,12 @@ export async function POST(request) {
     const baseUrl = origin?.startsWith('http') ? origin : `https://${origin}`;
 
     await Promise.all(parsedWords.map(async (pw) => {
+      // 事前生成済みの静的ファイルがあればAPI呼び出しをスキップ
+      if (pw.listType && pw.rank) {
+        pw.wordAudioUrl = `/audio/${pw.listType}/${pw.rank}_word.mp3`;
+        return;
+      }
+
       try {
         const res = await fetch(`${baseUrl}/api/tts`, {
           method: 'POST',
@@ -125,10 +135,15 @@ export async function POST(request) {
           const updateData = {
             assigned_date: assignedDate,
             assign_count: currentCount + 1,
+            meanings: pw.meanings,
+            example_sentence: pw.example || null,
+            example_sentence_ja: pw.exampleJa || null,
+            source: pw.source || null,
+            word_audio_url: pw.wordAudioUrl || null,
           };
-          if (pw.meanings.length > 0) updateData.meanings = pw.meanings;
-          if (pw.example) updateData.example_sentence = pw.example;
-          if (pw.wordAudioUrl) updateData.word_audio_url = pw.wordAudioUrl;
+          if (pw.listType && pw.rank && pw.example) {
+            updateData.sentence_audio_url = `/audio/${pw.listType}/${pw.rank}_example.mp3`;
+          }
 
           const { error } = await supabase
             .from('vb_words')
@@ -142,14 +157,20 @@ export async function POST(request) {
           continue;
         }
 
+        let staticSentenceAudio = null;
+        if (pw.listType && pw.rank && pw.example) {
+          staticSentenceAudio = `/audio/${pw.listType}/${pw.rank}_example.mp3`;
+        }
+
         const { data: inserted, error } = await supabase.from('vb_words').insert({
           student_id: student.id,
           english: pw.english,
           meanings: pw.meanings,
           example_sentence: pw.example || null,
-          example_sentence_ja: null,
+          example_sentence_ja: pw.exampleJa || null,
+          source: pw.source || null,
           word_audio_url: pw.wordAudioUrl || null,
-          sentence_audio_url: null,
+          sentence_audio_url: staticSentenceAudio || null,
           assigned_date: assignedDate,
           assigned_by: 'teacher',
           assign_count: 1,

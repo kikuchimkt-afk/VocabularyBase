@@ -489,18 +489,37 @@ export default function Quiz({ token, studentId }) {
       {/* Action Buttons */}
       <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center' }}>
         {!isFlipped ? (
-          <button
-            onClick={flipCard}
-            style={{
-              width: '100%', maxWidth: 300, padding: '0.9rem',
-              fontSize: '0.95rem', fontWeight: 700,
-              border: '2px solid var(--primary)', borderRadius: 14,
-              background: 'var(--primary-light)', color: 'var(--primary)',
-              cursor: 'pointer', transition: '0.2s',
-            }}
-          >
-            答えを見る
-          </button>
+          <>
+            {card.sentence_audio_url && (
+              <button
+                onClick={(e) => { e.stopPropagation(); playAudio(card.sentence_audio_url); }}
+                style={{
+                  padding: '0.9rem 1rem',
+                  fontSize: '0.85rem', fontWeight: 700,
+                  border: '2px solid #f59e0b', borderRadius: 14,
+                  background: '#fffbeb', color: '#b45309',
+                  cursor: 'pointer', transition: '0.2s',
+                  whiteSpace: 'nowrap',
+                  display: 'flex', alignItems: 'center', gap: 4,
+                }}
+                title="例文の音声をヒントとして再生"
+              >
+                🔈 ヒント
+              </button>
+            )}
+            <button
+              onClick={flipCard}
+              style={{
+                flex: 1, maxWidth: 300, padding: '0.9rem',
+                fontSize: '0.95rem', fontWeight: 700,
+                border: '2px solid var(--primary)', borderRadius: 14,
+                background: 'var(--primary-light)', color: 'var(--primary)',
+                cursor: 'pointer', transition: '0.2s',
+              }}
+            >
+              答えを見る
+            </button>
+          </>
         ) : (
           <>
             <button

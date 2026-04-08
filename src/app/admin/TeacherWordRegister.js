@@ -396,6 +396,8 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                     exampleJa: w.exampleJa || w.translation || '',
                     removed: false,
                     reassign: true,
+                    listType: masterGrade,
+                    rank: w.rank || (start + idx),
                   }));
                   setBulkPreviewWords(parsed);
                   setBulkResults(null);
@@ -705,12 +707,23 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                     }
                     const wordsToRegister = bulkPreviewWords
                       .filter(w => !w.removed && w.english.trim() && w.meanings.trim())
-                      .map(w => ({
-                        english: w.english.trim(),
-                        meanings: w.meanings.trim(),
-                        example: w.example.trim(),
-                        reassign: w.reassign !== false,
-                      }));
+                      .map(w => {
+                        const sourceMap = {
+                          '5kyu': '英検5級', '4kyu': '英検4級', '3kyu': '英検3級', '準2kyu': '英検準2級', '2kyu': '英検2級',
+                          'sys5th': 'シス単5訂版', 'leap': 'LEAP', 'target1900': 'ターゲット1900', 'target1400extra': 'ターゲット1400extra', 'idiom1000': '熟語ターゲット1000'
+                        };
+                        const sourceName = (w.listType && w.rank) ? `${sourceMap[w.listType]} No.${w.rank}` : '';
+                        return {
+                          english: w.english.trim(),
+                          meanings: w.meanings.trim(),
+                          example: w.example.trim(),
+                          exampleJa: w.exampleJa ? w.exampleJa.trim() : '',
+                          reassign: w.reassign !== false,
+                          listType: w.listType,
+                          rank: w.rank,
+                          source: sourceName
+                        };
+                      });
                     if (wordsToRegister.length === 0) {
                       setBulkResults({ error: '登録する単語がありません' });
                       return;
