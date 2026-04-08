@@ -90,17 +90,30 @@ export default function StudentDashboard({ token }) {
           <h2 style={{ fontSize: '1.3rem', fontWeight: '700' }}>📖 {studentName} の単語帳</h2>
           <p className="text-muted" style={{ fontSize: '0.8rem' }}>登録語数: {wordCount}語</p>
         </div>
-        <button
-          onClick={() => setShowManual(true)}
-          style={{
-            border: '1px solid var(--border)', background: 'var(--bg-card)',
-            borderRadius: 'var(--radius-md)', padding: '0.4rem 0.75rem',
-            fontSize: '0.8rem', cursor: 'pointer', color: 'var(--text-muted)',
-            fontWeight: '600',
-          }}
-        >
-          ❓ 使い方
-        </button>
+        <div style={{ display: 'flex', gap: '0.35rem', alignItems: 'center' }}>
+          <button
+            onClick={() => setShowManual(true)}
+            style={{
+              border: '1px solid var(--border)', background: 'var(--bg-card)',
+              borderRadius: 'var(--radius-md)', padding: '0.4rem 0.75rem',
+              fontSize: '0.8rem', cursor: 'pointer', color: 'var(--text-muted)',
+              fontWeight: '600',
+            }}
+          >
+            ❓ 使い方
+          </button>
+          <a
+            href="/admin"
+            style={{
+              border: 'none', background: 'transparent',
+              padding: '0.4rem', fontSize: '0.85rem', cursor: 'pointer',
+              color: 'var(--text-muted)', opacity: 0.35, textDecoration: 'none',
+            }}
+            title="管理画面"
+          >
+            ⚙️
+          </a>
+        </div>
       </div>
 
       {/* タブナビゲーション */}
