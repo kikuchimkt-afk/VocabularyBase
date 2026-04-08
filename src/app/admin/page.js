@@ -54,6 +54,9 @@ export default function AdminPage() {
   const [selectedWordIds, setSelectedWordIds] = useState(new Set());
   const [deletingWords, setDeletingWords] = useState(false);
   const [dateFilter, setDateFilter] = useState('all'); // 'all' or 'YYYY-MM-DD'
+  
+  // 検索
+  const [studentSearchQuery, setStudentSearchQuery] = useState('');
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -426,6 +429,31 @@ export default function AdminPage() {
           </div>
         )}
 
+        {/* 検索バー */}
+        {students.length > 0 && (
+          <div style={{ position: 'relative', marginBottom: '1.25rem', maxWidth: '350px' }}>
+            <input
+              className="input-text"
+              type="text"
+              value={studentSearchQuery}
+              onChange={(e) => setStudentSearchQuery(e.target.value)}
+              placeholder="🔍 名前・学年で検索..."
+              style={{ width: '100%', paddingRight: '2.5rem' }}
+            />
+            {studentSearchQuery && (
+              <button
+                onClick={() => setStudentSearchQuery('')}
+                style={{
+                  position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)',
+                  background: 'transparent', border: 'none', cursor: 'pointer', color: 'var(--text-muted)'
+                }}
+              >
+                ✕
+              </button>
+            )}
+          </div>
+        )}
+
         {/* Add form */}
         {showAddForm && (
           <div className="card" style={{ marginBottom: '1rem' }}>
@@ -457,10 +485,23 @@ export default function AdminPage() {
             <p className="text-muted">まだ生徒が登録されていません。<br/>「＋ 生徒を追加」ボタンから追加してください。</p>
           </div>
         ) : (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '0.75rem' }}>
-            {students.map(student => (
-              <div key={student.id} className="card" style={{ padding: '1.25rem' }}>
-                {/* Name */}
+          (() => {
+            const filteredStudents = students.filter(s => {
+              if (!studentSearchQuery.trim()) return true;
+              const q = studentSearchQuery.toLowerCase();
+              const name = (s.name || '').toLowerCase();
+              const grade = (s.grade || '').toLowerCase();
+              return name.includes(q) || grade.includes(q);
+            });
+            return (
+              <>
+                {studentSearchQuery && filteredStudents.length === 0 && (
+                  <p className="text-muted" style={{ textAlign: 'center', padding: '1rem' }}>一致する生徒が見つかりません。</p>
+                )}
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '0.75rem' }}>
+                  {filteredStudents.map(student => (
+                    <div key={student.id} className="card" style={{ padding: '1.25rem' }}>
+                      {/* Name */}
                 <div className="flex items-center gap-2" style={{ marginBottom: '0.75rem' }}>
 
                   <div style={{ flex: 1, minWidth: 0 }}>
@@ -521,6 +562,9 @@ export default function AdminPage() {
               </div>
             ))}
           </div>
+              </>
+            );
+          })()
         )}
         </>
         )}
