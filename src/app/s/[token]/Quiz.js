@@ -55,6 +55,39 @@ export default function Quiz({ token, studentId }) {
       .map(w => w.assigned_date)
   )].sort((a, b) => b.localeCompare(a));
 
+  // 選択中の日付の出典サマリーを生成（WordListと同じロジック）
+  const getSourceSummary = (date) => {
+    const dateWords = words.filter(w => w.assigned_date === date && w.source);
+    if (dateWords.length === 0) return null;
+
+    const groups = {};
+    dateWords.forEach(w => {
+      const match = w.source.match(/^(.*?) No\.(\d+)$/);
+      if (match) {
+        const name = match[1].trim();
+        const num = parseInt(match[2], 10);
+        if (!groups[name]) groups[name] = [];
+        groups[name].push(num);
+      } else {
+        if (!groups[w.source]) groups[w.source] = [];
+      }
+    });
+
+    const summaries = [];
+    for (const [name, nums] of Object.entries(groups)) {
+      if (nums.length > 0) {
+        nums.sort((a, b) => a - b);
+        const min = nums[0];
+        const max = nums[nums.length - 1];
+        if (min === max) summaries.push(`${name} No.${min}`);
+        else summaries.push(`${name} No.${min}〜${max}`);
+      } else {
+        summaries.push(name);
+      }
+    }
+    return summaries.join(', ');
+  };
+
   // フィルター適用後の単語
   const filteredWords = dateFilter === 'all'
     ? words
@@ -233,6 +266,19 @@ export default function Quiz({ token, studentId }) {
                 );
               })}
             </div>
+            {dateFilter !== 'all' && (() => {
+              const sum = getSourceSummary(dateFilter);
+              return sum ? (
+                <div style={{
+                  marginTop: '0.5rem',
+                  background: '#fff3e0', color: '#e65100', padding: '0.25rem 0.7rem',
+                  borderRadius: '6px', fontSize: '0.75rem', fontWeight: 600,
+                  border: '1px solid #ffe0b2', display: 'inline-flex', alignItems: 'center', gap: 4,
+                }}>
+                  🏷️ 出典: {sum}
+                </div>
+              ) : null;
+            })()}
           </div>
         )}
 
@@ -480,6 +526,16 @@ export default function Quiz({ token, studentId }) {
                     {card.example_sentence_ja}
                   </div>
                 )}
+              </div>
+            )}
+            {card.source && (
+              <div style={{
+                position: 'absolute', bottom: 14, left: 18, right: 18,
+                fontSize: '0.68rem', fontWeight: 600,
+                color: 'var(--text-muted)', opacity: 0.7,
+                textAlign: 'center', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+              }}>
+                📍 {card.source}
               </div>
             )}
           </div>
