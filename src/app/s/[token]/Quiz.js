@@ -21,7 +21,7 @@ export default function Quiz({ token, studentId }) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [knownSet, setKnownSet] = useState(new Set());
   const [againSet, setAgainSet] = useState(new Set());
-  const [order, setOrder] = useState('rand');
+  const [order, setOrder] = useState('seq');
   const [autoplay, setAutoplay] = useState(true);
   const [dateFilter, setDateFilter] = useState('all'); // 'all' or specific date string
   const [scope, setScope] = useState('all'); // 'all' or 'remaining'
@@ -120,7 +120,18 @@ export default function Quiz({ token, studentId }) {
   const startQuiz = () => {
     if (scopedWords.length === 0) return;
     let cards = scopedWords.map((w, i) => ({ ...w, origIdx: i }));
-    if (order === 'rand') cards = shuffleArray(cards);
+    if (order === 'rand') {
+      cards = shuffleArray(cards);
+    } else {
+      // 出現順: 出典番号（No.XX）の若い順にソート
+      cards.sort((a, b) => {
+        const numA = parseInt((a.source || '').match(/No\.(\d+)/)?.[1] || '99999');
+        const numB = parseInt((b.source || '').match(/No\.(\d+)/)?.[1] || '99999');
+        if (numA !== numB) return numA - numB;
+        // 同じ番号なら元の順序を維持
+        return a.origIdx - b.origIdx;
+      });
+    }
     setDeck(cards);
     setCurrentIdx(0);
     setIsFlipped(false);
