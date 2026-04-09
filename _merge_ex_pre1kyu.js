@@ -8,7 +8,7 @@ const path = require('path');
 const DIR = path.join(__dirname, '単語リスト', 'EX準一級');
 const OUTPUT = path.join(__dirname, 'public', 'wordlist_ex_pre1kyu.json');
 
-const files = fs.readdirSync(DIR).filter(f => f.endsWith('.csv')).sort((a, b) => {
+const files = fs.readdirSync(DIR).filter(f => f.endsWith('.csv') && !f.includes('_Ori')).sort((a, b) => {
   // ex204.csv, ex408.csv, ... の番号順にソート
   const numA = parseInt(a.match(/\d+/)?.[0] || 0);
   const numB = parseInt(b.match(/\d+/)?.[0] || 0);

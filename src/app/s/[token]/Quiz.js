@@ -27,6 +27,8 @@ export default function Quiz({ token, studentId }) {
   const [scope, setScope] = useState('all'); // 'all' or 'remaining'
   const audioRef = useRef(null);
   const [cardFading, setCardFading] = useState(false);
+  const [showResetConfirm, setShowResetConfirm] = useState(false);
+  const [resetting, setResetting] = useState(false);
 
   const supabase = createBrowserClient();
 
@@ -375,7 +377,81 @@ export default function Quiz({ token, studentId }) {
               {scope === 'remaining' ? 'すべて覚えました！🎉' : dateFilter !== 'all' ? 'この日付の単語はありません' : '単語を登録してから開始してください'}
             </p>
           )}
+          {masteredCount > 0 && (
+            <button
+              onClick={() => setShowResetConfirm(true)}
+              style={{
+                marginTop: '1rem', background: 'none', border: 'none', cursor: 'pointer',
+                color: 'var(--text-muted)', fontSize: '0.8rem', fontFamily: 'inherit',
+                textDecoration: 'underline', opacity: 0.7,
+              }}
+            >
+              🔄 学習記録をリセット
+            </button>
+          )}
         </div>
+
+        {/* Reset Confirmation Modal */}
+        {showResetConfirm && (
+          <div style={{
+            position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.5)', display: 'flex',
+            alignItems: 'center', justifyContent: 'center', zIndex: 9999, padding: '1rem',
+          }} onClick={() => setShowResetConfirm(false)}>
+            <div style={{
+              background: 'var(--bg-card)', borderRadius: 'var(--radius-lg)', padding: '2rem',
+              maxWidth: 400, width: '100%', boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
+            }} onClick={e => e.stopPropagation()}>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.75rem', textAlign: 'center' }}>
+                ⚠️ 学習記録のリセット
+              </h3>
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', textAlign: 'center', marginBottom: '0.5rem' }}>
+                {dateFilter === 'all' ? '全' : `📅 ${dateFilter.replace(/^\d{4}-/, '')} の`}
+                <strong style={{ color: 'var(--danger)' }}> {filteredWords.length}語</strong> の正解数・不正解数を
+                すべて0にリセットします。
+              </p>
+              <p style={{ fontSize: '0.75rem', color: 'var(--danger)', textAlign: 'center', marginBottom: '1.25rem' }}>
+                この操作は元に戻せません。
+              </p>
+              <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center' }}>
+                <button
+                  className="btn btn-secondary"
+                  onClick={() => setShowResetConfirm(false)}
+                  disabled={resetting}
+                  style={{ padding: '0.6rem 1.5rem' }}
+                >キャンセル</button>
+                <button
+                  className="btn"
+                  disabled={resetting}
+                  style={{
+                    padding: '0.6rem 1.5rem', background: 'var(--danger)', color: 'white',
+                    border: 'none', borderRadius: 'var(--radius-md)', fontWeight: 700,
+                    cursor: 'pointer', fontFamily: 'inherit',
+                  }}
+                  onClick={async () => {
+                    setResetting(true);
+                    try {
+                      const ids = filteredWords.map(w => w.id);
+                      // バッチで更新（Supabaseの制限を考慮して100件ずつ）
+                      for (let i = 0; i < ids.length; i += 100) {
+                        const batch = ids.slice(i, i + 100);
+                        await supabase
+                          .from('vb_words')
+                          .update({ correct_count: 0, wrong_count: 0, last_tested: null })
+                          .in('id', batch);
+                      }
+                      await fetchWords();
+                      setShowResetConfirm(false);
+                    } catch (e) {
+                      console.error('Reset error:', e);
+                    } finally {
+                      setResetting(false);
+                    }
+                  }}
+                >{resetting ? 'リセット中...' : '🗑️ リセット実行'}</button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     );
   }
