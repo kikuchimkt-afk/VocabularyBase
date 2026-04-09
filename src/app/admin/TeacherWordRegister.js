@@ -350,6 +350,7 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                 <option value="3kyu">英検3級 (996語)</option>
                 <option value="準2kyu">英検準2級 (1222語)</option>
                 <option value="2kyu">英検2級 (2000語)</option>
+                <option value="pre1kyu">英検準1級パス単 (1900語)</option>
                 <option disabled>──── 単語帳 ────</option>
                 <option value="sys5th">シス単5訂版 (2027語)</option>
                 <option value="leap">LEAP (1935語)</option>
@@ -709,7 +710,7 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                       .filter(w => !w.removed && w.english.trim() && w.meanings.trim())
                       .map(w => {
                         const sourceMap = {
-                          '5kyu': '英検5級', '4kyu': '英検4級', '3kyu': '英検3級', '準2kyu': '英検準2級', '2kyu': '英検2級',
+                          '5kyu': '英検5級', '4kyu': '英検4級', '3kyu': '英検3級', '準2kyu': '英検準2級', '2kyu': '英検2級', 'pre1kyu': '英検準1級パス単',
                           'sys5th': 'シス単5訂版', 'leap': 'LEAP', 'target1900': 'ターゲット1900', 'target1400extra': 'ターゲット1400extra', 'idiom1000': '熟語ターゲット1000'
                         };
                         const sourceName = (w.listType && w.rank) ? `${sourceMap[w.listType]} No.${w.rank}` : '';
