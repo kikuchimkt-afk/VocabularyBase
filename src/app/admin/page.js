@@ -58,6 +58,11 @@ export default function AdminPage() {
   // 検索
   const [studentSearchQuery, setStudentSearchQuery] = useState('');
 
+  // 達成率詳細ポップアップ
+  const [achieveStudent, setAchieveStudent] = useState(null);
+  const [achieveWords, setAchieveWords] = useState([]);
+  const [achieveLoading, setAchieveLoading] = useState(false);
+
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoginLoading(true);
@@ -558,6 +563,19 @@ export default function AdminPage() {
                   <button className="action-btn ghost" onClick={() => { setNotesStudent(student); setNotesText(student.notes || ''); }}>
                     📝 メモ
                   </button>
+                  <button className="action-btn ghost" onClick={async () => {
+                    setAchieveStudent(student);
+                    setAchieveLoading(true);
+                    try {
+                      const res = await fetch(`/api/students/words?studentId=${student.id}`);
+                      if (!res.ok) throw new Error('Fetch failed');
+                      const data = await res.json();
+                      setAchieveWords(data.words || []);
+                    } catch { setAchieveWords([]); }
+                    finally { setAchieveLoading(false); }
+                  }}>
+                    📊 達成率
+                  </button>
                 </div>
               </div>
             ))}
@@ -1001,6 +1019,107 @@ export default function AdminPage() {
               >
                 {notesSaving ? '保存中...' : '💾 保存'}
               </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* 達成率詳細モーダル */}
+      {achieveStudent && (
+        <div className="modal-overlay" onClick={() => setAchieveStudent(null)}>
+          <div className="modal-card" style={{ maxWidth: '500px', width: '100%', maxHeight: '80vh', overflowY: 'auto' }} onClick={e => e.stopPropagation()}>
+            <div className="flex justify-between items-center" style={{ marginBottom: '1rem' }}>
+              <h2 style={{ fontSize: '1.2rem', fontWeight: '700', margin: 0 }}>📊 {achieveStudent.name} の達成率</h2>
+              <button className="btn btn-ghost" onClick={() => setAchieveStudent(null)} style={{ fontSize: '1.2rem', padding: '0.25rem 0.5rem' }}>✕</button>
+            </div>
+            {achieveLoading ? (
+              <p className="text-muted">読み込み中...</p>
+            ) : achieveWords.length === 0 ? (
+              <p className="text-muted">単語が登録されていません。</p>
+            ) : (() => {
+              const isMastered = w => (w.correct_count || 0) > (w.wrong_count || 0);
+              const totalAll = achieveWords.length;
+              const masteredAll = achieveWords.filter(isMastered).length;
+              const pctAll = totalAll > 0 ? Math.round(masteredAll / totalAll * 100) : 0;
+
+              // 日付ごとに集計
+              const dateMap = {};
+              achieveWords.forEach(w => {
+                const d = w.assigned_date || '未設定';
+                if (!dateMap[d]) dateMap[d] = { total: 0, mastered: 0, words: [] };
+                dateMap[d].total++;
+                if (isMastered(w)) dateMap[d].mastered++;
+                dateMap[d].words.push(w);
+              });
+              const dates = Object.keys(dateMap).sort((a, b) => b.localeCompare(a));
+
+              const barColor = pct => pct >= 80 ? 'var(--secondary)' : pct >= 50 ? '#f59e0b' : 'var(--danger)';
+
+              return (
+                <>
+                  {/* 全体サマリー */}
+                  <div style={{
+                    display: 'grid', gridTemplateColumns: '1fr 1fr 1fr',
+                    gap: '0.5rem', marginBottom: '1.25rem',
+                    background: 'var(--primary-light)', borderRadius: 'var(--radius-md)', padding: '0.75rem',
+                  }}>
+                    <div style={{ textAlign: 'center' }}>
+                      <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--primary)' }}>{totalAll}</div>
+                      <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>全単語</div>
+                    </div>
+                    <div style={{ textAlign: 'center' }}>
+                      <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--secondary)' }}>{masteredAll}</div>
+                      <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>覚えた</div>
+                    </div>
+                    <div style={{ textAlign: 'center' }}>
+                      <div style={{ fontSize: '1.5rem', fontWeight: 800, color: barColor(pctAll) }}>{pctAll}%</div>
+                      <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>達成率</div>
+                    </div>
+                  </div>
+
+                  {/* 日付ごとの詳細 */}
+                  <h3 style={{ fontSize: '0.85rem', fontWeight: 700, marginBottom: '0.5rem', color: 'var(--text-muted)' }}>📅 宿題日ごとの達成率</h3>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                    {dates.map(d => {
+                      const info = dateMap[d];
+                      const pct = info.total > 0 ? Math.round(info.mastered / info.total * 100) : 0;
+                      const dateLabel = d === '未設定' ? '未設定' : (() => {
+                        const dt = new Date(d + 'T00:00:00');
+                        return `${dt.getMonth() + 1}/${dt.getDate()}`;
+                      })();
+                      return (
+                        <div key={d} style={{
+                          background: 'var(--bg-card)', border: '1px solid var(--border)',
+                          borderRadius: 'var(--radius-md)', padding: '0.6rem 0.75rem',
+                        }}>
+                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.35rem' }}>
+                            <span style={{ fontWeight: 600, fontSize: '0.85rem' }}>📅 {dateLabel}</span>
+                            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+                              {info.mastered}/{info.total}語
+                            </span>
+                          </div>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                            <div style={{
+                              flex: 1, height: 8, background: 'var(--border)', borderRadius: 4, overflow: 'hidden',
+                            }}>
+                              <div style={{
+                                height: '100%', width: `${pct}%`, borderRadius: 4,
+                                background: barColor(pct), transition: 'width 0.5s ease',
+                              }} />
+                            </div>
+                            <span style={{ fontSize: '0.8rem', fontWeight: 700, color: barColor(pct), minWidth: '36px', textAlign: 'right' }}>
+                              {pct}%
+                            </span>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </>
+              );
+            })()}
+            <div style={{ marginTop: '1rem', textAlign: 'right' }}>
+              <button className="btn btn-secondary" onClick={() => setAchieveStudent(null)}>閉じる</button>
             </div>
           </div>
         </div>
