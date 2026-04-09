@@ -24,6 +24,7 @@ export default function Quiz({ token, studentId }) {
   const [order, setOrder] = useState('rand');
   const [autoplay, setAutoplay] = useState(true);
   const [dateFilter, setDateFilter] = useState('all'); // 'all' or specific date string
+  const [scope, setScope] = useState('all'); // 'all' or 'remaining'
   const audioRef = useRef(null);
 
   const supabase = createBrowserClient();
@@ -95,8 +96,14 @@ export default function Quiz({ token, studentId }) {
 
   // 各単語の最新テスト結果から「覚えた」数を計算
   // correct_count > wrong_count なら覚えた判定
-  const masteredCount = filteredWords.filter(w => (w.correct_count || 0) > (w.wrong_count || 0)).length;
+  const isMastered = (w) => (w.correct_count || 0) > (w.wrong_count || 0);
+  const masteredCount = filteredWords.filter(isMastered).length;
   const remainingCount = filteredWords.length - masteredCount;
+
+  // スコープ適用後の単語（出題範囲）
+  const scopedWords = scope === 'remaining'
+    ? filteredWords.filter(w => !isMastered(w))
+    : filteredWords;
 
   const playAudio = useCallback((url) => {
     if (!url) return;
@@ -110,8 +117,8 @@ export default function Quiz({ token, studentId }) {
   }, []);
 
   const startQuiz = () => {
-    if (filteredWords.length === 0) return;
-    let cards = filteredWords.map((w, i) => ({ ...w, origIdx: i }));
+    if (scopedWords.length === 0) return;
+    let cards = scopedWords.map((w, i) => ({ ...w, origIdx: i }));
     if (order === 'rand') cards = shuffleArray(cards);
     setDeck(cards);
     setCurrentIdx(0);
@@ -299,6 +306,18 @@ export default function Quiz({ token, studentId }) {
           <OrderBtn active={order === 'rand'} onClick={() => setOrder('rand')}>ランダム</OrderBtn>
         </div>
 
+        {/* Scope toggle */}
+        <div style={{
+          display: 'flex', gap: '0.5rem', justifyContent: 'center', marginBottom: '1rem',
+          background: 'var(--bg-card)', borderRadius: 'var(--radius-full)', padding: '4px',
+          border: '1px solid var(--border)',
+        }}>
+          <OrderBtn active={scope === 'all'} onClick={() => setScope('all')}>全単語</OrderBtn>
+          <OrderBtn active={scope === 'remaining'} onClick={() => setScope('remaining')}>
+            残りのみ{scope === 'remaining' ? ` (${scopedWords.length})` : ''}
+          </OrderBtn>
+        </div>
+
         {/* Autoplay */}
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.5rem' }}>
           <label style={{
@@ -320,18 +339,18 @@ export default function Quiz({ token, studentId }) {
           <button
             className="btn btn-primary"
             onClick={startQuiz}
-            disabled={filteredWords.length === 0}
+            disabled={scopedWords.length === 0}
             style={{
               fontSize: '1.1rem', fontWeight: '800', padding: '1rem 3rem',
               borderRadius: 'var(--radius-full)', letterSpacing: '2px',
               boxShadow: '0 6px 24px rgba(79, 70, 229, 0.4)',
             }}
           >
-            START
+            START{scope === 'remaining' ? ` (${scopedWords.length}語)` : ''}
           </button>
-          {filteredWords.length === 0 && (
+          {scopedWords.length === 0 && (
             <p className="text-muted" style={{ marginTop: '1rem', color: 'var(--danger)' }}>
-              {dateFilter !== 'all' ? 'この日付の単語はありません' : '単語を登録してから開始してください'}
+              {scope === 'remaining' ? 'すべて覚えました！🎉' : dateFilter !== 'all' ? 'この日付の単語はありません' : '単語を登録してから開始してください'}
             </p>
           )}
         </div>
