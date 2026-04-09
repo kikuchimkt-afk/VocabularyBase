@@ -101,7 +101,7 @@
 /* Checkbox styling */
 input[type="checkbox"] {
   accent-color: var(--primary);
-  background-color: var(--bg-card-solid);
+  color-scheme: light;
 }
 
 :root[data-theme="dark"] {

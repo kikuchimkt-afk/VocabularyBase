@@ -421,7 +421,7 @@ export default function WordList({ studentId, studentName }) {
         </div>
       )}
       {/* お気に入り一括削除ボタン（日付フィルター選択時） */}
-      {sourceFilter.startsWith('hw:') && filteredWords.length > 0 && (
+      {sourceFilter.startsWith('hw:') && favorites.size > 0 && (
         <div style={{
           display: 'flex', alignItems: 'center', justifyContent: 'space-between',
           marginBottom: '0.5rem', gap: '0.5rem', flexWrap: 'wrap',
@@ -589,10 +589,12 @@ export default function WordList({ studentId, studentName }) {
                       setFavorites(next);
                     }}
                     style={{
-                      padding: '0.15rem 0.4rem', borderRadius: '999px',
-                      fontSize: '1.1rem', cursor: 'pointer', border: 'none',
-                      background: favorites.has(word.id) ? '#fef3c7' : 'transparent',
-                      transition: 'all 0.2s',
+                      padding: '0.25rem 0.5rem', borderRadius: 'var(--radius-md)',
+                      fontSize: '1.2rem', cursor: 'pointer',
+                      border: favorites.has(word.id) ? '2px solid #f59e0b' : '1px solid var(--border)',
+                      background: favorites.has(word.id) ? '#fef3c7' : 'var(--bg-page)',
+                      color: favorites.has(word.id) ? '#f59e0b' : 'var(--text-muted)',
+                      transition: 'all 0.2s', lineHeight: 1,
                     }}
                     title={favorites.has(word.id) ? 'お気に入り解除' : 'お気に入りに追加'}
                   >
