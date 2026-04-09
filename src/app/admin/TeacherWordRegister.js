@@ -33,6 +33,10 @@ export default function TeacherWordRegister({ students, onRegistered }) {
   const [bulkPreviewWords, setBulkPreviewWords] = useState(null);
   const [editingRowIndex, setEditingRowIndex] = useState(null);
 
+  // AI意味一括生成
+  const [aiMeaningLoading, setAiMeaningLoading] = useState(false);
+  const [aiMeaningProgress, setAiMeaningProgress] = useState('');
+
   // 英検マスターリスト
   const [showMasterList, setShowMasterList] = useState(false);
   const [masterGrade, setMasterGrade] = useState('5kyu');
@@ -541,6 +545,53 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                 </div>
               </div>
 
+              {/* AI意味一括生成ボタン */}
+              {bulkPreviewWords.some(w => !w.removed && !w.meanings.trim()) && (
+                <div style={{ marginBottom: '0.75rem' }}>
+                  <button
+                    className="btn btn-outline"
+                    style={{ fontSize: '0.75rem', padding: '0.35rem 0.75rem' }}
+                    disabled={aiMeaningLoading}
+                    onClick={async () => {
+                      setAiMeaningLoading(true);
+                      const emptyWords = bulkPreviewWords.filter(w => !w.removed && !w.meanings.trim() && w.english.trim());
+                      let updated = [...bulkPreviewWords];
+                      for (let i = 0; i < emptyWords.length; i++) {
+                        const pw = emptyWords[i];
+                        setAiMeaningProgress(`${i + 1}/${emptyWords.length}: ${pw.english}`);
+                        if (i > 0) await new Promise(r => setTimeout(r, 1000));
+                        try {
+                          const res = await fetch('/api/gemini', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ word: pw.english.trim() }),
+                          });
+                          if (res.ok) {
+                            const data = await res.json();
+                            const allMeanings = data.meanings || [];
+                            updated = updated.map(w =>
+                              w.id === pw.id ? {
+                                ...w,
+                                aiCandidates: allMeanings,
+                                aiSelected: new Set(allMeanings),
+                                meanings: allMeanings.join('、'),
+                                example: w.example || data.example_sentence || '',
+                                exampleJa: data.example_sentence_ja || '',
+                              } : w
+                            );
+                            setBulkPreviewWords([...updated]);
+                          }
+                        } catch {}
+                      }
+                      setAiMeaningLoading(false);
+                      setAiMeaningProgress('');
+                    }}
+                  >
+                    {aiMeaningLoading ? `⏳ ${aiMeaningProgress}` : `🤖 意味を一括生成（${bulkPreviewWords.filter(w => !w.removed && !w.meanings.trim() && w.english.trim()).length}語）`}
+                  </button>
+                </div>
+              )}
+
               <div style={{
                 border: '1px solid var(--border)',
                 borderRadius: 'var(--radius-md)',
@@ -692,6 +743,41 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                       </div>
                     )}
                     {pw.removed && <div />}
+                    {/* AI意味候補の選択チップ */}
+                    {!pw.removed && pw.aiCandidates && pw.aiCandidates.length > 0 && editingRowIndex !== pw.id && (
+                      <div style={{
+                        gridColumn: '1 / -1',
+                        display: 'flex', flexWrap: 'wrap', gap: '0.3rem',
+                        padding: '0.25rem 0.5rem 0.5rem',
+                      }}>
+                        {pw.aiCandidates.map((m, mi) => {
+                          const isSelected = pw.aiSelected?.has(m);
+                          return (
+                            <button
+                              key={mi}
+                              onClick={() => {
+                                const next = new Set(pw.aiSelected || []);
+                                if (isSelected) next.delete(m); else next.add(m);
+                                const newMeanings = pw.aiCandidates.filter(c => next.has(c)).join('、');
+                                setBulkPreviewWords(bulkPreviewWords.map(w =>
+                                  w.id === pw.id ? { ...w, aiSelected: next, meanings: newMeanings } : w
+                                ));
+                              }}
+                              style={{
+                                padding: '0.2rem 0.5rem', borderRadius: 20, fontSize: '0.7rem',
+                                border: `1px solid ${isSelected ? 'var(--primary)' : 'var(--border)'}`,
+                                background: isSelected ? 'var(--primary-light)' : 'transparent',
+                                color: isSelected ? 'var(--primary)' : 'var(--text-muted)',
+                                cursor: 'pointer', fontFamily: 'inherit', fontWeight: isSelected ? 600 : 400,
+                                transition: '0.15s',
+                              }}
+                            >
+                              {isSelected ? '✓ ' : ''}{m}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
