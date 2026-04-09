@@ -260,9 +260,23 @@ export default function Quiz({ token, studentId }) {
         {/* Date filter */}
         {availableDates.length > 0 && (
           <div style={{ marginBottom: '1.25rem' }}>
-            <label style={{ fontWeight: '600', fontSize: '0.85rem', display: 'block', marginBottom: '0.5rem', color: 'var(--text-muted)' }}>
-              📅 日付で絞り込む
-            </label>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+              <label style={{ fontWeight: '600', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+                📅 日付で絞り込む
+              </label>
+              {masteredCount > 0 && (
+                <button
+                  onClick={() => setShowResetConfirm(true)}
+                  style={{
+                    background: 'none', border: 'none', cursor: 'pointer',
+                    color: 'var(--text-muted)', fontSize: '0.7rem', fontFamily: 'inherit',
+                    opacity: 0.6,
+                  }}
+                >
+                  🔄 リセット
+                </button>
+              )}
+            </div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
               <button
                 onClick={() => setDateFilter('all')}
@@ -377,18 +391,7 @@ export default function Quiz({ token, studentId }) {
               {scope === 'remaining' ? 'すべて覚えました！🎉' : dateFilter !== 'all' ? 'この日付の単語はありません' : '単語を登録してから開始してください'}
             </p>
           )}
-          {masteredCount > 0 && (
-            <button
-              onClick={() => setShowResetConfirm(true)}
-              style={{
-                marginTop: '1rem', background: 'none', border: 'none', cursor: 'pointer',
-                color: 'var(--text-muted)', fontSize: '0.8rem', fontFamily: 'inherit',
-                textDecoration: 'underline', opacity: 0.7,
-              }}
-            >
-              🔄 学習記録をリセット
-            </button>
-          )}
+
         </div>
 
         {/* Reset Confirmation Modal */}
