@@ -190,19 +190,24 @@ export default function Quiz({ token, studentId }) {
       fetchWords();
       setQuizState('result');
     } else {
-      // フェードアウト → 内容切り替え → フェードインで残像を防止
+      // フェードアウト → 完全非表示 → 内容切り替え → フェードインで残像を防止
       setCardFading(true);
       setTimeout(() => {
+        // カードが完全に非表示になった後に内容を切り替え
         setIsFlipped(false);
         setCurrentIdx(nextIdx);
-        // フェードイン
+        // ダブルrAF + 遅延で確実にレンダリング完了を待ってからフェードイン
         requestAnimationFrame(() => {
-          setCardFading(false);
-          if (autoplay && deck[nextIdx]?.word_audio_url) {
-            setTimeout(() => playAudio(deck[nextIdx].word_audio_url), 300);
-          }
+          requestAnimationFrame(() => {
+            setTimeout(() => {
+              setCardFading(false);
+              if (autoplay && deck[nextIdx]?.word_audio_url) {
+                setTimeout(() => playAudio(deck[nextIdx].word_audio_url), 300);
+              }
+            }, 50);
+          });
         });
-      }, 250); // フェードアウト完了を待つ
+      }, 300); // フェードアウト完了を確実に待つ
     }
   };
 
@@ -457,9 +462,10 @@ export default function Quiz({ token, studentId }) {
         <div style={{
           width: '100%', maxWidth: 420, height: 300, position: 'relative',
           transformStyle: 'preserve-3d',
-          transition: cardFading ? 'opacity 0.2s ease' : 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
-          transform: isFlipped ? 'rotateY(180deg)' : 'none',
+          transition: cardFading ? 'opacity 0.25s ease' : 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+          transform: cardFading ? 'none' : (isFlipped ? 'rotateY(180deg)' : 'none'),
           opacity: cardFading ? 0 : 1,
+          visibility: cardFading ? 'hidden' : 'visible',
         }}>
           {/* Front */}
           <div style={{
