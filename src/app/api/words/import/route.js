@@ -92,9 +92,13 @@ export async function POST(request) {
       // 事前生成済みの静的ファイルがあればAPI呼び出しをスキップ
       if (pw.listType && pw.rank) {
         pw.wordAudioUrl = `/audio/${pw.listType}/${pw.rank}_word.mp3`;
+        if (pw.example) {
+          pw.sentenceAudioUrl = `/audio/${pw.listType}/${pw.rank}_example.mp3`;
+        }
         return;
       }
 
+      // 単語音声を生成
       try {
         const res = await fetch(`${baseUrl}/api/tts`, {
           method: 'POST',
@@ -106,6 +110,21 @@ export async function POST(request) {
           pw.wordAudioUrl = d.url;
         }
       } catch {}
+
+      // 例文音声を生成（例文がある場合のみ）
+      if (pw.example) {
+        try {
+          const res = await fetch(`${baseUrl}/api/tts`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ text: pw.example }),
+          });
+          if (res.ok) {
+            const d = await res.json();
+            pw.sentenceAudioUrl = d.url;
+          }
+        } catch {}
+      }
     }));
 
     // ===== Phase 3: DB登録 =====
@@ -140,10 +159,8 @@ export async function POST(request) {
             example_sentence_ja: pw.exampleJa || null,
             source: pw.source || null,
             word_audio_url: pw.wordAudioUrl || null,
+            sentence_audio_url: pw.sentenceAudioUrl || null,
           };
-          if (pw.listType && pw.rank && pw.example) {
-            updateData.sentence_audio_url = `/audio/${pw.listType}/${pw.rank}_example.mp3`;
-          }
 
           const { error } = await supabase
             .from('vb_words')
@@ -157,10 +174,7 @@ export async function POST(request) {
           continue;
         }
 
-        let staticSentenceAudio = null;
-        if (pw.listType && pw.rank && pw.example) {
-          staticSentenceAudio = `/audio/${pw.listType}/${pw.rank}_example.mp3`;
-        }
+        let staticSentenceAudio = pw.sentenceAudioUrl || null;
 
         const { data: inserted, error } = await supabase.from('vb_words').insert({
           student_id: student.id,
