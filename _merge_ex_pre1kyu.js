@@ -23,29 +23,19 @@ for (const f of files) {
   const content = fs.readFileSync(filePath, 'utf8').replace(/^\uFEFF/, '');
   const lines = content.trim().split(/\r?\n/);
   // header: word,meaning[,example,translation]
-  const header = lines[0].split(',');
-  const hasExample = header.length >= 4;
+  const header = parseCSVLine(lines[0]);
+  const hasExample = header.length >= 3;
 
   for (let i = 1; i < lines.length; i++) {
     const line = lines[i].trim();
     if (!line) continue;
 
-    // CSVパース（クォートを考慮）
-    let word, meaning, example, translation;
-    if (hasExample) {
-      // word,meaning,example,translation - クォートを考慮したパース
-      const parts = parseCSVLine(line);
-      word = (parts[0] || '').trim();
-      meaning = (parts[1] || '').trim();
-      example = (parts[2] || '').trim();
-      translation = (parts[3] || '').trim();
-    } else {
-      const parts = line.split(',');
-      word = (parts[0] || '').trim();
-      meaning = (parts.slice(1).join(',') || '').trim();
-      example = '';
-      translation = '';
-    }
+    // CSVパース（常にクォートを考慮）
+    const parts = parseCSVLine(line);
+    const word = (parts[0] || '').trim();
+    const meaning = (parts[1] || '').trim();
+    const example = hasExample ? (parts[2] || '').trim() : '';
+    const translation = hasExample ? (parts[3] || '').trim() : '';
 
     if (!word) continue;
 
@@ -56,11 +46,8 @@ for (const f of files) {
       rank,
       word,
       meaning: cleanMeaning,
-      meanings: cleanMeaning,
       example: example || '',
-      exampleJa: translation || '',
       translation: translation || '',
-      sourceFile: f,
     });
     rank++;
   }

@@ -463,16 +463,28 @@ export default function Quiz({ token, studentId }) {
   if (quizState === 'result') {
     const knownCount = knownSet.size;
     const againCount = againSet.size;
-    const isPerfect = againCount === 0;
+    const total = knownCount + againCount;
+    const pct = total > 0 ? Math.round((knownCount / total) * 100) : 0;
+
+    const getResultInfo = () => {
+      if (pct === 100) return { emoji: '🎉', msg: 'パーフェクト！すべて覚えました！', color: 'var(--secondary)' };
+      if (pct >= 80) return { emoji: '🌟', msg: '素晴らしい！もう少しで完璧！', color: '#f59e0b' };
+      if (pct >= 50) return { emoji: '💪', msg: 'いい調子！この調子で頑張ろう！', color: 'var(--primary)' };
+      return { emoji: '📚', msg: 'もう少し頑張ろう！繰り返しが大事！', color: 'var(--danger)' };
+    };
+    const result = getResultInfo();
 
     return (
       <div style={{ textAlign: 'center', padding: '2rem 1rem' }}>
         <div style={{ fontSize: '4rem', marginBottom: '0.5rem' }}>
-          {isPerfect ? '🎉' : '💪'}
+          {result.emoji}
         </div>
-        <h2 style={{ fontSize: '1.3rem', fontWeight: '800', marginBottom: '1.5rem' }}>
-          {isPerfect ? 'パーフェクト！すべて覚えました！' : 'お疲れ様でした！'}
+        <h2 style={{ fontSize: '1.3rem', fontWeight: '800', marginBottom: '0.5rem' }}>
+          {result.msg}
         </h2>
+        <div style={{ fontSize: '1.5rem', fontWeight: '800', color: result.color, marginBottom: '1.5rem' }}>
+          {pct}%
+        </div>
 
         <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', marginBottom: '2rem' }}>
           <div style={{ textAlign: 'center' }}>
