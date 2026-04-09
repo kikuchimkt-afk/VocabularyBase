@@ -181,12 +181,17 @@ export default function Quiz({ token, studentId }) {
       // vb_words の correct_count / wrong_count を更新
       const field = isKnown ? 'correct_count' : 'wrong_count';
       const currentVal = card[field] || 0;
+      const updateData = {
+        [field]: currentVal + 1,
+        last_tested: new Date().toISOString(),
+      };
+      // 初回テスト日を記録（まだ設定されていない場合のみ）
+      if (!card.first_tested) {
+        updateData.first_tested = new Date().toISOString();
+      }
       await supabase
         .from('vb_words')
-        .update({
-          [field]: currentVal + 1,
-          last_tested: new Date().toISOString(),
-        })
+        .update(updateData)
         .eq('id', card.id);
 
       // ローカルの deck データも更新（結果画面用）
@@ -439,7 +444,7 @@ export default function Quiz({ token, studentId }) {
                         const batch = ids.slice(i, i + 100);
                         await supabase
                           .from('vb_words')
-                          .update({ correct_count: 0, wrong_count: 0, last_tested: null })
+                          .update({ correct_count: 0, wrong_count: 0, last_tested: null, first_tested: null })
                           .in('id', batch);
                       }
                       await fetchWords();
