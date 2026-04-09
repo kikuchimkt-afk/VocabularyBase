@@ -98,6 +98,12 @@
   }
 }
 
+/* Checkbox styling */
+input[type="checkbox"] {
+  accent-color: var(--primary);
+  background-color: var(--bg-card-solid);
+}
+
 :root[data-theme="dark"] {
   --primary: #818cf8;
   --primary-hover: #6366f1;

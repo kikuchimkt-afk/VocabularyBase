@@ -17,6 +17,10 @@ export default function WordList({ studentId, studentName }) {
   const [bulkAudioProgress, setBulkAudioProgress] = useState('');
   const [bulkAudioCancelRef] = useState({ current: false });
 
+  // お気に入り＆一括削除
+  const [favorites, setFavorites] = useState(new Set());
+  const [bulkDeleting, setBulkDeleting] = useState(false);
+
   const supabase = useMemo(() => createBrowserClient(), []);
 
   useEffect(() => {
@@ -122,6 +126,39 @@ export default function WordList({ studentId, studentName }) {
       setWords(words.filter(w => w.id !== wordId));
     } catch (err) {
       console.error('Error deleting word:', err);
+    }
+  };
+
+  // お気に入り以外を一括削除
+  const bulkDeleteNonFavorites = async () => {
+    const date = sourceFilter.replace('hw:', '');
+    const targets = filteredWords.filter(w => !favorites.has(w.id));
+    const kept = filteredWords.filter(w => favorites.has(w.id));
+    if (targets.length === 0) { alert('削除対象がありません'); return; }
+    if (!confirm(`★以外の ${targets.length}語 を削除し、★付き ${kept.length}語 を「自分」に移動します。よろしいですか？`)) return;
+
+    setBulkDeleting(true);
+    try {
+      // 非お気に入りを削除
+      const deleteIds = targets.map(w => w.id);
+      for (let i = 0; i < deleteIds.length; i += 50) {
+        const batch = deleteIds.slice(i, i + 50);
+        await supabase.from('vb_words').delete().in('id', batch);
+      }
+      // お気に入りを「自分」に変更
+      const keepIds = kept.map(w => w.id);
+      for (let i = 0; i < keepIds.length; i += 50) {
+        const batch = keepIds.slice(i, i + 50);
+        await supabase.from('vb_words').update({ assigned_by: 'student' }).in('id', batch);
+      }
+      setFavorites(new Set());
+      await fetchWords();
+      setSourceFilter('self');
+    } catch (err) {
+      console.error('Bulk delete error:', err);
+      alert('一括削除中にエラーが発生しました');
+    } finally {
+      setBulkDeleting(false);
     }
   };
 
@@ -383,6 +420,32 @@ export default function WordList({ studentId, studentName }) {
           })()}
         </div>
       )}
+      {/* お気に入り一括削除ボタン（日付フィルター選択時） */}
+      {sourceFilter.startsWith('hw:') && filteredWords.length > 0 && (
+        <div style={{
+          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+          marginBottom: '0.5rem', gap: '0.5rem', flexWrap: 'wrap',
+          padding: '0.5rem 0.75rem', background: 'var(--danger-light)',
+          borderRadius: 'var(--radius-md)', border: '1px solid var(--danger)',
+        }}>
+          <span style={{ fontSize: '0.8rem', color: 'var(--danger)', fontWeight: 600 }}>
+            ★ {favorites.size}語をキープ / {filteredWords.length - favorites.size}語を削除
+          </span>
+          <button
+            className="btn"
+            disabled={bulkDeleting || favorites.size === filteredWords.length}
+            onClick={bulkDeleteNonFavorites}
+            style={{
+              fontSize: '0.7rem', padding: '0.3rem 0.6rem',
+              backgroundColor: 'var(--danger)', color: 'white',
+              border: 'none', borderRadius: 'var(--radius-md)',
+              fontWeight: 700, cursor: 'pointer', opacity: (bulkDeleting || favorites.size === filteredWords.length) ? 0.5 : 1,
+            }}
+          >
+            {bulkDeleting ? '処理中...' : '🗑️ ★以外を一括削除'}
+          </button>
+        </div>
+      )}
       {/* ダウンロードボタン */}
       {words.length > 0 && (
         <div style={{ display: 'flex', gap: '0.4rem', marginBottom: '0.5rem', justifyContent: 'flex-end', flexWrap: 'wrap', alignItems: 'center' }}>
@@ -517,6 +580,25 @@ export default function WordList({ studentId, studentName }) {
                 )}
               </div>
               <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                {/* お気に入りトグル（日付フィルター時のみ） */}
+                {sourceFilter.startsWith('hw:') && (
+                  <button
+                    onClick={() => {
+                      const next = new Set(favorites);
+                      if (next.has(word.id)) next.delete(word.id); else next.add(word.id);
+                      setFavorites(next);
+                    }}
+                    style={{
+                      padding: '0.15rem 0.4rem', borderRadius: '999px',
+                      fontSize: '1.1rem', cursor: 'pointer', border: 'none',
+                      background: favorites.has(word.id) ? '#fef3c7' : 'transparent',
+                      transition: 'all 0.2s',
+                    }}
+                    title={favorites.has(word.id) ? 'お気に入り解除' : 'お気に入りに追加'}
+                  >
+                    {favorites.has(word.id) ? '★' : '☆'}
+                  </button>
+                )}
                 {needsAudio && (
                   <button
                     onClick={() => regenerateAudio(word)}
