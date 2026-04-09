@@ -1,200 +1,200 @@
-word,meaning
-species,（分類上の）種
-mammal,ほ乳動物、ほ乳類
-primate,霊長類
-reptile,は虫類
-vertebrate,脊椎動物
-reproduction,生殖、繁殖
-mating,交尾、交配
-hibernation,冬眠
-carnivore,肉食動物
-herbivore,草食動物
-ape,（尾のない、または尾の短い）サル；類人猿
-rhinoceros,サイ
-camel,ラクダ
-donkey,ロバ
-mule,ラバ
-ram,（去勢していない）雄羊
-elk,ヘラジカ
-reindeer,トナカイ
-canine,イヌ科の；犬の
-bark,（犬・キツネなどが）ほえる
-hare,野ウサギ
-lynx,オオヤマネコ
-lizard,トカゲ
-crocodile,ワニ
-hump,（ラクダなどの）こぶ
-burrow,（ウサギ・モグラなどの）巣穴
-owl,フクロウ
-vulture,ハゲタカ ; コンドル
-parrot,オウム
-sparrow,スズメ
-gull,カモメ
-mosquito,蚊
-termite,シロアリ
-moth,ガ
-caterpillar,いも虫、毛虫
-earthworm,ミミズ
-salmon,サケ
-tuna,マグロ
-squid,イカ
-eel,ウナギ
-turtle,カメ ; (特に) ウミガメ
-oyster,カキ
-blossom,（木・庭木などの）花
-pollen,花粉
-thorn,（植物の）とげ、針
-pine,マツ
-maple,カエデ、モミジ
-hemp,麻、大麻
-holly,セイヨウヒイラギ
-walnut,クルミ
-cactus,サボテン
-fungus,（かび・キノコ・酵母菌などの）菌類
-moss,コケ
-mold,かび
-algae,藻、藻類
-organism,生物；有機体
-organ,器官；臓器
-abnormality,異常（性）
-stroke,脳卒中、発作
-cancer,がん
-leprosy,ハンセン病
-measles,はしか、麻疹
-scurvy,壊血病
-diabetes,糖尿病
-appetite,食欲
-obesity,肥満
-malnutrition,栄養失調［不良］
-indigestion,消化不良；不消化
-metabolism,（新陳）代謝
-diarrhea,下痢
-anorexia,拒食症
-protein,タンパク質
-inflammation,炎症
-injury,けが、負傷
-arthritis,関節炎
-blister,水ぶくれ、火ぶくれ
-impairment,障害、損傷
-fever,熱、発熱
-pulse,脈拍、鼓動
-sneeze,（名・動）くしゃみ（をする）
-ward,病棟、病室
-surgery,外科、外科手術
-endocrine,内分泌の
-coma,昏睡（状態）
-eyesight,視力、視覚
-circadian rhythm,概日リズム、体内時計
-diagnosis,診断、診察；診断書
-prescription,処方（箋）
-pharmacy,調剤学、薬学、製薬；薬局
-vaccine,ワクチン
-antibiotic,抗生物質
-hypodermic,皮下（注射）の
-painkiller,鎮痛剤
-first aid,応急手当
-pregnancy,妊娠
-infertility,不妊症
-childbirth,出産、分娩
-sperm,精子
-gene,遺伝子
-amputee,切断手術を受けた患者
-immunity,免疫（性）
-infection,感染、伝染；感染症
-parasite,寄生動物［植物］、寄生虫
-germ,病原菌、細菌
-microbe,微生物、細菌；病原菌
-virus,ウイルス
-bacterium,バクテリア
-skull,頭蓋骨
-spine,脊柱、背骨
-rib,あばら骨
-nostril,鼻の穴、鼻孔
-jaw,あご
-thigh,太もも、大腿部
-wrist,手首
-ankle,足首；くるぶし
-intestine,腸
-kidney,腎臓
-liver,肝臓
-spleen,脾臓
-vein,静脈；(一般に) 血管
-artery,動脈
-cell,細胞
-nerve,神経
-neuron,ニューロン
-fiber,繊維（の１本）
-reflex,反射（運動）
-insomnia,不眠症
-anxiety,心配、不安
-depression,憂うつ、うつ病
-manic,躁状態の
-addiction,（薬物などの）常用、中毒、依存症
-trance,催眠状態
-ecosystem,生態系
-deforestation,森林伐採
-logging,伐採
-reforestation,植林、森林再生
-pasture,牧草地、放牧場
-greenhouse effect,温室効果
-tropical rain forest,熱帯雨林
-fossil fuel,化石燃料
-carbon dioxide,二酸化炭素
-carbon offset,カーボンオフセット
-renewable energy,再生可能エネルギー
-radiation,放射能
-hydropower,水力発電
-solar power,太陽光発電
-biodiesel,バイオディーゼル
-acid rain,酸性雨
-Antarctica,南極大陸
-biodiversity,生物多様性
-coral reef,サンゴ礁
-overfishing,（魚の）乱獲
-poacher,密漁 [密猟] 者
-conservationist,自然 [環境] 保護論者
-pollute,～を汚染する
-pollutant,汚染物質、汚染源
-dumping,投げ捨て；投棄
-landfill,埋め立て（地）
-soil,土壌
-organic,有機栽培の
-compost,たい肥
-fertilizer,肥料
-pesticide,殺虫剤
-harvest,収穫
-cereal,穀物
-wheat,小麦
-soybean,大豆
-mineral,鉱物、鉱石
-limestone,石灰岩
-quartz,石英
-crystal,水晶
-continent,大陸
-equator,赤道
-tropic,熱帯地方；回帰線
-volcano,火山
-ash,灰、火山灰
-wetland,湿地
-seabed,海底
-inland,内地の
-bay,湾、入り江
-ground water,地下水
-gravity,重力、引力
-subzero,氷点下の
-rainfall,降雨（量）
-drizzle,霧雨（が降る）
-frost,霜（が降りる）
-breeze,微風
-gale,強風
-tornado,竜巻
-flood,洪水
-wildfire,野火；山火事
-astronomer,天文学者
-astronomy,天文学
-galaxy,銀河、星雲
-Mercury,水星
-Venus,金星
-Mars,火星
-Jupiter,木星
-Saturn,土星
+word,meaning,example,translation
+species,（分類上の）種,Many species that live in the rainforest are now facing extinction.,熱帯雨林に生息する多くの種が、今や絶滅の危機に瀕している。
+mammal,ほ乳動物、ほ乳類,A bat is the only mammal that can truly fly.,コウモリは、真に飛ぶことができる唯一のほ乳類である。
+primate,霊長類,"Being a primate, a monkey uses its hands to grab things.",霊長類であるため、サルは物をつかむために手を使う。
+reptile,は虫類,A snake is a reptile to be careful of in the wild.,ヘビは、野生では注意すべきは虫類である。
+vertebrate,脊椎動物,Humans are more intelligent than most other vertebrates.,人間は、他のほとんどの脊椎動物よりも知的である。
+reproduction,生殖、繁殖,Understanding reproduction is essential for protecting endangered animals.,生殖を理解することは、絶滅危惧動物を保護するために不可欠だ。
+mating,交尾、交配,The mating season for many birds is in the spring.,多くの鳥にとって、交尾の季節は春である。
+hibernation,冬眠,"Preparing for hibernation, the bear ate a lot of food.",冬眠の準備をしながら、そのクマはたくさんの食べ物を食べた。
+carnivore,肉食動物,"The lion is a carnivore, which means it eats meat.",ライオンは肉食動物であり、それは肉を食べることを意味する。
+herbivore,草食動物,"A giraffe, a tall herbivore, has a very long neck.",背の高い草食動物であるキリンは、とても長い首を持っている。
+ape,（尾のない、または尾の短い）サル；類人猿,Some apes have learned to use tools to get food.,いくつかの類人猿は、食べ物を得るために道具を使うことを学んだ。
+rhinoceros,サイ,"Being illegally hunted, the rhinoceros is now a protected species.",密猟されているため、サイは今や保護種となっている。
+camel,ラクダ,I saw a camel carrying heavy bags across the desert.,私はラクダが砂漠を横切って重い荷物を運んでいるのを見た。
+donkey,ロバ,That old donkey is much stronger than it looks.,あの年老いたロバは、見た目よりずっと力が強い。
+mule,ラバ,A mule was used on the farm where my grandfather grew up.,私の祖父が育った農場では、ラバが使われていた。
+ram,（去勢していない）雄羊,"Seeing another male, the ram charged with its large horns.",別のオスを見て、その雄羊は大きな角で突進した。
+elk,ヘラジカ,The elk is a large animal that lives in North American forests.,ヘラジカは、北アメリカの森に生息する大きな動物である。
+reindeer,トナカイ,"If it were Christmas, we would see Santa's reindeer.",もしクリスマスなら、サンタのトナカイを見られるだろうに。
+canine,イヌ科の；犬の,"Having a strong canine sense of smell, the dog found the keys.",犬特有の鋭い嗅覚を持っていたので、その犬は鍵を見つけた。
+bark,（犬・キツネなどが）ほえる,I heard a dog bark loudly in the middle of the night.,私は真夜中に犬がけたたましくほえるのを聞いた。
+hare,野ウサギ,A hare can run much faster than a common rabbit.,野ウサギは、普通のウサギよりもずっと速く走ることができる。
+lynx,オオヤマネコ,The lynx is a wild cat which has tufts on its ears.,オオヤマネコは、耳に房毛がある野生のネコである。
+lizard,トカゲ,"Feeling the sun, the lizard rested on a warm rock.",太陽の光を感じながら、そのトカゲは暖かい岩の上で休んでいた。
+crocodile,ワニ,Be careful of the crocodile that is hiding in the water.,水の中に隠れているワニに注意してください。
+hump,（ラクダなどの）こぶ,A camel uses its hump to store fat for energy.,ラクダはエネルギーのために脂肪を蓄えるのにこぶを使う。
+burrow,（ウサギ・モグラなどの）巣穴,"The rabbit, seeing me, quickly hid in its burrow.",私を見て、そのウサギは素早く巣穴に隠れた。
+owl,フクロウ,The owl hunting at night has very sharp eyes.,夜に狩りをするフクロウは、とても鋭い目を持っている。
+vulture,ハゲタカ ; コンドル,The vulture plays an important role by eating dead animals.,ハゲタカは死んだ動物を食べることによって重要な役割を果たしている。
+parrot,オウム,I was surprised to hear the parrot speak some human words.,そのオウムが人間の言葉をいくつか話すのを聞いて私は驚いた。
+sparrow,スズメ,I saw a small sparrow build its nest under the roof.,私は小さなスズメが屋根の下に巣を作るのを見た。
+gull,カモメ,"Flying over the sea, the gull was looking for fish.",海の上を飛びながら、カモメは魚を探していた。
+mosquito,蚊,Nothing is more annoying than a mosquito buzzing in your ear.,耳元でブーンと鳴く蚊ほどうるさいものはない。
+termite,シロアリ,The house made of wood was seriously damaged by the termite.,木でできたその家は、シロアリによって深刻な被害を受けた。
+moth,ガ,"A moth, which is attracted to light, flew into the room.",光に引き寄せられるガが、部屋に飛んできた。
+caterpillar,いも虫、毛虫,This green caterpillar will turn into a beautiful butterfly someday.,この緑のいも虫は、いつか美しい蝶になるだろう。
+earthworm,ミミズ,The earthworm helps to make the garden soil rich for plants.,ミミズは、植物のために庭の土壌を豊かにするのに役立つ。
+salmon,サケ,This is the river where the salmon swim upstream to lay eggs.,これがサケが産卵のために上流へ泳ぐ川です。
+tuna,マグロ,This tuna was caught in the Pacific Ocean this morning.,このマグロは今朝、太平洋で獲れたものです。
+squid,イカ,A squid has to release ink to escape from its enemies.,イカは敵から逃げるために墨を吐かなければならない。
+eel,ウナギ,Grilled eel served with rice is a popular dish in Japan.,ご飯と一緒に出されるウナギの蒲焼きは、日本で人気の料理だ。
+turtle,カメ ; (特に) ウミガメ,"If we protected the beaches, more sea turtles would survive.",もし私たちが砂浜を保護すれば、より多くのウミガメが生き残るだろう。
+oyster,カキ,This bay is known for producing very high-quality oysters.,この湾は非常に高品質なカキを生産することで知られている。
+blossom,（木・庭木などの）花,The apple tree blossom is especially beautiful in early spring.,リンゴの木の花は、早春には特に美しい。
+pollen,花粉,The large amount of pollen makes it difficult for me to breathe.,大量の花粉が、私の呼吸を困難にさせる。
+thorn,（植物の）とげ、針,"Be careful, or you will be pricked by the rose's thorn.",気をつけなさい、さもないとバラのとげで刺されますよ。
+pine,マツ,The pine tree is a symbol of long life in our culture.,私たちの文化では、マツの木は長寿の象徴です。
+maple,カエデ、モミジ,The reason people visit here is to see the autumn maple leaves.,人々がここを訪れる理由は、秋のカエデの葉を見るためです。
+hemp,麻、大麻,Hemp is known to be used for making clothes and rope.,麻は衣服やロープを作るために使われることで知られている。
+holly,セイヨウヒイラギ,"The holly, with its red berries, is used for Christmas decorations.",赤い実をつけたヒイラギは、クリスマスの飾りに使われる。
+walnut,クルミ,It is said that eating a walnut is good for your brain.,クルミを食べることは脳に良いと言われている。
+cactus,サボテン,A cactus is a plant which can survive in very dry desert areas.,サボテンは、とても乾燥した砂漠地帯で生き延びることができる植物です。
+fungus,（かび・キノコ・酵母菌などの）菌類,"A mushroom is a type of fungus that grows in damp, dark places.",キノコは、湿った暗い場所に生える菌類の一種です。
+moss,コケ,We saw green moss covering the surface of the old stone wall.,私たちは、古い石垣の表面を覆っている緑のコケを見ました。
+mold,かび,"If you leave bread out for too long, mold will start to grow.",パンをあまりに長く放置すると、かびが生え始めます。
+algae,藻、藻類,Too much algae in the pond can be a sign of water pollution.,池の藻が多すぎるのは、水質汚染の兆候である可能性があります。
+organism,生物；有機体,A human is a much more complex organism than a single-celled bacterium.,人間は単細胞のバクテリアより、はるかに複雑な生物です。
+organ,器官；臓器,The brain is the most important organ controlling the entire body.,脳は体全体を制御する最も重要な器官です。
+abnormality,異常（性）,The doctor found a slight abnormality in the patient's heart rhythm.,医師は患者の心臓のリズムにわずかな異常を発見した。
+stroke,脳卒中、発作,High blood pressure is a major risk factor for having a stroke.,高血圧は脳卒中になる主要な危険因子です。
+cancer,がん,Early detection is known to be the key to treating cancer successfully.,早期発見が、がんをうまく治療する鍵であると知られています。
+leprosy,ハンセン病,"Thanks to modern medicine, leprosy is now a completely curable disease.",現代医学のおかげで、ハンセン病は今や完全に治療可能な病気です。
+measles,はしか、麻疹,The vaccine given to children can prevent them from getting measles.,子供に与えられるワクチンは、彼らがはしかになるのを防ぐことができます。
+scurvy,壊血病,"Sailors in the past often suffered from scurvy, lacking fresh fruit.",昔の船乗りたちは、新鮮な果物が不足し、しばしば壊血病に苦しんだ。
+diabetes,糖尿病,He manages his diabetes by carefully controlling what he eats every day.,彼は毎日食べるものを注意深く管理することで、糖尿病をコントロールしています。
+appetite,食欲,"Having a high fever, I completely lost my appetite for food.",高熱があり、私はすっかり食欲をなくしてしまった。
+obesity,肥満,Obesity is a serious health issue which is increasing around the world.,肥満は世界中で増加している深刻な健康問題です。
+malnutrition,栄養失調［不良］,The report showed many children suffering from severe malnutrition in that area.,その報告書は、その地域で多くの子供たちが深刻な栄養失調に苦しんでいることを示した。
+indigestion,消化不良；不消化,Eating too quickly is a common cause of indigestion after a meal.,早食いは、食後の消化不良の一般的な原因です。
+metabolism,（新陳）代謝,It is said that regular exercise helps to boost your metabolism.,定期的な運動は新陳代謝を高めるのに役立つと言われています。
+diarrhea,下痢,He had to leave school early because he had terrible diarrhea.,彼はひどい下痢だったので、学校を早退しなければならなかった。
+anorexia,拒食症,Anorexia is a serious eating disorder that requires professional medical help.,拒食症は専門的な医療の助けを必要とする深刻な摂食障害です。
+protein,タンパク質,You need to eat enough protein in order to build strong muscles.,強い筋肉を作るためには、十分なタンパク質を食べる必要があります。
+inflammation,炎症,This cream is effective at reducing the pain and inflammation.,このクリームは痛みと炎症を抑えるのに効果的です。
+injury,けが、負傷,The athlete could not play in the game because of a serious injury.,その選手は深刻なけがのため、試合に出ることができなかった。
+arthritis,関節炎,"My grandmother has arthritis, making it difficult for her to walk.",私の祖母は関節炎を患っており、そのため歩くのが困難です。
+blister,水ぶくれ、火ぶくれ,My new shoes have given me a painful blister on my heel.,新しい靴のせいで、かかとに痛い水ぶくれができた。
+impairment,障害、損傷,"Hearing impairment, which affects many elderly people, can be challenging.",聴覚障害は多くの高齢者に影響を及ぼし、困難なものとなりうる。
+fever,熱、発熱,"If you have a high fever, you should see a doctor immediately.",もし高熱があるなら、すぐに医者に診てもらうべきです。
+pulse,脈拍、鼓動,Checking your pulse after exercise is important for your health.,運動後に脈拍を測ることは、健康にとって重要です。
+sneeze,（名・動）くしゃみ（をする）,"Feeling a tickle in his nose, the boy was about to sneeze.",鼻がむずむずして、その少年はくしゃみをしそうだった。
+ward,病棟、病室,The patient was moved to a different ward for special care.,その患者は特別な治療のため、別の病棟に移された。
+surgery,外科、外科手術,He will need surgery on his knee to recover completely.,彼が完全に回復するためには、膝の手術が必要になるだろう。
+endocrine,内分泌の,The endocrine system produces hormones that regulate bodily functions.,内分泌系は、身体機能を調節するホルモンを生成する。
+coma,昏睡（状態）,The patient has been in a coma since the car accident last week.,その患者は先週の交通事故以来、昏睡状態にある。
+eyesight,視力、視覚,My eyesight is getting worse than it was a year ago.,私の視力は1年前よりも悪くなっている。
+circadian rhythm,概日リズム、体内時計,Jet lag is a disruption of the circadian rhythm that controls sleep.,時差ぼけは、睡眠を制御する概日リズムの乱れである。
+diagnosis,診断、診察；診断書,The doctor's early diagnosis helped the patient to recover quickly.,医師の早期診断が、患者の素早い回復を助けた。
+prescription,処方（箋）,The doctor gave me a prescription for the medicine.,医者は私にその薬の処方箋をくれた。
+pharmacy,調剤学、薬学、製薬；薬局,I went to the pharmacy where I get my prescriptions filled.,私は処方箋の薬を出してもらう薬局へ行った。
+vaccine,ワクチン,It is said that the new vaccine is effective against the virus.,新しいワクチンはそのウイルスに対して効果があると言われている。
+antibiotic,抗生物質,This antibiotic is used for treating bacterial infections.,この抗生物質は、細菌感染症の治療に使われる。
+hypodermic,皮下（注射）の,A hypodermic needle was used to inject the medicine under the skin.,皮下注射針が、皮膚の下に薬を注入するために使われた。
+painkiller,鎮痛剤,"If I had a painkiller, this headache would be more tolerable.",もし鎮痛剤があれば、この頭痛はもっと耐えられるだろうに。
+first aid,応急手当,Knowing basic first aid can save someone's life in an emergency.,基本的な応急手当を知っていることは、緊急時に誰かの命を救うことがある。
+pregnancy,妊娠,Regular checkups are very important during pregnancy.,妊娠中の定期検診はとても重要です。
+infertility,不妊症,Many couples have been seeking treatment for infertility.,多くのカップルが不妊症の治療を求めてきた。
+childbirth,出産、分娩,Preparing for childbirth is more important than many people think.,出産の準備は、多くの人が思うよりも重要だ。
+sperm,精子,A sperm is a male cell that can fertilize a female egg.,精子とは、女性の卵子を受精させることができる男性の細胞である。
+gene,遺伝子,A gene is a unit of heredity which is transferred from parents.,遺伝子とは、親から受け継がれる遺伝の単位である。
+amputee,切断手術を受けた患者,The amputee learned to run again using a specially designed prosthetic leg.,その切断手術を受けた人は、特別に設計された義足を使って再び走ることを学んだ。
+immunity,免疫（性）,Vaccination is a way to acquire immunity against diseases.,ワクチン接種は病気に対する免疫を獲得するための一つの方法です。
+infection,感染、伝染；感染症,The doctor treated the infection caused by the bacteria.,その医者はバクテリアによって引き起こされた感染症を治療した。
+parasite,寄生動物［植物］、寄生虫,A parasite is an organism that lives on another living thing.,寄生生物とは、他の生物に依存して生きる生物のことです。
+germ,病原菌、細菌,Washing your hands with soap is a good way to remove germs.,石鹸で手を洗うことは、病原菌を取り除く良い方法です。
+microbe,微生物、細菌；病原菌,A microbe is too small to be seen without a microscope.,微生物はあまりに小さいため、顕微鏡なしで見ることはできません。
+virus,ウイルス,"The computer was infected by a virus, deleting all my files.",コンピュータがウイルスに感染し、私のファイルがすべて削除されてしまった。
+bacterium,バクテリア,A single bacterium is so small that you need a microscope.,一個のバクテリアは非常に小さいので、顕微鏡が必要です。
+skull,頭蓋骨,The skull is the bone structure that protects the brain.,頭蓋骨は脳を保護する骨の構造です。
+spine,脊柱、背骨,"The spine supports the body, allowing us to stand upright.",背骨は体を支え、私たちが直立することを可能にしている。
+rib,あばら骨,"He broke a rib, which made it difficult for him to breathe.",彼はあばら骨を折り、そのせいで呼吸が困難になった。
+nostril,鼻の穴、鼻孔,He breathed in the fresh morning air through his nostrils.,彼は新鮮な朝の空気を鼻の穴から吸い込んだ。
+jaw,あご,The snake can open its jaw very wide to swallow prey.,そのヘビは獲物を飲み込むためにあごをとても大きく開けることができる。
+thigh,太もも、大腿部,The runner pulled a muscle in his thigh during the race.,そのランナーはレース中に太ももの筋肉を痛めた。
+wrist,手首,"I sprained my wrist, so I cannot write easily.",手首を捻挫したので、簡単に字が書けません。
+ankle,足首；くるぶし,"If I were you, I would put some ice on that swollen ankle.",もし私があなたなら、その腫れた足首に氷を当てるでしょう。
+intestine,腸,The small intestine is much longer than the large intestine.,小腸は大腸よりもずっと長い。
+kidney,腎臓,The main function of the kidneys is to filter the blood.,腎臓の主な機能は血液をろ過することです。
+liver,肝臓,Drinking too much alcohol is known to damage the liver.,アルコールの飲み過ぎは肝臓を傷つけることが知られている。
+spleen,脾臓,"The spleen, located near the stomach, helps fight infection.",胃の近くにある脾臓は、感染症と戦うのを助ける。
+vein,静脈；(一般に) 血管,Veins are the vessels that carry blood toward the heart.,静脈は血液を心臓へと運ぶ血管です。
+artery,動脈,An artery is a blood vessel carrying oxygen-rich blood.,動脈は酸素を豊富に含んだ血液を運ぶ血管です。
+cell,細胞,A cancer cell divides more rapidly than a normal one.,がん細胞は正常な細胞よりも速く分裂する。
+nerve,神経,He had a nerve removed from his tooth at the dentist.,彼は歯医者で歯の神経を抜いてもらった。
+neuron,ニューロン,"Neurons communicate with each other, forming complex networks.",ニューロンは互いに情報を伝え合い、複雑なネットワークを形成する。
+fiber,繊維（の１本）,This sweater is made of a natural fiber called wool.,このセーターは羊毛と呼ばれる天然繊維でできている。
+reflex,反射（運動）,"Sneezing is a reflex action, protecting our bodies from foreign particles.",くしゃみは反射運動であり、異物から私たちの体を守っている。
+insomnia,不眠症,Stress is a common cause of insomnia that many students suffer from.,ストレスは、多くの学生が悩む不眠症の一般的な原因です。
+anxiety,心配、不安,He felt a great deal of anxiety about his future career path.,彼は将来の進路について大きな不安を感じていた。
+depression,憂うつ、うつ病,Seeking help is more important than hiding feelings of depression.,助けを求めることは、憂うつな気持ちを隠すことよりも重要だ。
+manic,躁状態の,He has manic episodes where he feels extremely energetic.,彼は躁状態の発作があり、そのとき彼は非常にエネルギッシュに感じる。
+addiction,（薬物などの）常用、中毒、依存症,"Overcoming his addiction to video games, he started studying hard.",ビデオゲーム依存症を克服し、彼は熱心に勉強を始めた。
+trance,催眠状態,She stared at the screen as if she were in a trance.,彼女はまるで催眠状態にあるかのように画面を見つめていた。
+ecosystem,生態系,The coral reef is a fragile ecosystem which many species depend on.,サンゴ礁は、多くの種が依存している壊れやすい生態系だ。
+deforestation,森林伐採,"Deforestation is a serious problem, causing the loss of many animal habitats.",森林伐採は深刻な問題で、多くの動物の生息地を失う原因となっている。
+logging,伐採,Illegal logging in this area must be stopped to protect the forest.,森林を保護するために、この地域の違法な伐採は止められなければならない。
+reforestation,植林、森林再生,It is important to promote reforestation for our planet's future.,私たちの地球の未来のために、森林再生を促進することは重要です。
+pasture,牧草地、放牧場,We saw a vast pasture with many sheep grazing peacefully.,私たちは、たくさんの羊が穏やかに草を食んでいる広大な牧草地を見た。
+greenhouse effect,温室効果,The greenhouse effect is said to be the main cause of global warming.,温室効果が地球温暖化の主な原因であると言われている。
+tropical rain forest,熱帯雨林,The tropical rain forest is a place where biodiversity is extremely rich.,熱帯雨林は、生物多様性が極めて豊かな場所です。
+fossil fuel,化石燃料,We need to rely less on fossil fuels for a cleaner environment.,よりクリーンな環境のために、私たちは化石燃料への依存を減らす必要がある。
+carbon dioxide,二酸化炭素,The amount of carbon dioxide released into the atmosphere is increasing.,大気中に放出される二酸化炭素の量が増加している。
+carbon offset,カーボンオフセット,Buying carbon offsets is one way to compensate for your emissions.,カーボンオフセットを購入することは、自らの排出量を埋め合わせる一つの方法です。
+renewable energy,再生可能エネルギー,"Renewable energy, such as solar and wind power, is becoming more common.",太陽光や風力のような再生可能エネルギーは、より一般的になってきている。
+radiation,放射能,Workers must be protected from exposure to harmful radiation.,作業員は有害な放射線への被ばくから保護されなければならない。
+hydropower,水力発電,The large dam provides the entire city with clean hydropower.,その大きなダムは、都市全体にクリーンな水力発電を供給している。
+solar power,太陽光発電,Solar power is a much cleaner energy source than coal.,太陽光発電は石炭よりもずっとクリーンなエネルギー源です。
+biodiesel,バイオディーゼル,Biodiesel is a fuel which is made from vegetable oils or animal fats.,バイオディーゼルは、植物油や動物性脂肪から作られる燃料です。
+acid rain,酸性雨,"Acid rain, caused by air pollution, makes forests and lakes unhealthy.",大気汚染によって引き起こされる酸性雨は、森林や湖を不健康にする。
+Antarctica,南極大陸,"Antarctica is the coldest, driest, and highest continent on Earth.",南極大陸は地球上で最も寒く、最も乾燥し、最も標高が高い大陸です。
+biodiversity,生物多様性,It is essential for us to protect the planet's biodiversity.,私たちが地球の生物多様性を守ることは不可欠です。
+coral reef,サンゴ礁,The beautiful coral reef is being damaged by rising sea temperatures.,その美しいサンゴ礁は、海水温の上昇によってダメージを受けている。
+overfishing,（魚の）乱獲,Overfishing has seriously reduced the number of fish in the ocean.,魚の乱獲は、海の魚の数を深刻に減少させてきた。
+poacher,密漁 [密猟] 者,The poacher was caught trying to sell elephant tusks illegally.,その密猟者は、象牙を違法に売ろうとして捕まった。
+conservationist,自然 [環境] 保護論者,A conservationist is a person who works to protect nature.,自然保護論者とは、自然を守るために活動する人です。
+pollute,～を汚染する,"If factories pollute the river, many fish will die.",もし工場が川を汚染すれば、多くの魚が死んでしまうだろう。
+pollutant,汚染物質、汚染源,That chemical pollutant has made the air quality much worse.,その化学汚染物質は、大気の質をずっと悪化させた。
+dumping,投げ捨て；投棄,The illegal dumping of waste is a serious environmental problem.,廃棄物の不法投棄は、深刻な環境問題です。
+landfill,埋め立て（地）,Most of our city's garbage is taken to a landfill.,私たちの市のゴミのほとんどは、埋め立て地に運ばれる。
+soil,土壌,This rich soil is better for growing vegetables than that one.,この肥沃な土壌は、あちらよりも野菜を育てるのにより適している。
+organic,有機栽培の,I prefer buying organic vegetables grown without any chemicals.,私は化学物質なしで育てられた有機野菜を買う方が好きだ。
+compost,たい肥,We use kitchen scraps to make compost for our garden.,私たちは庭のたい肥を作るために、台所の生ゴミを使います。
+fertilizer,肥料,Using too much chemical fertilizer can harm the environment.,化学肥料を使いすぎると、環境に害を与える可能性がある。
+pesticide,殺虫剤,This pesticide is used to protect crops from harmful insects.,この殺虫剤は、作物を害虫から守るために使われる。
+harvest,収穫,It is almost time for farmers to begin the rice harvest.,農家が米の収穫を始める時期がもうすぐです。
+cereal,穀物,Rice is a type of cereal widely grown in Asia.,米はアジアで広く栽培されている穀物の一種です。
+wheat,小麦,"Bread is made from flour, which comes from wheat.",パンは小麦粉から作られ、その小麦粉は小麦からできる。
+soybean,大豆,Soybeans are often used to make traditional foods like tofu.,大豆は、豆腐のような伝統的な食品を作るのによく使われる。
+mineral,鉱物、鉱石,Water contains minerals that are essential for our health.,水には私たちの健康に不可欠なミネラルが含まれている。
+limestone,石灰岩,This beautiful cave was formed by water eroding limestone.,この美しい洞窟は、水が石灰岩を侵食してできた。
+quartz,石英,Quartz is one of the most common minerals found on Earth.,石英は、地球上で見つかる最も一般的な鉱物の一つです。
+crystal,水晶,"I found a clear crystal, which looked like a piece of glass.",私はガラス片のように見える、透明な水晶を見つけた。
+continent,大陸,Asia is the largest continent in the world by area and population.,アジアは、面積と人口の両方で世界最大の大陸です。
+equator,赤道,The equator is an imaginary line which divides the Earth into two halves.,赤道は、地球を2つの半球に分ける想像上の線です。
+tropic,熱帯地方；回帰線,The area lying between the two tropics is very hot.,2つの回帰線の間にある地域は、とても暑い。
+volcano,火山,"The active volcano, located near the town, could erupt anytime.",町の近くにあるその活火山は、いつでも噴火する可能性がある。
+ash,灰、火山灰,The town was covered with ash which the volcano had erupted.,その町は火山が噴火した灰で覆われていた。
+wetland,湿地,The wetland is a habitat for many birds that migrate south.,その湿地は南へ渡る多くの鳥の生息地だ。
+seabed,海底,"Scientists are exploring the deep seabed, searching for new life forms.",科学者たちは新しい生命体を探して、深い海底を探査している。
+inland,内地の,"We traveled inland, away from the crowded coastal cities.",私たちは混雑した沿岸の都市から離れ、内陸へ旅をした。
+bay,湾、入り江,The view of the bay from the hill is more beautiful than I expected.,丘から見るその湾の景色は私が期待したよりも美しい。
+ground water,地下水,The pollution of ground water is a serious problem for the community.,地下水の汚染はその地域社会にとって深刻な問題だ。
+gravity,重力、引力,"Without gravity, everything on Earth would float away into space.",もし重力がなければ、地球上のすべてのものは宇宙へ漂っていくだろう。
+subzero,氷点下の,It is difficult to start a car in subzero temperatures.,氷点下の気温では、車のエンジンをかけるのは難しい。
+rainfall,降雨（量）,This year's rainfall has been less than the average of the last decade.,今年の降雨量は過去10年間の平均よりも少なかった。
+drizzle,霧雨（が降る）,"A light drizzle began to fall, making the streets wet.",小さな霧雨が降り始め、通りを濡らした。
+frost,霜（が降りる）,I saw frost covering the windows this morning.,今朝、窓が霜で覆われているのを見た。
+breeze,微風,A gentle breeze blowing from the sea felt very refreshing.,海から吹いてくるそよ風がとても心地よかった。
+gale,強風,The weather forecast warned of a strong gale approaching the coast.,天気予報は、強い風が沿岸に接近していると警告した。
+tornado,竜巻,"The tornado, which was extremely powerful, destroyed many houses.",その竜巻は、非常に強力で、多くの家を破壊した。
+flood,洪水,The heavy rain caused a serious flood in the low-lying areas.,大雨が低地で深刻な洪水を引き起こした。
+wildfire,野火；山火事,The wildfire spread so quickly that people had to evacuate immediately.,山火事はあまりに速く広まったので、人々はすぐに避難しなければならなかった。
+astronomer,天文学者,An astronomer is a scientist who studies stars and planets.,天文学者とは、星や惑星を研究する科学者である。
+astronomy,天文学,"My brother is interested in astronomy, especially in black holes.",私の兄は天文学、特にブラックホールに興味がある。
+galaxy,銀河、星雲,Our solar system is just a small part of the Milky Way galaxy.,私たちの太陽系は、天の川銀河のほんの小さな一部にすぎない。
+Mercury,水星,Mercury is the closest planet to the Sun in our solar system.,水星は私たちの太陽系で最も太陽に近い惑星です。
+Venus,金星,Venus is often called Earth's "sister planet" because of its similar size.,金星は大きさが似ているため、しばしば地球の「姉妹惑星」と呼ばれる。
+Mars,火星,Humans have long dreamed of sending astronauts to explore Mars.,人類は長い間、火星を探査するために宇宙飛行士を送ることを夢見てきた。
+Jupiter,木星,"Jupiter is the largest planet, known for its famous Great Red Spot.",木星は最大の惑星で、その有名な大赤斑で知られている。
+Saturn,土星,Saturn is famous for the beautiful rings which surround the planet.,土星はその惑星を取り巻く美しい環で有名だ。
