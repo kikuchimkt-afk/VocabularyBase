@@ -127,7 +127,7 @@ export default function WordList({ studentId, studentName }) {
 
   // 一括音声生成
   const bulkGenerateAudio = async () => {
-    const needAudio = words.filter(w =>
+    const needAudio = filteredWords.filter(w =>
       !w.word_audio_url || (!w.sentence_audio_url && w.example_sentence)
     );
     if (needAudio.length === 0) return;
@@ -388,7 +388,7 @@ export default function WordList({ studentId, studentName }) {
         <div style={{ display: 'flex', gap: '0.4rem', marginBottom: '0.5rem', justifyContent: 'flex-end', flexWrap: 'wrap', alignItems: 'center' }}>
           {/* 一括音声生成ボタン */}
           {(() => {
-            const needAudioCount = words.filter(w =>
+            const needAudioCount = filteredWords.filter(w =>
               !w.word_audio_url || (!w.sentence_audio_url && w.example_sentence)
             ).length;
             if (needAudioCount > 0 || bulkAudioGenerating) return (
