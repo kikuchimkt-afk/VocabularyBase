@@ -1083,10 +1083,12 @@ export default function AdminPage() {
               const dateMap = {};
               achieveWords.forEach(w => {
                 const d = w.assigned_date || '未設定';
-                if (!dateMap[d]) dateMap[d] = { total: 0, mastered: 0, words: [] };
+                if (!dateMap[d]) dateMap[d] = { total: 0, mastered: 0, lastTested: null };
                 dateMap[d].total++;
                 if (isMastered(w)) dateMap[d].mastered++;
-                dateMap[d].words.push(w);
+                if (w.last_tested && (!dateMap[d].lastTested || w.last_tested > dateMap[d].lastTested)) {
+                  dateMap[d].lastTested = w.last_tested;
+                }
               });
               const dates = Object.keys(dateMap).sort((a, b) => b.localeCompare(a));
 
@@ -1148,6 +1150,14 @@ export default function AdminPage() {
                               {pct}%
                             </span>
                           </div>
+                          {info.lastTested && (
+                            <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginTop: '0.25rem', textAlign: 'right' }}>
+                              📝 最終学習: {(() => {
+                                const dt = new Date(info.lastTested);
+                                return `${dt.getMonth() + 1}/${dt.getDate()}`;
+                              })()}
+                            </div>
+                          )}
                         </div>
                       );
                     })}
