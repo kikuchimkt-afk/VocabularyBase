@@ -22,6 +22,7 @@ export default function TeacherWordRegister({ students, onRegistered }) {
   const [message, setMessage] = useState('');
   const [saveProgress, setSaveProgress] = useState('');
   const [history, setHistory] = useState([]);
+  const [deliveryGradeFilter, setDeliveryGradeFilter] = useState('all');
 
   // Excel一括登録
   const [showBulkImport, setShowBulkImport] = useState(false);
@@ -258,14 +259,18 @@ export default function TeacherWordRegister({ students, onRegistered }) {
     <div>
       {/* 配信設定（常に表示） */}
       <div className="card" style={{ marginBottom: '1rem' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
-          <span style={{ fontWeight: '600' }}>📅 配信日（宿題日）</span>
+        <div style={{
+          display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '1rem',
+          padding: '0.6rem 0.75rem', borderRadius: 'var(--radius-md)',
+          border: '2px solid var(--danger)', background: 'var(--danger-light)',
+        }}>
+          <span style={{ fontWeight: '700', color: 'var(--danger)' }}>📅 配信日（宿題日）</span>
           <input
             type="date"
             className="input-text"
             value={assignedDate}
             onChange={(e) => setAssignedDate(e.target.value)}
-            style={{ width: 'auto', flex: 'unset' }}
+            style={{ width: 'auto', flex: 'unset', fontWeight: 600, border: '2px solid var(--danger)' }}
           />
         </div>
         {/* 配信先選択（常に表示） */}
@@ -282,8 +287,47 @@ export default function TeacherWordRegister({ students, onRegistered }) {
               {selectedStudents.size === students.length ? '☐ 全員解除' : '☑ 全員選択'}
             </button>
           </div>
+          {/* 学年フィルター */}
+          {(() => {
+            const grades = [...new Set(students.map(s => s.grade).filter(Boolean))]
+              .sort((a, b) => {
+                const gradeOrder = (g) => {
+                  const m = g.match(/(\D+)(\d+)/);
+                  if (!m) return 0;
+                  const base = m[1] === '高' ? 100 : m[1] === '中' ? 50 : m[1] === '小' ? 10 : 0;
+                  return base + parseInt(m[2]);
+                };
+                return gradeOrder(b) - gradeOrder(a);
+              });
+            if (grades.length <= 1) return null;
+            return (
+              <div style={{ display: 'flex', gap: '0.3rem', flexWrap: 'wrap', marginBottom: '0.5rem' }}>
+                <button
+                  onClick={() => setDeliveryGradeFilter('all')}
+                  style={{
+                    padding: '0.2rem 0.5rem', borderRadius: 20, fontSize: '0.7rem', fontWeight: 600,
+                    border: deliveryGradeFilter === 'all' ? '2px solid var(--primary)' : '1px solid var(--border)',
+                    background: deliveryGradeFilter === 'all' ? 'var(--primary)' : 'var(--bg-card)',
+                    color: deliveryGradeFilter === 'all' ? 'white' : 'var(--text-muted)', cursor: 'pointer',
+                  }}
+                >全て</button>
+                {grades.map(g => (
+                  <button
+                    key={g}
+                    onClick={() => setDeliveryGradeFilter(deliveryGradeFilter === g ? 'all' : g)}
+                    style={{
+                      padding: '0.2rem 0.5rem', borderRadius: 20, fontSize: '0.7rem', fontWeight: 600,
+                      border: deliveryGradeFilter === g ? '2px solid var(--primary)' : '1px solid var(--border)',
+                      background: deliveryGradeFilter === g ? 'var(--primary)' : 'var(--bg-card)',
+                      color: deliveryGradeFilter === g ? 'white' : 'var(--text-muted)', cursor: 'pointer',
+                    }}
+                  >{g}</button>
+                ))}
+              </div>
+            );
+          })()}
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-            {students.map(s => (
+            {students.filter(s => deliveryGradeFilter === 'all' || s.grade === deliveryGradeFilter).map(s => (
               <label
                 key={s.id}
                 style={{

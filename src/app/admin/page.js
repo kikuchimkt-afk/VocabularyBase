@@ -57,6 +57,7 @@ export default function AdminPage() {
   
   // 検索
   const [studentSearchQuery, setStudentSearchQuery] = useState('');
+  const [gradeFilter, setGradeFilter] = useState('all');
 
   // 達成率詳細ポップアップ
   const [achieveStudent, setAchieveStudent] = useState(null);
@@ -459,6 +460,41 @@ export default function AdminPage() {
           </div>
         )}
 
+        {/* 学年フィルター */}
+        {students.length > 0 && (() => {
+          const grades = [...new Set(students.map(s => s.grade).filter(Boolean))]
+            .sort((a, b) => gradeToNumber(b) - gradeToNumber(a));
+          if (grades.length <= 1) return null;
+          return (
+            <div style={{ display: 'flex', gap: '0.3rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
+              <button
+                onClick={() => setGradeFilter('all')}
+                style={{
+                  padding: '0.25rem 0.6rem', borderRadius: 20, fontSize: '0.75rem', fontWeight: 600,
+                  border: gradeFilter === 'all' ? '2px solid var(--primary)' : '1px solid var(--border)',
+                  background: gradeFilter === 'all' ? 'var(--primary)' : 'var(--bg-card)',
+                  color: gradeFilter === 'all' ? 'white' : 'var(--text-muted)', cursor: 'pointer',
+                }}
+              >全て ({students.length})</button>
+              {grades.map(g => {
+                const cnt = students.filter(s => s.grade === g).length;
+                return (
+                  <button
+                    key={g}
+                    onClick={() => setGradeFilter(gradeFilter === g ? 'all' : g)}
+                    style={{
+                      padding: '0.25rem 0.6rem', borderRadius: 20, fontSize: '0.75rem', fontWeight: 600,
+                      border: gradeFilter === g ? '2px solid var(--primary)' : '1px solid var(--border)',
+                      background: gradeFilter === g ? 'var(--primary)' : 'var(--bg-card)',
+                      color: gradeFilter === g ? 'white' : 'var(--text-muted)', cursor: 'pointer',
+                    }}
+                  >{g} ({cnt})</button>
+                );
+              })}
+            </div>
+          );
+        })()}
+
         {/* Add form */}
         {showAddForm && (
           <div className="card" style={{ marginBottom: '1rem' }}>
@@ -492,6 +528,7 @@ export default function AdminPage() {
         ) : (
           (() => {
             const filteredStudents = students.filter(s => {
+              if (gradeFilter !== 'all' && s.grade !== gradeFilter) return false;
               if (!studentSearchQuery.trim()) return true;
               const q = studentSearchQuery.toLowerCase();
               const name = (s.name || '').toLowerCase();
