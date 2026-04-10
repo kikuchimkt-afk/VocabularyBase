@@ -44,6 +44,17 @@ export default function TeacherWordRegister({ students, onRegistered }) {
   const [masterRange, setMasterRange] = useState('1-50');
   const [masterLoading, setMasterLoading] = useState(false);
 
+  // 毎日特訓
+  const [showDailyModal, setShowDailyModal] = useState(false);
+  const [dailyGrade, setDailyGrade] = useState('sys5th');
+  const [dailyStart, setDailyStart] = useState(1);
+  const [dailyPerDay, setDailyPerDay] = useState(10);
+  const [dailyStartDate, setDailyStartDate] = useState(new Date().toISOString().split('T')[0]);
+  const [dailyEndDate, setDailyEndDate] = useState('');
+  const [dailySkipWeekend, setDailySkipWeekend] = useState(true);
+  const [dailyRunning, setDailyRunning] = useState(false);
+  const [dailyProgress, setDailyProgress] = useState('');
+
   // 前回の選択を記憶
   useEffect(() => {
     try {
@@ -464,9 +475,21 @@ export default function TeacherWordRegister({ students, onRegistered }) {
               {masterLoading ? '読み込み中...' : '🔍 プレビュー'}
             </button>
           </div>
-          <div className="text-muted" style={{ fontSize: '0.75rem' }}>
+          <div className="text-muted" style={{ fontSize: '0.75rem', marginBottom: '0.75rem' }}>
             ※ 番号は出題頻度順のランクです。例: 「1-50」で最頻出50語を登録
           </div>
+          <button
+            className="btn"
+            onClick={() => setShowDailyModal(true)}
+            style={{
+              padding: '0.5rem 1rem', fontSize: '0.85rem', fontWeight: 700,
+              background: 'linear-gradient(135deg, #f59e0b, #ef4444)', color: 'white',
+              border: 'none', borderRadius: 'var(--radius-md)', cursor: 'pointer',
+              display: 'flex', alignItems: 'center', gap: '0.4rem',
+            }}
+          >
+            🔥 毎日特訓
+          </button>
         </div>
       )}
 
@@ -1123,6 +1146,224 @@ export default function TeacherWordRegister({ students, onRegistered }) {
           ))}
         </div>
       )}
+      {/* 毎日特訓モーダル */}
+      {showDailyModal && (() => {
+        // スケジュール計算
+        const calcSchedule = () => {
+          if (!dailyStartDate || !dailyEndDate || dailyPerDay < 1) return [];
+          const schedule = [];
+          let current = new Date(dailyStartDate + 'T00:00:00');
+          const end = new Date(dailyEndDate + 'T00:00:00');
+          let wordIdx = dailyStart;
+          while (current <= end) {
+            const dow = current.getDay();
+            if (!dailySkipWeekend || (dow !== 0 && dow !== 6)) {
+              const from = wordIdx;
+              const to = wordIdx + dailyPerDay - 1;
+              schedule.push({
+                date: current.toISOString().split('T')[0],
+                label: `${current.getMonth()+1}/${current.getDate()}`,
+                dow: ['日','月','火','水','木','金','土'][dow],
+                from, to,
+              });
+              wordIdx = to + 1;
+            }
+            current.setDate(current.getDate() + 1);
+          }
+          return schedule;
+        };
+        const schedule = calcSchedule();
+        const totalWords = schedule.length * dailyPerDay;
+
+        const listOptions = [
+          { value: '5kyu', label: '英検5級 (439語)' },
+          { value: '4kyu', label: '英検4級 (726語)' },
+          { value: '3kyu', label: '英検3級 (996語)' },
+          { value: '準2kyu', label: '英検準2級 (1222語)' },
+          { value: '2kyu', label: '英検2級 (2000語)' },
+          { value: 'pre1kyu', label: '英検準1級パス単 (1900語)' },
+          { value: 'ex_pre1kyu', label: 'EX準1級 (2434語)' },
+          { value: 'sys5th', label: 'シス単5訂版 (2027語)' },
+          { value: 'leap', label: 'LEAP (1935語)' },
+          { value: 'target1900', label: 'ターゲット1900 (1900語)' },
+          { value: 'target1400extra', label: '高校生368語' },
+          { value: 'idiom1000', label: '熟語ターゲット1000 (1000語)' },
+        ];
+
+        const sourceMap = {
+          '5kyu': '英検5級', '4kyu': '英検4級', '3kyu': '英検3級', '準2kyu': '英検準2級', '2kyu': '英検2級',
+          'pre1kyu': '英検準1級パス単', 'ex_pre1kyu': 'EX準1級', 'sys5th': 'シス単5訂版',
+          'leap': 'LEAP', 'target1900': 'ターゲット1900', 'target1400extra': 'ターゲット1400extra', 'idiom1000': '熟語ターゲット1000',
+        };
+
+        const runDaily = async () => {
+          if (selectedStudents.size === 0) { alert('配信先の生徒を選択してください'); return; }
+          if (schedule.length === 0) { alert('スケジュールが空です'); return; }
+          if (!confirm(`${schedule.length}日間 × ${dailyPerDay}語/日 = 合計${totalWords}語 を ${selectedStudents.size}名に配信します。\nよろしいですか？`)) return;
+
+          setDailyRunning(true);
+          try {
+            const res = await fetch(`/wordlist_${dailyGrade}.json`);
+            if (!res.ok) throw new Error('リスト読み込み失敗');
+            const allWords = await res.json();
+
+            for (let i = 0; i < schedule.length; i++) {
+              const s = schedule[i];
+              setDailyProgress(`📤 ${s.label} (${i+1}/${schedule.length}) No.${s.from}-${s.to}`);
+              const selected = allWords.filter(w => w.rank >= s.from && w.rank <= s.to);
+              if (selected.length === 0) continue;
+
+              const words = selected.map(w => ({
+                english: w.word || w.english,
+                meanings: Array.isArray(w.meanings) ? w.meanings.join('、') : (w.meanings || w.meaning || ''),
+                example: w.example || '',
+                exampleJa: w.exampleJa || w.translation || '',
+                reassign: true,
+                listType: dailyGrade,
+                rank: w.rank,
+                source: `${sourceMap[dailyGrade]} No.${w.rank}`,
+              }));
+
+              await fetch('/api/words/import', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  words, studentIds: [...selectedStudents], assignedDate: s.date,
+                }),
+              });
+            }
+            setDailyProgress('');
+            setShowDailyModal(false);
+            alert(`✅ ${schedule.length}日分の配信が完了しました！`);
+            if (onRegistered) onRegistered();
+          } catch (err) {
+            console.error(err);
+            alert('配信中にエラーが発生しました: ' + err.message);
+          } finally {
+            setDailyRunning(false);
+            setDailyProgress('');
+          }
+        };
+
+        return (
+          <div className="modal-overlay" onClick={() => !dailyRunning && setShowDailyModal(false)}>
+            <div className="modal-card" style={{ maxWidth: '560px', width: '100%', maxHeight: '85vh', overflowY: 'auto' }} onClick={e => e.stopPropagation()}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+                <h2 style={{ fontSize: '1.2rem', fontWeight: 800, margin: 0 }}>🔥 毎日特訓</h2>
+                <button className="btn btn-ghost" onClick={() => !dailyRunning && setShowDailyModal(false)} style={{ fontSize: '1.2rem', padding: '0.25rem 0.5rem' }}>✕</button>
+              </div>
+
+              {/* 設定フォーム */}
+              <div style={{ display: 'grid', gap: '0.75rem', marginBottom: '1rem' }}>
+                {/* 対象リスト */}
+                <div>
+                  <label style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.25rem' }}>📚 対象リスト</label>
+                  <select value={dailyGrade} onChange={e => setDailyGrade(e.target.value)} className="input-text" style={{ width: '100%' }}>
+                    {listOptions.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
+                  </select>
+                </div>
+
+                {/* 開始番号 & 1日あたり */}
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
+                  <div>
+                    <label style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.25rem' }}>🔢 開始番号</label>
+                    <input type="number" min={1} value={dailyStart} onChange={e => setDailyStart(Math.max(1, parseInt(e.target.value) || 1))} className="input-text" style={{ width: '100%' }} />
+                  </div>
+                  <div>
+                    <label style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.25rem' }}>📦 1日あたり</label>
+                    <input type="number" min={1} max={100} value={dailyPerDay} onChange={e => setDailyPerDay(Math.max(1, Math.min(100, parseInt(e.target.value) || 1)))} className="input-text" style={{ width: '100%' }} />
+                  </div>
+                </div>
+
+                {/* 期間 */}
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
+                  <div>
+                    <label style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.25rem' }}>📅 開始日</label>
+                    <input type="date" value={dailyStartDate} onChange={e => setDailyStartDate(e.target.value)} className="input-text" style={{ width: '100%' }} />
+                  </div>
+                  <div>
+                    <label style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.25rem' }}>📅 終了日</label>
+                    <input type="date" value={dailyEndDate} onChange={e => setDailyEndDate(e.target.value)} className="input-text" style={{ width: '100%' }} />
+                  </div>
+                </div>
+
+                {/* 土日スキップ */}
+                <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem', cursor: 'pointer' }}>
+                  <input type="checkbox" checked={dailySkipWeekend} onChange={e => setDailySkipWeekend(e.target.checked)} style={{ accentColor: 'var(--primary)' }} />
+                  <span style={{ fontWeight: 600 }}>⏭️ 土日をスキップ（平日のみ配信）</span>
+                </label>
+              </div>
+
+              {/* サマリー */}
+              <div style={{
+                display: 'flex', justifyContent: 'space-around', padding: '0.6rem',
+                background: 'var(--primary-light)', borderRadius: 'var(--radius-md)',
+                marginBottom: '0.75rem', textAlign: 'center',
+              }}>
+                <div>
+                  <div style={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--primary)' }}>{schedule.length}</div>
+                  <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>日数</div>
+                </div>
+                <div>
+                  <div style={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--primary)' }}>{dailyPerDay}</div>
+                  <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>語/日</div>
+                </div>
+                <div>
+                  <div style={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--secondary)' }}>{totalWords}</div>
+                  <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>合計</div>
+                </div>
+                <div>
+                  <div style={{ fontSize: '1.3rem', fontWeight: 800, color: '#f59e0b' }}>{selectedStudents.size}</div>
+                  <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>名</div>
+                </div>
+              </div>
+
+              {/* スケジュールプレビュー */}
+              {schedule.length > 0 && (
+                <div style={{ maxHeight: '200px', overflowY: 'auto', border: '1px solid var(--border)', borderRadius: 'var(--radius-md)', marginBottom: '0.75rem' }}>
+                  <table style={{ width: '100%', fontSize: '0.75rem', borderCollapse: 'collapse' }}>
+                    <thead>
+                      <tr style={{ background: 'var(--bg-page)', position: 'sticky', top: 0 }}>
+                        <th style={{ padding: '0.4rem', textAlign: 'left', fontWeight: 700 }}>日付</th>
+                        <th style={{ padding: '0.4rem', textAlign: 'left', fontWeight: 700 }}>曜日</th>
+                        <th style={{ padding: '0.4rem', textAlign: 'left', fontWeight: 700 }}>範囲</th>
+                        <th style={{ padding: '0.4rem', textAlign: 'right', fontWeight: 700 }}>語数</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {schedule.map((s, i) => (
+                        <tr key={i} style={{ borderTop: '1px solid var(--border)' }}>
+                          <td style={{ padding: '0.35rem 0.4rem' }}>{s.label}</td>
+                          <td style={{ padding: '0.35rem 0.4rem', color: s.dow === '土' ? '#3b82f6' : s.dow === '日' ? 'var(--danger)' : 'inherit' }}>{s.dow}</td>
+                          <td style={{ padding: '0.35rem 0.4rem' }}>No.{s.from}–{s.to}</td>
+                          <td style={{ padding: '0.35rem 0.4rem', textAlign: 'right' }}>{s.to - s.from + 1}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+
+              {/* 進捗 */}
+              {dailyProgress && (
+                <div style={{ padding: '0.5rem', background: 'var(--primary-light)', borderRadius: 'var(--radius-md)', fontSize: '0.8rem', fontWeight: 600, marginBottom: '0.75rem', textAlign: 'center' }}>
+                  {dailyProgress}
+                </div>
+              )}
+
+              {/* 実行ボタン */}
+              <button
+                className="btn btn-primary"
+                disabled={dailyRunning || schedule.length === 0 || selectedStudents.size === 0}
+                onClick={runDaily}
+                style={{ width: '100%', padding: '0.75rem', fontWeight: 700, fontSize: '0.95rem' }}
+              >
+                {dailyRunning ? '🔄 配信中...' : `📤 ${schedule.length}日分を${selectedStudents.size}名に配信する`}
+              </button>
+            </div>
+          </div>
+        );
+      })()}
     </div>
   );
 }
