@@ -480,7 +480,7 @@ export default function TeacherWordRegister({ students, onRegistered }) {
           </div>
           <button
             className="btn"
-            onClick={() => setShowDailyModal(true)}
+            onClick={() => { setDailyGrade(masterGrade); setShowDailyModal(true); }}
             style={{
               padding: '0.5rem 1rem', fontSize: '0.85rem', fontWeight: 700,
               background: 'linear-gradient(135deg, #f59e0b, #ef4444)', color: 'white',
@@ -1267,11 +1267,11 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
                   <div>
                     <label style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.25rem' }}>🔢 開始番号</label>
-                    <input type="number" min={1} value={dailyStart} onChange={e => setDailyStart(Math.max(1, parseInt(e.target.value) || 1))} className="input-text" style={{ width: '100%' }} />
+                    <input type="number" min={1} value={dailyStart} onChange={e => setDailyStart(e.target.value === '' ? '' : parseInt(e.target.value) || '')} onBlur={() => setDailyStart(prev => { const n = parseInt(prev); return (!n || n < 1) ? 1 : n; })} className="input-text" style={{ width: '100%' }} />
                   </div>
                   <div>
                     <label style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.25rem' }}>📦 1日あたり</label>
-                    <input type="number" min={1} max={100} value={dailyPerDay} onChange={e => setDailyPerDay(Math.max(1, Math.min(100, parseInt(e.target.value) || 1)))} className="input-text" style={{ width: '100%' }} />
+                    <input type="number" min={1} max={100} value={dailyPerDay} onChange={e => setDailyPerDay(e.target.value === '' ? '' : parseInt(e.target.value) || '')} onBlur={() => setDailyPerDay(prev => { const n = parseInt(prev); return (!n || n < 1) ? 1 : Math.min(100, n); })} className="input-text" style={{ width: '100%' }} />
                   </div>
                 </div>
 
