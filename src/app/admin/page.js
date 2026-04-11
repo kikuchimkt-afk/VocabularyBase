@@ -1020,7 +1020,7 @@ export default function AdminPage() {
                 width: '100%', padding: '0.75rem', borderRadius: 'var(--radius-md)',
                 border: '1px solid var(--border)', fontSize: '0.9rem',
                 fontFamily: 'inherit', resize: 'vertical', marginBottom: '1rem',
-                background: 'var(--bg-page)',
+                background: 'var(--bg-page)', color: 'var(--text-main)',
               }}
             />
             <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'flex-end' }}>
