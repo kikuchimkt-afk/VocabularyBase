@@ -44,6 +44,14 @@ export default function TeacherWordRegister({ students, onRegistered }) {
   const [masterRange, setMasterRange] = useState('1-50');
   const [masterLoading, setMasterLoading] = useState(false);
 
+  // 教科書モード
+  const isTextbook = masterGrade.startsWith('sunshine');
+  const [textbookMode, setTextbookMode] = useState('section'); // 'section' or 'page'
+  const [textbookSection, setTextbookSection] = useState('');
+  const [textbookSections, setTextbookSections] = useState([]);
+  const [textbookPageFrom, setTextbookPageFrom] = useState('');
+  const [textbookPageTo, setTextbookPageTo] = useState('');
+
   // 毎日特訓
   const [showDailyModal, setShowDailyModal] = useState(false);
   const [dailyGrade, setDailyGrade] = useState('sys5th');
@@ -54,6 +62,25 @@ export default function TeacherWordRegister({ students, onRegistered }) {
   const [dailySkipWeekend, setDailySkipWeekend] = useState(true);
   const [dailyRunning, setDailyRunning] = useState(false);
   const [dailyProgress, setDailyProgress] = useState('');
+
+  // 教科書選択時にセクション情報をロード
+  useEffect(() => {
+    if (!masterGrade.startsWith('sunshine')) {
+      setTextbookSections([]);
+      return;
+    }
+    (async () => {
+      try {
+        const res = await fetch(`/wordlist_${masterGrade}.json`);
+        if (!res.ok) return;
+        const data = await res.json();
+        if (data.meta && data.meta.sections) {
+          setTextbookSections(data.meta.sections);
+          setTextbookSection('');
+        }
+      } catch {}
+    })();
+  }, [masterGrade]);
 
   // 前回の選択を記憶
   useEffect(() => {
@@ -418,19 +445,86 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                 <option value="target1400extra">高校生になったらすぐに覚える368語</option>
                 <option disabled>──── 熟語 ────</option>
                 <option value="idiom1000">英熟語ターゲット1000 (1000語)</option>
+                <option disabled>──── 中学教科書 ────</option>
+                <option value="sunshine1">開隆堂サンシャイン中学1年生 (1309語)</option>
+                <option value="sunshine2">開隆堂サンシャイン中学2年生 (1149語)</option>
+                <option value="sunshine3">開隆堂サンシャイン中学3年生 (1062語)</option>
               </select>
             </div>
-            <div>
-              <label style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.25rem' }}>番号範囲</label>
-              <input
-                type="text"
-                value={masterRange}
-                onChange={e => setMasterRange(e.target.value)}
-                placeholder="例: 1-50, 51-100"
-                className="input-text"
-                style={{ padding: '0.4rem 0.6rem', fontSize: '0.85rem', width: '120px' }}
-              />
-            </div>
+
+            {/* 教科書モード: セクション or ページ範囲 */}
+            {isTextbook ? (
+              <>
+                <div>
+                  <label style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.25rem' }}>抽出方法</label>
+                  <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+                    <label style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.85rem', cursor: 'pointer' }}>
+                      <input type="radio" name="tbMode" checked={textbookMode === 'section'} onChange={() => setTextbookMode('section')} style={{ accentColor: 'var(--primary)' }} />
+                      Program単位
+                    </label>
+                    <label style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.85rem', cursor: 'pointer' }}>
+                      <input type="radio" name="tbMode" checked={textbookMode === 'page'} onChange={() => setTextbookMode('page')} style={{ accentColor: 'var(--primary)' }} />
+                      ページ範囲
+                    </label>
+                  </div>
+                </div>
+                {textbookMode === 'section' ? (
+                  <div>
+                    <label style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.25rem' }}>セクション</label>
+                    <select
+                      value={textbookSection}
+                      onChange={e => setTextbookSection(e.target.value)}
+                      className="input-text"
+                      style={{ padding: '0.4rem 0.6rem', fontSize: '0.85rem', width: 'auto', minWidth: '200px' }}
+                    >
+                      <option value="">全セクション</option>
+                      {textbookSections.map(s => (
+                        <option key={s.key} value={s.key}>{s.label} ({s.count}語)</option>
+                      ))}
+                    </select>
+                  </div>
+                ) : (
+                  <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'flex-end' }}>
+                    <div>
+                      <label style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.25rem' }}>ページ範囲</label>
+                      <div style={{ display: 'flex', gap: '0.3rem', alignItems: 'center' }}>
+                        <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>p.</span>
+                        <input
+                          type="number"
+                          value={textbookPageFrom}
+                          onChange={e => setTextbookPageFrom(e.target.value)}
+                          placeholder="開始"
+                          className="input-text"
+                          style={{ padding: '0.4rem 0.6rem', fontSize: '0.85rem', width: '70px' }}
+                        />
+                        <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>～ p.</span>
+                        <input
+                          type="number"
+                          value={textbookPageTo}
+                          onChange={e => setTextbookPageTo(e.target.value)}
+                          placeholder="終了"
+                          className="input-text"
+                          style={{ padding: '0.4rem 0.6rem', fontSize: '0.85rem', width: '70px' }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </>
+            ) : (
+              <div>
+                <label style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.25rem' }}>番号範囲</label>
+                <input
+                  type="text"
+                  value={masterRange}
+                  onChange={e => setMasterRange(e.target.value)}
+                  placeholder="例: 1-50, 51-100"
+                  className="input-text"
+                  style={{ padding: '0.4rem 0.6rem', fontSize: '0.85rem', width: '120px' }}
+                />
+              </div>
+            )}
+
             <button
               className="btn btn-primary"
               disabled={masterLoading}
@@ -440,13 +534,39 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                 try {
                   const res = await fetch(`/wordlist_${masterGrade}.json`);
                   if (!res.ok) throw new Error('Failed to load word list');
-                  const allWords = await res.json();
-                  const [startStr, endStr] = masterRange.split('-').map(s => s.trim());
-                  const start = parseInt(startStr) || 1;
-                  const end = parseInt(endStr) || start;
-                  const selected = allWords.filter(w => w.rank >= start && w.rank <= end);
+                  const rawData = await res.json();
+
+                  // 教科書の場合: wrapped format { meta, words }
+                  const isTextbookData = rawData.meta && rawData.words;
+                  const allWords = isTextbookData ? rawData.words : rawData;
+
+                  let selected;
+                  if (isTextbookData) {
+                    if (textbookMode === 'section' && textbookSection) {
+                      selected = allWords.filter(w => w.section === textbookSection);
+                    } else if (textbookMode === 'page' && textbookPageFrom) {
+                      const pFrom = parseInt(textbookPageFrom) || 0;
+                      const pTo = parseInt(textbookPageTo) || 999;
+                      selected = allWords.filter(w => {
+                        if (!w.page) return false;
+                        // Parse page like "p.71-73" or "p.30"
+                        const pageMatch = w.page.match(/p\.(\d+)/);
+                        if (!pageMatch) return false;
+                        const pageNum = parseInt(pageMatch[1]);
+                        return pageNum >= pFrom && pageNum <= pTo;
+                      });
+                    } else {
+                      selected = allWords;
+                    }
+                  } else {
+                    const [startStr, endStr] = masterRange.split('-').map(s => s.trim());
+                    const start = parseInt(startStr) || 1;
+                    const end = parseInt(endStr) || start;
+                    selected = allWords.filter(w => w.rank >= start && w.rank <= end);
+                  }
+
                   if (selected.length === 0) {
-                    alert(`番号 ${start}-${end} の範囲に単語が見つかりません`);
+                    alert('指定した条件に該当する単語が見つかりません');
                     return;
                   }
                   const parsed = selected.map((w, idx) => ({
@@ -458,7 +578,7 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                     removed: false,
                     reassign: true,
                     listType: masterGrade,
-                    rank: w.rank || (start + idx),
+                    rank: w.rank || (idx + 1),
                   }));
                   setBulkPreviewWords(parsed);
                   setBulkResults(null);
@@ -475,9 +595,11 @@ export default function TeacherWordRegister({ students, onRegistered }) {
               {masterLoading ? '読み込み中...' : '🔍 プレビュー'}
             </button>
           </div>
-          <div className="text-muted" style={{ fontSize: '0.75rem', marginBottom: '0.75rem' }}>
-            ※ 番号は出題頻度順のランクです。例: 「1-50」で最頻出50語を登録
-          </div>
+          {!isTextbook && (
+            <div className="text-muted" style={{ fontSize: '0.75rem', marginBottom: '0.75rem' }}>
+              ※ 番号は出題頻度順のランクです。例: 「1-50」で最頻出50語を登録
+            </div>
+          )}
           <button
             className="btn"
             onClick={() => { setDailyGrade(masterGrade); setShowDailyModal(true); }}
