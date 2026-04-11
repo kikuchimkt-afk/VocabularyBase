@@ -61,6 +61,7 @@ export default function TeacherWordRegister({ students, onRegistered }) {
   const [dailyStartDate, setDailyStartDate] = useState(new Date().toISOString().split('T')[0]);
   const [dailyEndDate, setDailyEndDate] = useState('');
   const [dailySkipWeekend, setDailySkipWeekend] = useState(true);
+  const [dailyRepeat, setDailyRepeat] = useState(false);
   const [dailyRunning, setDailyRunning] = useState(false);
   const [dailyProgress, setDailyProgress] = useState('');
 
@@ -1305,7 +1306,9 @@ export default function TeacherWordRegister({ students, onRegistered }) {
       )}
       {/* 毎日特訓モーダル */}
       {showDailyModal && (() => {
-        // スケジュール計算
+        const isDailyTextbook = dailyGrade.startsWith('sunshine');
+        // available word count for textbook
+        const availableWords = isDailyTextbook ? (textbookMatchCount || 0) : 99999;
         const calcSchedule = () => {
           if (!dailyStartDate || !dailyEndDate || dailyPerDay < 1) return [];
           const schedule = [];
@@ -1317,22 +1320,49 @@ export default function TeacherWordRegister({ students, onRegistered }) {
             if (!dailySkipWeekend || (dow !== 0 && dow !== 6)) {
               const from = wordIdx;
               const to = wordIdx + dailyPerDay - 1;
-              schedule.push({
-                date: current.toISOString().split('T')[0],
-                label: `${current.getMonth()+1}/${current.getDate()}`,
-                dow: ['日','月','火','水','木','金','土'][dow],
-                from, to,
-              });
-              wordIdx = to + 1;
+              // 教科書の場合: 利用可能語数を超えたらストップまたは繰り返し
+              if (isDailyTextbook && from > availableWords) {
+                if (!dailyRepeat) break;
+                // 繰り返しモード: 先頭に戻る
+                wordIdx = 1;
+                const rfrom = wordIdx;
+                const rto = wordIdx + dailyPerDay - 1;
+                schedule.push({
+                  date: current.toISOString().split('T')[0],
+                  label: `${current.getMonth()+1}/${current.getDate()}`,
+                  dow: ['日','月','火','水','木','金','土'][dow],
+                  from: rfrom, to: Math.min(rto, availableWords),
+                  repeat: true,
+                });
+                wordIdx = rto + 1;
+              } else {
+                const cappedTo = isDailyTextbook ? Math.min(to, availableWords) : to;
+                const actualCount = cappedTo - from + 1;
+                if (actualCount > 0) {
+                  schedule.push({
+                    date: current.toISOString().split('T')[0],
+                    label: `${current.getMonth()+1}/${current.getDate()}`,
+                    dow: ['日','月','火','水','木','金','土'][dow],
+                    from, to: cappedTo,
+                    repeat: isDailyTextbook && wordIdx > availableWords,
+                  });
+                }
+                wordIdx = cappedTo + 1;
+                // 繰り返しモード: 次が上限超過ならリセット
+                if (isDailyTextbook && dailyRepeat && wordIdx > availableWords) {
+                  wordIdx = 1;
+                }
+              }
             }
             current.setDate(current.getDate() + 1);
           }
           return schedule;
         };
         const schedule = calcSchedule();
-        const totalWords = schedule.length * dailyPerDay;
+        const totalWords = schedule.reduce((sum, s) => sum + (s.to - s.from + 1), 0);
+        const hasOverflow = isDailyTextbook && !dailyRepeat && schedule.length > 0 &&
+          schedule[schedule.length - 1].to < (dailyStart + schedule.length * dailyPerDay - 1);
 
-        const isDailyTextbook = dailyGrade.startsWith('sunshine');
         const listOptions = [
           { value: '5kyu', label: '英検5級 (439語)' },
           { value: '4kyu', label: '英検4級 (726語)' },
@@ -1361,7 +1391,7 @@ export default function TeacherWordRegister({ students, onRegistered }) {
         const runDaily = async () => {
           if (selectedStudents.size === 0) { alert('配信先の生徒を選択してください'); return; }
           if (schedule.length === 0) { alert('スケジュールが空です'); return; }
-          if (!confirm(`${schedule.length}日間 × ${dailyPerDay}語/日 = 合計${totalWords}語 を ${selectedStudents.size}名に配信します。\nよろしいですか？`)) return;
+          if (!confirm(`${schedule.length}日間 合計${totalWords}語 を ${selectedStudents.size}名に配信します。\nよろしいですか？`)) return;
 
           setDailyRunning(true);
           try {
@@ -1387,13 +1417,12 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                   return ps <= pTo && pFrom <= pe;
                 });
               }
-              // Re-assign rank based on filtered list
               allWords = allWords.map((w, i) => ({ ...w, rank: i + 1 }));
             }
 
             for (let i = 0; i < schedule.length; i++) {
               const s = schedule[i];
-              setDailyProgress(`📤 ${s.label} (${i+1}/${schedule.length}) No.${s.from}-${s.to}`);
+              setDailyProgress(`📤 ${s.label} (${i+1}/${schedule.length}) No.${s.from}-${s.to}${s.repeat ? ' 🔄' : ''}`);
               const selected = allWords.filter(w => w.rank >= s.from && w.rank <= s.to);
               if (selected.length === 0) continue;
 
@@ -1447,23 +1476,48 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                   </select>
                 </div>
 
-                {/* 教科書の場合: 現在の抽出条件を表示 */}
+                {/* 教科書の場合: 抽出条件を編集可能 */}
                 {isDailyTextbook && (
                   <div style={{
-                    padding: '0.5rem 0.75rem', background: 'var(--secondary-light)',
+                    padding: '0.6rem 0.75rem', background: 'var(--secondary-light)',
                     borderRadius: 'var(--radius-md)', border: '1px solid var(--border)',
-                    fontSize: '0.8rem',
                   }}>
-                    <span style={{ fontWeight: 700, color: 'var(--secondary)' }}>📖 抽出条件: </span>
-                    {textbookMode === 'section'
-                      ? (textbookSection
-                        ? `${textbookSections.find(s => s.key === textbookSection)?.label || textbookSection}`
-                        : '全セクション')
-                      : `p.${textbookPageFrom || '?'} ～ p.${textbookPageTo || '?'}`
-                    }
-                    {textbookMatchCount !== null && (
-                      <span style={{ marginLeft: '0.5rem', fontWeight: 700, color: 'var(--primary)' }}>({textbookMatchCount}語)</span>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
+                      <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--secondary)' }}>📖 抽出条件</span>
+                      <label style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', fontSize: '0.8rem', cursor: 'pointer' }}>
+                        <input type="radio" name="tbModeModal" checked={textbookMode === 'section'} onChange={() => setTextbookMode('section')} style={{ accentColor: 'var(--primary)' }} />
+                        Program
+                      </label>
+                      <label style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', fontSize: '0.8rem', cursor: 'pointer' }}>
+                        <input type="radio" name="tbModeModal" checked={textbookMode === 'page'} onChange={() => setTextbookMode('page')} style={{ accentColor: 'var(--primary)' }} />
+                        ページ
+                      </label>
+                    </div>
+                    {textbookMode === 'section' ? (
+                      <select
+                        value={textbookSection}
+                        onChange={e => setTextbookSection(e.target.value)}
+                        className="input-text"
+                        style={{ width: '100%', fontSize: '0.8rem', padding: '0.35rem 0.5rem' }}
+                      >
+                        <option value="">全セクション</option>
+                        {textbookSections.map(s => (
+                          <option key={s.key} value={s.key}>{s.label} ({s.count}語)</option>
+                        ))}
+                      </select>
+                    ) : (
+                      <div style={{ display: 'flex', gap: '0.3rem', alignItems: 'center' }}>
+                        <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>p.</span>
+                        <input type="number" value={textbookPageFrom} onChange={e => setTextbookPageFrom(e.target.value)}
+                          placeholder="開始" className="input-text" style={{ padding: '0.35rem 0.5rem', fontSize: '0.8rem', width: '65px' }} />
+                        <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>～ p.</span>
+                        <input type="number" value={textbookPageTo} onChange={e => setTextbookPageTo(e.target.value)}
+                          placeholder="終了" className="input-text" style={{ padding: '0.35rem 0.5rem', fontSize: '0.8rem', width: '65px' }} />
+                      </div>
                     )}
+                    <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--primary)', marginTop: '0.4rem' }}>
+                      対象: {textbookMatchCount !== null ? `${textbookMatchCount}語` : '---'}
+                    </div>
                   </div>
                 )}
 
@@ -1496,7 +1550,26 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                   <input type="checkbox" checked={dailySkipWeekend} onChange={e => setDailySkipWeekend(e.target.checked)} style={{ accentColor: 'var(--primary)' }} />
                   <span style={{ fontWeight: 600 }}>⏭️ 土日をスキップ（平日のみ配信）</span>
                 </label>
+
+                {/* 繰り返し出題（教科書モード） */}
+                {isDailyTextbook && (
+                  <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem', cursor: 'pointer' }}>
+                    <input type="checkbox" checked={dailyRepeat} onChange={e => setDailyRepeat(e.target.checked)} style={{ accentColor: '#f59e0b' }} />
+                    <span style={{ fontWeight: 600 }}>🔄 単語が足りない場合、最初から繰り返し出題する</span>
+                  </label>
+                )}
               </div>
+
+              {/* 警告: 単語不足 */}
+              {isDailyTextbook && availableWords > 0 && !dailyRepeat && schedule.length > 0 && totalWords < schedule.length * dailyPerDay && (
+                <div style={{
+                  padding: '0.5rem 0.75rem', background: 'rgba(239, 68, 68, 0.15)',
+                  borderRadius: 'var(--radius-md)', border: '1px solid rgba(239, 68, 68, 0.3)',
+                  fontSize: '0.8rem', color: '#ef4444', fontWeight: 600, marginBottom: '0.75rem',
+                }}>
+                  ⚠️ 対象{availableWords}語に対してスケジュールが多いため、途中で配信が止まります。「繰り返し出題」を有効にするか、条件を調整してください。
+                </div>
+              )}
 
               {/* サマリー */}
               <div style={{
@@ -1536,10 +1609,13 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                     </thead>
                     <tbody>
                       {schedule.map((s, i) => (
-                        <tr key={i} style={{ borderTop: '1px solid var(--border)' }}>
+                        <tr key={i} style={{ borderTop: '1px solid var(--border)', background: s.repeat ? 'rgba(245, 158, 11, 0.08)' : 'transparent' }}>
                           <td style={{ padding: '0.35rem 0.4rem' }}>{s.label}</td>
                           <td style={{ padding: '0.35rem 0.4rem', color: s.dow === '土' ? '#3b82f6' : s.dow === '日' ? 'var(--danger)' : 'inherit' }}>{s.dow}</td>
-                          <td style={{ padding: '0.35rem 0.4rem' }}>No.{s.from}–{s.to}</td>
+                          <td style={{ padding: '0.35rem 0.4rem' }}>
+                            No.{s.from}–{s.to}
+                            {s.repeat && <span style={{ marginLeft: '0.3rem', fontSize: '0.65rem', background: '#f59e0b', color: 'white', padding: '0.1rem 0.3rem', borderRadius: '3px', fontWeight: 700 }}>🔄2回目</span>}
+                          </td>
                           <td style={{ padding: '0.35rem 0.4rem', textAlign: 'right' }}>{s.to - s.from + 1}</td>
                         </tr>
                       ))}
