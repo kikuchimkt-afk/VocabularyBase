@@ -5,6 +5,11 @@
     "totalWords": 1309,
     "sections": [
       {
+        "key": "L0",
+        "label": "Get Ready",
+        "count": 139
+      },
+      {
         "key": "1",
         "label": "Program 1",
         "count": 70
@@ -20,6 +25,11 @@
         "count": 63
       },
       {
+        "key": "L1",
+        "label": "Let's Talk 1",
+        "count": 45
+      },
+      {
         "key": "4",
         "label": "Program 4",
         "count": 69
@@ -28,6 +38,11 @@
         "key": "5",
         "label": "Program 5",
         "count": 47
+      },
+      {
+        "key": "L2",
+        "label": "Let's Talk 2",
+        "count": 12
       },
       {
         "key": "6",
@@ -40,44 +55,14 @@
         "count": 70
       },
       {
-        "key": "8",
-        "label": "Program 8",
-        "count": 53
-      },
-      {
-        "key": "9",
-        "label": "Program 9",
-        "count": 80
-      },
-      {
-        "key": "10",
-        "label": "Program 10",
-        "count": 76
-      },
-      {
-        "key": "16",
-        "label": "16",
-        "count": 1
-      },
-      {
-        "key": "L0",
-        "label": "Get Ready",
-        "count": 139
-      },
-      {
-        "key": "L1",
-        "label": "Let's Talk 1",
-        "count": 45
-      },
-      {
-        "key": "L2",
-        "label": "Let's Talk 2",
-        "count": 12
-      },
-      {
         "key": "L3",
         "label": "Let's Talk 3",
         "count": 30
+      },
+      {
+        "key": "8",
+        "label": "Program 8",
+        "count": 53
       },
       {
         "key": "L4",
@@ -85,14 +70,29 @@
         "count": 11
       },
       {
+        "key": "9",
+        "label": "Program 9",
+        "count": 80
+      },
+      {
         "key": "L5",
         "label": "Let's Talk 5",
         "count": 10
       },
       {
+        "key": "10",
+        "label": "Program 10",
+        "count": 76
+      },
+      {
         "key": "L6",
         "label": "Let's Talk 6",
         "count": 22
+      },
+      {
+        "key": "16",
+        "label": "Program 16",
+        "count": 1
       },
       {
         "key": "WW",

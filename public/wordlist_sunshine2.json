@@ -15,14 +15,29 @@
         "count": 64
       },
       {
+        "key": "L1",
+        "label": "Let's Talk 1",
+        "count": 27
+      },
+      {
         "key": "3",
         "label": "Program 3",
         "count": 48
       },
       {
+        "key": "L2",
+        "label": "Let's Talk 2",
+        "count": 84
+      },
+      {
         "key": "4",
         "label": "Program 4",
         "count": 55
+      },
+      {
+        "key": "L3",
+        "label": "Let's Talk 3",
+        "count": 19
       },
       {
         "key": "5",
@@ -35,6 +50,11 @@
         "count": 76
       },
       {
+        "key": "L4",
+        "label": "Let's Talk 4",
+        "count": 92
+      },
+      {
         "key": "7",
         "label": "Program 7",
         "count": 58
@@ -43,26 +63,6 @@
         "key": "8",
         "label": "Program 8",
         "count": 64
-      },
-      {
-        "key": "L1",
-        "label": "Let's Talk 1",
-        "count": 27
-      },
-      {
-        "key": "L2",
-        "label": "Let's Talk 2",
-        "count": 84
-      },
-      {
-        "key": "L3",
-        "label": "Let's Talk 3",
-        "count": 19
-      },
-      {
-        "key": "L4",
-        "label": "Let's Talk 4",
-        "count": 92
       },
       {
         "key": "L5",

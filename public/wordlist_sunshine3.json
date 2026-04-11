@@ -20,6 +20,11 @@
         "count": 43
       },
       {
+        "key": "L1",
+        "label": "Let's Talk 1",
+        "count": 77
+      },
+      {
         "key": "4",
         "label": "Program 4",
         "count": 53
@@ -30,29 +35,24 @@
         "count": 63
       },
       {
-        "key": "6",
-        "label": "Program 6",
-        "count": 45
-      },
-      {
-        "key": "7",
-        "label": "Program 7",
-        "count": 60
-      },
-      {
-        "key": "L1",
-        "label": "Let's Talk 1",
-        "count": 77
-      },
-      {
         "key": "L2",
         "label": "Let's Talk 2",
         "count": 17
       },
       {
+        "key": "6",
+        "label": "Program 6",
+        "count": 45
+      },
+      {
         "key": "L3",
         "label": "Let's Talk 3",
         "count": 26
+      },
+      {
+        "key": "7",
+        "label": "Program 7",
+        "count": 60
       },
       {
         "key": "L4",

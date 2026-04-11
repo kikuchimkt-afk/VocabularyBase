@@ -51,6 +51,7 @@ export default function TeacherWordRegister({ students, onRegistered }) {
   const [textbookSections, setTextbookSections] = useState([]);
   const [textbookPageFrom, setTextbookPageFrom] = useState('');
   const [textbookPageTo, setTextbookPageTo] = useState('');
+  const [textbookWordCache, setTextbookWordCache] = useState([]); // キャッシュ用
 
   // 毎日特訓
   const [showDailyModal, setShowDailyModal] = useState(false);
@@ -63,10 +64,11 @@ export default function TeacherWordRegister({ students, onRegistered }) {
   const [dailyRunning, setDailyRunning] = useState(false);
   const [dailyProgress, setDailyProgress] = useState('');
 
-  // 教科書選択時にセクション情報をロード
+  // 教科書選択時にセクション情報 + 単語データをロード
   useEffect(() => {
     if (!masterGrade.startsWith('sunshine')) {
       setTextbookSections([]);
+      setTextbookWordCache([]);
       return;
     }
     (async () => {
@@ -78,9 +80,35 @@ export default function TeacherWordRegister({ students, onRegistered }) {
           setTextbookSections(data.meta.sections);
           setTextbookSection('');
         }
+        if (data.words) {
+          setTextbookWordCache(data.words);
+        }
       } catch {}
     })();
   }, [masterGrade]);
+
+  // 教科書のリアルタイム該当語数
+  const textbookMatchCount = (() => {
+    if (!isTextbook || textbookWordCache.length === 0) return null;
+    if (textbookMode === 'section') {
+      if (!textbookSection) return textbookWordCache.length;
+      return textbookWordCache.filter(w => w.section === textbookSection).length;
+    }
+    if (textbookMode === 'page') {
+      if (!textbookPageFrom && !textbookPageTo) return textbookWordCache.length;
+      const pFrom = parseInt(textbookPageFrom) || 0;
+      const pTo = parseInt(textbookPageTo) || 999;
+      return textbookWordCache.filter(w => {
+        if (!w.page) return false;
+        const m = w.page.match(/p\.(\d+)(?:-(\d+))?/);
+        if (!m) return false;
+        const ps = parseInt(m[1]);
+        const pe = m[2] ? parseInt(m[2]) : ps;
+        return ps <= pTo && pFrom <= pe;
+      }).length;
+    }
+    return null;
+  })();
 
   // 前回の選択を記憶
   useEffect(() => {
@@ -487,7 +515,7 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                   <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'flex-end' }}>
                     <div>
                       <label style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.25rem' }}>ページ範囲</label>
-                      <div style={{ display: 'flex', gap: '0.3rem', alignItems: 'center' }}>
+                      <div style={{ display: 'flex', gap: '0.3rem', alignItems: 'center', flexWrap: 'wrap' }}>
                         <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>p.</span>
                         <input
                           type="number"
@@ -506,6 +534,11 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                           className="input-text"
                           style={{ padding: '0.4rem 0.6rem', fontSize: '0.85rem', width: '70px' }}
                         />
+                        {textbookMatchCount !== null && (
+                          <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--primary)', marginLeft: '0.3rem', whiteSpace: 'nowrap' }}>
+                            → {textbookMatchCount}語
+                          </span>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -549,11 +582,13 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                       const pTo = parseInt(textbookPageTo) || 999;
                       selected = allWords.filter(w => {
                         if (!w.page) return false;
-                        // Parse page like "p.71-73" or "p.30"
-                        const pageMatch = w.page.match(/p\.(\d+)/);
+                        // Parse page range like "p.71-73" or "p.30"
+                        const pageMatch = w.page.match(/p\.(\d+)(?:-(\d+))?/);
                         if (!pageMatch) return false;
-                        const pageNum = parseInt(pageMatch[1]);
-                        return pageNum >= pFrom && pageNum <= pTo;
+                        const pageStart = parseInt(pageMatch[1]);
+                        const pageEnd = pageMatch[2] ? parseInt(pageMatch[2]) : pageStart;
+                        // Range overlap: [pageStart, pageEnd] ∩ [pFrom, pTo]
+                        return pageStart <= pTo && pFrom <= pageEnd;
                       });
                     } else {
                       selected = allWords;
@@ -1297,6 +1332,7 @@ export default function TeacherWordRegister({ students, onRegistered }) {
         const schedule = calcSchedule();
         const totalWords = schedule.length * dailyPerDay;
 
+        const isDailyTextbook = dailyGrade.startsWith('sunshine');
         const listOptions = [
           { value: '5kyu', label: '英検5級 (439語)' },
           { value: '4kyu', label: '英検4級 (726語)' },
@@ -1310,12 +1346,16 @@ export default function TeacherWordRegister({ students, onRegistered }) {
           { value: 'target1900', label: 'ターゲット1900 (1900語)' },
           { value: 'target1400extra', label: '高校生368語' },
           { value: 'idiom1000', label: '熟語ターゲット1000 (1000語)' },
+          { value: 'sunshine1', label: '開隆堂サンシャイン中学1年生 (1309語)' },
+          { value: 'sunshine2', label: '開隆堂サンシャイン中学2年生 (1149語)' },
+          { value: 'sunshine3', label: '開隆堂サンシャイン中学3年生 (1062語)' },
         ];
 
         const sourceMap = {
           '5kyu': '英検5級', '4kyu': '英検4級', '3kyu': '英検3級', '準2kyu': '英検準2級', '2kyu': '英検2級',
           'pre1kyu': '英検準1級パス単', 'ex_pre1kyu': 'EX準1級', 'sys5th': 'シス単5訂版',
           'leap': 'LEAP', 'target1900': 'ターゲット1900', 'target1400extra': 'ターゲット1400extra', 'idiom1000': '熟語ターゲット1000',
+          'sunshine1': 'サンシャイン中1', 'sunshine2': 'サンシャイン中2', 'sunshine3': 'サンシャイン中3',
         };
 
         const runDaily = async () => {
@@ -1327,7 +1367,29 @@ export default function TeacherWordRegister({ students, onRegistered }) {
           try {
             const res = await fetch(`/wordlist_${dailyGrade}.json`);
             if (!res.ok) throw new Error('リスト読み込み失敗');
-            const allWords = await res.json();
+            const rawData = await res.json();
+            const isTextbookList = rawData.meta && rawData.words;
+            let allWords = isTextbookList ? rawData.words : rawData;
+
+            // 教科書の場合: セクション/ページ範囲でフィルタ
+            if (isTextbookList) {
+              if (textbookMode === 'section' && textbookSection) {
+                allWords = allWords.filter(w => w.section === textbookSection);
+              } else if (textbookMode === 'page' && (textbookPageFrom || textbookPageTo)) {
+                const pFrom = parseInt(textbookPageFrom) || 0;
+                const pTo = parseInt(textbookPageTo) || 999;
+                allWords = allWords.filter(w => {
+                  if (!w.page) return false;
+                  const m = w.page.match(/p\.(\d+)(?:-(\d+))?/);
+                  if (!m) return false;
+                  const ps = parseInt(m[1]);
+                  const pe = m[2] ? parseInt(m[2]) : ps;
+                  return ps <= pTo && pFrom <= pe;
+                });
+              }
+              // Re-assign rank based on filtered list
+              allWords = allWords.map((w, i) => ({ ...w, rank: i + 1 }));
+            }
 
             for (let i = 0; i < schedule.length; i++) {
               const s = schedule[i];
@@ -1343,7 +1405,7 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                 reassign: true,
                 listType: dailyGrade,
                 rank: w.rank,
-                source: `${sourceMap[dailyGrade]} No.${w.rank}`,
+                source: `${sourceMap[dailyGrade] || dailyGrade} No.${w.rank}`,
               }));
 
               await fetch('/api/words/import', {
@@ -1384,6 +1446,26 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                     {listOptions.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
                   </select>
                 </div>
+
+                {/* 教科書の場合: 現在の抽出条件を表示 */}
+                {isDailyTextbook && (
+                  <div style={{
+                    padding: '0.5rem 0.75rem', background: 'var(--secondary-light)',
+                    borderRadius: 'var(--radius-md)', border: '1px solid var(--border)',
+                    fontSize: '0.8rem',
+                  }}>
+                    <span style={{ fontWeight: 700, color: 'var(--secondary)' }}>📖 抽出条件: </span>
+                    {textbookMode === 'section'
+                      ? (textbookSection
+                        ? `${textbookSections.find(s => s.key === textbookSection)?.label || textbookSection}`
+                        : '全セクション')
+                      : `p.${textbookPageFrom || '?'} ～ p.${textbookPageTo || '?'}`
+                    }
+                    {textbookMatchCount !== null && (
+                      <span style={{ marginLeft: '0.5rem', fontWeight: 700, color: 'var(--primary)' }}>({textbookMatchCount}語)</span>
+                    )}
+                  </div>
+                )}
 
                 {/* 開始番号 & 1日あたり */}
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
