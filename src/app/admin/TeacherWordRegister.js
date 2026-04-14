@@ -64,7 +64,7 @@ export default function TeacherWordRegister({ students, onRegistered }) {
     return `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
   });
   const [dailyEndDate, setDailyEndDate] = useState('');
-  const [dailySkipWeekend, setDailySkipWeekend] = useState(true);
+  const [dailySkipWeekend, setDailySkipWeekend] = useState(false);
   const [dailyRepeat, setDailyRepeat] = useState(false);
   const [dailyRunning, setDailyRunning] = useState(false);
   const [dailyProgress, setDailyProgress] = useState('');
