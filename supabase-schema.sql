@@ -32,6 +32,7 @@ CREATE TABLE vb_words (
   correct_count INT DEFAULT 0,
   wrong_count INT DEFAULT 0,
   last_tested TIMESTAMPTZ,
+  first_tested TIMESTAMPTZ,
   created_at TIMESTAMPTZ DEFAULT now(),
   updated_at TIMESTAMPTZ DEFAULT now()
 );

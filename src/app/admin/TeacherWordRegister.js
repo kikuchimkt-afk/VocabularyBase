@@ -1311,6 +1311,13 @@ export default function TeacherWordRegister({ students, onRegistered }) {
         const availableWords = isDailyTextbook ? (textbookMatchCount || 0) : 99999;
         const calcSchedule = () => {
           if (!dailyStartDate || !dailyEndDate || dailyPerDay < 1) return [];
+          // ローカルタイムゾーンで日付文字列 (YYYY-MM-DD) を取得するヘルパー
+          const toLocalDateStr = (d) => {
+            const y = d.getFullYear();
+            const m = String(d.getMonth() + 1).padStart(2, '0');
+            const day = String(d.getDate()).padStart(2, '0');
+            return `${y}-${m}-${day}`;
+          };
           const schedule = [];
           let current = new Date(dailyStartDate + 'T00:00:00');
           const end = new Date(dailyEndDate + 'T00:00:00');
@@ -1328,7 +1335,7 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                 const rfrom = wordIdx;
                 const rto = wordIdx + dailyPerDay - 1;
                 schedule.push({
-                  date: current.toISOString().split('T')[0],
+                  date: toLocalDateStr(current),
                   label: `${current.getMonth()+1}/${current.getDate()}`,
                   dow: ['日','月','火','水','木','金','土'][dow],
                   from: rfrom, to: Math.min(rto, availableWords),
@@ -1340,7 +1347,7 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                 const actualCount = cappedTo - from + 1;
                 if (actualCount > 0) {
                   schedule.push({
-                    date: current.toISOString().split('T')[0],
+                    date: toLocalDateStr(current),
                     label: `${current.getMonth()+1}/${current.getDate()}`,
                     dow: ['日','月','火','水','木','金','土'][dow],
                     from, to: cappedTo,
