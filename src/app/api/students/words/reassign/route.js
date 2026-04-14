@@ -34,7 +34,7 @@ export async function POST(request) {
       .from('vb_words')
       .update({
         assign_count: currentCount + 1,
-        assigned_date: assignedDate || new Date().toISOString().split('T')[0],
+        assigned_date: assignedDate || (() => { const n = new Date(); return `${n.getFullYear()}-${String(n.getMonth()+1).padStart(2,'0')}-${String(n.getDate()).padStart(2,'0')}`; })(),
       })
       .eq('id', wordId);
 

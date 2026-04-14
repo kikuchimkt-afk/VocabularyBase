@@ -13,9 +13,10 @@ export default function TeacherWordRegister({ students, onRegistered }) {
   const [exampleSentence, setExampleSentence] = useState('');
   const [exampleSentenceJa, setExampleSentenceJa] = useState('');
   const [source, setSource] = useState('');
-  const [assignedDate, setAssignedDate] = useState(
-    new Date().toISOString().split('T')[0]
-  );
+  const [assignedDate, setAssignedDate] = useState(() => {
+    const now = new Date();
+    return `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
+  });
 
   const [selectedStudents, setSelectedStudents] = useState(new Set());
   const [isSaving, setIsSaving] = useState(false);
@@ -58,7 +59,10 @@ export default function TeacherWordRegister({ students, onRegistered }) {
   const [dailyGrade, setDailyGrade] = useState('sys5th');
   const [dailyStart, setDailyStart] = useState(1);
   const [dailyPerDay, setDailyPerDay] = useState(10);
-  const [dailyStartDate, setDailyStartDate] = useState(new Date().toISOString().split('T')[0]);
+  const [dailyStartDate, setDailyStartDate] = useState(() => {
+    const now = new Date();
+    return `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
+  });
   const [dailyEndDate, setDailyEndDate] = useState('');
   const [dailySkipWeekend, setDailySkipWeekend] = useState(true);
   const [dailyRepeat, setDailyRepeat] = useState(false);

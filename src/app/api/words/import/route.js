@@ -34,7 +34,10 @@ export async function POST(request) {
   try {
     const body = await request.json();
     const { words, studentIds, assignedDate: rawDate } = body;
-    const assignedDate = rawDate || new Date().toISOString().split('T')[0];
+    const assignedDate = rawDate || (() => {
+      const now = new Date();
+      return `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
+    })();
 
     if (!words || !Array.isArray(words) || words.length === 0) {
       return NextResponse.json({ error: '登録する単語がありません' }, { status: 400 });
