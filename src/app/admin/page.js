@@ -1074,18 +1074,34 @@ export default function AdminPage() {
             ) : achieveWords.length === 0 ? (
               <p className="text-muted">単語が登録されていません。</p>
             ) : (() => {
+              const MIN_QUESTIONS_FOR_STUDIED = 10; // 10問以上回答で「学習済み」と判定
               const isMastered = w => (w.correct_count || 0) > (w.wrong_count || 0);
+              const isTested = w => ((w.correct_count || 0) + (w.wrong_count || 0)) > 0;
               const totalAll = achieveWords.length;
               const masteredAll = achieveWords.filter(isMastered).length;
+              const testedAll = achieveWords.filter(isTested).length;
               const pctAll = totalAll > 0 ? Math.round(masteredAll / totalAll * 100) : 0;
+
+              // 全体の最終学習日・初回学習日
+              let globalLastTested = null;
+              let globalFirstTested = null;
+              achieveWords.forEach(w => {
+                if (w.last_tested && (!globalLastTested || w.last_tested > globalLastTested)) {
+                  globalLastTested = w.last_tested;
+                }
+                if (w.first_tested && (!globalFirstTested || w.first_tested < globalFirstTested)) {
+                  globalFirstTested = w.first_tested;
+                }
+              });
 
               // 日付ごとに集計
               const dateMap = {};
               achieveWords.forEach(w => {
                 const d = w.assigned_date || '未設定';
-                if (!dateMap[d]) dateMap[d] = { total: 0, mastered: 0, lastTested: null, firstTested: null };
+                if (!dateMap[d]) dateMap[d] = { total: 0, mastered: 0, tested: 0, lastTested: null, firstTested: null };
                 dateMap[d].total++;
                 if (isMastered(w)) dateMap[d].mastered++;
+                if (isTested(w)) dateMap[d].tested++;
                 if (w.last_tested && (!dateMap[d].lastTested || w.last_tested > dateMap[d].lastTested)) {
                   dateMap[d].lastTested = w.last_tested;
                 }
@@ -1096,18 +1112,23 @@ export default function AdminPage() {
               const dates = Object.keys(dateMap).sort((a, b) => b.localeCompare(a));
 
               const barColor = pct => pct >= 80 ? 'var(--secondary)' : pct >= 50 ? '#f59e0b' : 'var(--danger)';
+              const isStudied = tested => tested >= MIN_QUESTIONS_FOR_STUDIED;
 
               return (
                 <>
                   {/* 全体サマリー */}
                   <div style={{
-                    display: 'grid', gridTemplateColumns: '1fr 1fr 1fr',
-                    gap: '0.5rem', marginBottom: '1.25rem',
+                    display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr',
+                    gap: '0.5rem', marginBottom: '0.75rem',
                     background: 'var(--primary-light)', borderRadius: 'var(--radius-md)', padding: '0.75rem',
                   }}>
                     <div style={{ textAlign: 'center' }}>
                       <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--primary)' }}>{totalAll}</div>
                       <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>全単語</div>
+                    </div>
+                    <div style={{ textAlign: 'center' }}>
+                      <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#3b82f6' }}>{testedAll}</div>
+                      <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>テスト済</div>
                     </div>
                     <div style={{ textAlign: 'center' }}>
                       <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--secondary)' }}>{masteredAll}</div>
@@ -1119,23 +1140,53 @@ export default function AdminPage() {
                     </div>
                   </div>
 
+                  {/* 全体の学習日情報 */}
+                  {(globalFirstTested || globalLastTested) && (
+                    <div style={{
+                      display: 'flex', justifyContent: 'center', gap: '1rem', fontSize: '0.75rem',
+                      color: 'var(--text-muted)', marginBottom: '1.25rem', flexWrap: 'wrap',
+                    }}>
+                      {globalFirstTested && (
+                        <span>🟢 初回学習日: {(() => { const dt = new Date(globalFirstTested); return `${dt.getFullYear()}/${dt.getMonth()+1}/${dt.getDate()}`; })()}</span>
+                      )}
+                      {globalLastTested && (
+                        <span>📝 最終学習日: {(() => { const dt = new Date(globalLastTested); return `${dt.getFullYear()}/${dt.getMonth()+1}/${dt.getDate()}`; })()}</span>
+                      )}
+                    </div>
+                  )}
+
                   {/* 日付ごとの詳細 */}
                   <h3 style={{ fontSize: '0.85rem', fontWeight: 700, marginBottom: '0.5rem', color: 'var(--text-muted)' }}>📅 宿題日ごとの達成率</h3>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                     {dates.map(d => {
                       const info = dateMap[d];
                       const pct = info.total > 0 ? Math.round(info.mastered / info.total * 100) : 0;
+                      const studied = isStudied(info.tested);
                       const dateLabel = d === '未設定' ? '未設定' : (() => {
                         const dt = new Date(d + 'T00:00:00');
                         return `${dt.getMonth() + 1}/${dt.getDate()}`;
                       })();
                       return (
                         <div key={d} style={{
-                          background: 'var(--bg-card)', border: '1px solid var(--border)',
+                          background: 'var(--bg-card)', border: `1px solid ${studied ? 'var(--secondary)' : 'var(--border)'}`,
                           borderRadius: 'var(--radius-md)', padding: '0.6rem 0.75rem',
                         }}>
                           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.35rem' }}>
-                            <span style={{ fontWeight: 600, fontSize: '0.85rem' }}>📅 {dateLabel}</span>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                              <span style={{ fontWeight: 600, fontSize: '0.85rem' }}>📅 {dateLabel}</span>
+                              {studied ? (
+                                <span style={{
+                                  fontSize: '0.6rem', fontWeight: 700, color: 'white',
+                                  background: 'var(--secondary)', padding: '1px 6px', borderRadius: 8,
+                                }}>✅ 学習済み</span>
+                              ) : info.tested > 0 ? (
+                                <span style={{
+                                  fontSize: '0.6rem', fontWeight: 700, color: '#f59e0b',
+                                  background: '#fef3c7', padding: '1px 6px', borderRadius: 8,
+                                  border: '1px solid #fde68a',
+                                }}>学習中 ({info.tested}/{MIN_QUESTIONS_FOR_STUDIED}問)</span>
+                              ) : null}
+                            </div>
                             <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
                               {info.mastered}/{info.total}語
                             </span>

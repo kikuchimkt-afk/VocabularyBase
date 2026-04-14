@@ -536,7 +536,11 @@ export default function Quiz({ token, studentId }) {
           {currentIdx + 1} / {deck.length}
         </span>
         <button
-          onClick={() => setQuizState('result')}
+          onClick={() => {
+            // 途中終了でもそこまでのデータを反映するためfetchWords()を呼ぶ
+            fetchWords();
+            setQuizState('result');
+          }}
           className="text-muted"
           style={{
             padding: '4px 12px', border: '1px solid var(--border)', borderRadius: 'var(--radius-full)',
