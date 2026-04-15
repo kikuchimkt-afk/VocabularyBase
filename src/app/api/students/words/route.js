@@ -43,7 +43,7 @@ export async function POST(request) {
     const {
       student_id, english, meanings, example_sentence,
       example_sentence_ja, source, word_audio_url,
-      sentence_audio_url, assigned_date, assigned_by
+      sentence_audio_url, assigned_date, assigned_by, teacher_name
     } = body;
 
     if (!student_id || !english || !meanings?.length) {
@@ -65,6 +65,7 @@ export async function POST(request) {
         sentence_audio_url: sentence_audio_url || null,
         assigned_date: assigned_date || null,
         assigned_by: assigned_by || 'student',
+        teacher_name: teacher_name || null,
       })
       .select()
       .single();

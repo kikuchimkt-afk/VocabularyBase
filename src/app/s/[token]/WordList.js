@@ -245,22 +245,37 @@ export default function WordList({ studentId, studentName }) {
     setTimeout(() => setBulkAudioProgress(''), 8000);
   };
 
-  // HWの日付一覧を取得 (hooks must be called before any early returns)
-  const hwDates = useMemo(() => {
-    const dates = new Set();
+  // HWの日付+講師名一覧を取得
+  const hwDateTeachers = useMemo(() => {
+    const map = new Map();
     words.forEach(w => {
       if (w.assigned_by === 'teacher' && w.assigned_date) {
-        dates.add(w.assigned_date);
+        const tn = w.teacher_name || '';
+        const key = `${w.assigned_date}::${tn}`;
+        if (!map.has(key)) map.set(key, { date: w.assigned_date, teacher: tn, count: 0 });
+        map.get(key).count++;
       }
     });
-    return [...dates].sort().reverse();
+    return [...map.values()].sort((a, b) => {
+      const dc = b.date.localeCompare(a.date);
+      if (dc !== 0) return dc;
+      return a.teacher.localeCompare(b.teacher);
+    });
+  }, [words]);
+
+  const teacherColors = useMemo(() => {
+    const colors = ['#e65100', '#6366f1', '#0891b2', '#059669', '#d946ef', '#ea580c', '#2563eb', '#dc2626'];
+    const names = [...new Set(words.filter(w => w.teacher_name).map(w => w.teacher_name))];
+    const map = {};
+    names.forEach((n, i) => { map[n] = colors[i % colors.length]; });
+    return map;
   }, [words]);
 
   const selfCount = useMemo(() => words.filter(w => w.assigned_by !== 'teacher').length, [words]);
   const hwCount = useMemo(() => words.filter(w => w.assigned_by === 'teacher').length, [words]);
 
-  const getHwSourceSummary = useCallback((date) => {
-    const hwWords = words.filter(w => w.assigned_by === 'teacher' && w.assigned_date === date && w.source);
+  const getHwSourceSummary = useCallback((date, teacher) => {
+    const hwWords = words.filter(w => w.assigned_by === 'teacher' && w.assigned_date === date && (teacher === undefined || (w.teacher_name || '') === teacher) && w.source);
     if (hwWords.length === 0) return null;
 
     const groups = {};
@@ -297,8 +312,11 @@ export default function WordList({ studentId, studentName }) {
     } else if (sourceFilter === 'self') {
       if (w.assigned_by === 'teacher') return false;
     } else if (sourceFilter.startsWith('hw:')) {
-      const date = sourceFilter.replace('hw:', '');
+      const parts = sourceFilter.replace('hw:', '').split('::');
+      const date = parts[0];
+      const teacher = parts.length > 1 ? parts[1] : null;
       if (w.assigned_by !== 'teacher' || w.assigned_date !== date) return false;
+      if (teacher !== null && (w.teacher_name || '') !== teacher) return false;
     }
     if (!searchQuery.trim()) return true;
     const q = searchQuery.toLowerCase();
@@ -382,20 +400,21 @@ export default function WordList({ studentId, studentName }) {
               }}
             >👤 自分 ({selfCount})</button>
           )}
-          {hwDates.map(date => {
-            const dateCount = words.filter(w => w.assigned_by === 'teacher' && w.assigned_date === date).length;
+          {hwDateTeachers.map(({ date, teacher, count }) => {
+            const filterKey = `hw:${date}::${teacher}`;
             const label = date.slice(5).replace('-', '/');
+            const color = teacher ? (teacherColors[teacher] || '#e65100') : '#e65100';
             return (
               <button
-                key={date}
-                onClick={() => setSourceFilter(`hw:${date}`)}
+                key={filterKey}
+                onClick={() => setSourceFilter(filterKey)}
                 style={{
                   padding: '0.3rem 0.7rem', borderRadius: 20, fontSize: '0.7rem', fontWeight: 600,
-                  border: sourceFilter === `hw:${date}` ? '2px solid #e65100' : '1px solid var(--border)',
-                  background: sourceFilter === `hw:${date}` ? '#fff3e0' : 'var(--bg-card)',
-                  color: sourceFilter === `hw:${date}` ? '#e65100' : 'var(--text-muted)', cursor: 'pointer',
+                  border: sourceFilter === filterKey ? `2px solid ${color}` : '1px solid var(--border)',
+                  background: sourceFilter === filterKey ? `${color}15` : 'var(--bg-card)',
+                  color: sourceFilter === filterKey ? color : 'var(--text-muted)', cursor: 'pointer',
                 }}
-              >📅 {label} ({dateCount})</button>
+              >{`\u{1F4C5}`} {label}{teacher ? ` ${teacher}` : ''} ({count})</button>
             );
           })}
         </div>
@@ -407,14 +426,18 @@ export default function WordList({ studentId, studentName }) {
             {filteredWords.length}件表示中
           </p>
           {sourceFilter.startsWith('hw:') && (() => {
-            const sum = getHwSourceSummary(sourceFilter.replace('hw:', ''));
+            const parts = sourceFilter.replace('hw:', '').split('::');
+            const date = parts[0];
+            const teacher = parts.length > 1 ? parts[1] : null;
+            const sum = getHwSourceSummary(date, teacher !== null ? teacher : undefined);
+            const color = teacher ? (teacherColors[teacher] || '#e65100') : '#e65100';
             return sum ? (
               <div style={{
-                background: '#fff3e0', color: '#e65100', padding: '0.2rem 0.6rem',
+                background: `${color}15`, color: color, padding: '0.2rem 0.6rem',
                 borderRadius: '6px', fontSize: '0.75rem', fontWeight: 600,
-                border: '1px solid #ffe0b2', display: 'inline-flex', alignItems: 'center', gap: 4
+                border: `1px solid ${color}30`, display: 'inline-flex', alignItems: 'center', gap: 4
               }}>
-                🏷️ 出典: {sum}
+                {`\u{1F3F7}\u{FE0F}`} {teacher ? `${teacher}：` : '出典: '}{sum}
               </div>
             ) : null;
           })()}

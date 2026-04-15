@@ -17,6 +17,16 @@ export default function TeacherWordRegister({ students, onRegistered }) {
     const now = new Date();
     return `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
   });
+  const [teacherName, setTeacherName] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('vb_teacher_name') || '';
+    }
+    return '';
+  });
+  const handleTeacherNameChange = (val) => {
+    setTeacherName(val);
+    localStorage.setItem('vb_teacher_name', val);
+  };
 
   const [selectedStudents, setSelectedStudents] = useState(new Set());
   const [isSaving, setIsSaving] = useState(false);
@@ -282,6 +292,7 @@ export default function TeacherWordRegister({ students, onRegistered }) {
             sentence_audio_url: sentenceAudioUrl,
             assigned_date: assignedDate,
             assigned_by: 'teacher',
+            teacher_name: teacherName || null,
           }),
         });
 
@@ -342,6 +353,15 @@ export default function TeacherWordRegister({ students, onRegistered }) {
             value={assignedDate}
             onChange={(e) => setAssignedDate(e.target.value)}
             style={{ width: 'auto', flex: 'unset', fontWeight: 600, border: '2px solid var(--danger)' }}
+          />
+          <span style={{ fontWeight: '700', color: '#6366f1' }}>👤 講師名</span>
+          <input
+            type="text"
+            className="input-text"
+            value={teacherName}
+            onChange={(e) => handleTeacherNameChange(e.target.value)}
+            placeholder="苗字のみ"
+            style={{ width: '80px', flex: 'unset', fontWeight: 600, border: '2px solid #6366f1', textAlign: 'center' }}
           />
         </div>
         {/* 配信先選択（常に表示） */}
@@ -470,6 +490,12 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                 <option value="準2kyu">英検準2級 (1222語)</option>
                 <option value="2kyu">英検2級 (2000語)</option>
                 <option value="pre1kyu">英検準1級パス単 (1900語)</option>
+                <option disabled>── 英検出る順パス単 ──</option>
+                <option value="5kyu_pass">パス単 5級</option>
+                <option value="4kyu_pass">パス単 4級</option>
+                <option value="3kyu_pass">パス単 3級</option>
+                <option value="pre2kyu_pass">パス単 準2級</option>
+                <option value="2kyu5th">パス単 2級 5訂版</option>
                 <option disabled>──── 単熟語EX ────</option>
                 <option value="ex2kyu_tango">EX 2級単語 (1460語)</option>
                 <option value="ex2kyu_idiom">EX 2級熟語 (560語)</option>
@@ -1030,6 +1056,7 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                       .map(w => {
                         const sourceMap = {
                           '5kyu': '英検5級', '4kyu': '英検4級', '3kyu': '英検3級', '準2kyu': '英検準2級', '2kyu': '英検2級', 'pre1kyu': '英検準1級パス単',
+                          '5kyu_pass': 'パス単5級', '4kyu_pass': 'パス単4級', '3kyu_pass': 'パス単3級', 'pre2kyu_pass': 'パス単準2級', '2kyu5th': 'パス単2級5訂版',
                           'ex2kyu_tango': 'EX2級単語', 'ex2kyu_idiom': 'EX2級熟語', 'ex_pre1kyu': 'EX準1級',
                           'sys5th': 'シス単5訂版', 'leap': 'LEAP', 'target1900': 'ターゲット1900', 'target1400extra': 'ターゲット1400extra', 'idiom1000': '熟語ターゲット1000'
                         };
@@ -1059,6 +1086,7 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                           words: wordsToRegister,
                           studentIds: [...selectedStudents],
                           assignedDate,
+                          teacherName: teacherName || null,
                         }),
                       });
                       if (!res.ok) {
@@ -1385,6 +1413,11 @@ export default function TeacherWordRegister({ students, onRegistered }) {
           { value: '準2kyu', label: '英検準2級 (1222語)' },
           { value: '2kyu', label: '英検2級 (2000語)' },
           { value: 'pre1kyu', label: '英検準1級パス単 (1900語)' },
+          { value: '5kyu_pass', label: '── パス単 5級' },
+          { value: '4kyu_pass', label: '── パス単 4級' },
+          { value: '3kyu_pass', label: '── パス単 3級' },
+          { value: 'pre2kyu_pass', label: '── パス単 準2級' },
+          { value: '2kyu5th', label: '── パス単 2級 5訂版' },
           { value: 'ex2kyu_tango', label: 'EX 2級単語 (1460語)' },
           { value: 'ex2kyu_idiom', label: 'EX 2級熟語 (560語)' },
           { value: 'ex_pre1kyu', label: 'EX 準1級 (2434語)' },
@@ -1400,7 +1433,9 @@ export default function TeacherWordRegister({ students, onRegistered }) {
 
         const sourceMap = {
           '5kyu': '英検5級', '4kyu': '英検4級', '3kyu': '英検3級', '準2kyu': '英検準2級', '2kyu': '英検2級',
-          'pre1kyu': '英検準1級パス単', 'ex2kyu_tango': 'EX2級単語', 'ex2kyu_idiom': 'EX2級熟語', 'ex_pre1kyu': 'EX準1級',
+          'pre1kyu': '英検準1級パス単',
+          '5kyu_pass': 'パス単5級', '4kyu_pass': 'パス単4級', '3kyu_pass': 'パス単3級', 'pre2kyu_pass': 'パス単準2級', '2kyu5th': 'パス単2級5訂版',
+          'ex2kyu_tango': 'EX2級単語', 'ex2kyu_idiom': 'EX2級熟語', 'ex_pre1kyu': 'EX準1級',
           'sys5th': 'シス単5訂版', 'leap': 'LEAP', 'target1900': 'ターゲット1900', 'target1400extra': 'ターゲット1400extra', 'idiom1000': '熟語ターゲット1000',
           'sunshine1': 'サンシャイン中1', 'sunshine2': 'サンシャイン中2', 'sunshine3': 'サンシャイン中3',
         };
@@ -1459,6 +1494,7 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                   words, studentIds: [...selectedStudents], assignedDate: s.date,
+                  teacherName: teacherName || null,
                 }),
               });
             }

@@ -1,0 +1,6002 @@
+[
+  {
+    "rank": 1,
+    "word": "look",
+    "meaning": "に見える、見る"
+  },
+  {
+    "rank": 2,
+    "word": "take",
+    "meaning": "がかかる、に乗る、を持っていく"
+  },
+  {
+    "rank": 3,
+    "word": "make",
+    "meaning": "を作る、行う"
+  },
+  {
+    "rank": 4,
+    "word": "see",
+    "meaning": "が見える、を見る、に会う"
+  },
+  {
+    "rank": 5,
+    "word": "watch",
+    "meaning": "を(注意して)見る"
+  },
+  {
+    "rank": 6,
+    "word": "give",
+    "meaning": "～に与える"
+  },
+  {
+    "rank": 7,
+    "word": "work",
+    "meaning": "働く、作動する、作業する、仕事"
+  },
+  {
+    "rank": 8,
+    "word": "call",
+    "meaning": "に電話をする、～を呼ぶ"
+  },
+  {
+    "rank": 9,
+    "word": "enjoy",
+    "meaning": "を楽しむ"
+  },
+  {
+    "rank": 10,
+    "word": "find",
+    "meaning": "を見つける、と分かる"
+  },
+  {
+    "rank": 11,
+    "word": "practice",
+    "meaning": "練習する、練習"
+  },
+  {
+    "rank": 12,
+    "word": "tell",
+    "meaning": "～を伝える、話す、を言う"
+  },
+  {
+    "rank": 13,
+    "word": "leave",
+    "meaning": "を置き忘れる、を残す、を出発する"
+  },
+  {
+    "rank": 14,
+    "word": "need",
+    "meaning": "を必要とする"
+  },
+  {
+    "rank": 15,
+    "word": "say",
+    "meaning": "を言う、と書いてある"
+  },
+  {
+    "rank": 16,
+    "word": "finish",
+    "meaning": "を終える、終わる"
+  },
+  {
+    "rank": 17,
+    "word": "sell",
+    "meaning": "を売る"
+  },
+  {
+    "rank": 18,
+    "word": "clean",
+    "meaning": "をきれいにする、を掃除する"
+  },
+  {
+    "rank": 19,
+    "word": "wait",
+    "meaning": "待つ"
+  },
+  {
+    "rank": 20,
+    "word": "become",
+    "meaning": "になる"
+  },
+  {
+    "rank": 21,
+    "word": "show",
+    "meaning": "～を見せる、テレビ番組"
+  },
+  {
+    "rank": 22,
+    "word": "join",
+    "meaning": "に加わる、に参加する"
+  },
+  {
+    "rank": 23,
+    "word": "bring",
+    "meaning": "を持ってくる、を連れてくる"
+  },
+  {
+    "rank": 24,
+    "word": "move",
+    "meaning": "を動かす、動く、引っ越す"
+  },
+  {
+    "rank": 25,
+    "word": "put",
+    "meaning": "を置く"
+  },
+  {
+    "rank": 26,
+    "word": "drive",
+    "meaning": "を車で送る、を運転する"
+  },
+  {
+    "rank": 27,
+    "word": "rain",
+    "meaning": "雨が降る、雨"
+  },
+  {
+    "rank": 28,
+    "word": "win",
+    "meaning": "勝つ、を勝ち取る"
+  },
+  {
+    "rank": 29,
+    "word": "speak",
+    "meaning": "話す"
+  },
+  {
+    "rank": 30,
+    "word": "travel",
+    "meaning": "旅行する、旅行"
+  },
+  {
+    "rank": 31,
+    "word": "hope",
+    "meaning": "を望む、を願う、希望、望み"
+  },
+  {
+    "rank": 32,
+    "word": "ride",
+    "meaning": "に乗る"
+  },
+  {
+    "rank": 33,
+    "word": "sound",
+    "meaning": "に聞こえる、音がする、音、物音"
+  },
+  {
+    "rank": 34,
+    "word": "wear",
+    "meaning": "を身に着けている、を着ている"
+  },
+  {
+    "rank": 35,
+    "word": "train",
+    "meaning": "列車、電車、を訓練する"
+  },
+  {
+    "rank": 36,
+    "word": "hour",
+    "meaning": "1時間、(勤務・営業などの)時間"
+  },
+  {
+    "rank": 37,
+    "word": "weekend",
+    "meaning": "週末"
+  },
+  {
+    "rank": 38,
+    "word": "restaurant",
+    "meaning": "料理店、レストラン"
+  },
+  {
+    "rank": 39,
+    "word": "food",
+    "meaning": "食べ物、料理"
+  },
+  {
+    "rank": 40,
+    "word": "month",
+    "meaning": "(暦の上の)月"
+  },
+  {
+    "rank": 41,
+    "word": "station",
+    "meaning": "駅、(警察や消防の)署"
+  },
+  {
+    "rank": 42,
+    "word": "festival",
+    "meaning": "祭り"
+  },
+  {
+    "rank": 43,
+    "word": "ticket",
+    "meaning": "チケット、切符"
+  },
+  {
+    "rank": 44,
+    "word": "minute",
+    "meaning": "(時間の)分、ちょっとの間"
+  },
+  {
+    "rank": 45,
+    "word": "trip",
+    "meaning": "旅行"
+  },
+  {
+    "rank": 46,
+    "word": "movie",
+    "meaning": "映画"
+  },
+  {
+    "rank": 47,
+    "word": "parent",
+    "meaning": "親"
+  },
+  {
+    "rank": 48,
+    "word": "lesson",
+    "meaning": "けいこ、授業"
+  },
+  {
+    "rank": 49,
+    "word": "kind",
+    "meaning": "種類"
+  },
+  {
+    "rank": 50,
+    "word": "money",
+    "meaning": "お金"
+  },
+  {
+    "rank": 51,
+    "word": "job",
+    "meaning": "仕事"
+  },
+  {
+    "rank": 52,
+    "word": "place",
+    "meaning": "場所"
+  },
+  {
+    "rank": 53,
+    "word": "office",
+    "meaning": "事務所、会社"
+  },
+  {
+    "rank": 54,
+    "word": "science",
+    "meaning": "理科、科学"
+  },
+  {
+    "rank": 55,
+    "word": "meeting",
+    "meaning": "会合、会議"
+  },
+  {
+    "rank": 56,
+    "word": "concert",
+    "meaning": "演奏会、音楽会、コンサート"
+  },
+  {
+    "rank": 57,
+    "word": "plan",
+    "meaning": "予定、計画、を計画する"
+  },
+  {
+    "rank": 58,
+    "word": "child",
+    "meaning": "子供"
+  },
+  {
+    "rank": 59,
+    "word": "vacation",
+    "meaning": "休み、休暇"
+  },
+  {
+    "rank": 60,
+    "word": "history",
+    "meaning": "歴史"
+  },
+  {
+    "rank": 61,
+    "word": "contest",
+    "meaning": "コンテスト"
+  },
+  {
+    "rank": 62,
+    "word": "library",
+    "meaning": "図書館"
+  },
+  {
+    "rank": 63,
+    "word": "last",
+    "meaning": "この前の、最後の、最後に"
+  },
+  {
+    "rank": 64,
+    "word": "next",
+    "meaning": "次の、次に"
+  },
+  {
+    "rank": 65,
+    "word": "famous",
+    "meaning": "有名な"
+  },
+  {
+    "rank": 66,
+    "word": "popular",
+    "meaning": "人気のある"
+  },
+  {
+    "rank": 67,
+    "word": "sure",
+    "meaning": "確かな、確信して"
+  },
+  {
+    "rank": 68,
+    "word": "favorite",
+    "meaning": "お気に入りの、大好きな"
+  },
+  {
+    "rank": 69,
+    "word": "other",
+    "meaning": "他の"
+  },
+  {
+    "rank": 70,
+    "word": "late",
+    "meaning": "遅れた、遅い、遅く"
+  },
+  {
+    "rank": 71,
+    "word": "special",
+    "meaning": "特別な"
+  },
+  {
+    "rank": 72,
+    "word": "different",
+    "meaning": "異なる、さまざまな、別の"
+  },
+  {
+    "rank": 73,
+    "word": "sorry",
+    "meaning": "気の毒に思って、申し訳なく思って"
+  },
+  {
+    "rank": 74,
+    "word": "free",
+    "meaning": "無料の、ひまな"
+  },
+  {
+    "rank": 75,
+    "word": "busy",
+    "meaning": "忙しい、にぎやかな"
+  },
+  {
+    "rank": 76,
+    "word": "first",
+    "meaning": "最初に、第1に、最初の"
+  },
+  {
+    "rank": 77,
+    "word": "often",
+    "meaning": "よく、しばしば"
+  },
+  {
+    "rank": 78,
+    "word": "also",
+    "meaning": "～も(また)"
+  },
+  {
+    "rank": 79,
+    "word": "tonight",
+    "meaning": "今夜は、今夜"
+  },
+  {
+    "rank": 80,
+    "word": "usually",
+    "meaning": "たいてい、いつもは"
+  },
+  {
+    "rank": 81,
+    "word": "well",
+    "meaning": "よく、十分に、じょうずに"
+  },
+  {
+    "rank": 82,
+    "word": "hard",
+    "meaning": "熱心に、激しく"
+  },
+  {
+    "rank": 83,
+    "word": "just",
+    "meaning": "たった今、ちょうど、ただ"
+  },
+  {
+    "rank": 84,
+    "word": "early",
+    "meaning": "早く、早い"
+  },
+  {
+    "rank": 85,
+    "word": "still",
+    "meaning": "まだ、今でも"
+  },
+  {
+    "rank": 86,
+    "word": "together",
+    "meaning": "一緒に"
+  },
+  {
+    "rank": 87,
+    "word": "ago",
+    "meaning": "(今から)～前に"
+  },
+  {
+    "rank": 88,
+    "word": "by",
+    "meaning": "～で、～によって、～までに、～のそばに"
+  },
+  {
+    "rank": 89,
+    "word": "around",
+    "meaning": "～のあちこちを、～の周りを、あちこちで"
+  },
+  {
+    "rank": 90,
+    "word": "during",
+    "meaning": "～の間"
+  },
+  {
+    "rank": 91,
+    "word": "over",
+    "meaning": "～を超えて、～より多く、～の上に"
+  },
+  {
+    "rank": 92,
+    "word": "when",
+    "meaning": "～するときに、いつ"
+  },
+  {
+    "rank": 93,
+    "word": "because",
+    "meaning": "～なので、～だから"
+  },
+  {
+    "rank": 94,
+    "word": "before",
+    "meaning": "～する前に、以前に"
+  },
+  {
+    "rank": 95,
+    "word": "if",
+    "meaning": "もし～ならば"
+  },
+  {
+    "rank": 96,
+    "word": "than",
+    "meaning": "～よりも"
+  },
+  {
+    "rank": 97,
+    "word": "one",
+    "meaning": "もの、1つ、人"
+  },
+  {
+    "rank": 98,
+    "word": "all",
+    "meaning": "すべての人、すべてのもの"
+  },
+  {
+    "rank": 99,
+    "word": "could",
+    "meaning": "～できた"
+  },
+  {
+    "rank": 100,
+    "word": "should",
+    "meaning": "～すべきだ、～したほうがよい"
+  },
+  {
+    "rank": 101,
+    "word": "forget",
+    "meaning": "忘れる"
+  },
+  {
+    "rank": 102,
+    "word": "break",
+    "meaning": "を割る、を壊す、を祈る"
+  },
+  {
+    "rank": 103,
+    "word": "learn",
+    "meaning": "学ぶ、～を習う"
+  },
+  {
+    "rank": 104,
+    "word": "close",
+    "meaning": "を閉める、閉まる"
+  },
+  {
+    "rank": 105,
+    "word": "hold",
+    "meaning": "(会など)を開く、を持つ"
+  },
+  {
+    "rank": 106,
+    "word": "decide",
+    "meaning": "(を)決める"
+  },
+  {
+    "rank": 107,
+    "word": "grow",
+    "meaning": "を栽培する、を育てる、育つ"
+  },
+  {
+    "rank": 108,
+    "word": "try",
+    "meaning": "(を)試す、(を)試みる、努力する"
+  },
+  {
+    "rank": 109,
+    "word": "happen",
+    "meaning": "起こる"
+  },
+  {
+    "rank": 110,
+    "word": "lose",
+    "meaning": "をなくす、を失う、に負ける"
+  },
+  {
+    "rank": 111,
+    "word": "arrive",
+    "meaning": "到着する"
+  },
+  {
+    "rank": 112,
+    "word": "send",
+    "meaning": "を送る"
+  },
+  {
+    "rank": 113,
+    "word": "borrow",
+    "meaning": "を借りる"
+  },
+  {
+    "rank": 114,
+    "word": "build",
+    "meaning": "を建てる、を造る"
+  },
+  {
+    "rank": 115,
+    "word": "draw",
+    "meaning": "(絵・図)を描く、(線)を引く"
+  },
+  {
+    "rank": 116,
+    "word": "hear",
+    "meaning": "～を聞いて知る、が聞こえる"
+  },
+  {
+    "rank": 117,
+    "word": "carry",
+    "meaning": "を運ぶ、を持ち歩く"
+  },
+  {
+    "rank": 118,
+    "word": "check",
+    "meaning": "を調べる"
+  },
+  {
+    "rank": 119,
+    "word": "pay",
+    "meaning": "を支払う"
+  },
+  {
+    "rank": 120,
+    "word": "marry",
+    "meaning": "結婚する"
+  },
+  {
+    "rank": 121,
+    "word": "miss",
+    "meaning": "に乗り遅れる、をし損なう、がいなくてさびしく思う"
+  },
+  {
+    "rank": 122,
+    "word": "remember",
+    "meaning": "を思い出す、を覚えている"
+  },
+  {
+    "rank": 123,
+    "word": "turn",
+    "meaning": "曲がる、を回す、回る"
+  },
+  {
+    "rank": 124,
+    "word": "beach",
+    "meaning": "海辺、浜辺、砂浜"
+  },
+  {
+    "rank": 125,
+    "word": "fun",
+    "meaning": "楽しみ"
+  },
+  {
+    "rank": 126,
+    "word": "idea",
+    "meaning": "考え、アイデア"
+  },
+  {
+    "rank": 127,
+    "word": "present",
+    "meaning": "プレゼント"
+  },
+  {
+    "rank": 128,
+    "word": "company",
+    "meaning": "会社"
+  },
+  {
+    "rank": 129,
+    "word": "event",
+    "meaning": "行事"
+  },
+  {
+    "rank": 130,
+    "word": "bike",
+    "meaning": "自転車"
+  },
+  {
+    "rank": 131,
+    "word": "store",
+    "meaning": "店"
+  },
+  {
+    "rank": 132,
+    "word": "street",
+    "meaning": "通り"
+  },
+  {
+    "rank": 133,
+    "word": "thing",
+    "meaning": "もの、こと"
+  },
+  {
+    "rank": 134,
+    "word": "glasses",
+    "meaning": "めがね"
+  },
+  {
+    "rank": 135,
+    "word": "a.m.",
+    "meaning": "午前"
+  },
+  {
+    "rank": 136,
+    "word": "computer",
+    "meaning": "コンピューター"
+  },
+  {
+    "rank": 137,
+    "word": "country",
+    "meaning": "国、いなか"
+  },
+  {
+    "rank": 138,
+    "word": "p.m.",
+    "meaning": "午後"
+  },
+  {
+    "rank": 139,
+    "word": "problem",
+    "meaning": "問題"
+  },
+  {
+    "rank": 140,
+    "word": "pumpkin",
+    "meaning": "カボチャ"
+  },
+  {
+    "rank": 141,
+    "word": "zoo",
+    "meaning": "動物園"
+  },
+  {
+    "rank": 142,
+    "word": "floor",
+    "meaning": "(建物の)階、床"
+  },
+  {
+    "rank": 143,
+    "word": "museum",
+    "meaning": "博物館、美術館"
+  },
+  {
+    "rank": 144,
+    "word": "way",
+    "meaning": "方法、道、方向"
+  },
+  {
+    "rank": 145,
+    "word": "band",
+    "meaning": "(音楽の)バンド"
+  },
+  {
+    "rank": 146,
+    "word": "clothes",
+    "meaning": "衣服"
+  },
+  {
+    "rank": 147,
+    "word": "speech",
+    "meaning": "スピーチ、演説"
+  },
+  {
+    "rank": 148,
+    "word": "weather",
+    "meaning": "天気、天候"
+  },
+  {
+    "rank": 149,
+    "word": "supermarket",
+    "meaning": "スーパーマーケット"
+  },
+  {
+    "rank": 150,
+    "word": "uncle",
+    "meaning": "おじ"
+  },
+  {
+    "rank": 151,
+    "word": "newspaper",
+    "meaning": "新聞"
+  },
+  {
+    "rank": 152,
+    "word": "photo",
+    "meaning": "写真"
+  },
+  {
+    "rank": 153,
+    "word": "star",
+    "meaning": "星、(映画・スポーツなどの)スター"
+  },
+  {
+    "rank": 154,
+    "word": "grandparent",
+    "meaning": "祖父、祖母"
+  },
+  {
+    "rank": 155,
+    "word": "holiday",
+    "meaning": "祝日、休日"
+  },
+  {
+    "rank": 156,
+    "word": "hospital",
+    "meaning": "病院"
+  },
+  {
+    "rank": 157,
+    "word": "pie",
+    "meaning": "パイ"
+  },
+  {
+    "rank": 158,
+    "word": "plane",
+    "meaning": "飛行機"
+  },
+  {
+    "rank": 159,
+    "word": "poster",
+    "meaning": "ポスター"
+  },
+  {
+    "rank": 160,
+    "word": "prize",
+    "meaning": "賞、賞品"
+  },
+  {
+    "rank": 161,
+    "word": "report",
+    "meaning": "報告、報告書、を報告する"
+  },
+  {
+    "rank": 162,
+    "word": "sir",
+    "meaning": "お客さま、先生"
+  },
+  {
+    "rank": 163,
+    "word": "stop",
+    "meaning": "(バスなどの)停留所、止まること"
+  },
+  {
+    "rank": 164,
+    "word": "dish",
+    "meaning": "皿、料理"
+  },
+  {
+    "rank": 165,
+    "word": "doctor",
+    "meaning": "医者、医師、博士"
+  },
+  {
+    "rank": 166,
+    "word": "e-mail",
+    "meaning": "Eメール"
+  },
+  {
+    "rank": 167,
+    "word": "gym",
+    "meaning": "体育館"
+  },
+  {
+    "rank": 168,
+    "word": "sandwich",
+    "meaning": "サンドイッチ"
+  },
+  {
+    "rank": 169,
+    "word": "right",
+    "meaning": "右の、正しい、右、ちょうど"
+  },
+  {
+    "rank": 170,
+    "word": "most",
+    "meaning": "大部分の、最も多くの"
+  },
+  {
+    "rank": 171,
+    "word": "better",
+    "meaning": "よりよい、よりよく"
+  },
+  {
+    "rank": 172,
+    "word": "little",
+    "meaning": "少しの"
+  },
+  {
+    "rank": 173,
+    "word": "delicious",
+    "meaning": "とてもおいしい"
+  },
+  {
+    "rank": 174,
+    "word": "ready",
+    "meaning": "用意ができて"
+  },
+  {
+    "rank": 175,
+    "word": "sick",
+    "meaning": "病気の、気分の悪い"
+  },
+  {
+    "rank": 176,
+    "word": "expensive",
+    "meaning": "高価な"
+  },
+  {
+    "rank": 177,
+    "word": "best",
+    "meaning": "最もよい、最もじょうずな"
+  },
+  {
+    "rank": 178,
+    "word": "difficult",
+    "meaning": "難しい"
+  },
+  {
+    "rank": 179,
+    "word": "interesting",
+    "meaning": "興味深い、おもしろい"
+  },
+  {
+    "rank": 180,
+    "word": "another",
+    "meaning": "もう1つの、別の"
+  },
+  {
+    "rank": 181,
+    "word": "beautiful",
+    "meaning": "美しい、きれいな"
+  },
+  {
+    "rank": 182,
+    "word": "enough",
+    "meaning": "十分な"
+  },
+  {
+    "rank": 183,
+    "word": "French",
+    "meaning": "フランスの、フランス語の"
+  },
+  {
+    "rank": 184,
+    "word": "Italian",
+    "meaning": "イタリアの、イタリア語の"
+  },
+  {
+    "rank": 185,
+    "word": "cheap",
+    "meaning": "安い、安っぽい"
+  },
+  {
+    "rank": 186,
+    "word": "Chinese",
+    "meaning": "中国の、中国人の"
+  },
+  {
+    "rank": 187,
+    "word": "important",
+    "meaning": "重要な"
+  },
+  {
+    "rank": 188,
+    "word": "ever",
+    "meaning": "今までに"
+  },
+  {
+    "rank": 189,
+    "word": "outside",
+    "meaning": "外で、外に"
+  },
+  {
+    "rank": 190,
+    "word": "never",
+    "meaning": "一度も～ない、決して～ない"
+  },
+  {
+    "rank": 191,
+    "word": "again",
+    "meaning": "また、ふたたび"
+  },
+  {
+    "rank": 192,
+    "word": "later",
+    "meaning": "後で"
+  },
+  {
+    "rank": 193,
+    "word": "yet",
+    "meaning": "まだ～ない"
+  },
+  {
+    "rank": 194,
+    "word": "each",
+    "meaning": "1個につき、それぞれの、それぞれ"
+  },
+  {
+    "rank": 195,
+    "word": "once",
+    "meaning": "1度、かつて、以前"
+  },
+  {
+    "rank": 196,
+    "word": "already",
+    "meaning": "すでに、もう"
+  },
+  {
+    "rank": 197,
+    "word": "until",
+    "meaning": "～まで"
+  },
+  {
+    "rank": 198,
+    "word": "something",
+    "meaning": "何か、あるもの"
+  },
+  {
+    "rank": 199,
+    "word": "anything",
+    "meaning": "何か、何も～ない"
+  },
+  {
+    "rank": 200,
+    "word": "must",
+    "meaning": "～しなければならない"
+  },
+  {
+    "rank": 201,
+    "word": "begin",
+    "meaning": "を始める、始まる"
+  },
+  {
+    "rank": 202,
+    "word": "catch",
+    "meaning": "をつかまえる、に間に合う"
+  },
+  {
+    "rank": 203,
+    "word": "invite",
+    "meaning": "を招待する"
+  },
+  {
+    "rank": 204,
+    "word": "feel",
+    "meaning": "を感じる"
+  },
+  {
+    "rank": 205,
+    "word": "choose",
+    "meaning": "を選ぶ"
+  },
+  {
+    "rank": 206,
+    "word": "hike",
+    "meaning": "ハイキングする"
+  },
+  {
+    "rank": 207,
+    "word": "keep",
+    "meaning": "を保つ、を持ち続ける、を取っておく"
+  },
+  {
+    "rank": 208,
+    "word": "worry",
+    "meaning": "心配する、を心配させる、心配"
+  },
+  {
+    "rank": 209,
+    "word": "camp",
+    "meaning": "キャンプする"
+  },
+  {
+    "rank": 210,
+    "word": "celebrate",
+    "meaning": "を祝う"
+  },
+  {
+    "rank": 211,
+    "word": "guess",
+    "meaning": "～だと思う、を推測する"
+  },
+  {
+    "rank": 212,
+    "word": "pass",
+    "meaning": "に合格する、を手渡す"
+  },
+  {
+    "rank": 213,
+    "word": "relax",
+    "meaning": "くつろぐ"
+  },
+  {
+    "rank": 214,
+    "word": "spend",
+    "meaning": "(時間)を過ごす、(お金など)を使う"
+  },
+  {
+    "rank": 215,
+    "word": "camera",
+    "meaning": "カメラ"
+  },
+  {
+    "rank": 216,
+    "word": "cousin",
+    "meaning": "いとこ"
+  },
+  {
+    "rank": 217,
+    "word": "grandmother",
+    "meaning": "祖母"
+  },
+  {
+    "rank": 218,
+    "word": "mountain",
+    "meaning": "山"
+  },
+  {
+    "rank": 219,
+    "word": "space",
+    "meaning": "宇宙、空間"
+  },
+  {
+    "rank": 220,
+    "word": "theater",
+    "meaning": "劇場、映画館"
+  },
+  {
+    "rank": 221,
+    "word": "wallet",
+    "meaning": "財布"
+  },
+  {
+    "rank": 222,
+    "word": "bookstore",
+    "meaning": "書店"
+  },
+  {
+    "rank": 223,
+    "word": "college",
+    "meaning": "大学、単科大学"
+  },
+  {
+    "rank": 224,
+    "word": "color",
+    "meaning": "色"
+  },
+  {
+    "rank": 225,
+    "word": "dictionary",
+    "meaning": "辞書"
+  },
+  {
+    "rank": 226,
+    "word": "dollar",
+    "meaning": "ドル"
+  },
+  {
+    "rank": 227,
+    "word": "garden",
+    "meaning": "庭"
+  },
+  {
+    "rank": 228,
+    "word": "husband",
+    "meaning": "夫"
+  },
+  {
+    "rank": 229,
+    "word": "key",
+    "meaning": "かぎ"
+  },
+  {
+    "rank": 230,
+    "word": "nurse",
+    "meaning": "看護師"
+  },
+  {
+    "rank": 231,
+    "word": "pool",
+    "meaning": "プール"
+  },
+  {
+    "rank": 232,
+    "word": "writer",
+    "meaning": "作家、書く人"
+  },
+  {
+    "rank": 233,
+    "word": "aunt",
+    "meaning": "おば"
+  },
+  {
+    "rank": 234,
+    "word": "classroom",
+    "meaning": "教室"
+  },
+  {
+    "rank": 235,
+    "word": "gift",
+    "meaning": "贈り物"
+  },
+  {
+    "rank": 236,
+    "word": "group",
+    "meaning": "グループ"
+  },
+  {
+    "rank": 237,
+    "word": "line",
+    "meaning": "列、線"
+  },
+  {
+    "rank": 238,
+    "word": "member",
+    "meaning": "一員"
+  },
+  {
+    "rank": 239,
+    "word": "passage",
+    "meaning": "(文章の)一節"
+  },
+  {
+    "rank": 240,
+    "word": "university",
+    "meaning": "大学、総合大学"
+  },
+  {
+    "rank": 241,
+    "word": "wedding",
+    "meaning": "結婚式"
+  },
+  {
+    "rank": 242,
+    "word": "wife",
+    "meaning": "妻"
+  },
+  {
+    "rank": 243,
+    "word": "word",
+    "meaning": "単語"
+  },
+  {
+    "rank": 244,
+    "word": "airport",
+    "meaning": "空港"
+  },
+  {
+    "rank": 245,
+    "word": "apartment",
+    "meaning": "アパート"
+  },
+  {
+    "rank": 246,
+    "word": "building",
+    "meaning": "建物、ビル"
+  },
+  {
+    "rank": 247,
+    "word": "coat",
+    "meaning": "(衣服の)コート"
+  },
+  {
+    "rank": 248,
+    "word": "farm",
+    "meaning": "農場"
+  },
+  {
+    "rank": 249,
+    "word": "part",
+    "meaning": "部分、役目"
+  },
+  {
+    "rank": 250,
+    "word": "phone",
+    "meaning": "電話"
+  },
+  {
+    "rank": 251,
+    "word": "son",
+    "meaning": "息子"
+  },
+  {
+    "rank": 252,
+    "word": "textbook",
+    "meaning": "教科書"
+  },
+  {
+    "rank": 253,
+    "word": "tournament",
+    "meaning": "トーナメント、選手権大会"
+  },
+  {
+    "rank": 254,
+    "word": "vegetable",
+    "meaning": "野菜"
+  },
+  {
+    "rank": 255,
+    "word": "area",
+    "meaning": "区域、地域"
+  },
+  {
+    "rank": 256,
+    "word": "bakery",
+    "meaning": "パン屋"
+  },
+  {
+    "rank": 257,
+    "word": "business",
+    "meaning": "商売、仕事"
+  },
+  {
+    "rank": 258,
+    "word": "cafeteria",
+    "meaning": "カフェテリア、食堂"
+  },
+  {
+    "rank": 259,
+    "word": "daughter",
+    "meaning": "娘"
+  },
+  {
+    "rank": 260,
+    "word": "health",
+    "meaning": "健康"
+  },
+  {
+    "rank": 261,
+    "word": "information",
+    "meaning": "情報"
+  },
+  {
+    "rank": 262,
+    "word": "Internet",
+    "meaning": "インターネット"
+  },
+  {
+    "rank": 263,
+    "word": "lake",
+    "meaning": "湖"
+  },
+  {
+    "rank": 264,
+    "word": "pizza",
+    "meaning": "ピザ"
+  },
+  {
+    "rank": 265,
+    "word": "police",
+    "meaning": "警察"
+  },
+  {
+    "rank": 266,
+    "word": "reason",
+    "meaning": "理由"
+  },
+  {
+    "rank": 267,
+    "word": "sale",
+    "meaning": "セール、特売"
+  },
+  {
+    "rank": 268,
+    "word": "snack",
+    "meaning": "軽い食事、おやつ"
+  },
+  {
+    "rank": 269,
+    "word": "stadium",
+    "meaning": "競技場、スタジアム"
+  },
+  {
+    "rank": 270,
+    "word": "main",
+    "meaning": "主な、主要な"
+  },
+  {
+    "rank": 271,
+    "word": "angry",
+    "meaning": "怒っている"
+  },
+  {
+    "rank": 272,
+    "word": "own",
+    "meaning": "自分自身の"
+  },
+  {
+    "rank": 273,
+    "word": "professional",
+    "meaning": "プロの、専門職の"
+  },
+  {
+    "rank": 274,
+    "word": "sad",
+    "meaning": "悲しい"
+  },
+  {
+    "rank": 275,
+    "word": "both",
+    "meaning": "両方の、両方"
+  },
+  {
+    "rank": 276,
+    "word": "dear",
+    "meaning": "親愛なる～さま"
+  },
+  {
+    "rank": 277,
+    "word": "excited",
+    "meaning": "わくわくした"
+  },
+  {
+    "rank": 278,
+    "word": "sunny",
+    "meaning": "晴れた"
+  },
+  {
+    "rank": 279,
+    "word": "cute",
+    "meaning": "かわいい"
+  },
+  {
+    "rank": 280,
+    "word": "fine",
+    "meaning": "結構な、晴れた、元気な"
+  },
+  {
+    "rank": 281,
+    "word": "glad",
+    "meaning": "うれしい"
+  },
+  {
+    "rank": 282,
+    "word": "healthy",
+    "meaning": "健康な"
+  },
+  {
+    "rank": 283,
+    "word": "heavy",
+    "meaning": "重い、激しい"
+  },
+  {
+    "rank": 284,
+    "word": "same",
+    "meaning": "同じ"
+  },
+  {
+    "rank": 285,
+    "word": "Spanish",
+    "meaning": "スペインの、スペイン語"
+  },
+  {
+    "rank": 286,
+    "word": "tired",
+    "meaning": "疲れた"
+  },
+  {
+    "rank": 287,
+    "word": "wrong",
+    "meaning": "間違った、調子が悪い"
+  },
+  {
+    "rank": 288,
+    "word": "strong",
+    "meaning": "強い、じょうぶな"
+  },
+  {
+    "rank": 289,
+    "word": "exciting",
+    "meaning": "わくわくさせる"
+  },
+  {
+    "rank": 290,
+    "word": "nervous",
+    "meaning": "緊張した"
+  },
+  {
+    "rank": 291,
+    "word": "surprised",
+    "meaning": "驚いた、びっくりした"
+  },
+  {
+    "rank": 292,
+    "word": "soon",
+    "meaning": "まもなく、すぐに"
+  },
+  {
+    "rank": 293,
+    "word": "twice",
+    "meaning": "2度"
+  },
+  {
+    "rank": 294,
+    "word": "far",
+    "meaning": "遠くへ、遠くに"
+  },
+  {
+    "rank": 295,
+    "word": "sometimes",
+    "meaning": "ときどき"
+  },
+  {
+    "rank": 296,
+    "word": "almost",
+    "meaning": "ほとんど、もう少しで"
+  },
+  {
+    "rank": 297,
+    "word": "instead",
+    "meaning": "代わりに"
+  },
+  {
+    "rank": 298,
+    "word": "maybe",
+    "meaning": "もしかすると、たぶん"
+  },
+  {
+    "rank": 299,
+    "word": "since",
+    "meaning": "～から、～以来"
+  },
+  {
+    "rank": 300,
+    "word": "while",
+    "meaning": "～している間に"
+  },
+  {
+    "rank": 301,
+    "word": "change",
+    "meaning": "を変える、変わる"
+  },
+  {
+    "rank": 302,
+    "word": "hurry",
+    "meaning": "急ぐ"
+  },
+  {
+    "rank": 303,
+    "word": "hurt",
+    "meaning": "を傷つける、にけがをさせる、痛む"
+  },
+  {
+    "rank": 304,
+    "word": "introduce",
+    "meaning": "を紹介する"
+  },
+  {
+    "rank": 305,
+    "word": "sleep",
+    "meaning": "眠る、睡眠、眠り"
+  },
+  {
+    "rank": 306,
+    "word": "snow",
+    "meaning": "雪が降る、雪、降雪"
+  },
+  {
+    "rank": 307,
+    "word": "bakery",
+    "meaning": "を焼く"
+  },
+  {
+    "rank": 308,
+    "word": "believe",
+    "meaning": "を信じる"
+  },
+  {
+    "rank": 309,
+    "word": "contact",
+    "meaning": "に連絡を取る"
+  },
+  {
+    "rank": 310,
+    "word": "order",
+    "meaning": "を注文する"
+  },
+  {
+    "rank": 311,
+    "word": "perform",
+    "meaning": "を上演する、を演じる、を演奏する"
+  },
+  {
+    "rank": 312,
+    "word": "return",
+    "meaning": "を返す、戻る"
+  },
+  {
+    "rank": 313,
+    "word": "save",
+    "meaning": "を救う、を貯める、を節約する"
+  },
+  {
+    "rank": 314,
+    "word": "collect",
+    "meaning": "を集める"
+  },
+  {
+    "rank": 315,
+    "word": "cost",
+    "meaning": "(費用が)かかる、値段、費用"
+  },
+  {
+    "rank": 316,
+    "word": "design",
+    "meaning": "をデザインする、デザイン"
+  },
+  {
+    "rank": 317,
+    "word": "enter",
+    "meaning": "に入る"
+  },
+  {
+    "rank": 318,
+    "word": "throw",
+    "meaning": "を投げる"
+  },
+  {
+    "rank": 319,
+    "word": "understand",
+    "meaning": "を理解する"
+  },
+  {
+    "rank": 320,
+    "word": "badminton",
+    "meaning": "バドミントン"
+  },
+  {
+    "rank": 321,
+    "word": "bottle",
+    "meaning": "びん"
+  },
+  {
+    "rank": 322,
+    "word": "café",
+    "meaning": "喫茶店"
+  },
+  {
+    "rank": 323,
+    "word": "cookie",
+    "meaning": "クッキー"
+  },
+  {
+    "rank": 324,
+    "word": "end",
+    "meaning": "終わり、を終える、終わる"
+  },
+  {
+    "rank": 325,
+    "word": "grade",
+    "meaning": "成績、学年、等級"
+  },
+  {
+    "rank": 326,
+    "word": "grandfather",
+    "meaning": "祖父"
+  },
+  {
+    "rank": 327,
+    "word": "hall",
+    "meaning": "ホール、会館、集会場"
+  },
+  {
+    "rank": 328,
+    "word": "letter",
+    "meaning": "手紙、文字"
+  },
+  {
+    "rank": 329,
+    "word": "parade",
+    "meaning": "パレード"
+  },
+  {
+    "rank": 330,
+    "word": "performance",
+    "meaning": "上演、演技、演奏"
+  },
+  {
+    "rank": 331,
+    "word": "salad",
+    "meaning": "サラダ"
+  },
+  {
+    "rank": 332,
+    "word": "website",
+    "meaning": "ウェブサイト"
+  },
+  {
+    "rank": 333,
+    "word": "actor",
+    "meaning": "俳優"
+  },
+  {
+    "rank": 334,
+    "word": "animal",
+    "meaning": "動物"
+  },
+  {
+    "rank": 335,
+    "word": "astronaut",
+    "meaning": "宇宙飛行士"
+  },
+  {
+    "rank": 336,
+    "word": "chocolate",
+    "meaning": "チョコレート"
+  },
+  {
+    "rank": 337,
+    "word": "comedy",
+    "meaning": "喜劇、コメディー"
+  },
+  {
+    "rank": 338,
+    "word": "fruit",
+    "meaning": "果物"
+  },
+  {
+    "rank": 339,
+    "word": "future",
+    "meaning": "未来、将来"
+  },
+  {
+    "rank": 340,
+    "word": "goal",
+    "meaning": "(ゴールによる)得点、目標"
+  },
+  {
+    "rank": 341,
+    "word": "hobby",
+    "meaning": "趣味"
+  },
+  {
+    "rank": 342,
+    "word": "license",
+    "meaning": "免許証、免許"
+  },
+  {
+    "rank": 343,
+    "word": "locker",
+    "meaning": "ロッカー"
+  },
+  {
+    "rank": 344,
+    "word": "machine",
+    "meaning": "機械"
+  },
+  {
+    "rank": 345,
+    "word": "magazine",
+    "meaning": "雑誌"
+  },
+  {
+    "rank": 346,
+    "word": "model",
+    "meaning": "模型、型、モデル"
+  },
+  {
+    "rank": 347,
+    "word": "notice",
+    "meaning": "掲示、通知、に気がつく"
+  },
+  {
+    "rank": 348,
+    "word": "paper",
+    "meaning": "紙"
+  },
+  {
+    "rank": 349,
+    "word": "question",
+    "meaning": "質問"
+  },
+  {
+    "rank": 350,
+    "word": "recipe",
+    "meaning": "(料理の)作り方、料理法"
+  },
+  {
+    "rank": 351,
+    "word": "rule",
+    "meaning": "規則、ルール"
+  },
+  {
+    "rank": 352,
+    "word": "season",
+    "meaning": "季節、時季"
+  },
+  {
+    "rank": 353,
+    "word": "sofa",
+    "meaning": "ソファ"
+  },
+  {
+    "rank": 354,
+    "word": "tour",
+    "meaning": "旅行、ツアー"
+  },
+  {
+    "rank": 355,
+    "word": "video",
+    "meaning": "ビデオ、映像"
+  },
+  {
+    "rank": 356,
+    "word": "winner",
+    "meaning": "優勝者、勝利者"
+  },
+  {
+    "rank": 357,
+    "word": "accident",
+    "meaning": "事故"
+  },
+  {
+    "rank": 358,
+    "word": "answer",
+    "meaning": "答え、返事、に答える"
+  },
+  {
+    "rank": 359,
+    "word": "bank",
+    "meaning": "銀行"
+  },
+  {
+    "rank": 360,
+    "word": "copy",
+    "meaning": "コピー、複写"
+  },
+  {
+    "rank": 361,
+    "word": "dentist",
+    "meaning": "歯医者、歯科医"
+  },
+  {
+    "rank": 362,
+    "word": "farmer",
+    "meaning": "農場経営者"
+  },
+  {
+    "rank": 363,
+    "word": "horse",
+    "meaning": "馬"
+  },
+  {
+    "rank": 364,
+    "word": "junior high school",
+    "meaning": "中学校"
+  },
+  {
+    "rank": 365,
+    "word": "kitchen",
+    "meaning": "台所"
+  },
+  {
+    "rank": 366,
+    "word": "race",
+    "meaning": "レース、競争"
+  },
+  {
+    "rank": 367,
+    "word": "sign",
+    "meaning": "看板、掲示"
+  },
+  {
+    "rank": 368,
+    "word": "snowboard",
+    "meaning": "スノーボード"
+  },
+  {
+    "rank": 369,
+    "word": "subject",
+    "meaning": "件名、教科"
+  },
+  {
+    "rank": 370,
+    "word": "tiger",
+    "meaning": "トラ"
+  },
+  {
+    "rank": 371,
+    "word": "toy",
+    "meaning": "おもちゃ"
+  },
+  {
+    "rank": 372,
+    "word": "visitor",
+    "meaning": "訪問者、観光客"
+  },
+  {
+    "rank": 373,
+    "word": "crowded",
+    "meaning": "混雑した"
+  },
+  {
+    "rank": 374,
+    "word": "easy",
+    "meaning": "簡単な"
+  },
+  {
+    "rank": 375,
+    "word": "fast",
+    "meaning": "速い、速く"
+  },
+  {
+    "rank": 376,
+    "word": "half",
+    "meaning": "半分の"
+  },
+  {
+    "rank": 377,
+    "word": "hungry",
+    "meaning": "空腹の"
+  },
+  {
+    "rank": 378,
+    "word": "afraid",
+    "meaning": "怖がって、恐れて"
+  },
+  {
+    "rank": 379,
+    "word": "cloudy",
+    "meaning": "曇った"
+  },
+  {
+    "rank": 380,
+    "word": "dirty",
+    "meaning": "汚れた、汚い"
+  },
+  {
+    "rank": 381,
+    "word": "funny",
+    "meaning": "おかしい、こっけいな"
+  },
+  {
+    "rank": 382,
+    "word": "poor",
+    "meaning": "貧しい、へたな"
+  },
+  {
+    "rank": 383,
+    "word": "such",
+    "meaning": "そのような、このような"
+  },
+  {
+    "rank": 384,
+    "word": "warm",
+    "meaning": "暖かい"
+  },
+  {
+    "rank": 385,
+    "word": "international",
+    "meaning": "国際的な"
+  },
+  {
+    "rank": 386,
+    "word": "wet",
+    "meaning": "濡れた"
+  },
+  {
+    "rank": 387,
+    "word": "alone",
+    "meaning": "1人で"
+  },
+  {
+    "rank": 388,
+    "word": "else",
+    "meaning": "その他に"
+  },
+  {
+    "rank": 389,
+    "word": "however",
+    "meaning": "しかしながら"
+  },
+  {
+    "rank": 390,
+    "word": "part-time",
+    "meaning": "パートタイムで、非常勤で"
+  },
+  {
+    "rank": 391,
+    "word": "abroad",
+    "meaning": "海外で、海外に"
+  },
+  {
+    "rank": 392,
+    "word": "finally",
+    "meaning": "ついに"
+  },
+  {
+    "rank": 393,
+    "word": "someday",
+    "meaning": "いつか、そのうちに"
+  },
+  {
+    "rank": 394,
+    "word": "either",
+    "meaning": "～もまた(～ない)"
+  },
+  {
+    "rank": 395,
+    "word": "even",
+    "meaning": "～でさえ、さらに"
+  },
+  {
+    "rank": 396,
+    "word": "beside",
+    "meaning": "～のそばに、～と並んで"
+  },
+  {
+    "rank": 397,
+    "word": "through",
+    "meaning": "～を通り抜けて、～を通して"
+  },
+  {
+    "rank": 398,
+    "word": "herself",
+    "meaning": "彼女自身を、彼女自身に"
+  },
+  {
+    "rank": 399,
+    "word": "anyone",
+    "meaning": "誰か、誰も(～ない)"
+  },
+  {
+    "rank": 400,
+    "word": "myself",
+    "meaning": "私自身を、私自身に"
+  },
+  {
+    "rank": 401,
+    "word": "climb",
+    "meaning": "に登る"
+  },
+  {
+    "rank": 402,
+    "word": "cover",
+    "meaning": "をおおう"
+  },
+  {
+    "rank": 403,
+    "word": "die",
+    "meaning": "死ぬ"
+  },
+  {
+    "rank": 404,
+    "word": "follow",
+    "meaning": "に従う、についていく"
+  },
+  {
+    "rank": 405,
+    "word": "hit",
+    "meaning": "をぶつける、にぶつかる、を打つ"
+  },
+  {
+    "rank": 406,
+    "word": "injure",
+    "meaning": "に怪我をさせる、を傷つける"
+  },
+  {
+    "rank": 407,
+    "word": "lend",
+    "meaning": "を貸す"
+  },
+  {
+    "rank": 408,
+    "word": "plant",
+    "meaning": "を植える"
+  },
+  {
+    "rank": 409,
+    "word": "receive",
+    "meaning": "を受け取る"
+  },
+  {
+    "rank": 410,
+    "word": "start",
+    "meaning": "を始める、始まる"
+  },
+  {
+    "rank": 411,
+    "word": "steal",
+    "meaning": "を盗む"
+  },
+  {
+    "rank": 412,
+    "word": "taste",
+    "meaning": "の味がする、味"
+  },
+  {
+    "rank": 413,
+    "word": "cry",
+    "meaning": "叫ぶ、泣く"
+  },
+  {
+    "rank": 414,
+    "word": "fall",
+    "meaning": "落ちる"
+  },
+  {
+    "rank": 415,
+    "word": "fix",
+    "meaning": "を修理する"
+  },
+  {
+    "rank": 416,
+    "word": "invent",
+    "meaning": "を発明する"
+  },
+  {
+    "rank": 417,
+    "word": "kill",
+    "meaning": "を殺す"
+  },
+  {
+    "rank": 418,
+    "word": "paint",
+    "meaning": "を(絵の具で)描く、にペンキを塗る、ペンキ"
+  },
+  {
+    "rank": 419,
+    "word": "serve",
+    "meaning": "(食事など)を出す"
+  },
+  {
+    "rank": 420,
+    "word": "adult",
+    "meaning": "大人"
+  },
+  {
+    "rank": 421,
+    "word": "bathroom",
+    "meaning": "浴室、トイレ"
+  },
+  {
+    "rank": 422,
+    "word": "bicycle",
+    "meaning": "自転車"
+  },
+  {
+    "rank": 423,
+    "word": "captain",
+    "meaning": "(チームの)主将、船長"
+  },
+  {
+    "rank": 424,
+    "word": "church",
+    "meaning": "教会"
+  },
+  {
+    "rank": 425,
+    "word": "coach",
+    "meaning": "コーチ、監督、指導者"
+  },
+  {
+    "rank": 426,
+    "word": "comic",
+    "meaning": "漫画本"
+  },
+  {
+    "rank": 427,
+    "word": "doughnut",
+    "meaning": "ドーナツ"
+  },
+  {
+    "rank": 428,
+    "word": "dress",
+    "meaning": "ドレス"
+  },
+  {
+    "rank": 429,
+    "word": "experience",
+    "meaning": "経験"
+  },
+  {
+    "rank": 430,
+    "word": "gate",
+    "meaning": "門"
+  },
+  {
+    "rank": 431,
+    "word": "horror",
+    "meaning": "ホラー、恐怖"
+  },
+  {
+    "rank": 432,
+    "word": "language",
+    "meaning": "言語"
+  },
+  {
+    "rank": 433,
+    "word": "nature",
+    "meaning": "自然"
+  },
+  {
+    "rank": 434,
+    "word": "noon",
+    "meaning": "正午"
+  },
+  {
+    "rank": 435,
+    "word": "owner",
+    "meaning": "所有者"
+  },
+  {
+    "rank": 436,
+    "word": "person",
+    "meaning": "人"
+  },
+  {
+    "rank": 437,
+    "word": "pond",
+    "meaning": "池"
+  },
+  {
+    "rank": 438,
+    "word": "price",
+    "meaning": "値段、価格"
+  },
+  {
+    "rank": 439,
+    "word": "schedule",
+    "meaning": "予定"
+  },
+  {
+    "rank": 440,
+    "word": "staff",
+    "meaning": "職員、スタッフ"
+  },
+  {
+    "rank": 441,
+    "word": "stage",
+    "meaning": "舞台、ステージ"
+  },
+  {
+    "rank": 442,
+    "word": "uniform",
+    "meaning": "制服"
+  },
+  {
+    "rank": 443,
+    "word": "volunteer",
+    "meaning": "ボランティア"
+  },
+  {
+    "rank": 444,
+    "word": "award",
+    "meaning": "賞、賞品"
+  },
+  {
+    "rank": 445,
+    "word": "basket",
+    "meaning": "かご"
+  },
+  {
+    "rank": 446,
+    "word": "boss",
+    "meaning": "上司"
+  },
+  {
+    "rank": 447,
+    "word": "classmate",
+    "meaning": "同級生、クラスメート"
+  },
+  {
+    "rank": 448,
+    "word": "court",
+    "meaning": "(テニスなどの)コート"
+  },
+  {
+    "rank": 449,
+    "word": "desert",
+    "meaning": "デザート"
+  },
+  {
+    "rank": 450,
+    "word": "dream",
+    "meaning": "夢、夢を見る"
+  },
+  {
+    "rank": 451,
+    "word": "environment",
+    "meaning": "環境"
+  },
+  {
+    "rank": 452,
+    "word": "exam",
+    "meaning": "試験、テスト"
+  },
+  {
+    "rank": 453,
+    "word": "fashion",
+    "meaning": "ファッション、流行"
+  },
+  {
+    "rank": 454,
+    "word": "field",
+    "meaning": "野原、競技場、グラウンド"
+  },
+  {
+    "rank": 455,
+    "word": "forest",
+    "meaning": "森、森林"
+  },
+  {
+    "rank": 456,
+    "word": "hole",
+    "meaning": "穴"
+  },
+  {
+    "rank": 457,
+    "word": "kilogram",
+    "meaning": "キログラム"
+  },
+  {
+    "rank": 458,
+    "word": "life",
+    "meaning": "生涯、生活、命"
+  },
+  {
+    "rank": 459,
+    "word": "meat",
+    "meaning": "肉"
+  },
+  {
+    "rank": 460,
+    "word": "meter",
+    "meaning": "メートル"
+  },
+  {
+    "rank": 461,
+    "word": "mind",
+    "meaning": "心、精神"
+  },
+  {
+    "rank": 462,
+    "word": "package",
+    "meaning": "小包、小荷物"
+  },
+  {
+    "rank": 463,
+    "word": "painting",
+    "meaning": "絵、絵を描くこと"
+  },
+  {
+    "rank": 464,
+    "word": "platform",
+    "meaning": "(駅の)プラットフォーム"
+  },
+  {
+    "rank": 465,
+    "word": "project",
+    "meaning": "研究課題、計画、事業"
+  },
+  {
+    "rank": 466,
+    "word": "road",
+    "meaning": "道路、道"
+  },
+  {
+    "rank": 467,
+    "word": "rock",
+    "meaning": "ロック音楽、岩"
+  },
+  {
+    "rank": 468,
+    "word": "scientist",
+    "meaning": "科学者"
+  },
+  {
+    "rank": 469,
+    "word": "score",
+    "meaning": "点数"
+  },
+  {
+    "rank": 470,
+    "word": "shape",
+    "meaning": "形"
+  },
+  {
+    "rank": 471,
+    "word": "side",
+    "meaning": "側、側面"
+  },
+  {
+    "rank": 472,
+    "word": "sightseeing",
+    "meaning": "観光"
+  },
+  {
+    "rank": 473,
+    "word": "steak",
+    "meaning": "ステーキ"
+  },
+  {
+    "rank": 474,
+    "word": "stomachache",
+    "meaning": "腹痛、胃痛"
+  },
+  {
+    "rank": 475,
+    "word": "dark",
+    "meaning": "暗い"
+  },
+  {
+    "rank": 476,
+    "word": "foreign",
+    "meaning": "外国の"
+  },
+  {
+    "rank": 477,
+    "word": "full",
+    "meaning": "満員の、いっぱいの、満腹で"
+  },
+  {
+    "rank": 478,
+    "word": "local",
+    "meaning": "その土地の、地元の"
+  },
+  {
+    "rank": 479,
+    "word": "silent",
+    "meaning": "静かな、無言の"
+  },
+  {
+    "rank": 480,
+    "word": "snowy",
+    "meaning": "雪の降る、雪の多い"
+  },
+  {
+    "rank": 481,
+    "word": "True",
+    "meaning": "本当の、真実の"
+  },
+  {
+    "rank": 482,
+    "word": "wonderful",
+    "meaning": "すばらしい"
+  },
+  {
+    "rank": 483,
+    "word": "bright",
+    "meaning": "光り輝く、明るい"
+  },
+  {
+    "rank": 484,
+    "word": "careful",
+    "meaning": "気をつける、注意深い"
+  },
+  {
+    "rank": 485,
+    "word": "fresh",
+    "meaning": "新鮮な"
+  },
+  {
+    "rank": 486,
+    "word": "million",
+    "meaning": "100万の"
+  },
+  {
+    "rank": 487,
+    "word": "national",
+    "meaning": "国民の、国立の、全国的な"
+  },
+  {
+    "rank": 488,
+    "word": "rich",
+    "meaning": "金持ちの、裕福な"
+  },
+  {
+    "rank": 489,
+    "word": "several",
+    "meaning": "数個の、いくつかの"
+  },
+  {
+    "rank": 490,
+    "word": "thirsty",
+    "meaning": "喉が渇いた"
+  },
+  {
+    "rank": 491,
+    "word": "below",
+    "meaning": "下に、下へ"
+  },
+  {
+    "rank": 492,
+    "word": "everywhere",
+    "meaning": "いたるところに、いたるところで、どこでも"
+  },
+  {
+    "rank": 493,
+    "word": "anytime",
+    "meaning": "いつでも"
+  },
+  {
+    "rank": 494,
+    "word": "anywhere",
+    "meaning": "どこかへ、どこかに"
+  },
+  {
+    "rank": 495,
+    "word": "carefully",
+    "meaning": "注意深く"
+  },
+  {
+    "rank": 496,
+    "word": "inside",
+    "meaning": "～の中に、内部に、内部、内側"
+  },
+  {
+    "rank": 497,
+    "word": "across",
+    "meaning": "～を渡って、～を横切って"
+  },
+  {
+    "rank": 498,
+    "word": "behind",
+    "meaning": "～の後ろに"
+  },
+  {
+    "rank": 499,
+    "word": "without",
+    "meaning": "～なしで、～しないで"
+  },
+  {
+    "rank": 500,
+    "word": "someone",
+    "meaning": "誰か、ある人"
+  },
+  {
+    "rank": 501,
+    "word": "burn",
+    "meaning": "燃える、を燃やす"
+  },
+  {
+    "rank": 502,
+    "word": "cross",
+    "meaning": "を横断する、を渡る"
+  },
+  {
+    "rank": 503,
+    "word": "cut",
+    "meaning": "を切る"
+  },
+  {
+    "rank": 504,
+    "word": "exchange",
+    "meaning": "を交換する、交換"
+  },
+  {
+    "rank": 505,
+    "word": "explain",
+    "meaning": "を説明する"
+  },
+  {
+    "rank": 506,
+    "word": "image",
+    "meaning": "を想像する"
+  },
+  {
+    "rank": 507,
+    "word": "mean",
+    "meaning": "を意味する"
+  },
+  {
+    "rank": 508,
+    "word": "pull",
+    "meaning": "を引く"
+  },
+  {
+    "rank": 509,
+    "word": "reach",
+    "meaning": "に着く、に届く"
+  },
+  {
+    "rank": 510,
+    "word": "shut",
+    "meaning": "を閉める、閉まる"
+  },
+  {
+    "rank": 511,
+    "word": "smell",
+    "meaning": "のにおいがする、のにおいをかぐ、におい"
+  },
+  {
+    "rank": 512,
+    "word": "action",
+    "meaning": "アクション、行動"
+  },
+  {
+    "rank": 513,
+    "word": "actress",
+    "meaning": "女優"
+  },
+  {
+    "rank": 514,
+    "word": "belt",
+    "meaning": "ベルト"
+  },
+  {
+    "rank": 515,
+    "word": "body",
+    "meaning": "体"
+  },
+  {
+    "rank": 516,
+    "word": "butter",
+    "meaning": "バター"
+  },
+  {
+    "rank": 517,
+    "word": "button",
+    "meaning": "ボタン"
+  },
+  {
+    "rank": 518,
+    "word": "capital",
+    "meaning": "首都"
+  },
+  {
+    "rank": 519,
+    "word": "center",
+    "meaning": "中心、中央"
+  },
+  {
+    "rank": 520,
+    "word": "century",
+    "meaning": "世紀"
+  },
+  {
+    "rank": 521,
+    "word": "convenience store",
+    "meaning": "コンビニエンスストア"
+  },
+  {
+    "rank": 522,
+    "word": "culture",
+    "meaning": "文化"
+  },
+  {
+    "rank": 523,
+    "word": "customer",
+    "meaning": "(店の)客"
+  },
+  {
+    "rank": 524,
+    "word": "date",
+    "meaning": "日付"
+  },
+  {
+    "rank": 525,
+    "word": "elementary school",
+    "meaning": "小学校"
+  },
+  {
+    "rank": 526,
+    "word": "elevator",
+    "meaning": "エレベーター"
+  },
+  {
+    "rank": 527,
+    "word": "fact",
+    "meaning": "事実"
+  },
+  {
+    "rank": 528,
+    "word": "fever",
+    "meaning": "(病気による)熱"
+  },
+  {
+    "rank": 529,
+    "word": "flight",
+    "meaning": "飛行機の便、飛行"
+  },
+  {
+    "rank": 530,
+    "word": "fridge",
+    "meaning": "冷蔵庫"
+  },
+  {
+    "rank": 531,
+    "word": "grandson",
+    "meaning": "男の孫、孫息子"
+  },
+  {
+    "rank": 532,
+    "word": "horizon",
+    "meaning": "地平線、水平線"
+  },
+  {
+    "rank": 533,
+    "word": "interview",
+    "meaning": "面接、面談、インタビュー"
+  },
+  {
+    "rank": 534,
+    "word": "kid",
+    "meaning": "子供"
+  },
+  {
+    "rank": 535,
+    "word": "living room",
+    "meaning": "居間"
+  },
+  {
+    "rank": 536,
+    "word": "medal",
+    "meaning": "メダル"
+  },
+  {
+    "rank": 537,
+    "word": "memory",
+    "meaning": "思い出、記憶"
+  },
+  {
+    "rank": 538,
+    "word": "middle",
+    "meaning": "真ん中、中央"
+  },
+  {
+    "rank": 539,
+    "word": "mirror",
+    "meaning": "鏡"
+  },
+  {
+    "rank": 540,
+    "word": "mushroom",
+    "meaning": "キノコ"
+  },
+  {
+    "rank": 541,
+    "word": "musician",
+    "meaning": "音楽家、ミュージシャン"
+  },
+  {
+    "rank": 542,
+    "word": "mystery",
+    "meaning": "推理小説、ミステリー"
+  },
+  {
+    "rank": 543,
+    "word": "panda",
+    "meaning": "パンダ"
+  },
+  {
+    "rank": 544,
+    "word": "power",
+    "meaning": "力、動力"
+  },
+  {
+    "rank": 545,
+    "word": "program",
+    "meaning": "番組、計画"
+  },
+  {
+    "rank": 546,
+    "word": "queen",
+    "meaning": "女王、王妃"
+  },
+  {
+    "rank": 547,
+    "word": "social studies",
+    "meaning": "社会科"
+  },
+  {
+    "rank": 548,
+    "word": "soldier",
+    "meaning": "兵士、軍人"
+  },
+  {
+    "rank": 549,
+    "word": "stew",
+    "meaning": "シチュー"
+  },
+  {
+    "rank": 550,
+    "word": "sugar",
+    "meaning": "砂糖"
+  },
+  {
+    "rank": 551,
+    "word": "suit",
+    "meaning": "スーツ"
+  },
+  {
+    "rank": 552,
+    "word": "swimsuit",
+    "meaning": "水着"
+  },
+  {
+    "rank": 553,
+    "word": "symbol",
+    "meaning": "象徴"
+  },
+  {
+    "rank": 554,
+    "word": "tooth",
+    "meaning": "歯"
+  },
+  {
+    "rank": 555,
+    "word": "tourist",
+    "meaning": "観光客、旅行者"
+  },
+  {
+    "rank": 556,
+    "word": "type",
+    "meaning": "型、タイプ"
+  },
+  {
+    "rank": 557,
+    "word": "waiter",
+    "meaning": "ウエイター"
+  },
+  {
+    "rank": 558,
+    "word": "war",
+    "meaning": "戦争"
+  },
+  {
+    "rank": 559,
+    "word": "aquarium",
+    "meaning": "水族館"
+  },
+  {
+    "rank": 560,
+    "word": "barbecue",
+    "meaning": "バーベキュー"
+  },
+  {
+    "rank": 561,
+    "word": "firework",
+    "meaning": "花火、花火の打ち上げ"
+  },
+  {
+    "rank": 562,
+    "word": "hill",
+    "meaning": "丘、低い山"
+  },
+  {
+    "rank": 563,
+    "word": "homestay",
+    "meaning": "ホームステイ"
+  },
+  {
+    "rank": 564,
+    "word": "hometown",
+    "meaning": "故郷"
+  },
+  {
+    "rank": 565,
+    "word": "musical",
+    "meaning": "ミュージカル"
+  },
+  {
+    "rank": 566,
+    "word": "president",
+    "meaning": "大統領、会長、学長"
+  },
+  {
+    "rank": 567,
+    "word": "rocket",
+    "meaning": "ロケット"
+  },
+  {
+    "rank": 568,
+    "word": "shrine",
+    "meaning": "神社"
+  },
+  {
+    "rank": 569,
+    "word": "statue",
+    "meaning": "像、彫像"
+  },
+  {
+    "rank": 570,
+    "word": "suitcase",
+    "meaning": "スーツケース"
+  },
+  {
+    "rank": 571,
+    "word": "sweater",
+    "meaning": "セーター"
+  },
+  {
+    "rank": 572,
+    "word": "tradition",
+    "meaning": "伝統"
+  },
+  {
+    "rank": 573,
+    "word": "worker",
+    "meaning": "働く人、労働者"
+  },
+  {
+    "rank": 574,
+    "word": "billion",
+    "meaning": "10億の"
+  },
+  {
+    "rank": 575,
+    "word": "boring",
+    "meaning": "退屈な"
+  },
+  {
+    "rank": 576,
+    "word": "central",
+    "meaning": "中心の、中央の"
+  },
+  {
+    "rank": 577,
+    "word": "clear",
+    "meaning": "澄んだ、晴れた"
+  },
+  {
+    "rank": 578,
+    "word": "clever",
+    "meaning": "利口な"
+  },
+  {
+    "rank": 579,
+    "word": "deep",
+    "meaning": "深い"
+  },
+  {
+    "rank": 580,
+    "word": "enjoyable",
+    "meaning": "楽しい、おもしろい"
+  },
+  {
+    "rank": 581,
+    "word": "final",
+    "meaning": "最終の、最後の、決勝"
+  },
+  {
+    "rank": 582,
+    "word": "loud",
+    "meaning": "(音・声が)大きい"
+  },
+  {
+    "rank": 583,
+    "word": "lucky",
+    "meaning": "運の良い"
+  },
+  {
+    "rank": 584,
+    "word": "narrow",
+    "meaning": "(幅が)狭い"
+  },
+  {
+    "rank": 585,
+    "word": "perfect",
+    "meaning": "完璧な、完全な"
+  },
+  {
+    "rank": 586,
+    "word": "short",
+    "meaning": "短い、背が低い"
+  },
+  {
+    "rank": 587,
+    "word": "simple",
+    "meaning": "簡単な、質素な"
+  },
+  {
+    "rank": 588,
+    "word": "tight",
+    "meaning": "きつい"
+  },
+  {
+    "rank": 589,
+    "word": "top",
+    "meaning": "いちばん上の"
+  },
+  {
+    "rank": 590,
+    "word": "usual",
+    "meaning": "いつもの、ふつうの"
+  },
+  {
+    "rank": 591,
+    "word": "whole",
+    "meaning": "全体の"
+  },
+  {
+    "rank": 592,
+    "word": "actually",
+    "meaning": "実は、実際に"
+  },
+  {
+    "rank": 593,
+    "word": "anymore",
+    "meaning": "今はもう"
+  },
+  {
+    "rank": 594,
+    "word": "anyway",
+    "meaning": "とにかく、いずれにしても"
+  },
+  {
+    "rank": 595,
+    "word": "luckily",
+    "meaning": "幸運にも"
+  },
+  {
+    "rank": 596,
+    "word": "pretty",
+    "meaning": "かなり、とても、きれいな、かわいらしい"
+  },
+  {
+    "rank": 597,
+    "word": "quickly",
+    "meaning": "すばやく、速く、すぐに"
+  },
+  {
+    "rank": 598,
+    "word": "sometime",
+    "meaning": "いつか、かつて"
+  },
+  {
+    "rank": 599,
+    "word": "between",
+    "meaning": "(2つ)の間に[で]"
+  },
+  {
+    "rank": 600,
+    "word": "as",
+    "meaning": "～として"
+  },
+  {
+    "rank": 601,
+    "word": "attend",
+    "meaning": "～に出席する"
+  },
+  {
+    "rank": 602,
+    "word": "boil",
+    "meaning": "をゆでる"
+  },
+  {
+    "rank": 603,
+    "word": "cancel",
+    "meaning": "を取り消す、を中止する"
+  },
+  {
+    "rank": 604,
+    "word": "continue",
+    "meaning": "を続ける、続く"
+  },
+  {
+    "rank": 605,
+    "word": "laugh",
+    "meaning": "笑う"
+  },
+  {
+    "rank": 606,
+    "word": "prepare",
+    "meaning": "準備する"
+  },
+  {
+    "rank": 607,
+    "word": "protect",
+    "meaning": "を保護する"
+  },
+  {
+    "rank": 608,
+    "word": "push",
+    "meaning": "を押す"
+  },
+  {
+    "rank": 609,
+    "word": "recycle",
+    "meaning": "を再生利用する"
+  },
+  {
+    "rank": 610,
+    "word": "rest",
+    "meaning": "休む、休憩する"
+  },
+  {
+    "rank": 611,
+    "word": "share",
+    "meaning": "を共有する、を分け合う"
+  },
+  {
+    "rank": 612,
+    "word": "smile",
+    "meaning": "ほほえむ、ほほえみ"
+  },
+  {
+    "rank": 613,
+    "word": "touch",
+    "meaning": "に触れる、に触る"
+  },
+  {
+    "rank": 614,
+    "word": "activity",
+    "meaning": "活動"
+  },
+  {
+    "rank": 615,
+    "word": "address",
+    "meaning": "住所"
+  },
+  {
+    "rank": 616,
+    "word": "advice",
+    "meaning": "助言"
+  },
+  {
+    "rank": 617,
+    "word": "air",
+    "meaning": "空気"
+  },
+  {
+    "rank": 618,
+    "word": "alarm",
+    "meaning": "目覚まし時計、警報"
+  },
+  {
+    "rank": 619,
+    "word": "block",
+    "meaning": "1区画"
+  },
+  {
+    "rank": 620,
+    "word": "bridge",
+    "meaning": "橋"
+  },
+  {
+    "rank": 621,
+    "word": "ceremony",
+    "meaning": "式、儀式"
+  },
+  {
+    "rank": 622,
+    "word": "chance",
+    "meaning": "機会"
+  },
+  {
+    "rank": 623,
+    "word": "chef",
+    "meaning": "料理長"
+  },
+  {
+    "rank": 624,
+    "word": "costume",
+    "meaning": "衣装"
+  },
+  {
+    "rank": 625,
+    "word": "difference",
+    "meaning": "違い"
+  },
+  {
+    "rank": 626,
+    "word": "energy",
+    "meaning": "エネルギー"
+  },
+  {
+    "rank": 627,
+    "word": "entrance",
+    "meaning": "入り口"
+  },
+  {
+    "rank": 628,
+    "word": "figure",
+    "meaning": "図、図表、人物、数字"
+  },
+  {
+    "rank": 629,
+    "word": "flag",
+    "meaning": "旗"
+  },
+  {
+    "rank": 630,
+    "word": "garbage",
+    "meaning": "ごみ"
+  },
+  {
+    "rank": 631,
+    "word": "glove",
+    "meaning": "手袋"
+  },
+  {
+    "rank": 632,
+    "word": "guide",
+    "meaning": "ガイド、案内人"
+  },
+  {
+    "rank": 633,
+    "word": "hamburger",
+    "meaning": "ハンバーガー"
+  },
+  {
+    "rank": 634,
+    "word": "headache",
+    "meaning": "頭痛"
+  },
+  {
+    "rank": 635,
+    "word": "height",
+    "meaning": "高さ、身長"
+  },
+  {
+    "rank": 636,
+    "word": "hero",
+    "meaning": "英雄、(男性の)主人公"
+  },
+  {
+    "rank": 637,
+    "word": "island",
+    "meaning": "島"
+  },
+  {
+    "rank": 638,
+    "word": "jazz",
+    "meaning": "ジャズ"
+  },
+  {
+    "rank": 639,
+    "word": "jeans",
+    "meaning": "ジーンズ"
+  },
+  {
+    "rank": 640,
+    "word": "judge",
+    "meaning": "審査員、陪審員"
+  },
+  {
+    "rank": 641,
+    "word": "juice",
+    "meaning": "ジュース"
+  },
+  {
+    "rank": 642,
+    "word": "leaf",
+    "meaning": "葉"
+  },
+  {
+    "rank": 643,
+    "word": "manager",
+    "meaning": "支配人、権利者、経営者"
+  },
+  {
+    "rank": 644,
+    "word": "meal",
+    "meaning": "食事"
+  },
+  {
+    "rank": 645,
+    "word": "message",
+    "meaning": "伝言、メッセージ"
+  },
+  {
+    "rank": 646,
+    "word": "midnight",
+    "meaning": "夜中の12時、真夜中"
+  },
+  {
+    "rank": 647,
+    "word": "novel",
+    "meaning": "(長編の)小説"
+  },
+  {
+    "rank": 648,
+    "word": "oil",
+    "meaning": "油"
+  },
+  {
+    "rank": 649,
+    "word": "oven",
+    "meaning": "オーブン"
+  },
+  {
+    "rank": 650,
+    "word": "page",
+    "meaning": "ページ"
+  },
+  {
+    "rank": 651,
+    "word": "pancake",
+    "meaning": "パンケーキ"
+  },
+  {
+    "rank": 652,
+    "word": "passenger",
+    "meaning": "乗客"
+  },
+  {
+    "rank": 653,
+    "word": "peace",
+    "meaning": "平和"
+  },
+  {
+    "rank": 654,
+    "word": "planet",
+    "meaning": "惑星"
+  },
+  {
+    "rank": 655,
+    "word": "pocket",
+    "meaning": "ポケット"
+  },
+  {
+    "rank": 656,
+    "word": "point",
+    "meaning": "得点、地点、要点"
+  },
+  {
+    "rank": 657,
+    "word": "promise",
+    "meaning": "約束"
+  },
+  {
+    "rank": 658,
+    "word": "radio",
+    "meaning": "ラジオ"
+  },
+  {
+    "rank": 659,
+    "word": "scarf",
+    "meaning": "スカーフ、マフラー"
+  },
+  {
+    "rank": 660,
+    "word": "scene",
+    "meaning": "場面"
+  },
+  {
+    "rank": 661,
+    "word": "sight",
+    "meaning": "視力、視界、光景"
+  },
+  {
+    "rank": 662,
+    "word": "stomach",
+    "meaning": "腹、胃"
+  },
+  {
+    "rank": 663,
+    "word": "storm",
+    "meaning": "嵐、暴風雨"
+  },
+  {
+    "rank": 664,
+    "word": "support",
+    "meaning": "支援、支持"
+  },
+  {
+    "rank": 665,
+    "word": "system",
+    "meaning": "制度、系統、体系"
+  },
+  {
+    "rank": 666,
+    "word": "telephone",
+    "meaning": "電話"
+  },
+  {
+    "rank": 667,
+    "word": "tie",
+    "meaning": "ネクタイ"
+  },
+  {
+    "rank": 668,
+    "word": "trouble",
+    "meaning": "面倒、悩み事"
+  },
+  {
+    "rank": 669,
+    "word": "voice",
+    "meaning": "声"
+  },
+  {
+    "rank": 670,
+    "word": "wish",
+    "meaning": "(幸福・健康などを)祈願する言葉、を願う"
+  },
+  {
+    "rank": 671,
+    "word": "broken",
+    "meaning": "折れた、壊れた"
+  },
+  {
+    "rank": 672,
+    "word": "comfortable",
+    "meaning": "快適な、心地よい"
+  },
+  {
+    "rank": 673,
+    "word": "dangerous",
+    "meaning": "危険な"
+  },
+  {
+    "rank": 674,
+    "word": "excellent",
+    "meaning": "優れた、優秀な"
+  },
+  {
+    "rank": 675,
+    "word": "familiar",
+    "meaning": "見慣れた、よく知られた"
+  },
+  {
+    "rank": 676,
+    "word": "helpful",
+    "meaning": "役に立つ"
+  },
+  {
+    "rank": 677,
+    "word": "noisy",
+    "meaning": "騒がしい"
+  },
+  {
+    "rank": 678,
+    "word": "Olympic",
+    "meaning": "オリンピックの"
+  },
+  {
+    "rank": 679,
+    "word": "peaceful",
+    "meaning": "穏やかな、平和な"
+  },
+  {
+    "rank": 680,
+    "word": "powerful",
+    "meaning": "強力な"
+  },
+  {
+    "rank": 681,
+    "word": "public",
+    "meaning": "公共の、公の"
+  },
+  {
+    "rank": 682,
+    "word": "quiet",
+    "meaning": "静かな"
+  },
+  {
+    "rank": 683,
+    "word": "round",
+    "meaning": "丸い"
+  },
+  {
+    "rank": 684,
+    "word": "scared",
+    "meaning": "怯えた、怖がった"
+  },
+  {
+    "rank": 685,
+    "word": "shy",
+    "meaning": "恥ずかしがりの、内気な"
+  },
+  {
+    "rank": 686,
+    "word": "smart",
+    "meaning": "利口な"
+  },
+  {
+    "rank": 687,
+    "word": "thick",
+    "meaning": "厚い"
+  },
+  {
+    "rank": 688,
+    "word": "traditional",
+    "meaning": "伝統的な"
+  },
+  {
+    "rank": 689,
+    "word": "upset",
+    "meaning": "動揺した"
+  },
+  {
+    "rank": 690,
+    "word": "wide",
+    "meaning": "(幅が)広い"
+  },
+  {
+    "rank": 691,
+    "word": "cheaply",
+    "meaning": "安く"
+  },
+  {
+    "rank": 692,
+    "word": "easily",
+    "meaning": "簡単に、容易に"
+  },
+  {
+    "rank": 693,
+    "word": "safely",
+    "meaning": "安全に、無事に"
+  },
+  {
+    "rank": 694,
+    "word": "sincerely",
+    "meaning": "敬具"
+  },
+  {
+    "rank": 695,
+    "word": "softly",
+    "meaning": "優しく、柔らかに、穏やかに"
+  },
+  {
+    "rank": 696,
+    "word": "straight",
+    "meaning": "まっすぐに"
+  },
+  {
+    "rank": 697,
+    "word": "upstairs",
+    "meaning": "上の階へ[で]"
+  },
+  {
+    "rank": 698,
+    "word": "above",
+    "meaning": "～の上に[の]"
+  },
+  {
+    "rank": 699,
+    "word": "against",
+    "meaning": "～に対抗して、～に反対して"
+  },
+  {
+    "rank": 700,
+    "word": "among",
+    "meaning": "～の間で、～の中で"
+  },
+  {
+    "rank": 701,
+    "word": "count",
+    "meaning": "を数える"
+  },
+  {
+    "rank": 702,
+    "word": "kick",
+    "meaning": "を蹴る"
+  },
+  {
+    "rank": 703,
+    "word": "set",
+    "meaning": "を用意する、を整える、1組"
+  },
+  {
+    "rank": 704,
+    "word": "spread",
+    "meaning": "を広げる、広がる"
+  },
+  {
+    "rank": 705,
+    "word": "surf",
+    "meaning": "サーフィンをする、～を見てまわる"
+  },
+  {
+    "rank": 706,
+    "word": "raise",
+    "meaning": "を上げる、を育てる"
+  },
+  {
+    "rank": 707,
+    "word": "add",
+    "meaning": "を加える"
+  },
+  {
+    "rank": 708,
+    "word": "appear",
+    "meaning": "現れる"
+  },
+  {
+    "rank": 709,
+    "word": "attack",
+    "meaning": "を攻撃する、攻撃"
+  },
+  {
+    "rank": 710,
+    "word": "control",
+    "meaning": "を操作する、を支配する、操作、支配、管理"
+  },
+  {
+    "rank": 711,
+    "word": "deliver",
+    "meaning": "を配達する"
+  },
+  {
+    "rank": 712,
+    "word": "expect",
+    "meaning": "を待ち受ける、を予期する"
+  },
+  {
+    "rank": 713,
+    "word": "express",
+    "meaning": "を表現する、急行の、急行"
+  },
+  {
+    "rank": 714,
+    "word": "fight",
+    "meaning": "と戦う、喧嘩する、戦い、喧嘩"
+  },
+  {
+    "rank": 715,
+    "word": "fit",
+    "meaning": "～にピッタリ合う"
+  },
+  {
+    "rank": 716,
+    "word": "hang",
+    "meaning": "を掛ける"
+  },
+  {
+    "rank": 717,
+    "word": "jog",
+    "meaning": "ジョギングをする"
+  },
+  {
+    "rank": 718,
+    "word": "knock",
+    "meaning": "ノックする"
+  },
+  {
+    "rank": 719,
+    "word": "mix",
+    "meaning": "を混ぜる、混ざる"
+  },
+  {
+    "rank": 720,
+    "word": "oversleep",
+    "meaning": "寝過ごす"
+  },
+  {
+    "rank": 721,
+    "word": "record",
+    "meaning": "を録画[音]する、を記録する"
+  },
+  {
+    "rank": 722,
+    "word": "repeat",
+    "meaning": "繰り返して言う"
+  },
+  {
+    "rank": 723,
+    "word": "seem",
+    "meaning": "のように見える、のように思われる"
+  },
+  {
+    "rank": 724,
+    "word": "shake",
+    "meaning": "を振る、揺れる"
+  },
+  {
+    "rank": 725,
+    "word": "shock",
+    "meaning": "に衝撃を与える、打撃"
+  },
+  {
+    "rank": 726,
+    "word": "shout",
+    "meaning": "どなる、叫ぶ"
+  },
+  {
+    "rank": 727,
+    "word": "spell",
+    "meaning": "をつづる"
+  },
+  {
+    "rank": 728,
+    "word": "waste",
+    "meaning": "を無駄に使う、無駄、廃棄物"
+  },
+  {
+    "rank": 729,
+    "word": "wonder",
+    "meaning": "～かなと思う"
+  },
+  {
+    "rank": 730,
+    "word": "ballet",
+    "meaning": "バレエ"
+  },
+  {
+    "rank": 731,
+    "word": "bit",
+    "meaning": "少し"
+  },
+  {
+    "rank": 732,
+    "word": "carnival",
+    "meaning": "カーニバル、お祭り騒ぎ"
+  },
+  {
+    "rank": 733,
+    "word": "carpenter",
+    "meaning": "大工"
+  },
+  {
+    "rank": 734,
+    "word": "cracker",
+    "meaning": "クラッカー"
+  },
+  {
+    "rank": 735,
+    "word": "drawing",
+    "meaning": "線画、スケッチ、図面"
+  },
+  {
+    "rank": 736,
+    "word": "engine",
+    "meaning": "エンジン"
+  },
+  {
+    "rank": 737,
+    "word": "exit",
+    "meaning": "出口"
+  },
+  {
+    "rank": 738,
+    "word": "fan",
+    "meaning": "ファン"
+  },
+  {
+    "rank": 739,
+    "word": "flour",
+    "meaning": "小麦粉"
+  },
+  {
+    "rank": 740,
+    "word": "gentleman",
+    "meaning": "紳士、男の方"
+  },
+  {
+    "rank": 741,
+    "word": "ghost",
+    "meaning": "幽霊"
+  },
+  {
+    "rank": 742,
+    "word": "guest",
+    "meaning": "客"
+  },
+  {
+    "rank": 743,
+    "word": "guy",
+    "meaning": "みんな、やつ、男"
+  },
+  {
+    "rank": 744,
+    "word": "habit",
+    "meaning": "習慣"
+  },
+  {
+    "rank": 745,
+    "word": "handle",
+    "meaning": "取っ手、柄"
+  },
+  {
+    "rank": 746,
+    "word": "heart",
+    "meaning": "心、心臓"
+  },
+  {
+    "rank": 747,
+    "word": "hockey",
+    "meaning": "ホッケー"
+  },
+  {
+    "rank": 748,
+    "word": "joke",
+    "meaning": "冗談"
+  },
+  {
+    "rank": 749,
+    "word": "kilometer",
+    "meaning": "キロメートル"
+  },
+  {
+    "rank": 750,
+    "word": "knee",
+    "meaning": "ひざ"
+  },
+  {
+    "rank": 751,
+    "word": "lady",
+    "meaning": "ご婦人、淑女"
+  },
+  {
+    "rank": 752,
+    "word": "leader",
+    "meaning": "指導者"
+  },
+  {
+    "rank": 753,
+    "word": "mall",
+    "meaning": "ショッピングセンター、商店街"
+  },
+  {
+    "rank": 754,
+    "word": "marathon",
+    "meaning": "マラソン"
+  },
+  {
+    "rank": 755,
+    "word": "meaning",
+    "meaning": "意味"
+  },
+  {
+    "rank": 756,
+    "word": "mouse",
+    "meaning": "(ハツカ)ネズミ"
+  },
+  {
+    "rank": 757,
+    "word": "parking",
+    "meaning": "駐車、駐車できる場所"
+  },
+  {
+    "rank": 758,
+    "word": "photographer",
+    "meaning": "写真家"
+  },
+  {
+    "rank": 759,
+    "word": "purpose",
+    "meaning": "目的"
+  },
+  {
+    "rank": 760,
+    "word": "radish",
+    "meaning": "ハツカダイコン"
+  },
+  {
+    "rank": 761,
+    "word": "reporter",
+    "meaning": "記者、通信員"
+  },
+  {
+    "rank": 762,
+    "word": "ring",
+    "meaning": "指輪、輪"
+  },
+  {
+    "rank": 763,
+    "word": "sailor",
+    "meaning": "船員"
+  },
+  {
+    "rank": 764,
+    "word": "salesclerk",
+    "meaning": "店員、販売員"
+  },
+  {
+    "rank": 765,
+    "word": "service",
+    "meaning": "サービス、接客、公共事業"
+  },
+  {
+    "rank": 766,
+    "word": "shell",
+    "meaning": "貝がら"
+  },
+  {
+    "rank": 767,
+    "word": "snake",
+    "meaning": "ヘビ"
+  },
+  {
+    "rank": 768,
+    "word": "spot",
+    "meaning": "場所、地点"
+  },
+  {
+    "rank": 769,
+    "word": "subway",
+    "meaning": "地下鉄"
+  },
+  {
+    "rank": 770,
+    "word": "sunglasses",
+    "meaning": "サングラス"
+  },
+  {
+    "rank": 771,
+    "word": "surprise",
+    "meaning": "驚き、驚くべきこと、を驚かせる"
+  },
+  {
+    "rank": 772,
+    "word": "teammate",
+    "meaning": "チームメイト、チームの仲間"
+  },
+  {
+    "rank": 773,
+    "word": "television",
+    "meaning": "テレビ"
+  },
+  {
+    "rank": 774,
+    "word": "toilet",
+    "meaning": "トイレ"
+  },
+  {
+    "rank": 775,
+    "word": "track",
+    "meaning": "(鉄道の)線路、(駅の)～番線"
+  },
+  {
+    "rank": 776,
+    "word": "turtle",
+    "meaning": "ウミガメ"
+  },
+  {
+    "rank": 777,
+    "word": "whale",
+    "meaning": "クジラ"
+  },
+  {
+    "rank": 778,
+    "word": "wind",
+    "meaning": "風"
+  },
+  {
+    "rank": 779,
+    "word": "yard",
+    "meaning": "庭"
+  },
+  {
+    "rank": 780,
+    "word": "army",
+    "meaning": "軍隊、陸軍"
+  },
+  {
+    "rank": 781,
+    "word": "decoration",
+    "meaning": "飾り、装飾"
+  },
+  {
+    "rank": 782,
+    "word": "pollution",
+    "meaning": "汚染、公害"
+  },
+  {
+    "rank": 783,
+    "word": "amazing",
+    "meaning": "驚くべき"
+  },
+  {
+    "rank": 784,
+    "word": "British",
+    "meaning": "イギリスの、イギリス人の"
+  },
+  {
+    "rank": 785,
+    "word": "correct",
+    "meaning": "正しい"
+  },
+  {
+    "rank": 786,
+    "word": "dry",
+    "meaning": "乾いた"
+  },
+  {
+    "rank": 787,
+    "word": "front",
+    "meaning": "正面の、前の"
+  },
+  {
+    "rank": 788,
+    "word": "lovely",
+    "meaning": "美しい、かわいらしい"
+  },
+  {
+    "rank": 789,
+    "word": "northern",
+    "meaning": "北の、北部の"
+  },
+  {
+    "rank": 790,
+    "word": "real",
+    "meaning": "本当の、現実の"
+  },
+  {
+    "rank": 791,
+    "word": "solar",
+    "meaning": "太陽の"
+  },
+  {
+    "rank": 792,
+    "word": "strange",
+    "meaning": "奇妙な、見知らぬ"
+  },
+  {
+    "rank": 793,
+    "word": "weak",
+    "meaning": "弱い"
+  },
+  {
+    "rank": 794,
+    "word": "native",
+    "meaning": "その土地固有の、生まれた土地の"
+  },
+  {
+    "rank": 795,
+    "word": "slowly",
+    "meaning": "ゆっくりと、遅く"
+  },
+  {
+    "rank": 796,
+    "word": "badly",
+    "meaning": "悪く、ひどく"
+  },
+  {
+    "rank": 797,
+    "word": "online",
+    "meaning": "オンラインで、インターネットで"
+  },
+  {
+    "rank": 798,
+    "word": "along",
+    "meaning": "～に沿って"
+  },
+  {
+    "rank": 799,
+    "word": "everybody",
+    "meaning": "みんな、だれでも"
+  },
+  {
+    "rank": 800,
+    "word": "ourselves",
+    "meaning": "私たち自身、私たち自身に"
+  },
+  {
+    "rank": 801,
+    "word": "act",
+    "meaning": "演じる、行動する"
+  },
+  {
+    "rank": 802,
+    "word": "cause",
+    "meaning": "を引き起こす、の原因となる"
+  },
+  {
+    "rank": 803,
+    "word": "destroy",
+    "meaning": "を破壊する"
+  },
+  {
+    "rank": 804,
+    "word": "disappear",
+    "meaning": "姿を消す、の原因となる"
+  },
+  {
+    "rank": 805,
+    "word": "discover",
+    "meaning": "を発見する"
+  },
+  {
+    "rank": 806,
+    "word": "escape",
+    "meaning": "逃げる"
+  },
+  {
+    "rank": 807,
+    "word": "exercise",
+    "meaning": "運動する"
+  },
+  {
+    "rank": 808,
+    "word": "fail",
+    "meaning": "に落ちる、失敗する"
+  },
+  {
+    "rank": 809,
+    "word": "feed",
+    "meaning": "にえさを与える"
+  },
+  {
+    "rank": 810,
+    "word": "hide",
+    "meaning": "に隠れる、に隠す"
+  },
+  {
+    "rank": 811,
+    "word": "lay",
+    "meaning": "(卵)を産む、を横たえる"
+  },
+  {
+    "rank": 812,
+    "word": "lead",
+    "meaning": "を率いる、を導く"
+  },
+  {
+    "rank": 813,
+    "word": "offer",
+    "meaning": "を申しでる、を差し出す"
+  },
+  {
+    "rank": 814,
+    "word": "produce",
+    "meaning": "を生産する"
+  },
+  {
+    "rank": 815,
+    "word": "realize",
+    "meaning": "と気づく"
+  },
+  {
+    "rank": 816,
+    "word": "shine",
+    "meaning": "輝く"
+  },
+  {
+    "rank": 817,
+    "word": "smoke",
+    "meaning": "タバコを吸う"
+  },
+  {
+    "rank": 818,
+    "word": "solve",
+    "meaning": "を解決する、を解く"
+  },
+  {
+    "rank": 819,
+    "word": "survive",
+    "meaning": "生き残る"
+  },
+  {
+    "rank": 820,
+    "word": "adventure",
+    "meaning": "冒険"
+  },
+  {
+    "rank": 821,
+    "word": "age",
+    "meaning": "年齢"
+  },
+  {
+    "rank": 822,
+    "word": "arm",
+    "meaning": "腕"
+  },
+  {
+    "rank": 823,
+    "word": "athlete",
+    "meaning": "運動選手"
+  },
+  {
+    "rank": 824,
+    "word": "bottom",
+    "meaning": "底、下部"
+  },
+  {
+    "rank": 825,
+    "word": "castle",
+    "meaning": "城"
+  },
+  {
+    "rank": 826,
+    "word": "ceiling",
+    "meaning": "天井"
+  },
+  {
+    "rank": 827,
+    "word": "closet",
+    "meaning": "クローゼット、押入れ"
+  },
+  {
+    "rank": 828,
+    "word": "corner",
+    "meaning": "角"
+  },
+  {
+    "rank": 829,
+    "word": "course",
+    "meaning": "講座、コース、進路"
+  },
+  {
+    "rank": 830,
+    "word": "custom",
+    "meaning": "慣習"
+  },
+  {
+    "rank": 831,
+    "word": "department store",
+    "meaning": "デパート、百貨店"
+  },
+  {
+    "rank": 832,
+    "word": "director",
+    "meaning": "監督、指導者"
+  },
+  {
+    "rank": 833,
+    "word": "discount",
+    "meaning": "割引き"
+  },
+  {
+    "rank": 834,
+    "word": "doghouse",
+    "meaning": "犬小屋"
+  },
+  {
+    "rank": 835,
+    "word": "drugstore",
+    "meaning": "ドラッグストア、薬局"
+  },
+  {
+    "rank": 836,
+    "word": "ear",
+    "meaning": "耳"
+  },
+  {
+    "rank": 837,
+    "word": "examination",
+    "meaning": "試験"
+  },
+  {
+    "rank": 838,
+    "word": "factory",
+    "meaning": "工場"
+  },
+  {
+    "rank": 839,
+    "word": "fair",
+    "meaning": "見本市、品評会"
+  },
+  {
+    "rank": 840,
+    "word": "fire",
+    "meaning": "火事、火"
+  },
+  {
+    "rank": 841,
+    "word": "furniture",
+    "meaning": "家具"
+  },
+  {
+    "rank": 842,
+    "word": "god",
+    "meaning": "神"
+  },
+  {
+    "rank": 843,
+    "word": "government",
+    "meaning": "政府"
+  },
+  {
+    "rank": 844,
+    "word": "grass",
+    "meaning": "草、芝生"
+  },
+  {
+    "rank": 845,
+    "word": "hallway",
+    "meaning": "通路、廊下、玄関"
+  },
+  {
+    "rank": 846,
+    "word": "host",
+    "meaning": "受け入れ側、(客をもてなす)主人"
+  },
+  {
+    "rank": 847,
+    "word": "hurricane",
+    "meaning": "ハリケーン"
+  },
+  {
+    "rank": 848,
+    "word": "instrument",
+    "meaning": "楽器、精密な機械"
+  },
+  {
+    "rank": 849,
+    "word": "land",
+    "meaning": "陸、土地、上陸する、着陸する"
+  },
+  {
+    "rank": 850,
+    "word": "list",
+    "meaning": "リスト、表"
+  },
+  {
+    "rank": 851,
+    "word": "medicine",
+    "meaning": "薬"
+  },
+  {
+    "rank": 852,
+    "word": "neighbor",
+    "meaning": "近所の人"
+  },
+  {
+    "rank": 853,
+    "word": "noise",
+    "meaning": "物音、騒音"
+  },
+  {
+    "rank": 854,
+    "word": "opinion",
+    "meaning": "意見"
+  },
+  {
+    "rank": 855,
+    "word": "safety",
+    "meaning": "安全"
+  },
+  {
+    "rank": 856,
+    "word": "science fiction",
+    "meaning": "空想科学小説"
+  },
+  {
+    "rank": 857,
+    "word": "scissors",
+    "meaning": "はさみ"
+  },
+  {
+    "rank": 858,
+    "word": "secret",
+    "meaning": "秘密"
+  },
+  {
+    "rank": 859,
+    "word": "section",
+    "meaning": "一部分、区分、部門"
+  },
+  {
+    "rank": 860,
+    "word": "sentence",
+    "meaning": "文"
+  },
+  {
+    "rank": 861,
+    "word": "stamp",
+    "meaning": "切手"
+  },
+  {
+    "rank": 862,
+    "word": "state",
+    "meaning": "州、国家"
+  },
+  {
+    "rank": 863,
+    "word": "tool",
+    "meaning": "(手で使う)道具"
+  },
+  {
+    "rank": 864,
+    "word": "trick",
+    "meaning": "芸当、いたずら"
+  },
+  {
+    "rank": 865,
+    "word": "typhoon",
+    "meaning": "台風"
+  },
+  {
+    "rank": 866,
+    "word": "view",
+    "meaning": "ながめ、景色"
+  },
+  {
+    "rank": 867,
+    "word": "village",
+    "meaning": "村"
+  },
+  {
+    "rank": 868,
+    "word": "wood",
+    "meaning": "木材、森"
+  },
+  {
+    "rank": 869,
+    "word": "damage",
+    "meaning": "被害、損害"
+  },
+  {
+    "rank": 870,
+    "word": "enemy",
+    "meaning": "敵"
+  },
+  {
+    "rank": 871,
+    "word": "importance",
+    "meaning": "重要性"
+  },
+  {
+    "rank": 872,
+    "word": "resort",
+    "meaning": "行楽地"
+  },
+  {
+    "rank": 873,
+    "word": "skill",
+    "meaning": "技術、技能"
+  },
+  {
+    "rank": 874,
+    "word": "speed",
+    "meaning": "速度"
+  },
+  {
+    "rank": 875,
+    "word": "asleep",
+    "meaning": "眠って、眠りこんで"
+  },
+  {
+    "rank": 876,
+    "word": "common",
+    "meaning": "よくある、共通の"
+  },
+  {
+    "rank": 877,
+    "word": "daily",
+    "meaning": "日常の、毎日の"
+  },
+  {
+    "rank": 878,
+    "word": "female",
+    "meaning": "雌の、女性の、雌、女性"
+  },
+  {
+    "rank": 879,
+    "word": "friendly",
+    "meaning": "親しみやすい、親切な"
+  },
+  {
+    "rank": 880,
+    "word": "homesick",
+    "meaning": "ホームシックの"
+  },
+  {
+    "rank": 881,
+    "word": "human",
+    "meaning": "人間の、人間、人"
+  },
+  {
+    "rank": 882,
+    "word": "latest",
+    "meaning": "最新の"
+  },
+  {
+    "rank": 883,
+    "word": "lonely",
+    "meaning": "ひとりぼっちの、さびしい"
+  },
+  {
+    "rank": 884,
+    "word": "natural",
+    "meaning": "自然の"
+  },
+  {
+    "rank": 885,
+    "word": "necessary",
+    "meaning": "必要な"
+  },
+  {
+    "rank": 886,
+    "word": "useful",
+    "meaning": "役に立つ"
+  },
+  {
+    "rank": 887,
+    "word": "wild",
+    "meaning": "野生の"
+  },
+  {
+    "rank": 888,
+    "word": "alive",
+    "meaning": "生きている"
+  },
+  {
+    "rank": 889,
+    "word": "huge",
+    "meaning": "巨大な"
+  },
+  {
+    "rank": 890,
+    "word": "low",
+    "meaning": "低い"
+  },
+  {
+    "rank": 891,
+    "word": "male",
+    "meaning": "雄の、男性の、雄、男性"
+  },
+  {
+    "rank": 892,
+    "word": "polite",
+    "meaning": "礼儀正しい"
+  },
+  {
+    "rank": 893,
+    "word": "serious",
+    "meaning": "重大な、まじめな"
+  },
+  {
+    "rank": 894,
+    "word": "southern",
+    "meaning": "南の、南部の"
+  },
+  {
+    "rank": 895,
+    "word": "especially",
+    "meaning": "特に"
+  },
+  {
+    "rank": 896,
+    "word": "somewhere",
+    "meaning": "どこかに[へ]"
+  },
+  {
+    "rank": 897,
+    "word": "suddenly",
+    "meaning": "突然"
+  },
+  {
+    "rank": 898,
+    "word": "toward",
+    "meaning": "～の方に、～に向かって"
+  },
+  {
+    "rank": 899,
+    "word": "although",
+    "meaning": "～だけれども"
+  },
+  {
+    "rank": 900,
+    "word": "nothing",
+    "meaning": "なにも～ない"
+  },
+  {
+    "rank": 901,
+    "word": "want to do",
+    "meaning": "～したい"
+  },
+  {
+    "rank": 902,
+    "word": "like to do",
+    "meaning": "～するのが好きである"
+  },
+  {
+    "rank": 903,
+    "word": "have to do",
+    "meaning": "～しなければならない"
+  },
+  {
+    "rank": 904,
+    "word": "like doing",
+    "meaning": "～するのが好きである"
+  },
+  {
+    "rank": 905,
+    "word": "enjoy doing",
+    "meaning": "～するのを楽しむ"
+  },
+  {
+    "rank": 906,
+    "word": "look forward to doing",
+    "meaning": "～するのを楽しみに待つ"
+  },
+  {
+    "rank": 907,
+    "word": "need to do",
+    "meaning": "～する必要がある"
+  },
+  {
+    "rank": 908,
+    "word": "take A to B",
+    "meaning": "AをBに連れていく、AをBにもっていく"
+  },
+  {
+    "rank": 909,
+    "word": "how long ~",
+    "meaning": "どれくらいの時間[期間、長さ]～"
+  },
+  {
+    "rank": 910,
+    "word": "want A to do",
+    "meaning": "Aに～してほしい"
+  },
+  {
+    "rank": 911,
+    "word": "be good at ~",
+    "meaning": "～がじょうず[得意]である"
+  },
+  {
+    "rank": 912,
+    "word": "go out (for~)",
+    "meaning": "～に出かける"
+  },
+  {
+    "rank": 913,
+    "word": "start doing",
+    "meaning": "～し始める"
+  },
+  {
+    "rank": 914,
+    "word": "after school",
+    "meaning": "放課後に"
+  },
+  {
+    "rank": 915,
+    "word": "go and do",
+    "meaning": "～しに行く"
+  },
+  {
+    "rank": 916,
+    "word": "grow up (in~)",
+    "meaning": "成長する、大人になる"
+  },
+  {
+    "rank": 917,
+    "word": "this morning",
+    "meaning": "今朝"
+  },
+  {
+    "rank": 918,
+    "word": "be popular with A",
+    "meaning": "Aに人気がある"
+  },
+  {
+    "rank": 919,
+    "word": "a lot of ~",
+    "meaning": "たくさんの～"
+  },
+  {
+    "rank": 920,
+    "word": "be able to do",
+    "meaning": "～することができる"
+  },
+  {
+    "rank": 921,
+    "word": "from A to B",
+    "meaning": "AからBまで"
+  },
+  {
+    "rank": 922,
+    "word": "a little",
+    "meaning": "少し"
+  },
+  {
+    "rank": 923,
+    "word": "be late for ~",
+    "meaning": "～に遅刻する"
+  },
+  {
+    "rank": 924,
+    "word": "how to do",
+    "meaning": "～の仕方"
+  },
+  {
+    "rank": 925,
+    "word": "look for ~",
+    "meaning": "～を探す"
+  },
+  {
+    "rank": 926,
+    "word": "a few ~",
+    "meaning": "少数の～"
+  },
+  {
+    "rank": 927,
+    "word": "ask A to do",
+    "meaning": "Aに～するように頼む"
+  },
+  {
+    "rank": 928,
+    "word": "be ready for ~",
+    "meaning": "～の準備ができている"
+  },
+  {
+    "rank": 929,
+    "word": "move to ~",
+    "meaning": "～に引っ越す"
+  },
+  {
+    "rank": 930,
+    "word": "decide to do",
+    "meaning": "～することに決める"
+  },
+  {
+    "rank": 931,
+    "word": "in front of ~",
+    "meaning": "～の前で"
+  },
+  {
+    "rank": 932,
+    "word": "one of ~",
+    "meaning": "～の1人"
+  },
+  {
+    "rank": 933,
+    "word": "plan to do",
+    "meaning": "～するつもりである"
+  },
+  {
+    "rank": 934,
+    "word": "~ year(s) old",
+    "meaning": "～歳"
+  },
+  {
+    "rank": 935,
+    "word": "help A with B",
+    "meaning": "AのBを手伝う"
+  },
+  {
+    "rank": 936,
+    "word": "by oneself",
+    "meaning": "1人で、独力で"
+  },
+  {
+    "rank": 937,
+    "word": "forget to do",
+    "meaning": "～するのを忘れる"
+  },
+  {
+    "rank": 938,
+    "word": "in the morning",
+    "meaning": "午前中に"
+  },
+  {
+    "rank": 939,
+    "word": "take part in ~",
+    "meaning": "～に参加する"
+  },
+  {
+    "rank": 940,
+    "word": "worry about ~",
+    "meaning": "～のことを心配する"
+  },
+  {
+    "rank": 941,
+    "word": "go home",
+    "meaning": "家に帰る"
+  },
+  {
+    "rank": 942,
+    "word": "how often ~",
+    "meaning": "どれくらいの頻度で～"
+  },
+  {
+    "rank": 943,
+    "word": "listen to ~",
+    "meaning": "～を聞く"
+  },
+  {
+    "rank": 944,
+    "word": "make A of B",
+    "meaning": "AをBで作る"
+  },
+  {
+    "rank": 945,
+    "word": "stay home",
+    "meaning": "家にいる"
+  },
+  {
+    "rank": 946,
+    "word": "tell A to do",
+    "meaning": "Aに～するように言う"
+  },
+  {
+    "rank": 947,
+    "word": "each other",
+    "meaning": "お互い"
+  },
+  {
+    "rank": 948,
+    "word": "far away",
+    "meaning": "遠くに"
+  },
+  {
+    "rank": 949,
+    "word": "get off (~)",
+    "meaning": "(乗り物から)降りる"
+  },
+  {
+    "rank": 950,
+    "word": "get up",
+    "meaning": "起きる"
+  },
+  {
+    "rank": 951,
+    "word": "have lunch",
+    "meaning": "昼食をとる"
+  },
+  {
+    "rank": 952,
+    "word": "more than",
+    "meaning": "～を超える、～とり多い"
+  },
+  {
+    "rank": 953,
+    "word": "pay A for B",
+    "meaning": "BのためにAを支払う"
+  },
+  {
+    "rank": 954,
+    "word": "run away",
+    "meaning": "逃げる、走り去る"
+  },
+  {
+    "rank": 955,
+    "word": "try on ~",
+    "meaning": "～を試着する"
+  },
+  {
+    "rank": 956,
+    "word": "turn off ~",
+    "meaning": "(電気などを)消す、(ガス・水道など)を止める"
+  },
+  {
+    "rank": 957,
+    "word": "wait for ~",
+    "meaning": "～を待つ"
+  },
+  {
+    "rank": 958,
+    "word": "because of ~",
+    "meaning": "～のために"
+  },
+  {
+    "rank": 959,
+    "word": "do well on ~",
+    "meaning": "～でうまくいく、～でよい結果を出す"
+  },
+  {
+    "rank": 960,
+    "word": "one day",
+    "meaning": "いつか、ある日"
+  },
+  {
+    "rank": 961,
+    "word": "too A to do",
+    "meaning": "とてもAで～できない"
+  },
+  {
+    "rank": 962,
+    "word": "all over the world",
+    "meaning": "世界中"
+  },
+  {
+    "rank": 963,
+    "word": "arrive in [at] ~",
+    "meaning": "～に着く、～に到着する"
+  },
+  {
+    "rank": 964,
+    "word": "at first",
+    "meaning": "最初は"
+  },
+  {
+    "rank": 965,
+    "word": "be afraid of",
+    "meaning": "～を恐れる、～を怖がる"
+  },
+  {
+    "rank": 966,
+    "word": "be sick in bed",
+    "meaning": "病気で寝ている"
+  },
+  {
+    "rank": 967,
+    "word": "get home",
+    "meaning": "帰宅する"
+  },
+  {
+    "rank": 968,
+    "word": "invite A to B",
+    "meaning": "AをBに招待する"
+  },
+  {
+    "rank": 969,
+    "word": "lots of ~",
+    "meaning": "たくさんの～"
+  },
+  {
+    "rank": 970,
+    "word": "on business",
+    "meaning": "仕事で"
+  },
+  {
+    "rank": 971,
+    "word": "stay at ~",
+    "meaning": "～に泊まる"
+  },
+  {
+    "rank": 972,
+    "word": "want to be ~",
+    "meaning": "～になりたい"
+  },
+  {
+    "rank": 973,
+    "word": "all day (long)",
+    "meaning": "一日中"
+  },
+  {
+    "rank": 974,
+    "word": "both A and B",
+    "meaning": "AもBも両方とも"
+  },
+  {
+    "rank": 975,
+    "word": "look like ~",
+    "meaning": "～に似ている、～のように見える"
+  },
+  {
+    "rank": 976,
+    "word": "put on ~",
+    "meaning": "～を着る、～を身につける"
+  },
+  {
+    "rank": 977,
+    "word": "speak to ~",
+    "meaning": "～に話しかける"
+  },
+  {
+    "rank": 978,
+    "word": "stay in ~",
+    "meaning": "～に滞在する"
+  },
+  {
+    "rank": 979,
+    "word": "~ than any other A",
+    "meaning": "他のどのAよりも～"
+  },
+  {
+    "rank": 980,
+    "word": "travel to ~",
+    "meaning": "～に行く、～へ旅行する"
+  },
+  {
+    "rank": 981,
+    "word": "a pair of ~",
+    "meaning": "1組の～"
+  },
+  {
+    "rank": 982,
+    "word": "anything else",
+    "meaning": "他になにか"
+  },
+  {
+    "rank": 983,
+    "word": "be proud of",
+    "meaning": "～を誇りに思う"
+  },
+  {
+    "rank": 984,
+    "word": "be ready to do",
+    "meaning": "～する準備ができている"
+  },
+  {
+    "rank": 985,
+    "word": "do one's best",
+    "meaning": "最善を尽くす"
+  },
+  {
+    "rank": 986,
+    "word": "far from ~",
+    "meaning": "～から遠くに"
+  },
+  {
+    "rank": 987,
+    "word": "find out ~",
+    "meaning": "～を知る、～を見つけ出す"
+  },
+  {
+    "rank": 988,
+    "word": "get married",
+    "meaning": "結婚する"
+  },
+  {
+    "rank": 989,
+    "word": "get to ~",
+    "meaning": "～に着く"
+  },
+  {
+    "rank": 990,
+    "word": "give A a ride",
+    "meaning": "Aを車で送る"
+  },
+  {
+    "rank": 991,
+    "word": "go into ~",
+    "meaning": "～に入る"
+  },
+  {
+    "rank": 992,
+    "word": "go to work",
+    "meaning": "仕事に行く"
+  },
+  {
+    "rank": 993,
+    "word": "have time to do~",
+    "meaning": "～する時間がある"
+  },
+  {
+    "rank": 994,
+    "word": "hear about ~",
+    "meaning": "～について聞く"
+  },
+  {
+    "rank": 995,
+    "word": "in the world",
+    "meaning": "世界で"
+  },
+  {
+    "rank": 996,
+    "word": "most of ~",
+    "meaning": "～のほとんど"
+  },
+  {
+    "rank": 997,
+    "word": "near here",
+    "meaning": "この近くに"
+  },
+  {
+    "rank": 998,
+    "word": "next to ~",
+    "meaning": "～の隣に"
+  },
+  {
+    "rank": 999,
+    "word": "not ~ at all",
+    "meaning": "まったく～ない"
+  },
+  {
+    "rank": 1000,
+    "word": "not have to do",
+    "meaning": "～しなくてもよい、～する必要がない"
+  },
+  {
+    "rank": 1001,
+    "word": "pick up A",
+    "meaning": "Aを車で迎えに行く"
+  },
+  {
+    "rank": 1002,
+    "word": "stay with A",
+    "meaning": "Aのところに泊まる"
+  },
+  {
+    "rank": 1003,
+    "word": "stop doing",
+    "meaning": "～するのをやめる"
+  },
+  {
+    "rank": 1004,
+    "word": "take a trip",
+    "meaning": "旅行する"
+  },
+  {
+    "rank": 1005,
+    "word": "take care of ~",
+    "meaning": "～の世話をする"
+  },
+  {
+    "rank": 1006,
+    "word": "twice a week",
+    "meaning": "週に2回"
+  },
+  {
+    "rank": 1007,
+    "word": "wake up",
+    "meaning": "目が覚める、起きる"
+  },
+  {
+    "rank": 1008,
+    "word": "work for",
+    "meaning": "～で働く、～に勤める"
+  },
+  {
+    "rank": 1009,
+    "word": "a lot",
+    "meaning": "ずいぶん、たいへん"
+  },
+  {
+    "rank": 1010,
+    "word": "at work",
+    "meaning": "仕事中で、職場で"
+  },
+  {
+    "rank": 1011,
+    "word": "be different from ~",
+    "meaning": "～と違う"
+  },
+  {
+    "rank": 1012,
+    "word": "be in the hospital",
+    "meaning": "入院している"
+  },
+  {
+    "rank": 1013,
+    "word": "be sold out",
+    "meaning": "売り切れている"
+  },
+  {
+    "rank": 1014,
+    "word": "between A and B",
+    "meaning": "AとBの間に"
+  },
+  {
+    "rank": 1015,
+    "word": "catch a cold",
+    "meaning": "風邪をひく"
+  },
+  {
+    "rank": 1016,
+    "word": "come back",
+    "meaning": "戻ってくる"
+  },
+  {
+    "rank": 1017,
+    "word": "come home",
+    "meaning": "帰宅する"
+  },
+  {
+    "rank": 1018,
+    "word": "do one's homework",
+    "meaning": "宿題をする"
+  },
+  {
+    "rank": 1019,
+    "word": "for free",
+    "meaning": "無料で"
+  },
+  {
+    "rank": 1020,
+    "word": "for the first time",
+    "meaning": "初めて"
+  },
+  {
+    "rank": 1021,
+    "word": "go back to ~",
+    "meaning": "～へ戻る、～へ帰る"
+  },
+  {
+    "rank": 1022,
+    "word": "how far ~",
+    "meaning": "どれくらいの距離で～"
+  },
+  {
+    "rank": 1023,
+    "word": "how many times ~",
+    "meaning": "何回～"
+  },
+  {
+    "rank": 1024,
+    "word": "hurry up",
+    "meaning": "急ぐ"
+  },
+  {
+    "rank": 1025,
+    "word": "in the future",
+    "meaning": "将来、未来に"
+  },
+  {
+    "rank": 1026,
+    "word": "not ~ yet",
+    "meaning": "まだ～ない"
+  },
+  {
+    "rank": 1027,
+    "word": "on vacation",
+    "meaning": "休暇で"
+  },
+  {
+    "rank": 1028,
+    "word": "put A in B",
+    "meaning": "AをBに入れる"
+  },
+  {
+    "rank": 1029,
+    "word": "stay up late",
+    "meaning": "遅くまで起きている"
+  },
+  {
+    "rank": 1030,
+    "word": "such as ~",
+    "meaning": "～のような"
+  },
+  {
+    "rank": 1031,
+    "word": "take a walk",
+    "meaning": "散歩する"
+  },
+  {
+    "rank": 1032,
+    "word": "take lessons",
+    "meaning": "レッスンを受ける"
+  },
+  {
+    "rank": 1033,
+    "word": "these days",
+    "meaning": "最近、近頃は"
+  },
+  {
+    "rank": 1034,
+    "word": "write back",
+    "meaning": "返事を書く"
+  },
+  {
+    "rank": 1035,
+    "word": "write to ~",
+    "meaning": "～に手紙を書く"
+  },
+  {
+    "rank": 1036,
+    "word": "(a) part of ~",
+    "meaning": "～の一部"
+  },
+  {
+    "rank": 1037,
+    "word": "a piece of ~",
+    "meaning": "1切れの～"
+  },
+  {
+    "rank": 1038,
+    "word": "all the way",
+    "meaning": "ずっと、はるばる"
+  },
+  {
+    "rank": 1039,
+    "word": "as ~ as...",
+    "meaning": "...と同じくらい～"
+  },
+  {
+    "rank": 1040,
+    "word": "as usual",
+    "meaning": "いつものように"
+  },
+  {
+    "rank": 1041,
+    "word": "at last",
+    "meaning": "やっと、ついに、とうとう"
+  },
+  {
+    "rank": 1042,
+    "word": "at the end of ~",
+    "meaning": "～の終わりに、～突き当りに"
+  },
+  {
+    "rank": 1043,
+    "word": "be back",
+    "meaning": "戻る"
+  },
+  {
+    "rank": 1044,
+    "word": "be full of ~",
+    "meaning": "～でいっぱいである"
+  },
+  {
+    "rank": 1045,
+    "word": "be glad to do",
+    "meaning": "～してうれしい"
+  },
+  {
+    "rank": 1046,
+    "word": "be in a hurry",
+    "meaning": "急いでいる"
+  },
+  {
+    "rank": 1047,
+    "word": "be interested in ~",
+    "meaning": "～に興味がある"
+  },
+  {
+    "rank": 1048,
+    "word": "be kind to ~",
+    "meaning": "～に親切である"
+  },
+  {
+    "rank": 1049,
+    "word": "be tired of doing",
+    "meaning": "～するのに飽きている"
+  },
+  {
+    "rank": 1050,
+    "word": "cheer A up",
+    "meaning": "Aを元気づける"
+  },
+  {
+    "rank": 1051,
+    "word": "come true",
+    "meaning": "実現する、本当になる"
+  },
+  {
+    "rank": 1052,
+    "word": "feel sick",
+    "meaning": "気分が悪い"
+  },
+  {
+    "rank": 1053,
+    "word": "finish doing",
+    "meaning": "～し終える"
+  },
+  {
+    "rank": 1054,
+    "word": "first of all",
+    "meaning": "まず最初に"
+  },
+  {
+    "rank": 1055,
+    "word": "for example",
+    "meaning": "例えば"
+  },
+  {
+    "rank": 1056,
+    "word": "get angry",
+    "meaning": "怒る"
+  },
+  {
+    "rank": 1057,
+    "word": "get back (to ~)",
+    "meaning": "～に戻る"
+  },
+  {
+    "rank": 1058,
+    "word": "go on a trip",
+    "meaning": "旅行に行く"
+  },
+  {
+    "rank": 1059,
+    "word": "have a cold",
+    "meaning": "風邪を引いている"
+  },
+  {
+    "rank": 1060,
+    "word": "have a stomachache",
+    "meaning": "腹痛がする"
+  },
+  {
+    "rank": 1061,
+    "word": "help A (to) do",
+    "meaning": "Aが～するのを手伝う"
+  },
+  {
+    "rank": 1062,
+    "word": "hundreds of ~",
+    "meaning": "何百もの～"
+  },
+  {
+    "rank": 1063,
+    "word": "in time",
+    "meaning": "間に合って"
+  },
+  {
+    "rank": 1064,
+    "word": "introduce A to B",
+    "meaning": "AをBに紹介する"
+  },
+  {
+    "rank": 1065,
+    "word": "It takes A B to do",
+    "meaning": "Aが～するのにBかかる"
+  },
+  {
+    "rank": 1066,
+    "word": "keep doing",
+    "meaning": "～し続ける"
+  },
+  {
+    "rank": 1067,
+    "word": "look after ~",
+    "meaning": "～の世話をする"
+  },
+  {
+    "rank": 1068,
+    "word": "make a speech",
+    "meaning": "スピーチをする"
+  },
+  {
+    "rank": 1069,
+    "word": "no more ~",
+    "meaning": "これ以上～ない"
+  },
+  {
+    "rank": 1070,
+    "word": "on foot",
+    "meaning": "徒歩で、歩いて"
+  },
+  {
+    "rank": 1071,
+    "word": "on one's way home",
+    "meaning": "家に帰る途中で"
+  },
+  {
+    "rank": 1072,
+    "word": "on one's way to",
+    "meaning": "～へ行く途中で"
+  },
+  {
+    "rank": 1073,
+    "word": "on time",
+    "meaning": "時間どおりに"
+  },
+  {
+    "rank": 1074,
+    "word": "once a week",
+    "meaning": "週に1回"
+  },
+  {
+    "rank": 1075,
+    "word": "one of the ~ A",
+    "meaning": "最も～なAのうちの1つ"
+  },
+  {
+    "rank": 1076,
+    "word": "right away",
+    "meaning": "すぐに、今すぐ"
+  },
+  {
+    "rank": 1077,
+    "word": "right now",
+    "meaning": "ちょうど今、今すぐに"
+  },
+  {
+    "rank": 1078,
+    "word": "see the doctor",
+    "meaning": "医者に診てもらう"
+  },
+  {
+    "rank": 1079,
+    "word": "show A how to do",
+    "meaning": "Aに～のやり方を教える"
+  },
+  {
+    "rank": 1080,
+    "word": "so ~ that ...",
+    "meaning": "とても～なので..."
+  },
+  {
+    "rank": 1081,
+    "word": "something to do",
+    "meaning": "何か～すべきもの"
+  },
+  {
+    "rank": 1082,
+    "word": "sound like",
+    "meaning": "～のように聞こえる"
+  },
+  {
+    "rank": 1083,
+    "word": "such a[an] ~",
+    "meaning": "そんなに～、これほどの～"
+  },
+  {
+    "rank": 1084,
+    "word": "take a picture",
+    "meaning": "写真を撮る"
+  },
+  {
+    "rank": 1085,
+    "word": "take a shower",
+    "meaning": "シャワーを浴びる"
+  },
+  {
+    "rank": 1086,
+    "word": "take off ~",
+    "meaning": "～を脱ぐ"
+  },
+  {
+    "rank": 1087,
+    "word": "the other day",
+    "meaning": "先日"
+  },
+  {
+    "rank": 1088,
+    "word": "the same as ~",
+    "meaning": "～と同じ"
+  },
+  {
+    "rank": 1089,
+    "word": "this way",
+    "meaning": "こちらへ"
+  },
+  {
+    "rank": 1090,
+    "word": "thousands of ~",
+    "meaning": "何千もの～、たくさんの～"
+  },
+  {
+    "rank": 1091,
+    "word": "turn down ~",
+    "meaning": "音量を下げる"
+  },
+  {
+    "rank": 1092,
+    "word": "a glass of ~",
+    "meaning": "コップ1杯の"
+  },
+  {
+    "rank": 1093,
+    "word": "be covered with ~",
+    "meaning": "～でおおわれている"
+  },
+  {
+    "rank": 1094,
+    "word": "be filled with ~",
+    "meaning": "～でいっぱいである"
+  },
+  {
+    "rank": 1095,
+    "word": "break one's promise",
+    "meaning": "約束を破る"
+  },
+  {
+    "rank": 1096,
+    "word": "give A a hand",
+    "meaning": "Aを手伝う"
+  },
+  {
+    "rank": 1097,
+    "word": "give up",
+    "meaning": "あきらめる、やめる"
+  },
+  {
+    "rank": 1098,
+    "word": "have an interview with A",
+    "meaning": "Aにインタビューする、Aと面談する"
+  },
+  {
+    "rank": 1099,
+    "word": "in fact",
+    "meaning": "実際は、実は"
+  },
+  {
+    "rank": 1100,
+    "word": "leave for ~",
+    "meaning": "～向けて出発する"
+  },
+  {
+    "rank": 1101,
+    "word": "a slice of ~",
+    "meaning": "1切れの～"
+  },
+  {
+    "rank": 1102,
+    "word": "agree with ~",
+    "meaning": "～に同意する"
+  },
+  {
+    "rank": 1103,
+    "word": "all the time",
+    "meaning": "いつも、その間ずっと"
+  },
+  {
+    "rank": 1104,
+    "word": "as soon as possible",
+    "meaning": "できるだけ早く"
+  },
+  {
+    "rank": 1105,
+    "word": "ask A for ~",
+    "meaning": "Aに～を求める"
+  },
+  {
+    "rank": 1106,
+    "word": "be absent from ~",
+    "meaning": "～を休んでいる"
+  },
+  {
+    "rank": 1107,
+    "word": "be careful (about ~)",
+    "meaning": "～に気をつける"
+  },
+  {
+    "rank": 1108,
+    "word": "be happy to do",
+    "meaning": "～してうれしい"
+  },
+  {
+    "rank": 1109,
+    "word": "be known as ~",
+    "meaning": "～として知られている"
+  },
+  {
+    "rank": 1110,
+    "word": "brush one's teeth",
+    "meaning": "歯をみがく"
+  },
+  {
+    "rank": 1111,
+    "word": "change one's mind",
+    "meaning": "気が変わる、考えを変える"
+  },
+  {
+    "rank": 1112,
+    "word": "day and night",
+    "meaning": "昼も夜も"
+  },
+  {
+    "rank": 1113,
+    "word": "fall down",
+    "meaning": "転ぶ、倒れる"
+  },
+  {
+    "rank": 1114,
+    "word": "feel better",
+    "meaning": "気分がよくなる"
+  },
+  {
+    "rank": 1115,
+    "word": "feel like doing",
+    "meaning": "～したい気分である"
+  },
+  {
+    "rank": 1116,
+    "word": "for a long time",
+    "meaning": "長い間"
+  },
+  {
+    "rank": 1117,
+    "word": "get better",
+    "meaning": "よくなる、上達する"
+  },
+  {
+    "rank": 1118,
+    "word": "get in trouble",
+    "meaning": "巻き込まれる、困ったことになる"
+  },
+  {
+    "rank": 1119,
+    "word": "get on ~",
+    "meaning": "(乗り物に)乗る"
+  },
+  {
+    "rank": 1120,
+    "word": "get A to do ~",
+    "meaning": "Aに～させる、Aに～してもらう"
+  },
+  {
+    "rank": 1121,
+    "word": "get together",
+    "meaning": "集まる"
+  },
+  {
+    "rank": 1122,
+    "word": "give A back to B",
+    "meaning": "AをBに返す"
+  },
+  {
+    "rank": 1123,
+    "word": "go abroad",
+    "meaning": "海外へ行く"
+  },
+  {
+    "rank": 1124,
+    "word": "go for a walk",
+    "meaning": "散歩に行く"
+  },
+  {
+    "rank": 1125,
+    "word": "go to see a movie",
+    "meaning": "映画を見に行く"
+  },
+  {
+    "rank": 1126,
+    "word": "graduate from ~",
+    "meaning": "～を卒業する"
+  },
+  {
+    "rank": 1127,
+    "word": "have a good memory",
+    "meaning": "記憶力がよい"
+  },
+  {
+    "rank": 1128,
+    "word": "have a good time",
+    "meaning": "楽しい時間を過ごす"
+  },
+  {
+    "rank": 1129,
+    "word": "have been to ~",
+    "meaning": "～に行ったことがある"
+  },
+  {
+    "rank": 1130,
+    "word": "have enough A to do",
+    "meaning": "～するのｂに十分なAがある"
+  },
+  {
+    "rank": 1131,
+    "word": "hear of ~",
+    "meaning": "～のことを聞く"
+  },
+  {
+    "rank": 1132,
+    "word": "in a minute",
+    "meaning": "すぐに"
+  },
+  {
+    "rank": 1133,
+    "word": "in those days ~",
+    "meaning": "その当時、あのころは"
+  },
+  {
+    "rank": 1134,
+    "word": "look around",
+    "meaning": "見て回る、あたりを見回す"
+  },
+  {
+    "rank": 1135,
+    "word": "look well",
+    "meaning": "元気そうに見える"
+  },
+  {
+    "rank": 1136,
+    "word": "make A from B",
+    "meaning": "AをBから作る"
+  },
+  {
+    "rank": 1137,
+    "word": "name A after B",
+    "meaning": "BにちなんでAに名前をつける"
+  },
+  {
+    "rank": 1138,
+    "word": "on one's first day",
+    "meaning": "初日に"
+  },
+  {
+    "rank": 1139,
+    "word": "on one's right",
+    "meaning": "右側に"
+  },
+  {
+    "rank": 1140,
+    "word": "on sale",
+    "meaning": "売り出されて"
+  },
+  {
+    "rank": 1141,
+    "word": "pick up ~",
+    "meaning": "～を拾い上げる、～を手に取る"
+  },
+  {
+    "rank": 1142,
+    "word": "play a cath",
+    "meaning": "キャッチボールをすうｒ"
+  },
+  {
+    "rank": 1143,
+    "word": "receive a prize",
+    "meaning": "賞を取る、受賞する"
+  },
+  {
+    "rank": 1144,
+    "word": "save money",
+    "meaning": "お金を貯める、お金を節約する"
+  },
+  {
+    "rank": 1145,
+    "word": "say goodbye to A",
+    "meaning": "Aにさよならを言う"
+  },
+  {
+    "rank": 1146,
+    "word": "say hello to A",
+    "meaning": "Aによろしくと伝える"
+  },
+  {
+    "rank": 1147,
+    "word": "show A around",
+    "meaning": "Aに～を案内する"
+  },
+  {
+    "rank": 1148,
+    "word": "slow down",
+    "meaning": "速度を落とす"
+  },
+  {
+    "rank": 1149,
+    "word": "take place",
+    "meaning": "行われる、起こる"
+  },
+  {
+    "rank": 1150,
+    "word": "talk to oneself",
+    "meaning": "ひとりごとを言う"
+  },
+  {
+    "rank": 1151,
+    "word": "thanks to ~",
+    "meaning": "～のおかげで、～のせいで"
+  },
+  {
+    "rank": 1152,
+    "word": "think of ~",
+    "meaning": "～を思いつく、～を考える"
+  },
+  {
+    "rank": 1153,
+    "word": "this is one's first time to do",
+    "meaning": "人にとって～するのはこれが初めて"
+  },
+  {
+    "rank": 1154,
+    "word": "turn left",
+    "meaning": "左にまがる"
+  },
+  {
+    "rank": 1155,
+    "word": "turn on ~",
+    "meaning": "(電気など)をつける、(ガス・水道など)をだす"
+  },
+  {
+    "rank": 1156,
+    "word": "visit A in the hospital",
+    "meaning": "病院にAの見舞いに行く"
+  },
+  {
+    "rank": 1157,
+    "word": "would love to do",
+    "meaning": "～したい"
+  },
+  {
+    "rank": 1158,
+    "word": "a couple of ~",
+    "meaning": "2,3の～、2つの～"
+  },
+  {
+    "rank": 1159,
+    "word": "a friend of mine",
+    "meaning": "私の友達の1人"
+  },
+  {
+    "rank": 1160,
+    "word": "after a while",
+    "meaning": "しばらくして"
+  },
+  {
+    "rank": 1161,
+    "word": "as soon as ~",
+    "meaning": "～するとすぐに"
+  },
+  {
+    "rank": 1162,
+    "word": "at least",
+    "meaning": "少なくとも"
+  },
+  {
+    "rank": 1163,
+    "word": "at once",
+    "meaning": "すぐに"
+  },
+  {
+    "rank": 1164,
+    "word": "be scared of ~",
+    "meaning": "～を怖がる"
+  },
+  {
+    "rank": 1165,
+    "word": "be similar to ~",
+    "meaning": "～と似ている"
+  },
+  {
+    "rank": 1166,
+    "word": "belong to ~",
+    "meaning": "～に所属している"
+  },
+  {
+    "rank": 1167,
+    "word": "by the way",
+    "meaning": "ところで"
+  },
+  {
+    "rank": 1168,
+    "word": "call A back",
+    "meaning": "Aに折り返し電話をする"
+  },
+  {
+    "rank": 1169,
+    "word": "care about ~",
+    "meaning": "～を気づかう"
+  },
+  {
+    "rank": 1170,
+    "word": "change trains",
+    "meaning": "列車を乗り換える"
+  },
+  {
+    "rank": 1171,
+    "word": "clean up ~",
+    "meaning": "～を掃除する、～をきれいにする"
+  },
+  {
+    "rank": 1172,
+    "word": "depend on ~",
+    "meaning": "～しだいである、～に頼る"
+  },
+  {
+    "rank": 1173,
+    "word": "either A or B",
+    "meaning": "AかBのどちらか"
+  },
+  {
+    "rank": 1174,
+    "word": "exchange A for B",
+    "meaning": "AをBと交換する"
+  },
+  {
+    "rank": 1175,
+    "word": "for a while",
+    "meaning": "しばらくの間"
+  },
+  {
+    "rank": 1176,
+    "word": "for fun",
+    "meaning": "楽しみで」"
+  },
+  {
+    "rank": 1177,
+    "word": "get a good grade (on ~)",
+    "meaning": "～でよい成績を取る"
+  },
+  {
+    "rank": 1178,
+    "word": "get away from ~",
+    "meaning": "～から逃げる"
+  },
+  {
+    "rank": 1179,
+    "word": "get in ~",
+    "meaning": "(車など)に乗り込む、～に入る"
+  },
+  {
+    "rank": 1180,
+    "word": "have a fight",
+    "meaning": "けんかをする"
+  },
+  {
+    "rank": 1181,
+    "word": "hear from ~",
+    "meaning": "～から連絡をもらう"
+  },
+  {
+    "rank": 1182,
+    "word": "instead of ~",
+    "meaning": "～の代わりに"
+  },
+  {
+    "rank": 1183,
+    "word": "It is A for B to do ~",
+    "meaning": "Bが～するのはAである"
+  },
+  {
+    "rank": 1184,
+    "word": "keep in touch with A",
+    "meaning": "Aと連絡をとり続ける"
+  },
+  {
+    "rank": 1185,
+    "word": "laugh at ~",
+    "meaning": "～を聞いて笑う"
+  },
+  {
+    "rank": 1186,
+    "word": "leave a message",
+    "meaning": "伝言を残す"
+  },
+  {
+    "rank": 1187,
+    "word": "less than ~",
+    "meaning": "～より少ない"
+  },
+  {
+    "rank": 1188,
+    "word": "lose one's way",
+    "meaning": "道に迷う"
+  },
+  {
+    "rank": 1189,
+    "word": "make a mistake",
+    "meaning": "間違える"
+  },
+  {
+    "rank": 1190,
+    "word": "make money",
+    "meaning": "お金をかせぐ"
+  },
+  {
+    "rank": 1191,
+    "word": "not A but B",
+    "meaning": "AではなくB"
+  },
+  {
+    "rank": 1192,
+    "word": "on the other hand",
+    "meaning": "一方では"
+  },
+  {
+    "rank": 1193,
+    "word": "so many ~",
+    "meaning": "とてもたくさんの～"
+  },
+  {
+    "rank": 1194,
+    "word": "take a break",
+    "meaning": "休憩をとる"
+  },
+  {
+    "rank": 1195,
+    "word": "take a look at ~",
+    "meaning": "～を見る"
+  },
+  {
+    "rank": 1196,
+    "word": "take off",
+    "meaning": "離陸する"
+  },
+  {
+    "rank": 1197,
+    "word": "the number of ~",
+    "meaning": "～の数"
+  },
+  {
+    "rank": 1198,
+    "word": "throw away ~",
+    "meaning": "～を捨てる"
+  },
+  {
+    "rank": 1199,
+    "word": "turn up ~",
+    "meaning": "音量を上げる"
+  },
+  {
+    "rank": 1200,
+    "word": "where to do",
+    "meaning": "どこで～するべきか"
+  }
+]

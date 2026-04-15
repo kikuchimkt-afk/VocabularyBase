@@ -33,7 +33,7 @@ export async function POST(request) {
 
   try {
     const body = await request.json();
-    const { words, studentIds, assignedDate: rawDate } = body;
+    const { words, studentIds, assignedDate: rawDate, teacherName } = body;
     const assignedDate = rawDate || (() => {
       const now = new Date();
       return `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
@@ -163,6 +163,7 @@ export async function POST(request) {
             source: pw.source || null,
             word_audio_url: pw.wordAudioUrl || null,
             sentence_audio_url: pw.sentenceAudioUrl || null,
+            teacher_name: teacherName || null,
           };
 
           const { error } = await supabase
@@ -191,6 +192,7 @@ export async function POST(request) {
           assigned_date: assignedDate,
           assigned_by: 'teacher',
           assign_count: 1,
+          teacher_name: teacherName || null,
         }).select('id').single();
 
         if (!error) {

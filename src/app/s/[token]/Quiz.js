@@ -52,16 +52,33 @@ export default function Quiz({ token, studentId }) {
     }
   };
 
-  // 日付一覧を取得（新しい順）
-  const availableDates = [...new Set(
-    words
-      .filter(w => w.assigned_date)
-      .map(w => w.assigned_date)
-  )].sort((a, b) => b.localeCompare(a));
+  // 日付+講師名一覧を取得（新しい順）
+  const availableDateTeachers = (() => {
+    const map = new Map();
+    words.filter(w => w.assigned_date).forEach(w => {
+      const tn = w.teacher_name || '';
+      const key = `${w.assigned_date}::${tn}`;
+      if (!map.has(key)) map.set(key, { date: w.assigned_date, teacher: tn, count: 0 });
+      map.get(key).count++;
+    });
+    return [...map.values()].sort((a, b) => {
+      const dc = b.date.localeCompare(a.date);
+      if (dc !== 0) return dc;
+      return a.teacher.localeCompare(b.teacher);
+    });
+  })();
+
+  const teacherColors = (() => {
+    const colors = ['#e65100', '#6366f1', '#0891b2', '#059669', '#d946ef', '#ea580c', '#2563eb', '#dc2626'];
+    const names = [...new Set(words.filter(w => w.teacher_name).map(w => w.teacher_name))];
+    const map = {};
+    names.forEach((n, i) => { map[n] = colors[i % colors.length]; });
+    return map;
+  })();
 
   // 選択中の日付の出典サマリーを生成（WordListと同じロジック）
-  const getSourceSummary = (date) => {
-    const dateWords = words.filter(w => w.assigned_date === date && w.source);
+  const getSourceSummary = (date, teacher) => {
+    const dateWords = words.filter(w => w.assigned_date === date && (teacher === undefined || (w.teacher_name || '') === teacher) && w.source);
     if (dateWords.length === 0) return null;
 
     const groups = {};
@@ -95,7 +112,16 @@ export default function Quiz({ token, studentId }) {
   // フィルター適用後の単語
   const filteredWords = dateFilter === 'all'
     ? words
-    : words.filter(w => w.assigned_date === dateFilter);
+    : (() => {
+        const parts = dateFilter.split('::');
+        const date = parts[0];
+        const teacher = parts.length > 1 ? parts[1] : null;
+        return words.filter(w => {
+          if (w.assigned_date !== date) return false;
+          if (teacher !== null && (w.teacher_name || '') !== teacher) return false;
+          return true;
+        });
+      })();
 
   // 各単語の最新テスト結果から「覚えた」数を計算
   // correct_count > wrong_count なら覚えた判定
@@ -296,36 +322,41 @@ export default function Quiz({ token, studentId }) {
               >
                 すべて ({words.length})
               </button>
-              {availableDates.map(date => {
-                const count = words.filter(w => w.assigned_date === date).length;
+              {availableDateTeachers.map(({ date, teacher, count }) => {
+                const filterKey = `${date}::${teacher}`;
+                const color = teacher ? (teacherColors[teacher] || '#e65100') : 'var(--primary)';
                 return (
                   <button
-                    key={date}
-                    onClick={() => setDateFilter(date)}
+                    key={filterKey}
+                    onClick={() => setDateFilter(filterKey)}
                     style={{
                       padding: '6px 14px', border: 'none', borderRadius: 20,
                       fontSize: '0.8rem', fontWeight: 600, cursor: 'pointer',
-                      background: dateFilter === date ? 'var(--primary)' : 'var(--bg-card)',
-                      color: dateFilter === date ? 'white' : 'var(--text-muted)',
-                      border: `1px solid ${dateFilter === date ? 'var(--primary)' : 'var(--border)'}`,
+                      background: dateFilter === filterKey ? color : 'var(--bg-card)',
+                      color: dateFilter === filterKey ? 'white' : 'var(--text-muted)',
+                      border: `1px solid ${dateFilter === filterKey ? color : 'var(--border)'}`,
                       transition: '0.2s',
                     }}
                   >
-                    {formatDate(date)} ({count})
+                    {formatDate(date)}{teacher ? ` ${teacher}` : ''} ({count})
                   </button>
                 );
               })}
             </div>
             {dateFilter !== 'all' && (() => {
-              const sum = getSourceSummary(dateFilter);
+              const parts = dateFilter.split('::');
+              const date = parts[0];
+              const teacher = parts.length > 1 ? parts[1] : null;
+              const sum = getSourceSummary(date, teacher !== null ? teacher : undefined);
+              const color = teacher ? (teacherColors[teacher] || '#e65100') : '#e65100';
               return sum ? (
                 <div style={{
                   marginTop: '0.5rem',
-                  background: '#fff3e0', color: '#e65100', padding: '0.25rem 0.7rem',
+                  background: `${color}15`, color: color, padding: '0.25rem 0.7rem',
                   borderRadius: '6px', fontSize: '0.75rem', fontWeight: 600,
-                  border: '1px solid #ffe0b2', display: 'inline-flex', alignItems: 'center', gap: 4,
+                  border: `1px solid ${color}30`, display: 'inline-flex', alignItems: 'center', gap: 4,
                 }}>
-                  🏷️ 出典: {sum}
+                  🏷️ {teacher ? `${teacher}：` : '出典: '}{sum}
                 </div>
               ) : null;
             })()}

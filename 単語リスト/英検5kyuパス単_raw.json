@@ -1,0 +1,2987 @@
+[
+  {
+    "rank": 1,
+    "word": "house",
+    "meaning": "いえ"
+  },
+  {
+    "rank": 2,
+    "word": "book",
+    "meaning": "ほん"
+  },
+  {
+    "rank": 3,
+    "word": "room",
+    "meaning": "へや"
+  },
+  {
+    "rank": 4,
+    "word": "home",
+    "meaning": "いえへ"
+  },
+  {
+    "rank": 5,
+    "word": "table",
+    "meaning": "テーブル"
+  },
+  {
+    "rank": 6,
+    "word": "picture",
+    "meaning": "え、しゃしん"
+  },
+  {
+    "rank": 7,
+    "word": "computer",
+    "meaning": "コンピューター"
+  },
+  {
+    "rank": 8,
+    "word": "box",
+    "meaning": "はこ"
+  },
+  {
+    "rank": 9,
+    "word": "TV",
+    "meaning": "テレビ"
+  },
+  {
+    "rank": 10,
+    "word": "cap",
+    "meaning": "ぼうし"
+  },
+  {
+    "rank": 11,
+    "word": "bag",
+    "meaning": "かばん，バッグ"
+  },
+  {
+    "rank": 12,
+    "word": "letter",
+    "meaning": "てがみ"
+  },
+  {
+    "rank": 13,
+    "word": "bed",
+    "meaning": "ベッド"
+  },
+  {
+    "rank": 14,
+    "word": "camera",
+    "meaning": "カメラ"
+  },
+  {
+    "rank": 15,
+    "word": "door",
+    "meaning": "ドア，と"
+  },
+  {
+    "rank": 16,
+    "word": "pet",
+    "meaning": "ペット"
+  },
+  {
+    "rank": 17,
+    "word": "T-shirt",
+    "meaning": "ティーシャツ"
+  },
+  {
+    "rank": 18,
+    "word": "window",
+    "meaning": "まど"
+  },
+  {
+    "rank": 19,
+    "word": "e-mail",
+    "meaning": "イーメール"
+  },
+  {
+    "rank": 20,
+    "word": "bath",
+    "meaning": "にゅうよく"
+  },
+  {
+    "rank": 21,
+    "word": "watch",
+    "meaning": "うでどけい"
+  },
+  {
+    "rank": 22,
+    "word": "comic book",
+    "meaning": "まんがぼん"
+  },
+  {
+    "rank": 23,
+    "word": "umbrella",
+    "meaning": "かさ"
+  },
+  {
+    "rank": 24,
+    "word": "today",
+    "meaning": "きょう"
+  },
+  {
+    "rank": 25,
+    "word": "tomorrow",
+    "meaning": "あした"
+  },
+  {
+    "rank": 26,
+    "word": "day",
+    "meaning": "ひ"
+  },
+  {
+    "rank": 27,
+    "word": "morning",
+    "meaning": "あさ"
+  },
+  {
+    "rank": 28,
+    "word": "afternoon",
+    "meaning": "ごご"
+  },
+  {
+    "rank": 29,
+    "word": "evening",
+    "meaning": "ゆうがた"
+  },
+  {
+    "rank": 30,
+    "word": "night",
+    "meaning": "よる"
+  },
+  {
+    "rank": 31,
+    "word": "time",
+    "meaning": "じかん"
+  },
+  {
+    "rank": 32,
+    "word": "hour",
+    "meaning": "いちじかん"
+  },
+  {
+    "rank": 33,
+    "word": "noon",
+    "meaning": "しょうご"
+  },
+  {
+    "rank": 34,
+    "word": "date",
+    "meaning": "ひづけ"
+  },
+  {
+    "rank": 35,
+    "word": "week",
+    "meaning": "しゅう"
+  },
+  {
+    "rank": 36,
+    "word": "weekend",
+    "meaning": "しゅうまつ"
+  },
+  {
+    "rank": 37,
+    "word": "year",
+    "meaning": "とし"
+  },
+  {
+    "rank": 38,
+    "word": "school",
+    "meaning": "がっこう"
+  },
+  {
+    "rank": 39,
+    "word": "textbook",
+    "meaning": "きょうかしょ"
+  },
+  {
+    "rank": 40,
+    "word": "class",
+    "meaning": "じゅぎょう"
+  },
+  {
+    "rank": 41,
+    "word": "pen",
+    "meaning": "ペン"
+  },
+  {
+    "rank": 42,
+    "word": "homework",
+    "meaning": "しゅくだい"
+  },
+  {
+    "rank": 43,
+    "word": "name",
+    "meaning": "なまえ"
+  },
+  {
+    "rank": 44,
+    "word": "math",
+    "meaning": "すうがく"
+  },
+  {
+    "rank": 45,
+    "word": "student",
+    "meaning": "せいと"
+  },
+  {
+    "rank": 46,
+    "word": "teacher",
+    "meaning": "せんせい"
+  },
+  {
+    "rank": 47,
+    "word": "pencil",
+    "meaning": "えんぴつ"
+  },
+  {
+    "rank": 48,
+    "word": "club",
+    "meaning": "クラブ，ぶ"
+  },
+  {
+    "rank": 49,
+    "word": "eraser",
+    "meaning": "けしゴム"
+  },
+  {
+    "rank": 50,
+    "word": "dictionary",
+    "meaning": "じしょ"
+  },
+  {
+    "rank": 51,
+    "word": "gym",
+    "meaning": "たいいくかん、体育館"
+  },
+  {
+    "rank": 52,
+    "word": "science",
+    "meaning": "りか、理科"
+  },
+  {
+    "rank": 53,
+    "word": "Classroom",
+    "meaning": "きょうしつ、教室"
+  },
+  {
+    "rank": 54,
+    "word": "notebook",
+    "meaning": "ノート"
+  },
+  {
+    "rank": 55,
+    "word": "art",
+    "meaning": "びじゅつ、美術"
+  },
+  {
+    "rank": 56,
+    "word": "classmate",
+    "meaning": "どうきゅうせい、同級生，クラスメート"
+  },
+  {
+    "rank": 57,
+    "word": "number",
+    "meaning": "ばんごう、番号"
+  },
+  {
+    "rank": 58,
+    "word": "subject",
+    "meaning": "かもく、科目"
+  },
+  {
+    "rank": 59,
+    "word": "story",
+    "meaning": "はなし、話"
+  },
+  {
+    "rank": 60,
+    "word": "friend",
+    "meaning": "ともだち、友だち"
+  },
+  {
+    "rank": 61,
+    "word": "boy",
+    "meaning": "おとこのこ、男の子"
+  },
+  {
+    "rank": 62,
+    "word": "girl",
+    "meaning": "おんなのこ、女の子"
+  },
+  {
+    "rank": 63,
+    "word": "player",
+    "meaning": "せんしゅ、選手"
+  },
+  {
+    "rank": 64,
+    "word": "man",
+    "meaning": "だんせい、男性"
+  },
+  {
+    "rank": 65,
+    "word": "woman",
+    "meaning": "じょせい、女性"
+  },
+  {
+    "rank": 66,
+    "word": "people",
+    "meaning": "ひとびと、人々"
+  },
+  {
+    "rank": 67,
+    "word": "singer",
+    "meaning": "かしゅ、歌手"
+  },
+  {
+    "rank": 68,
+    "word": "park",
+    "meaning": "こうえん、公園"
+  },
+  {
+    "rank": 69,
+    "word": "train",
+    "meaning": "でんしゃ、電車"
+  },
+  {
+    "rank": 70,
+    "word": "bus",
+    "meaning": "バス"
+  },
+  {
+    "rank": 71,
+    "word": "library",
+    "meaning": "としょかん、図書館"
+  },
+  {
+    "rank": 72,
+    "word": "car",
+    "meaning": "くるま、車"
+  },
+  {
+    "rank": 73,
+    "word": "movie",
+    "meaning": "えいが、映画"
+  },
+  {
+    "rank": 74,
+    "word": "restaurant",
+    "meaning": "レストラン"
+  },
+  {
+    "rank": 75,
+    "word": "station",
+    "meaning": "えき、駅"
+  },
+  {
+    "rank": 76,
+    "word": "shop",
+    "meaning": "みせ、店"
+  },
+  {
+    "rank": 77,
+    "word": "zoo",
+    "meaning": "どうぶつえん、動物園"
+  },
+  {
+    "rank": 78,
+    "word": "city",
+    "meaning": "し、市"
+  },
+  {
+    "rank": 79,
+    "word": "museum",
+    "meaning": "はくぶんかん、博物館"
+  },
+  {
+    "rank": 80,
+    "word": "hospital",
+    "meaning": "びょういん、病院"
+  },
+  {
+    "rank": 81,
+    "word": "street",
+    "meaning": "とおり、通り"
+  },
+  {
+    "rank": 82,
+    "word": "breakfast",
+    "meaning": "ちょうしょく、朝食"
+  },
+  {
+    "rank": 83,
+    "word": "lunch",
+    "meaning": "ちゅうしょく、昼食"
+  },
+  {
+    "rank": 84,
+    "word": "dinner",
+    "meaning": "ゆうしょく、夕食"
+  },
+  {
+    "rank": 85,
+    "word": "cake",
+    "meaning": "ケーキ"
+  },
+  {
+    "rank": 86,
+    "word": "apple",
+    "meaning": "リンゴ"
+  },
+  {
+    "rank": 87,
+    "word": "food",
+    "meaning": "たべもの、食べ物"
+  },
+  {
+    "rank": 88,
+    "word": "ice cream",
+    "meaning": "アイスクリーム"
+  },
+  {
+    "rank": 89,
+    "word": "sandwich",
+    "meaning": "サンドイッチ"
+  },
+  {
+    "rank": 90,
+    "word": "rice",
+    "meaning": "ごはん"
+  },
+  {
+    "rank": 91,
+    "word": "coffee",
+    "meaning": "コーヒー"
+  },
+  {
+    "rank": 92,
+    "word": "milk",
+    "meaning": "ぎゅうにゅう、牛乳"
+  },
+  {
+    "rank": 93,
+    "word": "juice",
+    "meaning": "ジュース"
+  },
+  {
+    "rank": 94,
+    "word": "curry",
+    "meaning": "カレー"
+  },
+  {
+    "rank": 95,
+    "word": "egg",
+    "meaning": "たまご"
+  },
+  {
+    "rank": 96,
+    "word": "orange",
+    "meaning": "オレンジ"
+  },
+  {
+    "rank": 97,
+    "word": "brother",
+    "meaning": "あに、兄︰おとうと、弟"
+  },
+  {
+    "rank": 98,
+    "word": "sister",
+    "meaning": "あね、姉︰いもうと、妹"
+  },
+  {
+    "rank": 99,
+    "word": "father",
+    "meaning": "ちち、父"
+  },
+  {
+    "rank": 100,
+    "word": "mother",
+    "meaning": "はは、母"
+  },
+  {
+    "rank": 101,
+    "word": "family",
+    "meaning": "家族"
+  },
+  {
+    "rank": 102,
+    "word": "aunt",
+    "meaning": "おば"
+  },
+  {
+    "rank": 103,
+    "word": "uncle",
+    "meaning": "おじ"
+  },
+  {
+    "rank": 104,
+    "word": "daughter",
+    "meaning": "娘"
+  },
+  {
+    "rank": 105,
+    "word": "son",
+    "meaning": "息子"
+  },
+  {
+    "rank": 106,
+    "word": "tennis",
+    "meaning": "テニス"
+  },
+  {
+    "rank": 107,
+    "word": "baseball",
+    "meaning": "野球"
+  },
+  {
+    "rank": 108,
+    "word": "game",
+    "meaning": "試合，ゲーム"
+  },
+  {
+    "rank": 109,
+    "word": "soccer",
+    "meaning": "サッカー"
+  },
+  {
+    "rank": 110,
+    "word": "sport",
+    "meaning": "スポーツ"
+  },
+  {
+    "rank": 111,
+    "word": "bike",
+    "meaning": "自転車"
+  },
+  {
+    "rank": 112,
+    "word": "basketball",
+    "meaning": "バスケットボール"
+  },
+  {
+    "rank": 113,
+    "word": "team",
+    "meaning": "チーム"
+  },
+  {
+    "rank": 114,
+    "word": "volleyball",
+    "meaning": "バレーボール"
+  },
+  {
+    "rank": 115,
+    "word": "ball",
+    "meaning": "ボール"
+  },
+  {
+    "rank": 116,
+    "word": "dog",
+    "meaning": "犬"
+  },
+  {
+    "rank": 117,
+    "word": "bird",
+    "meaning": "鳥"
+  },
+  {
+    "rank": 118,
+    "word": "cat",
+    "meaning": "ネコ"
+  },
+  {
+    "rank": 119,
+    "word": "tree",
+    "meaning": "木"
+  },
+  {
+    "rank": 120,
+    "word": "animal",
+    "meaning": "動物"
+  },
+  {
+    "rank": 121,
+    "word": "fish",
+    "meaning": "魚"
+  },
+  {
+    "rank": 122,
+    "word": "mountain",
+    "meaning": "山"
+  },
+  {
+    "rank": 123,
+    "word": "rabbit",
+    "meaning": "ウサギ"
+  },
+  {
+    "rank": 124,
+    "word": "water",
+    "meaning": "水"
+  },
+  {
+    "rank": 125,
+    "word": "Sunday",
+    "meaning": "日曜日"
+  },
+  {
+    "rank": 126,
+    "word": "Monday",
+    "meaning": "月曜日"
+  },
+  {
+    "rank": 127,
+    "word": "Tuesday",
+    "meaning": "火曜日"
+  },
+  {
+    "rank": 128,
+    "word": "Wednesday",
+    "meaning": "水曜日"
+  },
+  {
+    "rank": 129,
+    "word": "Thursday",
+    "meaning": "木曜日"
+  },
+  {
+    "rank": 130,
+    "word": "Friday",
+    "meaning": "金曜日"
+  },
+  {
+    "rank": 131,
+    "word": "Saturday",
+    "meaning": ""
+  },
+  {
+    "rank": 132,
+    "word": "㈯",
+    "meaning": ""
+  },
+  {
+    "rank": 133,
+    "word": "month",
+    "meaning": "月，１か月"
+  },
+  {
+    "rank": 134,
+    "word": "January",
+    "meaning": "１月"
+  },
+  {
+    "rank": 135,
+    "word": "February",
+    "meaning": "２月"
+  },
+  {
+    "rank": 136,
+    "word": "March",
+    "meaning": "３月"
+  },
+  {
+    "rank": 137,
+    "word": "April",
+    "meaning": "４月"
+  },
+  {
+    "rank": 138,
+    "word": "May",
+    "meaning": "５月"
+  },
+  {
+    "rank": 139,
+    "word": "June",
+    "meaning": "６月"
+  },
+  {
+    "rank": 140,
+    "word": "July",
+    "meaning": "７月"
+  },
+  {
+    "rank": 141,
+    "word": "August",
+    "meaning": "８月"
+  },
+  {
+    "rank": 142,
+    "word": "September",
+    "meaning": "９月"
+  },
+  {
+    "rank": 143,
+    "word": "October",
+    "meaning": "10月"
+  },
+  {
+    "rank": 144,
+    "word": "November",
+    "meaning": "11月"
+  },
+  {
+    "rank": 145,
+    "word": "December",
+    "meaning": "12月"
+  },
+  {
+    "rank": 146,
+    "word": "color",
+    "meaning": "色"
+  },
+  {
+    "rank": 147,
+    "word": "blue",
+    "meaning": "青，青い"
+  },
+  {
+    "rank": 148,
+    "word": "black",
+    "meaning": "黒，黒い"
+  },
+  {
+    "rank": 149,
+    "word": "red",
+    "meaning": "赤，赤い"
+  },
+  {
+    "rank": 150,
+    "word": "white",
+    "meaning": "白，白い"
+  },
+  {
+    "rank": 151,
+    "word": "pink",
+    "meaning": "ピンク色，ピンク色の"
+  },
+  {
+    "rank": 152,
+    "word": "green",
+    "meaning": "みどり"
+  },
+  {
+    "rank": 153,
+    "word": "yellow",
+    "meaning": "きいろ"
+  },
+  {
+    "rank": 154,
+    "word": "brown",
+    "meaning": "ちゃいろ"
+  },
+  {
+    "rank": 155,
+    "word": "music",
+    "meaning": "おんがく"
+  },
+  {
+    "rank": 156,
+    "word": "piano",
+    "meaning": "ピアノ"
+  },
+  {
+    "rank": 157,
+    "word": "song",
+    "meaning": "歌 （うた）"
+  },
+  {
+    "rank": 158,
+    "word": "CD",
+    "meaning": "CD （シーディー）"
+  },
+  {
+    "rank": 159,
+    "word": "violin",
+    "meaning": "バイオリン"
+  },
+  {
+    "rank": 160,
+    "word": "guitar",
+    "meaning": "ギター"
+  },
+  {
+    "rank": 161,
+    "word": "show",
+    "meaning": "ショー"
+  },
+  {
+    "rank": 162,
+    "word": "spring",
+    "meaning": "春（はる）"
+  },
+  {
+    "rank": 163,
+    "word": "summer",
+    "meaning": "夏（なつ）"
+  },
+  {
+    "rank": 164,
+    "word": "fall",
+    "meaning": "秋"
+  },
+  {
+    "rank": 165,
+    "word": "winter",
+    "meaning": "冬（ふゆ）"
+  },
+  {
+    "rank": 166,
+    "word": "birthday",
+    "meaning": "誕生日（たんじょうび）"
+  },
+  {
+    "rank": 167,
+    "word": "festival",
+    "meaning": "祭り（まつり）"
+  },
+  {
+    "rank": 168,
+    "word": "present",
+    "meaning": "プレゼント"
+  },
+  {
+    "rank": 169,
+    "word": "dollar",
+    "meaning": "ドル"
+  },
+  {
+    "rank": 170,
+    "word": "English",
+    "meaning": "英語（えいご）"
+  },
+  {
+    "rank": 171,
+    "word": "Japanese",
+    "meaning": "日本語（にほんご）"
+  },
+  {
+    "rank": 172,
+    "word": "Australia",
+    "meaning": "オーストラリア"
+  },
+  {
+    "rank": 173,
+    "word": "Japan",
+    "meaning": "日本 (にほん)"
+  },
+  {
+    "rank": 174,
+    "word": "Canada",
+    "meaning": "カナダ"
+  },
+  {
+    "rank": 175,
+    "word": "country",
+    "meaning": "国（くに）"
+  },
+  {
+    "rank": 176,
+    "word": "hand",
+    "meaning": "手 (て)"
+  },
+  {
+    "rank": 177,
+    "word": "hair",
+    "meaning": "髪の毛（かみのけ）"
+  },
+  {
+    "rank": 178,
+    "word": "leg",
+    "meaning": "脚（あし）"
+  },
+  {
+    "rank": 179,
+    "word": "face",
+    "meaning": "顔（かお）"
+  },
+  {
+    "rank": 180,
+    "word": "head",
+    "meaning": "頭（あたま）"
+  },
+  {
+    "rank": 181,
+    "word": "mouth",
+    "meaning": "口（くち）"
+  },
+  {
+    "rank": 182,
+    "word": "finger",
+    "meaning": "指（ゆび）"
+  },
+  {
+    "rank": 183,
+    "word": "teeth",
+    "meaning": "歯（は）"
+  },
+  {
+    "rank": 184,
+    "word": "am, is, are, was, were",
+    "meaning": "～です。"
+  },
+  {
+    "rank": 185,
+    "word": "like",
+    "meaning": "好き（すき）"
+  },
+  {
+    "rank": 186,
+    "word": "have",
+    "meaning": "持っている（もっている）"
+  },
+  {
+    "rank": 187,
+    "word": "go",
+    "meaning": "行く （いく）"
+  },
+  {
+    "rank": 188,
+    "word": "come",
+    "meaning": "来る (くる)"
+  },
+  {
+    "rank": 189,
+    "word": "play",
+    "meaning": "遊ぶ（あそぶ）"
+  },
+  {
+    "rank": 190,
+    "word": "want",
+    "meaning": "ほしい"
+  },
+  {
+    "rank": 191,
+    "word": "make",
+    "meaning": "作る （つくる）"
+  },
+  {
+    "rank": 192,
+    "word": "open",
+    "meaning": "開ける（あける）"
+  },
+  {
+    "rank": 193,
+    "word": "close",
+    "meaning": "閉じる（とじる）"
+  },
+  {
+    "rank": 194,
+    "word": "see",
+    "meaning": "見える（みえる）"
+  },
+  {
+    "rank": 195,
+    "word": "eat",
+    "meaning": "食べる (たべる)"
+  },
+  {
+    "rank": 196,
+    "word": "read",
+    "meaning": "読む （よむ）"
+  },
+  {
+    "rank": 197,
+    "word": "look",
+    "meaning": "見る（みる）"
+  },
+  {
+    "rank": 198,
+    "word": "watch",
+    "meaning": "じっと見る（じっとみる）"
+  },
+  {
+    "rank": 199,
+    "word": "know",
+    "meaning": "知っている（しっている）"
+  },
+  {
+    "rank": 200,
+    "word": "speak",
+    "meaning": "話す (はなす)"
+  },
+  {
+    "rank": 201,
+    "word": "use",
+    "meaning": "使う （つかう）"
+  },
+  {
+    "rank": 202,
+    "word": "wash",
+    "meaning": "洗う（あらう）"
+  },
+  {
+    "rank": 203,
+    "word": "run",
+    "meaning": "走る（はしる）"
+  },
+  {
+    "rank": 204,
+    "word": "write",
+    "meaning": "書く（かく）"
+  },
+  {
+    "rank": 205,
+    "word": "take",
+    "meaning": "（のりものに）乗る（のる）"
+  },
+  {
+    "rank": 206,
+    "word": "live",
+    "meaning": "住む（すむ）"
+  },
+  {
+    "rank": 207,
+    "word": "sing",
+    "meaning": "歌う （うたう）"
+  },
+  {
+    "rank": 208,
+    "word": "get",
+    "meaning": "手に入れる（てにいれる）"
+  },
+  {
+    "rank": 209,
+    "word": "study",
+    "meaning": "勉強する（べんきょうする）"
+  },
+  {
+    "rank": 210,
+    "word": "walk",
+    "meaning": "歩く （あるく）"
+  },
+  {
+    "rank": 211,
+    "word": "listen",
+    "meaning": "聞く (きく)"
+  },
+  {
+    "rank": 212,
+    "word": "drink",
+    "meaning": "飲む （のむ）"
+  },
+  {
+    "rank": 213,
+    "word": "swim",
+    "meaning": "泳ぐ（およぐ）"
+  },
+  {
+    "rank": 214,
+    "word": "meet",
+    "meaning": "会う （あう）"
+  },
+  {
+    "rank": 215,
+    "word": "cook",
+    "meaning": "料理する（りょうりする）"
+  },
+  {
+    "rank": 216,
+    "word": "start",
+    "meaning": "始まる（はじめる）"
+  },
+  {
+    "rank": 217,
+    "word": "talk",
+    "meaning": "話をする（はなしをする）"
+  },
+  {
+    "rank": 218,
+    "word": "teach",
+    "meaning": "教える（おしえる）"
+  },
+  {
+    "rank": 219,
+    "word": "clean",
+    "meaning": "きれいにする、そうじする"
+  },
+  {
+    "rank": 220,
+    "word": "help",
+    "meaning": "助ける（たすける）"
+  },
+  {
+    "rank": 221,
+    "word": "love",
+    "meaning": "大好き（だいすき）"
+  },
+  {
+    "rank": 222,
+    "word": "sit",
+    "meaning": "すわる"
+  },
+  {
+    "rank": 223,
+    "word": "stand",
+    "meaning": "立つ（たつ）"
+  },
+  {
+    "rank": 224,
+    "word": "work",
+    "meaning": "働く（はたらく）"
+  },
+  {
+    "rank": 225,
+    "word": "jump",
+    "meaning": "とぶ"
+  },
+  {
+    "rank": 226,
+    "word": "brush",
+    "meaning": "みがく"
+  },
+  {
+    "rank": 227,
+    "word": "dance",
+    "meaning": "踊る（おどる）"
+  },
+  {
+    "rank": 228,
+    "word": "fly",
+    "meaning": "飛ぶ（とぶ）"
+  },
+  {
+    "rank": 229,
+    "word": "skate",
+    "meaning": "スケートする"
+  },
+  {
+    "rank": 230,
+    "word": "stop",
+    "meaning": "止める（とめる）"
+  },
+  {
+    "rank": 231,
+    "word": "enjoy",
+    "meaning": "楽しむ（たのしむ）"
+  },
+  {
+    "rank": 232,
+    "word": "practice",
+    "meaning": "練習する（れんしゅうする）"
+  },
+  {
+    "rank": 233,
+    "word": "put",
+    "meaning": "置く（おく）"
+  },
+  {
+    "rank": 234,
+    "word": "good",
+    "meaning": "いい"
+  },
+  {
+    "rank": 235,
+    "word": "old",
+    "meaning": "古い（ふるい）"
+  },
+  {
+    "rank": 236,
+    "word": "new",
+    "meaning": "あたらしい"
+  },
+  {
+    "rank": 237,
+    "word": "fine",
+    "meaning": "元気で，晴れた，すばらしい"
+  },
+  {
+    "rank": 238,
+    "word": "nice",
+    "meaning": "すてきな、よい"
+  },
+  {
+    "rank": 239,
+    "word": "right",
+    "meaning": "正しい（ただしい）"
+  },
+  {
+    "rank": 240,
+    "word": "big",
+    "meaning": "大きい （おおきい）"
+  },
+  {
+    "rank": 241,
+    "word": "small",
+    "meaning": "小さい （ちいさい）"
+  },
+  {
+    "rank": 242,
+    "word": "little",
+    "meaning": "少し（すこし）"
+  },
+  {
+    "rank": 243,
+    "word": "long",
+    "meaning": "長い（ながい）"
+  },
+  {
+    "rank": 244,
+    "word": "short",
+    "meaning": "短い"
+  },
+  {
+    "rank": 245,
+    "word": "high",
+    "meaning": "高い（たかい）"
+  },
+  {
+    "rank": 246,
+    "word": "cute",
+    "meaning": "かわいい"
+  },
+  {
+    "rank": 247,
+    "word": "next",
+    "meaning": "次の（つぎの）"
+  },
+  {
+    "rank": 248,
+    "word": "great",
+    "meaning": "すばらしい"
+  },
+  {
+    "rank": 249,
+    "word": "hungry",
+    "meaning": "おなかがすいた"
+  },
+  {
+    "rank": 250,
+    "word": "cold",
+    "meaning": "寒い（さむい）"
+  },
+  {
+    "rank": 251,
+    "word": "hot",
+    "meaning": "暑い（あつい）"
+  },
+  {
+    "rank": 252,
+    "word": "favorite",
+    "meaning": "大好きな（だいすきな）"
+  },
+  {
+    "rank": 253,
+    "word": "ready",
+    "meaning": "準備ができている（じゅんびができている）"
+  },
+  {
+    "rank": 254,
+    "word": "beautiful",
+    "meaning": "美しい（うつくしい）"
+  },
+  {
+    "rank": 255,
+    "word": "Chinese",
+    "meaning": "中国の（ちゅうごくの）"
+  },
+  {
+    "rank": 256,
+    "word": "last",
+    "meaning": "最後の（さいごの）"
+  },
+  {
+    "rank": 257,
+    "word": "wonderful",
+    "meaning": "すばらしい"
+  },
+  {
+    "rank": 258,
+    "word": "here",
+    "meaning": "ここ"
+  },
+  {
+    "rank": 259,
+    "word": "very",
+    "meaning": "とても"
+  },
+  {
+    "rank": 260,
+    "word": "too",
+    "meaning": "～も"
+  },
+  {
+    "rank": 261,
+    "word": "often",
+    "meaning": "よく"
+  },
+  {
+    "rank": 262,
+    "word": "now",
+    "meaning": "今 （いま）"
+  },
+  {
+    "rank": 263,
+    "word": "there",
+    "meaning": "そこ"
+  },
+  {
+    "rank": 264,
+    "word": "o'clock",
+    "meaning": "～時（じ）"
+  },
+  {
+    "rank": 265,
+    "word": "up",
+    "meaning": "上に（うえに）"
+  },
+  {
+    "rank": 266,
+    "word": "down",
+    "meaning": "下に（したに）"
+  },
+  {
+    "rank": 267,
+    "word": "fast",
+    "meaning": "速く（はやく）"
+  },
+  {
+    "rank": 268,
+    "word": "really",
+    "meaning": "本当に（ほんとうに）"
+  },
+  {
+    "rank": 269,
+    "word": "usually",
+    "meaning": "ふつう"
+  },
+  {
+    "rank": 270,
+    "word": "well",
+    "meaning": "うまく"
+  },
+  {
+    "rank": 271,
+    "word": "out",
+    "meaning": "外に（そとに）"
+  },
+  {
+    "rank": 272,
+    "word": "sometimes",
+    "meaning": "ときどき"
+  },
+  {
+    "rank": 273,
+    "word": "always",
+    "meaning": "いつも"
+  },
+  {
+    "rank": 274,
+    "word": "just",
+    "meaning": "ただ～"
+  },
+  {
+    "rank": 275,
+    "word": "only",
+    "meaning": "ただ～だけ"
+  },
+  {
+    "rank": 276,
+    "word": "around",
+    "meaning": "およそ"
+  },
+  {
+    "rank": 277,
+    "word": "also",
+    "meaning": "～も"
+  },
+  {
+    "rank": 278,
+    "word": "then",
+    "meaning": "それから"
+  },
+  {
+    "rank": 279,
+    "word": "in",
+    "meaning": "～の中に（のなかに）"
+  },
+  {
+    "rank": 280,
+    "word": "to",
+    "meaning": "～へ"
+  },
+  {
+    "rank": 281,
+    "word": "at",
+    "meaning": "～のところに"
+  },
+  {
+    "rank": 282,
+    "word": "on",
+    "meaning": "～の上に（のうえに）"
+  },
+  {
+    "rank": 283,
+    "word": "for",
+    "meaning": "～のために"
+  },
+  {
+    "rank": 284,
+    "word": "of",
+    "meaning": "～の"
+  },
+  {
+    "rank": 285,
+    "word": "by",
+    "meaning": "～のそばに"
+  },
+  {
+    "rank": 286,
+    "word": "with",
+    "meaning": "～と共に（とともに）"
+  },
+  {
+    "rank": 287,
+    "word": "from",
+    "meaning": "～から"
+  },
+  {
+    "rank": 288,
+    "word": "under",
+    "meaning": "～の下に（のしたに）"
+  },
+  {
+    "rank": 289,
+    "word": "after",
+    "meaning": "～の後に（のあとに）"
+  },
+  {
+    "rank": 290,
+    "word": "before",
+    "meaning": "～の前に（のまえに）"
+  },
+  {
+    "rank": 291,
+    "word": "about",
+    "meaning": "～について"
+  },
+  {
+    "rank": 292,
+    "word": "near",
+    "meaning": "～の近くに（のちかくに）"
+  },
+  {
+    "rank": 293,
+    "word": "the",
+    "meaning": "その"
+  },
+  {
+    "rank": 294,
+    "word": "a, an",
+    "meaning": "１つの（ひとつの）"
+  },
+  {
+    "rank": 295,
+    "word": "and",
+    "meaning": "そして"
+  },
+  {
+    "rank": 296,
+    "word": "or",
+    "meaning": "～～～か・・・"
+  },
+  {
+    "rank": 297,
+    "word": "but",
+    "meaning": "しかし"
+  },
+  {
+    "rank": 298,
+    "word": "so",
+    "meaning": "それで，だから"
+  },
+  {
+    "rank": 299,
+    "word": "can",
+    "meaning": "～することができる，～してもよい"
+  },
+  {
+    "rank": 300,
+    "word": "what",
+    "meaning": "何，何の，どんな"
+  },
+  {
+    "rank": 301,
+    "word": "how",
+    "meaning": "どうやって，どんなぐあいで，どれくらい"
+  },
+  {
+    "rank": 302,
+    "word": "where",
+    "meaning": "どこに，どこへ"
+  },
+  {
+    "rank": 303,
+    "word": "when",
+    "meaning": "いつ"
+  },
+  {
+    "rank": 304,
+    "word": "who",
+    "meaning": "だれ，だれが"
+  },
+  {
+    "rank": 305,
+    "word": "whose",
+    "meaning": "だれの"
+  },
+  {
+    "rank": 306,
+    "word": "which",
+    "meaning": "どちら，どれ，どの"
+  },
+  {
+    "rank": 307,
+    "word": "why",
+    "meaning": "なぜ，どうして"
+  },
+  {
+    "rank": 308,
+    "word": "everyone",
+    "meaning": "みんな，だれでも"
+  },
+  {
+    "rank": 309,
+    "word": "one",
+    "meaning": "（前に述べられた名詞の代わりとして）もの，１つ"
+  },
+  {
+    "rank": 310,
+    "word": "every",
+    "meaning": "毎～，あらゆる，すべての"
+  },
+  {
+    "rank": 311,
+    "word": "some",
+    "meaning": "いくつかの，いくらかの"
+  },
+  {
+    "rank": 312,
+    "word": "many",
+    "meaning": "たくさんの，多数の"
+  },
+  {
+    "rank": 313,
+    "word": "all",
+    "meaning": "すべての，あらゆる"
+  },
+  {
+    "rank": 314,
+    "word": "any",
+    "meaning": "（疑問文で）いくつかの，何か，（否定文で）少しも，何も"
+  },
+  {
+    "rank": 315,
+    "word": "Mr.",
+    "meaning": "～さん，～氏，～先生（男性の姓または姓名の前につける）"
+  },
+  {
+    "rank": 316,
+    "word": "Ms.",
+    "meaning": "～さん，～先生（結婚している，していないに関係なく，女性の姓または姓名の前につける）"
+  },
+  {
+    "rank": 317,
+    "word": "chair",
+    "meaning": "いす"
+  },
+  {
+    "rank": 318,
+    "word": "magazine",
+    "meaning": "雑誌"
+  },
+  {
+    "rank": 319,
+    "word": "phone",
+    "meaning": "電話"
+  },
+  {
+    "rank": 320,
+    "word": "bathroom",
+    "meaning": "浴室"
+  },
+  {
+    "rank": 321,
+    "word": "hat",
+    "meaning": "（縁のある）帽子"
+  },
+  {
+    "rank": 322,
+    "word": "cup",
+    "meaning": "カップ"
+  },
+  {
+    "rank": 323,
+    "word": "kitchen",
+    "meaning": "台所"
+  },
+  {
+    "rank": 324,
+    "word": "desk",
+    "meaning": "机"
+  },
+  {
+    "rank": 325,
+    "word": "basket",
+    "meaning": "かご"
+  },
+  {
+    "rank": 326,
+    "word": "garden",
+    "meaning": "庭"
+  },
+  {
+    "rank": 327,
+    "word": "bedroom",
+    "meaning": "寝室"
+  },
+  {
+    "rank": 328,
+    "word": "newspaper",
+    "meaning": "新聞"
+  },
+  {
+    "rank": 329,
+    "word": "shirt",
+    "meaning": "シャツ"
+  },
+  {
+    "rank": 330,
+    "word": "DVD",
+    "meaning": ""
+  },
+  {
+    "rank": 331,
+    "word": "DVD",
+    "meaning": ""
+  },
+  {
+    "rank": 332,
+    "word": "floor",
+    "meaning": "床，階"
+  },
+  {
+    "rank": 333,
+    "word": "glove",
+    "meaning": "（ふつう複数形で）手袋，グローブ"
+  },
+  {
+    "rank": 334,
+    "word": "living room",
+    "meaning": "居間"
+  },
+  {
+    "rank": 335,
+    "word": "shoe",
+    "meaning": "（ふつう複数形で）くつ"
+  },
+  {
+    "rank": 336,
+    "word": "jacket",
+    "meaning": "ジャケット，（腰までの）上着"
+  },
+  {
+    "rank": 337,
+    "word": "postcard",
+    "meaning": "はがき，絵はがき"
+  },
+  {
+    "rank": 338,
+    "word": "shower",
+    "meaning": "シャワー"
+  },
+  {
+    "rank": 339,
+    "word": "sofa",
+    "meaning": "ソファー"
+  },
+  {
+    "rank": 340,
+    "word": "album",
+    "meaning": "アルバム"
+  },
+  {
+    "rank": 341,
+    "word": "card",
+    "meaning": "カード，はがき"
+  },
+  {
+    "rank": 342,
+    "word": "curtain",
+    "meaning": "カーテン"
+  },
+  {
+    "rank": 343,
+    "word": "diary",
+    "meaning": "日記"
+  },
+  {
+    "rank": 344,
+    "word": "dining room",
+    "meaning": "食堂，ダイニングルーム"
+  },
+  {
+    "rank": 345,
+    "word": "radio",
+    "meaning": "ラジオ"
+  },
+  {
+    "rank": 346,
+    "word": "towel",
+    "meaning": "タオル"
+  },
+  {
+    "rank": 347,
+    "word": "backpack",
+    "meaning": "バックパック"
+  },
+  {
+    "rank": 348,
+    "word": "calendar",
+    "meaning": "カレンダー"
+  },
+  {
+    "rank": 349,
+    "word": "coat",
+    "meaning": "コート"
+  },
+  {
+    "rank": 350,
+    "word": "pocket",
+    "meaning": "ポケット"
+  },
+  {
+    "rank": 351,
+    "word": "skirt",
+    "meaning": "スカート"
+  },
+  {
+    "rank": 352,
+    "word": "toy",
+    "meaning": "おもちゃ"
+  },
+  {
+    "rank": 353,
+    "word": "wall",
+    "meaning": "壁"
+  },
+  {
+    "rank": 354,
+    "word": "minute",
+    "meaning": "（時間の）分"
+  },
+  {
+    "rank": 355,
+    "word": "pencil case",
+    "meaning": "筆箱"
+  },
+  {
+    "rank": 356,
+    "word": "lesson",
+    "meaning": "レッスン，授業"
+  },
+  {
+    "rank": 357,
+    "word": "page",
+    "meaning": "ページ"
+  },
+  {
+    "rank": 358,
+    "word": "pool",
+    "meaning": "プール"
+  },
+  {
+    "rank": 359,
+    "word": "cafeteria",
+    "meaning": "カフェテリア"
+  },
+  {
+    "rank": 360,
+    "word": "test",
+    "meaning": "テスト"
+  },
+  {
+    "rank": 361,
+    "word": "P.E.",
+    "meaning": "体育"
+  },
+  {
+    "rank": 362,
+    "word": "ruler",
+    "meaning": "定規"
+  },
+  {
+    "rank": 363,
+    "word": "blackboard",
+    "meaning": "黒板"
+  },
+  {
+    "rank": 364,
+    "word": "ground",
+    "meaning": "グラウンド，地面"
+  },
+  {
+    "rank": 365,
+    "word": "history",
+    "meaning": "歴史"
+  },
+  {
+    "rank": 366,
+    "word": "idea",
+    "meaning": "考え"
+  },
+  {
+    "rank": 367,
+    "word": "children",
+    "meaning": "child（子ども）の複数形"
+  },
+  {
+    "rank": 368,
+    "word": "doctor",
+    "meaning": "医者"
+  },
+  {
+    "rank": 369,
+    "word": "pilot",
+    "meaning": "パイロット"
+  },
+  {
+    "rank": 370,
+    "word": "waiter",
+    "meaning": "ウエーター"
+  },
+  {
+    "rank": 371,
+    "word": "cook",
+    "meaning": "コック，（を）料理する"
+  },
+  {
+    "rank": 372,
+    "word": "lady",
+    "meaning": "ご婦人，女のかた"
+  },
+  {
+    "rank": 373,
+    "word": "police officer",
+    "meaning": "警察官"
+  },
+  {
+    "rank": 374,
+    "word": "dancer",
+    "meaning": "ダンサー"
+  },
+  {
+    "rank": 375,
+    "word": "nurse",
+    "meaning": "看護師"
+  },
+  {
+    "rank": 376,
+    "word": "pianist",
+    "meaning": "ピアニスト"
+  },
+  {
+    "rank": 377,
+    "word": "driver",
+    "meaning": "運転手"
+  },
+  {
+    "rank": 378,
+    "word": "firefighter",
+    "meaning": "消防士"
+  },
+  {
+    "rank": 379,
+    "word": "store",
+    "meaning": "店"
+  },
+  {
+    "rank": 380,
+    "word": "supermarket",
+    "meaning": "スーパーマーケット"
+  },
+  {
+    "rank": 381,
+    "word": "office",
+    "meaning": "会社，事務所"
+  },
+  {
+    "rank": 382,
+    "word": "department store",
+    "meaning": "デパート，百貨店"
+  },
+  {
+    "rank": 383,
+    "word": "ship",
+    "meaning": "船"
+  },
+  {
+    "rank": 384,
+    "word": "ticket",
+    "meaning": "チケット，切符"
+  },
+  {
+    "rank": 385,
+    "word": "airport",
+    "meaning": "空港"
+  },
+  {
+    "rank": 386,
+    "word": "bookstore",
+    "meaning": "書店"
+  },
+  {
+    "rank": 387,
+    "word": "bridge",
+    "meaning": "橋"
+  },
+  {
+    "rank": 388,
+    "word": "building",
+    "meaning": "建物，ビル"
+  },
+  {
+    "rank": 389,
+    "word": "tower",
+    "meaning": "タワー，塔"
+  },
+  {
+    "rank": 390,
+    "word": "bank",
+    "meaning": "銀行"
+  },
+  {
+    "rank": 391,
+    "word": "bus stop",
+    "meaning": "バス停"
+  },
+  {
+    "rank": 392,
+    "word": "gas station",
+    "meaning": "ガソリンスタンド"
+  },
+  {
+    "rank": 393,
+    "word": "hotel",
+    "meaning": "ホテル"
+  },
+  {
+    "rank": 394,
+    "word": "plane",
+    "meaning": "飛行機"
+  },
+  {
+    "rank": 395,
+    "word": "post office",
+    "meaning": "郵便局"
+  },
+  {
+    "rank": 396,
+    "word": "police station",
+    "meaning": "警察署"
+  },
+  {
+    "rank": 397,
+    "word": "taxi",
+    "meaning": "タクシー"
+  },
+  {
+    "rank": 398,
+    "word": "tea",
+    "meaning": "茶，紅茶"
+  },
+  {
+    "rank": 399,
+    "word": "pizza",
+    "meaning": "ピザ"
+  },
+  {
+    "rank": 400,
+    "word": "plate",
+    "meaning": "（浅い）皿"
+  },
+  {
+    "rank": 401,
+    "word": "potato",
+    "meaning": "ジャガイモ"
+  },
+  {
+    "rank": 402,
+    "word": "cookie",
+    "meaning": "クッキー"
+  },
+  {
+    "rank": 403,
+    "word": "fruit",
+    "meaning": "果物"
+  },
+  {
+    "rank": 404,
+    "word": "spoon",
+    "meaning": "スプーン"
+  },
+  {
+    "rank": 405,
+    "word": "bread",
+    "meaning": "パン"
+  },
+  {
+    "rank": 406,
+    "word": "dish",
+    "meaning": "皿"
+  },
+  {
+    "rank": 407,
+    "word": "grape",
+    "meaning": "ブドウ"
+  },
+  {
+    "rank": 408,
+    "word": "strawberry",
+    "meaning": "イチゴ"
+  },
+  {
+    "rank": 409,
+    "word": "banana",
+    "meaning": "バナナ"
+  },
+  {
+    "rank": 410,
+    "word": "chocolate",
+    "meaning": "チョコレート"
+  },
+  {
+    "rank": 411,
+    "word": "dessert",
+    "meaning": "デザート"
+  },
+  {
+    "rank": 412,
+    "word": "hamburger",
+    "meaning": "ハンバーガー"
+  },
+  {
+    "rank": 413,
+    "word": "jam",
+    "meaning": "ジャム"
+  },
+  {
+    "rank": 414,
+    "word": "lunchtime",
+    "meaning": "昼食時間，ランチタイム"
+  },
+  {
+    "rank": 415,
+    "word": "meat",
+    "meaning": "肉"
+  },
+  {
+    "rank": 416,
+    "word": "tomato",
+    "meaning": "トマト"
+  },
+  {
+    "rank": 417,
+    "word": "vegetable",
+    "meaning": "（ふつう複数形で）野菜"
+  },
+  {
+    "rank": 418,
+    "word": "carrot",
+    "meaning": "ニンジン"
+  },
+  {
+    "rank": 419,
+    "word": "chopstick",
+    "meaning": "（ふつう複数形で）はし"
+  },
+  {
+    "rank": 420,
+    "word": "cucumber",
+    "meaning": "キュウリ"
+  },
+  {
+    "rank": 421,
+    "word": "fork",
+    "meaning": "フォーク"
+  },
+  {
+    "rank": 422,
+    "word": "glass",
+    "meaning": "コップ，グラス"
+  },
+  {
+    "rank": 423,
+    "word": "onion",
+    "meaning": "タマネギ"
+  },
+  {
+    "rank": 424,
+    "word": "soup",
+    "meaning": "スープ"
+  },
+  {
+    "rank": 425,
+    "word": "pie",
+    "meaning": "パイ"
+  },
+  {
+    "rank": 426,
+    "word": "pumpkin",
+    "meaning": "カボチャ"
+  },
+  {
+    "rank": 427,
+    "word": "salad",
+    "meaning": "サラダ"
+  },
+  {
+    "rank": 428,
+    "word": "grandmother",
+    "meaning": "祖母"
+  },
+  {
+    "rank": 429,
+    "word": "grandfather",
+    "meaning": "祖父"
+  },
+  {
+    "rank": 430,
+    "word": "racket",
+    "meaning": "ラケット"
+  },
+  {
+    "rank": 431,
+    "word": "score",
+    "meaning": "得点，スコア"
+  },
+  {
+    "rank": 432,
+    "word": "softball",
+    "meaning": "ソフトボール"
+  },
+  {
+    "rank": 433,
+    "word": "bicycle",
+    "meaning": "自転車"
+  },
+  {
+    "rank": 434,
+    "word": "football",
+    "meaning": "フットボール"
+  },
+  {
+    "rank": 435,
+    "word": "badminton",
+    "meaning": "バドミントン"
+  },
+  {
+    "rank": 436,
+    "word": "flower",
+    "meaning": "花"
+  },
+  {
+    "rank": 437,
+    "word": "snow",
+    "meaning": "雪，雪が降る"
+  },
+  {
+    "rank": 438,
+    "word": "hamster",
+    "meaning": "ハムスター"
+  },
+  {
+    "rank": 439,
+    "word": "river",
+    "meaning": "川"
+  },
+  {
+    "rank": 440,
+    "word": "rose",
+    "meaning": "バラ"
+  },
+  {
+    "rank": 441,
+    "word": "sea",
+    "meaning": "（ふつうthe ～で）海"
+  },
+  {
+    "rank": 442,
+    "word": "sky",
+    "meaning": "（ふつうthe ～で）空"
+  },
+  {
+    "rank": 443,
+    "word": "weather",
+    "meaning": "天気"
+  },
+  {
+    "rank": 444,
+    "word": "beach",
+    "meaning": "浜辺，海辺"
+  },
+  {
+    "rank": 445,
+    "word": "dolphin",
+    "meaning": "イルカ"
+  },
+  {
+    "rank": 446,
+    "word": "elephant",
+    "meaning": "ゾウ"
+  },
+  {
+    "rank": 447,
+    "word": "sheep",
+    "meaning": "ヒツジ"
+  },
+  {
+    "rank": 448,
+    "word": "monkey",
+    "meaning": "サル"
+  },
+  {
+    "rank": 449,
+    "word": "purple",
+    "meaning": "紫色，紫色の"
+  },
+  {
+    "rank": 450,
+    "word": "concert",
+    "meaning": "コンサート"
+  },
+  {
+    "rank": 451,
+    "word": "flute",
+    "meaning": "フルート"
+  },
+  {
+    "rank": 452,
+    "word": "party",
+    "meaning": "パーティー"
+  },
+  {
+    "rank": 453,
+    "word": "meter",
+    "meaning": "メートル"
+  },
+  {
+    "rank": 454,
+    "word": "yen",
+    "meaning": "円"
+  },
+  {
+    "rank": 455,
+    "word": "kilogram",
+    "meaning": "キログラム"
+  },
+  {
+    "rank": 456,
+    "word": "centimeter",
+    "meaning": "センチメートル"
+  },
+  {
+    "rank": 457,
+    "word": "cent",
+    "meaning": "セント"
+  },
+  {
+    "rank": 458,
+    "word": "French",
+    "meaning": "フランス語"
+  },
+  {
+    "rank": 459,
+    "word": "Singapore",
+    "meaning": "シンガポール"
+  },
+  {
+    "rank": 460,
+    "word": "world",
+    "meaning": "（the ～で）世界"
+  },
+  {
+    "rank": 461,
+    "word": "foot",
+    "meaning": "足"
+  },
+  {
+    "rank": 462,
+    "word": "ear",
+    "meaning": "耳"
+  },
+  {
+    "rank": 463,
+    "word": "shoulder",
+    "meaning": "肩"
+  },
+  {
+    "rank": 464,
+    "word": "buy",
+    "meaning": "を買う"
+  },
+  {
+    "rank": 465,
+    "word": "cut",
+    "meaning": "を切る"
+  },
+  {
+    "rank": 466,
+    "word": "sleep",
+    "meaning": "眠る"
+  },
+  {
+    "rank": 467,
+    "word": "need",
+    "meaning": "を必要とする"
+  },
+  {
+    "rank": 468,
+    "word": "paint",
+    "meaning": "（絵の具で）を描く"
+  },
+  {
+    "rank": 469,
+    "word": "rain",
+    "meaning": "雨が降る，雨"
+  },
+  {
+    "rank": 470,
+    "word": "call",
+    "meaning": "に電話をかける"
+  },
+  {
+    "rank": 471,
+    "word": "camp",
+    "meaning": "キャンプをする"
+  },
+  {
+    "rank": 472,
+    "word": "find",
+    "meaning": "を見つける"
+  },
+  {
+    "rank": 473,
+    "word": "ski",
+    "meaning": "スキーをする"
+  },
+  {
+    "rank": 474,
+    "word": "think",
+    "meaning": "（を）思う"
+  },
+  {
+    "rank": 475,
+    "word": "tall",
+    "meaning": "背の高い，高い，身長［高さ］が～の"
+  },
+  {
+    "rank": 476,
+    "word": "easy",
+    "meaning": "簡単な"
+  },
+  {
+    "rank": 477,
+    "word": "happy",
+    "meaning": "幸せな"
+  },
+  {
+    "rank": 478,
+    "word": "pretty",
+    "meaning": "きれいな，かわいらしい"
+  },
+  {
+    "rank": 479,
+    "word": "sunny",
+    "meaning": "太陽の照っている"
+  },
+  {
+    "rank": 480,
+    "word": "cloudy",
+    "meaning": "くもった，くもりの"
+  },
+  {
+    "rank": 481,
+    "word": "rainy",
+    "meaning": "雨の"
+  },
+  {
+    "rank": 482,
+    "word": "windy",
+    "meaning": "風の強い，風の吹く"
+  },
+  {
+    "rank": 483,
+    "word": "snowy",
+    "meaning": "雪の降る"
+  },
+  {
+    "rank": 484,
+    "word": "young",
+    "meaning": "若い"
+  },
+  {
+    "rank": 485,
+    "word": "large",
+    "meaning": "大きい"
+  },
+  {
+    "rank": 486,
+    "word": "slow",
+    "meaning": "遅い"
+  },
+  {
+    "rank": 487,
+    "word": "fast",
+    "meaning": "速い，速く"
+  },
+  {
+    "rank": 488,
+    "word": "busy",
+    "meaning": "忙しい"
+  },
+  {
+    "rank": 489,
+    "word": "soft",
+    "meaning": "やわらかい"
+  },
+  {
+    "rank": 490,
+    "word": "sweet",
+    "meaning": "甘い"
+  },
+  {
+    "rank": 491,
+    "word": "warm",
+    "meaning": "暖かい"
+  },
+  {
+    "rank": 492,
+    "word": "sleepy",
+    "meaning": "眠い"
+  },
+  {
+    "rank": 493,
+    "word": "Italian",
+    "meaning": "イタリアの"
+  },
+  {
+    "rank": 494,
+    "word": "together",
+    "meaning": "いっしょに"
+  },
+  {
+    "rank": 495,
+    "word": "Mrs.",
+    "meaning": "～さん，～夫人，～先生（結婚している女性の姓または姓名の前につける）"
+  },
+  {
+    "rank": 496,
+    "word": "a.m.",
+    "meaning": "午前"
+  },
+  {
+    "rank": 497,
+    "word": "one",
+    "meaning": ""
+  },
+  {
+    "rank": 498,
+    "word": "1.0",
+    "meaning": ""
+  },
+  {
+    "rank": 499,
+    "word": "two",
+    "meaning": ""
+  },
+  {
+    "rank": 500,
+    "word": "2.0",
+    "meaning": ""
+  },
+  {
+    "rank": 501,
+    "word": "three",
+    "meaning": ""
+  },
+  {
+    "rank": 502,
+    "word": "3.0",
+    "meaning": ""
+  },
+  {
+    "rank": 503,
+    "word": "four",
+    "meaning": ""
+  },
+  {
+    "rank": 504,
+    "word": "4.0",
+    "meaning": ""
+  },
+  {
+    "rank": 505,
+    "word": "five",
+    "meaning": ""
+  },
+  {
+    "rank": 506,
+    "word": "5.0",
+    "meaning": ""
+  },
+  {
+    "rank": 507,
+    "word": "six",
+    "meaning": ""
+  },
+  {
+    "rank": 508,
+    "word": "6.0",
+    "meaning": ""
+  },
+  {
+    "rank": 509,
+    "word": "seven",
+    "meaning": ""
+  },
+  {
+    "rank": 510,
+    "word": "7.0",
+    "meaning": ""
+  },
+  {
+    "rank": 511,
+    "word": "eight",
+    "meaning": ""
+  },
+  {
+    "rank": 512,
+    "word": "8.0",
+    "meaning": ""
+  },
+  {
+    "rank": 513,
+    "word": "nine",
+    "meaning": ""
+  },
+  {
+    "rank": 514,
+    "word": "9.0",
+    "meaning": ""
+  },
+  {
+    "rank": 515,
+    "word": "ten",
+    "meaning": ""
+  },
+  {
+    "rank": 516,
+    "word": "10.0",
+    "meaning": ""
+  },
+  {
+    "rank": 517,
+    "word": "eleven",
+    "meaning": ""
+  },
+  {
+    "rank": 518,
+    "word": "11.0",
+    "meaning": ""
+  },
+  {
+    "rank": 519,
+    "word": "twelve",
+    "meaning": ""
+  },
+  {
+    "rank": 520,
+    "word": "12.0",
+    "meaning": ""
+  },
+  {
+    "rank": 521,
+    "word": "thirteen",
+    "meaning": ""
+  },
+  {
+    "rank": 522,
+    "word": "13.0",
+    "meaning": ""
+  },
+  {
+    "rank": 523,
+    "word": "fourteen",
+    "meaning": ""
+  },
+  {
+    "rank": 524,
+    "word": "14.0",
+    "meaning": ""
+  },
+  {
+    "rank": 525,
+    "word": "fifteen",
+    "meaning": ""
+  },
+  {
+    "rank": 526,
+    "word": "15.0",
+    "meaning": ""
+  },
+  {
+    "rank": 527,
+    "word": "sixteen",
+    "meaning": ""
+  },
+  {
+    "rank": 528,
+    "word": "16.0",
+    "meaning": ""
+  },
+  {
+    "rank": 529,
+    "word": "seventeen",
+    "meaning": ""
+  },
+  {
+    "rank": 530,
+    "word": "17.0",
+    "meaning": ""
+  },
+  {
+    "rank": 531,
+    "word": "eighteen",
+    "meaning": ""
+  },
+  {
+    "rank": 532,
+    "word": "18.0",
+    "meaning": ""
+  },
+  {
+    "rank": 533,
+    "word": "nineteen",
+    "meaning": ""
+  },
+  {
+    "rank": 534,
+    "word": "19.0",
+    "meaning": ""
+  },
+  {
+    "rank": 535,
+    "word": "twenty",
+    "meaning": ""
+  },
+  {
+    "rank": 536,
+    "word": "20.0",
+    "meaning": ""
+  },
+  {
+    "rank": 537,
+    "word": "thirty",
+    "meaning": ""
+  },
+  {
+    "rank": 538,
+    "word": "30.0",
+    "meaning": ""
+  },
+  {
+    "rank": 539,
+    "word": "forty",
+    "meaning": ""
+  },
+  {
+    "rank": 540,
+    "word": "40.0",
+    "meaning": ""
+  },
+  {
+    "rank": 541,
+    "word": "fifty",
+    "meaning": ""
+  },
+  {
+    "rank": 542,
+    "word": "50.0",
+    "meaning": ""
+  },
+  {
+    "rank": 543,
+    "word": "sixty",
+    "meaning": ""
+  },
+  {
+    "rank": 544,
+    "word": "60.0",
+    "meaning": ""
+  },
+  {
+    "rank": 545,
+    "word": "seventy",
+    "meaning": ""
+  },
+  {
+    "rank": 546,
+    "word": "70.0",
+    "meaning": ""
+  },
+  {
+    "rank": 547,
+    "word": "eighty",
+    "meaning": ""
+  },
+  {
+    "rank": 548,
+    "word": "80.0",
+    "meaning": ""
+  },
+  {
+    "rank": 549,
+    "word": "ninety",
+    "meaning": ""
+  },
+  {
+    "rank": 550,
+    "word": "90.0",
+    "meaning": ""
+  },
+  {
+    "rank": 551,
+    "word": "hundred",
+    "meaning": ""
+  },
+  {
+    "rank": 552,
+    "word": "100.0",
+    "meaning": ""
+  },
+  {
+    "rank": 553,
+    "word": "thousand",
+    "meaning": ""
+  },
+  {
+    "rank": 554,
+    "word": "1000.0",
+    "meaning": ""
+  },
+  {
+    "rank": 555,
+    "word": "first",
+    "meaning": "１番目の"
+  },
+  {
+    "rank": 556,
+    "word": "second",
+    "meaning": "２番目の"
+  },
+  {
+    "rank": 557,
+    "word": "third",
+    "meaning": "３番目の"
+  },
+  {
+    "rank": 558,
+    "word": "fourth",
+    "meaning": "４番目の"
+  },
+  {
+    "rank": 559,
+    "word": "fifth",
+    "meaning": "５番目の"
+  },
+  {
+    "rank": 560,
+    "word": "sixth",
+    "meaning": "６番目の"
+  },
+  {
+    "rank": 561,
+    "word": "seventh",
+    "meaning": "７番目の"
+  },
+  {
+    "rank": 562,
+    "word": "eighth",
+    "meaning": "８番目の"
+  },
+  {
+    "rank": 563,
+    "word": "ninth",
+    "meaning": "９番目の"
+  },
+  {
+    "rank": 564,
+    "word": "tenth",
+    "meaning": "１０番目の"
+  },
+  {
+    "rank": 565,
+    "word": "eleventh",
+    "meaning": "１１番目の"
+  },
+  {
+    "rank": 566,
+    "word": "twelfth",
+    "meaning": "１２番目の"
+  },
+  {
+    "rank": 567,
+    "word": "I",
+    "meaning": "私は"
+  },
+  {
+    "rank": 568,
+    "word": "my",
+    "meaning": "私の"
+  },
+  {
+    "rank": 569,
+    "word": "me",
+    "meaning": "私を［に］"
+  },
+  {
+    "rank": 570,
+    "word": "mine",
+    "meaning": "私のもの"
+  },
+  {
+    "rank": 571,
+    "word": "you",
+    "meaning": "あなたは"
+  },
+  {
+    "rank": 572,
+    "word": "your",
+    "meaning": "あなたの"
+  },
+  {
+    "rank": 573,
+    "word": "you",
+    "meaning": "あなたを［に］"
+  },
+  {
+    "rank": 574,
+    "word": "yours",
+    "meaning": "あなたのもの"
+  },
+  {
+    "rank": 575,
+    "word": "he",
+    "meaning": "彼は"
+  },
+  {
+    "rank": 576,
+    "word": "his",
+    "meaning": "彼の"
+  },
+  {
+    "rank": 577,
+    "word": "him",
+    "meaning": "彼を［に］"
+  },
+  {
+    "rank": 578,
+    "word": "his",
+    "meaning": "彼のもの"
+  },
+  {
+    "rank": 579,
+    "word": "she",
+    "meaning": "彼女は"
+  },
+  {
+    "rank": 580,
+    "word": "her",
+    "meaning": "彼女の"
+  },
+  {
+    "rank": 581,
+    "word": "her",
+    "meaning": "彼女を［に］"
+  },
+  {
+    "rank": 582,
+    "word": "hers",
+    "meaning": "彼女のもの"
+  },
+  {
+    "rank": 583,
+    "word": "it",
+    "meaning": "それは"
+  },
+  {
+    "rank": 584,
+    "word": "its",
+    "meaning": "それの"
+  },
+  {
+    "rank": 585,
+    "word": "it",
+    "meaning": "それを［に］"
+  },
+  {
+    "rank": 586,
+    "word": "we",
+    "meaning": "私たちは"
+  },
+  {
+    "rank": 587,
+    "word": "our",
+    "meaning": "私たちの"
+  },
+  {
+    "rank": 588,
+    "word": "us",
+    "meaning": "私たちを［に］"
+  },
+  {
+    "rank": 589,
+    "word": "ours",
+    "meaning": "私たちのもの"
+  },
+  {
+    "rank": 590,
+    "word": "they",
+    "meaning": "彼らは，彼女らは"
+  },
+  {
+    "rank": 591,
+    "word": "their",
+    "meaning": "彼らの，彼女らの"
+  },
+  {
+    "rank": 592,
+    "word": "them",
+    "meaning": "彼らを［に］，彼女らを［に］"
+  },
+  {
+    "rank": 593,
+    "word": "theirs",
+    "meaning": "彼らのもの，彼女らのもの"
+  },
+  {
+    "rank": 594,
+    "word": "this",
+    "meaning": "これ，この"
+  },
+  {
+    "rank": 595,
+    "word": "that",
+    "meaning": "あれ，それ，あの，その"
+  },
+  {
+    "rank": 596,
+    "word": "these",
+    "meaning": "これら，これらの"
+  },
+  {
+    "rank": 597,
+    "word": "those",
+    "meaning": "あれら，それら，あれらの，それらの"
+  }
+]
