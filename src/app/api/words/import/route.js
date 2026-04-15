@@ -87,21 +87,35 @@ export async function POST(request) {
       parsedWords.push({ english, meanings, example: exampleSentence, exampleJa, source, listType, rank, allowReassign });
     }
 
-    // ===== Phase 2: TTS音声を並列生成（単語音声のみ） =====
+    // ===== Phase 2: 音声URL設定（静的ファイル優先、なければTTS生成） =====
     const origin = request.headers.get('origin') || request.headers.get('host');
     const baseUrl = origin?.startsWith('http') ? origin : `https://${origin}`;
+
+    // listType → 音声ディレクトリ名のマッピング。
+    // public/audio/ 以下のディレクトリ名と一致させる
+    const audioDirMap = {
+      '5kyu': '5kyu', '4kyu': '4kyu', '3kyu': '3kyu', '準2kyu': '準2kyu', '2kyu': '2kyu',
+      'pre1kyu': 'pre1kyu',
+      '5kyu_pass': '5kyu_pass', '4kyu_pass': '4kyu_pass', '3kyu_pass': '3kyu_pass',
+      'pre2kyu_pass': 'pre2kyu_pass', '2kyu5th': '2kyu5th',
+      'ex2kyu_tango': 'ex2kyu_tango', 'ex2kyu_idiom': 'ex2kyu_idiom', 'ex_pre1kyu': 'ex_pre1kyu',
+      'sys5th': 'sys5th', 'leap': 'leap', 'target1900': 'target1900',
+      'target1400extra': 'target1400extra', 'idiom1000': 'idiom1000',
+      'sunshine1': 'sunshine1', 'sunshine2': 'sunshine2', 'sunshine3': 'sunshine3',
+    };
 
     await Promise.all(parsedWords.map(async (pw) => {
       // 事前生成済みの静的ファイルがあればAPI呼び出しをスキップ
       if (pw.listType && pw.rank) {
-        pw.wordAudioUrl = `/audio/${pw.listType}/${pw.rank}_word.mp3`;
+        const audioDir = audioDirMap[pw.listType] || pw.listType;
+        pw.wordAudioUrl = `/audio/${encodeURIComponent(audioDir)}/${pw.rank}_word.mp3`;
         if (pw.example) {
-          pw.sentenceAudioUrl = `/audio/${pw.listType}/${pw.rank}_example.mp3`;
+          pw.sentenceAudioUrl = `/audio/${encodeURIComponent(audioDir)}/${pw.rank}_example.mp3`;
         }
         return;
       }
 
-      // 単語音声を生成
+      // 静的ファイルがない場合のみTTS API呼び出し（フォールバック）
       try {
         const res = await fetch(`${baseUrl}/api/tts`, {
           method: 'POST',
@@ -114,7 +128,6 @@ export async function POST(request) {
         }
       } catch {}
 
-      // 例文音声を生成（例文がある場合のみ）
       if (pw.example) {
         try {
           const res = await fetch(`${baseUrl}/api/tts`, {

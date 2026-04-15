@@ -3498,5 +3498,684 @@
     "meanings": "",
     "example": "I have two cats.",
     "exampleJa": "私は猫を2匹飼っています。"
+  },
+  {
+    "rank": 501,
+    "english": "three",
+    "meanings": "3",
+    "example": "I have three pens.",
+    "exampleJa": "私はペンを3本持っています。"
+  },
+  {
+    "rank": 502,
+    "english": "3.0",
+    "meanings": "3",
+    "example": "I have three apples.",
+    "exampleJa": "私はリンゴを3つ持っています。"
+  },
+  {
+    "rank": 503,
+    "english": "four",
+    "meanings": "4",
+    "example": "My family has four members.",
+    "exampleJa": "私の家族は4人です。"
+  },
+  {
+    "rank": 504,
+    "english": "4.0",
+    "meanings": "4",
+    "example": "I have four books.",
+    "exampleJa": "私は本を4冊持っています。"
+  },
+  {
+    "rank": 505,
+    "english": "five",
+    "meanings": "5",
+    "example": "Please open page five.",
+    "exampleJa": "5ページを開いてください。"
+  },
+  {
+    "rank": 506,
+    "english": "5.0",
+    "meanings": "5",
+    "example": "I can count to five.",
+    "exampleJa": "私は5まで数えられます。"
+  },
+  {
+    "rank": 507,
+    "english": "six",
+    "meanings": "6",
+    "example": "It is six o'clock now.",
+    "exampleJa": "今、6時です。"
+  },
+  {
+    "rank": 508,
+    "english": "6.0",
+    "meanings": "6",
+    "example": "My brother is six.",
+    "exampleJa": "私の弟は6歳です。"
+  },
+  {
+    "rank": 509,
+    "english": "seven",
+    "meanings": "7",
+    "example": "There are seven days in a week.",
+    "exampleJa": "1週間には7日あります。"
+  },
+  {
+    "rank": 510,
+    "english": "7.0",
+    "meanings": "7",
+    "example": "I have seven friends.",
+    "exampleJa": "私は友達が7人います。"
+  },
+  {
+    "rank": 511,
+    "english": "eight",
+    "meanings": "8",
+    "example": "I eat breakfast at eight.",
+    "exampleJa": "私は8時に朝食を食べます。"
+  },
+  {
+    "rank": 512,
+    "english": "8.0",
+    "meanings": "8",
+    "example": "My sister is eight.",
+    "exampleJa": "私の姉は8歳です。"
+  },
+  {
+    "rank": 513,
+    "english": "nine",
+    "meanings": "9",
+    "example": "My class starts at nine.",
+    "exampleJa": "私の授業は9時に始まります。"
+  },
+  {
+    "rank": 514,
+    "english": "9.0",
+    "meanings": "9",
+    "example": "I have nine stickers.",
+    "exampleJa": "私は9枚のシールを持っています。"
+  },
+  {
+    "rank": 515,
+    "english": "ten",
+    "meanings": "10",
+    "example": "I can count to ten.",
+    "exampleJa": "私は10まで数えられます。"
+  },
+  {
+    "rank": 516,
+    "english": "10.0",
+    "meanings": "10",
+    "example": "My cat is ten years old.",
+    "exampleJa": "私の猫は10歳です。"
+  },
+  {
+    "rank": 517,
+    "english": "eleven",
+    "meanings": "11",
+    "example": "I am eleven years old.",
+    "exampleJa": "私は11歳です。"
+  },
+  {
+    "rank": 518,
+    "english": "11.0",
+    "meanings": "11",
+    "example": "My birthday is on November eleven.",
+    "exampleJa": "私の誕生日は11月11日です。"
+  },
+  {
+    "rank": 519,
+    "english": "twelve",
+    "meanings": "12",
+    "example": "There are twelve months in a year.",
+    "exampleJa": "1年には12ヶ月あります。"
+  },
+  {
+    "rank": 520,
+    "english": "12.0",
+    "meanings": "12",
+    "example": "He is twelve years old.",
+    "exampleJa": "彼は12歳です。"
+  },
+  {
+    "rank": 521,
+    "english": "thirteen",
+    "meanings": "13",
+    "example": "I am thirteen years old.",
+    "exampleJa": "私は13歳です。"
+  },
+  {
+    "rank": 522,
+    "english": "13.0",
+    "meanings": "13",
+    "example": "My brother is thirteen.",
+    "exampleJa": "私の兄は13歳です。"
+  },
+  {
+    "rank": 523,
+    "english": "fourteen",
+    "meanings": "14",
+    "example": "My sister is fourteen years old.",
+    "exampleJa": "私の姉は14歳です。"
+  },
+  {
+    "rank": 524,
+    "english": "14.0",
+    "meanings": "14",
+    "example": "I have fourteen colored pencils.",
+    "exampleJa": "私は14本のいろ鉛筆を持っています。"
+  },
+  {
+    "rank": 525,
+    "english": "fifteen",
+    "meanings": "15",
+    "example": "She is fifteen years old.",
+    "exampleJa": "彼女は15歳です。"
+  },
+  {
+    "rank": 526,
+    "english": "15.0",
+    "meanings": "15",
+    "example": "I am 15 years old.",
+    "exampleJa": "私は15歳です。"
+  },
+  {
+    "rank": 527,
+    "english": "sixteen",
+    "meanings": "16",
+    "example": "My brother is sixteen.",
+    "exampleJa": "私の兄は16歳です。"
+  },
+  {
+    "rank": 528,
+    "english": "16.0",
+    "meanings": "16",
+    "example": "I have 16 books.",
+    "exampleJa": "私は本を16冊持っています。"
+  },
+  {
+    "rank": 529,
+    "english": "seventeen",
+    "meanings": "17",
+    "example": "She is seventeen.",
+    "exampleJa": "彼女は17歳です。"
+  },
+  {
+    "rank": 530,
+    "english": "17.0",
+    "meanings": "17",
+    "example": "There are 17 students.",
+    "exampleJa": "17人の生徒がいます。"
+  },
+  {
+    "rank": 531,
+    "english": "eighteen",
+    "meanings": "18",
+    "example": "He is eighteen years old.",
+    "exampleJa": "彼は18歳です。"
+  },
+  {
+    "rank": 532,
+    "english": "18.0",
+    "meanings": "18",
+    "example": "I need 18 eggs.",
+    "exampleJa": "卵が18個必要です。"
+  },
+  {
+    "rank": 533,
+    "english": "nineteen",
+    "meanings": "19",
+    "example": "My sister is nineteen.",
+    "exampleJa": "私の姉は19歳です。"
+  },
+  {
+    "rank": 534,
+    "english": "19.0",
+    "meanings": "19",
+    "example": "The bus leaves at 19:00.",
+    "exampleJa": "バスは19時に出発します。"
+  },
+  {
+    "rank": 535,
+    "english": "twenty",
+    "meanings": "20",
+    "example": "I have twenty friends.",
+    "exampleJa": "私には友達が20人います。"
+  },
+  {
+    "rank": 536,
+    "english": "20.0",
+    "meanings": "20",
+    "example": "Let's meet at 20:00.",
+    "exampleJa": "20時に会いましょう。"
+  },
+  {
+    "rank": 537,
+    "english": "thirty",
+    "meanings": "30",
+    "example": "My father is thirty.",
+    "exampleJa": "私の父は30歳です。"
+  },
+  {
+    "rank": 538,
+    "english": "30.0",
+    "meanings": "30",
+    "example": "I ran 30 meters.",
+    "exampleJa": "私は30メートル走りました。"
+  },
+  {
+    "rank": 539,
+    "english": "forty",
+    "meanings": "40",
+    "example": "The box costs forty dollars.",
+    "exampleJa": "その箱は40ドルです。"
+  },
+  {
+    "rank": 540,
+    "english": "40.0",
+    "meanings": "40",
+    "example": "There are 40 pages.",
+    "exampleJa": "40ページあります。"
+  },
+  {
+    "rank": 541,
+    "english": "fifty",
+    "meanings": "50",
+    "example": "My mother is fifty.",
+    "exampleJa": "私の母は50歳です。"
+  },
+  {
+    "rank": 542,
+    "english": "50.0",
+    "meanings": "50",
+    "example": "I need 50 yen.",
+    "exampleJa": "50円必要です。"
+  },
+  {
+    "rank": 543,
+    "english": "sixty",
+    "meanings": "60",
+    "example": "This train goes sixty km.",
+    "exampleJa": "この電車は時速60kmで走ります。"
+  },
+  {
+    "rank": 544,
+    "english": "60.0",
+    "meanings": "60",
+    "example": "My grandpa is 60.",
+    "exampleJa": "私の祖父は60歳です。"
+  },
+  {
+    "rank": 545,
+    "english": "seventy",
+    "meanings": "70",
+    "example": "My grandma is seventy.",
+    "exampleJa": "私の祖母は70歳です。"
+  },
+  {
+    "rank": 546,
+    "english": "70.0",
+    "meanings": "70",
+    "example": "The total is 70 points.",
+    "exampleJa": "合計は70点です。"
+  },
+  {
+    "rank": 547,
+    "english": "eighty",
+    "meanings": "80",
+    "example": "The price is eighty dollars.",
+    "exampleJa": "値段は80ドルです。"
+  },
+  {
+    "rank": 548,
+    "english": "80.0",
+    "meanings": "80",
+    "example": "I have 80 stamps.",
+    "exampleJa": "私は切手を80枚持っています。"
+  },
+  {
+    "rank": 549,
+    "english": "ninety",
+    "meanings": "90",
+    "example": "My score was ninety.",
+    "exampleJa": "私の点数は90点でした。"
+  },
+  {
+    "rank": 550,
+    "english": "90.0",
+    "meanings": "90",
+    "example": "We need 90 chairs.",
+    "exampleJa": "90個の椅子が必要です。"
+  },
+  {
+    "rank": 551,
+    "english": "hundred",
+    "meanings": "",
+    "example": "I have one hundred yen.",
+    "exampleJa": "私は100円持っています。"
+  },
+  {
+    "rank": 552,
+    "english": "100.0",
+    "meanings": "",
+    "example": "I got 100 points on the test.",
+    "exampleJa": "私はテストで100点を取りました。"
+  },
+  {
+    "rank": 553,
+    "english": "thousand",
+    "meanings": "",
+    "example": "This book costs one thousand yen.",
+    "exampleJa": "この本は1000円です。"
+  },
+  {
+    "rank": 554,
+    "english": "1000.0",
+    "meanings": "",
+    "example": "There are 1000 pages in this book.",
+    "exampleJa": "この本には1000ページあります。"
+  },
+  {
+    "rank": 555,
+    "english": "first",
+    "meanings": "１番目の",
+    "example": "I am the first in line.",
+    "exampleJa": "私は列の１番目です。"
+  },
+  {
+    "rank": 556,
+    "english": "second",
+    "meanings": "２番目の",
+    "example": "My birthday is on the second of July.",
+    "exampleJa": "私の誕生日は7月2日です。"
+  },
+  {
+    "rank": 557,
+    "english": "third",
+    "meanings": "３番目の",
+    "example": "This is my third time to visit here.",
+    "exampleJa": "ここを訪れるのは３回目です。"
+  },
+  {
+    "rank": 558,
+    "english": "fourth",
+    "meanings": "４番目の",
+    "example": "Today is the fourth of August.",
+    "exampleJa": "今日は8月4日です。"
+  },
+  {
+    "rank": 559,
+    "english": "fifth",
+    "meanings": "５番目の",
+    "example": "He is in the fifth grade.",
+    "exampleJa": "彼は小学5年生です。"
+  },
+  {
+    "rank": 560,
+    "english": "sixth",
+    "meanings": "６番目の",
+    "example": "My class is on the sixth floor.",
+    "exampleJa": "私のクラスは6階にあります。"
+  },
+  {
+    "rank": 561,
+    "english": "seventh",
+    "meanings": "７番目の",
+    "example": "Today is the seventh day of the week.",
+    "exampleJa": "今日は週の7日目です。"
+  },
+  {
+    "rank": 562,
+    "english": "eighth",
+    "meanings": "８番目の",
+    "example": "I like the eighth song on the album.",
+    "exampleJa": "私はアルバムの8曲目が好きです。"
+  },
+  {
+    "rank": 563,
+    "english": "ninth",
+    "meanings": "９番目の",
+    "example": "She is the ninth person in line.",
+    "exampleJa": "彼女は列の9番目の人です。"
+  },
+  {
+    "rank": 564,
+    "english": "tenth",
+    "meanings": "１０番目の",
+    "example": "My birthday is on the tenth of May.",
+    "exampleJa": "私の誕生日は5月10日です。"
+  },
+  {
+    "rank": 565,
+    "english": "eleventh",
+    "meanings": "１１番目の",
+    "example": "We live on the eleventh floor.",
+    "exampleJa": "私たちは11階に住んでいます。"
+  },
+  {
+    "rank": 566,
+    "english": "twelfth",
+    "meanings": "１２番目の",
+    "example": "December is the twelfth month of the year.",
+    "exampleJa": "12月は1年の12番目の月です。"
+  },
+  {
+    "rank": 567,
+    "english": "I",
+    "meanings": "私は",
+    "example": "I like apples.",
+    "exampleJa": "私はリンゴが好きです。"
+  },
+  {
+    "rank": 568,
+    "english": "my",
+    "meanings": "私の",
+    "example": "This is my book.",
+    "exampleJa": "これは私の本です。"
+  },
+  {
+    "rank": 569,
+    "english": "me",
+    "meanings": "私を［に］",
+    "example": "Please help me.",
+    "exampleJa": "私を助けてください。"
+  },
+  {
+    "rank": 570,
+    "english": "mine",
+    "meanings": "私のもの",
+    "example": "This pen is mine.",
+    "exampleJa": "このペンは私のものです。"
+  },
+  {
+    "rank": 571,
+    "english": "you",
+    "meanings": "あなたは",
+    "example": "You are kind.",
+    "exampleJa": "あなたは親切です。"
+  },
+  {
+    "rank": 572,
+    "english": "your",
+    "meanings": "あなたの",
+    "example": "What is your name?",
+    "exampleJa": "あなたの名前は何ですか？"
+  },
+  {
+    "rank": 573,
+    "english": "you",
+    "meanings": "あなたを［に］",
+    "example": "I know you.",
+    "exampleJa": "私はあなたを知っています。"
+  },
+  {
+    "rank": 574,
+    "english": "yours",
+    "meanings": "あなたのもの",
+    "example": "This bag is yours.",
+    "exampleJa": "このカバンはあなたのものです。"
+  },
+  {
+    "rank": 575,
+    "english": "he",
+    "meanings": "彼は",
+    "example": "He is my brother.",
+    "exampleJa": "彼は私の兄です。"
+  },
+  {
+    "rank": 576,
+    "english": "his",
+    "meanings": "彼の",
+    "example": "This is his bag.",
+    "exampleJa": "これは彼のカバンです。"
+  },
+  {
+    "rank": 577,
+    "english": "him",
+    "meanings": "彼を［に］",
+    "example": "I know him well.",
+    "exampleJa": "私は彼をよく知っています。"
+  },
+  {
+    "rank": 578,
+    "english": "his",
+    "meanings": "彼のもの",
+    "example": "This book is his.",
+    "exampleJa": "この本は彼のものです。"
+  },
+  {
+    "rank": 579,
+    "english": "she",
+    "meanings": "彼女は",
+    "example": "She is my sister.",
+    "exampleJa": "彼女は私の妹です。"
+  },
+  {
+    "rank": 580,
+    "english": "her",
+    "meanings": "彼女の",
+    "example": "This is her pen.",
+    "exampleJa": "これは彼女のペンです。"
+  },
+  {
+    "rank": 581,
+    "english": "her",
+    "meanings": "彼女を［に］",
+    "example": "I like her very much.",
+    "exampleJa": "私は彼女が大好きです。"
+  },
+  {
+    "rank": 582,
+    "english": "hers",
+    "meanings": "彼女のもの",
+    "example": "That doll is hers.",
+    "exampleJa": "あの人形は彼女のものです。"
+  },
+  {
+    "rank": 583,
+    "english": "it",
+    "meanings": "それは",
+    "example": "It is a cat.",
+    "exampleJa": "それは猫です。"
+  },
+  {
+    "rank": 584,
+    "english": "its",
+    "meanings": "それの",
+    "example": "The dog wags its tail.",
+    "exampleJa": "その犬はしっぽを振ります。"
+  },
+  {
+    "rank": 585,
+    "english": "it",
+    "meanings": "それを［に］",
+    "example": "I like it very much.",
+    "exampleJa": "私はそれが大好きです。"
+  },
+  {
+    "rank": 586,
+    "english": "we",
+    "meanings": "私たちは",
+    "example": "We are good friends.",
+    "exampleJa": "私たちは良い友達です。"
+  },
+  {
+    "rank": 587,
+    "english": "our",
+    "meanings": "私たちの",
+    "example": "This is our school.",
+    "exampleJa": "これは私たちの学校です。"
+  },
+  {
+    "rank": 588,
+    "english": "us",
+    "meanings": "私たちを［に］",
+    "example": "Please help us.",
+    "exampleJa": "私たちを助けてください。"
+  },
+  {
+    "rank": 589,
+    "english": "ours",
+    "meanings": "私たちのもの",
+    "example": "This house is ours.",
+    "exampleJa": "この家は私たちのものです。"
+  },
+  {
+    "rank": 590,
+    "english": "they",
+    "meanings": "彼らは，彼女らは",
+    "example": "They are my parents.",
+    "exampleJa": "彼らは私の両親です。"
+  },
+  {
+    "rank": 591,
+    "english": "their",
+    "meanings": "彼らの，彼女らの",
+    "example": "This is their car.",
+    "exampleJa": "これは彼らの車です。"
+  },
+  {
+    "rank": 592,
+    "english": "them",
+    "meanings": "彼らを［に］，彼女らを［に］",
+    "example": "I know them well.",
+    "exampleJa": "私は彼らをよく知っています。"
+  },
+  {
+    "rank": 593,
+    "english": "theirs",
+    "meanings": "彼らのもの，彼女らのもの",
+    "example": "That ball is theirs.",
+    "exampleJa": "あのボールは彼らのものです。"
+  },
+  {
+    "rank": 594,
+    "english": "this",
+    "meanings": "これ，この",
+    "example": "This is my book.",
+    "exampleJa": "これは私の本です。"
+  },
+  {
+    "rank": 595,
+    "english": "that",
+    "meanings": "あれ，それ，あの，その",
+    "example": "That is my dog.",
+    "exampleJa": "あれは私の犬です。"
+  },
+  {
+    "rank": 596,
+    "english": "these",
+    "meanings": "これら，これらの",
+    "example": "These are my pens.",
+    "exampleJa": "これらは私のペンです。"
+  },
+  {
+    "rank": 597,
+    "english": "those",
+    "meanings": "あれら，それら，あれらの，それらの",
+    "example": "Those are his shoes.",
+    "exampleJa": "あれらは彼の靴です。"
   }
 ]
