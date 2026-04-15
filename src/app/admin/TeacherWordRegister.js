@@ -470,7 +470,10 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                 <option value="準2kyu">英検準2級 (1222語)</option>
                 <option value="2kyu">英検2級 (2000語)</option>
                 <option value="pre1kyu">英検準1級パス単 (1900語)</option>
-                <option value="ex_pre1kyu">EX準1級 (2434語)</option>
+                <option disabled>──── 単熟語EX ────</option>
+                <option value="ex2kyu_tango">EX 2級単語 (1460語)</option>
+                <option value="ex2kyu_idiom">EX 2級熟語 (560語)</option>
+                <option value="ex_pre1kyu">EX 準1級 (2434語)</option>
                 <option disabled>──── 単語帳 ────</option>
                 <option value="sys5th">シス単5訂版 (2027語)</option>
                 <option value="leap">LEAP (1935語)</option>
@@ -1026,7 +1029,8 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                       .filter(w => !w.removed && w.english.trim() && w.meanings.trim())
                       .map(w => {
                         const sourceMap = {
-                          '5kyu': '英検5級', '4kyu': '英検4級', '3kyu': '英検3級', '準2kyu': '英検準2級', '2kyu': '英検2級', 'pre1kyu': '英検準1級パス単', 'ex_pre1kyu': 'EX準1級',
+                          '5kyu': '英検5級', '4kyu': '英検4級', '3kyu': '英検3級', '準2kyu': '英検準2級', '2kyu': '英検2級', 'pre1kyu': '英検準1級パス単',
+                          'ex2kyu_tango': 'EX2級単語', 'ex2kyu_idiom': 'EX2級熟語', 'ex_pre1kyu': 'EX準1級',
                           'sys5th': 'シス単5訂版', 'leap': 'LEAP', 'target1900': 'ターゲット1900', 'target1400extra': 'ターゲット1400extra', 'idiom1000': '熟語ターゲット1000'
                         };
                         const sourceName = (w.listType && w.rank) ? `${sourceMap[w.listType]} No.${w.rank}` : '';
@@ -1381,7 +1385,9 @@ export default function TeacherWordRegister({ students, onRegistered }) {
           { value: '準2kyu', label: '英検準2級 (1222語)' },
           { value: '2kyu', label: '英検2級 (2000語)' },
           { value: 'pre1kyu', label: '英検準1級パス単 (1900語)' },
-          { value: 'ex_pre1kyu', label: 'EX準1級 (2434語)' },
+          { value: 'ex2kyu_tango', label: 'EX 2級単語 (1460語)' },
+          { value: 'ex2kyu_idiom', label: 'EX 2級熟語 (560語)' },
+          { value: 'ex_pre1kyu', label: 'EX 準1級 (2434語)' },
           { value: 'sys5th', label: 'シス単5訂版 (2027語)' },
           { value: 'leap', label: 'LEAP (1935語)' },
           { value: 'target1900', label: 'ターゲット1900 (1900語)' },
@@ -1394,8 +1400,8 @@ export default function TeacherWordRegister({ students, onRegistered }) {
 
         const sourceMap = {
           '5kyu': '英検5級', '4kyu': '英検4級', '3kyu': '英検3級', '準2kyu': '英検準2級', '2kyu': '英検2級',
-          'pre1kyu': '英検準1級パス単', 'ex_pre1kyu': 'EX準1級', 'sys5th': 'シス単5訂版',
-          'leap': 'LEAP', 'target1900': 'ターゲット1900', 'target1400extra': 'ターゲット1400extra', 'idiom1000': '熟語ターゲット1000',
+          'pre1kyu': '英検準1級パス単', 'ex2kyu_tango': 'EX2級単語', 'ex2kyu_idiom': 'EX2級熟語', 'ex_pre1kyu': 'EX準1級',
+          'sys5th': 'シス単5訂版', 'leap': 'LEAP', 'target1900': 'ターゲット1900', 'target1400extra': 'ターゲット1400extra', 'idiom1000': '熟語ターゲット1000',
           'sunshine1': 'サンシャイン中1', 'sunshine2': 'サンシャイン中2', 'sunshine3': 'サンシャイン中3',
         };
 

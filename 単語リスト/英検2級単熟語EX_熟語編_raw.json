@@ -1,0 +1,2802 @@
+[
+  {
+    "rank": 1,
+    "word": "do away with 〜",
+    "meaning": "〜を廃止する／取り除く"
+  },
+  {
+    "rank": 2,
+    "word": "in vain",
+    "meaning": "むだに／むなしく"
+  },
+  {
+    "rank": 3,
+    "word": "work out",
+    "meaning": "うまくいく／解決する／（答えを）考え出す／運動する"
+  },
+  {
+    "rank": 4,
+    "word": "think over",
+    "meaning": "よく考える／じっくり検討する"
+  },
+  {
+    "rank": 5,
+    "word": "take after 〜",
+    "meaning": "〜に似ている（家族など）"
+  },
+  {
+    "rank": 6,
+    "word": "be in charge of 〜",
+    "meaning": "〜を担当している／～の責任者である"
+  },
+  {
+    "rank": 7,
+    "word": "cope with 〜",
+    "meaning": "〜に対処する／切り抜ける"
+  },
+  {
+    "rank": 8,
+    "word": "insist on 〜",
+    "meaning": "〜を強く主張する／〜にこだわる"
+  },
+  {
+    "rank": 9,
+    "word": "in the meantime",
+    "meaning": "その間に／一方で"
+  },
+  {
+    "rank": 10,
+    "word": "turn down",
+    "meaning": "断る／（音量などを）下げる"
+  },
+  {
+    "rank": 11,
+    "word": "refrain from 〜",
+    "meaning": "〜を控える／〜するのを慎む"
+  },
+  {
+    "rank": 12,
+    "word": "by way of 〜",
+    "meaning": "〜経由で／〜として（のつもりで）"
+  },
+  {
+    "rank": 13,
+    "word": "be accustomed to 〜",
+    "meaning": "〜に慣れている"
+  },
+  {
+    "rank": 14,
+    "word": "a wide range of 〜",
+    "meaning": "幅広い〜／多種多様な〜"
+  },
+  {
+    "rank": 15,
+    "word": "end up doing",
+    "meaning": "結局〜することになる"
+  },
+  {
+    "rank": 16,
+    "word": "so as to do",
+    "meaning": "〜するために"
+  },
+  {
+    "rank": 17,
+    "word": "break into 〜",
+    "meaning": "〜に押し入る／急に〜しだす"
+  },
+  {
+    "rank": 18,
+    "word": "even if ...",
+    "meaning": "たとえ...でも"
+  },
+  {
+    "rank": 19,
+    "word": "amount to 〜",
+    "meaning": "合計〜になる／結局〜ということになる"
+  },
+  {
+    "rank": 20,
+    "word": "in person",
+    "meaning": "本人が直接／自ら"
+  },
+  {
+    "rank": 21,
+    "word": "There is no doing",
+    "meaning": "〜することはできない／〜するなんてありえない"
+  },
+  {
+    "rank": 22,
+    "word": "no less than 〜",
+    "meaning": "〜もの（多さ・意外さを強調）"
+  },
+  {
+    "rank": 23,
+    "word": "find it 〜 that ...",
+    "meaning": "...ということを〜だと感じる／思う"
+  },
+  {
+    "rank": 24,
+    "word": "for nothing",
+    "meaning": "ただで／むだに／理由もなく"
+  },
+  {
+    "rank": 25,
+    "word": "a great deal of 〜",
+    "meaning": "たくさんの〜（量）"
+  },
+  {
+    "rank": 26,
+    "word": "pick out",
+    "meaning": "選び出す／見分ける"
+  },
+  {
+    "rank": 27,
+    "word": "as if ...",
+    "meaning": "まるで...かのように"
+  },
+  {
+    "rank": 28,
+    "word": "do harm",
+    "meaning": "害を与える"
+  },
+  {
+    "rank": 29,
+    "word": "come to an end",
+    "meaning": "終わる／終わりを迎える"
+  },
+  {
+    "rank": 30,
+    "word": "no more than 〜",
+    "meaning": "たった〜／〜にすぎない"
+  },
+  {
+    "rank": 31,
+    "word": "drop off",
+    "meaning": "降ろす／少しずつ減る／居眠りする"
+  },
+  {
+    "rank": 32,
+    "word": "stare at 〜",
+    "meaning": "〜をじっと見つめる"
+  },
+  {
+    "rank": 33,
+    "word": "be in demand",
+    "meaning": "需要がある／人気がある"
+  },
+  {
+    "rank": 34,
+    "word": "It's time ...",
+    "meaning": "そろそろ...してよいころだ／もう...してもいい時期だ"
+  },
+  {
+    "rank": 35,
+    "word": "look up to 〜",
+    "meaning": "〜を尊敬する"
+  },
+  {
+    "rank": 36,
+    "word": "for the benefit of 〜",
+    "meaning": "〜のために／〜の利益のために"
+  },
+  {
+    "rank": 37,
+    "word": "hand down",
+    "meaning": "伝える／（次の世代に）受け継がせる"
+  },
+  {
+    "rank": 38,
+    "word": "charge A with B",
+    "meaning": "AをB（罪・責任）で告発する／責める"
+  },
+  {
+    "rank": 39,
+    "word": "in terms of 〜",
+    "meaning": "〜の観点から／〜の面で"
+  },
+  {
+    "rank": 40,
+    "word": "come to do",
+    "meaning": "〜するようになる"
+  },
+  {
+    "rank": 41,
+    "word": "be independent of 〜",
+    "meaning": "〜から自立している／〜に依存していない"
+  },
+  {
+    "rank": 42,
+    "word": "take it for granted that ...",
+    "meaning": "...を当然のことだと思う"
+  },
+  {
+    "rank": 43,
+    "word": "Little did A know that ...",
+    "meaning": "Aは...とは少しも思っていなかった"
+  },
+  {
+    "rank": 44,
+    "word": "urge A to do",
+    "meaning": "Aに〜するよう強く促す"
+  },
+  {
+    "rank": 45,
+    "word": "rely on 〜",
+    "meaning": "〜に頼る／〜をあてにする"
+  },
+  {
+    "rank": 46,
+    "word": "take over",
+    "meaning": "引き継ぐ／引き取る／乗っ取る"
+  },
+  {
+    "rank": 47,
+    "word": "in advance",
+    "meaning": "前もって／事前に"
+  },
+  {
+    "rank": 48,
+    "word": "be capable of 〜",
+    "meaning": "〜する能力がある"
+  },
+  {
+    "rank": 49,
+    "word": "refer to 〜",
+    "meaning": "〜に言及する／〜を指す／〜を参照する"
+  },
+  {
+    "rank": 50,
+    "word": "use up",
+    "meaning": "使い果たす"
+  },
+  {
+    "rank": 51,
+    "word": "bring out",
+    "meaning": "引き出す／出版する／発売する／目立たせる"
+  },
+  {
+    "rank": 52,
+    "word": "by means of 〜",
+    "meaning": "〜によって／〜という手段で"
+  },
+  {
+    "rank": 53,
+    "word": "call off",
+    "meaning": "中止する／取り消す"
+  },
+  {
+    "rank": 54,
+    "word": "by no means",
+    "meaning": "決して〜ない"
+  },
+  {
+    "rank": 55,
+    "word": "for fear of 〜",
+    "meaning": "〜を恐れて／〜しないように"
+  },
+  {
+    "rank": 56,
+    "word": "to some extent",
+    "meaning": "ある程度は"
+  },
+  {
+    "rank": 57,
+    "word": "go by",
+    "meaning": "（時間が）過ぎる／〜という名で通っている"
+  },
+  {
+    "rank": 58,
+    "word": "account for 〜",
+    "meaning": "〜を説明する／〜（割合）を占める"
+  },
+  {
+    "rank": 59,
+    "word": "at heart",
+    "meaning": "心の中では／本心は"
+  },
+  {
+    "rank": 60,
+    "word": "keep off 〜",
+    "meaning": "〜に近づかない／〜を避ける／〜を控える"
+  },
+  {
+    "rank": 61,
+    "word": "even though ...",
+    "meaning": "...だけれども／...にもかかわらず"
+  },
+  {
+    "rank": 62,
+    "word": "get along",
+    "meaning": "うまくやっていく／仲良くやる／暮らしていく"
+  },
+  {
+    "rank": 63,
+    "word": "pay attention",
+    "meaning": "注意を払う"
+  },
+  {
+    "rank": 64,
+    "word": "up to 〜",
+    "meaning": "〜まで／〜次第で／〜の責任で"
+  },
+  {
+    "rank": 65,
+    "word": "tend to do",
+    "meaning": "〜する傾向がある"
+  },
+  {
+    "rank": 66,
+    "word": "stick to 〜",
+    "meaning": "〜にくっつく／〜にこだわる／〜を守る"
+  },
+  {
+    "rank": 67,
+    "word": "try out",
+    "meaning": "試してみる／試用する／オーディションする"
+  },
+  {
+    "rank": 68,
+    "word": "make up for 〜",
+    "meaning": "〜を埋め合わせる／取り戻す"
+  },
+  {
+    "rank": 69,
+    "word": "make a difference",
+    "meaning": "違いを生む／役に立つ"
+  },
+  {
+    "rank": 70,
+    "word": "by far",
+    "meaning": "はるかに／ずっと"
+  },
+  {
+    "rank": 71,
+    "word": "at present",
+    "meaning": "現在は／今のところ"
+  },
+  {
+    "rank": 72,
+    "word": "on the contrary",
+    "meaning": "それどころかむしろ／反対に"
+  },
+  {
+    "rank": 73,
+    "word": "for sure",
+    "meaning": "確かに／間違いなく"
+  },
+  {
+    "rank": 74,
+    "word": "count on 〜",
+    "meaning": "〜を当てにする／〜に頼る"
+  },
+  {
+    "rank": 75,
+    "word": "give off 〜",
+    "meaning": "（光・熱・においなど）〜を発する"
+  },
+  {
+    "rank": 76,
+    "word": "carry on",
+    "meaning": "続ける／続けていく"
+  },
+  {
+    "rank": 77,
+    "word": "from time to time",
+    "meaning": "時々／ときおり"
+  },
+  {
+    "rank": 78,
+    "word": "stand out",
+    "meaning": "目立つ／際立つ"
+  },
+  {
+    "rank": 79,
+    "word": "live on 〜",
+    "meaning": "〜で生活する／〜を常食とする／〜に頼って生きる"
+  },
+  {
+    "rank": 80,
+    "word": "shut off",
+    "meaning": "遮断する／止める／締め出す"
+  },
+  {
+    "rank": 81,
+    "word": "find out",
+    "meaning": "知る／突き止める／分かる"
+  },
+  {
+    "rank": 82,
+    "word": "be particular about 〜",
+    "meaning": "〜にうるさい／〜にこだわる"
+  },
+  {
+    "rank": 83,
+    "word": "at one's best",
+    "meaning": "最高の状態で／ベストなときの"
+  },
+  {
+    "rank": 84,
+    "word": "be ashamed of 〜",
+    "meaning": "〜を恥ずかしく思う"
+  },
+  {
+    "rank": 85,
+    "word": "on the go",
+    "meaning": "とても忙しく動き回って／常に活動中で"
+  },
+  {
+    "rank": 86,
+    "word": "out of date",
+    "meaning": "時代遅れの／期限切れの"
+  },
+  {
+    "rank": 87,
+    "word": "by degrees",
+    "meaning": "徐々に／だんだんと"
+  },
+  {
+    "rank": 88,
+    "word": "on the spot",
+    "meaning": "その場で／即座に"
+  },
+  {
+    "rank": 89,
+    "word": "behind A's back",
+    "meaning": "Aのいないところで／Aに隠れて"
+  },
+  {
+    "rank": 90,
+    "word": "on account of 〜",
+    "meaning": "〜の理由で／〜のために"
+  },
+  {
+    "rank": 91,
+    "word": "by heart",
+    "meaning": "暗記して／そらで"
+  },
+  {
+    "rank": 92,
+    "word": "be obliged to do",
+    "meaning": "やむをえず〜する／〜せざるをえない"
+  },
+  {
+    "rank": 93,
+    "word": "make sure of 〜",
+    "meaning": "〜を確かめる／〜を確実にする"
+  },
+  {
+    "rank": 94,
+    "word": "head for 〜",
+    "meaning": "〜へ向かう"
+  },
+  {
+    "rank": 95,
+    "word": "put up with 〜",
+    "meaning": "〜を我慢する／辛抱する"
+  },
+  {
+    "rank": 96,
+    "word": "back and forth",
+    "meaning": "行ったり来たり／あちこちへ"
+  },
+  {
+    "rank": 97,
+    "word": "by nature",
+    "meaning": "生まれつき／性質として"
+  },
+  {
+    "rank": 98,
+    "word": "if only ...",
+    "meaning": "...でさえあればいいのに（という願望）"
+  },
+  {
+    "rank": 99,
+    "word": "run away (from 〜)",
+    "meaning": "（〜から）逃げる"
+  },
+  {
+    "rank": 100,
+    "word": "at all costs",
+    "meaning": "どんな犠牲を払っても／何としても"
+  },
+  {
+    "rank": 101,
+    "word": "run over",
+    "meaning": "ひく／（ざっと）目を通す／あふれる"
+  },
+  {
+    "rank": 102,
+    "word": "of no use",
+    "meaning": "役に立たない／無駄な"
+  },
+  {
+    "rank": 103,
+    "word": "for the time being",
+    "meaning": "当分の間は／さしあたり"
+  },
+  {
+    "rank": 104,
+    "word": "for good",
+    "meaning": "永久に／きっぱりと"
+  },
+  {
+    "rank": 105,
+    "word": "at a distance",
+    "meaning": "離れて／一定の距離を置いて"
+  },
+  {
+    "rank": 106,
+    "word": "on the move",
+    "meaning": "移動中で／どんどん発展して"
+  },
+  {
+    "rank": 107,
+    "word": "lay off",
+    "meaning": "解雇する／やめる・中断する"
+  },
+  {
+    "rank": 108,
+    "word": "at times",
+    "meaning": "ときどき／時には"
+  },
+  {
+    "rank": 109,
+    "word": "bound for 〜",
+    "meaning": "〜行きの"
+  },
+  {
+    "rank": 110,
+    "word": "at large",
+    "meaning": "全体として／逃走中で／一般に"
+  },
+  {
+    "rank": 111,
+    "word": "keep one's word",
+    "meaning": "約束を守る"
+  },
+  {
+    "rank": 112,
+    "word": "as for 〜",
+    "meaning": "〜に関して言えば／〜については"
+  },
+  {
+    "rank": 113,
+    "word": "hang on",
+    "meaning": "ちょっと待つ／しがみつく／頑張り続ける"
+  },
+  {
+    "rank": 114,
+    "word": "have trouble doing",
+    "meaning": "〜するのに苦労する／問題を抱える"
+  },
+  {
+    "rank": 115,
+    "word": "in particular",
+    "meaning": "とりわけ／特に"
+  },
+  {
+    "rank": 116,
+    "word": "point out",
+    "meaning": "指摘する／指し示す"
+  },
+  {
+    "rank": 117,
+    "word": "A rather than B",
+    "meaning": "B ではなくむしろ A"
+  },
+  {
+    "rank": 118,
+    "word": "what is more",
+    "meaning": "おまけに／その上"
+  },
+  {
+    "rank": 119,
+    "word": "in turn",
+    "meaning": "今度は／順番に／結果として"
+  },
+  {
+    "rank": 120,
+    "word": "provided (that) ...",
+    "meaning": "...という条件で／...ならば"
+  },
+  {
+    "rank": 121,
+    "word": "stay up",
+    "meaning": "起きている／夜更かしする"
+  },
+  {
+    "rank": 122,
+    "word": "put together",
+    "meaning": "まとめる／組み立てる"
+  },
+  {
+    "rank": 123,
+    "word": "in other words",
+    "meaning": "言い換えれば／つまり"
+  },
+  {
+    "rank": 124,
+    "word": "as far as ...",
+    "meaning": "...する限り（では）／...まで"
+  },
+  {
+    "rank": 125,
+    "word": "run into 〜",
+    "meaning": "〜に偶然出会う／〜（問題など）にぶつかる"
+  },
+  {
+    "rank": 126,
+    "word": "name A after B",
+    "meaning": "BにちなんでAと名付ける"
+  },
+  {
+    "rank": 127,
+    "word": "die out",
+    "meaning": "絶滅する／消え去る"
+  },
+  {
+    "rank": 128,
+    "word": "in spite of 〜",
+    "meaning": "〜にもかかわらず"
+  },
+  {
+    "rank": 129,
+    "word": "manage to do",
+    "meaning": "なんとか〜する／どうにかして〜する"
+  },
+  {
+    "rank": 130,
+    "word": "make use of 〜",
+    "meaning": "〜を利用する／活用する"
+  },
+  {
+    "rank": 131,
+    "word": "play a role in 〜",
+    "meaning": "〜で役割を果たす"
+  },
+  {
+    "rank": 132,
+    "word": "if A were to do",
+    "meaning": "もしAが〜するとしたら（仮定法・まずない想定）"
+  },
+  {
+    "rank": 133,
+    "word": "There is no point in doing",
+    "meaning": "〜しても意味がない／無駄だ"
+  },
+  {
+    "rank": 134,
+    "word": "nothing but 〜",
+    "meaning": "〜ばかり／〜だけ／ただ〜"
+  },
+  {
+    "rank": 135,
+    "word": "get through 〜",
+    "meaning": "〜をやり通す／通り抜ける／〜に連絡がつく"
+  },
+  {
+    "rank": 136,
+    "word": "as a whole",
+    "meaning": "全体として／概して"
+  },
+  {
+    "rank": 137,
+    "word": "come close to 〜",
+    "meaning": "もう少しで〜しそうになる／ほとんど〜に近づく"
+  },
+  {
+    "rank": 138,
+    "word": "make sense",
+    "meaning": "意味をなす／筋が通る／理解できる"
+  },
+  {
+    "rank": 139,
+    "word": "show up",
+    "meaning": "現れる／姿を見せる"
+  },
+  {
+    "rank": 140,
+    "word": "at a time",
+    "meaning": "一度に／一回に"
+  },
+  {
+    "rank": 141,
+    "word": "look out for 〜",
+    "meaning": "〜に気をつける／〜を見張る"
+  },
+  {
+    "rank": 142,
+    "word": "go out of business",
+    "meaning": "倒産する／廃業する"
+  },
+  {
+    "rank": 143,
+    "word": "remind A of B",
+    "meaning": "AにBを思い出させる"
+  },
+  {
+    "rank": 144,
+    "word": "go through 〜",
+    "meaning": "〜を経験する／〜を通り抜ける／（書類など）目を通す"
+  },
+  {
+    "rank": 145,
+    "word": "decide on 〜",
+    "meaning": "〜に決める／〜を選ぶ"
+  },
+  {
+    "rank": 146,
+    "word": "on a 〜 basis",
+    "meaning": "〜という基準で／〜ごとに（例"
+  },
+  {
+    "rank": 147,
+    "word": "happen to do",
+    "meaning": "たまたま〜する／偶然〜する"
+  },
+  {
+    "rank": 148,
+    "word": "no matter what ...",
+    "meaning": "たとえ何が...しても／どんなに...でも"
+  },
+  {
+    "rank": 149,
+    "word": "go wrong with 〜",
+    "meaning": "〜に不具合が起きる／〜がおかしくなる"
+  },
+  {
+    "rank": 150,
+    "word": "no less 〜 than A",
+    "meaning": "Aに劣らず〜／Aと同じくらい〜な"
+  },
+  {
+    "rank": 151,
+    "word": "come by 〜",
+    "meaning": "〜を手に入れる／〜のそばを通る"
+  },
+  {
+    "rank": 152,
+    "word": "look into 〜",
+    "meaning": "〜を調査する／詳しく調べる"
+  },
+  {
+    "rank": 153,
+    "word": "what is worse",
+    "meaning": "さらに悪いことに"
+  },
+  {
+    "rank": 154,
+    "word": "put A into practice",
+    "meaning": "Aを実行に移す／実践する"
+  },
+  {
+    "rank": 155,
+    "word": "bring up",
+    "meaning": "育てる／（話題を）持ち出す"
+  },
+  {
+    "rank": 156,
+    "word": "get bored with 〜",
+    "meaning": "〜に飽きる"
+  },
+  {
+    "rank": 157,
+    "word": "put an end to 〜",
+    "meaning": "〜に終止符を打つ／終わらせる"
+  },
+  {
+    "rank": 158,
+    "word": "show off",
+    "meaning": "見せびらかす／自慢する"
+  },
+  {
+    "rank": 159,
+    "word": "get over 〜",
+    "meaning": "〜を乗り越える／（病気などから）回復する"
+  },
+  {
+    "rank": 160,
+    "word": "ahead of schedule",
+    "meaning": "予定より早く／予定より前に"
+  },
+  {
+    "rank": 161,
+    "word": "enable A to do",
+    "meaning": "Aが〜できるようにする"
+  },
+  {
+    "rank": 162,
+    "word": "set aside",
+    "meaning": "取っておく／脇へ置く／無視する"
+  },
+  {
+    "rank": 163,
+    "word": "at the mercy of 〜",
+    "meaning": "〜のなすがままになって／〜に翻弄されて"
+  },
+  {
+    "rank": 164,
+    "word": "cannot help doing",
+    "meaning": "〜せずにはいられない"
+  },
+  {
+    "rank": 165,
+    "word": "go on the air",
+    "meaning": "放送される／オンエアになる"
+  },
+  {
+    "rank": 166,
+    "word": "make a fool of 〜",
+    "meaning": "〜をばかにする／笑い者にする"
+  },
+  {
+    "rank": 167,
+    "word": "but for 〜",
+    "meaning": "〜がなければ／〜がなかったら"
+  },
+  {
+    "rank": 168,
+    "word": "follow through with 〜",
+    "meaning": "〜を最後までやり通す／完遂する"
+  },
+  {
+    "rank": 169,
+    "word": "tear off",
+    "meaning": "引きはがす／びりっと破り取る"
+  },
+  {
+    "rank": 170,
+    "word": "be to blame for 〜",
+    "meaning": "〜の責任がある／〜について責められるべきだ"
+  },
+  {
+    "rank": 171,
+    "word": "persist in 〜",
+    "meaning": "〜をしつこく続ける／〜に固執する"
+  },
+  {
+    "rank": 172,
+    "word": "all the more",
+    "meaning": "なおさら／いっそう"
+  },
+  {
+    "rank": 173,
+    "word": "be sufficient for 〜",
+    "meaning": "〜に十分である"
+  },
+  {
+    "rank": 174,
+    "word": "get sick of 〜",
+    "meaning": "〜にうんざりする"
+  },
+  {
+    "rank": 175,
+    "word": "talk A into doing",
+    "meaning": "Aを説得して〜させる"
+  },
+  {
+    "rank": 176,
+    "word": "to say nothing of 〜",
+    "meaning": "〜は言うまでもなく"
+  },
+  {
+    "rank": 177,
+    "word": "at first sight",
+    "meaning": "一目見て／一見したところでは"
+  },
+  {
+    "rank": 178,
+    "word": "at any moment",
+    "meaning": "今にも／いつでも"
+  },
+  {
+    "rank": 179,
+    "word": "be said to do",
+    "meaning": "〜すると言われている"
+  },
+  {
+    "rank": 180,
+    "word": "now and then",
+    "meaning": "ときどき／たまに"
+  },
+  {
+    "rank": 181,
+    "word": "out of order",
+    "meaning": "（機械などが）故障して／順番がめちゃくちゃで"
+  },
+  {
+    "rank": 182,
+    "word": "for lack of 〜",
+    "meaning": "〜が不足して／〜がないために"
+  },
+  {
+    "rank": 183,
+    "word": "take down",
+    "meaning": "書きとめる／取り外す／取り壊す"
+  },
+  {
+    "rank": 184,
+    "word": "A is to B what C is to D",
+    "meaning": "AとBの関係はCとDの関係に等しい"
+  },
+  {
+    "rank": 185,
+    "word": "as follows",
+    "meaning": "次の通り"
+  },
+  {
+    "rank": 186,
+    "word": "be anxious about 〜",
+    "meaning": "〜を心配している／気にかける"
+  },
+  {
+    "rank": 187,
+    "word": "become acquainted with 〜",
+    "meaning": "〜と知り合いになる／〜を知るようになる"
+  },
+  {
+    "rank": 188,
+    "word": "be entitled to 〜",
+    "meaning": "〜の資格がある／〜を受ける権利がある"
+  },
+  {
+    "rank": 189,
+    "word": "get A over with",
+    "meaning": "A（面倒なこと）をさっさと片づけてしまう"
+  },
+  {
+    "rank": 190,
+    "word": "out of focus",
+    "meaning": "ピントが合っていない／焦点がずれている"
+  },
+  {
+    "rank": 191,
+    "word": "answer for 〜",
+    "meaning": "〜に責任を負う／〜を保証する"
+  },
+  {
+    "rank": 192,
+    "word": "lose face",
+    "meaning": "面目を失う／顔をつぶされる"
+  },
+  {
+    "rank": 193,
+    "word": "call it a day",
+    "meaning": "その日はそこで切り上げる／仕事を終わりにする"
+  },
+  {
+    "rank": 194,
+    "word": "have second thoughts",
+    "meaning": "あとになって考え直す／迷いが出る"
+  },
+  {
+    "rank": 195,
+    "word": "well off",
+    "meaning": "裕福な／暮らし向きがよい"
+  },
+  {
+    "rank": 196,
+    "word": "keep A to oneself",
+    "meaning": "Aを自分だけの秘密にしておく"
+  },
+  {
+    "rank": 197,
+    "word": "as many as 〜",
+    "meaning": "〜もの（多さを強調）"
+  },
+  {
+    "rank": 198,
+    "word": "make it in time",
+    "meaning": "間に合う"
+  },
+  {
+    "rank": 199,
+    "word": "be dying to do",
+    "meaning": "とても〜したくてたまらない"
+  },
+  {
+    "rank": 200,
+    "word": "catch one's breath",
+    "meaning": "息を整える／ほっと一息つく"
+  },
+  {
+    "rank": 201,
+    "word": "in practice",
+    "meaning": "実際には／実際のところ"
+  },
+  {
+    "rank": 202,
+    "word": "speak well of 〜",
+    "meaning": "〜をほめる／〜のことをよく言う"
+  },
+  {
+    "rank": 203,
+    "word": "beyond A's reach",
+    "meaning": "Aの手の届かないところに／Aには手が届かない"
+  },
+  {
+    "rank": 204,
+    "word": "as a matter of course",
+    "meaning": "当然のこととして／もちろん"
+  },
+  {
+    "rank": 205,
+    "word": "in effect",
+    "meaning": "事実上／実質的には／効力があって"
+  },
+  {
+    "rank": 206,
+    "word": "in part",
+    "meaning": "一部は／部分的に"
+  },
+  {
+    "rank": 207,
+    "word": "out of use",
+    "meaning": "使われていない／使用されていない"
+  },
+  {
+    "rank": 208,
+    "word": "speaking of 〜",
+    "meaning": "〜と言えば"
+  },
+  {
+    "rank": 209,
+    "word": "come into being",
+    "meaning": "生まれる／出現する／成立する"
+  },
+  {
+    "rank": 210,
+    "word": "under way",
+    "meaning": "進行中で／始まっていて"
+  },
+  {
+    "rank": 211,
+    "word": "on the basis of 〜",
+    "meaning": "〜に基づいて"
+  },
+  {
+    "rank": 212,
+    "word": "have a word with 〜",
+    "meaning": "〜と少し話をする／ちょっと相談する"
+  },
+  {
+    "rank": 213,
+    "word": "The bottom line is that ...",
+    "meaning": "要するに...ということだ／結論は...だ"
+  },
+  {
+    "rank": 214,
+    "word": "be inferior to 〜",
+    "meaning": "〜より劣っている"
+  },
+  {
+    "rank": 215,
+    "word": "except that ...",
+    "meaning": "...ということを除いては"
+  },
+  {
+    "rank": 216,
+    "word": "make a face",
+    "meaning": "顔をしかめる／いやな顔をする"
+  },
+  {
+    "rank": 217,
+    "word": "prior to 〜",
+    "meaning": "〜の前に／〜に先立って"
+  },
+  {
+    "rank": 218,
+    "word": "cross out",
+    "meaning": "線を引いて消す"
+  },
+  {
+    "rank": 219,
+    "word": "in any event",
+    "meaning": "いずれにせよ／とにかく"
+  },
+  {
+    "rank": 220,
+    "word": "in the course of 〜",
+    "meaning": "〜の途中で／〜の間に"
+  },
+  {
+    "rank": 221,
+    "word": "inside out",
+    "meaning": "裏返しに／すみずみまで／徹底的に"
+  },
+  {
+    "rank": 222,
+    "word": "be spared from doing",
+    "meaning": "〜せずにすむ／〜から免れる"
+  },
+  {
+    "rank": 223,
+    "word": "expect much of 〜",
+    "meaning": "〜に多くを期待する"
+  },
+  {
+    "rank": 224,
+    "word": "get on A's nerves",
+    "meaning": "Aの神経にさわる／Aをいらいらさせる"
+  },
+  {
+    "rank": 225,
+    "word": "permit A to do",
+    "meaning": "Aに〜することを許す"
+  },
+  {
+    "rank": 226,
+    "word": "be packed with 〜",
+    "meaning": "〜でぎっしりである／〜が詰まっている"
+  },
+  {
+    "rank": 227,
+    "word": "for all I know",
+    "meaning": "私の知る限りでは／もしかすると〜かもしれない"
+  },
+  {
+    "rank": 228,
+    "word": "go too far",
+    "meaning": "やりすぎる／度が過ぎる"
+  },
+  {
+    "rank": 229,
+    "word": "at the cost of 〜",
+    "meaning": "〜を犠牲にして／〜という代償を払って"
+  },
+  {
+    "rank": 230,
+    "word": "close at hand",
+    "meaning": "すぐ近くに／間近に迫って"
+  },
+  {
+    "rank": 231,
+    "word": "have yet to do",
+    "meaning": "まだ〜していない／これから〜しなければならない"
+  },
+  {
+    "rank": 232,
+    "word": "come of age",
+    "meaning": "成人する／一人前になる"
+  },
+  {
+    "rank": 233,
+    "word": "have a great deal to do with 〜",
+    "meaning": "〜と大いに関係がある"
+  },
+  {
+    "rank": 234,
+    "word": "take the trouble of doing",
+    "meaning": "わざわざ骨を折って〜する"
+  },
+  {
+    "rank": 235,
+    "word": "fade out",
+    "meaning": "次第に消える／フェードアウトする"
+  },
+  {
+    "rank": 236,
+    "word": "all of a sudden",
+    "meaning": "突然／不意に"
+  },
+  {
+    "rank": 237,
+    "word": "be ignorant of 〜",
+    "meaning": "〜を知らない／〜について無知である"
+  },
+  {
+    "rank": 238,
+    "word": "leave nothing to be desired",
+    "meaning": "申し分ない／文句のつけようがない"
+  },
+  {
+    "rank": 239,
+    "word": "cover up",
+    "meaning": "隠す／もみ消す／覆い隠す"
+  },
+  {
+    "rank": 240,
+    "word": "let down",
+    "meaning": "がっかりさせる／期待を裏切る"
+  },
+  {
+    "rank": 241,
+    "word": "make room for 〜",
+    "meaning": "〜のためのスペースを空ける／〜に席を譲る"
+  },
+  {
+    "rank": 242,
+    "word": "be in command of 〜",
+    "meaning": "〜を指揮している／〜を自由に操れる"
+  },
+  {
+    "rank": 243,
+    "word": "burst into laughter",
+    "meaning": "どっと笑い出す"
+  },
+  {
+    "rank": 244,
+    "word": "on doing",
+    "meaning": "〜するとすぐに（＝on ~ing）"
+  },
+  {
+    "rank": 245,
+    "word": "sit up",
+    "meaning": "起きている／上体を起こす／夜更かしする"
+  },
+  {
+    "rank": 246,
+    "word": "all the same",
+    "meaning": "それでもやはり／それにもかかわらず"
+  },
+  {
+    "rank": 247,
+    "word": "go on doing",
+    "meaning": "〜し続ける"
+  },
+  {
+    "rank": 248,
+    "word": "in the sun",
+    "meaning": "日なたで／日光の下で"
+  },
+  {
+    "rank": 249,
+    "word": "mean to do",
+    "meaning": "〜するつもりである／〜する意図がある"
+  },
+  {
+    "rank": 250,
+    "word": "have one's own way",
+    "meaning": "自分の思いどおりにする"
+  },
+  {
+    "rank": 251,
+    "word": "pass down",
+    "meaning": "伝える／受け継がせる"
+  },
+  {
+    "rank": 252,
+    "word": "take A into account",
+    "meaning": "Aを考慮に入れる"
+  },
+  {
+    "rank": 253,
+    "word": "be tempted to do",
+    "meaning": "つい〜したくなる／〜したい誘惑にかられる"
+  },
+  {
+    "rank": 254,
+    "word": "by instinct",
+    "meaning": "本能的に／勘で"
+  },
+  {
+    "rank": 255,
+    "word": "not so much as do",
+    "meaning": "〜さえしない"
+  },
+  {
+    "rank": 256,
+    "word": "be certain to do",
+    "meaning": "きっと〜する／確実に〜する"
+  },
+  {
+    "rank": 257,
+    "word": "only to do",
+    "meaning": "その結果〜しただけだった"
+  },
+  {
+    "rank": 258,
+    "word": "at your earliest convenience",
+    "meaning": "ご都合がつき次第なるべく早く"
+  },
+  {
+    "rank": 259,
+    "word": "safe and sound",
+    "meaning": "無事に／何事もなく"
+  },
+  {
+    "rank": 260,
+    "word": "with regard to 〜",
+    "meaning": "〜に関しては"
+  },
+  {
+    "rank": 261,
+    "word": "as is often the case with 〜",
+    "meaning": "〜にはよくあることだが／〜によく見られるように"
+  },
+  {
+    "rank": 262,
+    "word": "as often as A times",
+    "meaning": "A回も（〜するたび）"
+  },
+  {
+    "rank": 263,
+    "word": "in private",
+    "meaning": "内密に／人のいないところで"
+  },
+  {
+    "rank": 264,
+    "word": "run through 〜",
+    "meaning": "〜にざっと目を通す／〜の中を流れる／〜を通しで練習する"
+  },
+  {
+    "rank": 265,
+    "word": "go with 〜",
+    "meaning": "〜に合う／〜と一緒に行く"
+  },
+  {
+    "rank": 266,
+    "word": "make time",
+    "meaning": "時間を作る／時間の都合をつける"
+  },
+  {
+    "rank": 267,
+    "word": "No wonder ...",
+    "meaning": "...なのも不思議ではない／道理で...なわけだ"
+  },
+  {
+    "rank": 268,
+    "word": "take A's place",
+    "meaning": "Aの代わりをする／Aに取って代わる"
+  },
+  {
+    "rank": 269,
+    "word": "bring about",
+    "meaning": "引き起こす／もたらす"
+  },
+  {
+    "rank": 270,
+    "word": "get in A's way",
+    "meaning": "Aのじゃまをする／Aの障害になる"
+  },
+  {
+    "rank": 271,
+    "word": "make up one's mind",
+    "meaning": "決心する／覚悟を決める"
+  },
+  {
+    "rank": 272,
+    "word": "nothing less than 〜",
+    "meaning": "まさに〜／〜にほかならない"
+  },
+  {
+    "rank": 273,
+    "word": "in depth",
+    "meaning": "徹底的に／深く"
+  },
+  {
+    "rank": 274,
+    "word": "in honor of A",
+    "meaning": "Aに敬意を表して／Aを祝して"
+  },
+  {
+    "rank": 275,
+    "word": "pass away",
+    "meaning": "亡くなる／死去する"
+  },
+  {
+    "rank": 276,
+    "word": "show A to B",
+    "meaning": "AをBに案内する"
+  },
+  {
+    "rank": 277,
+    "word": "such that ...",
+    "meaning": "〜なほど...／...するほどの（程度を表す構文）"
+  },
+  {
+    "rank": 278,
+    "word": "pay a visit to 〜",
+    "meaning": "〜を訪問する／〜を訪ねる"
+  },
+  {
+    "rank": 279,
+    "word": "when it comes to 〜",
+    "meaning": "〜のことになると／〜と言えば"
+  },
+  {
+    "rank": 280,
+    "word": "a piece of cake",
+    "meaning": "とても簡単なこと／楽勝"
+  },
+  {
+    "rank": 281,
+    "word": "to A's regret",
+    "meaning": "Aにとって残念なことに"
+  },
+  {
+    "rank": 282,
+    "word": "stand by",
+    "meaning": "そばにいる／待機する／（人・意見を）支持する"
+  },
+  {
+    "rank": 283,
+    "word": "for instance",
+    "meaning": "例えば"
+  },
+  {
+    "rank": 284,
+    "word": "by accident",
+    "meaning": "偶然に／誤って"
+  },
+  {
+    "rank": 285,
+    "word": "in detail",
+    "meaning": "詳しく／詳細に"
+  },
+  {
+    "rank": 286,
+    "word": "in place of A",
+    "meaning": "Aの代わりに"
+  },
+  {
+    "rank": 287,
+    "word": "on duty",
+    "meaning": "勤務中で／当番で"
+  },
+  {
+    "rank": 288,
+    "word": "by chance",
+    "meaning": "偶然に"
+  },
+  {
+    "rank": 289,
+    "word": "put away",
+    "meaning": "片づける／しまう"
+  },
+  {
+    "rank": 290,
+    "word": "in case (that) ...",
+    "meaning": "...する場合に備えて／...するといけないので"
+  },
+  {
+    "rank": 291,
+    "word": "on behalf of 〜",
+    "meaning": "〜を代表して／〜に代わって"
+  },
+  {
+    "rank": 292,
+    "word": "turn over",
+    "meaning": "ひっくり返す／（ページを）めくる／入れ替わる"
+  },
+  {
+    "rank": 293,
+    "word": "on the whole",
+    "meaning": "全体としては／概して"
+  },
+  {
+    "rank": 294,
+    "word": "come across 〜",
+    "meaning": "〜に偶然出会う／～をふと見つける"
+  },
+  {
+    "rank": 295,
+    "word": "keep up",
+    "meaning": "続ける／遅れずについていく"
+  },
+  {
+    "rank": 296,
+    "word": "in place",
+    "meaning": "所定の位置に／きちんとして"
+  },
+  {
+    "rank": 297,
+    "word": "spread out",
+    "meaning": "広がる／広げる"
+  },
+  {
+    "rank": 298,
+    "word": "now that ...",
+    "meaning": "今は...なので／...である以上"
+  },
+  {
+    "rank": 299,
+    "word": "be familiar with 〜",
+    "meaning": "〜をよく知っている／〜に詳しい"
+  },
+  {
+    "rank": 300,
+    "word": "look over",
+    "meaning": "ざっと目を通す／見て調べる"
+  },
+  {
+    "rank": 301,
+    "word": "at most",
+    "meaning": "せいぜい／多くても"
+  },
+  {
+    "rank": 302,
+    "word": "bring back",
+    "meaning": "持ち帰る／思い出させる"
+  },
+  {
+    "rank": 303,
+    "word": "ever since",
+    "meaning": "それ以来ずっと"
+  },
+  {
+    "rank": 304,
+    "word": "dig up",
+    "meaning": "掘り起こす／（情報などを）掘り出す"
+  },
+  {
+    "rank": 305,
+    "word": "calm down",
+    "meaning": "落ち着く／落ち着かせる"
+  },
+  {
+    "rank": 306,
+    "word": "all the way",
+    "meaning": "ずっと／はるばる／最後まで"
+  },
+  {
+    "rank": 307,
+    "word": "come down",
+    "meaning": "（雨などが）降ってくる／下がる／落ちてくる"
+  },
+  {
+    "rank": 308,
+    "word": "on top of 〜",
+    "meaning": "〜に加えて／〜の上に"
+  },
+  {
+    "rank": 309,
+    "word": "in danger of 〜",
+    "meaning": "〜の危険があって"
+  },
+  {
+    "rank": 310,
+    "word": "leave out",
+    "meaning": "省く／抜かす／入れない"
+  },
+  {
+    "rank": 311,
+    "word": "make up",
+    "meaning": "作り上げる／構成する／仲直りする／化粧する"
+  },
+  {
+    "rank": 312,
+    "word": "on purpose",
+    "meaning": "わざと／故意に"
+  },
+  {
+    "rank": 313,
+    "word": "for fun",
+    "meaning": "遊びで／おもしろ半分に"
+  },
+  {
+    "rank": 314,
+    "word": "rule out",
+    "meaning": "除外する／可能性を排除する"
+  },
+  {
+    "rank": 315,
+    "word": "dispose of 〜",
+    "meaning": "〜を処分する／始末する"
+  },
+  {
+    "rank": 316,
+    "word": "for a change",
+    "meaning": "気分転換に／いつもと違って"
+  },
+  {
+    "rank": 317,
+    "word": "read through",
+    "meaning": "通して読む／一通り読む"
+  },
+  {
+    "rank": 318,
+    "word": "act on 〜",
+    "meaning": "〜に基づいて行動する／〜に作用する"
+  },
+  {
+    "rank": 319,
+    "word": "wear out",
+    "meaning": "すり減る／使い古す／疲れ果てさせる"
+  },
+  {
+    "rank": 320,
+    "word": "at the sight of 〜",
+    "meaning": "〜を見て／〜を見たとたん"
+  },
+  {
+    "rank": 321,
+    "word": "put off",
+    "meaning": "延期する／やる気をなくさせる"
+  },
+  {
+    "rank": 322,
+    "word": "out of place",
+    "meaning": "場違いで／違和感がある"
+  },
+  {
+    "rank": 323,
+    "word": "tell A from B",
+    "meaning": "AとBを見分ける／区別する"
+  },
+  {
+    "rank": 324,
+    "word": "change one's mind",
+    "meaning": "気が変わる／考えを変える"
+  },
+  {
+    "rank": 325,
+    "word": "be engaged to 〜",
+    "meaning": "〜と婚約している"
+  },
+  {
+    "rank": 326,
+    "word": "to the point",
+    "meaning": "要領を得た／的を射た"
+  },
+  {
+    "rank": 327,
+    "word": "in the air",
+    "meaning": "空中に／（うわさ・期待などが）広まって"
+  },
+  {
+    "rank": 328,
+    "word": "switch off",
+    "meaning": "（スイッチを切って）消す"
+  },
+  {
+    "rank": 329,
+    "word": "drop by (〜)",
+    "meaning": "（〜に）ちょっと立ち寄る"
+  },
+  {
+    "rank": 330,
+    "word": "in trouble",
+    "meaning": "困って／面倒なことになって"
+  },
+  {
+    "rank": 331,
+    "word": "turn away",
+    "meaning": "背ける／追い返す"
+  },
+  {
+    "rank": 332,
+    "word": "fold up",
+    "meaning": "折りたたむ"
+  },
+  {
+    "rank": 333,
+    "word": "make sure (that) ...",
+    "meaning": "...であることを確かめる／必ず...する"
+  },
+  {
+    "rank": 334,
+    "word": "carry out",
+    "meaning": "実行する／行う"
+  },
+  {
+    "rank": 335,
+    "word": "on the other hand",
+    "meaning": "一方で"
+  },
+  {
+    "rank": 336,
+    "word": "suffer from 〜",
+    "meaning": "〜で苦しむ／〜に悩む"
+  },
+  {
+    "rank": 337,
+    "word": "over time",
+    "meaning": "時間とともに／やがて"
+  },
+  {
+    "rank": 338,
+    "word": "result in 〜",
+    "meaning": "結果として〜になる／〜という結果を招く"
+  },
+  {
+    "rank": 339,
+    "word": "based on 〜",
+    "meaning": "〜に基づいて"
+  },
+  {
+    "rank": 340,
+    "word": "deal with 〜",
+    "meaning": "〜を扱う／〜に対処する"
+  },
+  {
+    "rank": 341,
+    "word": "depend on 〜",
+    "meaning": "〜に頼る／〜しだいで決まる"
+  },
+  {
+    "rank": 342,
+    "word": "due to 〜",
+    "meaning": "〜が原因で／〜のために"
+  },
+  {
+    "rank": 343,
+    "word": "fill out",
+    "meaning": "（用紙に）書き込む／記入する"
+  },
+  {
+    "rank": 344,
+    "word": "get used to 〜",
+    "meaning": "〜に慣れる"
+  },
+  {
+    "rank": 345,
+    "word": "even when ...",
+    "meaning": "たとえ...の時でも"
+  },
+  {
+    "rank": 346,
+    "word": "on average",
+    "meaning": "平均して／概して"
+  },
+  {
+    "rank": 347,
+    "word": "sign up for 〜",
+    "meaning": "〜に申し込む／登録する"
+  },
+  {
+    "rank": 348,
+    "word": "give out",
+    "meaning": "配る／出す（音・光など）／尽きる"
+  },
+  {
+    "rank": 349,
+    "word": "along with 〜",
+    "meaning": "〜と一緒に／〜に加えて"
+  },
+  {
+    "rank": 350,
+    "word": "break up",
+    "meaning": "別れる／解散する／ばらばらにする"
+  },
+  {
+    "rank": 351,
+    "word": "consist of 〜",
+    "meaning": "〜から成る／〜で構成される"
+  },
+  {
+    "rank": 352,
+    "word": "go ahead",
+    "meaning": "先へ進む／どうぞ（して下さい）"
+  },
+  {
+    "rank": 353,
+    "word": "anything but 〜",
+    "meaning": "決して〜ではない／〜どころではない"
+  },
+  {
+    "rank": 354,
+    "word": "be related to 〜",
+    "meaning": "〜と関係がある／〜に関連している"
+  },
+  {
+    "rank": 355,
+    "word": "together with 〜",
+    "meaning": "〜と一緒に／〜に加えて"
+  },
+  {
+    "rank": 356,
+    "word": "believe in 〜",
+    "meaning": "〜の存在（正しさ）を信じる／〜を信頼する"
+  },
+  {
+    "rank": 357,
+    "word": "be aware of 〜",
+    "meaning": "〜に気づいている／〜を意識している"
+  },
+  {
+    "rank": 358,
+    "word": "take advantage of 〜",
+    "meaning": "〜を利用する／～につけ込む"
+  },
+  {
+    "rank": 359,
+    "word": "in return",
+    "meaning": "お返しに／その代わりに"
+  },
+  {
+    "rank": 360,
+    "word": "major in 〜",
+    "meaning": "〜を専攻する"
+  },
+  {
+    "rank": 361,
+    "word": "before long",
+    "meaning": "まもなく／やがて"
+  },
+  {
+    "rank": 362,
+    "word": "back up",
+    "meaning": "後押しする／バックアップを取る"
+  },
+  {
+    "rank": 363,
+    "word": "in the hope of doing",
+    "meaning": "〜することを期待して／望んで"
+  },
+  {
+    "rank": 364,
+    "word": "run out",
+    "meaning": "尽きる／なくなる"
+  },
+  {
+    "rank": 365,
+    "word": "in time for 〜",
+    "meaning": "〜に間に合って"
+  },
+  {
+    "rank": 366,
+    "word": "look through 〜",
+    "meaning": "〜にざっと目を通す／〜を通して見る"
+  },
+  {
+    "rank": 367,
+    "word": "go on",
+    "meaning": "続く／続ける"
+  },
+  {
+    "rank": 368,
+    "word": "look up",
+    "meaning": "（調べて）探す／（状況が）よくなる"
+  },
+  {
+    "rank": 369,
+    "word": "dry out",
+    "meaning": "乾ききる／乾かす"
+  },
+  {
+    "rank": 370,
+    "word": "save up",
+    "meaning": "貯金する／貯める"
+  },
+  {
+    "rank": 371,
+    "word": "above all",
+    "meaning": "なかでもとりわけ／とくに"
+  },
+  {
+    "rank": 372,
+    "word": "check in",
+    "meaning": "（ホテル・空港などで）チェックインする"
+  },
+  {
+    "rank": 373,
+    "word": "speak up",
+    "meaning": "はっきり話す／意見をはっきり言う"
+  },
+  {
+    "rank": 374,
+    "word": "in short",
+    "meaning": "要するに／一言で言えば"
+  },
+  {
+    "rank": 375,
+    "word": "for long",
+    "meaning": "長い間"
+  },
+  {
+    "rank": 376,
+    "word": "give in",
+    "meaning": "屈する／譲る／提出する"
+  },
+  {
+    "rank": 377,
+    "word": "catch up with 〜",
+    "meaning": "〜に追いつく"
+  },
+  {
+    "rank": 378,
+    "word": "in fashion",
+    "meaning": "流行している／はやっている"
+  },
+  {
+    "rank": 379,
+    "word": "at random",
+    "meaning": "無作為に／でたらめに"
+  },
+  {
+    "rank": 380,
+    "word": "in the long run",
+    "meaning": "長い目で見れば／結局は"
+  },
+  {
+    "rank": 381,
+    "word": "for short",
+    "meaning": "略して／短く言って"
+  },
+  {
+    "rank": 382,
+    "word": "lie down",
+    "meaning": "横になる"
+  },
+  {
+    "rank": 383,
+    "word": "drop out",
+    "meaning": "（学校などを）やめる／途中で投げ出す"
+  },
+  {
+    "rank": 384,
+    "word": "break out",
+    "meaning": "（戦争・火事・病気などが）起こる／勃発する"
+  },
+  {
+    "rank": 385,
+    "word": "make fun of 〜",
+    "meaning": "〜をからかう／笑いものにする"
+  },
+  {
+    "rank": 386,
+    "word": "be engaged in 〜",
+    "meaning": "〜に従事している／〜に関わっている"
+  },
+  {
+    "rank": 387,
+    "word": "be worthy of 〜",
+    "meaning": "〜に値する／〜にふさわしい"
+  },
+  {
+    "rank": 388,
+    "word": "be known to 〜",
+    "meaning": "〜に知られている"
+  },
+  {
+    "rank": 389,
+    "word": "shake hands",
+    "meaning": "握手する"
+  },
+  {
+    "rank": 390,
+    "word": "drop in",
+    "meaning": "立ち寄る"
+  },
+  {
+    "rank": 391,
+    "word": "on demand",
+    "meaning": "要求があればいつでも／オンデマンドで"
+  },
+  {
+    "rank": 392,
+    "word": "in a row",
+    "meaning": "連続して／一列に"
+  },
+  {
+    "rank": 393,
+    "word": "be typical of 〜",
+    "meaning": "〜に典型的である／〜らしい"
+  },
+  {
+    "rank": 394,
+    "word": "hang up",
+    "meaning": "切る（電話を）／掛ける（服・絵などを）"
+  },
+  {
+    "rank": 395,
+    "word": "stop A from doing",
+    "meaning": "Aが〜するのを妨げる"
+  },
+  {
+    "rank": 396,
+    "word": "come to light",
+    "meaning": "明るみに出る／発覚する"
+  },
+  {
+    "rank": 397,
+    "word": "owing to 〜",
+    "meaning": "〜のために／〜が原因で"
+  },
+  {
+    "rank": 398,
+    "word": "for certain",
+    "meaning": "確かに／はっきりと"
+  },
+  {
+    "rank": 399,
+    "word": "long for 〜",
+    "meaning": "〜を切望する／恋しく思う"
+  },
+  {
+    "rank": 400,
+    "word": "make one's way",
+    "meaning": "進む／苦労しながら進む"
+  },
+  {
+    "rank": 401,
+    "word": "pull off",
+    "meaning": "うまくやってのける／（服などを）脱ぐ／引きはがす"
+  },
+  {
+    "rank": 402,
+    "word": "allow A to do",
+    "meaning": "Aが〜するのを許す／可能にする"
+  },
+  {
+    "rank": 403,
+    "word": "used to do",
+    "meaning": "以前はよく〜していた／昔は〜だった"
+  },
+  {
+    "rank": 404,
+    "word": "in order to do",
+    "meaning": "〜するために"
+  },
+  {
+    "rank": 405,
+    "word": "come up with 〜",
+    "meaning": "〜を思いつく／〜を考え出す"
+  },
+  {
+    "rank": 406,
+    "word": "not only A, but (also) B",
+    "meaning": "AだけでなくBも"
+  },
+  {
+    "rank": 407,
+    "word": "be likely to do",
+    "meaning": "〜しそうだ／〜する可能性が高い"
+  },
+  {
+    "rank": 408,
+    "word": "lead to 〜",
+    "meaning": "〜につながる／〜を引き起こす"
+  },
+  {
+    "rank": 409,
+    "word": "bring down",
+    "meaning": "倒す／減らす／（政府などを）打倒する"
+  },
+  {
+    "rank": 410,
+    "word": "no longer",
+    "meaning": "もはや〜ない"
+  },
+  {
+    "rank": 411,
+    "word": "let A do",
+    "meaning": "Aに〜させる（許す）"
+  },
+  {
+    "rank": 412,
+    "word": "prepare for 〜",
+    "meaning": "〜に備える／準備する"
+  },
+  {
+    "rank": 413,
+    "word": "help A do",
+    "meaning": "Aが〜するのを助ける"
+  },
+  {
+    "rank": 414,
+    "word": "in addition",
+    "meaning": "その上／加えて"
+  },
+  {
+    "rank": 415,
+    "word": "a number of 〜",
+    "meaning": "いくつかの〜／多数の〜"
+  },
+  {
+    "rank": 416,
+    "word": "prevent A from doing",
+    "meaning": "Aが〜するのを妨げる／防ぐ"
+  },
+  {
+    "rank": 417,
+    "word": "so far",
+    "meaning": "これまでのところ／今のところ"
+  },
+  {
+    "rank": 418,
+    "word": "instead of 〜",
+    "meaning": "〜の代わりに"
+  },
+  {
+    "rank": 419,
+    "word": "be sure to do",
+    "meaning": "きっと〜する／必ず〜するように"
+  },
+  {
+    "rank": 420,
+    "word": "turn A into B",
+    "meaning": "AをBに変える"
+  },
+  {
+    "rank": 421,
+    "word": "be supposed to do",
+    "meaning": "〜することになっている／〜すべきだとされている"
+  },
+  {
+    "rank": 422,
+    "word": "A as well as B",
+    "meaning": "BだけでなくAも／Bと同様にAも"
+  },
+  {
+    "rank": 423,
+    "word": "a variety of 〜",
+    "meaning": "さまざまな〜／いろいろな〜"
+  },
+  {
+    "rank": 424,
+    "word": "get rid of 〜",
+    "meaning": "〜を取り除く／捨てる／処分する"
+  },
+  {
+    "rank": 425,
+    "word": "find it 〜 to do",
+    "meaning": "〜だと感じる／〜だと思う（to以下をすることが）"
+  },
+  {
+    "rank": 426,
+    "word": "as 〜 as possible",
+    "meaning": "できるだけ〜／できる限り〜"
+  },
+  {
+    "rank": 427,
+    "word": "seem to do",
+    "meaning": "〜のように思われる／〜らしい"
+  },
+  {
+    "rank": 428,
+    "word": "be concerned about 〜",
+    "meaning": "〜を心配している／〜を気にかけている"
+  },
+  {
+    "rank": 429,
+    "word": "provide A with B",
+    "meaning": "AにBを与える／提供する"
+  },
+  {
+    "rank": 430,
+    "word": "take a look at 〜",
+    "meaning": "〜を見る／ちょっと目を通す"
+  },
+  {
+    "rank": 431,
+    "word": "give away",
+    "meaning": "ただであげる／（秘密などを）ばらす"
+  },
+  {
+    "rank": 432,
+    "word": "break down",
+    "meaning": "故障する／壊れる／（気持ちが）崩れる"
+  },
+  {
+    "rank": 433,
+    "word": "have difficulty doing",
+    "meaning": "〜するのに苦労する"
+  },
+  {
+    "rank": 434,
+    "word": "set up",
+    "meaning": "設置する／準備する／立ち上げる"
+  },
+  {
+    "rank": 435,
+    "word": "take place",
+    "meaning": "起こる／（行事が）行われる"
+  },
+  {
+    "rank": 436,
+    "word": "take up",
+    "meaning": "始める／（スペース・時間を）取る"
+  },
+  {
+    "rank": 437,
+    "word": "That is why ...",
+    "meaning": "だから...だ／それが...の理由だ"
+  },
+  {
+    "rank": 438,
+    "word": "every time ...",
+    "meaning": "...するたびに"
+  },
+  {
+    "rank": 439,
+    "word": "as long as ...",
+    "meaning": "...である限り／...であるかぎりは"
+  },
+  {
+    "rank": 440,
+    "word": "turn in",
+    "meaning": "提出する／（口語）寝る"
+  },
+  {
+    "rank": 441,
+    "word": "plenty of 〜",
+    "meaning": "たくさんの〜／十分な〜"
+  },
+  {
+    "rank": 442,
+    "word": "sell out",
+    "meaning": "売り切れる／売り尽くす"
+  },
+  {
+    "rank": 443,
+    "word": "It looks like ...",
+    "meaning": "...のように見える／...らしい"
+  },
+  {
+    "rank": 444,
+    "word": "in response to 〜",
+    "meaning": "〜に応えて／〜への返答として"
+  },
+  {
+    "rank": 445,
+    "word": "in the end",
+    "meaning": "結局は／最後には"
+  },
+  {
+    "rank": 446,
+    "word": "in reality",
+    "meaning": "実際には／現実には"
+  },
+  {
+    "rank": 447,
+    "word": "on one's own",
+    "meaning": "一人で／自力で／独立して"
+  },
+  {
+    "rank": 448,
+    "word": "run out of 〜",
+    "meaning": "〜を使い果たす／〜がなくなる"
+  },
+  {
+    "rank": 449,
+    "word": "hand out",
+    "meaning": "配る／配布する"
+  },
+  {
+    "rank": 450,
+    "word": "figure out",
+    "meaning": "理解する／解決策を見つける／考え出す"
+  },
+  {
+    "rank": 451,
+    "word": "not to mention 〜",
+    "meaning": "〜は言うまでもなく"
+  },
+  {
+    "rank": 452,
+    "word": "hand in",
+    "meaning": "提出する"
+  },
+  {
+    "rank": 453,
+    "word": "be involved in 〜",
+    "meaning": "〜に関わっている／〜に巻き込まれている"
+  },
+  {
+    "rank": 454,
+    "word": "in addition to 〜",
+    "meaning": "〜に加えて／〜だけでなく"
+  },
+  {
+    "rank": 455,
+    "word": "come out",
+    "meaning": "出版される／出る／明らかになる"
+  },
+  {
+    "rank": 456,
+    "word": "make it to 〜",
+    "meaning": "〜にたどり着く／〜に間に合う／〜に出席する"
+  },
+  {
+    "rank": 457,
+    "word": "cut down on 〜",
+    "meaning": "〜を減らす"
+  },
+  {
+    "rank": 458,
+    "word": "send out",
+    "meaning": "送り出す／発する（メール・光・音など）"
+  },
+  {
+    "rank": 459,
+    "word": "check out",
+    "meaning": "調べる／（ホテルを）チェックアウトする／試してみる"
+  },
+  {
+    "rank": 460,
+    "word": "be willing to do",
+    "meaning": "進んで〜する／〜してもかまわない"
+  },
+  {
+    "rank": 461,
+    "word": "live up to 〜",
+    "meaning": "〜に応える／〜にふさわしい行動をする"
+  },
+  {
+    "rank": 462,
+    "word": "take away",
+    "meaning": "取り去る／持ち帰りにする"
+  },
+  {
+    "rank": 463,
+    "word": "look down on 〜",
+    "meaning": "〜を見下す／ばかにする"
+  },
+  {
+    "rank": 464,
+    "word": "make do with 〜",
+    "meaning": "〜で間に合わせる／〜ですます"
+  },
+  {
+    "rank": 465,
+    "word": "have A in common",
+    "meaning": "Aを共通して持っている／共通点がある"
+  },
+  {
+    "rank": 466,
+    "word": "after all",
+    "meaning": "結局（のところ）／やはり"
+  },
+  {
+    "rank": 467,
+    "word": "put out",
+    "meaning": "消す（火・明かりなど）／出す・発行する"
+  },
+  {
+    "rank": 468,
+    "word": "settle down",
+    "meaning": "落ち着く／腰を落ち着ける／身を固める"
+  },
+  {
+    "rank": 469,
+    "word": "from now on",
+    "meaning": "これからは／今後ずっと"
+  },
+  {
+    "rank": 470,
+    "word": "go over 〜",
+    "meaning": "〜をよく調べる／復習する／見直す"
+  },
+  {
+    "rank": 471,
+    "word": "bring in",
+    "meaning": "導入する／取り入れる／（収入を）もたらす"
+  },
+  {
+    "rank": 472,
+    "word": "be responsible for 〜",
+    "meaning": "〜に責任がある／〜の原因である"
+  },
+  {
+    "rank": 473,
+    "word": "go into 〜",
+    "meaning": "〜の中に入る／〜を詳しく述べる"
+  },
+  {
+    "rank": 474,
+    "word": "in public",
+    "meaning": "人前で／公の場で"
+  },
+  {
+    "rank": 475,
+    "word": "and so on",
+    "meaning": "〜など／〜といった感じで（列挙の続き）"
+  },
+  {
+    "rank": 476,
+    "word": "in search of 〜",
+    "meaning": "〜を求めて／〜を探して"
+  },
+  {
+    "rank": 477,
+    "word": "what is called 〜",
+    "meaning": "いわゆる〜"
+  },
+  {
+    "rank": 478,
+    "word": "be concerned with 〜",
+    "meaning": "〜に関係している／〜を扱っている"
+  },
+  {
+    "rank": 479,
+    "word": "watch out for 〜",
+    "meaning": "〜に気をつける／注意する"
+  },
+  {
+    "rank": 480,
+    "word": "go along with 〜",
+    "meaning": "〜に同調する／〜に従う"
+  },
+  {
+    "rank": 481,
+    "word": "a bunch of 〜",
+    "meaning": "たくさんの〜／一束の〜"
+  },
+  {
+    "rank": 482,
+    "word": "in the first place",
+    "meaning": "そもそも／第一に"
+  },
+  {
+    "rank": 483,
+    "word": "be sick of 〜",
+    "meaning": "〜にうんざりしている"
+  },
+  {
+    "rank": 484,
+    "word": "come about",
+    "meaning": "起こる／生じる"
+  },
+  {
+    "rank": 485,
+    "word": "in exchange for 〜",
+    "meaning": "〜と引き換えに／〜の代わりに"
+  },
+  {
+    "rank": 486,
+    "word": "by the time ...",
+    "meaning": "...する頃までには／...する時までに"
+  },
+  {
+    "rank": 487,
+    "word": "in general",
+    "meaning": "一般的に／概して"
+  },
+  {
+    "rank": 488,
+    "word": "not A but B",
+    "meaning": "AではなくB"
+  },
+  {
+    "rank": 489,
+    "word": "sit back",
+    "meaning": "何もせずに座っている／傍観する"
+  },
+  {
+    "rank": 490,
+    "word": "Would you mind 〜 ing?",
+    "meaning": "〜していただいてもよろしいですか（控えめ依頼）"
+  },
+  {
+    "rank": 491,
+    "word": "Why not 〜?",
+    "meaning": "〜したら？／〜してはどう？"
+  },
+  {
+    "rank": 492,
+    "word": "it's on me",
+    "meaning": "私のおごりです"
+  },
+  {
+    "rank": 493,
+    "word": "Would you be kind enough to 〜?",
+    "meaning": "〜していただけませんか（とても丁寧）"
+  },
+  {
+    "rank": 494,
+    "word": "You deserve it",
+    "meaning": "それに値するよ／当然のごほうびだよ"
+  },
+  {
+    "rank": 495,
+    "word": "What became of 〜?",
+    "meaning": "〜はどうなったの？"
+  },
+  {
+    "rank": 496,
+    "word": "To the best of my knowledge",
+    "meaning": "私の知る限りでは"
+  },
+  {
+    "rank": 497,
+    "word": "I'm all ears",
+    "meaning": "ちゃんと聞いてるよ／ぜひ聞かせて"
+  },
+  {
+    "rank": 498,
+    "word": "don't hesitate to",
+    "meaning": "遠慮なく〜してください"
+  },
+  {
+    "rank": 499,
+    "word": "So do I",
+    "meaning": "私もです"
+  },
+  {
+    "rank": 500,
+    "word": "It's none of your business",
+    "meaning": "あなたには関係ないことだよ"
+  },
+  {
+    "rank": 501,
+    "word": "Take your time",
+    "meaning": "急がなくていいよ／ごゆっくり"
+  },
+  {
+    "rank": 502,
+    "word": "Would you mind my 〜 ing?",
+    "meaning": "私が〜してもよろしいですか"
+  },
+  {
+    "rank": 503,
+    "word": "How come 〜?",
+    "meaning": "どうして〜なの？（くだけた言い方）"
+  },
+  {
+    "rank": 504,
+    "word": "Why don't you 〜?",
+    "meaning": "〜したらどう？／〜しませんか"
+  },
+  {
+    "rank": 505,
+    "word": "What happened to 〜?",
+    "meaning": "〜に何があったの？／〜どうしちゃったの？"
+  },
+  {
+    "rank": 506,
+    "word": "No problem",
+    "meaning": "問題ないよ／いいですよ"
+  },
+  {
+    "rank": 507,
+    "word": "I'm sure",
+    "meaning": "きっとそうだよ／絶対そう"
+  },
+  {
+    "rank": 508,
+    "word": "I guess",
+    "meaning": "たぶんね／そうかなあ"
+  },
+  {
+    "rank": 509,
+    "word": "I was wondering if",
+    "meaning": "〜していただけるかと思いまして（控えめな前置き）"
+  },
+  {
+    "rank": 510,
+    "word": "I wonder",
+    "meaning": "〜かなあ／どうなんだろう"
+  },
+  {
+    "rank": 511,
+    "word": "Why don't we 〜?",
+    "meaning": "〜しようよ（お誘い）"
+  },
+  {
+    "rank": 512,
+    "word": "I'd like ... to 〜",
+    "meaning": "...に〜してほしい"
+  },
+  {
+    "rank": 513,
+    "word": "How about 〜 ing?",
+    "meaning": "〜してはどう？"
+  },
+  {
+    "rank": 514,
+    "word": "I wish I could",
+    "meaning": "できたらいいんだけど（でもできない）"
+  },
+  {
+    "rank": 515,
+    "word": "Can I ask you a favor?",
+    "meaning": "お願い事をしてもいい？"
+  },
+  {
+    "rank": 516,
+    "word": "It's a shame",
+    "meaning": "残念だ／気の毒だ"
+  },
+  {
+    "rank": 517,
+    "word": "I have no idea",
+    "meaning": "全然わからない"
+  },
+  {
+    "rank": 518,
+    "word": "Let's see",
+    "meaning": "ええとね／そうだなあ（考えながら）"
+  },
+  {
+    "rank": 519,
+    "word": "Guess what?",
+    "meaning": "ねえ聞いてよ／あのね（話の切り出し）"
+  },
+  {
+    "rank": 520,
+    "word": "It doesn't matter",
+    "meaning": "どっちでもいいよ／大したことじゃない"
+  },
+  {
+    "rank": 521,
+    "word": "I really appreciate it",
+    "meaning": "本当に感謝しています"
+  },
+  {
+    "rank": 522,
+    "word": "I'd be happy to",
+    "meaning": "喜んでそうします"
+  },
+  {
+    "rank": 523,
+    "word": "What do you say to 〜 ing?",
+    "meaning": "〜するのはどう？"
+  },
+  {
+    "rank": 524,
+    "word": "If it's not too much trouble",
+    "meaning": "もしご面倒でなければ"
+  },
+  {
+    "rank": 525,
+    "word": "My apologies",
+    "meaning": "申し訳ありません"
+  },
+  {
+    "rank": 526,
+    "word": "How can I help you?",
+    "meaning": "どうなさいましたか？／何のお手伝いができるでしょうか"
+  },
+  {
+    "rank": 527,
+    "word": "I'm sorry to hear that",
+    "meaning": "それはお気の毒に／残念ですね"
+  },
+  {
+    "rank": 528,
+    "word": "What's the matter?",
+    "meaning": "どうしたの？"
+  },
+  {
+    "rank": 529,
+    "word": "I'll be sure to do that",
+    "meaning": "必ずそうします"
+  },
+  {
+    "rank": 530,
+    "word": "Could you possibly 〜?",
+    "meaning": "〜していただけませんか（かなり丁寧）"
+  },
+  {
+    "rank": 531,
+    "word": "Thank goodness",
+    "meaning": "よかった／助かった"
+  },
+  {
+    "rank": 532,
+    "word": "What's wrong with 〜?",
+    "meaning": "〜のどこがいけないの？／〜はどうしたの？"
+  },
+  {
+    "rank": 533,
+    "word": "it wouldn't hurt to",
+    "meaning": "〜しても損はないよ／悪くはないよ"
+  },
+  {
+    "rank": 534,
+    "word": "Hold on a second",
+    "meaning": "ちょっと待って"
+  },
+  {
+    "rank": 535,
+    "word": "I bet",
+    "meaning": "絶対そうだよ／きっとね"
+  },
+  {
+    "rank": 536,
+    "word": "I can't help it",
+    "meaning": "仕方ないんだ／どうにもならない"
+  },
+  {
+    "rank": 537,
+    "word": "Thank you for your cooperation",
+    "meaning": "ご協力ありがとうございます"
+  },
+  {
+    "rank": 538,
+    "word": "To tell you the truth",
+    "meaning": "実を言うと／本当のことを言うと"
+  },
+  {
+    "rank": 539,
+    "word": "I'd appreciate it if",
+    "meaning": "〜していただけるとありがたいです"
+  },
+  {
+    "rank": 540,
+    "word": "Can I have your name, please?",
+    "meaning": "お名前をうかがってもよろしいですか"
+  },
+  {
+    "rank": 541,
+    "word": "How much do I owe you?",
+    "meaning": "いくらお支払いすればいいですか"
+  },
+  {
+    "rank": 542,
+    "word": "Long time no see",
+    "meaning": "久しぶり！"
+  },
+  {
+    "rank": 543,
+    "word": "I don't get it",
+    "meaning": "よくわからない／意味がわからない"
+  },
+  {
+    "rank": 544,
+    "word": "That's nice of you",
+    "meaning": "ご親切に／優しいね"
+  },
+  {
+    "rank": 545,
+    "word": "What a mess",
+    "meaning": "なんて散らかってるんだ／ひどい有様だ"
+  },
+  {
+    "rank": 546,
+    "word": "I have something to tell you",
+    "meaning": "話したいことがあるんだ"
+  },
+  {
+    "rank": 547,
+    "word": "Would that be OK?",
+    "meaning": "それで大丈夫ですか？"
+  },
+  {
+    "rank": 548,
+    "word": "No way",
+    "meaning": "ありえない／絶対イヤ"
+  },
+  {
+    "rank": 549,
+    "word": "I'm pleased to",
+    "meaning": "〜できてうれしいです／光栄です"
+  },
+  {
+    "rank": 550,
+    "word": "That would be a big help",
+    "meaning": "それは大助かりです"
+  },
+  {
+    "rank": 551,
+    "word": "This is 〜 speaking",
+    "meaning": "こちら〜です（電話で名乗るとき）"
+  },
+  {
+    "rank": 552,
+    "word": "What's on your mind?",
+    "meaning": "何を考えているの？／どうしたの？"
+  },
+  {
+    "rank": 553,
+    "word": "may want to",
+    "meaning": "〜した方がいいかも（控えめな提案）"
+  },
+  {
+    "rank": 554,
+    "word": "What's up?",
+    "meaning": "どうした？／元気？／何かあった？"
+  },
+  {
+    "rank": 555,
+    "word": "It was my pleasure",
+    "meaning": "どういたしまして（こちらこそ）"
+  },
+  {
+    "rank": 556,
+    "word": "By all means",
+    "meaning": "ぜひどうぞ／もちろん"
+  },
+  {
+    "rank": 557,
+    "word": "Good for you!",
+    "meaning": "よかったね！／えらいね！"
+  },
+  {
+    "rank": 558,
+    "word": "That's no good",
+    "meaning": "それはよくないね／ダメだね"
+  },
+  {
+    "rank": 559,
+    "word": "It depends",
+    "meaning": "場合によるね"
+  },
+  {
+    "rank": 560,
+    "word": "〜 as well",
+    "meaning": "〜もまた／〜も同様に"
+  }
+]

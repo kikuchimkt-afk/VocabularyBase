@@ -1,0 +1,7302 @@
+[
+  {
+    "rank": 1,
+    "word": "vehicle",
+    "meaning": "乗り物／手段"
+  },
+  {
+    "rank": 2,
+    "word": "abandon",
+    "meaning": "捨てる／放棄する"
+  },
+  {
+    "rank": 3,
+    "word": "vague",
+    "meaning": "あいまいな／はっきりしない"
+  },
+  {
+    "rank": 4,
+    "word": "evidence",
+    "meaning": "証拠／証拠物"
+  },
+  {
+    "rank": 5,
+    "word": "feature",
+    "meaning": "特徴／特集する・目玉にする"
+  },
+  {
+    "rank": 6,
+    "word": "stir",
+    "meaning": "かき回す／（感情などを）かき立てる"
+  },
+  {
+    "rank": 7,
+    "word": "restore",
+    "meaning": "元に戻す／修復する"
+  },
+  {
+    "rank": 8,
+    "word": "preserve",
+    "meaning": "保存する／保護する"
+  },
+  {
+    "rank": 9,
+    "word": "mixture",
+    "meaning": "混合物／混ざり合ったもの"
+  },
+  {
+    "rank": 10,
+    "word": "budget",
+    "meaning": "予算"
+  },
+  {
+    "rank": 11,
+    "word": "approve",
+    "meaning": "承認する／賛成する"
+  },
+  {
+    "rank": 12,
+    "word": "reverse",
+    "meaning": "逆にする／覆す／逆の"
+  },
+  {
+    "rank": 13,
+    "word": "launch",
+    "meaning": "開始する／打ち上げる／発売する"
+  },
+  {
+    "rank": 14,
+    "word": "behave",
+    "meaning": "ふるまう"
+  },
+  {
+    "rank": 15,
+    "word": "imply",
+    "meaning": "ほのめかす／意味する"
+  },
+  {
+    "rank": 16,
+    "word": "postpone",
+    "meaning": "延期する／先送りにする"
+  },
+  {
+    "rank": 17,
+    "word": "convince",
+    "meaning": "納得させる／確信させる"
+  },
+  {
+    "rank": 18,
+    "word": "estimate",
+    "meaning": "見積もる／推定する／見積もり"
+  },
+  {
+    "rank": 19,
+    "word": "despite",
+    "meaning": "〜にもかかわらず"
+  },
+  {
+    "rank": 20,
+    "word": "frequently",
+    "meaning": "しばしば／頻繁に"
+  },
+  {
+    "rank": 21,
+    "word": "relative",
+    "meaning": "親戚／相対的な"
+  },
+  {
+    "rank": 22,
+    "word": "respond",
+    "meaning": "反応する／返答する"
+  },
+  {
+    "rank": 23,
+    "word": "struggle",
+    "meaning": "奮闘する／もがく／苦労"
+  },
+  {
+    "rank": 24,
+    "word": "politely",
+    "meaning": "礼儀正しく／丁寧に"
+  },
+  {
+    "rank": 25,
+    "word": "compose",
+    "meaning": "構成する／作曲・作文する"
+  },
+  {
+    "rank": 26,
+    "word": "divide",
+    "meaning": "分ける／分割する"
+  },
+  {
+    "rank": 27,
+    "word": "concept",
+    "meaning": "概念／考え方"
+  },
+  {
+    "rank": 28,
+    "word": "interfere",
+    "meaning": "邪魔をする／干渉する"
+  },
+  {
+    "rank": 29,
+    "word": "hesitantly",
+    "meaning": "ためらいがちに／躊躇して"
+  },
+  {
+    "rank": 30,
+    "word": "element",
+    "meaning": "要素／成分"
+  },
+  {
+    "rank": 31,
+    "word": "tolerate",
+    "meaning": "我慢する／許容する"
+  },
+  {
+    "rank": 32,
+    "word": "eventually",
+    "meaning": "最終的には／やがて"
+  },
+  {
+    "rank": 33,
+    "word": "disappointed",
+    "meaning": "がっかりした／失望した"
+  },
+  {
+    "rank": 34,
+    "word": "survey",
+    "meaning": "調査／アンケート調査"
+  },
+  {
+    "rank": 35,
+    "word": "participate",
+    "meaning": "参加する"
+  },
+  {
+    "rank": 36,
+    "word": "rarely",
+    "meaning": "めったに〜ない"
+  },
+  {
+    "rank": 37,
+    "word": "meanwhile",
+    "meaning": "その間に／一方で"
+  },
+  {
+    "rank": 38,
+    "word": "spill",
+    "meaning": "こぼす／こぼれる"
+  },
+  {
+    "rank": 39,
+    "word": "ban",
+    "meaning": "禁止する／禁止（令）"
+  },
+  {
+    "rank": 40,
+    "word": "insurance",
+    "meaning": "保険"
+  },
+  {
+    "rank": 41,
+    "word": "disadvantage",
+    "meaning": "不利な点／欠点"
+  },
+  {
+    "rank": 42,
+    "word": "react",
+    "meaning": "反応する"
+  },
+  {
+    "rank": 43,
+    "word": "surgery",
+    "meaning": "手術／外科"
+  },
+  {
+    "rank": 44,
+    "word": "civilization",
+    "meaning": "文明"
+  },
+  {
+    "rank": 45,
+    "word": "flexibility",
+    "meaning": "柔軟性／融通のきくこと"
+  },
+  {
+    "rank": 46,
+    "word": "confuse",
+    "meaning": "混乱させる／まごつかせる"
+  },
+  {
+    "rank": 47,
+    "word": "genuine",
+    "meaning": "本物の／心からの／誠実な"
+  },
+  {
+    "rank": 48,
+    "word": "flow",
+    "meaning": "流れる／流れ"
+  },
+  {
+    "rank": 49,
+    "word": "individually",
+    "meaning": "個別に／一人一人"
+  },
+  {
+    "rank": 50,
+    "word": "tension",
+    "meaning": "緊張／張りつめた状態"
+  },
+  {
+    "rank": 51,
+    "word": "hardship",
+    "meaning": "苦難／つらい状況"
+  },
+  {
+    "rank": 52,
+    "word": "bend",
+    "meaning": "曲げる／曲がる"
+  },
+  {
+    "rank": 53,
+    "word": "occupation",
+    "meaning": "職業／占領"
+  },
+  {
+    "rank": 54,
+    "word": "formation",
+    "meaning": "形成／構成／隊形"
+  },
+  {
+    "rank": 55,
+    "word": "overlap",
+    "meaning": "重なる／重ねる／重なり"
+  },
+  {
+    "rank": 56,
+    "word": "burden",
+    "meaning": "負担／重荷"
+  },
+  {
+    "rank": 57,
+    "word": "discipline",
+    "meaning": "規律／しつけ／（学問の）分野"
+  },
+  {
+    "rank": 58,
+    "word": "progress",
+    "meaning": "進歩／前進／進歩する"
+  },
+  {
+    "rank": 59,
+    "word": "solution",
+    "meaning": "解決策／溶液"
+  },
+  {
+    "rank": 60,
+    "word": "achieve",
+    "meaning": "達成する／成し遂げる"
+  },
+  {
+    "rank": 61,
+    "word": "admit",
+    "meaning": "認める／入場を許す"
+  },
+  {
+    "rank": 62,
+    "word": "religion",
+    "meaning": "宗教"
+  },
+  {
+    "rank": 63,
+    "word": "quantity",
+    "meaning": "量／数量"
+  },
+  {
+    "rank": 64,
+    "word": "encounter",
+    "meaning": "出くわす／遭遇する／遭遇"
+  },
+  {
+    "rank": 65,
+    "word": "recognize",
+    "meaning": "認識する／見分ける／認める"
+  },
+  {
+    "rank": 66,
+    "word": "separate",
+    "meaning": "分ける／引き離す／別々の"
+  },
+  {
+    "rank": 67,
+    "word": "compare",
+    "meaning": "比較する"
+  },
+  {
+    "rank": 68,
+    "word": "export",
+    "meaning": "輸出する／輸出（品）"
+  },
+  {
+    "rank": 69,
+    "word": "represent",
+    "meaning": "代表する／表す"
+  },
+  {
+    "rank": 70,
+    "word": "persuade",
+    "meaning": "説得する"
+  },
+  {
+    "rank": 71,
+    "word": "witness",
+    "meaning": "目撃者／証人／目撃する"
+  },
+  {
+    "rank": 72,
+    "word": "collapse",
+    "meaning": "倒壊する／崩れ落ちる／崩壊"
+  },
+  {
+    "rank": 73,
+    "word": "desire",
+    "meaning": "強い望み／欲望／望む"
+  },
+  {
+    "rank": 74,
+    "word": "accompany",
+    "meaning": "同行する／伴う"
+  },
+  {
+    "rank": 75,
+    "word": "betray",
+    "meaning": "裏切る／漏らす"
+  },
+  {
+    "rank": 76,
+    "word": "justice",
+    "meaning": "正義／公正／司法"
+  },
+  {
+    "rank": 77,
+    "word": "interpret",
+    "meaning": "通訳する／解釈する"
+  },
+  {
+    "rank": 78,
+    "word": "courage",
+    "meaning": "勇気"
+  },
+  {
+    "rank": 79,
+    "word": "spoil",
+    "meaning": "台無しにする／甘やかす／腐る"
+  },
+  {
+    "rank": 80,
+    "word": "connect",
+    "meaning": "つなぐ／関係づける"
+  },
+  {
+    "rank": 81,
+    "word": "remind",
+    "meaning": "思い出させる／念押しする"
+  },
+  {
+    "rank": 82,
+    "word": "experiment",
+    "meaning": "実験（する）"
+  },
+  {
+    "rank": 83,
+    "word": "attach",
+    "meaning": "取り付ける／添付する／愛着を持たせる"
+  },
+  {
+    "rank": 84,
+    "word": "gain",
+    "meaning": "得る／増やす／利益・増加"
+  },
+  {
+    "rank": 85,
+    "word": "translate",
+    "meaning": "翻訳する／訳す"
+  },
+  {
+    "rank": 86,
+    "word": "factor",
+    "meaning": "要因／要素"
+  },
+  {
+    "rank": 87,
+    "word": "bury",
+    "meaning": "埋める／埋葬する"
+  },
+  {
+    "rank": 88,
+    "word": "theory",
+    "meaning": "理論／学説"
+  },
+  {
+    "rank": 89,
+    "word": "whenever",
+    "meaning": "〜するときはいつでも／いつ〜しても"
+  },
+  {
+    "rank": 90,
+    "word": "establish",
+    "meaning": "設立する／確立する"
+  },
+  {
+    "rank": 91,
+    "word": "heal",
+    "meaning": "治す／癒す／治る"
+  },
+  {
+    "rank": 92,
+    "word": "trick",
+    "meaning": "だます／手品／いたずら"
+  },
+  {
+    "rank": 93,
+    "word": "inform",
+    "meaning": "知らせる／通知する"
+  },
+  {
+    "rank": 94,
+    "word": "enemy",
+    "meaning": "敵"
+  },
+  {
+    "rank": 95,
+    "word": "occasion",
+    "meaning": "機会／行事・特別な時"
+  },
+  {
+    "rank": 96,
+    "word": "contribute",
+    "meaning": "貢献する／寄付する／一因となる"
+  },
+  {
+    "rank": 97,
+    "word": "opponent",
+    "meaning": "相手／敵／反対者"
+  },
+  {
+    "rank": 98,
+    "word": "emotion",
+    "meaning": "感情"
+  },
+  {
+    "rank": 99,
+    "word": "mineral",
+    "meaning": "鉱物／ミネラル"
+  },
+  {
+    "rank": 100,
+    "word": "landscape",
+    "meaning": "風景／景観"
+  },
+  {
+    "rank": 101,
+    "word": "qualify",
+    "meaning": "資格を得る／資格を与える／条件をつける"
+  },
+  {
+    "rank": 102,
+    "word": "silently",
+    "meaning": "黙って／静かに"
+  },
+  {
+    "rank": 103,
+    "word": "conflict",
+    "meaning": "対立／衝突／矛盾／対立する"
+  },
+  {
+    "rank": 104,
+    "word": "sensation",
+    "meaning": "感覚／大評判・センセーション"
+  },
+  {
+    "rank": 105,
+    "word": "affection",
+    "meaning": "愛情／好意"
+  },
+  {
+    "rank": 106,
+    "word": "annually",
+    "meaning": "毎年／年に一度"
+  },
+  {
+    "rank": 107,
+    "word": "suppose",
+    "meaning": "〜だと思う／仮定する"
+  },
+  {
+    "rank": 108,
+    "word": "confess",
+    "meaning": "告白する／自白する"
+  },
+  {
+    "rank": 109,
+    "word": "permit",
+    "meaning": "許可する／許可証"
+  },
+  {
+    "rank": 110,
+    "word": "recommend",
+    "meaning": "推薦する／勧める"
+  },
+  {
+    "rank": 111,
+    "word": "treat",
+    "meaning": "扱う／治療する／奢り・お楽しみ"
+  },
+  {
+    "rank": 112,
+    "word": "organize",
+    "meaning": "組織する／整理する"
+  },
+  {
+    "rank": 113,
+    "word": "device",
+    "meaning": "装置／工夫"
+  },
+  {
+    "rank": 114,
+    "word": "source",
+    "meaning": "源／出どころ／情報源"
+  },
+  {
+    "rank": 115,
+    "word": "retire",
+    "meaning": "引退する／退職する／就寝する（古い言い方）"
+  },
+  {
+    "rank": 116,
+    "word": "method",
+    "meaning": "方法／やり方"
+  },
+  {
+    "rank": 117,
+    "word": "artificial",
+    "meaning": "人工の／不自然な"
+  },
+  {
+    "rank": 118,
+    "word": "account",
+    "meaning": "口座／説明／考慮／説明する"
+  },
+  {
+    "rank": 119,
+    "word": "gradually",
+    "meaning": "徐々に／だんだん"
+  },
+  {
+    "rank": 120,
+    "word": "award",
+    "meaning": "賞／授与する"
+  },
+  {
+    "rank": 121,
+    "word": "temporary",
+    "meaning": "一時的な／臨時の"
+  },
+  {
+    "rank": 122,
+    "word": "correct",
+    "meaning": "正しい／訂正する"
+  },
+  {
+    "rank": 123,
+    "word": "approach",
+    "meaning": "近づく／取り組む／接近・アプローチ"
+  },
+  {
+    "rank": 124,
+    "word": "display",
+    "meaning": "展示する／表示する／展示"
+  },
+  {
+    "rank": 125,
+    "word": "broadcast",
+    "meaning": "放送する／放送"
+  },
+  {
+    "rank": 126,
+    "word": "predict",
+    "meaning": "予測する／予言する"
+  },
+  {
+    "rank": 127,
+    "word": "liquid",
+    "meaning": "液体／液体の"
+  },
+  {
+    "rank": 128,
+    "word": "confirm",
+    "meaning": "確認する／裏づける"
+  },
+  {
+    "rank": 129,
+    "word": "poverty",
+    "meaning": "貧困"
+  },
+  {
+    "rank": 130,
+    "word": "calculate",
+    "meaning": "計算する／見積もる"
+  },
+  {
+    "rank": 131,
+    "word": "excuse",
+    "meaning": "言い訳／許す／免除する"
+  },
+  {
+    "rank": 132,
+    "word": "exhibit",
+    "meaning": "展示する／示す／展示物"
+  },
+  {
+    "rank": 133,
+    "word": "enormous",
+    "meaning": "巨大な／莫大な"
+  },
+  {
+    "rank": 134,
+    "word": "opposite",
+    "meaning": "反対の／向かい側の／反対のもの"
+  },
+  {
+    "rank": 135,
+    "word": "previous",
+    "meaning": "前の／以前の"
+  },
+  {
+    "rank": 136,
+    "word": "insist",
+    "meaning": "主張する／言い張る"
+  },
+  {
+    "rank": 137,
+    "word": "loan",
+    "meaning": "貸付金／ローン／貸す"
+  },
+  {
+    "rank": 138,
+    "word": "critic",
+    "meaning": "評論家／批評する人"
+  },
+  {
+    "rank": 139,
+    "word": "emphasize",
+    "meaning": "強調する"
+  },
+  {
+    "rank": 140,
+    "word": "interrupt",
+    "meaning": "さえぎる／中断させる"
+  },
+  {
+    "rank": 141,
+    "word": "percentage",
+    "meaning": "割合／歩合"
+  },
+  {
+    "rank": 142,
+    "word": "content",
+    "meaning": "中身／内容／（形）満足している"
+  },
+  {
+    "rank": 143,
+    "word": "industrial",
+    "meaning": "工業の／産業の"
+  },
+  {
+    "rank": 144,
+    "word": "reality",
+    "meaning": "現実／現実性"
+  },
+  {
+    "rank": 145,
+    "word": "suspect",
+    "meaning": "疑う／容疑者／怪しい"
+  },
+  {
+    "rank": 146,
+    "word": "investigate",
+    "meaning": "調査する／捜査する"
+  },
+  {
+    "rank": 147,
+    "word": "appropriate",
+    "meaning": "適切な／ふさわしい"
+  },
+  {
+    "rank": 148,
+    "word": "expose",
+    "meaning": "さらす／暴く／露出させる"
+  },
+  {
+    "rank": 149,
+    "word": "military",
+    "meaning": "軍の／軍事的な／軍隊"
+  },
+  {
+    "rank": 150,
+    "word": "amusing",
+    "meaning": "おもしろい／愉快な"
+  },
+  {
+    "rank": 151,
+    "word": "guarantee",
+    "meaning": "保証する／保証（書）"
+  },
+  {
+    "rank": 152,
+    "word": "ruin",
+    "meaning": "台無しにする／滅ぼす／廃墟・破滅"
+  },
+  {
+    "rank": 153,
+    "word": "continent",
+    "meaning": "大陸"
+  },
+  {
+    "rank": 154,
+    "word": "sacrifice",
+    "meaning": "犠牲／犠牲にする"
+  },
+  {
+    "rank": 155,
+    "word": "direct",
+    "meaning": "直接の／率直な／向ける／指示する"
+  },
+  {
+    "rank": 156,
+    "word": "scar",
+    "meaning": "傷跡／心の傷／傷跡を残す"
+  },
+  {
+    "rank": 157,
+    "word": "attempt",
+    "meaning": "試みる／試み"
+  },
+  {
+    "rank": 158,
+    "word": "flame",
+    "meaning": "炎／燃え上がる"
+  },
+  {
+    "rank": 159,
+    "word": "judgment",
+    "meaning": "判断／判決"
+  },
+  {
+    "rank": 160,
+    "word": "distribute",
+    "meaning": "分配する／配布する"
+  },
+  {
+    "rank": 161,
+    "word": "eliminate",
+    "meaning": "取り除く／排除する"
+  },
+  {
+    "rank": 162,
+    "word": "mission",
+    "meaning": "任務／使命"
+  },
+  {
+    "rank": 163,
+    "word": "capture",
+    "meaning": "捕らえる／とらわれる／捕獲"
+  },
+  {
+    "rank": 164,
+    "word": "irritate",
+    "meaning": "いらだたせる／刺激する"
+  },
+  {
+    "rank": 165,
+    "word": "humanity",
+    "meaning": "人類／人間性／人道"
+  },
+  {
+    "rank": 166,
+    "word": "navigate",
+    "meaning": "航行する／道順を導く／操作する"
+  },
+  {
+    "rank": 167,
+    "word": "drown",
+    "meaning": "溺れ死ぬ／おぼれさせる"
+  },
+  {
+    "rank": 168,
+    "word": "compliment",
+    "meaning": "ほめ言葉／賛辞／褒める"
+  },
+  {
+    "rank": 169,
+    "word": "enlarge",
+    "meaning": "大きくする／拡大する"
+  },
+  {
+    "rank": 170,
+    "word": "ignorance",
+    "meaning": "無知／知らないこと"
+  },
+  {
+    "rank": 171,
+    "word": "unite",
+    "meaning": "団結させる／結合する"
+  },
+  {
+    "rank": 172,
+    "word": "modify",
+    "meaning": "修正する／多少変える"
+  },
+  {
+    "rank": 173,
+    "word": "peel",
+    "meaning": "皮をむく／はがれる／皮"
+  },
+  {
+    "rank": 174,
+    "word": "guilty",
+    "meaning": "有罪の／罪悪感のある"
+  },
+  {
+    "rank": 175,
+    "word": "revise",
+    "meaning": "改訂する／見直す"
+  },
+  {
+    "rank": 176,
+    "word": "knit",
+    "meaning": "編む"
+  },
+  {
+    "rank": 177,
+    "word": "assume",
+    "meaning": "仮定する／当然と思う／引き受ける"
+  },
+  {
+    "rank": 178,
+    "word": "thickly",
+    "meaning": "厚く／濃く／密に"
+  },
+  {
+    "rank": 179,
+    "word": "compromise",
+    "meaning": "妥協（する）"
+  },
+  {
+    "rank": 180,
+    "word": "intention",
+    "meaning": "意図／つもり"
+  },
+  {
+    "rank": 181,
+    "word": "endure",
+    "meaning": "耐える／持ちこたえる"
+  },
+  {
+    "rank": 182,
+    "word": "abuse",
+    "meaning": "乱用／虐待／乱用する・虐待する"
+  },
+  {
+    "rank": 183,
+    "word": "disaster",
+    "meaning": "災害／大失敗"
+  },
+  {
+    "rank": 184,
+    "word": "justify",
+    "meaning": "正当化する／弁明する"
+  },
+  {
+    "rank": 185,
+    "word": "coincidence",
+    "meaning": "偶然の一致／同時発生"
+  },
+  {
+    "rank": 186,
+    "word": "capacity",
+    "meaning": "容量／収容力／能力"
+  },
+  {
+    "rank": 187,
+    "word": "distinguish",
+    "meaning": "区別する／見分ける"
+  },
+  {
+    "rank": 188,
+    "word": "encourage",
+    "meaning": "励ます／勇気づける／促進する"
+  },
+  {
+    "rank": 189,
+    "word": "creature",
+    "meaning": "生き物／動物"
+  },
+  {
+    "rank": 190,
+    "word": "release",
+    "meaning": "解放する／発売する／公開する／解放・発売"
+  },
+  {
+    "rank": 191,
+    "word": "document",
+    "meaning": "文書／資料／文書化する"
+  },
+  {
+    "rank": 192,
+    "word": "competition",
+    "meaning": "競争／試合／コンテスト"
+  },
+  {
+    "rank": 193,
+    "word": "lower",
+    "meaning": "下げる／下がる／より低い"
+  },
+  {
+    "rank": 194,
+    "word": "stress",
+    "meaning": "ストレス／強調／強調する"
+  },
+  {
+    "rank": 195,
+    "word": "exactly",
+    "meaning": "正確に／まさに"
+  },
+  {
+    "rank": 196,
+    "word": "doubt",
+    "meaning": "疑い／疑う"
+  },
+  {
+    "rank": 197,
+    "word": "rapidly",
+    "meaning": "急速に／素早く"
+  },
+  {
+    "rank": 198,
+    "word": "assignment",
+    "meaning": "課題／宿題／割り当て"
+  },
+  {
+    "rank": 199,
+    "word": "mention",
+    "meaning": "言及する／軽く触れる"
+  },
+  {
+    "rank": 200,
+    "word": "harm",
+    "meaning": "害／害を与える"
+  },
+  {
+    "rank": 201,
+    "word": "destination",
+    "meaning": "目的地／行き先"
+  },
+  {
+    "rank": 202,
+    "word": "unique",
+    "meaning": "唯一の／独特な"
+  },
+  {
+    "rank": 203,
+    "word": "pay",
+    "meaning": "支払う／給料"
+  },
+  {
+    "rank": 204,
+    "word": "soil",
+    "meaning": "土壌／土"
+  },
+  {
+    "rank": 205,
+    "word": "instruction",
+    "meaning": "指示／説明書／教育"
+  },
+  {
+    "rank": 206,
+    "word": "once",
+    "meaning": "一度／かつて"
+  },
+  {
+    "rank": 207,
+    "word": "accurate",
+    "meaning": "正確な"
+  },
+  {
+    "rank": 208,
+    "word": "operate",
+    "meaning": "操作する／（機械・会社などを）動かす／手術する"
+  },
+  {
+    "rank": 209,
+    "word": "physical",
+    "meaning": "身体の／物理的な"
+  },
+  {
+    "rank": 210,
+    "word": "choice",
+    "meaning": "選択／選択肢"
+  },
+  {
+    "rank": 211,
+    "word": "illegal",
+    "meaning": "違法の"
+  },
+  {
+    "rank": 212,
+    "word": "apply",
+    "meaning": "申し込む／当てはまる／塗る・つける"
+  },
+  {
+    "rank": 213,
+    "word": "evolution",
+    "meaning": "進化／発展"
+  },
+  {
+    "rank": 214,
+    "word": "fairly",
+    "meaning": "かなり／公平に"
+  },
+  {
+    "rank": 215,
+    "word": "relatively",
+    "meaning": "比較的"
+  },
+  {
+    "rank": 216,
+    "word": "due",
+    "meaning": "～する予定の／当然支払うべき／原因で"
+  },
+  {
+    "rank": 217,
+    "word": "ancestor",
+    "meaning": "祖先"
+  },
+  {
+    "rank": 218,
+    "word": "error",
+    "meaning": "誤り／ミス"
+  },
+  {
+    "rank": 219,
+    "word": "whoever",
+    "meaning": "～する人は誰でも／いったい誰が"
+  },
+  {
+    "rank": 220,
+    "word": "belief",
+    "meaning": "信念／信仰／考え"
+  },
+  {
+    "rank": 221,
+    "word": "afterward",
+    "meaning": "そのあとで／後になって"
+  },
+  {
+    "rank": 222,
+    "word": "potential",
+    "meaning": "潜在的な／潜在能力・可能性"
+  },
+  {
+    "rank": 223,
+    "word": "object",
+    "meaning": "物体／目的／反対する"
+  },
+  {
+    "rank": 224,
+    "word": "debate",
+    "meaning": "討論／議論（する）"
+  },
+  {
+    "rank": 225,
+    "word": "disagree",
+    "meaning": "意見が合わない／賛成しない"
+  },
+  {
+    "rank": 226,
+    "word": "adapt",
+    "meaning": "適応する／順応させる／改作する"
+  },
+  {
+    "rank": 227,
+    "word": "specialize",
+    "meaning": "専門にする／専攻する"
+  },
+  {
+    "rank": 228,
+    "word": "vary",
+    "meaning": "さまざまだ／変わる／変える"
+  },
+  {
+    "rank": 229,
+    "word": "handle",
+    "meaning": "扱う／対処する／取っ手"
+  },
+  {
+    "rank": 230,
+    "word": "practical",
+    "meaning": "実用的な／現実的な"
+  },
+  {
+    "rank": 231,
+    "word": "bleed",
+    "meaning": "出血する"
+  },
+  {
+    "rank": 232,
+    "word": "refund",
+    "meaning": "払い戻し／払い戻す"
+  },
+  {
+    "rank": 233,
+    "word": "spot",
+    "meaning": "場所／しみ／見つける"
+  },
+  {
+    "rank": 234,
+    "word": "diversity",
+    "meaning": "多様性"
+  },
+  {
+    "rank": 235,
+    "word": "fold",
+    "meaning": "折りたたむ／折り畳み"
+  },
+  {
+    "rank": 236,
+    "word": "lack",
+    "meaning": "欠けている／不足／欠乏"
+  },
+  {
+    "rank": 237,
+    "word": "threaten",
+    "meaning": "脅す／脅かす／～の恐れがある"
+  },
+  {
+    "rank": 238,
+    "word": "latter",
+    "meaning": "後者の／後半の"
+  },
+  {
+    "rank": 239,
+    "word": "spray",
+    "meaning": "噴射する／スプレー／噴霧"
+  },
+  {
+    "rank": 240,
+    "word": "reputation",
+    "meaning": "評判／名声"
+  },
+  {
+    "rank": 241,
+    "word": "conservation",
+    "meaning": "保護／保存（自然・資源など）"
+  },
+  {
+    "rank": 242,
+    "word": "commute",
+    "meaning": "通勤・通学する"
+  },
+  {
+    "rank": 243,
+    "word": "place",
+    "meaning": "場所／置く"
+  },
+  {
+    "rank": 244,
+    "word": "yell",
+    "meaning": "大声で叫ぶ"
+  },
+  {
+    "rank": 245,
+    "word": "urgent",
+    "meaning": "緊急の／差し迫った"
+  },
+  {
+    "rank": 246,
+    "word": "mess",
+    "meaning": "散らかった状態／混乱"
+  },
+  {
+    "rank": 247,
+    "word": "publicity",
+    "meaning": "宣伝／注目・評判"
+  },
+  {
+    "rank": 248,
+    "word": "phenomenon",
+    "meaning": "現象"
+  },
+  {
+    "rank": 249,
+    "word": "passion",
+    "meaning": "情熱／熱中"
+  },
+  {
+    "rank": 250,
+    "word": "humidity",
+    "meaning": "湿気／湿度"
+  },
+  {
+    "rank": 251,
+    "word": "means",
+    "meaning": "手段／方法／財力（複数形）"
+  },
+  {
+    "rank": 252,
+    "word": "rude",
+    "meaning": "失礼な／無作法な"
+  },
+  {
+    "rank": 253,
+    "word": "rough",
+    "meaning": "荒い／大まかな／手荒い"
+  },
+  {
+    "rank": 254,
+    "word": "characteristic",
+    "meaning": "特徴的な／特徴"
+  },
+  {
+    "rank": 255,
+    "word": "generally",
+    "meaning": "一般的に／大体"
+  },
+  {
+    "rank": 256,
+    "word": "wage",
+    "meaning": "賃金／給料"
+  },
+  {
+    "rank": 257,
+    "word": "pack",
+    "meaning": "詰める／荷造りする／群れ"
+  },
+  {
+    "rank": 258,
+    "word": "permanent",
+    "meaning": "永久的な／常設の"
+  },
+  {
+    "rank": 259,
+    "word": "constantly",
+    "meaning": "絶えず／しょっちゅう"
+  },
+  {
+    "rank": 260,
+    "word": "empire",
+    "meaning": "帝国"
+  },
+  {
+    "rank": 261,
+    "word": "accomplish",
+    "meaning": "成し遂げる／やり遂げる"
+  },
+  {
+    "rank": 262,
+    "word": "domestic",
+    "meaning": "家庭の／国内の／飼いならされた"
+  },
+  {
+    "rank": 263,
+    "word": "submit",
+    "meaning": "提出する／従う"
+  },
+  {
+    "rank": 264,
+    "word": "cough",
+    "meaning": "せき（をする）"
+  },
+  {
+    "rank": 265,
+    "word": "celebration",
+    "meaning": "祝賀／お祝いの行事"
+  },
+  {
+    "rank": 266,
+    "word": "surround",
+    "meaning": "取り囲む"
+  },
+  {
+    "rank": 267,
+    "word": "chase",
+    "meaning": "追いかける／追跡"
+  },
+  {
+    "rank": 268,
+    "word": "incredible",
+    "meaning": "信じられないほどの／すごい"
+  },
+  {
+    "rank": 269,
+    "word": "sum",
+    "meaning": "合計／要約する"
+  },
+  {
+    "rank": 270,
+    "word": "approximately",
+    "meaning": "約／およそ"
+  },
+  {
+    "rank": 271,
+    "word": "motivate",
+    "meaning": "やる気にさせる／動機づける"
+  },
+  {
+    "rank": 272,
+    "word": "immigrant",
+    "meaning": "移民（来る側）"
+  },
+  {
+    "rank": 273,
+    "word": "congratulate",
+    "meaning": "祝う／お祝いを言う"
+  },
+  {
+    "rank": 274,
+    "word": "pioneer",
+    "meaning": "先駆者／草分け／切り開く"
+  },
+  {
+    "rank": 275,
+    "word": "stick",
+    "meaning": "くっつく／突き刺す／棒"
+  },
+  {
+    "rank": 276,
+    "word": "warmth",
+    "meaning": "温かさ／温もり"
+  },
+  {
+    "rank": 277,
+    "word": "priority",
+    "meaning": "優先事項／優先順位"
+  },
+  {
+    "rank": 278,
+    "word": "minority",
+    "meaning": "少数派／少数民族"
+  },
+  {
+    "rank": 279,
+    "word": "category",
+    "meaning": "部類／カテゴリー"
+  },
+  {
+    "rank": 280,
+    "word": "dormitory",
+    "meaning": "寮"
+  },
+  {
+    "rank": 281,
+    "word": "engagement",
+    "meaning": "婚約／約束／参加・関与"
+  },
+  {
+    "rank": 282,
+    "word": "pregnant",
+    "meaning": "妊娠している"
+  },
+  {
+    "rank": 283,
+    "word": "master",
+    "meaning": "習得する／主人／修士号"
+  },
+  {
+    "rank": 284,
+    "word": "bond",
+    "meaning": "絆／債券／接着する"
+  },
+  {
+    "rank": 285,
+    "word": "press",
+    "meaning": "押す／報道機関・新聞"
+  },
+  {
+    "rank": 286,
+    "word": "seal",
+    "meaning": "封をする／密閉する／アザラシ／印章"
+  },
+  {
+    "rank": 287,
+    "word": "recall",
+    "meaning": "思い出す／回収する／召喚する"
+  },
+  {
+    "rank": 288,
+    "word": "load",
+    "meaning": "積み荷／負荷／積む"
+  },
+  {
+    "rank": 289,
+    "word": "claw",
+    "meaning": "かぎづめ／ツメ"
+  },
+  {
+    "rank": 290,
+    "word": "carriage",
+    "meaning": "馬車／車両／運搬"
+  },
+  {
+    "rank": 291,
+    "word": "confront",
+    "meaning": "立ち向かう／直面させる"
+  },
+  {
+    "rank": 292,
+    "word": "proceed",
+    "meaning": "進む／続ける"
+  },
+  {
+    "rank": 293,
+    "word": "notion",
+    "meaning": "考え／概念／意見"
+  },
+  {
+    "rank": 294,
+    "word": "marvelous",
+    "meaning": "すばらしい／驚くべき"
+  },
+  {
+    "rank": 295,
+    "word": "remarkably",
+    "meaning": "驚くほど／際立って"
+  },
+  {
+    "rank": 296,
+    "word": "sufficient",
+    "meaning": "十分な"
+  },
+  {
+    "rank": 297,
+    "word": "precise",
+    "meaning": "正確な／厳密な"
+  },
+  {
+    "rank": 298,
+    "word": "utilize",
+    "meaning": "利用する／活用する"
+  },
+  {
+    "rank": 299,
+    "word": "awkward",
+    "meaning": "ぎこちない／気まずい／不器用な"
+  },
+  {
+    "rank": 300,
+    "word": "principle",
+    "meaning": "原理／原則／信条"
+  },
+  {
+    "rank": 301,
+    "word": "absolute",
+    "meaning": "絶対的な／完全な"
+  },
+  {
+    "rank": 302,
+    "word": "compensate",
+    "meaning": "補償する／埋め合わせる"
+  },
+  {
+    "rank": 303,
+    "word": "adequate",
+    "meaning": "十分な／ちょうどよい"
+  },
+  {
+    "rank": 304,
+    "word": "masterpiece",
+    "meaning": "傑作／名作"
+  },
+  {
+    "rank": 305,
+    "word": "tremble",
+    "meaning": "震える／身震い"
+  },
+  {
+    "rank": 306,
+    "word": "ambulance",
+    "meaning": "救急車"
+  },
+  {
+    "rank": 307,
+    "word": "exclusive",
+    "meaning": "独占的な／排他的な／限定の"
+  },
+  {
+    "rank": 308,
+    "word": "impose",
+    "meaning": "課す／押しつける"
+  },
+  {
+    "rank": 309,
+    "word": "maximum",
+    "meaning": "最大限（の）"
+  },
+  {
+    "rank": 310,
+    "word": "parliament",
+    "meaning": "議会（特に英国）"
+  },
+  {
+    "rank": 311,
+    "word": "enthusiasm",
+    "meaning": "熱意／情熱"
+  },
+  {
+    "rank": 312,
+    "word": "significance",
+    "meaning": "重要性／意味"
+  },
+  {
+    "rank": 313,
+    "word": "considerate",
+    "meaning": "思いやりのある／気配りのできる"
+  },
+  {
+    "rank": 314,
+    "word": "intend",
+    "meaning": "意図する／～するつもりである"
+  },
+  {
+    "rank": 315,
+    "word": "deceive",
+    "meaning": "だます／欺く"
+  },
+  {
+    "rank": 316,
+    "word": "statistics",
+    "meaning": "統計／統計学"
+  },
+  {
+    "rank": 317,
+    "word": "isolated",
+    "meaning": "孤立した／隔離された"
+  },
+  {
+    "rank": 318,
+    "word": "violate",
+    "meaning": "違反する／侵害する"
+  },
+  {
+    "rank": 319,
+    "word": "withdraw",
+    "meaning": "引き出す／撤退する／撤回する"
+  },
+  {
+    "rank": 320,
+    "word": "inspect",
+    "meaning": "検査する／点検する"
+  },
+  {
+    "rank": 321,
+    "word": "sympathize",
+    "meaning": "同情する／共感する"
+  },
+  {
+    "rank": 322,
+    "word": "collaboration",
+    "meaning": "協力／共同作業"
+  },
+  {
+    "rank": 323,
+    "word": "evaluate",
+    "meaning": "評価する／見積もる"
+  },
+  {
+    "rank": 324,
+    "word": "prayer",
+    "meaning": "祈り／祈りの言葉"
+  },
+  {
+    "rank": 325,
+    "word": "prospect",
+    "meaning": "見込み／可能性／展望"
+  },
+  {
+    "rank": 326,
+    "word": "obstacle",
+    "meaning": "障害／妨げ"
+  },
+  {
+    "rank": 327,
+    "word": "hospitality",
+    "meaning": "もてなし／歓待"
+  },
+  {
+    "rank": 328,
+    "word": "welfare",
+    "meaning": "福祉／幸福"
+  },
+  {
+    "rank": 329,
+    "word": "faith",
+    "meaning": "信頼／信仰"
+  },
+  {
+    "rank": 330,
+    "word": "apparently",
+    "meaning": "一見／どうやら～のようだ"
+  },
+  {
+    "rank": 331,
+    "word": "fate",
+    "meaning": "運命／宿命"
+  },
+  {
+    "rank": 332,
+    "word": "dawn",
+    "meaning": "夜明け／始まり"
+  },
+  {
+    "rank": 333,
+    "word": "neat",
+    "meaning": "きちんとした／こぎれいな／すてきな"
+  },
+  {
+    "rank": 334,
+    "word": "funeral",
+    "meaning": "葬式"
+  },
+  {
+    "rank": 335,
+    "word": "abruptly",
+    "meaning": "突然に／不意に"
+  },
+  {
+    "rank": 336,
+    "word": "magnificent",
+    "meaning": "壮大な／すばらしい"
+  },
+  {
+    "rank": 337,
+    "word": "anxiously",
+    "meaning": "心配そうに／不安げに"
+  },
+  {
+    "rank": 338,
+    "word": "resign",
+    "meaning": "辞任する／退職する"
+  },
+  {
+    "rank": 339,
+    "word": "circumstance",
+    "meaning": "状況／事情／境遇"
+  },
+  {
+    "rank": 340,
+    "word": "context",
+    "meaning": "文脈／状況・背景"
+  },
+  {
+    "rank": 341,
+    "word": "dominate",
+    "meaning": "支配する／優位を占める"
+  },
+  {
+    "rank": 342,
+    "word": "sigh",
+    "meaning": "ため息（をつく）"
+  },
+  {
+    "rank": 343,
+    "word": "irony",
+    "meaning": "皮肉／反語"
+  },
+  {
+    "rank": 344,
+    "word": "nightmare",
+    "meaning": "悪夢／ひどい体験"
+  },
+  {
+    "rank": 345,
+    "word": "seek",
+    "meaning": "求める／探し求める"
+  },
+  {
+    "rank": 346,
+    "word": "disgusting",
+    "meaning": "むかつくような／実に嫌な"
+  },
+  {
+    "rank": 347,
+    "word": "grief",
+    "meaning": "深い悲しみ"
+  },
+  {
+    "rank": 348,
+    "word": "beforehand",
+    "meaning": "あらかじめ／前もって"
+  },
+  {
+    "rank": 349,
+    "word": "alert",
+    "meaning": "油断のない／警戒した／警報／注意を促す"
+  },
+  {
+    "rank": 350,
+    "word": "awfully",
+    "meaning": "ひどく／とても（くだけた口語）"
+  },
+  {
+    "rank": 351,
+    "word": "architecture",
+    "meaning": "建築／建築様式"
+  },
+  {
+    "rank": 352,
+    "word": "credit",
+    "meaning": "信用／クレジット／功績と認める"
+  },
+  {
+    "rank": 353,
+    "word": "possession",
+    "meaning": "所有（物）"
+  },
+  {
+    "rank": 354,
+    "word": "trustworthy",
+    "meaning": "信頼できる／頼りになる"
+  },
+  {
+    "rank": 355,
+    "word": "cease",
+    "meaning": "やめる／終わる"
+  },
+  {
+    "rank": 356,
+    "word": "formulate",
+    "meaning": "明確に述べる／体系化する"
+  },
+  {
+    "rank": 357,
+    "word": "undertake",
+    "meaning": "引き受ける／着手する"
+  },
+  {
+    "rank": 358,
+    "word": "philosophy",
+    "meaning": "哲学／人生観"
+  },
+  {
+    "rank": 359,
+    "word": "thrilling",
+    "meaning": "わくわくするような／スリル満点の"
+  },
+  {
+    "rank": 360,
+    "word": "famine",
+    "meaning": "飢饉"
+  },
+  {
+    "rank": 361,
+    "word": "peak",
+    "meaning": "頂点／ピーク／最高点に達する"
+  },
+  {
+    "rank": 362,
+    "word": "somehow",
+    "meaning": "どういうわけか／なんとかして"
+  },
+  {
+    "rank": 363,
+    "word": "apparent",
+    "meaning": "明らかな／外見上の"
+  },
+  {
+    "rank": 364,
+    "word": "misunderstanding",
+    "meaning": "誤解"
+  },
+  {
+    "rank": 365,
+    "word": "surrender",
+    "meaning": "降伏する／明け渡す／降伏"
+  },
+  {
+    "rank": 366,
+    "word": "disturb",
+    "meaning": "邪魔する／不安にさせる"
+  },
+  {
+    "rank": 367,
+    "word": "defend",
+    "meaning": "守る／弁護する"
+  },
+  {
+    "rank": 368,
+    "word": "publish",
+    "meaning": "出版する／発表する"
+  },
+  {
+    "rank": 369,
+    "word": "surface",
+    "meaning": "表面／表面の／表面化する"
+  },
+  {
+    "rank": 370,
+    "word": "imitate",
+    "meaning": "まねる／模倣する"
+  },
+  {
+    "rank": 371,
+    "word": "melt",
+    "meaning": "溶ける／溶かす"
+  },
+  {
+    "rank": 372,
+    "word": "arrest",
+    "meaning": "逮捕する／逮捕"
+  },
+  {
+    "rank": 373,
+    "word": "delay",
+    "meaning": "遅らせる／遅れ"
+  },
+  {
+    "rank": 374,
+    "word": "argue",
+    "meaning": "主張する／口論する"
+  },
+  {
+    "rank": 375,
+    "word": "supply",
+    "meaning": "供給する／供給"
+  },
+  {
+    "rank": 376,
+    "word": "income",
+    "meaning": "収入"
+  },
+  {
+    "rank": 377,
+    "word": "observe",
+    "meaning": "観察する／（規則などを）守る／気づく"
+  },
+  {
+    "rank": 378,
+    "word": "accidentally",
+    "meaning": "偶然に／うっかり"
+  },
+  {
+    "rank": 379,
+    "word": "policy",
+    "meaning": "方針／政策"
+  },
+  {
+    "rank": 380,
+    "word": "rhythm",
+    "meaning": "リズム／律動"
+  },
+  {
+    "rank": 381,
+    "word": "instrument",
+    "meaning": "楽器／器具／計器"
+  },
+  {
+    "rank": 382,
+    "word": "sense",
+    "meaning": "感覚／意味／センス"
+  },
+  {
+    "rank": 383,
+    "word": "greet",
+    "meaning": "あいさつする／迎える"
+  },
+  {
+    "rank": 384,
+    "word": "forecast",
+    "meaning": "予報／予測（する）"
+  },
+  {
+    "rank": 385,
+    "word": "illustrate",
+    "meaning": "説明する／図解する／例示する"
+  },
+  {
+    "rank": 386,
+    "word": "foundation",
+    "meaning": "土台／基盤／設立／財団"
+  },
+  {
+    "rank": 387,
+    "word": "revolution",
+    "meaning": "革命／大変革"
+  },
+  {
+    "rank": 388,
+    "word": "pretend",
+    "meaning": "ふりをする／装う"
+  },
+  {
+    "rank": 389,
+    "word": "property",
+    "meaning": "財産／所有物／不動産／特性"
+  },
+  {
+    "rank": 390,
+    "word": "figure",
+    "meaning": "数字／人物／姿／図形／理解する"
+  },
+  {
+    "rank": 391,
+    "word": "substitute",
+    "meaning": "代わりのもの／代用する"
+  },
+  {
+    "rank": 392,
+    "word": "benefit",
+    "meaning": "利益／恩恵／利益を得る"
+  },
+  {
+    "rank": 393,
+    "word": "contact",
+    "meaning": "連絡（を取る）／接触"
+  },
+  {
+    "rank": 394,
+    "word": "promote",
+    "meaning": "促進する／宣伝する／昇進させる"
+  },
+  {
+    "rank": 395,
+    "word": "demand",
+    "meaning": "要求／需要／要求する"
+  },
+  {
+    "rank": 396,
+    "word": "trade",
+    "meaning": "貿易／取引／商売する"
+  },
+  {
+    "rank": 397,
+    "word": "describe",
+    "meaning": "描写する／説明する"
+  },
+  {
+    "rank": 398,
+    "word": "climate",
+    "meaning": "気候／雰囲気"
+  },
+  {
+    "rank": 399,
+    "word": "trap",
+    "meaning": "わな／罠にかける／閉じ込める"
+  },
+  {
+    "rank": 400,
+    "word": "consume",
+    "meaning": "消費する／食べる・飲む"
+  },
+  {
+    "rank": 401,
+    "word": "prove",
+    "meaning": "証明する／本当だと示す"
+  },
+  {
+    "rank": 402,
+    "word": "generation",
+    "meaning": "世代／同世代の人々"
+  },
+  {
+    "rank": 403,
+    "word": "measure",
+    "meaning": "測る／対策／基準"
+  },
+  {
+    "rank": 404,
+    "word": "criticize",
+    "meaning": "批判する／非難する"
+  },
+  {
+    "rank": 405,
+    "word": "maintain",
+    "meaning": "維持する／主張する"
+  },
+  {
+    "rank": 406,
+    "word": "satisfy",
+    "meaning": "満足させる／要求を満たす"
+  },
+  {
+    "rank": 407,
+    "word": "reveal",
+    "meaning": "明らかにする／暴露する"
+  },
+  {
+    "rank": 408,
+    "word": "detect",
+    "meaning": "感知する／見つける"
+  },
+  {
+    "rank": 409,
+    "word": "reflect",
+    "meaning": "反射する／反映する／よく考える"
+  },
+  {
+    "rank": 410,
+    "word": "portable",
+    "meaning": "持ち運びできる／携帯用の"
+  },
+  {
+    "rank": 411,
+    "word": "elect",
+    "meaning": "選挙で選ぶ／選出する"
+  },
+  {
+    "rank": 412,
+    "word": "stretch",
+    "meaning": "伸ばす／広げる／伸びる"
+  },
+  {
+    "rank": 413,
+    "word": "wipe",
+    "meaning": "ふき取る／ぬぐう"
+  },
+  {
+    "rank": 414,
+    "word": "harvest",
+    "meaning": "収穫（する）"
+  },
+  {
+    "rank": 415,
+    "word": "blame",
+    "meaning": "責める／～のせいにする"
+  },
+  {
+    "rank": 416,
+    "word": "instinct",
+    "meaning": "本能／直感"
+  },
+  {
+    "rank": 417,
+    "word": "protest",
+    "meaning": "抗議（する）"
+  },
+  {
+    "rank": 418,
+    "word": "judge",
+    "meaning": "判断する／裁く／裁判官"
+  },
+  {
+    "rank": 419,
+    "word": "praise",
+    "meaning": "ほめる／称賛"
+  },
+  {
+    "rank": 420,
+    "word": "symbol",
+    "meaning": "象徴／シンボル"
+  },
+  {
+    "rank": 421,
+    "word": "currency",
+    "meaning": "通貨／流通しているお金"
+  },
+  {
+    "rank": 422,
+    "word": "origin",
+    "meaning": "起源／出身"
+  },
+  {
+    "rank": 423,
+    "word": "signature",
+    "meaning": "署名／サイン"
+  },
+  {
+    "rank": 424,
+    "word": "extend",
+    "meaning": "伸ばす／延長する／広げる"
+  },
+  {
+    "rank": 425,
+    "word": "legally",
+    "meaning": "法律的に／合法的に"
+  },
+  {
+    "rank": 426,
+    "word": "restrict",
+    "meaning": "制限する／規制する"
+  },
+  {
+    "rank": 427,
+    "word": "brilliant",
+    "meaning": "見事な／すばらしい／とても頭のよい"
+  },
+  {
+    "rank": 428,
+    "word": "whisper",
+    "meaning": "ささやく／ささやき"
+  },
+  {
+    "rank": 429,
+    "word": "dedicate",
+    "meaning": "ささげる／専念する"
+  },
+  {
+    "rank": 430,
+    "word": "replace",
+    "meaning": "取り替える／交換する／後任になる"
+  },
+  {
+    "rank": 431,
+    "word": "moreover",
+    "meaning": "その上／さらに"
+  },
+  {
+    "rank": 432,
+    "word": "complain",
+    "meaning": "不平を言う／苦情を言う"
+  },
+  {
+    "rank": 433,
+    "word": "attend",
+    "meaning": "出席する／通う／注意を向ける"
+  },
+  {
+    "rank": 434,
+    "word": "focus",
+    "meaning": "焦点を当てる／集中する／焦点"
+  },
+  {
+    "rank": 435,
+    "word": "technique",
+    "meaning": "技術／方法"
+  },
+  {
+    "rank": 436,
+    "word": "decrease",
+    "meaning": "減る／減少させる／減少"
+  },
+  {
+    "rank": 437,
+    "word": "locate",
+    "meaning": "位置を突き止める／（受身で）位置する"
+  },
+  {
+    "rank": 438,
+    "word": "destroy",
+    "meaning": "破壊する／台無しにする"
+  },
+  {
+    "rank": 439,
+    "word": "fuel",
+    "meaning": "燃料／あおる・燃料を供給する"
+  },
+  {
+    "rank": 440,
+    "word": "cure",
+    "meaning": "治す／治療する／治療法"
+  },
+  {
+    "rank": 441,
+    "word": "appointment",
+    "meaning": "約束／予約／任命"
+  },
+  {
+    "rank": 442,
+    "word": "ingredient",
+    "meaning": "材料／成分"
+  },
+  {
+    "rank": 443,
+    "word": "examine",
+    "meaning": "調べる／診察する／試験する"
+  },
+  {
+    "rank": 444,
+    "word": "valuable",
+    "meaning": "価値のある／貴重な"
+  },
+  {
+    "rank": 445,
+    "word": "decorate",
+    "meaning": "飾る／装飾する"
+  },
+  {
+    "rank": 446,
+    "word": "influence",
+    "meaning": "影響（を与える）"
+  },
+  {
+    "rank": 447,
+    "word": "license",
+    "meaning": "免許／許可証"
+  },
+  {
+    "rank": 448,
+    "word": "concentrate",
+    "meaning": "集中する／集中させる"
+  },
+  {
+    "rank": 449,
+    "word": "prevent",
+    "meaning": "防ぐ／妨げる"
+  },
+  {
+    "rank": 450,
+    "word": "purpose",
+    "meaning": "目的／意図"
+  },
+  {
+    "rank": 451,
+    "word": "gather",
+    "meaning": "集める／集まる"
+  },
+  {
+    "rank": 452,
+    "word": "task",
+    "meaning": "任務／仕事"
+  },
+  {
+    "rank": 453,
+    "word": "otherwise",
+    "meaning": "さもなければ／それ以外は"
+  },
+  {
+    "rank": 454,
+    "word": "luckily",
+    "meaning": "運よく／幸いにも"
+  },
+  {
+    "rank": 455,
+    "word": "financial",
+    "meaning": "財政的な／金銭的な"
+  },
+  {
+    "rank": 456,
+    "word": "overall",
+    "meaning": "全体の／全体として"
+  },
+  {
+    "rank": 457,
+    "word": "refuse",
+    "meaning": "拒む／断る"
+  },
+  {
+    "rank": 458,
+    "word": "impress",
+    "meaning": "感心させる／印象づける"
+  },
+  {
+    "rank": 459,
+    "word": "emergency",
+    "meaning": "緊急事態／非常時"
+  },
+  {
+    "rank": 460,
+    "word": "profit",
+    "meaning": "利益／儲け／利益を得る"
+  },
+  {
+    "rank": 461,
+    "word": "route",
+    "meaning": "道／経路／路線"
+  },
+  {
+    "rank": 462,
+    "word": "campaign",
+    "meaning": "運動／キャンペーン"
+  },
+  {
+    "rank": 463,
+    "word": "disappear",
+    "meaning": "消える／見えなくなる"
+  },
+  {
+    "rank": 464,
+    "word": "combine",
+    "meaning": "組み合わせる／混ぜる／結合する"
+  },
+  {
+    "rank": 465,
+    "word": "obtain",
+    "meaning": "手に入れる／得る"
+  },
+  {
+    "rank": 466,
+    "word": "structure",
+    "meaning": "構造／建造物"
+  },
+  {
+    "rank": 467,
+    "word": "journey",
+    "meaning": "旅／旅行"
+  },
+  {
+    "rank": 468,
+    "word": "widely",
+    "meaning": "広く／広範囲に"
+  },
+  {
+    "rank": 469,
+    "word": "manage",
+    "meaning": "何とかやり遂げる／管理する"
+  },
+  {
+    "rank": 470,
+    "word": "habit",
+    "meaning": "習慣／癖"
+  },
+  {
+    "rank": 471,
+    "word": "scenery",
+    "meaning": "景色／風景"
+  },
+  {
+    "rank": 472,
+    "word": "tough",
+    "meaning": "タフな／困難な／丈夫な"
+  },
+  {
+    "rank": 473,
+    "word": "select",
+    "meaning": "選ぶ／選択する"
+  },
+  {
+    "rank": 474,
+    "word": "construct",
+    "meaning": "建設する／組み立てる"
+  },
+  {
+    "rank": 475,
+    "word": "whatever",
+    "meaning": "～するものは何でも／いったい何が"
+  },
+  {
+    "rank": 476,
+    "word": "luxury",
+    "meaning": "ぜいたく／高級品"
+  },
+  {
+    "rank": 477,
+    "word": "punish",
+    "meaning": "罰する／処罰する"
+  },
+  {
+    "rank": 478,
+    "word": "register",
+    "meaning": "登録する／記入する／レジ"
+  },
+  {
+    "rank": 479,
+    "word": "import",
+    "meaning": "輸入する／輸入（品）"
+  },
+  {
+    "rank": 480,
+    "word": "overcome",
+    "meaning": "克服する／乗り越える"
+  },
+  {
+    "rank": 481,
+    "word": "manual",
+    "meaning": "手作業の／説明書"
+  },
+  {
+    "rank": 482,
+    "word": "respect",
+    "meaning": "尊敬する／尊重する／尊敬"
+  },
+  {
+    "rank": 483,
+    "word": "scratch",
+    "meaning": "ひっかく／傷をつける／ひっかき傷"
+  },
+  {
+    "rank": 484,
+    "word": "label",
+    "meaning": "ラベル／表示／ラベルを貼る"
+  },
+  {
+    "rank": 485,
+    "word": "stuck",
+    "meaning": "動けなくなった／行き詰まった"
+  },
+  {
+    "rank": 486,
+    "word": "monitor",
+    "meaning": "監視する／モニター"
+  },
+  {
+    "rank": 487,
+    "word": "succeed",
+    "meaning": "成功する／後を継ぐ"
+  },
+  {
+    "rank": 488,
+    "word": "conclude",
+    "meaning": "結論づける／締めくくる"
+  },
+  {
+    "rank": 489,
+    "word": "series",
+    "meaning": "連続／シリーズもの"
+  },
+  {
+    "rank": 490,
+    "word": "adjust",
+    "meaning": "調整する／慣れる"
+  },
+  {
+    "rank": 491,
+    "word": "wherever",
+    "meaning": "どこで～しても／～する所はどこでも"
+  },
+  {
+    "rank": 492,
+    "word": "consequently",
+    "meaning": "その結果／したがって"
+  },
+  {
+    "rank": 493,
+    "word": "delicate",
+    "meaning": "繊細な／壊れやすい／細やかな"
+  },
+  {
+    "rank": 494,
+    "word": "resource",
+    "meaning": "資源／（人的）資源・手段"
+  },
+  {
+    "rank": 495,
+    "word": "violence",
+    "meaning": "暴力／激しさ"
+  },
+  {
+    "rank": 496,
+    "word": "generous",
+    "meaning": "気前のよい／寛大な"
+  },
+  {
+    "rank": 497,
+    "word": "complex",
+    "meaning": "複雑な／コンプレックス"
+  },
+  {
+    "rank": 498,
+    "word": "delete",
+    "meaning": "削除する"
+  },
+  {
+    "rank": 499,
+    "word": "terminal",
+    "meaning": "終点／終着駅・ターミナル／末期の"
+  },
+  {
+    "rank": 500,
+    "word": "legend",
+    "meaning": "伝説／伝説的な人"
+  },
+  {
+    "rank": 501,
+    "word": "generate",
+    "meaning": "生み出す／発生させる"
+  },
+  {
+    "rank": 502,
+    "word": "curious",
+    "meaning": "好奇心の強い／奇妙な"
+  },
+  {
+    "rank": 503,
+    "word": "trial",
+    "meaning": "裁判／試み／試験"
+  },
+  {
+    "rank": 504,
+    "word": "assist",
+    "meaning": "手助けする／補助する"
+  },
+  {
+    "rank": 505,
+    "word": "commit",
+    "meaning": "犯す／約束する／専念する"
+  },
+  {
+    "rank": 506,
+    "word": "conduct",
+    "meaning": "行う／指揮する／行い・ふるまい"
+  },
+  {
+    "rank": 507,
+    "word": "declare",
+    "meaning": "宣言する／表明する"
+  },
+  {
+    "rank": 508,
+    "word": "define",
+    "meaning": "定義する／はっきりさせる"
+  },
+  {
+    "rank": 509,
+    "word": "pile",
+    "meaning": "積み重ね／山／積み重ねる"
+  },
+  {
+    "rank": 510,
+    "word": "frightened",
+    "meaning": "おびえた／こわがっている"
+  },
+  {
+    "rank": 511,
+    "word": "regret",
+    "meaning": "後悔する／残念に思う／後悔"
+  },
+  {
+    "rank": 512,
+    "word": "deposit",
+    "meaning": "預金／保証金／預ける・堆積させる"
+  },
+  {
+    "rank": 513,
+    "word": "informal",
+    "meaning": "形式ばらない／くだけた"
+  },
+  {
+    "rank": 514,
+    "word": "transform",
+    "meaning": "変形させる／一変させる"
+  },
+  {
+    "rank": 515,
+    "word": "candidate",
+    "meaning": "候補者／志願者"
+  },
+  {
+    "rank": 516,
+    "word": "renew",
+    "meaning": "更新する／新たにする／再開する"
+  },
+  {
+    "rank": 517,
+    "word": "political",
+    "meaning": "政治の／政治的な"
+  },
+  {
+    "rank": 518,
+    "word": "nutrition",
+    "meaning": "栄養（摂取）"
+  },
+  {
+    "rank": 519,
+    "word": "deserve",
+    "meaning": "～に値する／当然～を受けるべき"
+  },
+  {
+    "rank": 520,
+    "word": "honor",
+    "meaning": "名誉／敬意／称える"
+  },
+  {
+    "rank": 521,
+    "word": "triumph",
+    "meaning": "大勝利／大成功（する）"
+  },
+  {
+    "rank": 522,
+    "word": "eagerly",
+    "meaning": "熱心に／心待ちにして"
+  },
+  {
+    "rank": 523,
+    "word": "edition",
+    "meaning": "版／～版"
+  },
+  {
+    "rank": 524,
+    "word": "instant",
+    "meaning": "即座の／即席の／瞬間"
+  },
+  {
+    "rank": 525,
+    "word": "negotiate",
+    "meaning": "交渉する"
+  },
+  {
+    "rank": 526,
+    "word": "fulfill",
+    "meaning": "果たす／満たす"
+  },
+  {
+    "rank": 527,
+    "word": "phrase",
+    "meaning": "句／言い回し／表現"
+  },
+  {
+    "rank": 528,
+    "word": "stimulate",
+    "meaning": "刺激する／活性化させる"
+  },
+  {
+    "rank": 529,
+    "word": "applause",
+    "meaning": "拍手／称賛"
+  },
+  {
+    "rank": 530,
+    "word": "convert",
+    "meaning": "変える／改宗させる"
+  },
+  {
+    "rank": 531,
+    "word": "harmony",
+    "meaning": "調和／ハーモニー"
+  },
+  {
+    "rank": 532,
+    "word": "routine",
+    "meaning": "決まりきった仕事／日課／いつもの"
+  },
+  {
+    "rank": 533,
+    "word": "duty",
+    "meaning": "義務／任務"
+  },
+  {
+    "rank": 534,
+    "word": "narration",
+    "meaning": "語り／ナレーション"
+  },
+  {
+    "rank": 535,
+    "word": "unit",
+    "meaning": "単位／一つのまとまり／部隊"
+  },
+  {
+    "rank": 536,
+    "word": "supplement",
+    "meaning": "補足／サプリメント／補う"
+  },
+  {
+    "rank": 537,
+    "word": "debt",
+    "meaning": "借金／負債"
+  },
+  {
+    "rank": 538,
+    "word": "appeal",
+    "meaning": "訴える／魅力／上訴"
+  },
+  {
+    "rank": 539,
+    "word": "pronunciation",
+    "meaning": "発音"
+  },
+  {
+    "rank": 540,
+    "word": "superior",
+    "meaning": "優れた／上位の／上司"
+  },
+  {
+    "rank": 541,
+    "word": "insult",
+    "meaning": "侮辱（する）"
+  },
+  {
+    "rank": 542,
+    "word": "punctual",
+    "meaning": "時間に正確な／時間を守る"
+  },
+  {
+    "rank": 543,
+    "word": "bargain",
+    "meaning": "お買い得品／交渉する・値切る"
+  },
+  {
+    "rank": 544,
+    "word": "fascinate",
+    "meaning": "魅了する／引きつける"
+  },
+  {
+    "rank": 545,
+    "word": "illusion",
+    "meaning": "錯覚／幻影"
+  },
+  {
+    "rank": 546,
+    "word": "whistle",
+    "meaning": "口笛／汽笛／口笛を吹く"
+  },
+  {
+    "rank": 547,
+    "word": "bravely",
+    "meaning": "勇敢に"
+  },
+  {
+    "rank": 548,
+    "word": "tragedy",
+    "meaning": "悲劇／悲惨な出来事"
+  },
+  {
+    "rank": 549,
+    "word": "transmit",
+    "meaning": "送る／伝達する／（病気を）うつす"
+  },
+  {
+    "rank": 550,
+    "word": "considerably",
+    "meaning": "かなり／相当"
+  },
+  {
+    "rank": 551,
+    "word": "polish",
+    "meaning": "磨く／洗練する／つや出し"
+  },
+  {
+    "rank": 552,
+    "word": "resemble",
+    "meaning": "似ている"
+  },
+  {
+    "rank": 553,
+    "word": "resolve",
+    "meaning": "解決する／決意する"
+  },
+  {
+    "rank": 554,
+    "word": "sorrow",
+    "meaning": "悲しみ／悲嘆"
+  },
+  {
+    "rank": 555,
+    "word": "fasten",
+    "meaning": "しっかり留める／固定する"
+  },
+  {
+    "rank": 556,
+    "word": "reduce",
+    "meaning": "減らす／小さくする"
+  },
+  {
+    "rank": 557,
+    "word": "research",
+    "meaning": "研究（する）／調査"
+  },
+  {
+    "rank": 558,
+    "word": "unfortunately",
+    "meaning": "残念ながら／不運にも"
+  },
+  {
+    "rank": 559,
+    "word": "suggest",
+    "meaning": "提案する／ほのめかす"
+  },
+  {
+    "rank": 560,
+    "word": "repair",
+    "meaning": "修理する／修理"
+  },
+  {
+    "rank": 561,
+    "word": "cause",
+    "meaning": "原因／大義／引き起こす"
+  },
+  {
+    "rank": 562,
+    "word": "statement",
+    "meaning": "声明／発言／明細書"
+  },
+  {
+    "rank": 563,
+    "word": "cost",
+    "meaning": "費用がかかる／費用／犠牲"
+  },
+  {
+    "rank": 564,
+    "word": "serve",
+    "meaning": "仕える／（食べ物を）出す／役立つ"
+  },
+  {
+    "rank": 565,
+    "word": "produce",
+    "meaning": "生産する／作り出す／農産物"
+  },
+  {
+    "rank": 566,
+    "word": "remove",
+    "meaning": "取り除く／はずす／移す"
+  },
+  {
+    "rank": 567,
+    "word": "provide",
+    "meaning": "提供する／与える"
+  },
+  {
+    "rank": 568,
+    "word": "various",
+    "meaning": "さまざまな／いろいろな"
+  },
+  {
+    "rank": 569,
+    "word": "affect",
+    "meaning": "影響を与える"
+  },
+  {
+    "rank": 570,
+    "word": "attract",
+    "meaning": "引きつける／魅了する"
+  },
+  {
+    "rank": 571,
+    "word": "especially",
+    "meaning": "特に／とりわけ"
+  },
+  {
+    "rank": 572,
+    "word": "leave",
+    "meaning": "去る／残す／休暇"
+  },
+  {
+    "rank": 573,
+    "word": "reservation",
+    "meaning": "予約／遠慮・ためらい／保留地"
+  },
+  {
+    "rank": 574,
+    "word": "experience",
+    "meaning": "経験／経験する"
+  },
+  {
+    "rank": 575,
+    "word": "contain",
+    "meaning": "含む／中に入れている"
+  },
+  {
+    "rank": 576,
+    "word": "equipment",
+    "meaning": "設備／装置／備品"
+  },
+  {
+    "rank": 577,
+    "word": "rare",
+    "meaning": "まれな／珍しい／レアな"
+  },
+  {
+    "rank": 578,
+    "word": "deliver",
+    "meaning": "配達する／届ける／（演説などを）する"
+  },
+  {
+    "rank": 579,
+    "word": "quality",
+    "meaning": "質／良質／特質"
+  },
+  {
+    "rank": 580,
+    "word": "raise",
+    "meaning": "上げる／育てる／集める／賃上げ"
+  },
+  {
+    "rank": 581,
+    "word": "detail",
+    "meaning": "詳細／細部"
+  },
+  {
+    "rank": 582,
+    "word": "common",
+    "meaning": "共通の／一般的な／よくある"
+  },
+  {
+    "rank": 583,
+    "word": "survive",
+    "meaning": "生き残る／生き延びる"
+  },
+  {
+    "rank": 584,
+    "word": "sincerely",
+    "meaning": "心から／敬具（手紙の結び）"
+  },
+  {
+    "rank": 585,
+    "word": "certain",
+    "meaning": "ある～／確かな／確信して"
+  },
+  {
+    "rank": 586,
+    "word": "notice",
+    "meaning": "気づく／通知／掲示"
+  },
+  {
+    "rank": 587,
+    "word": "effective",
+    "meaning": "効果的な／有効な"
+  },
+  {
+    "rank": 588,
+    "word": "train",
+    "meaning": "訓練する／電車"
+  },
+  {
+    "rank": 589,
+    "word": "purchase",
+    "meaning": "購入する／購入"
+  },
+  {
+    "rank": 590,
+    "word": "career",
+    "meaning": "職業／経歴／キャリア"
+  },
+  {
+    "rank": 591,
+    "word": "upset",
+    "meaning": "動揺させる／ひっくり返す／動揺した"
+  },
+  {
+    "rank": 592,
+    "word": "ancient",
+    "meaning": "古代の／とても古い"
+  },
+  {
+    "rank": 593,
+    "word": "waste",
+    "meaning": "無駄にする／廃棄物／浪費"
+  },
+  {
+    "rank": 594,
+    "word": "advertise",
+    "meaning": "広告する／宣伝する"
+  },
+  {
+    "rank": 595,
+    "word": "exchange",
+    "meaning": "交換する／両替する／交換"
+  },
+  {
+    "rank": 596,
+    "word": "majority",
+    "meaning": "大多数／過半数"
+  },
+  {
+    "rank": 597,
+    "word": "complete",
+    "meaning": "完全な／完了した／完成させる"
+  },
+  {
+    "rank": 598,
+    "word": "discovery",
+    "meaning": "発見"
+  },
+  {
+    "rank": 599,
+    "word": "remain",
+    "meaning": "～のままである／残る／遺物・遺体"
+  },
+  {
+    "rank": 600,
+    "word": "furthermore",
+    "meaning": "その上／さらに"
+  },
+  {
+    "rank": 601,
+    "word": "responsibility",
+    "meaning": "責任"
+  },
+  {
+    "rank": 602,
+    "word": "conference",
+    "meaning": "会議／協議会"
+  },
+  {
+    "rank": 603,
+    "word": "require",
+    "meaning": "必要とする／要求する"
+  },
+  {
+    "rank": 604,
+    "word": "mostly",
+    "meaning": "主に／たいてい"
+  },
+  {
+    "rank": 605,
+    "word": "immediately",
+    "meaning": "すぐに／直ちに"
+  },
+  {
+    "rank": 606,
+    "word": "flavor",
+    "meaning": "味／風味"
+  },
+  {
+    "rank": 607,
+    "word": "decade",
+    "meaning": "10年間／十年"
+  },
+  {
+    "rank": 608,
+    "word": "crop",
+    "meaning": "作物／収穫高"
+  },
+  {
+    "rank": 609,
+    "word": "increasingly",
+    "meaning": "ますます／だんだんと"
+  },
+  {
+    "rank": 610,
+    "word": "occur",
+    "meaning": "起こる／生じる"
+  },
+  {
+    "rank": 611,
+    "word": "perform",
+    "meaning": "行う／演じる／機能する"
+  },
+  {
+    "rank": 612,
+    "word": "negative",
+    "meaning": "否定的な／マイナスの"
+  },
+  {
+    "rank": 613,
+    "word": "opportunity",
+    "meaning": "機会／チャンス"
+  },
+  {
+    "rank": 614,
+    "word": "charge",
+    "meaning": "料金／責任／請求する／非難する"
+  },
+  {
+    "rank": 615,
+    "word": "private",
+    "meaning": "私的な／個人の／非公開の"
+  },
+  {
+    "rank": 616,
+    "word": "share",
+    "meaning": "分け合う／共有する／取り分"
+  },
+  {
+    "rank": 617,
+    "word": "appear",
+    "meaning": "現れる／～のように見える"
+  },
+  {
+    "rank": 618,
+    "word": "transport",
+    "meaning": "輸送する／輸送"
+  },
+  {
+    "rank": 619,
+    "word": "commercial",
+    "meaning": "商業の／広告（CM）"
+  },
+  {
+    "rank": 620,
+    "word": "contract",
+    "meaning": "契約（書）／縮む／契約する"
+  },
+  {
+    "rank": 621,
+    "word": "production",
+    "meaning": "生産／制作"
+  },
+  {
+    "rank": 622,
+    "word": "medical",
+    "meaning": "医療の／医学の"
+  },
+  {
+    "rank": 623,
+    "word": "audience",
+    "meaning": "観客／聴衆"
+  },
+  {
+    "rank": 624,
+    "word": "escape",
+    "meaning": "逃げる／逃亡／逃避"
+  },
+  {
+    "rank": 625,
+    "word": "serious",
+    "meaning": "まじめな／重大な／深刻な"
+  },
+  {
+    "rank": 626,
+    "word": "impact",
+    "meaning": "影響／衝撃"
+  },
+  {
+    "rank": 627,
+    "word": "membership",
+    "meaning": "会員であること／会員資格"
+  },
+  {
+    "rank": 628,
+    "word": "mystery",
+    "meaning": "謎／推理もの"
+  },
+  {
+    "rank": 629,
+    "word": "obvious",
+    "meaning": "明らかな／見え見えの"
+  },
+  {
+    "rank": 630,
+    "word": "spread",
+    "meaning": "広がる／広げる／広がり"
+  },
+  {
+    "rank": 631,
+    "word": "anniversary",
+    "meaning": "記念日"
+  },
+  {
+    "rank": 632,
+    "word": "marry",
+    "meaning": "結婚する"
+  },
+  {
+    "rank": 633,
+    "word": "facility",
+    "meaning": "施設／設備／能力"
+  },
+  {
+    "rank": 634,
+    "word": "empty",
+    "meaning": "空の／空にする"
+  },
+  {
+    "rank": 635,
+    "word": "injure",
+    "meaning": "傷つける／けがをさせる"
+  },
+  {
+    "rank": 636,
+    "word": "expand",
+    "meaning": "拡大する／広がる"
+  },
+  {
+    "rank": 637,
+    "word": "involve",
+    "meaning": "含む／関与させる／巻き込む"
+  },
+  {
+    "rank": 638,
+    "word": "throughout",
+    "meaning": "～の至る所に／～を通じてずっと"
+  },
+  {
+    "rank": 639,
+    "word": "opinion",
+    "meaning": "意見／考え"
+  },
+  {
+    "rank": 640,
+    "word": "explanation",
+    "meaning": "説明"
+  },
+  {
+    "rank": 641,
+    "word": "historical",
+    "meaning": "歴史の／歴史上重要な"
+  },
+  {
+    "rank": 642,
+    "word": "continue",
+    "meaning": "続ける／続く"
+  },
+  {
+    "rank": 643,
+    "word": "earn",
+    "meaning": "稼ぐ／得る（信頼など）"
+  },
+  {
+    "rank": 644,
+    "word": "receipt",
+    "meaning": "レシート／受け取り"
+  },
+  {
+    "rank": 645,
+    "word": "dramatic",
+    "meaning": "劇的な／印象的な"
+  },
+  {
+    "rank": 646,
+    "word": "expense",
+    "meaning": "費用／出費"
+  },
+  {
+    "rank": 647,
+    "word": "store",
+    "meaning": "店／蓄える／保存する"
+  },
+  {
+    "rank": 648,
+    "word": "absorb",
+    "meaning": "吸収する／夢中にさせる"
+  },
+  {
+    "rank": 649,
+    "word": "layer",
+    "meaning": "層／重なり"
+  },
+  {
+    "rank": 650,
+    "word": "traffic",
+    "meaning": "交通（量）／（違法な）取引"
+  },
+  {
+    "rank": 651,
+    "word": "breathe",
+    "meaning": "息をする／呼吸する"
+  },
+  {
+    "rank": 652,
+    "word": "analyze",
+    "meaning": "分析する"
+  },
+  {
+    "rank": 653,
+    "word": "cultural",
+    "meaning": "文化の／文化的な"
+  },
+  {
+    "rank": 654,
+    "word": "decline",
+    "meaning": "減少する／断る／衰退"
+  },
+  {
+    "rank": 655,
+    "word": "movement",
+    "meaning": "動き／運動（社会運動など）"
+  },
+  {
+    "rank": 656,
+    "word": "identify",
+    "meaning": "特定する／同一視する／本人確認する"
+  },
+  {
+    "rank": 657,
+    "word": "review",
+    "meaning": "見直す／批評する／レビュー・再検討"
+  },
+  {
+    "rank": 658,
+    "word": "guess",
+    "meaning": "推測する／当てずっぽうで言う"
+  },
+  {
+    "rank": 659,
+    "word": "ability",
+    "meaning": "能力／才能"
+  },
+  {
+    "rank": 660,
+    "word": "explore",
+    "meaning": "探検する／詳しく調べる"
+  },
+  {
+    "rank": 661,
+    "word": "switch",
+    "meaning": "切り替える／スイッチ"
+  },
+  {
+    "rank": 662,
+    "word": "shape",
+    "meaning": "形／形づくる／影響を与える"
+  },
+  {
+    "rank": 663,
+    "word": "freeze",
+    "meaning": "凍る／凍らせる／固まる"
+  },
+  {
+    "rank": 664,
+    "word": "entry",
+    "meaning": "入ること／出品作／項目"
+  },
+  {
+    "rank": 665,
+    "word": "wrap",
+    "meaning": "包む／くるむ"
+  },
+  {
+    "rank": 666,
+    "word": "border",
+    "meaning": "国境／境界"
+  },
+  {
+    "rank": 667,
+    "word": "popularity",
+    "meaning": "人気／評判"
+  },
+  {
+    "rank": 668,
+    "word": "fashion",
+    "meaning": "流行／ファッション"
+  },
+  {
+    "rank": 669,
+    "word": "citizen",
+    "meaning": "市民／国民"
+  },
+  {
+    "rank": 670,
+    "word": "link",
+    "meaning": "つなぐ／関連づける／リンク"
+  },
+  {
+    "rank": 671,
+    "word": "ideal",
+    "meaning": "理想（的な）"
+  },
+  {
+    "rank": 672,
+    "word": "claim",
+    "meaning": "主張する／請求する／主張"
+  },
+  {
+    "rank": 673,
+    "word": "reward",
+    "meaning": "報酬／ご褒美／報いる"
+  },
+  {
+    "rank": 674,
+    "word": "trust",
+    "meaning": "信頼（する）"
+  },
+  {
+    "rank": 675,
+    "word": "unless",
+    "meaning": "～でない限り"
+  },
+  {
+    "rank": 676,
+    "word": "scene",
+    "meaning": "場面／光景／現場"
+  },
+  {
+    "rank": 677,
+    "word": "rival",
+    "meaning": "ライバル／競争相手／競い合う"
+  },
+  {
+    "rank": 678,
+    "word": "severe",
+    "meaning": "厳しい／ひどい／深刻な"
+  },
+  {
+    "rank": 679,
+    "word": "steady",
+    "meaning": "安定した／着実な"
+  },
+  {
+    "rank": 680,
+    "word": "function",
+    "meaning": "機能／役割／機能する"
+  },
+  {
+    "rank": 681,
+    "word": "arrange",
+    "meaning": "手配する／並べる／整える"
+  },
+  {
+    "rank": 682,
+    "word": "deal",
+    "meaning": "扱う／取引／量／対処する"
+  },
+  {
+    "rank": 683,
+    "word": "sensitive",
+    "meaning": "敏感な／神経質な／繊細な"
+  },
+  {
+    "rank": 684,
+    "word": "locally",
+    "meaning": "地元で／局所的に"
+  },
+  {
+    "rank": 685,
+    "word": "fire",
+    "meaning": "火／火事／クビにする／発砲する"
+  },
+  {
+    "rank": 686,
+    "word": "gentle",
+    "meaning": "優しい／穏やかな"
+  },
+  {
+    "rank": 687,
+    "word": "custom",
+    "meaning": "習慣／風習／オーダーメイドの"
+  },
+  {
+    "rank": 688,
+    "word": "appreciate",
+    "meaning": "感謝する／良さが分かる／鑑賞する"
+  },
+  {
+    "rank": 689,
+    "word": "count",
+    "meaning": "数える／重要である"
+  },
+  {
+    "rank": 690,
+    "word": "honest",
+    "meaning": "正直な／誠実な"
+  },
+  {
+    "rank": 691,
+    "word": "league",
+    "meaning": "リーグ／仲間・同盟"
+  },
+  {
+    "rank": 692,
+    "word": "degree",
+    "meaning": "程度／学位／度（角度・温度）"
+  },
+  {
+    "rank": 693,
+    "word": "manufacture",
+    "meaning": "製造する／製造業"
+  },
+  {
+    "rank": 694,
+    "word": "exception",
+    "meaning": "例外"
+  },
+  {
+    "rank": 695,
+    "word": "wonder",
+    "meaning": "不思議に思う／驚く／驚き"
+  },
+  {
+    "rank": 696,
+    "word": "fail",
+    "meaning": "失敗する／～しそこなう／機能しない"
+  },
+  {
+    "rank": 697,
+    "word": "advance",
+    "meaning": "前進する／進歩する／前進・進歩"
+  },
+  {
+    "rank": 698,
+    "word": "sponsor",
+    "meaning": "スポンサー／後援者／支援する"
+  },
+  {
+    "rank": 699,
+    "word": "roast",
+    "meaning": "焼く／ローストする／焼いた"
+  },
+  {
+    "rank": 700,
+    "word": "determine",
+    "meaning": "決定する／決心する／突き止める"
+  },
+  {
+    "rank": 701,
+    "word": "terribly",
+    "meaning": "ひどく／とても"
+  },
+  {
+    "rank": 702,
+    "word": "burst",
+    "meaning": "破裂する／突然～しだす"
+  },
+  {
+    "rank": 703,
+    "word": "rescue",
+    "meaning": "救助（する）"
+  },
+  {
+    "rank": 704,
+    "word": "propose",
+    "meaning": "提案する／プロポーズする"
+  },
+  {
+    "rank": 705,
+    "word": "native",
+    "meaning": "母国の／生まれた土地の／原住民・その土地の人"
+  },
+  {
+    "rank": 706,
+    "word": "insert",
+    "meaning": "差し込む／挿入する"
+  },
+  {
+    "rank": 707,
+    "word": "pleasant",
+    "meaning": "楽しい／心地よい"
+  },
+  {
+    "rank": 708,
+    "word": "wisdom",
+    "meaning": "知恵／賢明さ"
+  },
+  {
+    "rank": 709,
+    "word": "resist",
+    "meaning": "抵抗する／我慢する"
+  },
+  {
+    "rank": 710,
+    "word": "barrier",
+    "meaning": "障壁／バリア"
+  },
+  {
+    "rank": 711,
+    "word": "migrate",
+    "meaning": "移住する／渡りをする"
+  },
+  {
+    "rank": 712,
+    "word": "slightly",
+    "meaning": "わずかに／少し"
+  },
+  {
+    "rank": 713,
+    "word": "suburb",
+    "meaning": "郊外"
+  },
+  {
+    "rank": 714,
+    "word": "entire",
+    "meaning": "全体の／すべての"
+  },
+  {
+    "rank": 715,
+    "word": "spell",
+    "meaning": "つづる／期間／魔法"
+  },
+  {
+    "rank": 716,
+    "word": "equal",
+    "meaning": "等しい／対等な／匹敵する"
+  },
+  {
+    "rank": 717,
+    "word": "shorten",
+    "meaning": "短くする／縮める"
+  },
+  {
+    "rank": 718,
+    "word": "dig",
+    "meaning": "掘る"
+  },
+  {
+    "rank": 719,
+    "word": "treasure",
+    "meaning": "宝物／大切な物（人）"
+  },
+  {
+    "rank": 720,
+    "word": "gap",
+    "meaning": "すき間／差／ギャップ"
+  },
+  {
+    "rank": 721,
+    "word": "invisible",
+    "meaning": "見えない／目に見えない"
+  },
+  {
+    "rank": 722,
+    "word": "sight",
+    "meaning": "視力／光景／名所"
+  },
+  {
+    "rank": 723,
+    "word": "term",
+    "meaning": "期間／専門用語／学期／条件"
+  },
+  {
+    "rank": 724,
+    "word": "obey",
+    "meaning": "従う／守る"
+  },
+  {
+    "rank": 725,
+    "word": "single",
+    "meaning": "ただ一つの／独身の"
+  },
+  {
+    "rank": 726,
+    "word": "latest",
+    "meaning": "最新の／最近の"
+  },
+  {
+    "rank": 727,
+    "word": "fault",
+    "meaning": "責任／過失／欠点"
+  },
+  {
+    "rank": 728,
+    "word": "knowledge",
+    "meaning": "知識"
+  },
+  {
+    "rank": 729,
+    "word": "fiction",
+    "meaning": "フィクション／架空の物語"
+  },
+  {
+    "rank": 730,
+    "word": "volume",
+    "meaning": "量／音量／冊"
+  },
+  {
+    "rank": 731,
+    "word": "repeatedly",
+    "meaning": "何度も／繰り返し"
+  },
+  {
+    "rank": 732,
+    "word": "annoy",
+    "meaning": "いら立たせる／うるさがらせる"
+  },
+  {
+    "rank": 733,
+    "word": "hunt",
+    "meaning": "狩りをする／捜し求める"
+  },
+  {
+    "rank": 734,
+    "word": "tax",
+    "meaning": "税金／課税する"
+  },
+  {
+    "rank": 735,
+    "word": "minimum",
+    "meaning": "最小限（の）"
+  },
+  {
+    "rank": 736,
+    "word": "extreme",
+    "meaning": "極端な／極度の／過激な"
+  },
+  {
+    "rank": 737,
+    "word": "tail",
+    "meaning": "しっぽ"
+  },
+  {
+    "rank": 738,
+    "word": "amaze",
+    "meaning": "驚かせる／感心させる"
+  },
+  {
+    "rank": 739,
+    "word": "stable",
+    "meaning": "安定した／しっかりした／厩（うまや）"
+  },
+  {
+    "rank": 740,
+    "word": "reject",
+    "meaning": "拒否する／却下する"
+  },
+  {
+    "rank": 741,
+    "word": "alter",
+    "meaning": "変える／変わる"
+  },
+  {
+    "rank": 742,
+    "word": "geography",
+    "meaning": "地理（学）"
+  },
+  {
+    "rank": 743,
+    "word": "puzzle",
+    "meaning": "頭を悩ませる／パズル"
+  },
+  {
+    "rank": 744,
+    "word": "convention",
+    "meaning": "慣習／大会・集会／協定"
+  },
+  {
+    "rank": 745,
+    "word": "dye",
+    "meaning": "染める／染料"
+  },
+  {
+    "rank": 746,
+    "word": "slice",
+    "meaning": "薄切り／1切れ／薄く切る"
+  },
+  {
+    "rank": 747,
+    "word": "cheat",
+    "meaning": "だます／カンニングする／ペテン師"
+  },
+  {
+    "rank": 748,
+    "word": "moment",
+    "meaning": "瞬間／ちょっとの間"
+  },
+  {
+    "rank": 749,
+    "word": "beat",
+    "meaning": "打ち負かす／打つ／鼓動"
+  },
+  {
+    "rank": 750,
+    "word": "lazy",
+    "meaning": "怠け者の／面倒くさがりの"
+  },
+  {
+    "rank": 751,
+    "word": "marine",
+    "meaning": "海の／海洋の／海兵隊員"
+  },
+  {
+    "rank": 752,
+    "word": "pause",
+    "meaning": "一時停止（する）"
+  },
+  {
+    "rank": 753,
+    "word": "wound",
+    "meaning": "傷／傷つける"
+  },
+  {
+    "rank": 754,
+    "word": "romantic",
+    "meaning": "ロマンチックな／恋愛の"
+  },
+  {
+    "rank": 755,
+    "word": "vital",
+    "meaning": "極めて重要な／生命にかかわる"
+  },
+  {
+    "rank": 756,
+    "word": "embarrassed",
+    "meaning": "恥ずかしい／気まずい思いをした"
+  },
+  {
+    "rank": 757,
+    "word": "aid",
+    "meaning": "援助／助ける"
+  },
+  {
+    "rank": 758,
+    "word": "force",
+    "meaning": "力／武力／強制する"
+  },
+  {
+    "rank": 759,
+    "word": "incident",
+    "meaning": "出来事／事件（比較的小さめの）"
+  },
+  {
+    "rank": 760,
+    "word": "rehearsal",
+    "meaning": "リハーサル／通し練習"
+  },
+  {
+    "rank": 761,
+    "word": "sneeze",
+    "meaning": "くしゃみ（をする）"
+  },
+  {
+    "rank": 762,
+    "word": "allowance",
+    "meaning": "小遣い／手当／許容量"
+  },
+  {
+    "rank": 763,
+    "word": "march",
+    "meaning": "行進（する）／3月"
+  },
+  {
+    "rank": 764,
+    "word": "cruel",
+    "meaning": "残酷な／むごい"
+  },
+  {
+    "rank": 765,
+    "word": "pour",
+    "meaning": "注ぐ／どっと流れ出る"
+  },
+  {
+    "rank": 766,
+    "word": "stock",
+    "meaning": "在庫／株／仕入れる"
+  },
+  {
+    "rank": 767,
+    "word": "minor",
+    "meaning": "小さい／さほど重要でない／未成年者"
+  },
+  {
+    "rank": 768,
+    "word": "victim",
+    "meaning": "被害者／犠牲者"
+  },
+  {
+    "rank": 769,
+    "word": "voyage",
+    "meaning": "船旅／航海"
+  },
+  {
+    "rank": 770,
+    "word": "exaggerate",
+    "meaning": "誇張する／大げさに言う"
+  },
+  {
+    "rank": 771,
+    "word": "fade",
+    "meaning": "色あせる／だんだん消える"
+  },
+  {
+    "rank": 772,
+    "word": "reuse",
+    "meaning": "再利用する"
+  },
+  {
+    "rank": 773,
+    "word": "strike",
+    "meaning": "打つ／ストライキをする／ストライキ／攻撃"
+  },
+  {
+    "rank": 774,
+    "word": "contrast",
+    "meaning": "対照／対比／対照をなす"
+  },
+  {
+    "rank": 775,
+    "word": "bark",
+    "meaning": "ほえる／木の皮"
+  },
+  {
+    "rank": 776,
+    "word": "jealous",
+    "meaning": "嫉妬深い／うらやましがる"
+  },
+  {
+    "rank": 777,
+    "word": "bloom",
+    "meaning": "花が咲く／開花"
+  },
+  {
+    "rank": 778,
+    "word": "plain",
+    "meaning": "簡素な／わかりやすい／地味な／平野"
+  },
+  {
+    "rank": 779,
+    "word": "landmark",
+    "meaning": "目印になる建物／歴史的転換点"
+  },
+  {
+    "rank": 780,
+    "word": "humor",
+    "meaning": "ユーモア／おもしろさ"
+  },
+  {
+    "rank": 781,
+    "word": "lean",
+    "meaning": "寄りかかる／傾く／脂肪の少ない"
+  },
+  {
+    "rank": 782,
+    "word": "tip",
+    "meaning": "先端／チップ／助言"
+  },
+  {
+    "rank": 783,
+    "word": "estate",
+    "meaning": "財産／土地・不動産"
+  },
+  {
+    "rank": 784,
+    "word": "basis",
+    "meaning": "基礎／根拠／土台"
+  },
+  {
+    "rank": 785,
+    "word": "length",
+    "meaning": "長さ"
+  },
+  {
+    "rank": 786,
+    "word": "reconsider",
+    "meaning": "再考する／考え直す"
+  },
+  {
+    "rank": 787,
+    "word": "forgive",
+    "meaning": "許す"
+  },
+  {
+    "rank": 788,
+    "word": "possibly",
+    "meaning": "もしかすると／おそらく／どうしても（否定文）"
+  },
+  {
+    "rank": 789,
+    "word": "scholarship",
+    "meaning": "奨学金／学識"
+  },
+  {
+    "rank": 790,
+    "word": "wave",
+    "meaning": "波／手を振る／波打つ"
+  },
+  {
+    "rank": 791,
+    "word": "souvenir",
+    "meaning": "お土産／記念品"
+  },
+  {
+    "rank": 792,
+    "word": "bet",
+    "meaning": "賭ける／断言する／賭け"
+  },
+  {
+    "rank": 793,
+    "word": "mature",
+    "meaning": "成熟した／大人びた／成熟する"
+  },
+  {
+    "rank": 794,
+    "word": "breeze",
+    "meaning": "そよ風／楽なこと"
+  },
+  {
+    "rank": 795,
+    "word": "fine",
+    "meaning": "良い／細かい／（天気が）晴れた／罰金"
+  },
+  {
+    "rank": 796,
+    "word": "recover",
+    "meaning": "回復する／取り戻す"
+  },
+  {
+    "rank": 797,
+    "word": "relation",
+    "meaning": "関係／親戚"
+  },
+  {
+    "rank": 798,
+    "word": "fortunate",
+    "meaning": "幸運な／運のよい"
+  },
+  {
+    "rank": 799,
+    "word": "social",
+    "meaning": "社会的な／社交的な"
+  },
+  {
+    "rank": 800,
+    "word": "entertainment",
+    "meaning": "娯楽／エンターテインメント"
+  },
+  {
+    "rank": 801,
+    "word": "strictly",
+    "meaning": "厳しく／厳密に"
+  },
+  {
+    "rank": 802,
+    "word": "impulse",
+    "meaning": "衝動／衝動的行動"
+  },
+  {
+    "rank": 803,
+    "word": "offspring",
+    "meaning": "子ども／子孫"
+  },
+  {
+    "rank": 804,
+    "word": "confine",
+    "meaning": "閉じ込める／限定する"
+  },
+  {
+    "rank": 805,
+    "word": "prohibit",
+    "meaning": "禁止する"
+  },
+  {
+    "rank": 806,
+    "word": "partially",
+    "meaning": "部分的に"
+  },
+  {
+    "rank": 807,
+    "word": "pardon",
+    "meaning": "許す／恩赦"
+  },
+  {
+    "rank": 808,
+    "word": "humble",
+    "meaning": "謙虚な／質素な"
+  },
+  {
+    "rank": 809,
+    "word": "inquiry",
+    "meaning": "質問／問い合わせ／調査"
+  },
+  {
+    "rank": 810,
+    "word": "sweep",
+    "meaning": "掃く／さっと一掃する"
+  },
+  {
+    "rank": 811,
+    "word": "overwhelm",
+    "meaning": "圧倒する／打ちのめす"
+  },
+  {
+    "rank": 812,
+    "word": "distract",
+    "meaning": "気をそらす／注意をそらす"
+  },
+  {
+    "rank": 813,
+    "word": "intense",
+    "meaning": "激しい／強烈な"
+  },
+  {
+    "rank": 814,
+    "word": "neglect",
+    "meaning": "怠る／放置する／無視"
+  },
+  {
+    "rank": 815,
+    "word": "accuse",
+    "meaning": "非難する／告発する"
+  },
+  {
+    "rank": 816,
+    "word": "flatter",
+    "meaning": "お世辞を言う／実際以上によく言う"
+  },
+  {
+    "rank": 817,
+    "word": "govern",
+    "meaning": "統治する／支配する"
+  },
+  {
+    "rank": 818,
+    "word": "ambition",
+    "meaning": "野心／大きな目標"
+  },
+  {
+    "rank": 819,
+    "word": "intelligent",
+    "meaning": "頭の良い／知的な"
+  },
+  {
+    "rank": 820,
+    "word": "forbid",
+    "meaning": "禁じる"
+  },
+  {
+    "rank": 821,
+    "word": "inherit",
+    "meaning": "相続する／受け継ぐ"
+  },
+  {
+    "rank": 822,
+    "word": "proportion",
+    "meaning": "割合／比率／部分"
+  },
+  {
+    "rank": 823,
+    "word": "objectively",
+    "meaning": "客観的に"
+  },
+  {
+    "rank": 824,
+    "word": "ridiculous",
+    "meaning": "ばかげた／おかしな"
+  },
+  {
+    "rank": 825,
+    "word": "visually",
+    "meaning": "見た目で／視覚的に"
+  },
+  {
+    "rank": 826,
+    "word": "drag",
+    "meaning": "引きずる／ぐいっと引っ張る"
+  },
+  {
+    "rank": 827,
+    "word": "frown",
+    "meaning": "眉をひそめる／しかめ面をする"
+  },
+  {
+    "rank": 828,
+    "word": "astonish",
+    "meaning": "驚かせる"
+  },
+  {
+    "rank": 829,
+    "word": "differ",
+    "meaning": "異なる"
+  },
+  {
+    "rank": 830,
+    "word": "grasp",
+    "meaning": "しっかりつかむ／理解する"
+  },
+  {
+    "rank": 831,
+    "word": "twist",
+    "meaning": "ねじる／ひねる／ねじれ"
+  },
+  {
+    "rank": 832,
+    "word": "glance",
+    "meaning": "ちらっと見る／一目見る"
+  },
+  {
+    "rank": 833,
+    "word": "matter",
+    "meaning": "重要である／問題／物質"
+  },
+  {
+    "rank": 834,
+    "word": "barely",
+    "meaning": "かろうじて／ほとんど〜ない"
+  },
+  {
+    "rank": 835,
+    "word": "arrogant",
+    "meaning": "傲慢な／偉そうな"
+  },
+  {
+    "rank": 836,
+    "word": "embrace",
+    "meaning": "抱きしめる／（考えなどを）受け入れる"
+  },
+  {
+    "rank": 837,
+    "word": "innocent",
+    "meaning": "無実の／罪のない／うぶな"
+  },
+  {
+    "rank": 838,
+    "word": "overtake",
+    "meaning": "追い越す／上回る"
+  },
+  {
+    "rank": 839,
+    "word": "temper",
+    "meaning": "気質／気分／怒り"
+  },
+  {
+    "rank": 840,
+    "word": "spectator",
+    "meaning": "観客"
+  },
+  {
+    "rank": 841,
+    "word": "era",
+    "meaning": "時代"
+  },
+  {
+    "rank": 842,
+    "word": "roll",
+    "meaning": "転がる／巻く／名簿"
+  },
+  {
+    "rank": 843,
+    "word": "district",
+    "meaning": "地区／区域"
+  },
+  {
+    "rank": 844,
+    "word": "orbit",
+    "meaning": "軌道／軌道を回る"
+  },
+  {
+    "rank": 845,
+    "word": "offensive",
+    "meaning": "不快な／攻撃的な"
+  },
+  {
+    "rank": 846,
+    "word": "envy",
+    "meaning": "うらやむ／嫉妬"
+  },
+  {
+    "rank": 847,
+    "word": "sphere",
+    "meaning": "球体／領域・範囲"
+  },
+  {
+    "rank": 848,
+    "word": "territory",
+    "meaning": "領土／なわばり"
+  },
+  {
+    "rank": 849,
+    "word": "prosperity",
+    "meaning": "繁栄／豊かさ"
+  },
+  {
+    "rank": 850,
+    "word": "massive",
+    "meaning": "巨大な／どっしりした"
+  },
+  {
+    "rank": 851,
+    "word": "relieve",
+    "meaning": "和らげる／安心させる"
+  },
+  {
+    "rank": 852,
+    "word": "shift",
+    "meaning": "変化／移動／交代勤務／移す"
+  },
+  {
+    "rank": 853,
+    "word": "remark",
+    "meaning": "発言／コメント／述べる"
+  },
+  {
+    "rank": 854,
+    "word": "soak",
+    "meaning": "浸す／びしょ濡れにする"
+  },
+  {
+    "rank": 855,
+    "word": "solid",
+    "meaning": "固体の／堅実な／しっかりした"
+  },
+  {
+    "rank": 856,
+    "word": "margin",
+    "meaning": "余白／差／利ざや"
+  },
+  {
+    "rank": 857,
+    "word": "owe",
+    "meaning": "借りがある／〜のおかげである"
+  },
+  {
+    "rank": 858,
+    "word": "appetite",
+    "meaning": "食欲／欲求"
+  },
+  {
+    "rank": 859,
+    "word": "admire",
+    "meaning": "感心する／称賛する"
+  },
+  {
+    "rank": 860,
+    "word": "boundary",
+    "meaning": "境界線／限界"
+  },
+  {
+    "rank": 861,
+    "word": "summary",
+    "meaning": "要約／まとめ"
+  },
+  {
+    "rank": 862,
+    "word": "occupy",
+    "meaning": "占める／占領する／居住する"
+  },
+  {
+    "rank": 863,
+    "word": "belongings",
+    "meaning": "所有物／持ち物"
+  },
+  {
+    "rank": 864,
+    "word": "neutral",
+    "meaning": "中立の／どっちつかずの"
+  },
+  {
+    "rank": 865,
+    "word": "suspend",
+    "meaning": "一時停止する／停職にする／つるす"
+  },
+  {
+    "rank": 866,
+    "word": "inspire",
+    "meaning": "刺激する／ひらめきを与える／感動させる"
+  },
+  {
+    "rank": 867,
+    "word": "technically",
+    "meaning": "技術的には／厳密に言えば"
+  },
+  {
+    "rank": 868,
+    "word": "conscious",
+    "meaning": "意識している／意識のある"
+  },
+  {
+    "rank": 869,
+    "word": "subtle",
+    "meaning": "微妙な／分かりにくい／巧妙な"
+  },
+  {
+    "rank": 870,
+    "word": "vanish",
+    "meaning": "消える／消え去る"
+  },
+  {
+    "rank": 871,
+    "word": "frontier",
+    "meaning": "辺境／最先端分野"
+  },
+  {
+    "rank": 872,
+    "word": "merit",
+    "meaning": "長所／功績／価値"
+  },
+  {
+    "rank": 873,
+    "word": "miniature",
+    "meaning": "小型の／ミニチュア"
+  },
+  {
+    "rank": 874,
+    "word": "trace",
+    "meaning": "跡／わずかな〜／跡をたどる"
+  },
+  {
+    "rank": 875,
+    "word": "wander",
+    "meaning": "歩き回る／さまよう"
+  },
+  {
+    "rank": 876,
+    "word": "vacant",
+    "meaning": "空いている／空席の"
+  },
+  {
+    "rank": 877,
+    "word": "adore",
+    "meaning": "大好きである／崇拝する"
+  },
+  {
+    "rank": 878,
+    "word": "discrimination",
+    "meaning": "差別／識別"
+  },
+  {
+    "rank": 879,
+    "word": "fragile",
+    "meaning": "壊れやすい／もろい／か弱い"
+  },
+  {
+    "rank": 880,
+    "word": "extensive",
+    "meaning": "広範囲の／大量の"
+  },
+  {
+    "rank": 881,
+    "word": "frankly",
+    "meaning": "率直に（言って）"
+  },
+  {
+    "rank": 882,
+    "word": "shield",
+    "meaning": "盾／防御／守る・保護する"
+  },
+  {
+    "rank": 883,
+    "word": "rotate",
+    "meaning": "回転する／ローテーションする"
+  },
+  {
+    "rank": 884,
+    "word": "capable",
+    "meaning": "能力がある／〜できる"
+  },
+  {
+    "rank": 885,
+    "word": "actually",
+    "meaning": "実は／本当に"
+  },
+  {
+    "rank": 886,
+    "word": "recently",
+    "meaning": "最近"
+  },
+  {
+    "rank": 887,
+    "word": "improve",
+    "meaning": "改善する／よくなる"
+  },
+  {
+    "rank": 888,
+    "word": "offer",
+    "meaning": "申し出る／提供する／提案"
+  },
+  {
+    "rank": 889,
+    "word": "extra",
+    "meaning": "余分の／追加の／おまけ"
+  },
+  {
+    "rank": 890,
+    "word": "own",
+    "meaning": "自分自身の／所有する"
+  },
+  {
+    "rank": 891,
+    "word": "presentation",
+    "meaning": "発表／プレゼン／提示"
+  },
+  {
+    "rank": 892,
+    "word": "available",
+    "meaning": "利用できる／手に入る／都合がつく"
+  },
+  {
+    "rank": 893,
+    "word": "amount",
+    "meaning": "量／総額／（〜に）達する"
+  },
+  {
+    "rank": 894,
+    "word": "item",
+    "meaning": "品目／項目"
+  },
+  {
+    "rank": 895,
+    "word": "skill",
+    "meaning": "技術／能力"
+  },
+  {
+    "rank": 896,
+    "word": "cancel",
+    "meaning": "取り消す／キャンセルする"
+  },
+  {
+    "rank": 897,
+    "word": "nearby",
+    "meaning": "近くの／近くで"
+  },
+  {
+    "rank": 898,
+    "word": "electricity",
+    "meaning": "電気"
+  },
+  {
+    "rank": 899,
+    "word": "increase",
+    "meaning": "増える／増加させる／増加"
+  },
+  {
+    "rank": 900,
+    "word": "quit",
+    "meaning": "やめる／辞める／中止する"
+  },
+  {
+    "rank": 901,
+    "word": "avoid",
+    "meaning": "避ける／回避する"
+  },
+  {
+    "rank": 902,
+    "word": "huge",
+    "meaning": "巨大な／膨大な"
+  },
+  {
+    "rank": 903,
+    "word": "originally",
+    "meaning": "もともと／当初は"
+  },
+  {
+    "rank": 904,
+    "word": "chemical",
+    "meaning": "化学の／化学薬品"
+  },
+  {
+    "rank": 905,
+    "word": "client",
+    "meaning": "依頼人／顧客"
+  },
+  {
+    "rank": 906,
+    "word": "material",
+    "meaning": "材料／資料／物質的な"
+  },
+  {
+    "rank": 907,
+    "word": "include",
+    "meaning": "含む／含める"
+  },
+  {
+    "rank": 908,
+    "word": "protect",
+    "meaning": "守る／保護する"
+  },
+  {
+    "rank": 909,
+    "word": "charity",
+    "meaning": "慈善団体／慈善活動"
+  },
+  {
+    "rank": 910,
+    "word": "rest",
+    "meaning": "残り／休み／休む"
+  },
+  {
+    "rank": 911,
+    "word": "develop",
+    "meaning": "発展させる／開発する／発達する"
+  },
+  {
+    "rank": 912,
+    "word": "therefore",
+    "meaning": "それゆえ／したがって"
+  },
+  {
+    "rank": 913,
+    "word": "advantage",
+    "meaning": "利点／強み／有利"
+  },
+  {
+    "rank": 914,
+    "word": "donate",
+    "meaning": "寄付する／提供する"
+  },
+  {
+    "rank": 915,
+    "word": "article",
+    "meaning": "記事／品物／条項"
+  },
+  {
+    "rank": 916,
+    "word": "community",
+    "meaning": "地域社会／共同体"
+  },
+  {
+    "rank": 917,
+    "word": "nevertheless",
+    "meaning": "それにもかかわらず"
+  },
+  {
+    "rank": 918,
+    "word": "past",
+    "meaning": "過去（の）／〜を過ぎて"
+  },
+  {
+    "rank": 919,
+    "word": "temperature",
+    "meaning": "気温／温度／体温"
+  },
+  {
+    "rank": 920,
+    "word": "discuss",
+    "meaning": "話し合う／議論する"
+  },
+  {
+    "rank": 921,
+    "word": "prepare",
+    "meaning": "準備する／用意する"
+  },
+  {
+    "rank": 922,
+    "word": "neighborhood",
+    "meaning": "近所／近隣地域"
+  },
+  {
+    "rank": 923,
+    "word": "run",
+    "meaning": "走る／経営する／流れる／立候補する"
+  },
+  {
+    "rank": 924,
+    "word": "support",
+    "meaning": "支える／支持する／支援"
+  },
+  {
+    "rank": 925,
+    "word": "condition",
+    "meaning": "状態／条件／病状"
+  },
+  {
+    "rank": 926,
+    "word": "situation",
+    "meaning": "状況／事態"
+  },
+  {
+    "rank": 927,
+    "word": "clothing",
+    "meaning": "衣類／服"
+  },
+  {
+    "rank": 928,
+    "word": "search",
+    "meaning": "捜す／捜索する／検索する"
+  },
+  {
+    "rank": 929,
+    "word": "agree",
+    "meaning": "同意する／賛成する／一致する"
+  },
+  {
+    "rank": 930,
+    "word": "effect",
+    "meaning": "影響／効果／結果"
+  },
+  {
+    "rank": 931,
+    "word": "form",
+    "meaning": "形／用紙／形成する"
+  },
+  {
+    "rank": 932,
+    "word": "discount",
+    "meaning": "割引／割り引く"
+  },
+  {
+    "rank": 933,
+    "word": "rent",
+    "meaning": "家賃／賃貸料／借りる・貸す"
+  },
+  {
+    "rank": 934,
+    "word": "invent",
+    "meaning": "発明する／でっち上げる"
+  },
+  {
+    "rank": 935,
+    "word": "wealthy",
+    "meaning": "裕福な／金持ちの"
+  },
+  {
+    "rank": 936,
+    "word": "lately",
+    "meaning": "最近"
+  },
+  {
+    "rank": 937,
+    "word": "population",
+    "meaning": "人口／個体数"
+  },
+  {
+    "rank": 938,
+    "word": "current",
+    "meaning": "現在の／今の／流れ"
+  },
+  {
+    "rank": 939,
+    "word": "mainly",
+    "meaning": "主に／大部分は"
+  },
+  {
+    "rank": 940,
+    "word": "transfer",
+    "meaning": "移動する／転校・転勤する／振り込む"
+  },
+  {
+    "rank": 941,
+    "word": "realize",
+    "meaning": "気づく／実現する"
+  },
+  {
+    "rank": 942,
+    "word": "fee",
+    "meaning": "料金／手数料"
+  },
+  {
+    "rank": 943,
+    "word": "consider",
+    "meaning": "よく考える／考慮する／みなす"
+  },
+  {
+    "rank": 944,
+    "word": "strict",
+    "meaning": "厳しい／厳格な"
+  },
+  {
+    "rank": 945,
+    "word": "original",
+    "meaning": "元の／独創的な／原作"
+  },
+  {
+    "rank": 946,
+    "word": "access",
+    "meaning": "アクセス／利用権／接近"
+  },
+  {
+    "rank": 947,
+    "word": "announce",
+    "meaning": "発表する／知らせる"
+  },
+  {
+    "rank": 948,
+    "word": "department",
+    "meaning": "部門／学部／売り場"
+  },
+  {
+    "rank": 949,
+    "word": "downtown",
+    "meaning": "中心街／繁華街"
+  },
+  {
+    "rank": 950,
+    "word": "land",
+    "meaning": "土地／着陸する／上陸する"
+  },
+  {
+    "rank": 951,
+    "word": "law",
+    "meaning": "法律／法則"
+  },
+  {
+    "rank": 952,
+    "word": "period",
+    "meaning": "期間／時代／授業（コマ）"
+  },
+  {
+    "rank": 953,
+    "word": "challenge",
+    "meaning": "課題／難題／挑戦（する）"
+  },
+  {
+    "rank": 954,
+    "word": "ordinary",
+    "meaning": "普通の／平凡な"
+  },
+  {
+    "rank": 955,
+    "word": "surprising",
+    "meaning": "驚くべき／意外な"
+  },
+  {
+    "rank": 956,
+    "word": "afford",
+    "meaning": "～する余裕がある（時間・お金）"
+  },
+  {
+    "rank": 957,
+    "word": "while",
+    "meaning": "～する間／一方で／しばらくの間"
+  },
+  {
+    "rank": 958,
+    "word": "result",
+    "meaning": "結果／結果になる"
+  },
+  {
+    "rank": 959,
+    "word": "countryside",
+    "meaning": "田舎／田園地帯"
+  },
+  {
+    "rank": 960,
+    "word": "normally",
+    "meaning": "普通は／通常は"
+  },
+  {
+    "rank": 961,
+    "word": "resident",
+    "meaning": "住民／居住者"
+  },
+  {
+    "rank": 962,
+    "word": "confident",
+    "meaning": "自信のある／確信している"
+  },
+  {
+    "rank": 963,
+    "word": "cover",
+    "meaning": "覆う／カバーする／報道する／表紙"
+  },
+  {
+    "rank": 964,
+    "word": "major",
+    "meaning": "主要な／大きい方の／専攻"
+  },
+  {
+    "rank": 965,
+    "word": "unusual",
+    "meaning": "珍しい／普通でない"
+  },
+  {
+    "rank": 966,
+    "word": "complicated",
+    "meaning": "複雑な／込み入った"
+  },
+  {
+    "rank": 967,
+    "word": "communicate",
+    "meaning": "意思疎通する／伝達する"
+  },
+  {
+    "rank": 968,
+    "word": "efficient",
+    "meaning": "効率的な／能率の良い"
+  },
+  {
+    "rank": 969,
+    "word": "employ",
+    "meaning": "雇う／用いる"
+  },
+  {
+    "rank": 970,
+    "word": "accept",
+    "meaning": "受け入れる／受け取る"
+  },
+  {
+    "rank": 971,
+    "word": "position",
+    "meaning": "位置／地位／立場／姿勢"
+  },
+  {
+    "rank": 972,
+    "word": "properly",
+    "meaning": "きちんと／正しく／適切に"
+  },
+  {
+    "rank": 973,
+    "word": "similar",
+    "meaning": "似ている／類似した"
+  },
+  {
+    "rank": 974,
+    "word": "economic",
+    "meaning": "経済の／経済的な"
+  },
+  {
+    "rank": 975,
+    "word": "apologize",
+    "meaning": "謝る／謝罪する"
+  },
+  {
+    "rank": 976,
+    "word": "decision",
+    "meaning": "決定／判断"
+  },
+  {
+    "rank": 977,
+    "word": "disease",
+    "meaning": "病気／疾患"
+  },
+  {
+    "rank": 978,
+    "word": "hire",
+    "meaning": "雇う"
+  },
+  {
+    "rank": 979,
+    "word": "nearly",
+    "meaning": "ほとんど／ほぼ"
+  },
+  {
+    "rank": 980,
+    "word": "grocery",
+    "meaning": "食料雑貨／食料品店"
+  },
+  {
+    "rank": 981,
+    "word": "essay",
+    "meaning": "作文／小論文／エッセイ"
+  },
+  {
+    "rank": 982,
+    "word": "site",
+    "meaning": "場所／用地／サイト（ウェブサイト）"
+  },
+  {
+    "rank": 983,
+    "word": "concern",
+    "meaning": "心配（事）／関心事／関係する"
+  },
+  {
+    "rank": 984,
+    "word": "shortage",
+    "meaning": "不足／欠乏"
+  },
+  {
+    "rank": 985,
+    "word": "average",
+    "meaning": "平均／平均の／普通の"
+  },
+  {
+    "rank": 986,
+    "word": "warn",
+    "meaning": "警告する／注意を促す"
+  },
+  {
+    "rank": 987,
+    "word": "adopt",
+    "meaning": "採用する／養子にする"
+  },
+  {
+    "rank": 988,
+    "word": "match",
+    "meaning": "合う／釣り合う／試合／よく合う相手"
+  },
+  {
+    "rank": 989,
+    "word": "control",
+    "meaning": "管理する／制御／抑える"
+  },
+  {
+    "rank": 990,
+    "word": "enter",
+    "meaning": "入る／入力する／参加する"
+  },
+  {
+    "rank": 991,
+    "word": "pressure",
+    "meaning": "圧力／重圧／プレッシャー"
+  },
+  {
+    "rank": 992,
+    "word": "trail",
+    "meaning": "小道／跡／跡を追う"
+  },
+  {
+    "rank": 993,
+    "word": "relationship",
+    "meaning": "関係／人間関係／恋愛関係"
+  },
+  {
+    "rank": 994,
+    "word": "graduate",
+    "meaning": "卒業する／卒業生"
+  },
+  {
+    "rank": 995,
+    "word": "definitely",
+    "meaning": "間違いなく／確かに"
+  },
+  {
+    "rank": 996,
+    "word": "overtime",
+    "meaning": "残業／時間外"
+  },
+  {
+    "rank": 997,
+    "word": "install",
+    "meaning": "設置する／インストールする"
+  },
+  {
+    "rank": 998,
+    "word": "indeed",
+    "meaning": "本当に／実際に／確かに"
+  },
+  {
+    "rank": 999,
+    "word": "meet",
+    "meaning": "会う／満たす（条件などを）"
+  },
+  {
+    "rank": 1000,
+    "word": "conversation",
+    "meaning": "会話"
+  },
+  {
+    "rank": 1001,
+    "word": "garbage",
+    "meaning": "ごみ"
+  },
+  {
+    "rank": 1002,
+    "word": "dislike",
+    "meaning": "嫌う／嫌悪"
+  },
+  {
+    "rank": 1003,
+    "word": "tour",
+    "meaning": "旅行／見学／巡回する"
+  },
+  {
+    "rank": 1004,
+    "word": "rather",
+    "meaning": "むしろ／かなり"
+  },
+  {
+    "rank": 1005,
+    "word": "last",
+    "meaning": "続く／最後の／この前の"
+  },
+  {
+    "rank": 1006,
+    "word": "scary",
+    "meaning": "怖い／恐ろしい"
+  },
+  {
+    "rank": 1007,
+    "word": "substance",
+    "meaning": "物質／本質"
+  },
+  {
+    "rank": 1008,
+    "word": "crime",
+    "meaning": "犯罪"
+  },
+  {
+    "rank": 1009,
+    "word": "face",
+    "meaning": "顔／直面する"
+  },
+  {
+    "rank": 1010,
+    "word": "attitude",
+    "meaning": "態度／考え方"
+  },
+  {
+    "rank": 1011,
+    "word": "diet",
+    "meaning": "食事（制限）／ダイエット"
+  },
+  {
+    "rank": 1012,
+    "word": "trend",
+    "meaning": "傾向／流行"
+  },
+  {
+    "rank": 1013,
+    "word": "edit",
+    "meaning": "編集する"
+  },
+  {
+    "rank": 1014,
+    "word": "reply",
+    "meaning": "返事（をする）"
+  },
+  {
+    "rank": 1015,
+    "word": "park",
+    "meaning": "公園／駐車する"
+  },
+  {
+    "rank": 1016,
+    "word": "regular",
+    "meaning": "規則的な／いつもの／常連の"
+  },
+  {
+    "rank": 1017,
+    "word": "view",
+    "meaning": "見解／眺め／見る"
+  },
+  {
+    "rank": 1018,
+    "word": "case",
+    "meaning": "場合／事件／ケース"
+  },
+  {
+    "rank": 1019,
+    "word": "nervous",
+    "meaning": "緊張した／神経質な"
+  },
+  {
+    "rank": 1020,
+    "word": "official",
+    "meaning": "公式の／公的な／役人"
+  },
+  {
+    "rank": 1021,
+    "word": "pain",
+    "meaning": "痛み／いやな人・こと"
+  },
+  {
+    "rank": 1022,
+    "word": "aim",
+    "meaning": "狙い／目標／狙う"
+  },
+  {
+    "rank": 1023,
+    "word": "process",
+    "meaning": "過程／処理／加工する"
+  },
+  {
+    "rank": 1024,
+    "word": "suitable",
+    "meaning": "ふさわしい／適した"
+  },
+  {
+    "rank": 1025,
+    "word": "trash",
+    "meaning": "ごみ／くだらないもの"
+  },
+  {
+    "rank": 1026,
+    "word": "walk",
+    "meaning": "歩く／散歩／通路"
+  },
+  {
+    "rank": 1027,
+    "word": "billion",
+    "meaning": "10億"
+  },
+  {
+    "rank": 1028,
+    "word": "poorly",
+    "meaning": "下手に／貧しく／体調が悪く"
+  },
+  {
+    "rank": 1029,
+    "word": "book",
+    "meaning": "予約する／本"
+  },
+  {
+    "rank": 1030,
+    "word": "childhood",
+    "meaning": "子ども時代"
+  },
+  {
+    "rank": 1031,
+    "word": "global",
+    "meaning": "世界的な／地球規模の"
+  },
+  {
+    "rank": 1032,
+    "word": "distance",
+    "meaning": "距離／隔たり"
+  },
+  {
+    "rank": 1033,
+    "word": "fit",
+    "meaning": "合う／適している／体が締まった"
+  },
+  {
+    "rank": 1034,
+    "word": "request",
+    "meaning": "頼む／要請する／依頼"
+  },
+  {
+    "rank": 1035,
+    "word": "bill",
+    "meaning": "請求書／紙幣／法案"
+  },
+  {
+    "rank": 1036,
+    "word": "housework",
+    "meaning": "家事"
+  },
+  {
+    "rank": 1037,
+    "word": "additional",
+    "meaning": "追加の／さらなる"
+  },
+  {
+    "rank": 1038,
+    "word": "hopefully",
+    "meaning": "うまくいけば／～だといいのですが"
+  },
+  {
+    "rank": 1039,
+    "word": "sample",
+    "meaning": "見本／サンプル"
+  },
+  {
+    "rank": 1040,
+    "word": "shelf",
+    "meaning": "棚"
+  },
+  {
+    "rank": 1041,
+    "word": "classic",
+    "meaning": "古典的名作／定番の"
+  },
+  {
+    "rank": 1042,
+    "word": "unwanted",
+    "meaning": "望まれない／不要な"
+  },
+  {
+    "rank": 1043,
+    "word": "feed",
+    "meaning": "食べ物を与える／フィード"
+  },
+  {
+    "rank": 1044,
+    "word": "solar",
+    "meaning": "太陽の／太陽光の"
+  },
+  {
+    "rank": 1045,
+    "word": "inexpensive",
+    "meaning": "安価な／手ごろな"
+  },
+  {
+    "rank": 1046,
+    "word": "aspect",
+    "meaning": "側面／観点"
+  },
+  {
+    "rank": 1047,
+    "word": "version",
+    "meaning": "版／バージョン"
+  },
+  {
+    "rank": 1048,
+    "word": "worldwide",
+    "meaning": "世界中の／世界的に"
+  },
+  {
+    "rank": 1049,
+    "word": "direction",
+    "meaning": "方向／指示"
+  },
+  {
+    "rank": 1050,
+    "word": "agent",
+    "meaning": "代理人／エージェント／薬剤"
+  },
+  {
+    "rank": 1051,
+    "word": "atmosphere",
+    "meaning": "雰囲気／大気"
+  },
+  {
+    "rank": 1052,
+    "word": "inconvenience",
+    "meaning": "不便／迷惑"
+  },
+  {
+    "rank": 1053,
+    "word": "positive",
+    "meaning": "前向きな／肯定的な／プラスの"
+  },
+  {
+    "rank": 1054,
+    "word": "prefer",
+    "meaning": "より好む"
+  },
+  {
+    "rank": 1055,
+    "word": "worth",
+    "meaning": "～の価値がある／～するに値する"
+  },
+  {
+    "rank": 1056,
+    "word": "success",
+    "meaning": "成功"
+  },
+  {
+    "rank": 1057,
+    "word": "effort",
+    "meaning": "努力／試み"
+  },
+  {
+    "rank": 1058,
+    "word": "cash",
+    "meaning": "現金／現金化する"
+  },
+  {
+    "rank": 1059,
+    "word": "bite",
+    "meaning": "かむ／一口"
+  },
+  {
+    "rank": 1060,
+    "word": "option",
+    "meaning": "選択肢／オプション"
+  },
+  {
+    "rank": 1061,
+    "word": "security",
+    "meaning": "安全／警備／保障"
+  },
+  {
+    "rank": 1062,
+    "word": "session",
+    "meaning": "（活動の）時間／会合"
+  },
+  {
+    "rank": 1063,
+    "word": "signal",
+    "meaning": "合図／信号／合図する"
+  },
+  {
+    "rank": 1064,
+    "word": "fake",
+    "meaning": "偽物／偽の／〜のふりをする"
+  },
+  {
+    "rank": 1065,
+    "word": "shortly",
+    "meaning": "まもなく／少ししてから"
+  },
+  {
+    "rank": 1066,
+    "word": "species",
+    "meaning": "種（しゅ）"
+  },
+  {
+    "rank": 1067,
+    "word": "water",
+    "meaning": "水／水をやる"
+  },
+  {
+    "rank": 1068,
+    "word": "bother",
+    "meaning": "悩ませる／わざわざ～する"
+  },
+  {
+    "rank": 1069,
+    "word": "casual",
+    "meaning": "カジュアルな／気軽な"
+  },
+  {
+    "rank": 1070,
+    "word": "long-term",
+    "meaning": "長期的な"
+  },
+  {
+    "rank": 1071,
+    "word": "pollute",
+    "meaning": "汚染する"
+  },
+  {
+    "rank": 1072,
+    "word": "overnight",
+    "meaning": "一晩（の）／一夜にして"
+  },
+  {
+    "rank": 1073,
+    "word": "homeless",
+    "meaning": "ホームレスの／家のない"
+  },
+  {
+    "rank": 1074,
+    "word": "aisle",
+    "meaning": "通路（列と列の間）"
+  },
+  {
+    "rank": 1075,
+    "word": "scan",
+    "meaning": "ざっと目を通す／スキャンする"
+  },
+  {
+    "rank": 1076,
+    "word": "fear",
+    "meaning": "恐れ／恐怖／恐れる"
+  },
+  {
+    "rank": 1077,
+    "word": "poisonous",
+    "meaning": "有毒な"
+  },
+  {
+    "rank": 1078,
+    "word": "unhealthy",
+    "meaning": "不健康な／体によくない"
+  },
+  {
+    "rank": 1079,
+    "word": "pump",
+    "meaning": "ポンプ／くみ上げる／くみ出す"
+  },
+  {
+    "rank": 1080,
+    "word": "amateur",
+    "meaning": "アマチュア／素人"
+  },
+  {
+    "rank": 1081,
+    "word": "unlike",
+    "meaning": "～とは違って／似ていない"
+  },
+  {
+    "rank": 1082,
+    "word": "note",
+    "meaning": "メモ／注／注意する"
+  },
+  {
+    "rank": 1083,
+    "word": "scientific",
+    "meaning": "科学の／科学的な"
+  },
+  {
+    "rank": 1084,
+    "word": "army",
+    "meaning": "陸軍／軍隊"
+  },
+  {
+    "rank": 1085,
+    "word": "sail",
+    "meaning": "帆走する／船で行く／帆"
+  },
+  {
+    "rank": 1086,
+    "word": "standard",
+    "meaning": "基準／標準／標準的な"
+  },
+  {
+    "rank": 1087,
+    "word": "tiny",
+    "meaning": "とても小さい"
+  },
+  {
+    "rank": 1088,
+    "word": "reasonable",
+    "meaning": "妥当な／手ごろな"
+  },
+  {
+    "rank": 1089,
+    "word": "essential",
+    "meaning": "不可欠な／本質的な"
+  },
+  {
+    "rank": 1090,
+    "word": "leisure",
+    "meaning": "余暇／レジャー"
+  },
+  {
+    "rank": 1091,
+    "word": "strengthen",
+    "meaning": "強める／強くなる"
+  },
+  {
+    "rank": 1092,
+    "word": "stressful",
+    "meaning": "ストレスの多い"
+  },
+  {
+    "rank": 1093,
+    "word": "closely",
+    "meaning": "密接に／注意深く"
+  },
+  {
+    "rank": 1094,
+    "word": "rebuild",
+    "meaning": "再建する／建て直す"
+  },
+  {
+    "rank": 1095,
+    "word": "endangered",
+    "meaning": "絶滅の危機にある"
+  },
+  {
+    "rank": 1096,
+    "word": "regard",
+    "meaning": "みなす／考える／敬意・配慮"
+  },
+  {
+    "rank": 1097,
+    "word": "tribe",
+    "meaning": "部族／種族"
+  },
+  {
+    "rank": 1098,
+    "word": "satellite",
+    "meaning": "衛星／人工衛星"
+  },
+  {
+    "rank": 1099,
+    "word": "weapon",
+    "meaning": "武器"
+  },
+  {
+    "rank": 1100,
+    "word": "fossil",
+    "meaning": "化石"
+  },
+  {
+    "rank": 1101,
+    "word": "lifetime",
+    "meaning": "一生／生涯"
+  },
+  {
+    "rank": 1102,
+    "word": "senior",
+    "meaning": "年上の／上級の／高齢者"
+  },
+  {
+    "rank": 1103,
+    "word": "turn",
+    "meaning": "順番／回転／曲がる／変わる"
+  },
+  {
+    "rank": 1104,
+    "word": "upgrade",
+    "meaning": "格上げする／アップグレード"
+  },
+  {
+    "rank": 1105,
+    "word": "urban",
+    "meaning": "都市の／都会の"
+  },
+  {
+    "rank": 1106,
+    "word": "importantly",
+    "meaning": "重要なことには"
+  },
+  {
+    "rank": 1107,
+    "word": "tourism",
+    "meaning": "観光（業）"
+  },
+  {
+    "rank": 1108,
+    "word": "differently",
+    "meaning": "異なって／違ったふうに"
+  },
+  {
+    "rank": 1109,
+    "word": "mental",
+    "meaning": "精神の／心の"
+  },
+  {
+    "rank": 1110,
+    "word": "invest",
+    "meaning": "投資する／（時間などを）注ぐ"
+  },
+  {
+    "rank": 1111,
+    "word": "academic",
+    "meaning": "学問的な／学業の"
+  },
+  {
+    "rank": 1112,
+    "word": "secondhand",
+    "meaning": "中古の／又聞きの"
+  },
+  {
+    "rank": 1113,
+    "word": "thus",
+    "meaning": "したがって／このように"
+  },
+  {
+    "rank": 1114,
+    "word": "compete",
+    "meaning": "競争する"
+  },
+  {
+    "rank": 1115,
+    "word": "cooperate",
+    "meaning": "協力する"
+  },
+  {
+    "rank": 1116,
+    "word": "semester",
+    "meaning": "（大学などの）学期"
+  },
+  {
+    "rank": 1117,
+    "word": "value",
+    "meaning": "価値／評価する／大切にする"
+  },
+  {
+    "rank": 1118,
+    "word": "express",
+    "meaning": "表現する／急行（列車）"
+  },
+  {
+    "rank": 1119,
+    "word": "branch",
+    "meaning": "支店／枝／分野"
+  },
+  {
+    "rank": 1120,
+    "word": "concerning",
+    "meaning": "～に関しての／関係する"
+  },
+  {
+    "rank": 1121,
+    "word": "lessen",
+    "meaning": "減らす／減る"
+  },
+  {
+    "rank": 1122,
+    "word": "further",
+    "meaning": "さらに／もっと先の／さらに進める"
+  },
+  {
+    "rank": 1123,
+    "word": "hide",
+    "meaning": "隠す／隠れる／隠れ場所"
+  },
+  {
+    "rank": 1124,
+    "word": "exist",
+    "meaning": "存在する"
+  },
+  {
+    "rank": 1125,
+    "word": "crash",
+    "meaning": "衝突（する）／クラッシュ・故障"
+  },
+  {
+    "rank": 1126,
+    "word": "childcare",
+    "meaning": "育児／託児"
+  },
+  {
+    "rank": 1127,
+    "word": "issue",
+    "meaning": "問題／発行物／発行する"
+  },
+  {
+    "rank": 1128,
+    "word": "laundry",
+    "meaning": "洗濯（物）"
+  },
+  {
+    "rank": 1129,
+    "word": "specific",
+    "meaning": "具体的な／特定の"
+  },
+  {
+    "rank": 1130,
+    "word": "split",
+    "meaning": "分ける／割る／分裂"
+  },
+  {
+    "rank": 1131,
+    "word": "surf",
+    "meaning": "サーフィンをする／ネットを見る"
+  },
+  {
+    "rank": 1132,
+    "word": "farther",
+    "meaning": "より遠くに／より遠い"
+  },
+  {
+    "rank": 1133,
+    "word": "region",
+    "meaning": "地域／地方"
+  },
+  {
+    "rank": 1134,
+    "word": "representative",
+    "meaning": "代表者／代表の"
+  },
+  {
+    "rank": 1135,
+    "word": "thread",
+    "meaning": "糸／話の筋"
+  },
+  {
+    "rank": 1136,
+    "word": "farming",
+    "meaning": "農業"
+  },
+  {
+    "rank": 1137,
+    "word": "status",
+    "meaning": "地位／状態／ステータス"
+  },
+  {
+    "rank": 1138,
+    "word": "unpack",
+    "meaning": "荷ほどきする／開封する"
+  },
+  {
+    "rank": 1139,
+    "word": "besides",
+    "meaning": "そのうえ／～に加えて／～以外に"
+  },
+  {
+    "rank": 1140,
+    "word": "rob",
+    "meaning": "奪う／強盗する"
+  },
+  {
+    "rank": 1141,
+    "word": "spare",
+    "meaning": "予備の／余分な／割く／惜しむ"
+  },
+  {
+    "rank": 1142,
+    "word": "unexpected",
+    "meaning": "予想外の"
+  },
+  {
+    "rank": 1143,
+    "word": "aware",
+    "meaning": "気づいている／知っている"
+  },
+  {
+    "rank": 1144,
+    "word": "sunrise",
+    "meaning": "日の出"
+  },
+  {
+    "rank": 1145,
+    "word": "rural",
+    "meaning": "田舎の／農村の"
+  },
+  {
+    "rank": 1146,
+    "word": "electronic",
+    "meaning": "電子の／電子式の"
+  },
+  {
+    "rank": 1147,
+    "word": "genetic",
+    "meaning": "遺伝子の／遺伝的な"
+  },
+  {
+    "rank": 1148,
+    "word": "bubble",
+    "meaning": "泡／バブル状態"
+  },
+  {
+    "rank": 1149,
+    "word": "extinct",
+    "meaning": "絶滅した"
+  },
+  {
+    "rank": 1150,
+    "word": "unnecessary",
+    "meaning": "不必要な／余計な"
+  },
+  {
+    "rank": 1151,
+    "word": "council",
+    "meaning": "評議会／議会"
+  },
+  {
+    "rank": 1152,
+    "word": "frame",
+    "meaning": "枠／額縁／骨組み／組み立てる"
+  },
+  {
+    "rank": 1153,
+    "word": "particular",
+    "meaning": "特定の／特に"
+  },
+  {
+    "rank": 1154,
+    "word": "fund",
+    "meaning": "資金／基金／資金を出す"
+  },
+  {
+    "rank": 1155,
+    "word": "update",
+    "meaning": "最新情報／更新する"
+  },
+  {
+    "rank": 1156,
+    "word": "rush",
+    "meaning": "急ぐ／殺到／ラッシュ"
+  },
+  {
+    "rank": 1157,
+    "word": "newsletter",
+    "meaning": "会報／ニュースレター"
+  },
+  {
+    "rank": 1158,
+    "word": "background",
+    "meaning": "背景／経歴／バックグラウンド"
+  },
+  {
+    "rank": 1159,
+    "word": "household",
+    "meaning": "家庭／家族／家庭の"
+  },
+  {
+    "rank": 1160,
+    "word": "boring",
+    "meaning": "退屈な"
+  },
+  {
+    "rank": 1161,
+    "word": "organic",
+    "meaning": "有機栽培の／オーガニックの"
+  },
+  {
+    "rank": 1162,
+    "word": "wheel",
+    "meaning": "車輪／ハンドル"
+  },
+  {
+    "rank": 1163,
+    "word": "agency",
+    "meaning": "代理店／庁（公的機関）"
+  },
+  {
+    "rank": 1164,
+    "word": "lay",
+    "meaning": "置く／横たえる（lieの他動詞）"
+  },
+  {
+    "rank": 1165,
+    "word": "sudden",
+    "meaning": "突然の／急な"
+  },
+  {
+    "rank": 1166,
+    "word": "workplace",
+    "meaning": "職場"
+  },
+  {
+    "rank": 1167,
+    "word": "ship",
+    "meaning": "船／出荷する／発送する"
+  },
+  {
+    "rank": 1168,
+    "word": "lock",
+    "meaning": "鍵／鍵をかける"
+  },
+  {
+    "rank": 1169,
+    "word": "demonstrate",
+    "meaning": "実演する／証明する／デモを行う"
+  },
+  {
+    "rank": 1170,
+    "word": "hug",
+    "meaning": "抱きしめる／ハグ"
+  },
+  {
+    "rank": 1171,
+    "word": "ugly",
+    "meaning": "醜い／見苦しい"
+  },
+  {
+    "rank": 1172,
+    "word": "vote",
+    "meaning": "投票（する）／票を投じる"
+  },
+  {
+    "rank": 1173,
+    "word": "alternative",
+    "meaning": "代わりの／選択肢／別の方法"
+  },
+  {
+    "rank": 1174,
+    "word": "unsure",
+    "meaning": "確信がない／自信がない"
+  },
+  {
+    "rank": 1175,
+    "word": "plus",
+    "meaning": "プラスの／長所／〜に加えて"
+  },
+  {
+    "rank": 1176,
+    "word": "post",
+    "meaning": "郵便／ポスト／投稿する／掲示する"
+  },
+  {
+    "rank": 1177,
+    "word": "risk",
+    "meaning": "危険／リスク／危険を冒す"
+  },
+  {
+    "rank": 1178,
+    "word": "fiber",
+    "meaning": "繊維／食物繊維"
+  },
+  {
+    "rank": 1179,
+    "word": "educate",
+    "meaning": "教育する"
+  },
+  {
+    "rank": 1180,
+    "word": "totally",
+    "meaning": "完全に／全く"
+  },
+  {
+    "rank": 1181,
+    "word": "code",
+    "meaning": "暗号／規則／コード"
+  },
+  {
+    "rank": 1182,
+    "word": "defeat",
+    "meaning": "打ち負かす／敗北"
+  },
+  {
+    "rank": 1183,
+    "word": "ease",
+    "meaning": "和らげる／楽にする／気楽さ"
+  },
+  {
+    "rank": 1184,
+    "word": "feather",
+    "meaning": "羽／羽毛"
+  },
+  {
+    "rank": 1185,
+    "word": "handwriting",
+    "meaning": "手書き文字／筆跡"
+  },
+  {
+    "rank": 1186,
+    "word": "basically",
+    "meaning": "基本的に／要するに"
+  },
+  {
+    "rank": 1187,
+    "word": "stain",
+    "meaning": "汚れ／しみ／汚す"
+  },
+  {
+    "rank": 1188,
+    "word": "stylish",
+    "meaning": "おしゃれな／洗練された"
+  },
+  {
+    "rank": 1189,
+    "word": "disabled",
+    "meaning": "障害のある／無効になった"
+  },
+  {
+    "rank": 1190,
+    "word": "unclear",
+    "meaning": "はっきりしない／不明確な"
+  },
+  {
+    "rank": 1191,
+    "word": "room",
+    "meaning": "部屋／余地・スペース"
+  },
+  {
+    "rank": 1192,
+    "word": "talented",
+    "meaning": "才能のある"
+  },
+  {
+    "rank": 1193,
+    "word": "loss",
+    "meaning": "損失／失うこと"
+  },
+  {
+    "rank": 1194,
+    "word": "reliable",
+    "meaning": "信頼できる／頼りになる"
+  },
+  {
+    "rank": 1195,
+    "word": "truly",
+    "meaning": "本当に／心から"
+  },
+  {
+    "rank": 1196,
+    "word": "deny",
+    "meaning": "否定する／拒む"
+  },
+  {
+    "rank": 1197,
+    "word": "dive",
+    "meaning": "飛び込む／潜る"
+  },
+  {
+    "rank": 1198,
+    "word": "indicate",
+    "meaning": "示す／指し示す／ほのめかす"
+  },
+  {
+    "rank": 1199,
+    "word": "aggressive",
+    "meaning": "攻撃的な／積極的な"
+  },
+  {
+    "rank": 1200,
+    "word": "emission",
+    "meaning": "排出（物）／放射"
+  },
+  {
+    "rank": 1201,
+    "word": "rate",
+    "meaning": "割合／評価"
+  },
+  {
+    "rank": 1202,
+    "word": "makeup",
+    "meaning": "化粧／構成／メイク"
+  },
+  {
+    "rank": 1203,
+    "word": "vocabulary",
+    "meaning": "語彙／単語力"
+  },
+  {
+    "rank": 1204,
+    "word": "old-fashioned",
+    "meaning": "古風な／時代遅れの"
+  },
+  {
+    "rank": 1205,
+    "word": "possibility",
+    "meaning": "可能性"
+  },
+  {
+    "rank": 1206,
+    "word": "nowadays",
+    "meaning": "最近は／この頃は"
+  },
+  {
+    "rank": 1207,
+    "word": "typical",
+    "meaning": "典型的な／いかにも～らしい"
+  },
+  {
+    "rank": 1208,
+    "word": "fluent",
+    "meaning": "流ちょうな／すらすら話せる"
+  },
+  {
+    "rank": 1209,
+    "word": "fare",
+    "meaning": "運賃／料金"
+  },
+  {
+    "rank": 1210,
+    "word": "settle",
+    "meaning": "落ち着く／解決する／定住する"
+  },
+  {
+    "rank": 1211,
+    "word": "delighted",
+    "meaning": "とてもうれしい"
+  },
+  {
+    "rank": 1212,
+    "word": "refresh",
+    "meaning": "さっぱりさせる／リフレッシュする"
+  },
+  {
+    "rank": 1213,
+    "word": "hand",
+    "meaning": "手渡す／手／助け"
+  },
+  {
+    "rank": 1214,
+    "word": "bomb",
+    "meaning": "爆弾／大失敗（する）"
+  },
+  {
+    "rank": 1215,
+    "word": "purely",
+    "meaning": "純粋に／まったく（～だけ）"
+  },
+  {
+    "rank": 1216,
+    "word": "widespread",
+    "meaning": "広く行き渡った／広範囲にわたる"
+  },
+  {
+    "rank": 1217,
+    "word": "halfway",
+    "meaning": "途中で／中途半端な"
+  },
+  {
+    "rank": 1218,
+    "word": "salty",
+    "meaning": "しょっぱい／塩辛い"
+  },
+  {
+    "rank": 1219,
+    "word": "brightness",
+    "meaning": "明るさ／輝き"
+  },
+  {
+    "rank": 1220,
+    "word": "dump",
+    "meaning": "投げ捨てる／ごみ捨て場"
+  },
+  {
+    "rank": 1221,
+    "word": "leftover",
+    "meaning": "食べ残し／残り物"
+  },
+  {
+    "rank": 1222,
+    "word": "prescription",
+    "meaning": "処方箋"
+  },
+  {
+    "rank": 1223,
+    "word": "echo",
+    "meaning": "こだま／反響（する）"
+  },
+  {
+    "rank": 1224,
+    "word": "memorize",
+    "meaning": "暗記する／覚える"
+  },
+  {
+    "rank": 1225,
+    "word": "altitude",
+    "meaning": "高度／標高"
+  },
+  {
+    "rank": 1226,
+    "word": "initial",
+    "meaning": "最初の／頭文字"
+  },
+  {
+    "rank": 1227,
+    "word": "expire",
+    "meaning": "期限が切れる／失効する"
+  },
+  {
+    "rank": 1228,
+    "word": "script",
+    "meaning": "台本／脚本／文字"
+  },
+  {
+    "rank": 1229,
+    "word": "depression",
+    "meaning": "不景気／うつ病／落ち込み"
+  },
+  {
+    "rank": 1230,
+    "word": "digest",
+    "meaning": "消化する／要約（する）"
+  },
+  {
+    "rank": 1231,
+    "word": "gender",
+    "meaning": "性別（社会的な性）"
+  },
+  {
+    "rank": 1232,
+    "word": "procedure",
+    "meaning": "手続き／やり方／処置"
+  },
+  {
+    "rank": 1233,
+    "word": "profile",
+    "meaning": "プロフィール／横顔／人物像"
+  },
+  {
+    "rank": 1234,
+    "word": "rewrite",
+    "meaning": "書き直す／書き換える"
+  },
+  {
+    "rank": 1235,
+    "word": "sort",
+    "meaning": "種類／分類する／（英口語）ちょっと"
+  },
+  {
+    "rank": 1236,
+    "word": "necessity",
+    "meaning": "必需品／必要なこと"
+  },
+  {
+    "rank": 1237,
+    "word": "spin",
+    "meaning": "回転（させる）／（話を）脚色する"
+  },
+  {
+    "rank": 1238,
+    "word": "partnership",
+    "meaning": "提携／協力関係／パートナー関係"
+  },
+  {
+    "rank": 1239,
+    "word": "starve",
+    "meaning": "飢える／ひどくお腹がすく"
+  },
+  {
+    "rank": 1240,
+    "word": "automobile",
+    "meaning": "自動車"
+  },
+  {
+    "rank": 1241,
+    "word": "path",
+    "meaning": "小道／進路／軌道"
+  },
+  {
+    "rank": 1242,
+    "word": "fertile",
+    "meaning": "肥えた（土地）／よく実を結ぶ／多産の"
+  },
+  {
+    "rank": 1243,
+    "word": "discourage",
+    "meaning": "落胆させる／やる気をそぐ"
+  },
+  {
+    "rank": 1244,
+    "word": "nation",
+    "meaning": "国家／国民"
+  },
+  {
+    "rank": 1245,
+    "word": "precious",
+    "meaning": "貴重な／大切な"
+  },
+  {
+    "rank": 1246,
+    "word": "smooth",
+    "meaning": "なめらかな／順調な／円滑にする"
+  },
+  {
+    "rank": 1247,
+    "word": "board",
+    "meaning": "板／委員会／搭乗する"
+  },
+  {
+    "rank": 1248,
+    "word": "lift",
+    "meaning": "持ち上げる／持ち上がる／リフト・エレベーター"
+  },
+  {
+    "rank": 1249,
+    "word": "artwork",
+    "meaning": "作品／美術品"
+  },
+  {
+    "rank": 1250,
+    "word": "up-to-date",
+    "meaning": "最新の／現代的な"
+  },
+  {
+    "rank": 1251,
+    "word": "personal",
+    "meaning": "個人的な／個人の"
+  },
+  {
+    "rank": 1252,
+    "word": "suffer",
+    "meaning": "苦しむ／被害を受ける"
+  },
+  {
+    "rank": 1253,
+    "word": "royal",
+    "meaning": "王の／王室の"
+  },
+  {
+    "rank": 1254,
+    "word": "accommodation",
+    "meaning": "宿泊施設／住居／順応"
+  },
+  {
+    "rank": 1255,
+    "word": "authority",
+    "meaning": "権威／権限／当局"
+  },
+  {
+    "rank": 1256,
+    "word": "raw",
+    "meaning": "生の／未加工の"
+  },
+  {
+    "rank": 1257,
+    "word": "weigh",
+    "meaning": "重さが～ある／よく考える"
+  },
+  {
+    "rank": 1258,
+    "word": "False",
+    "meaning": "偽の／間違った"
+  },
+  {
+    "rank": 1259,
+    "word": "breed",
+    "meaning": "繁殖させる／繁殖する／品種"
+  },
+  {
+    "rank": 1260,
+    "word": "uncomfortable",
+    "meaning": "居心地が悪い／落ち着かない／不快な"
+  },
+  {
+    "rank": 1261,
+    "word": "mammal",
+    "meaning": "哺乳類"
+  },
+  {
+    "rank": 1262,
+    "word": "horn",
+    "meaning": "角"
+  },
+  {
+    "rank": 1263,
+    "word": "kitten",
+    "meaning": "子猫"
+  },
+  {
+    "rank": 1264,
+    "word": "polar bear",
+    "meaning": "ホッキョクグマ"
+  },
+  {
+    "rank": 1265,
+    "word": "bat",
+    "meaning": "コウモリ"
+  },
+  {
+    "rank": 1266,
+    "word": "lizard",
+    "meaning": "トカゲ"
+  },
+  {
+    "rank": 1267,
+    "word": "insect",
+    "meaning": "昆虫"
+  },
+  {
+    "rank": 1268,
+    "word": "mosquito",
+    "meaning": "蚊"
+  },
+  {
+    "rank": 1269,
+    "word": "spider",
+    "meaning": "クモ"
+  },
+  {
+    "rank": 1270,
+    "word": "worm",
+    "meaning": "ミミズ・細長い虫"
+  },
+  {
+    "rank": 1271,
+    "word": "shark",
+    "meaning": "サメ"
+  },
+  {
+    "rank": 1272,
+    "word": "turtle",
+    "meaning": "カメ（多くは陸／淡水）"
+  },
+  {
+    "rank": 1273,
+    "word": "eel",
+    "meaning": "ウナギ"
+  },
+  {
+    "rank": 1274,
+    "word": "oyster",
+    "meaning": "カキ（貝）"
+  },
+  {
+    "rank": 1275,
+    "word": "whale",
+    "meaning": "クジラ"
+  },
+  {
+    "rank": 1276,
+    "word": "shellfish",
+    "meaning": "貝類"
+  },
+  {
+    "rank": 1277,
+    "word": "cactus",
+    "meaning": "サボテン"
+  },
+  {
+    "rank": 1278,
+    "word": "seed",
+    "meaning": "種"
+  },
+  {
+    "rank": 1279,
+    "word": "herb",
+    "meaning": "ハーブ／薬草"
+  },
+  {
+    "rank": 1280,
+    "word": "bacteria",
+    "meaning": "バクテリア／細菌"
+  },
+  {
+    "rank": 1281,
+    "word": "organ",
+    "meaning": "臓器"
+  },
+  {
+    "rank": 1282,
+    "word": "lung",
+    "meaning": "肺"
+  },
+  {
+    "rank": 1283,
+    "word": "muscle",
+    "meaning": "筋肉"
+  },
+  {
+    "rank": 1284,
+    "word": "brain",
+    "meaning": "脳"
+  },
+  {
+    "rank": 1285,
+    "word": "bone",
+    "meaning": "骨"
+  },
+  {
+    "rank": 1286,
+    "word": "skeleton",
+    "meaning": "骨格／骸骨"
+  },
+  {
+    "rank": 1287,
+    "word": "wrist",
+    "meaning": "手首"
+  },
+  {
+    "rank": 1288,
+    "word": "knee",
+    "meaning": "ひざ"
+  },
+  {
+    "rank": 1289,
+    "word": "fingerprint",
+    "meaning": "指紋"
+  },
+  {
+    "rank": 1290,
+    "word": "blood pressure",
+    "meaning": "血圧"
+  },
+  {
+    "rank": 1291,
+    "word": "patient",
+    "meaning": "患者"
+  },
+  {
+    "rank": 1292,
+    "word": "vitamin",
+    "meaning": "ビタミン"
+  },
+  {
+    "rank": 1293,
+    "word": "eyesight",
+    "meaning": "視力"
+  },
+  {
+    "rank": 1294,
+    "word": "gene",
+    "meaning": "遺伝子"
+  },
+  {
+    "rank": 1295,
+    "word": "protein",
+    "meaning": "タンパク質"
+  },
+  {
+    "rank": 1296,
+    "word": "stomachache",
+    "meaning": "胃痛・腹痛"
+  },
+  {
+    "rank": 1297,
+    "word": "food poisoning",
+    "meaning": "食中毒"
+  },
+  {
+    "rank": 1298,
+    "word": "fever",
+    "meaning": "熱／発熱"
+  },
+  {
+    "rank": 1299,
+    "word": "heart attack",
+    "meaning": "心臓発作"
+  },
+  {
+    "rank": 1300,
+    "word": "cancer",
+    "meaning": "がん"
+  },
+  {
+    "rank": 1301,
+    "word": "immune system",
+    "meaning": "免疫系／免疫システム"
+  },
+  {
+    "rank": 1302,
+    "word": "virus",
+    "meaning": "ウイルス"
+  },
+  {
+    "rank": 1303,
+    "word": "operation",
+    "meaning": "手術／作業"
+  },
+  {
+    "rank": 1304,
+    "word": "wheelchair",
+    "meaning": "車いす"
+  },
+  {
+    "rank": 1305,
+    "word": "medicine",
+    "meaning": "薬／医学"
+  },
+  {
+    "rank": 1306,
+    "word": "side effect",
+    "meaning": "副作用"
+  },
+  {
+    "rank": 1307,
+    "word": "allergy",
+    "meaning": "アレルギー"
+  },
+  {
+    "rank": 1308,
+    "word": "shot",
+    "meaning": "注射／ワクチン注射"
+  },
+  {
+    "rank": 1309,
+    "word": "checkup",
+    "meaning": "健康診断／検査"
+  },
+  {
+    "rank": 1310,
+    "word": "veterinarian",
+    "meaning": "獣医"
+  },
+  {
+    "rank": 1311,
+    "word": "volcano",
+    "meaning": "火山"
+  },
+  {
+    "rank": 1312,
+    "word": "desert",
+    "meaning": "砂漠"
+  },
+  {
+    "rank": 1313,
+    "word": "island",
+    "meaning": "島"
+  },
+  {
+    "rank": 1314,
+    "word": "ocean floor",
+    "meaning": "海底"
+  },
+  {
+    "rank": 1315,
+    "word": "earthquake",
+    "meaning": "地震"
+  },
+  {
+    "rank": 1316,
+    "word": "tornado",
+    "meaning": "竜巻"
+  },
+  {
+    "rank": 1317,
+    "word": "thunderstorm",
+    "meaning": "雷を伴う嵐"
+  },
+  {
+    "rank": 1318,
+    "word": "flood",
+    "meaning": "洪水"
+  },
+  {
+    "rank": 1319,
+    "word": "global warming",
+    "meaning": "地球温暖化"
+  },
+  {
+    "rank": 1320,
+    "word": "greenhouse gas",
+    "meaning": "温室効果ガス"
+  },
+  {
+    "rank": 1321,
+    "word": "fossil fuel",
+    "meaning": "化石燃料"
+  },
+  {
+    "rank": 1322,
+    "word": "carbon dioxide",
+    "meaning": "二酸化炭素"
+  },
+  {
+    "rank": 1323,
+    "word": "power plant",
+    "meaning": "発電所"
+  },
+  {
+    "rank": 1324,
+    "word": "biofuel",
+    "meaning": "バイオ燃料"
+  },
+  {
+    "rank": 1325,
+    "word": "ecosystem",
+    "meaning": "生態系"
+  },
+  {
+    "rank": 1326,
+    "word": "wildlife",
+    "meaning": "野生動物"
+  },
+  {
+    "rank": 1327,
+    "word": "tropical rain forest",
+    "meaning": "熱帯雨林"
+  },
+  {
+    "rank": 1328,
+    "word": "landfill",
+    "meaning": "埋立地／ごみ埋立処分場"
+  },
+  {
+    "rank": 1329,
+    "word": "plastic bag",
+    "meaning": "ビニール袋／プラスチック袋"
+  },
+  {
+    "rank": 1330,
+    "word": "pollution",
+    "meaning": "汚染"
+  },
+  {
+    "rank": 1331,
+    "word": "recycling bin",
+    "meaning": "リサイクル用ゴミ箱"
+  },
+  {
+    "rank": 1332,
+    "word": "acid rain",
+    "meaning": "酸性雨"
+  },
+  {
+    "rank": 1333,
+    "word": "ultraviolet ray",
+    "meaning": "紫外線"
+  },
+  {
+    "rank": 1334,
+    "word": "gravity",
+    "meaning": "重力"
+  },
+  {
+    "rank": 1335,
+    "word": "radio wave",
+    "meaning": "電波"
+  },
+  {
+    "rank": 1336,
+    "word": "planet",
+    "meaning": "惑星"
+  },
+  {
+    "rank": 1337,
+    "word": "asteroid",
+    "meaning": "小惑星"
+  },
+  {
+    "rank": 1338,
+    "word": "spacecraft",
+    "meaning": "宇宙船"
+  },
+  {
+    "rank": 1339,
+    "word": "astronaut",
+    "meaning": "宇宙飛行士"
+  },
+  {
+    "rank": 1340,
+    "word": "telescope",
+    "meaning": "望遠鏡"
+  },
+  {
+    "rank": 1341,
+    "word": "agriculture",
+    "meaning": "農業"
+  },
+  {
+    "rank": 1342,
+    "word": "grain",
+    "meaning": "穀物／粒"
+  },
+  {
+    "rank": 1343,
+    "word": "wheat",
+    "meaning": "小麦"
+  },
+  {
+    "rank": 1344,
+    "word": "weed",
+    "meaning": "雑草"
+  },
+  {
+    "rank": 1345,
+    "word": "fertilizer",
+    "meaning": "肥料"
+  },
+  {
+    "rank": 1346,
+    "word": "oxygen",
+    "meaning": "酸素"
+  },
+  {
+    "rank": 1347,
+    "word": "nitrogen",
+    "meaning": "窒素"
+  },
+  {
+    "rank": 1348,
+    "word": "copper",
+    "meaning": "銅"
+  },
+  {
+    "rank": 1349,
+    "word": "aluminum",
+    "meaning": "アルミニウム"
+  },
+  {
+    "rank": 1350,
+    "word": "steel",
+    "meaning": "鋼鉄"
+  },
+  {
+    "rank": 1351,
+    "word": "molecular",
+    "meaning": "分子の／分子的な"
+  },
+  {
+    "rank": 1352,
+    "word": "laptop",
+    "meaning": "ノートパソコン"
+  },
+  {
+    "rank": 1353,
+    "word": "circuit",
+    "meaning": "回路／巡回"
+  },
+  {
+    "rank": 1354,
+    "word": "battery",
+    "meaning": "電池／バッテリー"
+  },
+  {
+    "rank": 1355,
+    "word": "skyscraper",
+    "meaning": "超高層ビル"
+  },
+  {
+    "rank": 1356,
+    "word": "gallery",
+    "meaning": "美術館／画廊"
+  },
+  {
+    "rank": 1357,
+    "word": "clinic",
+    "meaning": "診療所／クリニック"
+  },
+  {
+    "rank": 1358,
+    "word": "retirement home",
+    "meaning": "老人ホーム／高齢者施設"
+  },
+  {
+    "rank": 1359,
+    "word": "sidewalk",
+    "meaning": "歩道"
+  },
+  {
+    "rank": 1360,
+    "word": "kindergarten",
+    "meaning": "幼稚園"
+  },
+  {
+    "rank": 1361,
+    "word": "hallway",
+    "meaning": "廊下"
+  },
+  {
+    "rank": 1362,
+    "word": "vending machine",
+    "meaning": "自動販売機"
+  },
+  {
+    "rank": 1363,
+    "word": "freeway",
+    "meaning": "高速道路"
+  },
+  {
+    "rank": 1364,
+    "word": "passenger",
+    "meaning": "乗客"
+  },
+  {
+    "rank": 1365,
+    "word": "traffic jam",
+    "meaning": "交通渋滞"
+  },
+  {
+    "rank": 1366,
+    "word": "furniture",
+    "meaning": "家具"
+  },
+  {
+    "rank": 1367,
+    "word": "basement",
+    "meaning": "地下室"
+  },
+  {
+    "rank": 1368,
+    "word": "blanket",
+    "meaning": "毛布"
+  },
+  {
+    "rank": 1369,
+    "word": "backyard",
+    "meaning": "裏庭"
+  },
+  {
+    "rank": 1370,
+    "word": "restroom",
+    "meaning": "トイレ／お手洗い"
+  },
+  {
+    "rank": 1371,
+    "word": "vacuum cleaner",
+    "meaning": "掃除機"
+  },
+  {
+    "rank": 1372,
+    "word": "refrigerator",
+    "meaning": "冷蔵庫"
+  },
+  {
+    "rank": 1373,
+    "word": "air conditioner",
+    "meaning": "エアコン／冷暖房機"
+  },
+  {
+    "rank": 1374,
+    "word": "garage",
+    "meaning": "ガレージ／車庫"
+  },
+  {
+    "rank": 1375,
+    "word": "antique",
+    "meaning": "骨とう品／アンティーク"
+  },
+  {
+    "rank": 1376,
+    "word": "chopsticks",
+    "meaning": "箸"
+  },
+  {
+    "rank": 1377,
+    "word": "trash can",
+    "meaning": "ゴミ箱"
+  },
+  {
+    "rank": 1378,
+    "word": "sewing machine",
+    "meaning": "ミシン"
+  },
+  {
+    "rank": 1379,
+    "word": "microwave oven",
+    "meaning": "電子レンジ"
+  },
+  {
+    "rank": 1380,
+    "word": "ceiling",
+    "meaning": "天井"
+  },
+  {
+    "rank": 1381,
+    "word": "fur",
+    "meaning": "毛皮"
+  },
+  {
+    "rank": 1382,
+    "word": "fabric",
+    "meaning": "布地／生地"
+  },
+  {
+    "rank": 1383,
+    "word": "perfume",
+    "meaning": "香水"
+  },
+  {
+    "rank": 1384,
+    "word": "jewelry",
+    "meaning": "宝石類／アクセサリー"
+  },
+  {
+    "rank": 1385,
+    "word": "government",
+    "meaning": "政府"
+  },
+  {
+    "rank": 1386,
+    "word": "prime minister",
+    "meaning": "首相／総理大臣"
+  },
+  {
+    "rank": 1387,
+    "word": "civil war",
+    "meaning": "内戦"
+  },
+  {
+    "rank": 1388,
+    "word": "soldier",
+    "meaning": "兵士"
+  },
+  {
+    "rank": 1389,
+    "word": "submarine",
+    "meaning": "潜水艦"
+  },
+  {
+    "rank": 1390,
+    "word": "slum",
+    "meaning": "スラム街／貧民街"
+  },
+  {
+    "rank": 1391,
+    "word": "criminal",
+    "meaning": "犯罪者／犯罪の"
+  },
+  {
+    "rank": 1392,
+    "word": "lawyer",
+    "meaning": "弁護士"
+  },
+  {
+    "rank": 1393,
+    "word": "prison",
+    "meaning": "刑務所"
+  },
+  {
+    "rank": 1394,
+    "word": "thief",
+    "meaning": "泥棒（こっそり盗む人）"
+  },
+  {
+    "rank": 1395,
+    "word": "robber",
+    "meaning": "強盗（暴力・脅しで盗む人）"
+  },
+  {
+    "rank": 1396,
+    "word": "courthouse",
+    "meaning": "裁判所の建物"
+  },
+  {
+    "rank": 1397,
+    "word": "capitalist",
+    "meaning": "資本家／資本主義者"
+  },
+  {
+    "rank": 1398,
+    "word": "coworker",
+    "meaning": "同僚"
+  },
+  {
+    "rank": 1399,
+    "word": "secretary",
+    "meaning": "秘書／事務員"
+  },
+  {
+    "rank": 1400,
+    "word": "workshop",
+    "meaning": "研修会／講習会／作業場"
+  },
+  {
+    "rank": 1401,
+    "word": "farewell party",
+    "meaning": "送別会"
+  },
+  {
+    "rank": 1402,
+    "word": "deadline",
+    "meaning": "締め切り"
+  },
+  {
+    "rank": 1403,
+    "word": "pamphlet",
+    "meaning": "パンフレット"
+  },
+  {
+    "rank": 1404,
+    "word": "envelope",
+    "meaning": "封筒"
+  },
+  {
+    "rank": 1405,
+    "word": "glue",
+    "meaning": "のり／接着剤"
+  },
+  {
+    "rank": 1406,
+    "word": "salary",
+    "meaning": "給料"
+  },
+  {
+    "rank": 1407,
+    "word": "pay raise",
+    "meaning": "昇給／給料アップ"
+  },
+  {
+    "rank": 1408,
+    "word": "bank transfer",
+    "meaning": "銀行振込"
+  },
+  {
+    "rank": 1409,
+    "word": "personnel department",
+    "meaning": "人事部"
+  },
+  {
+    "rank": 1410,
+    "word": "human resources",
+    "meaning": "人事（部）／人材"
+  },
+  {
+    "rank": 1411,
+    "word": "commuter",
+    "meaning": "通勤者"
+  },
+  {
+    "rank": 1412,
+    "word": "warehouse",
+    "meaning": "倉庫"
+  },
+  {
+    "rank": 1413,
+    "word": "sightseeing",
+    "meaning": "観光"
+  },
+  {
+    "rank": 1414,
+    "word": "flight attendant",
+    "meaning": "客室乗務員／CA"
+  },
+  {
+    "rank": 1415,
+    "word": "jet lag",
+    "meaning": "時差ボケ"
+  },
+  {
+    "rank": 1416,
+    "word": "cruise",
+    "meaning": "船旅／クルーズ"
+  },
+  {
+    "rank": 1417,
+    "word": "luggage",
+    "meaning": "荷物（旅行用）"
+  },
+  {
+    "rank": 1418,
+    "word": "housekeeper",
+    "meaning": "家政婦／家事をする人"
+  },
+  {
+    "rank": 1419,
+    "word": "fireworks",
+    "meaning": "花火"
+  },
+  {
+    "rank": 1420,
+    "word": "theme park",
+    "meaning": "テーマパーク／遊園地"
+  },
+  {
+    "rank": 1421,
+    "word": "aquarium",
+    "meaning": "水族館"
+  },
+  {
+    "rank": 1422,
+    "word": "roller-coaster",
+    "meaning": "ジェットコースター"
+  },
+  {
+    "rank": 1423,
+    "word": "sculpture",
+    "meaning": "彫刻（作品・技法）"
+  },
+  {
+    "rank": 1424,
+    "word": "statue",
+    "meaning": "像／彫像"
+  },
+  {
+    "rank": 1425,
+    "word": "orchestra",
+    "meaning": "オーケストラ／管弦楽団"
+  },
+  {
+    "rank": 1426,
+    "word": "literature",
+    "meaning": "文学"
+  },
+  {
+    "rank": 1427,
+    "word": "poetry",
+    "meaning": "詩（というジャンル）"
+  },
+  {
+    "rank": 1428,
+    "word": "romantic comedy",
+    "meaning": "ラブコメ／恋愛コメディ"
+  },
+  {
+    "rank": 1429,
+    "word": "biography",
+    "meaning": "伝記"
+  },
+  {
+    "rank": 1430,
+    "word": "documentary",
+    "meaning": "ドキュメンタリー"
+  },
+  {
+    "rank": 1431,
+    "word": "championship",
+    "meaning": "選手権大会"
+  },
+  {
+    "rank": 1432,
+    "word": "athlete",
+    "meaning": "運動選手／アスリート"
+  },
+  {
+    "rank": 1433,
+    "word": "dinosaur",
+    "meaning": "恐竜"
+  },
+  {
+    "rank": 1434,
+    "word": "human being",
+    "meaning": "人間"
+  },
+  {
+    "rank": 1435,
+    "word": "cave",
+    "meaning": "洞窟／ほら穴"
+  },
+  {
+    "rank": 1436,
+    "word": "emperor",
+    "meaning": "皇帝／天皇"
+  },
+  {
+    "rank": 1437,
+    "word": "monument",
+    "meaning": "記念碑／モニュメント"
+  },
+  {
+    "rank": 1438,
+    "word": "physics",
+    "meaning": "物理学"
+  },
+  {
+    "rank": 1439,
+    "word": "chemistry",
+    "meaning": "化学"
+  },
+  {
+    "rank": 1440,
+    "word": "engineering",
+    "meaning": "工学"
+  },
+  {
+    "rank": 1441,
+    "word": "biology",
+    "meaning": "生物学"
+  },
+  {
+    "rank": 1442,
+    "word": "psychology",
+    "meaning": "心理学"
+  },
+  {
+    "rank": 1443,
+    "word": "graduate school",
+    "meaning": "大学院"
+  },
+  {
+    "rank": 1444,
+    "word": "principal",
+    "meaning": "校長（主に小・中・高校）"
+  },
+  {
+    "rank": 1445,
+    "word": "tutor",
+    "meaning": "個別指導の先生／家庭教師"
+  },
+  {
+    "rank": 1446,
+    "word": "laboratory",
+    "meaning": "研究室／実験室"
+  },
+  {
+    "rank": 1447,
+    "word": "thermometer",
+    "meaning": "温度計／体温計"
+  },
+  {
+    "rank": 1448,
+    "word": "microscope",
+    "meaning": "顕微鏡"
+  },
+  {
+    "rank": 1449,
+    "word": "expert",
+    "meaning": "専門家"
+  },
+  {
+    "rank": 1450,
+    "word": "scholar",
+    "meaning": "学者（特に人文・学術研究者）"
+  },
+  {
+    "rank": 1451,
+    "word": "mechanic",
+    "meaning": "整備士／機械工"
+  },
+  {
+    "rank": 1452,
+    "word": "guard",
+    "meaning": "警備員／ガードマン／見張り"
+  },
+  {
+    "rank": 1453,
+    "word": "author",
+    "meaning": "著者／作家"
+  },
+  {
+    "rank": 1454,
+    "word": "firefighter",
+    "meaning": "消防士"
+  },
+  {
+    "rank": 1455,
+    "word": "clerk",
+    "meaning": "店員／事務員"
+  },
+  {
+    "rank": 1456,
+    "word": "detective",
+    "meaning": "探偵／刑事"
+  },
+  {
+    "rank": 1457,
+    "word": "companion",
+    "meaning": "連れ／仲間／同行者"
+  },
+  {
+    "rank": 1458,
+    "word": "vegetarian",
+    "meaning": "ベジタリアン／菜食主義者"
+  },
+  {
+    "rank": 1459,
+    "word": "bride",
+    "meaning": "花嫁"
+  },
+  {
+    "rank": 1460,
+    "word": "millionaire",
+    "meaning": "億万長者"
+  }
+]
