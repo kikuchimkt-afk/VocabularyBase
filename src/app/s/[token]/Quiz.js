@@ -289,7 +289,7 @@ export default function Quiz({ token, studentId }) {
     return (
       <div style={{ padding: '1rem' }}>
         {/* Date filter */}
-        {availableDates.length > 0 && (
+        {availableDateTeachers.length > 0 && (
           <div style={{ marginBottom: '1.25rem' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
               <label style={{ fontWeight: '600', fontSize: '0.85rem', color: 'var(--text-muted)' }}>

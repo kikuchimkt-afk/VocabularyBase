@@ -703,15 +703,35 @@ export default function AdminPage() {
             ) : (
               <div>
                 {(() => {
-                  // 登録日リストを生成
-                  const dateSet = new Set();
+                  // 登録日+講師名リストを生成
+                  const dateTeacherMap = new Map();
                   studentWords.forEach(w => {
-                    dateSet.add(w.assigned_date || '未設定');
+                    const d = w.assigned_date || '未設定';
+                    const tn = w.teacher_name || '';
+                    const key = `${d}::${tn}`;
+                    if (!dateTeacherMap.has(key)) dateTeacherMap.set(key, { date: d, teacher: tn, count: 0 });
+                    dateTeacherMap.get(key).count++;
                   });
-                  const dates = [...dateSet].sort().reverse();
+                  const dateTeachers = [...dateTeacherMap.values()].sort((a, b) => {
+                    const dc = b.date.localeCompare(a.date); if (dc !== 0) return dc;
+                    return a.teacher.localeCompare(b.teacher);
+                  });
+                  const teacherColors = (() => {
+                    const colors = ['#e65100', '#6366f1', '#0891b2', '#059669', '#d946ef', '#ea580c', '#2563eb', '#dc2626'];
+                    const names = [...new Set(studentWords.filter(w => w.teacher_name).map(w => w.teacher_name))];
+                    const map = {}; names.forEach((n, i) => { map[n] = colors[i % colors.length]; }); return map;
+                  })();
                   const filteredWords = dateFilter === 'all'
                     ? studentWords
-                    : studentWords.filter(w => (w.assigned_date || '未設定') === dateFilter);
+                    : (() => {
+                        const parts = dateFilter.split('::');
+                        const date = parts[0]; const teacher = parts.length > 1 ? parts[1] : null;
+                        return studentWords.filter(w => {
+                          if ((w.assigned_date || '未設定') !== date) return false;
+                          if (teacher !== null && (w.teacher_name || '') !== teacher) return false;
+                          return true;
+                        });
+                      })();
                   const filteredCount = filteredWords.length;
 
                   return (<>
@@ -792,22 +812,28 @@ export default function AdminPage() {
                 </div>
 
                 {/* 登録日フィルター */}
-                {dates.length > 1 && (
+                {dateTeachers.length > 1 && (
                   <div style={{ display: 'flex', gap: '0.3rem', flexWrap: 'wrap', marginBottom: '0.5rem' }}>
                     <button
                       className={`btn ${dateFilter === 'all' ? 'btn-primary' : 'btn-secondary'}`}
                       style={{ fontSize: '0.65rem', padding: '0.2rem 0.5rem', borderRadius: '20px' }}
                       onClick={() => { setDateFilter('all'); setSelectedWordIds(new Set()); }}
                     >すべて ({studentWords.length})</button>
-                    {dates.map(d => {
-                      const count = studentWords.filter(w => (w.assigned_date || '未設定') === d).length;
-                      const label = d === '未設定' ? '未設定' : d.replace(/^\d{4}-/, '');
+                    {dateTeachers.map(({ date, teacher, count }) => {
+                      const filterKey = `${date}::${teacher}`;
+                      const label = date === '未設定' ? '未設定' : date.replace(/^\d{4}-/, '');
+                      const color = teacher ? (teacherColors[teacher] || '#e65100') : 'var(--primary)';
                       return (
-                        <button key={d}
-                          className={`btn ${dateFilter === d ? 'btn-primary' : 'btn-secondary'}`}
-                          style={{ fontSize: '0.65rem', padding: '0.2rem 0.5rem', borderRadius: '20px' }}
-                          onClick={() => { setDateFilter(d); setSelectedWordIds(new Set()); }}
-                        >📅 {label} ({count})</button>
+                        <button key={filterKey}
+                          className={`btn ${dateFilter === filterKey ? 'btn-primary' : 'btn-secondary'}`}
+                          style={{
+                            fontSize: '0.65rem', padding: '0.2rem 0.5rem', borderRadius: '20px',
+                            background: dateFilter === filterKey ? color : undefined,
+                            borderColor: dateFilter === filterKey ? color : undefined,
+                            color: dateFilter === filterKey ? 'white' : undefined,
+                          }}
+                          onClick={() => { setDateFilter(filterKey); setSelectedWordIds(new Set()); }}
+                        >{'\u{1F4C5}'} {label}{teacher ? ` ${teacher}` : ''} ({count})</button>
                       );
                     })}
                   </div>
@@ -1094,22 +1120,29 @@ export default function AdminPage() {
                 }
               });
 
-              // 日付ごとに集計
-              const dateMap = {};
+              // 日付+講師名ごとに集計
+              const dateTeacherMap2 = {};
               achieveWords.forEach(w => {
                 const d = w.assigned_date || '未設定';
-                if (!dateMap[d]) dateMap[d] = { total: 0, mastered: 0, tested: 0, lastTested: null, firstTested: null };
-                dateMap[d].total++;
-                if (isMastered(w)) dateMap[d].mastered++;
-                if (isTested(w)) dateMap[d].tested++;
-                if (w.last_tested && (!dateMap[d].lastTested || w.last_tested > dateMap[d].lastTested)) {
-                  dateMap[d].lastTested = w.last_tested;
+                const tn = w.teacher_name || '';
+                const key = `${d}::${tn}`;
+                if (!dateTeacherMap2[key]) dateTeacherMap2[key] = { date: d, teacher: tn, total: 0, mastered: 0, tested: 0, lastTested: null, firstTested: null };
+                dateTeacherMap2[key].total++;
+                if (isMastered(w)) dateTeacherMap2[key].mastered++;
+                if (isTested(w)) dateTeacherMap2[key].tested++;
+                if (w.last_tested && (!dateTeacherMap2[key].lastTested || w.last_tested > dateTeacherMap2[key].lastTested)) {
+                  dateTeacherMap2[key].lastTested = w.last_tested;
                 }
-                if (w.first_tested && (!dateMap[d].firstTested || w.first_tested < dateMap[d].firstTested)) {
-                  dateMap[d].firstTested = w.first_tested;
+                if (w.first_tested && (!dateTeacherMap2[key].firstTested || w.first_tested < dateTeacherMap2[key].firstTested)) {
+                  dateTeacherMap2[key].firstTested = w.first_tested;
                 }
               });
-              const dates = Object.keys(dateMap).sort((a, b) => b.localeCompare(a));
+              const dtKeys = Object.keys(dateTeacherMap2).sort((a, b) => b.localeCompare(a));
+              const achieveTeacherColors = (() => {
+                const colors = ['#e65100', '#6366f1', '#0891b2', '#059669', '#d946ef', '#ea580c', '#2563eb', '#dc2626'];
+                const names = [...new Set(achieveWords.filter(w => w.teacher_name).map(w => w.teacher_name))];
+                const map = {}; names.forEach((n, i) => { map[n] = colors[i % colors.length]; }); return map;
+              })();
 
               const barColor = pct => pct >= 80 ? 'var(--secondary)' : pct >= 50 ? '#f59e0b' : 'var(--danger)';
               const isStudied = tested => tested >= MIN_QUESTIONS_FOR_STUDIED;
@@ -1158,22 +1191,24 @@ export default function AdminPage() {
                   {/* 日付ごとの詳細 */}
                   <h3 style={{ fontSize: '0.85rem', fontWeight: 700, marginBottom: '0.5rem', color: 'var(--text-muted)' }}>📅 宿題日ごとの達成率</h3>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                    {dates.map(d => {
-                      const info = dateMap[d];
+                    {dtKeys.map(key => {
+                      const info = dateTeacherMap2[key];
                       const pct = info.total > 0 ? Math.round(info.mastered / info.total * 100) : 0;
                       const studied = isStudied(info.tested);
-                      const dateLabel = d === '未設定' ? '未設定' : (() => {
-                        const dt = new Date(d + 'T00:00:00');
+                      const dateLabel = info.date === '未設定' ? '未設定' : (() => {
+                        const dt = new Date(info.date + 'T00:00:00');
                         return `${dt.getMonth() + 1}/${dt.getDate()}`;
                       })();
+                      const tColor = info.teacher ? (achieveTeacherColors[info.teacher] || '#e65100') : 'var(--primary)';
                       return (
-                        <div key={d} style={{
+                        <div key={key} style={{
                           background: 'var(--bg-card)', border: `1px solid ${studied ? 'var(--secondary)' : 'var(--border)'}`,
                           borderRadius: 'var(--radius-md)', padding: '0.6rem 0.75rem',
+                          borderLeft: info.teacher ? `3px solid ${tColor}` : undefined,
                         }}>
                           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.35rem' }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                              <span style={{ fontWeight: 600, fontSize: '0.85rem' }}>📅 {dateLabel}</span>
+                              <span style={{ fontWeight: 600, fontSize: '0.85rem' }}>{'\u{1F4C5}'} {dateLabel}{info.teacher ? ` ${info.teacher}` : ''}</span>
                               {studied ? (
                                 <span style={{
                                   fontSize: '0.6rem', fontWeight: 700, color: 'white',
