@@ -177,6 +177,11 @@ export async function POST(request) {
             word_audio_url: pw.wordAudioUrl || null,
             sentence_audio_url: pw.sentenceAudioUrl || null,
             teacher_name: teacherName || null,
+            // 再出題時は学習記録をリセット（覚えた状態を初期化）
+            correct_count: 0,
+            wrong_count: 0,
+            last_tested: null,
+            first_tested: null,
           };
 
           const { error } = await supabase
