@@ -257,7 +257,7 @@ export default function WordList({ studentId, studentName }) {
       }
     });
     return [...map.values()].sort((a, b) => {
-      const dc = b.date.localeCompare(a.date);
+      const dc = a.date.localeCompare(b.date);
       if (dc !== 0) return dc;
       return a.teacher.localeCompare(b.teacher);
     });
