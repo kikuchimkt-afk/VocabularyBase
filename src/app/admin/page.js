@@ -713,7 +713,7 @@ export default function AdminPage() {
                     dateTeacherMap.get(key).count++;
                   });
                   const dateTeachers = [...dateTeacherMap.values()].sort((a, b) => {
-                    const dc = b.date.localeCompare(a.date); if (dc !== 0) return dc;
+                    const dc = a.date.localeCompare(b.date); if (dc !== 0) return dc;
                     return a.teacher.localeCompare(b.teacher);
                   });
                   const teacherColors = (() => {

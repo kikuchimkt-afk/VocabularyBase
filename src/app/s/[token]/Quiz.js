@@ -62,7 +62,7 @@ export default function Quiz({ token, studentId }) {
       map.get(key).count++;
     });
     return [...map.values()].sort((a, b) => {
-      const dc = b.date.localeCompare(a.date);
+      const dc = a.date.localeCompare(b.date);
       if (dc !== 0) return dc;
       return a.teacher.localeCompare(b.teacher);
     });
