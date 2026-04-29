@@ -90,11 +90,14 @@ export default function Quiz({ token, studentId }) {
         if (!groups[name]) groups[name] = [];
         groups[name].push(num);
       } else {
+        // 教科書セクション名形式（「サンシャイン中1 Program 3」等）もそのまま収集
         if (!groups[w.source]) groups[w.source] = [];
       }
     });
 
     const summaries = [];
+    // 同じセクション名のものを重複排除してまとめる
+    const sectionNames = new Set();
     for (const [name, nums] of Object.entries(groups)) {
       if (nums.length > 0) {
         nums.sort((a, b) => a - b);
@@ -103,7 +106,10 @@ export default function Quiz({ token, studentId }) {
         if (min === max) summaries.push(`${name} No.${min}`);
         else summaries.push(`${name} No.${min}〜${max}`);
       } else {
-        summaries.push(name);
+        if (!sectionNames.has(name)) {
+          sectionNames.add(name);
+          summaries.push(name);
+        }
       }
     }
     return summaries.join(', ');

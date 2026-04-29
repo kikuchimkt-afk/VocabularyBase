@@ -638,6 +638,11 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                     alert('指定した条件に該当する単語が見つかりません');
                     return;
                   }
+                  // 教科書の場合: sectionのlabelを取得するためのマップを作成
+                  const sectionLabelMap = {};
+                  if (isTextbookData && rawData.meta && rawData.meta.sections) {
+                    rawData.meta.sections.forEach(s => { sectionLabelMap[s.key] = s.label; });
+                  }
                   const parsed = selected.map((w, idx) => ({
                     id: idx,
                     english: w.word || w.english,
@@ -648,6 +653,8 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                     reassign: true,
                     listType: masterGrade,
                     rank: w.rank || (idx + 1),
+                    section: w.section || null,
+                    sectionLabel: (w.section && sectionLabelMap[w.section]) || null,
                   }));
                   setBulkPreviewWords(parsed);
                   setBulkResults(null);
@@ -1058,9 +1065,16 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                           '5kyu': '英検5級', '4kyu': '英検4級', '3kyu': '英検3級', '準2kyu': '英検準2級', '2kyu': '英検2級',
                           '5kyu_pass': 'パス単5級', '4kyu_pass': 'パス単4級', '3kyu_pass': 'パス単3級', 'pre2kyu_pass': 'パス単準2級', '2kyu5th': 'パス単2級5訂版', 'pre1kyu': 'パス単準1級',
                           'ex2kyu_tango': 'EX2級単語', 'ex2kyu_idiom': 'EX2級熟語', 'ex_pre1kyu': 'EX準1級',
-                          'sys5th': 'シス単5訂版', 'leap': 'LEAP', 'target1900': 'ターゲット1900', 'target1400extra': 'ターゲット1400extra', 'idiom1000': '熟語ターゲット1000'
+                          'sys5th': 'シス単5訂版', 'leap': 'LEAP', 'target1900': 'ターゲット1900', 'target1400extra': 'ターゲット1400extra', 'idiom1000': '熟語ターゲット1000',
+                          'sunshine1': 'サンシャイン中1', 'sunshine2': 'サンシャイン中2', 'sunshine3': 'サンシャイン中3',
                         };
-                        const sourceName = (w.listType && w.rank) ? `${sourceMap[w.listType]} No.${w.rank}` : '';
+                        let sourceName = '';
+                        if (w.listType && w.listType.startsWith('sunshine') && w.sectionLabel) {
+                          // 教科書: 「サンシャイン中1 Program 3」形式
+                          sourceName = `${sourceMap[w.listType]} ${w.sectionLabel}`;
+                        } else if (w.listType && w.rank) {
+                          sourceName = `${sourceMap[w.listType] || w.listType} No.${w.rank}`;
+                        }
                         return {
                           english: w.english.trim(),
                           meanings: w.meanings.trim(),
@@ -1452,6 +1466,12 @@ export default function TeacherWordRegister({ students, onRegistered }) {
             const isTextbookList = rawData.meta && rawData.words;
             let allWords = isTextbookList ? rawData.words : rawData;
 
+            // 教科書の場合: sectionのlabelマップを作成
+            const dailySectionLabelMap = {};
+            if (isTextbookList && rawData.meta && rawData.meta.sections) {
+              rawData.meta.sections.forEach(sec => { dailySectionLabelMap[sec.key] = sec.label; });
+            }
+
             // 教科書の場合: セクション/ページ範囲でフィルタ
             if (isTextbookList) {
               if (textbookMode === 'section' && textbookSection) {
@@ -1477,16 +1497,25 @@ export default function TeacherWordRegister({ students, onRegistered }) {
               const selected = allWords.filter(w => w.rank >= s.from && w.rank <= s.to);
               if (selected.length === 0) continue;
 
-              const words = selected.map(w => ({
-                english: w.word || w.english,
-                meanings: Array.isArray(w.meanings) ? w.meanings.join('、') : (w.meanings || w.meaning || ''),
-                example: w.example || '',
-                exampleJa: w.exampleJa || w.translation || '',
-                reassign: true,
-                listType: dailyGrade,
-                rank: w.rank,
-                source: `${sourceMap[dailyGrade] || dailyGrade} No.${w.rank}`,
-              }));
+              const words = selected.map(w => {
+                let wordSource;
+                if (isTextbookList && w.section && dailySectionLabelMap[w.section]) {
+                  // 教科書: 「サンシャイン中1 Program 3」形式
+                  wordSource = `${sourceMap[dailyGrade] || dailyGrade} ${dailySectionLabelMap[w.section]}`;
+                } else {
+                  wordSource = `${sourceMap[dailyGrade] || dailyGrade} No.${w.rank}`;
+                }
+                return {
+                  english: w.word || w.english,
+                  meanings: Array.isArray(w.meanings) ? w.meanings.join('、') : (w.meanings || w.meaning || ''),
+                  example: w.example || '',
+                  exampleJa: w.exampleJa || w.translation || '',
+                  reassign: true,
+                  listType: dailyGrade,
+                  rank: w.rank,
+                  source: wordSource,
+                };
+              });
 
               await fetch('/api/words/import', {
                 method: 'POST',
