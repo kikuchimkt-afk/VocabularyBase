@@ -1488,13 +1488,14 @@ export default function TeacherWordRegister({ students, onRegistered }) {
                   return ps <= pTo && pFrom <= pe;
                 });
               }
-              allWords = allWords.map((w, i) => ({ ...w, rank: i + 1 }));
+              // 元のrankを保持（振り直すとaudio URLがズレる）
             }
 
             for (let i = 0; i < schedule.length; i++) {
               const s = schedule[i];
               setDailyProgress(`📤 ${s.label} (${i+1}/${schedule.length}) No.${s.from}-${s.to}${s.repeat ? ' 🔄' : ''}`);
-              const selected = allWords.filter(w => w.rank >= s.from && w.rank <= s.to);
+              // from/to はフィルタ後配列の1始まりインデックス → 配列スライスで取得
+              const selected = allWords.slice(s.from - 1, s.to);
               if (selected.length === 0) continue;
 
               const words = selected.map(w => {
