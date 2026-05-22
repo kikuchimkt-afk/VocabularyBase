@@ -1047,7 +1047,7 @@ export default function WordList({ studentId, studentName }) {
       {/* 自主トレーニングオーバーレイ */}
       {showTraining && (
         <SelfTraining
-          words={filteredWords}
+          words={words}
           onClose={() => setShowTraining(false)}
         />
       )}

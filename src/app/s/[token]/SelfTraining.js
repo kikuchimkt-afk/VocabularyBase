@@ -13,6 +13,7 @@ function shuffleArray(arr) {
 export default function SelfTraining({ words, onClose }) {
   const [phase, setPhase] = useState('settings');
   // settings
+  const [wordScope, setWordScope] = useState('self'); // 'self' | 'bookmarked' | 'all'
   const [sourceText, setSourceText] = useState('all');
   const [idFrom, setIdFrom] = useState('');
   const [idTo, setIdTo] = useState('');
@@ -29,10 +30,20 @@ export default function SelfTraining({ words, onClose }) {
   const [autoplay, setAutoplay] = useState(true);
   const audioRef = useRef(null);
 
+  // スコープでまず絞り込み
+  const scopedWords = useMemo(() => {
+    if (wordScope === 'self') return words.filter(w => w.assigned_by !== 'teacher');
+    if (wordScope === 'bookmarked') return words.filter(w => w.is_bookmarked);
+    return words;
+  }, [words, wordScope]);
+
+  const selfCount = useMemo(() => words.filter(w => w.assigned_by !== 'teacher').length, [words]);
+  const bookmarkedCount = useMemo(() => words.filter(w => w.is_bookmarked).length, [words]);
+
   // 出典元のグループ一覧
   const sourceGroups = useMemo(() => {
     const map = {};
-    words.forEach(w => {
+    scopedWords.forEach(w => {
       if (!w.source) return;
       const prefix = w.source.replace(/\s*No\.\d+$/, '').trim();
       if (!prefix) return;
@@ -40,11 +51,11 @@ export default function SelfTraining({ words, onClose }) {
       map[prefix]++;
     });
     return Object.entries(map).sort((a, b) => b[1] - a[1]);
-  }, [words]);
+  }, [scopedWords]);
 
   // 設定に基づいてフィルタリング
   const candidateWords = useMemo(() => {
-    let list = [...words];
+    let list = [...scopedWords];
     // 出典元フィルター
     if (sourceText !== 'all') {
       list = list.filter(w => w.source && w.source.replace(/\s*No\.\d+$/, '').trim() === sourceText);
@@ -69,7 +80,7 @@ export default function SelfTraining({ words, onClose }) {
       list = list.filter(w => (w.wrong_count || 0) > (w.correct_count || 0));
     }
     return list;
-  }, [words, sourceText, idFrom, idTo, diffScope]);
+  }, [scopedWords, sourceText, idFrom, idTo, diffScope]);
 
   const playAudio = useCallback((url) => {
     if (!url) return;
@@ -161,6 +172,16 @@ export default function SelfTraining({ words, onClose }) {
         <div style={{ background: 'var(--bg-card)', borderRadius: 'var(--radius-lg)', padding: '1.5rem', maxWidth: 440, width: '100%', boxShadow: '0 20px 60px rgba(0,0,0,0.4)', maxHeight: '85vh', overflow: 'auto' }}
           onClick={e => e.stopPropagation()}>
           <h3 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem' }}>🏋️ 自主トレーニング</h3>
+
+          {/* 対象スコープ */}
+          <div style={{ marginBottom: '1rem' }}>
+            <label style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.4rem' }}>📂 対象</label>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem' }}>
+              <Pill active={wordScope === 'self'} onClick={() => { setWordScope('self'); setSourceText('all'); }} color="var(--secondary)">👤 自分 ({selfCount})</Pill>
+              {bookmarkedCount > 0 && <Pill active={wordScope === 'bookmarked'} onClick={() => { setWordScope('bookmarked'); setSourceText('all'); }} color="#f59e0b">⭐ お気に入り ({bookmarkedCount})</Pill>}
+              <Pill active={wordScope === 'all'} onClick={() => { setWordScope('all'); setSourceText('all'); }}>すべて ({words.length})</Pill>
+            </div>
+          </div>
 
           {/* 出典元 */}
           {sourceGroups.length > 0 && (
