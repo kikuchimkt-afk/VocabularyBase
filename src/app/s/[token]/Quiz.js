@@ -54,10 +54,10 @@ export default function Quiz({ token, studentId }) {
     }
   };
 
-  // 日付+講師名一覧を取得（新しい順）
+  // 日付+講師名一覧を取得（講師配信の単語のみ。整理済みの日付は表示しない）
   const availableDateTeachers = (() => {
     const map = new Map();
-    words.filter(w => w.assigned_date).forEach(w => {
+    words.filter(w => w.assigned_by === 'teacher' && w.assigned_date).forEach(w => {
       const tn = w.teacher_name || '';
       const key = `${w.assigned_date}::${tn}`;
       if (!map.has(key)) map.set(key, { date: w.assigned_date, teacher: tn, count: 0 });

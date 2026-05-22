@@ -3,6 +3,7 @@
 import { useState, useEffect, useMemo, useCallback } from 'react';
 import { createBrowserClient } from '@/lib/supabase';
 import * as XLSX from 'xlsx';
+import SelfTraining from './SelfTraining';
 
 export default function WordList({ studentId, studentName }) {
   const [words, setWords] = useState([]);
@@ -20,6 +21,13 @@ export default function WordList({ studentId, studentName }) {
   // ブックマーク＆一括削除
   const [bookmarkTogglingId, setBookmarkTogglingId] = useState(null);
   const [bulkDeleting, setBulkDeleting] = useState(false);
+
+  // 日付指定一括整理
+  const [showCleanupModal, setShowCleanupModal] = useState(false);
+  const [cleanupSelectedDates, setCleanupSelectedDates] = useState(new Set());
+  const [cleanupRunning, setCleanupRunning] = useState(false);
+  const [cleanupResult, setCleanupResult] = useState(null);
+  const [showTraining, setShowTraining] = useState(false);
 
   const supabase = useMemo(() => createBrowserClient(), []);
 
@@ -179,6 +187,69 @@ export default function WordList({ studentId, studentName }) {
       alert('一括削除中にエラーが発生しました');
     } finally {
       setBulkDeleting(false);
+    }
+  };
+
+  // 日付指定一括整理の集計情報
+  const cleanupDateStats = useMemo(() => {
+    const map = new Map();
+    words.forEach(w => {
+      if (w.assigned_by === 'teacher' && w.assigned_date) {
+        const key = w.assigned_date;
+        if (!map.has(key)) map.set(key, { date: key, total: 0, bookmarked: 0, teachers: new Set() });
+        const entry = map.get(key);
+        entry.total++;
+        if (w.is_bookmarked) entry.bookmarked++;
+        if (w.teacher_name) entry.teachers.add(w.teacher_name);
+      }
+    });
+    return [...map.values()].sort((a, b) => a.date.localeCompare(b.date));
+  }, [words]);
+
+  // 日付指定一括整理の実行
+  const executeCleanup = async () => {
+    if (cleanupSelectedDates.size === 0) return;
+
+    // 対象の単語を収集
+    const targetWords = words.filter(w =>
+      w.assigned_by === 'teacher' &&
+      w.assigned_date &&
+      cleanupSelectedDates.has(w.assigned_date)
+    );
+    const toDelete = targetWords.filter(w => !w.is_bookmarked);
+    const toKeep = targetWords.filter(w => w.is_bookmarked);
+
+    if (toDelete.length === 0 && toKeep.length === 0) {
+      alert('対象の単語がありません');
+      return;
+    }
+
+    setCleanupRunning(true);
+    try {
+      // 非ブックマークを削除
+      if (toDelete.length > 0) {
+        const deleteIds = toDelete.map(w => w.id);
+        for (let i = 0; i < deleteIds.length; i += 50) {
+          const batch = deleteIds.slice(i, i + 50);
+          await supabase.from('vb_words').delete().in('id', batch);
+        }
+      }
+      // ブックマーク済みを「自分」に変更（HWから解放）
+      if (toKeep.length > 0) {
+        const keepIds = toKeep.map(w => w.id);
+        for (let i = 0; i < keepIds.length; i += 50) {
+          const batch = keepIds.slice(i, i + 50);
+          await supabase.from('vb_words').update({ assigned_by: 'student' }).in('id', batch);
+        }
+      }
+
+      setCleanupResult({ deleted: toDelete.length, kept: toKeep.length });
+      await fetchWords();
+    } catch (err) {
+      console.error('Cleanup error:', err);
+      alert('整理中にエラーが発生しました');
+    } finally {
+      setCleanupRunning(false);
     }
   };
 
@@ -512,6 +583,19 @@ export default function WordList({ studentId, studentName }) {
       {/* ダウンロードボタン */}
       {words.length > 0 && (
         <div style={{ display: 'flex', gap: '0.4rem', marginBottom: '0.5rem', justifyContent: 'flex-end', flexWrap: 'wrap', alignItems: 'center' }}>
+          {/* 自主トレーニングボタン */}
+          {filteredWords.length > 0 && (
+            <button
+              className="btn"
+              onClick={() => setShowTraining(true)}
+              style={{
+                fontSize: '0.75rem', padding: '0.35rem 0.7rem',
+                backgroundColor: '#fef3c7', color: '#b45309',
+                border: '1px solid #f59e0b', borderRadius: 'var(--radius-md)',
+                fontWeight: 600,
+              }}
+            >🏋️ トレーニング</button>
+          )}
           {/* 一括音声生成ボタン */}
           {(() => {
             const needAudioCount = filteredWords.filter(w =>
@@ -573,6 +657,23 @@ export default function WordList({ studentId, studentName }) {
             XLSX.utils.book_append_sheet(wb, ws, '単語帳');
             XLSX.writeFile(wb, `${studentName || '単語帳'}.xlsx`);
           }}>📥 Excel</button>
+          {/* 日付指定一括整理ボタン */}
+          {hwCount > 0 && (
+            <button
+              className="btn"
+              onClick={() => {
+                setCleanupSelectedDates(new Set());
+                setCleanupResult(null);
+                setShowCleanupModal(true);
+              }}
+              style={{
+                fontSize: '0.75rem', padding: '0.35rem 0.7rem',
+                backgroundColor: 'var(--danger-light)', color: 'var(--danger)',
+                border: '1px solid var(--danger)', borderRadius: 'var(--radius-md)',
+                fontWeight: 600,
+              }}
+            >🗑️ 日付で整理</button>
+          )}
         </div>
       )}
       {/* 一括音声生成の進捗表示 */}
@@ -736,6 +837,219 @@ export default function WordList({ studentId, studentName }) {
         <div className="card" style={{ textAlign: 'center', padding: '2rem' }}>
           <p className="text-muted">「{searchQuery}」に一致する単語が見つかりません</p>
         </div>
+      )}
+
+      {/* === 日付指定一括整理モーダル === */}
+      {showCleanupModal && (
+        <div
+          style={{
+            position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.55)',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            zIndex: 9999, padding: '1rem',
+          }}
+          onClick={() => !cleanupRunning && setShowCleanupModal(false)}
+        >
+          <div
+            style={{
+              background: 'var(--bg-card)', borderRadius: 'var(--radius-lg)',
+              padding: '1.5rem', maxWidth: 480, width: '100%',
+              boxShadow: '0 20px 60px rgba(0,0,0,0.4)', maxHeight: '85vh', overflow: 'auto',
+            }}
+            onClick={e => e.stopPropagation()}
+          >
+            {/* 完了画面 */}
+            {cleanupResult ? (
+              <div style={{ textAlign: 'center', padding: '1rem 0' }}>
+                <div style={{ fontSize: '3rem', marginBottom: '0.75rem' }}>✨</div>
+                <h3 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem' }}>整理が完了しました</h3>
+                <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', marginBottom: '1.5rem' }}>
+                  <div style={{ textAlign: 'center' }}>
+                    <div style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--danger)' }}>{cleanupResult.deleted}</div>
+                    <div className="text-muted" style={{ fontSize: '0.75rem' }}>削除</div>
+                  </div>
+                  <div style={{ textAlign: 'center' }}>
+                    <div style={{ fontSize: '1.8rem', fontWeight: 800, color: '#f59e0b' }}>{cleanupResult.kept}</div>
+                    <div className="text-muted" style={{ fontSize: '0.75rem' }}>⭐ 保存</div>
+                  </div>
+                </div>
+                {cleanupResult.kept > 0 && (
+                  <p className="text-muted" style={{ fontSize: '0.8rem', marginBottom: '1rem' }}>
+                    ⭐付きの{cleanupResult.kept}語は「👤 自分」に移動しました
+                  </p>
+                )}
+                <button
+                  className="btn btn-primary"
+                  onClick={() => {
+                    setShowCleanupModal(false);
+                    setSourceFilter('all');
+                  }}
+                  style={{ padding: '0.6rem 2rem', borderRadius: 'var(--radius-full)', fontWeight: 700 }}
+                >閉じる</button>
+              </div>
+            ) : (
+              /* 選択画面 */
+              <>
+                <h3 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  🗑️ 日付指定で一括整理
+                </h3>
+                <p className="text-muted" style={{ fontSize: '0.8rem', marginBottom: '1rem' }}>
+                  削除する日付を選択してください。<strong style={{ color: '#f59e0b' }}>⭐お気に入りの単語は必ず保護</strong>されます。
+                </p>
+
+                {cleanupDateStats.length === 0 ? (
+                  <p className="text-muted" style={{ textAlign: 'center', padding: '2rem 0' }}>HW配信の単語がありません</p>
+                ) : (
+                  <>
+                    {/* 全選択 / 全解除 */}
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '0.5rem' }}>
+                      <button
+                        className="text-muted"
+                        style={{ fontSize: '0.75rem', cursor: 'pointer', background: 'none', border: 'none', fontFamily: 'inherit' }}
+                        onClick={() => {
+                          if (cleanupSelectedDates.size === cleanupDateStats.length) {
+                            setCleanupSelectedDates(new Set());
+                          } else {
+                            setCleanupSelectedDates(new Set(cleanupDateStats.map(d => d.date)));
+                          }
+                        }}
+                      >
+                        {cleanupSelectedDates.size === cleanupDateStats.length ? '☐ 全解除' : '☑ 全選択'}
+                      </button>
+                    </div>
+
+                    {/* 日付一覧 */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', marginBottom: '1rem' }}>
+                      {cleanupDateStats.map(({ date, total, bookmarked, teachers }) => {
+                        const toDelete = total - bookmarked;
+                        const isSelected = cleanupSelectedDates.has(date);
+                        const dateLabel = (() => {
+                          const d = new Date(date + 'T00:00:00');
+                          return `${d.getMonth() + 1}/${d.getDate()}`;
+                        })();
+                        const teacherList = [...teachers].join(', ');
+
+                        return (
+                          <label
+                            key={date}
+                            style={{
+                              display: 'flex', alignItems: 'center', gap: '0.6rem',
+                              padding: '0.6rem 0.75rem', borderRadius: 'var(--radius-md)',
+                              border: `1.5px solid ${isSelected ? 'var(--danger)' : 'var(--border)'}`,
+                              background: isSelected ? 'var(--danger-light)' : 'transparent',
+                              cursor: 'pointer', transition: 'all 0.15s',
+                            }}
+                          >
+                            <input
+                              type="checkbox"
+                              checked={isSelected}
+                              onChange={() => {
+                                const next = new Set(cleanupSelectedDates);
+                                if (next.has(date)) next.delete(date); else next.add(date);
+                                setCleanupSelectedDates(next);
+                              }}
+                              style={{ width: 18, height: 18, accentColor: 'var(--danger)', flexShrink: 0 }}
+                            />
+                            <div style={{ flex: 1, minWidth: 0 }}>
+                              <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.4rem', flexWrap: 'wrap' }}>
+                                <span style={{ fontWeight: 700, fontSize: '0.9rem' }}>📅 {dateLabel}</span>
+                                {teacherList && (
+                                  <span className="text-muted" style={{ fontSize: '0.7rem' }}>{teacherList}</span>
+                                )}
+                              </div>
+                              <div style={{ display: 'flex', gap: '0.75rem', marginTop: '0.15rem' }}>
+                                <span className="text-muted" style={{ fontSize: '0.72rem' }}>
+                                  全{total}語
+                                </span>
+                                {bookmarked > 0 && (
+                                  <span style={{ fontSize: '0.72rem', color: '#f59e0b', fontWeight: 600 }}>
+                                    ⭐{bookmarked}語 保護
+                                  </span>
+                                )}
+                                <span style={{ fontSize: '0.72rem', color: 'var(--danger)', fontWeight: 600 }}>
+                                  🗑️{toDelete}語 削除
+                                </span>
+                              </div>
+                            </div>
+                          </label>
+                        );
+                      })}
+                    </div>
+
+                    {/* サマリー＆実行ボタン */}
+                    {cleanupSelectedDates.size > 0 && (() => {
+                      const selectedStats = cleanupDateStats.filter(d => cleanupSelectedDates.has(d.date));
+                      const totalAll = selectedStats.reduce((sum, d) => sum + d.total, 0);
+                      const totalBookmarked = selectedStats.reduce((sum, d) => sum + d.bookmarked, 0);
+                      const totalDelete = totalAll - totalBookmarked;
+                      return (
+                        <div style={{
+                          padding: '0.75rem', borderRadius: 'var(--radius-md)',
+                          border: '2px solid var(--danger)', background: 'var(--danger-light)',
+                          marginBottom: '0.75rem',
+                        }}>
+                          <div style={{
+                            display: 'flex', justifyContent: 'center', gap: '1.5rem',
+                            marginBottom: '0.5rem',
+                          }}>
+                            <div style={{ textAlign: 'center' }}>
+                              <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--danger)' }}>{totalDelete}</div>
+                              <div style={{ fontSize: '0.7rem', color: 'var(--danger)', fontWeight: 600 }}>削除</div>
+                            </div>
+                            <div style={{ textAlign: 'center' }}>
+                              <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#f59e0b' }}>{totalBookmarked}</div>
+                              <div style={{ fontSize: '0.7rem', color: '#f59e0b', fontWeight: 600 }}>⭐ 保護</div>
+                            </div>
+                          </div>
+                          {totalBookmarked > 0 && (
+                            <p className="text-muted" style={{ fontSize: '0.72rem', textAlign: 'center', marginBottom: '0.5rem' }}>
+                              ⭐付き{totalBookmarked}語は「👤 自分」に自動移動
+                            </p>
+                          )}
+                          <button
+                            className="btn"
+                            disabled={cleanupRunning || totalDelete === 0}
+                            onClick={() => {
+                              if (!confirm(`${cleanupSelectedDates.size}日分の ${totalDelete}語 を削除します。⭐付き${totalBookmarked}語は保護されます。実行しますか？`)) return;
+                              executeCleanup();
+                            }}
+                            style={{
+                              width: '100%', padding: '0.7rem',
+                              fontSize: '0.95rem', fontWeight: 700,
+                              backgroundColor: totalDelete === 0 ? 'var(--text-muted)' : 'var(--danger)',
+                              color: 'white', border: 'none', borderRadius: 'var(--radius-md)',
+                              cursor: cleanupRunning || totalDelete === 0 ? 'not-allowed' : 'pointer',
+                              opacity: cleanupRunning || totalDelete === 0 ? 0.5 : 1,
+                              fontFamily: 'inherit',
+                            }}
+                          >
+                            {cleanupRunning ? '処理中...' : totalDelete === 0 ? 'すべてお気に入り済み' : `🗑️ ${totalDelete}語を削除する`}
+                          </button>
+                        </div>
+                      );
+                    })()}
+                  </>
+                )}
+
+                {/* キャンセル */}
+                <div style={{ textAlign: 'center', marginTop: '0.5rem' }}>
+                  <button
+                    className="text-muted"
+                    onClick={() => setShowCleanupModal(false)}
+                    disabled={cleanupRunning}
+                    style={{ fontSize: '0.85rem', cursor: 'pointer', background: 'none', border: 'none', fontFamily: 'inherit' }}
+                  >キャンセル</button>
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      )}
+      {/* 自主トレーニングオーバーレイ */}
+      {showTraining && (
+        <SelfTraining
+          words={filteredWords}
+          onClose={() => setShowTraining(false)}
+        />
       )}
     </div>
   );
