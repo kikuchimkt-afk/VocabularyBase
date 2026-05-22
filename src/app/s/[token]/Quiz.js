@@ -24,11 +24,13 @@ export default function Quiz({ token, studentId }) {
   const [order, setOrder] = useState('seq');
   const [autoplay, setAutoplay] = useState(true);
   const [dateFilter, setDateFilter] = useState('all'); // 'all' or specific date string
-  const [scope, setScope] = useState('all'); // 'all' or 'remaining'
+  const [scope, setScope] = useState('all'); // 'all' | 'remaining' | 'bookmarked'
   const audioRef = useRef(null);
   const [cardFading, setCardFading] = useState(false);
   const [showResetConfirm, setShowResetConfirm] = useState(false);
   const [resetting, setResetting] = useState(false);
+  const [bookmarkTogglingId, setBookmarkTogglingId] = useState(null);
+  const [bulkBookmarking, setBulkBookmarking] = useState(false);
 
   const supabase = createBrowserClient();
 
@@ -134,10 +136,13 @@ export default function Quiz({ token, studentId }) {
   const isMastered = (w) => (w.correct_count || 0) > (w.wrong_count || 0);
   const masteredCount = filteredWords.filter(isMastered).length;
   const remainingCount = filteredWords.length - masteredCount;
+  const bookmarkedCount = filteredWords.filter(w => w.is_bookmarked).length;
 
   // スコープ適用後の単語（出題範囲）
   const scopedWords = scope === 'remaining'
     ? filteredWords.filter(w => !isMastered(w))
+    : scope === 'bookmarked'
+    ? filteredWords.filter(w => w.is_bookmarked)
     : filteredWords;
 
   const playAudio = useCallback((url) => {
@@ -150,6 +155,61 @@ export default function Quiz({ token, studentId }) {
     audioRef.current = audio;
     audio.play().catch(() => {});
   }, []);
+
+  // ブックマークトグル（DB永続化）
+  const toggleBookmark = async (wordId) => {
+    const card = deck.find(c => c.id === wordId);
+    if (!card) return;
+    const newState = !card.is_bookmarked;
+    setBookmarkTogglingId(wordId);
+    try {
+      const { error } = await supabase
+        .from('vb_words')
+        .update({ is_bookmarked: newState })
+        .eq('id', wordId);
+      if (error) throw error;
+      // deckのローカルステート更新
+      setDeck(prev => prev.map(c =>
+        c.id === wordId ? { ...c, is_bookmarked: newState } : c
+      ));
+      // wordsも更新
+      setWords(prev => prev.map(w =>
+        w.id === wordId ? { ...w, is_bookmarked: newState } : w
+      ));
+    } catch (err) {
+      console.error('Bookmark toggle error:', err);
+    } finally {
+      setBookmarkTogglingId(null);
+    }
+  };
+
+  // 一括ブックマーク（「もう一度」の単語）
+  const bulkBookmarkMissed = async () => {
+    const missedWordIds = [...againSet].map(i => deck[i]?.id).filter(Boolean);
+    if (missedWordIds.length === 0) return;
+    setBulkBookmarking(true);
+    try {
+      for (let i = 0; i < missedWordIds.length; i += 50) {
+        const batch = missedWordIds.slice(i, i + 50);
+        await supabase
+          .from('vb_words')
+          .update({ is_bookmarked: true })
+          .in('id', batch);
+      }
+      // deckのローカルステート更新
+      const idSet = new Set(missedWordIds);
+      setDeck(prev => prev.map(c =>
+        idSet.has(c.id) ? { ...c, is_bookmarked: true } : c
+      ));
+      setWords(prev => prev.map(w =>
+        idSet.has(w.id) ? { ...w, is_bookmarked: true } : w
+      ));
+    } catch (err) {
+      console.error('Bulk bookmark error:', err);
+    } finally {
+      setBulkBookmarking(false);
+    }
+  };
 
   const startQuiz = () => {
     if (scopedWords.length === 0) return;
@@ -396,6 +456,11 @@ export default function Quiz({ token, studentId }) {
           <OrderBtn active={scope === 'remaining'} onClick={() => setScope('remaining')}>
             残りのみ{scope === 'remaining' ? ` (${scopedWords.length})` : ''}
           </OrderBtn>
+          {bookmarkedCount > 0 && (
+            <OrderBtn active={scope === 'bookmarked'} onClick={() => setScope('bookmarked')}>
+              ⭐{scope === 'bookmarked' ? ` (${scopedWords.length})` : ''}
+            </OrderBtn>
+          )}
         </div>
 
         {/* Autoplay */}
@@ -430,7 +495,7 @@ export default function Quiz({ token, studentId }) {
           </button>
           {scopedWords.length === 0 && (
             <p className="text-muted" style={{ marginTop: '1rem', color: 'var(--danger)' }}>
-              {scope === 'remaining' ? 'すべて覚えました！🎉' : dateFilter !== 'all' ? 'この日付の単語はありません' : '単語を登録してから開始してください'}
+              {scope === 'remaining' ? 'すべて覚えました！🎉' : scope === 'bookmarked' ? 'お気に入りの単語がありません' : dateFilter !== 'all' ? 'この日付の単語はありません' : '単語を登録してから開始してください'}
             </p>
           )}
 
@@ -557,6 +622,52 @@ export default function Quiz({ token, studentId }) {
             最初からやり直す
           </button>
         </div>
+
+        {/* 「もう一度」の単語を一括ブックマーク */}
+        {againCount > 0 && (
+          <div style={{
+            marginTop: '1.5rem', padding: '1rem', borderRadius: 'var(--radius-lg)',
+            border: '1px solid #f59e0b', background: 'linear-gradient(135deg, #fef3c720, #fbbf2410)',
+          }}>
+            {(() => {
+              const missedCards = [...againSet].map(i => deck[i]).filter(Boolean);
+              const alreadyBookmarked = missedCards.filter(c => c.is_bookmarked).length;
+              const notYetBookmarked = missedCards.length - alreadyBookmarked;
+              const allDone = notYetBookmarked === 0;
+              return (
+                <>
+                  <div style={{ textAlign: 'center', marginBottom: '0.75rem' }}>
+                    <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#f59e0b' }}>
+                      ⭐ 覚えるべき単語をお気に入りに追加
+                    </span>
+                  </div>
+                  <div style={{ textAlign: 'center' }}>
+                    {allDone ? (
+                      <span style={{ fontSize: '0.85rem', color: 'var(--secondary)', fontWeight: 600 }}>
+                        ✅ {againCount}語すべてお気に入り登録済み
+                      </span>
+                    ) : (
+                      <button
+                        onClick={bulkBookmarkMissed}
+                        disabled={bulkBookmarking}
+                        style={{
+                          padding: '0.6rem 1.5rem', borderRadius: 'var(--radius-full)',
+                          fontSize: '0.9rem', fontWeight: 700,
+                          border: '2px solid #f59e0b', background: '#fef3c7', color: '#b45309',
+                          cursor: bulkBookmarking ? 'wait' : 'pointer',
+                          opacity: bulkBookmarking ? 0.6 : 1,
+                          transition: '0.2s',
+                        }}
+                      >
+                        {bulkBookmarking ? '登録中...' : `⭐ 「もう一度」の${notYetBookmarked}語を一括登録`}
+                      </button>
+                    )}
+                  </div>
+                </>
+              );
+            })()}
+          </div>
+        )}
       </div>
     );
   }
@@ -718,6 +829,25 @@ export default function Quiz({ token, studentId }) {
                 📍 {card.source}
               </div>
             )}
+            {/* ブックマークボタン（カード裏面） */}
+            <button
+              onClick={(e) => { e.stopPropagation(); toggleBookmark(card.id); }}
+              disabled={bookmarkTogglingId === card.id}
+              style={{
+                position: 'absolute', bottom: 14, right: 18,
+                padding: '4px 10px', borderRadius: 'var(--radius-md)',
+                fontSize: '1rem', cursor: bookmarkTogglingId === card.id ? 'wait' : 'pointer',
+                border: card.is_bookmarked ? '2px solid #f59e0b' : '1px solid var(--border)',
+                background: card.is_bookmarked ? '#fef3c7' : 'var(--bg-page)',
+                color: card.is_bookmarked ? '#f59e0b' : 'var(--text-muted)',
+                transition: 'all 0.2s', lineHeight: 1,
+                opacity: bookmarkTogglingId === card.id ? 0.5 : 1,
+                zIndex: 2,
+              }}
+              title={card.is_bookmarked ? 'お気に入り解除' : 'お気に入りに追加'}
+            >
+              {card.is_bookmarked ? '★' : '☆'}
+            </button>
           </div>
         </div>
       </div>

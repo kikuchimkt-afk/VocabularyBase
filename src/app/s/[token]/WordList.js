@@ -17,8 +17,8 @@ export default function WordList({ studentId, studentName }) {
   const [bulkAudioProgress, setBulkAudioProgress] = useState('');
   const [bulkAudioCancelRef] = useState({ current: false });
 
-  // お気に入り＆一括削除
-  const [favorites, setFavorites] = useState(new Set());
+  // ブックマーク＆一括削除
+  const [bookmarkTogglingId, setBookmarkTogglingId] = useState(null);
   const [bulkDeleting, setBulkDeleting] = useState(false);
 
   const supabase = useMemo(() => createBrowserClient(), []);
@@ -42,6 +42,28 @@ export default function WordList({ studentId, studentName }) {
       console.error('Error fetching words:', err);
     } finally {
       setLoading(false);
+    }
+  };
+
+  // ブックマークトグル（DB永続化）
+  const toggleBookmark = async (wordId) => {
+    const word = words.find(w => w.id === wordId);
+    if (!word) return;
+    const newState = !word.is_bookmarked;
+    setBookmarkTogglingId(wordId);
+    try {
+      const { error } = await supabase
+        .from('vb_words')
+        .update({ is_bookmarked: newState })
+        .eq('id', wordId);
+      if (error) throw error;
+      setWords(prev => prev.map(w =>
+        w.id === wordId ? { ...w, is_bookmarked: newState } : w
+      ));
+    } catch (err) {
+      console.error('Bookmark toggle error:', err);
+    } finally {
+      setBookmarkTogglingId(null);
     }
   };
 
@@ -129,29 +151,27 @@ export default function WordList({ studentId, studentName }) {
     }
   };
 
-  // お気に入り以外を一括削除
+  // ⭐以外を一括削除（is_bookmarkedベース）
   const bulkDeleteNonFavorites = async () => {
-    const date = sourceFilter.replace('hw:', '');
-    const targets = filteredWords.filter(w => !favorites.has(w.id));
-    const kept = filteredWords.filter(w => favorites.has(w.id));
+    const targets = filteredWords.filter(w => !w.is_bookmarked);
+    const kept = filteredWords.filter(w => w.is_bookmarked);
     if (targets.length === 0) { alert('削除対象がありません'); return; }
-    if (!confirm(`★以外の ${targets.length}語 を削除し、★付き ${kept.length}語 を「自分」に移動します。よろしいですか？`)) return;
+    if (!confirm(`⭐以外の ${targets.length}語 を削除し、⭐付き ${kept.length}語 を「自分」に移動します。よろしいですか？`)) return;
 
     setBulkDeleting(true);
     try {
-      // 非お気に入りを削除
+      // 非ブックマークを削除
       const deleteIds = targets.map(w => w.id);
       for (let i = 0; i < deleteIds.length; i += 50) {
         const batch = deleteIds.slice(i, i + 50);
         await supabase.from('vb_words').delete().in('id', batch);
       }
-      // お気に入りを「自分」に変更
+      // ブックマーク済みを「自分」に変更
       const keepIds = kept.map(w => w.id);
       for (let i = 0; i < keepIds.length; i += 50) {
         const batch = keepIds.slice(i, i + 50);
         await supabase.from('vb_words').update({ assigned_by: 'student' }).in('id', batch);
       }
-      setFavorites(new Set());
       await fetchWords();
       setSourceFilter('self');
     } catch (err) {
@@ -273,6 +293,7 @@ export default function WordList({ studentId, studentName }) {
 
   const selfCount = useMemo(() => words.filter(w => w.assigned_by !== 'teacher').length, [words]);
   const hwCount = useMemo(() => words.filter(w => w.assigned_by === 'teacher').length, [words]);
+  const bookmarkedCount = useMemo(() => words.filter(w => w.is_bookmarked).length, [words]);
 
   const getHwSourceSummary = useCallback((date, teacher) => {
     const hwWords = words.filter(w => w.assigned_by === 'teacher' && w.assigned_date === date && (teacher === undefined || (w.teacher_name || '') === teacher) && w.source);
@@ -313,7 +334,9 @@ export default function WordList({ studentId, studentName }) {
   }, [words]);
 
   const filteredWords = useMemo(() => words.filter(w => {
-    if (sourceFilter === 'teacher') {
+    if (sourceFilter === 'bookmarked') {
+      if (!w.is_bookmarked) return false;
+    } else if (sourceFilter === 'teacher') {
       if (w.assigned_by !== 'teacher') return false;
     } else if (sourceFilter === 'self') {
       if (w.assigned_by === 'teacher') return false;
@@ -406,6 +429,17 @@ export default function WordList({ studentId, studentName }) {
               }}
             >👤 自分 ({selfCount})</button>
           )}
+          {bookmarkedCount > 0 && (
+            <button
+              onClick={() => setSourceFilter('bookmarked')}
+              style={{
+                padding: '0.3rem 0.7rem', borderRadius: 20, fontSize: '0.75rem', fontWeight: 600,
+                border: sourceFilter === 'bookmarked' ? '2px solid #f59e0b' : '1px solid var(--border)',
+                background: sourceFilter === 'bookmarked' ? '#f59e0b' : 'var(--bg-card)',
+                color: sourceFilter === 'bookmarked' ? 'white' : 'var(--text-muted)', cursor: 'pointer',
+              }}
+            >⭐ お気に入り ({bookmarkedCount})</button>
+          )}
           {hwDateTeachers.map(({ date, teacher, count }) => {
             const filterKey = `hw:${date}::${teacher}`;
             const label = date.slice(5).replace('-', '/');
@@ -449,8 +483,8 @@ export default function WordList({ studentId, studentName }) {
           })()}
         </div>
       )}
-      {/* お気に入り一括削除ボタン（日付フィルター選択時） */}
-      {sourceFilter.startsWith('hw:') && favorites.size > 0 && (
+      {/* ⭐以外を一括削除ボタン（日付フィルター選択時） */}
+      {sourceFilter.startsWith('hw:') && filteredWords.some(w => w.is_bookmarked) && (
         <div style={{
           display: 'flex', alignItems: 'center', justifyContent: 'space-between',
           marginBottom: '0.5rem', gap: '0.5rem', flexWrap: 'wrap',
@@ -458,20 +492,20 @@ export default function WordList({ studentId, studentName }) {
           borderRadius: 'var(--radius-md)', border: '1px solid var(--danger)',
         }}>
           <span style={{ fontSize: '0.8rem', color: 'var(--danger)', fontWeight: 600 }}>
-            ★ {favorites.size}語をキープ / {filteredWords.length - favorites.size}語を削除
+            ⭐ {filteredWords.filter(w => w.is_bookmarked).length}語をキープ / {filteredWords.filter(w => !w.is_bookmarked).length}語を削除
           </span>
           <button
             className="btn"
-            disabled={bulkDeleting || favorites.size === filteredWords.length}
+            disabled={bulkDeleting || filteredWords.every(w => w.is_bookmarked)}
             onClick={bulkDeleteNonFavorites}
             style={{
               fontSize: '0.7rem', padding: '0.3rem 0.6rem',
               backgroundColor: 'var(--danger)', color: 'white',
               border: 'none', borderRadius: 'var(--radius-md)',
-              fontWeight: 700, cursor: 'pointer', opacity: (bulkDeleting || favorites.size === filteredWords.length) ? 0.5 : 1,
+              fontWeight: 700, cursor: 'pointer', opacity: (bulkDeleting || filteredWords.every(w => w.is_bookmarked)) ? 0.5 : 1,
             }}
           >
-            {bulkDeleting ? '処理中...' : '🗑️ ★以外を一括削除'}
+            {bulkDeleting ? '処理中...' : '🗑️ ⭐以外を一括削除'}
           </button>
         </div>
       )}
@@ -609,27 +643,23 @@ export default function WordList({ studentId, studentName }) {
                 )}
               </div>
               <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-                {/* お気に入りトグル（日付フィルター時のみ） */}
-                {sourceFilter.startsWith('hw:') && (
-                  <button
-                    onClick={() => {
-                      const next = new Set(favorites);
-                      if (next.has(word.id)) next.delete(word.id); else next.add(word.id);
-                      setFavorites(next);
-                    }}
-                    style={{
-                      padding: '0.25rem 0.5rem', borderRadius: 'var(--radius-md)',
-                      fontSize: '1.2rem', cursor: 'pointer',
-                      border: favorites.has(word.id) ? '2px solid #f59e0b' : '1px solid var(--border)',
-                      background: favorites.has(word.id) ? '#fef3c7' : 'var(--bg-page)',
-                      color: favorites.has(word.id) ? '#f59e0b' : 'var(--text-muted)',
-                      transition: 'all 0.2s', lineHeight: 1,
-                    }}
-                    title={favorites.has(word.id) ? 'お気に入り解除' : 'お気に入りに追加'}
-                  >
-                    {favorites.has(word.id) ? '★' : '☆'}
-                  </button>
-                )}
+                {/* ⭐ ブックマークトグル（常時表示） */}
+                <button
+                  onClick={() => toggleBookmark(word.id)}
+                  disabled={bookmarkTogglingId === word.id}
+                  style={{
+                    padding: '0.25rem 0.5rem', borderRadius: 'var(--radius-md)',
+                    fontSize: '1.2rem', cursor: bookmarkTogglingId === word.id ? 'wait' : 'pointer',
+                    border: word.is_bookmarked ? '2px solid #f59e0b' : '1px solid var(--border)',
+                    background: word.is_bookmarked ? '#fef3c7' : 'var(--bg-page)',
+                    color: word.is_bookmarked ? '#f59e0b' : 'var(--text-muted)',
+                    transition: 'all 0.2s', lineHeight: 1,
+                    opacity: bookmarkTogglingId === word.id ? 0.5 : 1,
+                  }}
+                  title={word.is_bookmarked ? 'お気に入り解除' : 'お気に入りに追加'}
+                >
+                  {word.is_bookmarked ? '★' : '☆'}
+                </button>
                 {needsAudio && (
                   <button
                     onClick={() => regenerateAudio(word)}
