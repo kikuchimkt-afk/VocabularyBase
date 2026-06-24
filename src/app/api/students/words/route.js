@@ -21,7 +21,8 @@ export async function GET(request) {
       .from('vb_words')
       .select('*')
       .eq('student_id', studentId)
-      .order('created_at', { ascending: false });
+      .order('created_at', { ascending: false })
+      .range(0, 1999);
 
     if (error) throw error;
 

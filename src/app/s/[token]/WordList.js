@@ -28,6 +28,7 @@ export default function WordList({ studentId, studentName }) {
   const [cleanupRunning, setCleanupRunning] = useState(false);
   const [cleanupResult, setCleanupResult] = useState(null);
   const [showTraining, setShowTraining] = useState(false);
+  const [showAllDates, setShowAllDates] = useState(false);
 
   const supabase = useMemo(() => createBrowserClient(), []);
 
@@ -42,7 +43,8 @@ export default function WordList({ studentId, studentName }) {
         .from('vb_words')
         .select('*')
         .eq('student_id', studentId)
-        .order('created_at', { ascending: false });
+        .order('created_at', { ascending: false })
+        .range(0, 1999);
 
       if (error) throw error;
       setWords(data || []);
@@ -511,23 +513,46 @@ export default function WordList({ studentId, studentName }) {
               }}
             >⭐ お気に入り ({bookmarkedCount})</button>
           )}
-          {hwDateTeachers.map(({ date, teacher, count }) => {
-            const filterKey = `hw:${date}::${teacher}`;
-            const label = date.slice(5).replace('-', '/');
-            const color = teacher ? (teacherColors[teacher] || '#e65100') : '#e65100';
+          {(() => {
+            const VISIBLE_COUNT = 7;
+            const visibleDates = showAllDates
+              ? hwDateTeachers
+              : hwDateTeachers.slice(-VISIBLE_COUNT);
+            const hiddenCount = hwDateTeachers.length - VISIBLE_COUNT;
             return (
-              <button
-                key={filterKey}
-                onClick={() => setSourceFilter(filterKey)}
-                style={{
-                  padding: '0.3rem 0.7rem', borderRadius: 20, fontSize: '0.7rem', fontWeight: 600,
-                  border: sourceFilter === filterKey ? `2px solid ${color}` : '1px solid var(--border)',
-                  background: sourceFilter === filterKey ? `${color}15` : 'var(--bg-card)',
-                  color: sourceFilter === filterKey ? color : 'var(--text-muted)', cursor: 'pointer',
-                }}
-              >{`\u{1F4C5}`} {label}{teacher ? ` ${teacher}` : ''} ({count})</button>
+              <>
+                {visibleDates.map(({ date, teacher, count }) => {
+                  const filterKey = `hw:${date}::${teacher}`;
+                  const label = date.slice(5).replace('-', '/');
+                  const color = teacher ? (teacherColors[teacher] || '#e65100') : '#e65100';
+                  return (
+                    <button
+                      key={filterKey}
+                      onClick={() => setSourceFilter(filterKey)}
+                      style={{
+                        padding: '0.3rem 0.7rem', borderRadius: 20, fontSize: '0.7rem', fontWeight: 600,
+                        border: sourceFilter === filterKey ? `2px solid ${color}` : '1px solid var(--border)',
+                        background: sourceFilter === filterKey ? `${color}15` : 'var(--bg-card)',
+                        color: sourceFilter === filterKey ? color : 'var(--text-muted)', cursor: 'pointer',
+                      }}
+                    >{`\u{1F4C5}`} {label}{teacher ? ` ${teacher}` : ''} ({count})</button>
+                  );
+                })}
+                {hiddenCount > 0 && (
+                  <button
+                    onClick={() => setShowAllDates(!showAllDates)}
+                    style={{
+                      padding: '0.3rem 0.7rem', borderRadius: 20, fontSize: '0.7rem', fontWeight: 600,
+                      border: '1px solid var(--border)', background: 'var(--bg-card)',
+                      color: 'var(--text-muted)', cursor: 'pointer',
+                    }}
+                  >
+                    {showAllDates ? '▲ 最新のみ' : `▼ +${hiddenCount}件`}
+                  </button>
+                )}
+              </>
             );
-          })}
+          })()}
         </div>
       )}
 

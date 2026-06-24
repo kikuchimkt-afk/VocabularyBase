@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { createServerClient } from '@/lib/supabase';
+import { createServerClient, fetchAllRows } from '@/lib/supabase';
 import fs from 'fs';
 import path from 'path';
 
@@ -20,7 +20,7 @@ export async function POST(request) {
 
     const supabase = createServerClient();
 
-    // 対象生徒の全単語を取得
+    // 対象生徒の全単語を取得（1000行制限回避）
     let query = supabase.from('vb_words').select('*');
     if (studentId) {
       query = query.eq('student_id', studentId);
@@ -28,7 +28,7 @@ export async function POST(request) {
     // sourceに「サンシャイン」を含むもののみ
     query = query.like('source', '%サンシャイン%');
 
-    const { data: words, error } = await query;
+    const { data: words, error } = await fetchAllRows(query);
     if (error) throw error;
 
     if (!words || words.length === 0) {

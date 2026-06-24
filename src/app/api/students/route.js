@@ -29,7 +29,8 @@ export async function GET(request) {
         const { data: quizData } = await supabase
           .from('vb_quiz_results')
           .select('is_correct')
-          .eq('student_id', student.id);
+          .eq('student_id', student.id)
+          .range(0, 9999);
 
         const totalQuiz = quizData?.length || 0;
         const correctQuiz = quizData?.filter(q => q.is_correct).length || 0;

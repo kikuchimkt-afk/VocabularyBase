@@ -31,6 +31,7 @@ export default function Quiz({ token, studentId }) {
   const [resetting, setResetting] = useState(false);
   const [bookmarkTogglingId, setBookmarkTogglingId] = useState(null);
   const [bulkBookmarking, setBulkBookmarking] = useState(false);
+  const [showAllDates, setShowAllDates] = useState(false);
 
   const supabase = createBrowserClient();
 
@@ -44,7 +45,8 @@ export default function Quiz({ token, studentId }) {
       const { data, error } = await supabase
         .from('vb_words')
         .select('*')
-        .eq('student_id', studentId);
+        .eq('student_id', studentId)
+        .range(0, 1999);
       if (error) throw error;
       setWords(data || []);
     } catch (err) {
@@ -374,41 +376,65 @@ export default function Quiz({ token, studentId }) {
                 </button>
               )}
             </div>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
-              <button
-                onClick={() => setDateFilter('all')}
-                style={{
-                  padding: '6px 14px', border: 'none', borderRadius: 20,
-                  fontSize: '0.8rem', fontWeight: 600, cursor: 'pointer',
-                  background: dateFilter === 'all' ? 'var(--primary)' : 'var(--bg-card)',
-                  color: dateFilter === 'all' ? 'white' : 'var(--text-muted)',
-                  border: `1px solid ${dateFilter === 'all' ? 'var(--primary)' : 'var(--border)'}`,
-                  transition: '0.2s',
-                }}
-              >
-                すべて ({words.length})
-              </button>
-              {availableDateTeachers.map(({ date, teacher, count }) => {
-                const filterKey = `${date}::${teacher}`;
-                const color = teacher ? (teacherColors[teacher] || '#e65100') : 'var(--primary)';
-                return (
-                  <button
-                    key={filterKey}
-                    onClick={() => setDateFilter(filterKey)}
-                    style={{
-                      padding: '6px 14px', border: 'none', borderRadius: 20,
-                      fontSize: '0.8rem', fontWeight: 600, cursor: 'pointer',
-                      background: dateFilter === filterKey ? color : 'var(--bg-card)',
-                      color: dateFilter === filterKey ? 'white' : 'var(--text-muted)',
-                      border: `1px solid ${dateFilter === filterKey ? color : 'var(--border)'}`,
-                      transition: '0.2s',
-                    }}
-                  >
-                    {formatDate(date)}{teacher ? ` ${teacher}` : ''} ({count})
-                  </button>
-                );
-              })}
-            </div>
+            {(() => {
+              const VISIBLE_COUNT = 7;
+              const visibleDates = showAllDates
+                ? availableDateTeachers
+                : availableDateTeachers.slice(-VISIBLE_COUNT);
+              const hiddenCount = availableDateTeachers.length - VISIBLE_COUNT;
+              return (
+                <>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+                    <button
+                      onClick={() => setDateFilter('all')}
+                      style={{
+                        padding: '6px 14px', border: 'none', borderRadius: 20,
+                        fontSize: '0.8rem', fontWeight: 600, cursor: 'pointer',
+                        background: dateFilter === 'all' ? 'var(--primary)' : 'var(--bg-card)',
+                        color: dateFilter === 'all' ? 'white' : 'var(--text-muted)',
+                        border: `1px solid ${dateFilter === 'all' ? 'var(--primary)' : 'var(--border)'}`,
+                        transition: '0.2s',
+                      }}
+                    >
+                      すべて ({words.length})
+                    </button>
+                    {visibleDates.map(({ date, teacher, count }) => {
+                      const filterKey = `${date}::${teacher}`;
+                      const color = teacher ? (teacherColors[teacher] || '#e65100') : 'var(--primary)';
+                      return (
+                        <button
+                          key={filterKey}
+                          onClick={() => setDateFilter(filterKey)}
+                          style={{
+                            padding: '6px 14px', border: 'none', borderRadius: 20,
+                            fontSize: '0.8rem', fontWeight: 600, cursor: 'pointer',
+                            background: dateFilter === filterKey ? color : 'var(--bg-card)',
+                            color: dateFilter === filterKey ? 'white' : 'var(--text-muted)',
+                            border: `1px solid ${dateFilter === filterKey ? color : 'var(--border)'}`,
+                            transition: '0.2s',
+                          }}
+                        >
+                          {formatDate(date)}{teacher ? ` ${teacher}` : ''} ({count})
+                        </button>
+                      );
+                    })}
+                  </div>
+                  {hiddenCount > 0 && (
+                    <button
+                      onClick={() => setShowAllDates(!showAllDates)}
+                      style={{
+                        marginTop: '0.4rem', padding: '4px 12px', border: '1px solid var(--border)',
+                        borderRadius: 20, fontSize: '0.75rem', fontWeight: 600, cursor: 'pointer',
+                        background: 'var(--bg-card)', color: 'var(--text-muted)',
+                        transition: '0.2s',
+                      }}
+                    >
+                      {showAllDates ? '▲ 最新のみ表示' : `▼ すべて見る (+${hiddenCount}件)`}
+                    </button>
+                  )}
+                </>
+              );
+            })()}
             {dateFilter !== 'all' && (() => {
               const parts = dateFilter.split('::');
               const date = parts[0];
