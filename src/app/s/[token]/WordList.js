@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useMemo, useCallback } from 'react';
-import { createBrowserClient } from '@/lib/supabase';
+import { createBrowserClient, fetchAllRows } from '@/lib/supabase';
 import * as XLSX from 'xlsx';
 import SelfTraining from './SelfTraining';
 
@@ -39,12 +39,13 @@ export default function WordList({ studentId, studentName }) {
 
   const fetchWords = async () => {
     try {
-      const { data, error } = await supabase
+      const query = supabase
         .from('vb_words')
         .select('*')
         .eq('student_id', studentId)
-        .order('created_at', { ascending: false })
-        .range(0, 1999);
+        .order('created_at', { ascending: false });
+
+      const { data, error } = await fetchAllRows(query);
 
       if (error) throw error;
       setWords(data || []);

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { createBrowserClient } from '@/lib/supabase';
+import { createBrowserClient, fetchAllRows } from '@/lib/supabase';
 
 function shuffleArray(array) {
   const a = [...array];
@@ -42,11 +42,12 @@ export default function Quiz({ token, studentId }) {
 
   const fetchWords = async () => {
     try {
-      const { data, error } = await supabase
+      const query = supabase
         .from('vb_words')
         .select('*')
-        .eq('student_id', studentId)
-        .range(0, 1999);
+        .eq('student_id', studentId);
+
+      const { data, error } = await fetchAllRows(query);
       if (error) throw error;
       setWords(data || []);
     } catch (err) {

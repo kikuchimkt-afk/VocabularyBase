@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { createServerClient } from '@/lib/supabase';
+import { createServerClient, fetchAllRows } from '@/lib/supabase';
 import crypto from 'crypto';
 
 // GET: 全生徒の一覧を取得（統計情報付き）
@@ -26,11 +26,12 @@ export async function GET(request) {
           .select('*', { count: 'exact', head: true })
           .eq('student_id', student.id);
 
-        const { data: quizData } = await supabase
+        const quizQuery = supabase
           .from('vb_quiz_results')
           .select('is_correct')
-          .eq('student_id', student.id)
-          .range(0, 9999);
+          .eq('student_id', student.id);
+
+        const { data: quizData } = await fetchAllRows(quizQuery);
 
         const totalQuiz = quizData?.length || 0;
         const correctQuiz = quizData?.filter(q => q.is_correct).length || 0;

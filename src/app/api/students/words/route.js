@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { createServerClient } from '@/lib/supabase';
+import { createServerClient, fetchAllRows } from '@/lib/supabase';
 
 export async function GET(request) {
   const session = request.cookies.get('admin_session');
@@ -17,12 +17,13 @@ export async function GET(request) {
 
     const supabase = createServerClient();
 
-    const { data, error } = await supabase
+    const query = supabase
       .from('vb_words')
       .select('*')
       .eq('student_id', studentId)
-      .order('created_at', { ascending: false })
-      .range(0, 1999);
+      .order('created_at', { ascending: false });
+
+    const { data, error } = await fetchAllRows(query);
 
     if (error) throw error;
 
